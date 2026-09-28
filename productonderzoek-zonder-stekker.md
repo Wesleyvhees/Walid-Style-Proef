@@ -42,7 +42,7 @@
 | Verkoopprijs | €59,95 (doorgestreept €99,95) | €89,95 | €99,95 |
 | Btw | −€10,40 | −€15,61 | −€17,35 |
 | Inkoop (schatting, vacuümverpakt) | −€14 | −€28 | −€31 |
-| Transactiekosten + reserve | −€3,84 | −€5,61 | −€6,19 |
+| Transactiekosten + reserve | −€3,84 | −€5,61 | −€6,20 |
 | **Bijdrage vóór ads** | **€31,71** | **€40,73** | **€45,41** |
 | Break-even ROAS | 1,89 | 2,21 | 2,20 |
 | Verwachte CPA | €25 | €27,50 | €27,50 |
