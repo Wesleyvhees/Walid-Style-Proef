@@ -39,7 +39,7 @@
 
 | | 1 kussen | 2 kussens (jij + partner) | Kussen + nekmassager (set) |
 |---|---|---|---|
-| Verkoopprijs | €59,95 (doorgestreept €99,95) | €89,95 | €99,95 |
+| Verkoopprijs | €59,95 | €89,95 | €99,95 |
 | Btw | −€10,40 | −€15,61 | −€17,35 |
 | Inkoop (schatting, vacuümverpakt) | −€14 | −€28 | −€31 |
 | Transactiekosten + reserve | −€3,84 | −€5,61 | −€6,20 |

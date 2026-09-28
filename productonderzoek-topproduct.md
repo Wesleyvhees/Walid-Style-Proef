@@ -48,7 +48,7 @@ Twee keer per dag 15 minuten warmte en massage, thuis op de bank, zonder snoer e
 | Post | Bedrag |
 |---|---|
 | Inkoop (CJ Dropshipping / AliExpress, EU-warehouse of snelle lijn), incl. verzending | **~€22** |
-| Voorgestelde verkoopprijs (1 stuk) | **€79,95** (doorgestreepte prijs €129,95) |
+| Voorgestelde verkoopprijs (1 stuk) | **€79,95** (let op: geen doorgestreepte "was"-prijs gebruiken; dat mag in de EU alleen als je die prijs de afgelopen 30 dagen echt hebt gerekend) |
 | Bruto winstmarge | **€57,95 / ~72%** |
 | Bundel 2 stuks ("beide knieën") | €129,95 (inkoop ~€42, marge ~€88 / 68%) |
 | Break-even ROAS (1 stuk) | ~1,38 |

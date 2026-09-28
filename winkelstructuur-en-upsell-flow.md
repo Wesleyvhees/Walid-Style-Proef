@@ -49,7 +49,7 @@ Home
 | 2 stuks (beide knieën) | €129,95 | €42 | €57,43 | **Meest gekozen** (standaard geselecteerd) |
 | 3 stuks (ook voor je partner of ouder) | €169,95 | €62 | €68,13 | Beste deal |
 
-*Doorgestreepte prijs: €129,95 per stuk.*
+*Geen doorgestreepte "was"-prijs: volgens de EU-regels (Omnibus-richtlijn) mag dat alleen als je die prijs de afgelopen 30 dagen echt hebt gerekend. Toon in plaats daarvan de echte besparing van de bundel tegenover losse aankoop ("bespaar €29,95").*
 
 ### Upsells & extra's
 

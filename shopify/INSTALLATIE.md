@@ -4,7 +4,7 @@ Dit pakket bevat:
 - `producten-import.csv`: 7 producten, klaar om te importeren. Het LED-masker staat als concept (fase 2).
 - `paginas/*.html`: Over ons, Veelgestelde vragen, Verzending & retour, Garantie, Contact en het herroepingsformulier.
 
-Vervang overal **[MERKNAAM]**, **[Adres]**, **[e-mailadres]**, **[nummer]** en **[Retouradres]** door je eigen gegevens. Zoek in de bestanden op `[` om ze allemaal te vinden.
+Vervang overal **Veloxity**, **[Adres]**, **[e-mailadres]**, **[nummer]** en **[Retouradres]** door je eigen gegevens. Zoek in de bestanden op `[` om ze allemaal te vinden.
 
 ---
 
