@@ -56,11 +56,11 @@ Home
 | Moment | Aanbod | Prijs | Bijdrage | Aangenomen take-rate |
 |---|---|---|---|---|
 | Productpagina: "Maak je comfortset compleet" (vinkje) | Nekmassager | €44,95 (normaal €59,95) | €17,20 | 15% |
-| Winkelwagen / checkout | 2 jaar extra garantie | €7,95 | ~€4,84* | 20% |
+| Winkelwagen / checkout | XL-verlengband (grotere knieën, bovenbeen of schouder) | €9,95 | €5,34 | 20% |
 | Na betaling (1 klik, zonder opnieuw betalen) | Oogmassager | €34,95 (normaal €49,95) | €11,52 | 8% |
 | E-mail dag 14 | LED-masker (fase 2) | €119 | €59,03 | 2–3% |
 
-*Garantie: €7,95 excl. btw, min transactiekosten, min een geschatte €1,50 per verkochte garantie aan vervangingen. Controleer of je de garantie zelf kunt dragen en noem de voorwaarden duidelijk.*
+*Eerder stond hier een "2 jaar extra garantie" van €7,95. Die is vervangen: in NL heeft de consument al wettelijke garantie, dus een betaalde extra garantie die daarmee overlapt kan misleidend zijn.*
 
 **Losse prijzen** (als iemand ze direct in de winkel koopt): nekmassager €59,95 (bijdrage €28,71), oogmassager €49,95 (bijdrage €23,03). Die prijzen dienen vooral als anker voor de korting. Adverteer er niet los voor (zie het concurrentieonderzoek).
 
@@ -82,7 +82,7 @@ Meta/TikTok-ad (knie)
 Productpagina knie ──► kiest 1/2/3 stuks  (2-pack staat standaard aan)
       │                 + vinkje "Nekmassager voor €44,95"
       ▼
-Winkelwagen ──► extra garantie €7,95 (vinkje)
+Winkelwagen ──► XL-verlengband €9,95 (vinkje)
       │
       ▼
 Checkout (iDEAL, Bancontact, Klarna, creditcard)
@@ -98,12 +98,12 @@ Bedankpagina + e-mails na aankoop (zie §5)
 
 | | Alleen de knie (mix 70% 1 stuk / 25% 2 stuks / 5% 3 stuks) | Met alle upsells |
 |---|---|---|
-| Gemiddelde orderwaarde | €96,95 | **€108,08** |
-| Bijdrage vóór ads (= break-even CPA) | €45,10 | **€49,57** |
-| Netto na CPA €32 | €13,10 | **€17,57** |
-| Per maand (300 orders) | €3.931 | **€5.272** |
+| Gemiddelde orderwaarde | €96,95 | **€108,48** |
+| Bijdrage vóór ads (= break-even CPA) | €45,10 | **€49,67** |
+| Netto na CPA €32 | €13,10 | **€17,67** |
+| Per maand (300 orders) | €3.931 | **€5.302** |
 
-**De upsells leveren ongeveer €1.340 per maand extra op, zonder extra advertentiebudget.** Je break-even CPA stijgt ook van €45 naar €50, dus je kunt meer betalen voor een klant voordat je verlies maakt. Dat maakt opschalen makkelijker.
+**De upsells leveren ongeveer €1.370 per maand extra op, zonder extra advertentiebudget.** Je break-even CPA stijgt ook van €45 naar bijna €50, dus je kunt meer betalen voor een klant voordat je verlies maakt. Dat maakt opschalen makkelijker.
 
 ---
 
