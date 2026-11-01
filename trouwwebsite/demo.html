@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sanne &amp; Daan – 12 juni 2027</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .w-hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:
+    radial-gradient(circle at 20% 20%,var(--accent-soft),transparent 55%),radial-gradient(circle at 80% 80%,var(--sage-soft),transparent 55%),var(--bg)}
+  .w-hero h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:500}
+  .w-hero h1 em{color:var(--accent);font-style:italic}
+  .count{display:flex;gap:14px;justify-content:center;margin:34px 0;flex-wrap:wrap}
+  .count div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 0;width:84px}
+  .count b{display:block;font-family:var(--serif);font-size:2.2rem;line-height:1}
+  .count span{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  .guest-switch{display:inline-flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:8px}
+  .guest-switch button{border:0;background:none;padding:.5em 1.1em;border-radius:999px;font:inherit;color:var(--ink);cursor:pointer}
+  .guest-switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+  .timeline{max-width:680px;margin:0 auto;position:relative;padding-left:28px;border-left:2px solid var(--line)}
+  .tl-item{position:relative;padding:0 0 30px 18px}
+  .tl-item::before{content:"";position:absolute;left:-37px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:4px solid var(--bg)}
+  .tl-item time{font-weight:700;color:var(--accent)}
+  .tl-item p{color:var(--muted);margin:0}
+  .tl-item[hidden]{display:none}
+  .gift{display:flex;flex-direction:column;gap:10px}
+  .gift .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px}
+  .bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--sage)}
+  .reserved{opacity:.6}
+  .dropzone{border:2px dashed var(--line);border-radius:var(--radius);padding:40px 20px;text-align:center;cursor:pointer;background:var(--surface)}
+  .dropzone.drag{border-color:var(--accent);background:var(--accent-soft)}
+  .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-top:18px}
+  .thumbs img{aspect-ratio:1;object-fit:cover;border-radius:12px}
+  .rsvp{max-width:640px;margin:0 auto}
+  .demo-bar{background:var(--ink);color:var(--bg);text-align:center;font-size:.85rem;padding:8px 16px}
+  .demo-bar a{color:var(--bg);font-weight:600}
+</style>
+</head>
+<body>
+<div class="demo-bar">Dit is een voorbeeldsite gemaakt met Jawoord. <a href="index.html">Maak er zelf een →</a></div>
+
+<nav class="nav" aria-label="Menu">
+  <div class="wrap">
+    <a href="#top" class="logo">S <span>&amp;</span> D</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
+    <div class="nav-links" id="links">
+      <a href="#verhaal">Ons verhaal</a><a href="#programma">Programma</a><a href="#locatie">Locatie</a>
+      <a href="#cadeaus">Cadeaus</a><a href="#fotos">Foto's</a><a href="#vragen">Vragen</a>
+      <button class="theme-btn" aria-label="Wissel licht/donker thema">◐</button>
+      <a href="#rsvp" class="btn btn-primary">Meld je aan</a>
+    </div>
+  </div>
+</nav>
+
+<header class="w-hero" id="top">
+  <div>
+    <p class="eyebrow">Wij gaan trouwen</p>
+    <h1>Sanne <em>&amp;</em> Daan</h1>
+    <p class="lead" style="margin:0 auto">Zaterdag 12 juni 2027 · Landgoed De Linde, Utrecht</p>
+    <div class="count" id="count">
+      <div><b>–</b><span>dagen</span></div><div><b>–</b><span>uur</span></div><div><b>–</b><span>min</span></div><div><b>–</b><span>sec</span></div>
+    </div>
+    <a href="#rsvp" class="btn btn-primary">Laat weten of je erbij bent</a>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:14px">Graag uiterlijk 1 april 2027</p>
+  </div>
+</header>
+
+<section class="section alt" id="verhaal">
+  <div class="wrap grid g2" style="align-items:center">
+    <div>
+      <p class="eyebrow">Ons verhaal</p>
+      <h2>Begonnen bij een gemiste trein</h2>
+      <p>In 2019 stonden we allebei te balen op perron 5 van Utrecht Centraal. Wat begon met gedeelde koffie uit de automaat, werd een eerste date, een gezamenlijk huis en een kat genaamd Pindakaas.</p>
+      <p>Vorige zomer vroeg Daan op dat zelfde perron of Sanne met hem wilde trouwen. Ze zei ja, en de trein had gelukkig vertraging.</p>
+    </div>
+    <div class="card" style="text-align:center;padding:48px 28px">
+      <div style="font-family:var(--serif);font-size:4rem;line-height:1;color:var(--accent)">7</div>
+      <p style="margin:0 0 20px">jaar samen</p>
+      <div style="font-family:var(--serif);font-size:4rem;line-height:1;color:var(--sage)">1</div>
+      <p style="margin:0">kat die het allemaal goedkeurt</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programma">
+  <div class="wrap">
+    <div class="head center">
+      <p class="eyebrow">Programma</p><h2>Zo ziet de dag eruit</h2>
+      <p class="lead">Je persoonlijke uitnodiging laat zien welk deel van de dag voor jou geldt.</p>
+      <div class="guest-switch" role="group" aria-label="Type gast">
+        <button aria-pressed="true" data-type="dag">Daggast</button>
+        <button aria-pressed="false" data-type="avond">Avondgast</button>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item" data-for="dag"><time>13:30</time><h3>Ontvangst</h3><p>Koffie, thee en iets lekkers in de oranjerie.</p></div>
+      <div class="tl-item" data-for="dag"><time>14:00</time><h3>Ceremonie</h3><p>In de tuin bij de oude linde (bij regen in de oranjerie).</p></div>
+      <div class="tl-item" data-for="dag"><time>15:00</time><h3>Toost &amp; taart</h3><p>Proosten op het terras, tijd voor felicitaties en foto's.</p></div>
+      <div class="tl-item" data-for="dag"><time>18:00</time><h3>Diner</h3><p>Lange tafels in de schuur. Dieetwensen? Geef ze door bij je aanmelding.</p></div>
+      <div class="tl-item" data-for="dag avond"><time>20:30</time><h3>Feest</h3><p>Openingsdans, livemuziek en daarna de dj tot in de late uurtjes.</p></div>
+      <div class="tl-item" data-for="dag avond"><time>00:30</time><h3>Einde</h3><p>Pendelbus naar Utrecht Centraal vertrekt om 00:45.</p></div>
+    </div>
+    <p class="center" style="color:var(--muted);margin-top:10px">Dresscode: <b style="color:var(--ink)">zomers chic</b>. De ceremonie is op gras, laat de naaldhakken thuis.</p>
+  </div>
+</section>
+
+<section class="section alt" id="locatie">
+  <div class="wrap">
+    <div class="head center"><p class="eyebrow">Locatie</p><h2>Hoe kom je er?</h2></div>
+    <div class="grid g3">
+      <div class="card"><h3>Landgoed De Linde</h3><p>Lindelaan 12, Utrecht (voorbeeldadres)</p><p style="margin-top:14px"><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Utrecht" target="_blank" rel="noopener">Open route</a></p></div>
+      <div class="card"><h3>Met het OV</h3><p>Pendelbus vanaf Utrecht Centraal (busstation zijde Jaarbeurs) om 13:00 en 20:00. Terug om 00:45.</p></div>
+      <div class="card"><h3>Parkeren &amp; overnachten</h3><p>Gratis parkeren op het landgoed. In het Linde-hotel naast de deur is met de code <b>SANNEDAAN</b> 15% korting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rsvp">
+  <div class="wrap">
+    <div class="head center"><p class="eyebrow">Aanmelden</p><h2>Ben je erbij?</h2><p class="lead">Laat het ons uiterlijk 1 april 2027 weten. Je kunt je antwoord later altijd aanpassen.</p></div>
+    <form class="card rsvp" id="rsvpForm" novalidate>
+      <div class="field"><label for="naam">Naam</label><input id="naam" name="naam" required autocomplete="name"></div>
+      <div class="field"><label for="email">E-mailadres <span style="font-weight:400;color:var(--muted)">(voor updates)</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div class="field">
+        <span class="sr-only" id="komLabel">Kom je?</span>
+        <div class="radio-row" role="radiogroup" aria-labelledby="komLabel">
+          <label><input type="radio" name="komt" value="ja" required> Ja, ik ben erbij!</label>
+          <label><input type="radio" name="komt" value="nee"> Helaas, ik kan niet</label>
+        </div>
+      </div>
+      <div id="extra">
+        <div class="field"><label for="aantal">Aantal personen (incl. jezelf)</label>
+          <select id="aantal" name="aantal"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+        <div class="field"><label for="dieet">Dieetwensen of allergieën</label><input id="dieet" name="dieet" placeholder="Bijv. vegetarisch, notenallergie"></div>
+        <div class="field"><label for="lied">Dit nummer krijgt mij op de dansvloer</label><input id="lied" name="lied" placeholder="Artiest – titel"></div>
+      </div>
+      <div class="field"><label for="bericht">Bericht voor het bruidspaar</label><textarea id="bericht" name="bericht" rows="3"></textarea></div>
+      <button class="btn btn-primary" type="submit">Verstuur aanmelding</button>
+      <div id="rsvpMsg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<section class="section alt" id="cadeaus">
+  <div class="wrap">
+    <div class="head center"><p class="eyebrow">Cadeaus</p><h2>Jullie aanwezigheid is het mooiste cadeau</h2><p class="lead">Wil je toch iets geven? Hieronder een paar ideeën. Reserveren is anoniem, zo krijgen we niets dubbel.</p></div>
+    <div class="grid g3" id="gifts"></div>
+  </div>
+</section>
+
+<section class="section" id="fotos">
+  <div class="wrap">
+    <div class="head center"><p class="eyebrow">Foto's</p><h2>Deel jouw kiekjes</h2><p class="lead">Upload je foto's van de dag in volle kwaliteit. Op de tafels vind je een QR-code die je direct hierheen brengt.</p></div>
+    <label class="dropzone" id="drop" for="fileIn">
+      <strong>Sleep je foto's hierheen</strong><br><span style="color:var(--muted)">of tik om te kiezen</span>
+      <input type="file" id="fileIn" accept="image/*" multiple class="sr-only">
+    </label>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:10px">In deze demo blijven foto's in je eigen browser en worden ze niet verstuurd.</p>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
+</section>
+
+<section class="section alt" id="vragen">
+  <div class="wrap">
+    <div class="head center"><p class="eyebrow">Vragen</p><h2>Handig om te weten</h2></div>
+    <div class="faq">
+      <details><summary>Mogen kinderen mee?</summary><p>We houden van jullie kleintjes, maar deze dag is voor volwassenen. Uitzondering: baby's die nog borstvoeding krijgen.</p></details>
+      <details><summary>Mag ik foto's maken tijdens de ceremonie?</summary><p>We hebben een onplugged ceremonie: telefoons even weg. De fotograaf legt alles vast. Daarna mag je los!</p></details>
+      <details><summary>Wie is de ceremoniemeester?</summary><p>Lotte (zus van Sanne) helpt je met speeches, verrassingen en vragen op de dag zelf. Je bereikt haar via het contactformulier.</p></details>
+      <details><summary>Is de locatie rolstoeltoegankelijk?</summary><p>Ja, alle ruimtes zijn gelijkvloers en er is een aangepast toilet.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Met liefde, Sanne &amp; Daan</span><span>Gemaakt met <a href="index.html">Jawoord</a></span></div></footer>
+
+<script src="app.js"></script>
+<script>
+startCountdown('2027-06-12T14:00:00','#count');
+
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+// Programma per type gast (ook via ?gast=avond)
+function setGuest(t){
+  document.querySelectorAll('.guest-switch button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.type===t));
+  document.querySelectorAll('.tl-item').forEach(i=>i.hidden=!i.dataset.for.split(' ').includes(t));
+}
+document.querySelectorAll('.guest-switch button').forEach(b=>b.addEventListener('click',()=>setGuest(b.dataset.type)));
+setGuest(new URLSearchParams(location.search).get('gast')==='avond'?'avond':'dag');
+
+// RSVP
+const form=document.getElementById('rsvpForm'), msg=document.getElementById('rsvpMsg'), extra=document.getElementById('extra');
+const saved=store.get('rsvp',null);
+if(saved){Object.entries(saved).forEach(([k,v])=>{const el=form.elements[k];if(!el)return;if(el instanceof RadioNodeList){[...el].forEach(r=>r.checked=r.value===v)}else el.value=v;});}
+const toggleExtra=()=>{extra.hidden=form.elements.komt.value==='nee'};
+form.addEventListener('change',toggleExtra); toggleExtra();
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(form));
+  if(!d.naam||!/^\S+@\S+\.\S+$/.test(d.email||'')||!d.komt){msg.innerHTML='<div class="notice">Vul je naam, een geldig e-mailadres en je antwoord in.</div>';return;}
+  store.set('rsvp',d);
+  const voornaam=d.naam.trim().split(' ')[0];
+  msg.innerHTML='<div class="notice">'+(d.komt==='ja'
+    ?`Dank je wel, ${voornaam.replace(/</g,'&lt;')}! We hebben ${d.aantal==='1'?'je':d.aantal+' personen'} genoteerd. Je ontvangt een bevestiging per e-mail.`
+    :`Jammer dat je er niet bij kunt zijn, ${voornaam.replace(/</g,'&lt;')}. Bedankt voor het laten weten!`)+'</div>';
+});
+
+// Cadeaulijst
+const gifts=[
+  {id:'reis',t:'Huwelijksreis naar Japan',d:'Een bijdrage aan onze treinpas en ryokan-nachten.',goal:2500,got:1340,pot:true},
+  {id:'oven',t:'Pizza-oven voor de tuin',d:'Voor zomeravonden met vrienden.',prijs:189},
+  {id:'fiets',t:'Bakfiets-bijdrage',d:'Voor boodschappen en een kat die mee wil.',goal:1800,got:620,pot:true},
+  {id:'servies',t:'Servies voor 8',d:'Want we hebben nu 4 borden en 9 mokken.',prijs:145},
+  {id:'plant',t:'Een olijfboom',d:'Om samen groot te zien worden.',prijs:95},
+  {id:'cursus',t:'Kookworkshop voor twee',d:'Daan leert eindelijk iets anders dan pasta.',prijs:120}
+];
+let res=store.get('gifts',{});
+function renderGifts(){
+  document.getElementById('gifts').innerHTML=gifts.map(g=>{
+    const r=res[g.id];
+    if(g.pot){const pct=Math.min(100,Math.round(g.got/g.goal*100));
+      return `<div class="card gift"><h3>${g.t}</h3><p>${g.d}</p><div class="bar" aria-label="${pct}% bereikt"><i style="width:${pct}%"></i></div>
+      <small style="color:var(--muted)">€${g.got} van €${g.goal}</small><div class="meta"><span class="pill">Geldpot</span><button class="btn btn-ghost" data-pot="${g.id}">Draag bij</button></div></div>`;}
+    return `<div class="card gift ${r?'reserved':''}"><h3>${g.t}</h3><p>${g.d}</p><div class="meta"><b>€${g.prijs}</b>
+      <button class="btn ${r?'btn-ghost':'btn-primary'}" data-id="${g.id}" title="${r?'Klik om ongedaan te maken':''}">${r?'Gereserveerd ✓':'Reserveer'}</button></div></div>`;
+  }).join('');
+}
+document.getElementById('gifts').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  if(b.dataset.id){res[b.dataset.id]=!res[b.dataset.id]; if(!res[b.dataset.id]) delete res[b.dataset.id]; store.set('gifts',res); renderGifts();}
+  if(b.dataset.pot){const v=parseInt(prompt('Hoeveel wil je bijdragen? (demo, er wordt niets afgeschreven)','25'),10);
+    if(v>0){gifts.find(g=>g.id===b.dataset.pot).got+=v; renderGifts();}}
+});
+renderGifts();
+
+// Foto's (alleen lokale preview)
+const drop=document.getElementById('drop'), fileIn=document.getElementById('fileIn'), thumbs=document.getElementById('thumbs');
+const addFiles=fs=>[...fs].filter(f=>f.type.startsWith('image/')).forEach(f=>{const i=new Image();i.alt=f.name;i.src=URL.createObjectURL(f);thumbs.prepend(i);});
+fileIn.addEventListener('change',()=>addFiles(fileIn.files));
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag')}));
+drop.addEventListener('drop',e=>addFiles(e.dataTransfer.files));
+</script>
+</body>
+</html>
