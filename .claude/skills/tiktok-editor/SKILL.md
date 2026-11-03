@@ -157,7 +157,12 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 - Om de 1,5–3 s iets nieuws in beeld (kijktijd), maar nooit twee effecten tegelijk op dezelfde plek.
 - Max één punch-zoom per 1,5 s; wissel punch en langzaam af.
 - Alles boven y≈1000 of naast het gezicht; onder y=1400 en rechts van x=900 blijft leeg (TikTok-UI).
-- Alle tekst in beeld **exact gecentreerd op x 540** (symmetrische marges). Hook groot: `size` ±86.
+- **Vaste indeling** (wens van Wes): alle tekst **exact gecentreerd op x 540**, altijd met donkere letterrand (leesbaar op elke achtergrond).
+  - Bovenaan: hook-titel (y ±215, `size` ±86).
+  - Onderaan: stickers, stempels en grote woorden **net boven de ondertitels** (standaard in de code: y 1120, `big` y 1040; geef in het storyboard dus géén `x`/`y` mee tenzij nodig).
+  - Daaronder: ondertitels op y 1290.
+  - Iconen, fotokaarten en meters mogen opzij of bovenin, nooit over het gezicht.
+  - Wijk alleen af als de standaardplek iets belangrijks bedekt; kies dan de dichtstbijzijnde vrije plek en meld dat.
 - Ondertitels: **altijd vast op y≈1290** (wens van Wes, ook bij een body check). Stickers, stempels en kaarten blijven erboven (y ≤ 1100) zodat ze niet overlappen.
   `captions.y: "auto"` (net onder de kin, via `layout.json`) bestaat als optie, alleen gebruiken als Wes erom vraagt.
 - Tekst-achter-de-persoon (`title` met `behind: true`, vereist `tt.py person`) is optioneel:

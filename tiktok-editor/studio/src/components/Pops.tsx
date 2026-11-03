@@ -17,7 +17,8 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
   const out = exit(frame, beat.end, fps, 0.15);
   const look = beat.look ?? "sticker";
   const x = beat.x ?? 540;
-  const y = beat.y ?? 420;
+  // standaardplek: gecentreerd, net boven de ondertitels (y 1290); grote tekst iets hoger zodat het label past
+  const y = beat.y ?? (look === "big" ? 1040 : 1120);
   const rot = beat.rotate ?? (look === "sticker" ? -4 : 0);
   const base: React.CSSProperties = {
     position: "absolute",

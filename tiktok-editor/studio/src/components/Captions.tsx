@@ -95,7 +95,10 @@ export const Captions: React.FC<{
           justifyContent: "center",
           columnGap: "0.24em",
           textTransform: style.captionUpper ? "uppercase" : "none",
-          textShadow: style.captionShadow ? "0 4px 24px rgba(0,0,0,0.55), 0 2px 4px rgba(0,0,0,0.5)" : "none",
+          textShadow: style.captionShadow ? "0 4px 24px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.6)" : "none",
+          // donkere rand om elke letter: altijd leesbaar, ook op lichte muren of lucht
+          WebkitTextStroke: style.captionShadow ? `${Math.round(fs * 0.09)}px rgba(0,0,0,0.55)` : undefined,
+          paintOrder: "stroke fill",
         }}
       >
         {chunk.words.map((w, i) => {
