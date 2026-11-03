@@ -138,7 +138,7 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
         transform: `translateY(${(1 - out) * -20}px)`,
       }}
     >
-      <div style={{ ...fontCss("sans"), fontSize: 80, lineHeight: 1.04, color: "#fff", textShadow: "0 6px 28px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.5)" }}>
+      <div style={{ ...fontCss("sans"), fontSize: beat.size ?? 80, lineHeight: 1.04, color: "#fff", textShadow: "0 6px 28px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.5)" }}>
         {words.map((w, i) => {
           const p = enter(frame, beat.start + i * 0.06, fps, 14);
           const hot = /\*[^*]+\*/.test(w);

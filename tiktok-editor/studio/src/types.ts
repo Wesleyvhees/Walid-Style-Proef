@@ -148,6 +148,7 @@ export type HookBeat = {
   text: string;
   sub?: string;
   y?: number;
+  size?: number;
 };
 
 export type ChartBeat = {

@@ -464,16 +464,16 @@ def cmd_storyboard(a):
 <td><p class="said">{said}</p>{('<p class="why">' + ' · '.join(notes) + '</p>') if notes else ''}</td>
 <td>{cell(cuts)}</td><td>{cell(texts)}</td><td>{cell(vis)}</td><td>{cell(sfx)}</td></tr>""")
     n_vis = sum(1 for b in beats if b["type"] in VISUAL_TYPES + TEXT_TYPES)
-    page = f"""<!doctype html><html lang="nl"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Montageblad {html.escape(sb.get('title', ''))}</title>
+    page = f"""<title>Montageblad {html.escape(sb.get('title', ''))}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 <style>
-:root{{--bg:#111112;--panel:#1C1C1E;--ink:#FFFFFF;--muted:#A1A1A6;--accent:#FFC93C;--line:rgba(255,255,255,.12)}}
-@media (prefers-color-scheme: light){{:root:not([data-theme="dark"]){{--bg:#FAFAF7;--panel:#F0EFEA;--ink:#111112;--muted:#5E5E63;--accent:#B88400;--line:rgba(0,0,0,.1)}}}}
-:root[data-theme="dark"]{{--bg:#111112;--panel:#1C1C1E;--ink:#FFFFFF;--muted:#A1A1A6;--accent:#FFC93C;--line:rgba(255,255,255,.12)}}
-*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,sans-serif}}
-main{{max-width:1200px;margin:0 auto;padding:28px 16px 64px}}
+:root{{--bg:#111112;--panel:#1C1C1E;--ink:#FFFFFF;--muted:#A1A1A6;--accent:#FFC93C;--line:rgba(255,255,255,.12);color-scheme:dark}}
+@media (prefers-color-scheme: light){{:root:not([data-theme="dark"]){{--bg:#FAFAF7;--panel:#F0EFEA;--ink:#111112;--muted:#5E5E63;--accent:#9A6E00;--line:rgba(0,0,0,.1);color-scheme:light}}}}
+:root[data-theme="light"]{{--bg:#FAFAF7;--panel:#F0EFEA;--ink:#111112;--muted:#5E5E63;--accent:#9A6E00;--line:rgba(0,0,0,.1);color-scheme:light}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,sans-serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+main{{max-width:1200px;margin:0 auto;padding-block:28px 64px}}
+h1{{text-wrap:balance}}td.tc{{font-variant-numeric:tabular-nums}}
 .k{{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}}
 h1{{font-weight:900;letter-spacing:-.04em;font-size:clamp(32px,7vw,56px);line-height:1;margin:.25em 0 .35em}}
 .sum{{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:22px}}
@@ -486,7 +486,7 @@ small,.dim{{color:var(--muted)}}
 @media (max-width:820px){{thead{{display:none}}tr{{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line);padding:12px 0}}td{{border:0;padding:4px 8px}}td.tc{{grid-row:span 5}}
 td:nth-child(3)::before{{content:"Cuts & pacing";}}td:nth-child(4)::before{{content:"Tekst-overlays";}}td:nth-child(5)::before{{content:"B-roll & visueel";}}td:nth-child(6)::before{{content:"Audio FX";}}
 td:nth-child(n+3)::before{{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}}}}
-</style></head><body><main>
+</style><main>
 <div class="k">Tijdlijn &amp; montage-instructieblad · nog niet gerenderd</div>
 <h1>{html.escape(sb.get('title', 'Video'))}</h1>
 <div class="sum k"><span>Stijl: {html.escape(sb.get('style', 'grip'))}</span><span>Lengte: {total:.1f}s</span>
@@ -494,7 +494,7 @@ td:nth-child(n+3)::before{{display:block;font-family:'DM Mono',monospace;font-si
 <table><thead><tr><th>Tijdstip</th><th>Wat je zegt</th><th>Cuts &amp; pacing</th><th>Tekst-overlays (keywords)</th><th>B-roll &amp; visuele effecten</th><th>Audio FX</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table>
 <div class="next"><div class="k">Aanpassen?</div><p>Zeg het in één zin, bijvoorbeeld: “maak het moody”, “strakker knippen”, “grotere ondertitels”, “meer achtergronden” of “andere hook”.</p></div>
-</main></body></html>"""
+</main>"""
     out = os.path.join(a.project, "storyboard.html")
     open(out, "w").write(page)
     print("Klaar:", out)
