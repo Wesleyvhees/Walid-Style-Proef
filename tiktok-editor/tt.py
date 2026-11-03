@@ -271,6 +271,48 @@ def cmd_fixwords(a):
     print(" ".join(f"{w['w']}@{w['s']}" for w in out))
 
 
+# ------------------------------------------------------------ gebruikte beelden
+REGISTER = os.path.join(HERE, "kennis", "gebruikte-beelden.json")
+
+
+def file_hash(path):
+    import hashlib
+    return hashlib.sha1(open(path, "rb").read()).hexdigest()[:16]
+
+
+def load_register():
+    return json.load(open(REGISTER)) if os.path.exists(REGISTER) else {"beelden": {}, "iconen": {}}
+
+
+def used_elsewhere(reg, path, title):
+    """Naam van een andere video waarin dit beeld al zat, of None."""
+    if not os.path.exists(path):
+        return None
+    hit = reg["beelden"].get(file_hash(path))
+    others = [v for v in (hit or {}).get("videos", []) if v != title]
+    return others[0] if others else None
+
+
+def register_project(project):
+    """Na een render: alle beelden en iconen van deze video in het register zetten."""
+    sb = json.load(open(os.path.join(project, "storyboard.json")))
+    title = sb.get("title", os.path.basename(project))
+    reg = load_register()
+    for b in sb["beats"]:
+        src = b.get("src") if isinstance(b.get("src"), str) else None
+        if src and b.get("type") in ("image", "scene", "cutaway") and os.path.exists(os.path.join(project, src)):
+            h = file_hash(os.path.join(project, src))
+            e = reg["beelden"].setdefault(h, {"omschrijving": b.get("query") or os.path.basename(src), "videos": []})
+            if title not in e["videos"]:
+                e["videos"].append(title)
+        if b.get("type") == "emoji" and b.get("name"):
+            v = reg["iconen"].setdefault(b["name"], [])
+            if title not in v:
+                v.append(title)
+    os.makedirs(os.path.dirname(REGISTER), exist_ok=True)
+    json.dump(reg, open(REGISTER, "w"), ensure_ascii=False, indent=1)
+
+
 # --------------------------------------------------------------------- assets
 FLUENT = "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets"
 
@@ -350,6 +392,17 @@ def cmd_assets(a):
     adir = os.path.join(a.project, "assets")
     os.makedirs(adir, exist_ok=True)
     credits = {}
+    reg = load_register()
+    title = sb.get("title", os.path.basename(a.project))
+    names = [b["name"] for b in sb["beats"] if b.get("type") == "emoji" and b.get("name")]
+    for n in sorted(set(x for x in names if names.count(x) > 1)):
+        print(f"  ⚠ icoon '{n}' komt {names.count(n)}× voor in deze video: wissel af")
+    for b in sb["beats"]:
+        src = b.get("src") if isinstance(b.get("src"), str) else None
+        if src and not b.get("query") and b.get("type") in ("image", "scene", "cutaway"):
+            other = used_elsewhere(reg, os.path.join(a.project, src), title)
+            if other:
+                print(f"  ⚠ {src} zat al in '{other}': gebruik een ander beeld")
     for b in sb["beats"]:
         if b.get("type") == "emoji" and b.get("name"):
             rel = f"assets/emoji_{slug(b['name'])}.png"
@@ -366,8 +419,15 @@ def cmd_assets(a):
             if not found:
                 print("✗ geen foto: " + b["query"])
                 continue
-            pick = min(int(b.get("pick", 0)), len(found) - 1)
+            if "pick" in b:
+                pick = min(int(b["pick"]), len(found) - 1)
+            else:  # eerste kandidaat die nog in geen enkele andere video zat
+                pick = next((i for i in range(len(found))
+                             if not used_elsewhere(reg, os.path.join(folder, f"{i}.jpg"), title)), 0)
             rel = f"assets/kandidaten/{slug(b['query'])}/{pick}.jpg"
+            other = used_elsewhere(reg, os.path.join(a.project, rel), title)
+            if other:
+                print(f"  ⚠ deze foto zat al in '{other}': kies een andere (pick) of zoekterm")
             b["src"] = rel
             credits[rel] = found[pick]
             print(f"✓ {b['query']}: keuze {pick} van {len(found)} (overzicht: {os.path.join(folder, 'sheet.jpg')})")
@@ -560,6 +620,9 @@ def cmd_render(a):
     out = a.out or os.path.join(a.project, "final.mp4")
     extra = ["--draft"] if a.draft else []
     run(["node", os.path.join(STUDIO, "render.mjs"), os.path.abspath(a.project), os.path.abspath(out), *extra], cwd=STUDIO)
+    if not a.draft:
+        register_project(a.project)
+        print("Beelden en iconen geregistreerd in kennis/gebruikte-beelden.json")
 
 
 def main():

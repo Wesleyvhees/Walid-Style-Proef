@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-03 · algemeen · "wissel met de verschillende plaatjes elke video" → nooit hetzelfde beeld in twee video's (register `kennis/gebruikte-beelden.json`, `assets` kiest automatisch een ongebruikte kandidaat en waarschuwt), en binnen één video geen icoon twee keer.
 - 2026-11-03 · cardio (video 1–8) · Wes neemt per zin een losse take op → altijd checken of losse video's één verhaal zijn en voorstellen om ze samen te voegen (`tt.py combine`). Gekozen: één video, hook "Cardio maakt je niet *strak*", uitleg-tempo, volg-kaart **@wes.built**.
 - 2026-11-03 · cardio · spraakherkenning maakt fouten in Wes' zinnen ("Dus weet jij je kapot…") → altijd de tekst nalezen en verbeteren met `tt.py fixwords`.
 - 2026-11-03 · cardio · iconen niet over het gezicht; bij wandelvlogs zit het hoofd groot in beeld → iconen rechts (x ±820) en boven (y < 650).

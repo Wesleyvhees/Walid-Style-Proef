@@ -35,7 +35,9 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 4. **Keuzes voorleggen** (zie hieronder) en daarna **storyboard schrijven**: lees `transcript.txt` + `words.json`, bepaal per zin wat
    de kijker moet voelen/onthouden en schrijf `<project>/storyboard.json` (regels hieronder).
    Geef elke beat een `note` met het waarom.
-5. **Beelden ophalen**: `python3 tt.py assets <project>`. Bekijk bij elke foto de
+5. **Beelden ophalen**: `python3 tt.py assets <project>`. **Elke video andere plaatjes**: `assets` slaat beelden over die al in een andere video zaten
+   (register `tiktok-editor/kennis/gebruikte-beelden.json`, wordt na elke render bijgewerkt) en waarschuwt bij ⚠. Los elke ⚠ op
+   (andere `pick`, andere zoekterm of ander icoon). Ook iconen: kies bij voorkeur iconen die nog niet in het register staan. Bekijk bij elke foto de
    `assets/kandidaten/<zoekterm>/sheet.jpg` en zet `"pick": n` op de beste; draai `assets` opnieuw.
    Geen goede foto? Andere zoekterm (Engels werkt het best) of vervang door een emoji-beat.
 6. **Controleren**: `node studio/render.mjs <project> --stills 1.2,5,9` en bekijk de stills
