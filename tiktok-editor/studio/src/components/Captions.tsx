@@ -93,8 +93,9 @@ export const Captions: React.FC<{
               style={{
                 color: spoken ? (key ? style.accent : style.ink) : style.muted,
                 display: "inline-block",
-                transform: `scale(${1 + 0.1 * kp})`,
-                margin: key ? "0 0.08em" : 0,
+                transform: `scale(${1 + 0.08 * kp})`,
+                // ruimte meeschalen zodat het grotere woord niet tegen de buren aan komt
+                margin: key ? `0 ${(0.04 * w.w.length * kp).toFixed(3)}em` : 0,
               }}
             >
               {w.w}

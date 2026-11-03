@@ -4,6 +4,8 @@
   python3 tt.py prepare    <ruw.mp4> <projectmap> [--mirror] [--lang nl]
       -> norm + takes/stiltes eruit -> cut.mp4, words.json, transcript.txt, takes.json
   (Claude schrijft <projectmap>/storyboard.json, zie README.md)
+  python3 tt.py combine    <project> <take1> <take2> ...  -> meerdere takes tot één video
+  python3 tt.py fixwords   <project> "juiste tekst"      -> spraakherkenningsfouten verbeteren
   python3 tt.py assets     <projectmap>      -> 3D-iconen + rechtenvrije foto's uit storyboard.json ophalen
   python3 tt.py person     <projectmap>      -> person.webm (optioneel: cutout voor tekst-achter-persoon)
   python3 tt.py storyboard <projectmap>      -> storyboard.html (preview per beat, ter goedkeuring)
@@ -223,6 +225,50 @@ def cmd_prepare(a):
         for d in dropped:
             print(f"  - {d['text']}")
     os.remove(norm)
+
+
+# -------------------------------------------------------------------- combine
+def cmd_combine(a):
+    """Meerdere voorbereide takes (projectmappen met cut.mp4 + words.json) achter elkaar tot één project."""
+    os.makedirs(a.project, exist_ok=True)
+    words, offset, lst = [], 0.0, os.path.join(a.project, "concat.txt")
+    with open(lst, "w") as fh:
+        for src in a.takes:
+            cut = os.path.abspath(os.path.join(src, "cut.mp4"))
+            fh.write(f"file '{cut}'\n")
+            for w in json.load(open(os.path.join(src, "words.json"))):
+                words.append({"w": w["w"], "s": round(w["s"] + offset, 3), "e": round(w["e"] + offset, 3)})
+            offset += duration(cut)
+    run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst,
+         "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-r", str(FPS), "-c:a", "aac", "-b:a", "256k",
+         os.path.join(a.project, "cut.mp4")])
+    json.dump(words, open(os.path.join(a.project, "words.json"), "w"), ensure_ascii=False, indent=0)
+    print(f"Klaar: {len(a.takes)} takes, {offset:.1f}s")
+
+
+def cmd_fixwords(a):
+    """Verbeter de tekst van words.json met een correcte zin (tijden blijven, verschillen worden verdeeld)."""
+    path = os.path.join(a.project, "words.json")
+    words = json.load(open(path))
+    good = a.text.split()
+    sm = difflib.SequenceMatcher(None, [norm_text(w["w"])[0] if norm_text(w["w"]) else "" for w in words],
+                                 [norm_text(g)[0] if norm_text(g) else "" for g in good], autojunk=False)
+    out = []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == "equal":
+            out += [{"w": good[j1 + k], "s": words[i1 + k]["s"], "e": words[i1 + k]["e"]} for k in range(i2 - i1)]
+        elif j2 > j1:
+            if i2 > i1:
+                s0, e0 = words[i1]["s"], words[i2 - 1]["e"]
+            else:  # ingevoegd woord: klein stukje rond de vorige/volgende
+                s0 = out[-1]["e"] if out else (words[i1]["s"] if i1 < len(words) else 0)
+                e0 = words[i1]["s"] if i1 < len(words) else s0 + 0.3
+                if e0 <= s0:
+                    e0 = s0 + 0.2
+            step = (e0 - s0) / (j2 - j1)
+            out += [{"w": good[j], "s": round(s0 + step * (j - j1), 3), "e": round(s0 + step * (j - j1 + 1), 3)} for j in range(j1, j2)]
+    json.dump(out, open(path, "w"), ensure_ascii=False, indent=0)
+    print(" ".join(f"{w['w']}@{w['s']}" for w in out))
 
 
 # --------------------------------------------------------------------- assets
@@ -523,6 +569,10 @@ def main():
     c.add_argument("--mirror", action="store_true", help="beeld spiegelen (standaard uit; alleen op verzoek)")
     c.add_argument("--gap", type=float, default=0.08, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
+    c = sub.add_parser("combine", help="takes achter elkaar tot één project")
+    c.add_argument("project"); c.add_argument("takes", nargs="+"); c.set_defaults(fn=cmd_combine)
+    c = sub.add_parser("fixwords", help="tekst van words.json verbeteren")
+    c.add_argument("project"); c.add_argument("text"); c.set_defaults(fn=cmd_fixwords)
     c = sub.add_parser("assets"); c.add_argument("project"); c.set_defaults(fn=cmd_assets)
     c = sub.add_parser("person"); c.add_argument("project")
     c.add_argument("--model", default="isnet-general-use", help="isnet-general-use (standaard), birefnet-general-lite (beste, traag), u2net_human_seg (snel)"); c.set_defaults(fn=cmd_person)

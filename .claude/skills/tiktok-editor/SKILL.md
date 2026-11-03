@@ -30,7 +30,8 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 3. **Voorbereiden**: `python3 tt.py prepare ruw.mp4 <project>` (niet spiegelen, tenzij de gebruiker erom vraagt)
    Haalt mislukte takes
    (herhaalde zinnen, laatste take blijft) en elke pauze > 0,08 s eruit (op basis van het geluid zelf), maakt `cut.mp4`, `words.json`, `transcript.txt`.
-   Controleer `words.json` op samengeplakte woorden en splits ze zo nodig.
+   Controleer `words.json` op samengeplakte woorden en spraakfouten; verbeter met `tt.py fixwords <project> "juiste zin"`.
+   **Meerdere takes** (bv. video 1–8 = één zin per take): `prepare` per take, daarna `tt.py combine <project> <take1> … <takeN>`.
 4. **Keuzes voorleggen** (zie hieronder) en daarna **storyboard schrijven**: lees `transcript.txt` + `words.json`, bepaal per zin wat
    de kijker moet voelen/onthouden en schrijf `<project>/storyboard.json` (regels hieronder).
    Geef elke beat een `note` met het waarom.
