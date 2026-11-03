@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-03 · algemeen · Wes gaf een multicam-instructie (EDL + knipplan) → skill `multicam-editor` gebruiken als Wes om een multicam-montage, EDL of knipplan vraagt; huisstijl en lessen gelden daar ook.
 - 2026-11-03 · shape na de vakantie · "altijd in het midden, duidelijk leesbaar, overlay en ondertiteling op de juiste plek" (voorbeelden A/B/C, Wes: kies de meest geschikte) → **vaste indeling**: hook bovenaan gecentreerd; stickers/stempels/grote woorden gecentreerd **net boven de ondertitels** (y ±1120, grote getallen ±1040); ondertitels onderaan op y 1290. Alle tekst met donkere letterrand voor leesbaarheid. Wijk alleen af als die plek iets belangrijks bedekt, dan de dichtstbijzijnde vrije plek (eerst iets hoger).
 - 2026-11-03 · shape na de vakantie · "overlay tekst centeren en vergroten" → hook en ondertitels exact gecentreerd op x 540 (symmetrische marges); hook groter: standaard `size` ±86 (2 regels mag).
 - 2026-11-03 · shape na de vakantie · "ondertitels op hoogte als de vorige video" → **ondertitels altijd vast op y 1290** (zoals cardio), ook bij een body check. Automatisch onder de kin (`captions.y: "auto"`) alleen als Wes erom vraagt. Hook bovenin (y ±215, één regel). Stickers/stempels boven de ondertitels houden (y ≤ 1100) zodat niets overlapt.
