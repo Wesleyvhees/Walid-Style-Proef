@@ -304,7 +304,7 @@ def cmd_assets(a):
                 if not ok:
                     continue
             b["src"] = rel
-        if b.get("type") == "image" and b.get("query"):
+        if b.get("type") in ("image", "scene", "cutaway") and b.get("query"):
             folder = os.path.join(adir, "kandidaten", slug(b["query"]))
             cj = os.path.join(folder, "credits.json")
             found = json.load(open(cj)) if os.path.exists(cj) else photo_candidates(b["query"], folder)
@@ -326,7 +326,8 @@ def cmd_assets(a):
 
 # --------------------------------------------------------------------- person
 def behind_ranges(sb, pad=0.2):
-    return [(b["start"] - pad, b["end"] + pad) for b in sb["beats"] if b.get("type") == "title" and b.get("behind")]
+    return [(b["start"] - pad, b["end"] + pad) for b in sb["beats"]
+            if (b.get("type") == "title" and b.get("behind")) or (b.get("type") == "scene" and b.get("mode") == "cutout")]
 
 
 def cmd_person(a):
@@ -387,69 +388,112 @@ DESCRIBE = {
     "images": lambda b: f"{len(b.get('src', []))} zwevende beelden",
     "pop": lambda b: f"Tekst popt op: “{b.get('text')}” ({b.get('look', 'sticker')})",
     "emoji": lambda b: f"3D-icoon popt op: {b.get('name')}",
+    "scene": lambda b: ("Jij uitgeknipt voor" if b.get("mode") == "cutout" else "Jij in kader voor") + f" beeld: {b.get('query') or b.get('src')}",
+    "cutaway": lambda b: f"Cutaway schermvullend: {b.get('query') or b.get('src')}" + (f" — “{b['label']}”" if b.get("label") else ""),
+    "hook": lambda b: f"Hook-titel: “{b.get('text')}”" + (f" ({b['sub']})" if b.get("sub") else ""),
+    "chart": lambda b: f"Data-kaart: {b.get('title', '')} ({len(b.get('rows', []))} rijen)",
     "image": lambda b: f"Foto popt op: {b.get('query') or b.get('src')}" + (f" — “{b['label']}”" if b.get("label") else ""),
 }
 
 
+TEXT_TYPES = ("pop", "words", "hook", "title")
+VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment")
+SFX_NL = {"pop": "pop", "whoosh": "whoosh", "ding": "ding", "click": "klik", "boom": "boem"}
+
+
+def sentences(words):
+    out, cur = [], []
+    for w in words:
+        cur.append(w)
+        if re.search(r"[.!?]$", w["w"]) or (len(cur) >= 9 and re.search(r",$", w["w"])):
+            out.append(cur); cur = []
+    if cur:
+        out.append(cur)
+    return out
+
+
+def beat_text(b):
+    if b["type"] in ("words", "title"):
+        return " / ".join(l["text"] for l in b.get("lines", []))
+    if b["type"] == "hook":
+        return b["text"].replace("*", "") + (f" ({b['sub']})" if b.get("sub") else "")
+    return b.get("text", "")
+
+
 def cmd_storyboard(a):
+    """Tijdlijn & Montage-Instructieblad: per zin wat er gebeurt, met preview."""
     sb = json.load(open(os.path.join(a.project, "storyboard.json")))
     words = sb.get("words") or json.load(open(os.path.join(a.project, "words.json")))
     total = duration(os.path.join(a.project, sb.get("video", "cut.mp4")))
     beats = sorted(sb["beats"], key=lambda b: b["start"])
-    # één preview per beat (iets na het begin, als alles in beeld staat)
-    times = [round(min(b["end"] - 0.05, b["start"] + min(1.0, (b["end"] - b["start"]) * 0.6)), 2) for b in beats]
+    sents = sentences(words)
+    bounds = [(s[0]["s"], (sents[i + 1][0]["s"] if i + 1 < len(sents) else total)) for i, s in enumerate(sents)]
+    # preview: midden van de zin, of het eerste visuele effect erin
+    times = []
+    for (s0, s1) in bounds:
+        vis = [b for b in beats if s0 <= b["start"] < s1 and b["type"] in VISUAL_TYPES + TEXT_TYPES]
+        t = vis[0]["start"] + min(0.5, (vis[0]["end"] - vis[0]["start"]) * 0.5) if vis else (s0 + s1) / 2
+        times.append(round(min(t, total - 0.05), 2))
     shutil.rmtree(os.path.join(a.project, "stills"), ignore_errors=True)
     run(["node", os.path.join(STUDIO, "render.mjs"), a.project, "--stills", ",".join(map(str, times))], cwd=STUDIO)
+    hl = {re.sub(r"[^a-z0-9à-ÿ]", "", h.lower()) for h in sb.get("captions", {}).get("highlight", [])}
+    zooms = sb.get("zooms", [])
     rows = []
-    for b, t in zip(beats, times):
+    for (s0, s1), sent, t in zip(bounds, sents, times):
         png = os.path.join(a.project, "stills", f"still_{t}.png")
         jpg = png.replace(".png", ".jpg")
-        run(["ffmpeg", "-y", "-v", "error", "-i", png, "-vf", "scale=360:-1", "-q:v", "4", jpg])
+        run(["ffmpeg", "-y", "-v", "error", "-i", png, "-vf", "scale=300:-1", "-q:v", "4", jpg])
         img = base64.b64encode(open(jpg, "rb").read()).decode()
-        said = " ".join(w["w"] for w in words if b["start"] - 0.05 <= w["s"] < b["end"])
-        lines = " / ".join(l["text"] for l in b.get("lines", []))
-        rows.append(f"""
-<article class="beat">
-  <img src="data:image/jpeg;base64,{img}" alt="Preview {b['start']:.1f}s">
-  <div class="meta">
-    <div class="tc">{b['start']:05.2f} → {b['end']:05.2f} · {html.escape(b['type'].upper())}</div>
-    <p class="quote">“{html.escape(said) or '—'}”</p>
-    <ul>
-      <li><b>Beeld</b> {html.escape(DESCRIBE.get(b['type'], lambda _: b['type'])(b))}</li>
-      {f'<li><b>Tekst</b> {html.escape(lines)}</li>' if lines else ''}
-      {f'<li><b>Waarom</b> {html.escape(b["note"])}</li>' if b.get("note") else ''}
-    </ul>
-  </div>
-</article>""")
-    zooms = ", ".join(f"{z['start']:.1f}s {z.get('ease', 'in')}" for z in sb.get("zooms", [])) or "geen"
-    cap = sb.get("captions", {})
+        inb = [b for b in beats if s0 <= b["start"] < s1]
+        said = " ".join(
+            f"<mark>{html.escape(w['w'])}</mark>" if re.sub(r"[^a-z0-9à-ÿ]", "", w["w"].lower()) in hl else html.escape(w["w"])
+            for w in sent)
+        cuts = [f"{z['start']:.1f}s {'punch-zoom' if z.get('ease') == 'punch' else 'langzame zoom'} → {int(round(z.get('to', 1.08) * 100))}%"
+                for z in zooms if s0 <= z["start"] < s1]
+        if s0 == bounds[0][0]:
+            cuts.insert(0, "Hard begin, geen intro")
+        texts = [f"{b['start']:.1f}s {html.escape(beat_text(b))} <small>({b.get('look', b['type'])})</small>"
+                 for b in inb if b["type"] in TEXT_TYPES]
+        vis = [f"{b['start']:.1f}–{b['end']:.1f}s {html.escape(DESCRIBE.get(b['type'], lambda _: b['type'])(b))}"
+               for b in inb if b["type"] in VISUAL_TYPES]
+        sfx = [f"{b['start']:.1f}s {SFX_NL.get(b['sfx'], b['sfx'])}" for b in inb if b.get("sfx")]
+        notes = [html.escape(b["note"]) for b in inb if b.get("note")]
+        cell = lambda xs: "<br>".join(xs) if xs else '<span class="dim">—</span>'
+        rows.append(f"""<tr>
+<td class="tc"><img src="data:image/jpeg;base64,{img}" alt=""><b>{s0:05.2f}</b><span class="dim">→ {s1:05.2f}</span></td>
+<td><p class="said">{said}</p>{('<p class="why">' + ' · '.join(notes) + '</p>') if notes else ''}</td>
+<td>{cell(cuts)}</td><td>{cell(texts)}</td><td>{cell(vis)}</td><td>{cell(sfx)}</td></tr>""")
+    n_vis = sum(1 for b in beats if b["type"] in VISUAL_TYPES + TEXT_TYPES)
     page = f"""<!doctype html><html lang="nl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Storyboard {html.escape(sb.get('title', ''))}</title>
+<title>Montageblad {html.escape(sb.get('title', ''))}</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 <style>
 :root{{--bg:#111112;--panel:#1C1C1E;--ink:#FFFFFF;--muted:#A1A1A6;--accent:#FFC93C;--line:rgba(255,255,255,.12)}}
 @media (prefers-color-scheme: light){{:root:not([data-theme="dark"]){{--bg:#FAFAF7;--panel:#F0EFEA;--ink:#111112;--muted:#5E5E63;--accent:#B88400;--line:rgba(0,0,0,.1)}}}}
 :root[data-theme="dark"]{{--bg:#111112;--panel:#1C1C1E;--ink:#FFFFFF;--muted:#A1A1A6;--accent:#FFC93C;--line:rgba(255,255,255,.12)}}
-*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif}}
-main{{max-width:820px;margin:0 auto;padding:28px 16px 64px}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,sans-serif}}
+main{{max-width:1200px;margin:0 auto;padding:28px 16px 64px}}
 .k{{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}}
-h1{{font-family:Inter,sans-serif;font-weight:900;letter-spacing:-.04em;font-size:clamp(36px,8vw,64px);line-height:.98;margin:.2em 0 .3em}}
-.sum{{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:28px}}
-.beat{{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}}
-.beat img{{width:120px;border-radius:10px;display:block}}
-.tc{{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.06em}}
-.quote{{font-size:20px;font-weight:600;line-height:1.25;margin:.3em 0 .5em}}.quote::before{{content:"";display:inline-block;width:10px;height:10px;border-radius:10px;background:var(--accent);margin-right:10px}}
-ul{{list-style:none;padding:0;margin:0;font-size:14px;color:var(--muted)}}li{{margin:.2em 0}}li b{{color:var(--ink);font-weight:600;margin-right:.4em}}
-.next{{margin-top:32px;padding:18px;border-radius:14px;background:var(--panel)}}
-@media (min-width:640px){{.beat{{grid-template-columns:180px 1fr}}.beat img{{width:180px}}}}
+h1{{font-weight:900;letter-spacing:-.04em;font-size:clamp(32px,7vw,56px);line-height:1;margin:.25em 0 .35em}}
+.sum{{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:22px}}
+table{{width:100%;border-collapse:collapse}}th{{text-align:left;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400;padding:8px 10px;border-bottom:1px solid var(--line)}}
+td{{vertical-align:top;padding:14px 10px;border-bottom:1px solid var(--line);font-size:14px}}
+td.tc{{width:110px;font-family:'DM Mono',monospace;font-size:12px}}td.tc img{{width:96px;border-radius:8px;display:block;margin-bottom:6px}}td.tc b{{display:block;color:var(--accent);font-weight:400}}
+.said{{font-weight:600;font-size:16px;margin:0}}mark{{background:none;color:var(--accent)}}.why{{color:var(--muted);font-size:13px;margin:.4em 0 0}}
+small,.dim{{color:var(--muted)}}
+.next{{margin-top:28px;padding:18px;border-radius:14px;background:var(--panel)}}
+@media (max-width:820px){{thead{{display:none}}tr{{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line);padding:12px 0}}td{{border:0;padding:4px 8px}}td.tc{{grid-row:span 5}}
+td:nth-child(3)::before{{content:"Cuts & pacing";}}td:nth-child(4)::before{{content:"Tekst-overlays";}}td:nth-child(5)::before{{content:"B-roll & visueel";}}td:nth-child(6)::before{{content:"Audio FX";}}
+td:nth-child(n+3)::before{{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}}}}
 </style></head><body><main>
-<div class="k">Storyboard · nog niet gerenderd</div>
+<div class="k">Tijdlijn &amp; montage-instructieblad · nog niet gerenderd</div>
 <h1>{html.escape(sb.get('title', 'Video'))}</h1>
-<div class="sum k"><span>Stijl: {html.escape(sb.get('style', 'aesthetic'))}</span><span>Lengte: {total:.1f}s</span>
-<span>Ondertitels: {'aan' if cap.get('enabled', True) else 'uit'}</span><span>Kernwoorden: {html.escape(', '.join(cap.get('highlight', [])) or '—')}</span><span>Zooms: {html.escape(zooms)}</span></div>
-{''.join(rows)}
-<div class="next"><div class="k">Aanpassen?</div><p>Zeg het in één zin, bijvoorbeeld: “maak het moody”, “strakker knippen”, “grotere ondertitels” of “andere hook”.</p></div>
+<div class="sum k"><span>Stijl: {html.escape(sb.get('style', 'grip'))}</span><span>Lengte: {total:.1f}s</span>
+<span>{n_vis} effecten · gem. elke {total / max(1, n_vis):.1f}s iets nieuws</span><span>{len(zooms)} zooms</span></div>
+<table><thead><tr><th>Tijdstip</th><th>Wat je zegt</th><th>Cuts &amp; pacing</th><th>Tekst-overlays (keywords)</th><th>B-roll &amp; visuele effecten</th><th>Audio FX</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table>
+<div class="next"><div class="k">Aanpassen?</div><p>Zeg het in één zin, bijvoorbeeld: “maak het moody”, “strakker knippen”, “grotere ondertitels”, “meer achtergronden” of “andere hook”.</p></div>
 </main></body></html>"""
     out = os.path.join(a.project, "storyboard.html")
     open(out, "w").write(page)
@@ -471,7 +515,7 @@ def main():
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
     c = sub.add_parser("assets"); c.add_argument("project"); c.set_defaults(fn=cmd_assets)
     c = sub.add_parser("person"); c.add_argument("project")
-    c.add_argument("--model", default="u2net_human_seg"); c.set_defaults(fn=cmd_person)
+    c.add_argument("--model", default="isnet-general-use", help="isnet-general-use (standaard), birefnet-general-lite (beste, traag), u2net_human_seg (snel)"); c.set_defaults(fn=cmd_person)
     c = sub.add_parser("storyboard"); c.add_argument("project"); c.set_defaults(fn=cmd_storyboard)
     c = sub.add_parser("render"); c.add_argument("project"); c.add_argument("--out")
     c.add_argument("--draft", action="store_true"); c.set_defaults(fn=cmd_render)

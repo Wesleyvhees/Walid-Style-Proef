@@ -84,7 +84,8 @@ export type PopBeat = {
   start: number;
   end: number;
   text: string;
-  look?: "sticker" | "outline" | "big" | "label";
+  look?: "sticker" | "outline" | "big" | "label" | "stamp";
+  color?: string; // voor stamp: bv. "#FF3B30" (mythe) of "#34C759" (feit)
   x?: number; // midden, px (standaard midden van het beeld)
   y?: number;
   rotate?: number;
@@ -109,6 +110,7 @@ export type ImageBeat = {
   end: number;
   query?: string; // zoekterm, tt.py assets zoekt een rechtenvrije foto
   src?: string; // of zelf een bestand in de projectmap
+  pick?: number;
   label?: string;
   x?: number;
   y?: number;
@@ -116,7 +118,52 @@ export type ImageBeat = {
   rotate?: number;
 };
 
-export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat) & {
+export type SceneBeat = {
+  type: "scene"; // achtergrond vervangen door een beeld dat past bij wat je zegt
+  start: number;
+  end: number;
+  query?: string; // zoekterm voor het achtergrondbeeld (of src)
+  src?: string;
+  pick?: number;
+  mode?: "cutout" | "pip"; // cutout = jij uitgeknipt voor het beeld (vereist tt.py person), pip = jij in een afgerond kader
+  scale?: number; // grootte van jou (1 = origineel), standaard 0.8 (cutout) / 0.46 (pip)
+  anchor?: "bottom" | "center" | "left" | "right";
+  dim?: number; // achtergrond donkerder maken 0..1
+};
+
+export type CutawayBeat = {
+  type: "cutaway"; // beeld schermvullend (0.6–1.5 s), jij blijft hoorbaar
+  start: number;
+  end: number;
+  query?: string;
+  src?: string;
+  pick?: number;
+  label?: string;
+};
+
+export type HookBeat = {
+  type: "hook"; // vaste titel bovenin (de mythe/vraag) met kleine ondertitel
+  start: number;
+  end: number;
+  text: string;
+  sub?: string;
+  y?: number;
+};
+
+export type ChartBeat = {
+  type: "chart"; // geanimeerde data: lijst of staafjes
+  start: number;
+  end: number;
+  title?: string;
+  rows: { label: string; value: number }[];
+  unit?: string;
+  decimals?: number;
+  highlight?: number[]; // indexen van rijen in accentkleur
+  mode?: "bars" | "list";
+  note?: string;
+};
+
+export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat) & {
   sfx?: Sfx;
   note?: string;
 };

@@ -7,6 +7,7 @@ import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
 import { CommentCard, FloatingImages, FollowCard, PromptCard } from "./components/Cards";
 import { EmojiPop, PhotoPop, PopText } from "./components/Pops";
+import { ChartCard, CutawayLayer, HookTitle, SceneLayer } from "./components/Scenes";
 
 loadFonts();
 
@@ -94,6 +95,10 @@ export const Main: React.FC<Storyboard> = (sb) => {
           <OffthreadVideo src={staticFile(`p/${sb.person}`)} transparent muted style={videoStyle} />
         </AbsoluteFill>
       ) : null}
+      {now.map((b, i) =>
+        b.type === "scene" ? <SceneLayer key={`sc${i}`} beat={b} video={sb.video} person={sb.person} filter={s.filter} /> : null,
+      )}
+      {now.map((b, i) => (b.type === "cutaway" ? <CutawayLayer key={`ca${i}`} beat={b} style={s} /> : null))}
       {s.vignette ? (
         <AbsoluteFill
           style={{ background: `radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 45%, rgba(0,0,0,${s.vignette}) 100%)` }}
@@ -111,8 +116,10 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (b.type === "pop") return <PopText key={`c${i}`} beat={b} style={s} />;
         if (b.type === "emoji") return <EmojiPop key={`c${i}`} beat={b} />;
         if (b.type === "image") return <PhotoPop key={`c${i}`} beat={b} style={s} />;
+        if (b.type === "chart") return <ChartCard key={`c${i}`} beat={b} style={s} />;
         return null;
       })}
+      {now.map((b, i) => (b.type === "hook" ? <HookTitle key={`h${i}`} beat={b} style={s} /> : null))}
       {cap.enabled !== false ? (
         <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} highlight={cap.highlight} />
       ) : null}

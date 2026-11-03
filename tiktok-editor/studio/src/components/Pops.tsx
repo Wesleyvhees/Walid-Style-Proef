@@ -87,6 +87,35 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
       </div>
     );
   }
+  if (look === "stamp") {
+    // stempel: MYTHE / FEIT, slaat neer met overshoot
+    const c = beat.color ?? "#FF3B30";
+    const sp = spring({ frame: frame - Math.round(beat.start * fps), fps, config: { damping: 10, mass: 0.4, stiffness: 260 } });
+    return (
+      <div
+        style={{
+          position: "absolute",
+          left: x,
+          top: y,
+          transform: `translate(-50%,-50%) rotate(${rot || -8}deg) scale(${(2.2 - 1.2 * sp) * out})`,
+          opacity: Math.min(1, sp * 2) * out,
+          ...fontCss("condensed"),
+          fontSize: beat.size ?? 150,
+          lineHeight: 1,
+          color: c,
+          border: `10px solid ${c}`,
+          borderRadius: 18,
+          padding: "6px 34px 12px",
+          textTransform: "uppercase",
+          background: "rgba(255,255,255,0.92)",
+          boxShadow: "0 20px 50px rgba(0,0,0,0.4)",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {beat.text}
+      </div>
+    );
+  }
   // sticker
   return (
     <div

@@ -53,6 +53,36 @@ Rol: compromisloze video-editor en retentiespecialist voor **Wes.Built**. Doel: 
 `Tijdstip | Cuts & Pacing | Tekst-overlays (Keywords) | B-roll & Visuele Effecten | Audio FX`.
 Bij een echte video: hetzelfde blad als storyboard, daarna renderen met dit systeem.
 
+## Wes.Built-methode (afgeleid van analyse van Jesse's video's, verbeterd)
+
+Jesse (fitness-uitleg, 40–55 s, talking head aan tafel) wisselt **elke 1,4–2,3 s** van beeld. Dat tempo nemen we over,
+maar strakker uitgevoerd. Per video wisselen deze lagen elkaar af, nooit twee keer dezelfde na elkaar:
+
+| Laag | Wanneer | Hoe (beter dan Jesse) |
+|---|---|---|
+| `hook` (vaste titel bovenin) | 0–6/8 s: de mythe of vraag, 2 regels, eindigt op "…", accentwoord tussen `*sterretjes*`; `sub` = belofte ("wat het is + wat je moet nemen") | Strak getypeerd met geel accentwoord en een pill-ondertitel in plaats van platte tekst over het gezicht |
+| `pop` look `stamp` | Op het moment dat de mythe genoemd/ontkracht wordt: "MYTHE" (#FF3B30) / "FEIT" (#34C759) | Stempel met inslag + `boom` |
+| `scene` mode `cutout` | Analogieën en plekken ("zie je lichaam als een **tank**", "in de **gym**", "je **maag**") → jij uitgeknipt vóór dat beeld, 1,5–3 s | Schone AI-cutout met witte rand en schaduw + bewegende achtergrond (Ken Burns), i.p.v. ruwe uitsnede of rechthoek |
+| `scene` mode `pip` | Schermen, producten, websites, app (MacroFactor), schema's → jij in afgerond kader ervoor | Kader met witte rand, schaduw, binnen de veilige zone |
+| `cutaway` | Concreet ding of actie ("weegschaal", "cardio", "maaltijden skippen") 0,6–1,2 s schermvullend, evt. met `label` | Ken Burns + snelle in-zoom, eigen clips/rechtenvrije foto's i.p.v. stock met watermerk |
+| `image` | Voorbeeld/ding erbij terwijl jij in beeld blijft | Fotokaart die oppopt en weer wegklapt |
+| `chart` | Zodra er getallen vallen (gewicht per dag, grammen, %) | Geanimeerde staafjes die optellen, uitschieter in geel, i.p.v. een statisch zwart lijstje |
+| `emoji` / `pop` | Emotie en kernwoorden tussen de grote wissels door | Zie effectregels |
+| Ondertitels | Altijd, 1–4 woorden per keer | Groter dan bij Jesse, kernwoorden geel (`captions.highlight`), altijd leesbaar |
+
+Volgorde-ritme (herhalen): talking head + pop → scene/cutaway → talking head + emoji → image/chart → …
+Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen frames van die beats).
+
+### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
+
+1. **Hook (0–3 s):** val een bekende overtuiging aan, in de jij-vorm. "Hoe kan het nou dat…", "Ben je nou echt nog steeds…", "Als jij maar … doet, dan…". Geen intro, geen "hoi".
+2. **Herkenning (3–8 s):** het gevoel/probleem van de kijker ("de weegschaal schiet omhoog").
+3. **Uitleg via één analogie** (tank, spons, batterij) — die analogie krijgt een `scene`.
+4. **Wetenschap in één zin**, simpel gehouden; vakterm mag als `pop`.
+5. **Praktisch advies met een getal** ("20–40 gram halverwege je training") → `chart` of `pop`.
+6. **CTA met een knipoog** die terugkoppelt aan het onderwerp ("je kijkt toch dagelijks naar mijn video's, dus…") → `follow`-kaart.
+7. Sponsor: eerlijk benoemen ("ja, ik word gesponsord") + code als `pop` look `label`.
+
 ## Effectregels (wat bij welke tekst past)
 
 | In de tekst | Effect |
