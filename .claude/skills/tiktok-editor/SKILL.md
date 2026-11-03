@@ -20,7 +20,7 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
    Haalt mislukte takes
    (herhaalde zinnen, laatste take blijft) en elke pauze > 0,08 s eruit (op basis van het geluid zelf), maakt `cut.mp4`, `words.json`, `transcript.txt`.
    Controleer `words.json` op samengeplakte woorden en splits ze zo nodig.
-4. **Analyseren en storyboard schrijven**: lees `transcript.txt` + `words.json`, bepaal per zin wat
+4. **Keuzes voorleggen** (zie hieronder) en daarna **storyboard schrijven**: lees `transcript.txt` + `words.json`, bepaal per zin wat
    de kijker moet voelen/onthouden en schrijf `<project>/storyboard.json` (regels hieronder).
    Geef elke beat een `note` met het waarom.
 5. **Beelden ophalen**: `python3 tt.py assets <project>`. Bekijk bij elke foto de
@@ -34,6 +34,26 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 8. **Renderen**: `python3 tt.py render <project> --out "<project>/<titel> - bewerkt.mp4"`,
    controleer een contactsheet van de output, stuur het bestand met SendUserFile.
 9. **Feedback in één zin** → pas `storyboard.json` aan → stills → opnieuw renderen.
+
+## Keuzes voorleggen (verplicht, vóór het bewerken)
+
+De gebruiker wil **eerst kiezen, dan pas bewerken**. Na stap 3 (prepare) en een eerste analyse van de tekst,
+en vóór storyboard.json definitief is, assets/cutouts worden gemaakt of er gerenderd wordt:
+
+1. Leg de keuzes voor met **AskUserQuestion** (max 4 vragen per keer, elk 2–4 opties, aanbevolen optie eerst
+   met "(Aanbevolen)"). Gebruik `preview` om per optie te laten zien wat er gebeurt (tijdstip + effect).
+2. Standaard vragen (kies de 3–4 die voor deze video het meest uitmaken):
+   - **Stijl**: `grip` (strak, geel accent) / `moody` (donker, grote ondertitels) / `editorial` (rustig, chic) / `pop` (fel).
+   - **Hook**: 2–3 concrete hook-teksten voor de eerste 3 s (bv. serietitel, prikkelende vraag, mythe + stempel).
+   - **Achtergronden/B-roll**: per belangrijk moment 2–3 beeldideeën (bv. bij "love": publiek dat juicht / zonsopkomst / jij in kader voor sportschool),
+     of de mate: veel scene-wissels (Jesse-tempo, elke 1,5 s) / gemiddeld (elke 3 s) / weinig (alleen kernmomenten).
+   - **Effecten & geluid**: vol (pops, emoji, sfx) / gemiddeld / minimaal (alleen ondertitels + zooms).
+   - **Knippen**: extra strak (`--gap 0.04`) / strak (`0.08`, standaard) / natuurlijk (`0.2`).
+   - **Einde/CTA**: volg-kaart / vraag om reactie / niets.
+3. Bij fotokeuzes: toon het overzicht (`assets/kandidaten/<zoekterm>/sheet.jpg`) met SendUserFile en laat
+   de gebruiker het nummer kiezen (of kies zelf als de gebruiker dat zegt).
+4. Pas na de antwoorden: storyboard.json schrijven → assets → stills → montageblad (Artifact) → renderen.
+5. Na de render: vraag opnieuw met opties wat er beter kan (bv. "andere achtergrond bij X", "minder effecten", "andere hook", "zo laten").
 
 ## Wes.Built-montageregels (altijd toepassen)
 
