@@ -132,8 +132,8 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
       style={{
         position: "absolute",
         top: beat.y ?? 250,
-        left: SAFE.left,
-        right: 1080 - SAFE.right + 10,
+        left: 60, // gecentreerd op het midden van het beeld (bovenin zitten geen TikTok-knoppen)
+        right: 60,
         textAlign: "center",
         opacity: out,
         transform: `translateY(${(1 - out) * -20}px)`,

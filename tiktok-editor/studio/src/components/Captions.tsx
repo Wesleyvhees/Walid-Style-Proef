@@ -72,8 +72,8 @@ export const Captions: React.FC<{
     <div
       style={{
         position: "absolute",
-        left: SAFE.left,
-        width: SAFE.right - SAFE.left,
+        left: 1080 - SAFE.right, // symmetrisch: gecentreerd op x 540, rechts vrij voor de TikTok-knoppen
+        width: SAFE.right - (1080 - SAFE.right),
         top,
         display: "flex",
         justifyContent: "center",

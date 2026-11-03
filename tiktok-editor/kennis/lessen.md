@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-03 · shape na de vakantie · "overlay tekst centeren en vergroten" → hook en ondertitels exact gecentreerd op x 540 (symmetrische marges); hook groter: standaard `size` ±86 (2 regels mag).
 - 2026-11-03 · shape na de vakantie · "ondertitels op hoogte als de vorige video" → **ondertitels altijd vast op y 1290** (zoals cardio), ook bij een body check. Automatisch onder de kin (`captions.y: "auto"`) alleen als Wes erom vraagt. Hook bovenin (y ±215, één regel). Stickers/stempels boven de ondertitels houden (y ≤ 1100) zodat niets overlapt.
 - 2026-11-03 · shape na de vakantie · body check met muziek eronder → (1) muziek wordt nu herkend: dan niet knippen op geluidsniveau (anders blijft er 2 s over van 10,8 s), maar op woorden of met `--keep-pauses`; (2) Whisper `medium` is de standaard (small verstond "Eerlijk met je design"); (3) effecten op de beat via `tt.py beats` + `beatZooms`.
 - 2026-11-03 · shape na de vakantie · body check: poses tussen de zinnen houden (Wes koos dat); ondertitels hoger (y ±800, onder de kin) en hook op de borst, zodat gezicht en buik vrij blijven; geen iconen bij "Op de beat"; geen "Dag 1"-label als Wes "Alleen volg-kaart" kiest.
