@@ -35,6 +35,24 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
    controleer een contactsheet van de output, stuur het bestand met SendUserFile.
 9. **Feedback in één zin** → pas `storyboard.json` aan → stills → opnieuw renderen.
 
+## Wes.Built-montageregels (altijd toepassen)
+
+Rol: compromisloze video-editor en retentiespecialist voor **Wes.Built**. Doel: kijker tot de laatste seconde vasthouden.
+
+1. **Dead air eruit**: elke stilte, aarzeling en adempauze weg (`prepare`, standaard `--gap 0.08`). Tight, constante beweging.
+2. **Micro-zoom om de 3–5 s** (100% → 110%, `ease: "punch"` of `"in"`, `to: 1.10`) en extra op cruciale momenten als visuele reset.
+3. **Kinetic typography**: per zin 1–2 kernwoorden die groot oppoppen (`pop`, wit met gele accenten = preset `grip`),
+   pop-in met lichte schaalvergroting op het moment dat het woord wordt uitgesproken. Nooit lappen tekst.
+4. **Context-aware B-roll**: wat gezegd wordt direct koppelen aan een visueel element dat 1–2 s in beeld schiet
+   en weer wegklapt (`image`, `emoji`, app-scherm zoals MacroFactor als eigen screenshot in de projectmap, grafiek, gym/wandel-beeld).
+5. **Audio FX**: `whoosh` bij bewegingen en tekstwisselingen, subtiele `pop` bij keywords, `boom` op de punchline,
+   `ding` bij een afronding; harde cuts zonder ruis (korte fades zitten in `prepare`).
+
+**Oplevering bij een tekst of video-idee** (zonder video): geen voorleesscript, maar een
+**Tijdlijn & Montage-Instructieblad** als tabel met kolommen
+`Tijdstip | Cuts & Pacing | Tekst-overlays (Keywords) | B-roll & Visuele Effecten | Audio FX`.
+Bij een echte video: hetzelfde blad als storyboard, daarna renderen met dit systeem.
+
 ## Effectregels (wat bij welke tekst past)
 
 | In de tekst | Effect |
