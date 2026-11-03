@@ -96,7 +96,7 @@ maar strakker uitgevoerd. Per video wisselen deze lagen elkaar af, nooit twee ke
 
 | Laag | Wanneer | Hoe (beter dan Jesse) |
 |---|---|---|
-| `hook` (vaste titel bovenin) | 0–6/8 s: de mythe of vraag, 2 regels, eindigt op "…", accentwoord tussen `*sterretjes*`; `sub` = belofte ("wat het is + wat je moet nemen") | Strak getypeerd met geel accentwoord en een pill-ondertitel in plaats van platte tekst over het gezicht |
+| `hook` (vaste titel bovenin) | 0–6/8 s: de mythe of vraag, 2 regels, zonder "…", accentwoord tussen `*sterretjes*` (opmaak, verschijnt niet); `sub` = belofte ("wat het is + wat je moet nemen") | Strak getypeerd met geel accentwoord en een pill-ondertitel in plaats van platte tekst over het gezicht |
 | `pop` look `stamp` | Op het moment dat de mythe genoemd/ontkracht wordt: "MYTHE" (#FF3B30) / "FEIT" (#34C759) | Stempel met inslag + `boom` |
 | `scene` mode `cutout` | Analogieën en plekken ("zie je lichaam als een **tank**", "in de **gym**", "je **maag**") → jij uitgeknipt vóór dat beeld, 1,5–3 s | Schone AI-cutout met witte rand en schaduw + bewegende achtergrond (Ken Burns), i.p.v. ruwe uitsnede of rechthoek |
 | `scene` mode `pip` | Schermen, producten, websites, app (MacroFactor), schema's → jij in afgerond kader ervoor | Kader met witte rand, schaduw, binnen de veilige zone |
@@ -127,6 +127,13 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 7. **CTA met een knipoog** die terugkoppelt aan het onderwerp ("je kijkt toch dagelijks naar mijn video's, dus…") → `follow`-kaart.
 8. **Vaste afsluiter**: een eigen herkenbare slotzin voor Wes.Built (voorstellen als keuze).
 9. Sponsor: eerlijk benoemen ("ja, ik word gesponsord") + code als `pop` look `label`.
+
+## Tekst in beeld
+
+- **Geen rare leestekens**: geen … – — × = * of aanhalingstekens, geen klemtoontekens als nadruk (wél). Nadruk = groen/sticker.
+  `render.mjs` filtert ze ook automatisch; schrijf ze dus al niet in het storyboard. (`*woord*` in een hook is alleen opmaak.)
+- Ondertitels zonder komma's en punten; ? en ! blijven.
+- Getallen en bereiken voluit: "3 of 4", "20 tot 30 gram".
 
 ## Effectregels (wat bij welke tekst past)
 

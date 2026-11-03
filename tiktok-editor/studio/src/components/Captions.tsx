@@ -7,7 +7,12 @@ import { enter } from "../anim";
 type Chunk = { words: Word[]; s: number; e: number };
 
 const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9à-ÿ]/g, "");
-const clean = (w: string) => w.replace(/^[-–]+/, "").trim();
+// Ondertitels zonder komma's, punten en rare tekens; vraag- en uitroeptekens blijven.
+const clean = (w: string) =>
+  w
+    .replace(/^[-–]+/, "")
+    .replace(/[,.;:…"“”„*=×–—]+/g, "")
+    .trim();
 
 export const chunkWords = (words: Word[], maxChars: number): Chunk[] => {
   const out: Chunk[] = [];
@@ -23,7 +28,7 @@ export const chunkWords = (words: Word[], maxChars: number): Chunk[] => {
     const prev = cur[cur.length - 1];
     if (cur.length && (len + 1 + text.length > maxChars || (prev && w.s - prev.e > 0.45))) flush();
     cur.push({ ...w, w: text });
-    if (/[.!?,;:]$/.test(text)) flush();
+    if (/[.!?,;:…]$/.test(w.w.trim())) flush(); // breek op de oorspronkelijke leestekens
     if (i === words.length - 1) flush();
   });
   // elke chunk blijft staan tot de volgende begint (max 0.6s na het laatste woord)

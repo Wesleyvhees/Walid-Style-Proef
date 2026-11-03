@@ -34,6 +34,25 @@ if (sb.person && !fs.existsSync(path.join(project, sb.person))) {
   delete sb.person;
 }
 
+// Geen rare leestekens in tekst in beeld (wens van Wes): … – — × = * “ ” en klemtoontekens als nadruk.
+const cleanText = (t, keepStars = false) =>
+  t
+    .replace(/\.\.\.|…/g, "")
+    .replace(/[–—]/g, "-")
+    .replace(/×/g, "x")
+    .replace(/[=“”„"«»]/g, "")
+    .replace(/[‘’]/g, "'")
+    .replace(keepStars ? /(?!)/g : /\*/g, "")
+    .replace(/\b(w|d|z|h)él\b/gi, (m) => m.replace(/é/, "e").replace(/É/, "E"))
+    .replace(/\s{2,}/g, " ")
+    .trim();
+const TEXT_KEYS = ["text", "sub", "label", "doneText", "doneLabel", "headline", "comment", "kicker", "title"];
+for (const b of sb.beats) {
+  for (const k of TEXT_KEYS) if (typeof b[k] === "string") b[k] = cleanText(b[k], b.type === "hook" && k === "text");
+  for (const l of b.lines ?? []) l.text = cleanText(l.text);
+  for (const r of b.rows ?? []) r.label = cleanText(r.label);
+}
+
 // Projectbestanden naar public/p (Remotion serveert alleen public/).
 const pub = path.join(here, "public", "p");
 fs.rmSync(pub, { recursive: true, force: true });
