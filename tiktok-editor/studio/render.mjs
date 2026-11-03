@@ -57,9 +57,7 @@ for (const b of sb.beats) {
 const layoutFile = path.join(project, "layout.json");
 if (fs.existsSync(layoutFile)) {
   sb.layout = JSON.parse(fs.readFileSync(layoutFile, "utf8"));
-  sb.captions = sb.captions ?? {};
-  if (sb.captions.y === undefined) sb.captions.y = "auto"; // standaard: ondertitels op de beste plek
-}
+}  // ondertitels standaard op vaste hoogte (y 1290, zoals Wes wil); "auto" alleen als dat in het storyboard staat
 if (sb.captions?.y === "auto" && !sb.layout) console.warn("Let op: captions.y = auto maar layout.json ontbreekt (draai tt.py layout)");
 
 // Zooms op de beat: "beatZooms": {"every": 2, "to": 1.04} + beats.json (tt.py beats)
