@@ -1,0 +1,189 @@
+{
+ "title": "Van nul naar grip — dag 10",
+ "style": "grip",
+ "video": "cut.mp4",
+ "captions": {
+  "enabled": true,
+  "y": 1290,
+  "highlight": [
+   "grip",
+   "motivatie",
+   "strong",
+   "unstoppable",
+   "afleiden",
+   "eigen",
+   "pad"
+  ]
+ },
+ "beats": [
+  {
+   "type": "pop",
+   "start": 0.05,
+   "end": 1.62,
+   "text": "Dag 10",
+   "look": "label",
+   "x": 540,
+   "y": 255,
+   "sfx": "click",
+   "note": "Serie-label: kijkers zien meteen dat dit een reeks is",
+   "size": 40
+  },
+  {
+   "type": "words",
+   "start": 0.0,
+   "end": 1.62,
+   "y": 320,
+   "sfx": "whoosh",
+   "lines": [
+    {
+     "text": "VAN NUL",
+     "font": "sans",
+     "size": 165,
+     "at": 0.0
+    },
+    {
+     "text": "NAAR GRIP",
+     "font": "sans",
+     "size": 165,
+     "at": 0.72,
+     "color": "#FFC93C"
+    }
+   ],
+   "note": "Hook: titel van de reeks woord voor woord, synchroon met wat je zegt"
+  },
+  {
+   "type": "emoji",
+   "start": 3.02,
+   "end": 4.45,
+   "name": "fire",
+   "x": 790,
+   "y": 470,
+   "size": 270,
+   "sfx": "pop",
+   "note": "Bij 'motivatie'"
+  },
+  {
+   "type": "emoji",
+   "start": 4.58,
+   "end": 6.4,
+   "name": "red heart",
+   "x": 270,
+   "y": 470,
+   "size": 230,
+   "sfx": "pop",
+   "note": "Bij 'love'"
+  },
+  {
+   "type": "pop",
+   "start": 5.48,
+   "end": 6.45,
+   "text": "Strong",
+   "look": "sticker",
+   "x": 700,
+   "y": 400,
+   "rotate": 4,
+   "sfx": "pop",
+   "note": "Kernwoord als sticker"
+  },
+  {
+   "type": "emoji",
+   "start": 6.62,
+   "end": 7.5,
+   "name": "broken heart",
+   "x": 790,
+   "y": 470,
+   "size": 230,
+   "sfx": "pop",
+   "note": "Bij 'hate'"
+  },
+  {
+   "type": "pop",
+   "start": 7.56,
+   "end": 8.42,
+   "text": "Unstoppable",
+   "look": "big",
+   "x": 540,
+   "y": 420,
+   "size": 200,
+   "sfx": "boom",
+   "note": "Punchline: grootste tekst + boem + punch-zoom"
+  },
+  {
+   "type": "image",
+   "start": 9.6,
+   "end": 11.35,
+   "query": "smartphone",
+   "label": "Geen afleiding",
+   "x": 520,
+   "y": 250,
+   "w": 560,
+   "rotate": -4,
+   "sfx": "whoosh",
+   "note": "Beeld bij 'afleiden'",
+   "pick": 4
+  },
+  {
+   "type": "image",
+   "start": 11.44,
+   "end": 13.0,
+   "query": "hiking trail",
+   "label": "Jouw pad",
+   "x": 560,
+   "y": 250,
+   "w": 560,
+   "rotate": 4,
+   "sfx": "whoosh",
+   "note": "Beeld bij 'bewandel je eigen pad'",
+   "pick": 4
+  },
+  {
+   "type": "emoji",
+   "start": 12.48,
+   "end": 13.0,
+   "name": "check mark button",
+   "x": 780,
+   "y": 860,
+   "size": 220,
+   "sfx": "ding",
+   "note": "Afsluiter op 'pad'"
+  }
+ ],
+ "zooms": [
+  {
+   "start": 0.9,
+   "end": 1.5,
+   "to": 1.07,
+   "ease": "punch"
+  },
+  {
+   "start": 1.6,
+   "end": 4.4,
+   "to": 1.05,
+   "ease": "in"
+  },
+  {
+   "start": 5.48,
+   "end": 6.3,
+   "to": 1.08,
+   "ease": "punch"
+  },
+  {
+   "start": 7.56,
+   "end": 8.3,
+   "to": 1.14,
+   "ease": "punch"
+  },
+  {
+   "start": 8.5,
+   "end": 11.3,
+   "to": 1.06,
+   "ease": "in"
+  },
+  {
+   "start": 12.48,
+   "end": 12.9,
+   "to": 1.07,
+   "ease": "punch"
+  }
+ ]
+}

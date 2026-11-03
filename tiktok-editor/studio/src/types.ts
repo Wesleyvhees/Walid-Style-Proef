@@ -1,0 +1,162 @@
+// Storyboard-formaat. Alle tijden in seconden op de tijdlijn van cut.mp4.
+
+export type Word = { w: string; s: number; e: number };
+
+export type FontKind = "serif" | "italic" | "sans" | "condensed" | "mono";
+
+export type TitleLine = {
+  text: string;
+  font?: FontKind;
+  size?: number; // px
+  at?: number; // moment waarop de regel verschijnt
+  color?: string;
+  tracking?: number; // letter-spacing in em
+  uppercase?: boolean;
+};
+
+export type TitleBeat = {
+  type: "title";
+  start: number;
+  end: number;
+  lines: TitleLine[];
+  behind?: boolean; // tekst achter de persoon (cutout)
+  background?: "video" | "solid"; // solid = effen kleurvlak achter de persoon
+  y?: number; // bovenkant van het titelblok
+  align?: "left" | "center";
+  timecode?: boolean;
+  kicker?: string; // klein mono-label boven de titel
+};
+
+export type PromptBeat = {
+  type: "prompt";
+  start: number;
+  end: number;
+  label?: string; // klein label linksboven, bv. "AAN JEZELF"
+  text: string; // getypte tekst
+  typeFrom?: number;
+  typeTo?: number;
+  doneAt?: number; // vanaf hier: vinkje + doneText
+  doneLabel?: string;
+  doneText?: string;
+  y?: number;
+};
+
+export type FollowBeat = {
+  type: "follow";
+  start: number;
+  end: number;
+  handle: string;
+  sub?: string;
+  toggleAt?: number;
+  y?: number;
+};
+
+export type CommentBeat = {
+  type: "comment";
+  start: number;
+  end: number;
+  headline: string;
+  comment: string;
+  user?: string;
+  y?: number;
+};
+
+export type WordsBeat = {
+  type: "words"; // grote losse woorden over de video (niet achter de persoon)
+  start: number;
+  end: number;
+  lines: TitleLine[];
+  y?: number;
+  align?: "left" | "center";
+};
+
+export type ImagesBeat = {
+  type: "images"; // zwevende afbeeldingen/screenshots
+  start: number;
+  end: number;
+  src: string[]; // paden binnen de projectmap
+};
+
+export type Sfx = "pop" | "whoosh" | "ding" | "click" | "boom";
+
+export type PopBeat = {
+  type: "pop"; // tekst die oppopt bij een woord
+  start: number;
+  end: number;
+  text: string;
+  look?: "sticker" | "outline" | "big" | "label";
+  x?: number; // midden, px (standaard midden van het beeld)
+  y?: number;
+  rotate?: number;
+  size?: number;
+};
+
+export type EmojiBeat = {
+  type: "emoji"; // 3D-icoon dat oppopt (Microsoft Fluent Emoji)
+  start: number;
+  end: number;
+  name: string; // bv. "flexed biceps", "rocket", "brain"
+  src?: string; // ingevuld door tt.py assets
+  x?: number;
+  y?: number;
+  size?: number;
+  rotate?: number;
+};
+
+export type ImageBeat = {
+  type: "image"; // foto die oppopt als kaart
+  start: number;
+  end: number;
+  query?: string; // zoekterm, tt.py assets zoekt een rechtenvrije foto
+  src?: string; // of zelf een bestand in de projectmap
+  label?: string;
+  x?: number;
+  y?: number;
+  w?: number;
+  rotate?: number;
+};
+
+export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat) & {
+  sfx?: Sfx;
+  note?: string;
+};
+
+export type Zoom = { start: number; end: number; to?: number; ease?: "in" | "punch" };
+
+export type Storyboard = {
+  title?: string;
+  style: string; // naam van een preset in styles.ts
+  duration: number;
+  video: string; // bv. "cut.mp4"
+  person?: string; // bv. "person.webm" (cutout met alpha)
+  words: Word[];
+  captions?: {
+    enabled?: boolean;
+    size?: number;
+    y?: number;
+    maxChars?: number;
+    style?: string;
+    highlight?: string[]; // kernwoorden in accentkleur
+  };
+  beats: Beat[];
+  zooms?: Zoom[];
+  overrides?: Partial<StylePreset>;
+};
+
+export type StylePreset = {
+  bg: string; // kleur van effen vlakken / kaart-accent
+  ink: string; // hoofd-tekstkleur
+  muted: string; // nog niet uitgesproken woorden
+  accent: string;
+  card: string; // achtergrond van kaartjes
+  cardInk: string;
+  filter: string; // CSS-filter op de video (kleurcorrectie)
+  vignette: number; // 0..1
+  grain: number; // 0..1
+  captionFont: FontKind;
+  captionSize: number;
+  captionUpper: boolean;
+  captionBox: string | null; // achtergrond achter ondertitel, null = geen
+  captionShadow: boolean;
+  titleColor: string;
+};
