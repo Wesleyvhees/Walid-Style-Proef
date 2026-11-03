@@ -26,6 +26,7 @@ ruw.mp4 ──prepare──▶ cut.mp4 + words.json ──(Claude)──▶ stor
 ```bash
 cd tiktok-editor/studio && npm install
 pip install faster-whisper            # spraak → woorden met tijden
+pip install "opencv-python-headless==4.10.0.84"   # gezicht volgen voor ondertitel-plaatsing
 pip install "rembg[cpu]"              # alleen voor tekst-achter-de-persoon
 ```
 

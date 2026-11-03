@@ -247,11 +247,55 @@ def cmd_prepare(a):
     txt = "\n".join(f"[{l[0]['s']:6.2f} - {l[-1]['e']:6.2f}] " + " ".join(x["w"] for x in l) for l in lines)
     open(os.path.join(a.project, "transcript.txt"), "w").write(txt + "\n")
     print(txt)
+    try:
+        cmd_layout(argparse.Namespace(project=a.project))  # gezicht volgen voor ondertitel-plaatsing
+    except Exception as e:
+        print("Gezicht volgen mislukt (ondertitels op vaste plek):", e)
     if dropped:
         print("\nEruit geknipt (mislukte takes):")
         for d in dropped:
             print(f"  - {d['text']}")
     os.remove(norm)
+
+
+# --------------------------------------------------------------------- layout
+def cmd_layout(a):
+    """Waar staat het gezicht? -> layout.json (4x per seconde), voor automatische plaatsing van ondertitels."""
+    import cv2
+    import numpy as np
+    video = os.path.join(a.project, "cut.mp4")
+    fps = 4
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", video, "-vf", f"fps={fps},scale=540:960,format=gray",
+                          "-f", "rawvideo", "-"], check=True, capture_output=True).stdout
+    frames = np.frombuffer(raw, dtype=np.uint8).reshape(-1, 960, 540)
+    front = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    prof = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_profileface.xml")
+    faces = []
+    for g in frames:
+        g = cv2.equalizeHist(g)
+        boxes = list(front.detectMultiScale(g, 1.1, 5, minSize=(60, 60)))
+        if not boxes:
+            boxes = list(prof.detectMultiScale(g, 1.1, 4, minSize=(60, 60))) + \
+                    [(540 - x - w, y, w, h) for x, y, w, h in prof.detectMultiScale(cv2.flip(g, 1), 1.1, 4, minSize=(60, 60))]
+        # alleen geloofwaardige gezichten: middelpunt in de bovenste 60%, niet breder dan 60% van het beeld
+        boxes = [b for b in boxes if (b[1] + b[3] / 2) < 960 * 0.6 and b[2] < 540 * 0.6]
+        faces.append([int(v * 2) for v in max(boxes, key=lambda b: b[2] * b[3])] if boxes else None)
+    # uitschieters weg: een "gezicht" waarvan de kin >260 px afwijkt van de mediaan is vrijwel zeker iets anders
+    chins = [f[1] + f[3] for f in faces if f]
+    if chins:
+        med = float(np.median(chins))
+        faces = [f if f and abs(f[1] + f[3] - med) < 260 else None for f in faces]
+    # gaten opvullen met de dichtstbijzijnde detectie, daarna mediaan over 5 frames tegen springen
+    idx = [i for i, f in enumerate(faces) if f]
+    if idx:
+        faces = [faces[min(idx, key=lambda j: abs(j - i))] for i in range(len(faces))]
+        arr = np.array(faces, dtype=float)
+        sm = np.array([np.median(arr[max(0, i - 2): i + 3], axis=0) for i in range(len(arr))])
+        faces = [[int(v) for v in r] for r in sm]
+    json.dump({"fps": fps, "faces": faces}, open(os.path.join(a.project, "layout.json"), "w"))
+    found = len(idx)
+    print(f"Gezicht gevonden in {found} van {len(frames)} frames"
+          + (f"; kin gemiddeld op y={int(np.mean([f[1] + f[3] for f in faces]))}" if found else ""))
 
 
 # ---------------------------------------------------------------------- beats
@@ -294,6 +338,7 @@ def cmd_combine(a):
          "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-r", str(FPS), "-c:a", "aac", "-b:a", "256k",
          os.path.join(a.project, "cut.mp4")])
     json.dump(words, open(os.path.join(a.project, "words.json"), "w"), ensure_ascii=False, indent=0)
+    cmd_layout(argparse.Namespace(project=a.project))
     print(f"Klaar: {len(a.takes)} takes, {offset:.1f}s")
 
 
@@ -685,6 +730,7 @@ def main():
     c.add_argument("--keep-pauses", action="store_true", help="niets wegknippen (poses, muziekmomenten)")
     c.add_argument("--model", default="medium", help="Whisper-model: medium (standaard, nauwkeurig) of small (sneller)")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
+    c = sub.add_parser("layout", help="gezicht volgen voor automatische plaatsing"); c.add_argument("project"); c.set_defaults(fn=cmd_layout)
     c = sub.add_parser("beats", help="beat van de muziek vinden"); c.add_argument("project"); c.set_defaults(fn=cmd_beats)
     c = sub.add_parser("combine", help="takes achter elkaar tot één project")
     c.add_argument("project"); c.add_argument("takes", nargs="+"); c.set_defaults(fn=cmd_combine)

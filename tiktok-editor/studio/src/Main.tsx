@@ -126,8 +126,8 @@ export const Main: React.FC<Storyboard> = (sb) => {
         return null;
       })}
       {now.map((b, i) => (b.type === "hook" ? <HookTitle key={`h${i}`} beat={b} style={s} /> : null))}
-      {cap.enabled !== false ? (
-        <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} highlight={cap.highlight} />
+      {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart") ? (
+        <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} highlight={cap.highlight} layout={sb.layout} />
       ) : null}
       {sb.beats
         .flatMap((b) => (b.sfx ? (Array.isArray(b.sfx) ? b.sfx : [b.sfx]).map((fx) => ({ fx, start: b.start })) : []))

@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-03 · shape na de vakantie · "hook hoger en ondertitels altijd op de beste plek" → hook bovenin (y ±215, één regel) en ondertitels standaard **automatisch net onder de kin** (`tt.py layout` volgt het gezicht, draait vanzelf bij prepare/combine; render zet `captions.y` op auto). Ondertitels verdwijnen zolang een volg-kaart of grafiek in beeld is.
 - 2026-11-03 · shape na de vakantie · body check met muziek eronder → (1) muziek wordt nu herkend: dan niet knippen op geluidsniveau (anders blijft er 2 s over van 10,8 s), maar op woorden of met `--keep-pauses`; (2) Whisper `medium` is de standaard (small verstond "Eerlijk met je design"); (3) effecten op de beat via `tt.py beats` + `beatZooms`.
 - 2026-11-03 · shape na de vakantie · body check: poses tussen de zinnen houden (Wes koos dat); ondertitels hoger (y ±800, onder de kin) en hook op de borst, zodat gezicht en buik vrij blijven; geen iconen bij "Op de beat"; geen "Dag 1"-label als Wes "Alleen volg-kaart" kiest.
 - 2026-11-03 · algemeen · "geen rare leestekens meer in de teksten" → nooit … – — × = * of aanhalingstekens in tekst in beeld (filter in render.mjs haalt ze er ook automatisch uit); ondertitels zonder komma's/punten (? en ! mogen); schrijf getallen als "3 of 4" i.p.v. "3–4×" en "Krachttraining geeft" i.p.v. "Krachttraining =".

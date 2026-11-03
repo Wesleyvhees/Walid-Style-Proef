@@ -53,6 +53,15 @@ for (const b of sb.beats) {
   for (const r of b.rows ?? []) r.label = cleanText(r.label);
 }
 
+// Gezichtsposities voor automatische plaatsing (tt.py layout)
+const layoutFile = path.join(project, "layout.json");
+if (fs.existsSync(layoutFile)) {
+  sb.layout = JSON.parse(fs.readFileSync(layoutFile, "utf8"));
+  sb.captions = sb.captions ?? {};
+  if (sb.captions.y === undefined) sb.captions.y = "auto"; // standaard: ondertitels op de beste plek
+}
+if (sb.captions?.y === "auto" && !sb.layout) console.warn("Let op: captions.y = auto maar layout.json ontbreekt (draai tt.py layout)");
+
 // Zooms op de beat: "beatZooms": {"every": 2, "to": 1.04} + beats.json (tt.py beats)
 const bz = sb.beatZooms;
 const beatsFile = path.join(project, "beats.json");

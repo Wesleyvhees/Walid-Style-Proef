@@ -201,7 +201,7 @@ export type Storyboard = {
   captions?: {
     enabled?: boolean;
     size?: number;
-    y?: number;
+    y?: number | "auto"; // "auto" = net onder de kin (vereist tt.py layout)
     maxChars?: number;
     style?: string;
     highlight?: string[]; // kernwoorden in accentkleur
@@ -209,6 +209,7 @@ export type Storyboard = {
   beats: Beat[];
   zooms?: Zoom[];
   overrides?: Partial<StylePreset>;
+  layout?: { fps: number; faces: ([number, number, number, number] | null)[] }; // uit layout.json
 };
 
 export type StylePreset = {
