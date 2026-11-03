@@ -81,7 +81,7 @@ await renderMedia({
   outputLocation: tmp,
   inputProps: sb,
   browserExecutable,
-  crf: draft ? 26 : 16,
+  crf: draft ? 26 : 20, // 20 = visueel gelijk, half zo groot (prettig voor telefoon/TikTok)
   concurrency: Number(process.env.CONCURRENCY ?? 4),
   scale: draft ? 0.5 : 1,
   onProgress: ({ progress }) => {
