@@ -60,6 +60,32 @@ if (fs.existsSync(layoutFile)) {
 }  // ondertitels standaard op vaste hoogte (y 1290, zoals Wes wil); "auto" alleen als dat in het storyboard staat
 if (sb.captions?.y === "auto" && !sb.layout) console.warn("Let op: captions.y = auto maar layout.json ontbreekt (draai tt.py layout)");
 
+// Virtuele camera's: per shot schaal + verschuiving zodat het focuspunt (gezicht/borst) goed in beeld staat
+if (sb.cams?.length) {
+  const presets = { A: { scale: 1, focus: "full" }, B: { scale: 1.3, focus: "chest" }, C: { scale: 1.7, focus: "face" }, ...(sb.camPresets ?? {}) };
+  const faces = sb.layout?.faces ?? [];
+  const lfps = sb.layout?.fps ?? 4;
+  const median = (arr) => { const a = [...arr].sort((x, y) => x - y); return a.length ? a[Math.floor(a.length / 2)] : undefined; };
+  sb.camShots = sb.cams.map((c) => {
+    const pr = presets[c.cam] ?? presets.A;
+    if (pr.scale <= 1.001) return { start: c.start, end: c.end, scale: 1, tx: 0, ty: 0 };
+    const fs = faces.slice(Math.floor(c.start * lfps), Math.ceil(c.end * lfps) + 1).filter(Boolean);
+    const fx = median(fs.map((f) => f[0] + f[2] / 2)) ?? 540;
+    const fy = median(fs.map((f) => f[1] + f[3] / 2)) ?? 700;
+    const fh = median(fs.map((f) => f[3])) ?? 300;
+    // gezicht op een vaste schermgrootte: close-up ±600 px, medium ±420 px (nooit verder dan de preset)
+    const wantFace = { face: 600, chest: 420, belly: 300 }[pr.focus ?? "face"] ?? 600;
+    const s = Math.max(1.08, Math.min(pr.scale, wantFace / fh));
+    // focuspunt in het bronbeeld en waar het op het scherm moet komen
+    const focus = { face: [fx, fy, 760], chest: [fx, fy + fh * 1.1, 980], belly: [fx, fy + fh * 2.6, 1000], full: [540, 960, 960] }[pr.focus ?? "face"];
+    let tx = 540 - s * focus[0];
+    let ty = focus[2] - s * focus[1];
+    tx = Math.min(0, Math.max(1080 - s * 1080, tx)); // nooit randen laten zien
+    ty = Math.min(0, Math.max(1920 - s * 1920, ty));
+    return { start: c.start, end: c.end, scale: s, tx: Math.round(tx), ty: Math.round(ty) };
+  });
+}
+
 // Zooms op de beat: "beatZooms": {"every": 2, "to": 1.04} + beats.json (tt.py beats)
 const bz = sb.beatZooms;
 const beatsFile = path.join(project, "beats.json");

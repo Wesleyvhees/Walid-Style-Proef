@@ -89,7 +89,17 @@ export const Main: React.FC<Storyboard> = (sb) => {
 
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <OffthreadVideo src={staticFile(`p/${sb.video}`)} style={videoStyle} />
+      {/* virtuele camera: vaste uitsnede per shot (multicam uit één opname) */}
+      {(() => {
+        const shot = (sb.camShots ?? []).find((c) => t >= c.start && t < c.end);
+        return (
+          <AbsoluteFill
+            style={shot ? { transform: `translate(${shot.tx}px, ${shot.ty}px) scale(${shot.scale})`, transformOrigin: "0 0" } : undefined}
+          >
+            <OffthreadVideo src={staticFile(`p/${sb.video}`)} style={videoStyle} />
+          </AbsoluteFill>
+        );
+      })()}
       {solid ? <AbsoluteFill style={{ background: s.bg }} /> : null}
       {behind.map((b, i) => (
         <Title key={`b${i}`} beat={b} s={s} />

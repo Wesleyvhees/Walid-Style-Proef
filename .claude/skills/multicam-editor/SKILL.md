@@ -55,7 +55,18 @@ overlays net boven de ondertitels, ondertitels onderaan (y ±1290), geen rare le
 - Geschatte eindduur (na het eruit knippen).
 - Verdeling per camera (% van de tijd), aantal cuts, gemiddelde shotlengte, langste shot.
 
-## 4. Werkwijze
+## 4. Eén camera → virtuele multicam
+
+Heeft Wes maar één opname, dan maak je virtuele hoeken door uitsnedes (geen echte extra beelden):
+- Cam A wide = 100%, Cam B medium (borst + hoofd), Cam C close-up (gezicht). Optioneel Cam D detail.
+- In `storyboard.json`: `"cams": [{"start": 0, "end": 1.57, "cam": "A", "note": "…"}, …]` (aaneensluitend, op de beat of zinsgrens).
+  Presets aanpassen met `"camPresets": {"C": {"scale": 1.7, "focus": "face"}}` (focus: `face`, `chest`, `belly`, `full`).
+- `render.mjs` berekent per shot een **vaste** uitsnede op de mediaan van het gezicht in dat shot (`layout.json`), met
+  automatische zoom zodat het gezicht ±600 px (close-up) of ±420 px (medium) groot is, en nooit randen.
+- Overlays die bij één hoek horen (stempel op de buik) laten eindigen op de wissel naar een hoek waar ze niet passen.
+- Lever ook dan de EDL-tabel, overlay-advies en samenvatting op.
+
+## 5. Werkwijze
 
 1. Lees `tiktok-editor/kennis/lessen.md` (voorkeuren van Wes gelden ook hier).
 2. Vraag ontbrekende invoer met opties (platform, tempo, camera's).

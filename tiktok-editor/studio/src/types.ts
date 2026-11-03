@@ -210,6 +210,10 @@ export type Storyboard = {
   zooms?: Zoom[];
   overrides?: Partial<StylePreset>;
   layout?: { fps: number; faces: ([number, number, number, number] | null)[] }; // uit layout.json
+  // Virtuele camera's (multicam uit één opname): per shot een uitsnede, berekend in render.mjs
+  cams?: { start: number; end: number; cam: string; note?: string }[];
+  camPresets?: Record<string, { scale: number; focus?: "face" | "chest" | "full" | "belly" }>;
+  camShots?: { start: number; end: number; scale: number; tx: number; ty: number }[];
 };
 
 export type StylePreset = {

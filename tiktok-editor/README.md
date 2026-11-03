@@ -71,6 +71,8 @@ Tijden in seconden op de tijdlijn van `cut.mp4` (= tijden in `words.json`).
 | `persona` | jij als kijker: close-up, scheef, label | `label` (standaard "jij") |
 | `title` | titel, optioneel **achter** de persoon (`behind: true`, eerst `tt.py person`) | als `words` + `behind`, `background: "solid"` |
 
+Virtuele camera's (multicam uit één opname): `"cams": [{"start", "end", "cam": "A"|"B"|"C"}]`, zie `.claude/skills/multicam-editor/SKILL.md`.
+
 Elke beat kan `sfx` (`pop`, `whoosh`, `ding`, `click`, `boom`, `riser`, of een lijst zoals `["riser", "boom"]`) en `note` (uitleg in het storyboard) hebben.
 Lettertypes: `sans` (Inter Black), `condensed` (Anton), `serif`, `italic`, `mono`.
 
