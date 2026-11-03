@@ -77,7 +77,7 @@ export type ImagesBeat = {
   src: string[]; // paden binnen de projectmap
 };
 
-export type Sfx = "pop" | "whoosh" | "ding" | "click" | "boom";
+export type Sfx = "pop" | "whoosh" | "ding" | "click" | "boom" | "riser";
 
 export type PopBeat = {
   type: "pop"; // tekst die oppopt bij een woord
@@ -165,7 +165,7 @@ export type ChartBeat = {
 };
 
 export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat) & {
-  sfx?: Sfx;
+  sfx?: Sfx | Sfx[]; // bv. ["riser", "boom"] op een punchline
   note?: string;
 };
 

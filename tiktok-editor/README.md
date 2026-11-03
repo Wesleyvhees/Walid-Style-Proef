@@ -18,6 +18,8 @@ ruw.mp4 ──prepare──▶ cut.mp4 + words.json ──(Claude)──▶ stor
 - `studio/public/sfx/` – zelfgemaakte geluidseffecten: pop, whoosh, ding, click, boom
 - `studio/public/fonts/` – Inter, Anton, Instrument Serif, DM Mono (allemaal OFL)
 - `../.claude/skills/tiktok-editor/SKILL.md` – werkwijze en effectregels voor Claude
+- `kennis/onderzoek.md` – onderzoek naar hoe top-creators editen (met bronnen)
+- `kennis/lessen.md` – feedback van Wes, wordt na elke video aangevuld
 
 ## Installatie
 
@@ -66,7 +68,7 @@ Tijden in seconden op de tijdlijn van `cut.mp4` (= tijden in `words.json`).
 | `chart` | geanimeerde staafjes/lijst bij getallen | `title`, `rows[] {label, value}`, `unit`, `highlight[]`, `mode` |
 | `title` | titel, optioneel **achter** de persoon (`behind: true`, eerst `tt.py person`) | als `words` + `behind`, `background: "solid"` |
 
-Elke beat kan `sfx` (`pop`, `whoosh`, `ding`, `click`, `boom`) en `note` (uitleg in het storyboard) hebben.
+Elke beat kan `sfx` (`pop`, `whoosh`, `ding`, `click`, `boom`, `riser`, of een lijst zoals `["riser", "boom"]`) en `note` (uitleg in het storyboard) hebben.
 Lettertypes: `sans` (Inter Black), `condensed` (Anton), `serif`, `italic`, `mono`.
 
 ## Veilige zones (1080×1920)

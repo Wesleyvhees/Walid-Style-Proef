@@ -11,6 +11,9 @@ import { ChartCard, CutawayLayer, HookTitle, SceneLayer } from "./components/Sce
 
 loadFonts();
 
+const SFX_LEAD: Record<string, number> = { whoosh: 0.1, riser: 0.86 };
+const SFX_VOL: Record<string, number> = { riser: 0.35, boom: 0.55, click: 0.4 };
+
 const zoomAt = (zooms: Zoom[], t: number) => {
   let z = 1;
   for (const zm of zooms) {
@@ -124,10 +127,16 @@ export const Main: React.FC<Storyboard> = (sb) => {
         <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} highlight={cap.highlight} />
       ) : null}
       {sb.beats
-        .filter((b) => b.sfx)
-        .map((b, i) => (
-          <Sequence key={`s${i}`} from={Math.max(0, Math.round(b.start * fps))} durationInFrames={45} layout="none">
-            <Audio src={staticFile(`sfx/${b.sfx}.wav`)} volume={0.45} />
+        .flatMap((b) => (b.sfx ? (Array.isArray(b.sfx) ? b.sfx : [b.sfx]).map((fx) => ({ fx, start: b.start })) : []))
+        .map(({ fx, start }, i) => (
+          // whoosh iets vóór de beweging; riser piekt precies op het moment zelf
+          <Sequence
+            key={`s${i}`}
+            from={Math.max(0, Math.round((start - (SFX_LEAD[fx] ?? 0)) * fps))}
+            durationInFrames={45}
+            layout="none"
+          >
+            <Audio src={staticFile(`sfx/${fx}.wav`)} volume={SFX_VOL[fx] ?? 0.45} />
           </Sequence>
         ))}
     </AbsoluteFill>

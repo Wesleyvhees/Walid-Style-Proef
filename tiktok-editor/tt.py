@@ -407,7 +407,7 @@ DESCRIBE = {
 
 TEXT_TYPES = ("pop", "words", "hook", "title")
 VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment")
-SFX_NL = {"pop": "pop", "whoosh": "whoosh", "ding": "ding", "click": "klik", "boom": "boem"}
+SFX_NL = {"pop": "pop", "whoosh": "whoosh", "ding": "ding", "click": "klik", "boom": "boem", "riser": "riser"}
 
 
 def sentences(words):
@@ -465,7 +465,8 @@ def cmd_storyboard(a):
                  for b in inb if b["type"] in TEXT_TYPES]
         vis = [f"{b['start']:.1f}–{b['end']:.1f}s {html.escape(DESCRIBE.get(b['type'], lambda _: b['type'])(b))}"
                for b in inb if b["type"] in VISUAL_TYPES]
-        sfx = [f"{b['start']:.1f}s {SFX_NL.get(b['sfx'], b['sfx'])}" for b in inb if b.get("sfx")]
+        sfx = [f"{b['start']:.1f}s " + " + ".join(SFX_NL.get(x, x) for x in (b["sfx"] if isinstance(b["sfx"], list) else [b["sfx"]]))
+               for b in inb if b.get("sfx")]
         notes = [html.escape(b["note"]) for b in inb if b.get("note")]
         cell = lambda xs: "<br>".join(xs) if xs else '<span class="dim">—</span>'
         rows.append(f"""<tr>

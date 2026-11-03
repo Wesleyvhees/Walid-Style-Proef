@@ -8,6 +8,17 @@ description: Bewerkt ruwe TikTok/Reels-video's automatisch op basis van wat er g
 Systeem in `tiktok-editor/` (Python-pipeline `tt.py` + Remotion-renderer in `studio/`).
 Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 
+## Leren (altijd, bij elke video)
+
+- **Vóór het bewerken** lees je `tiktok-editor/kennis/lessen.md` (feedback van Wes, nieuwste eerst) en
+  `tiktok-editor/kennis/onderzoek.md` (onderzoek naar top-creators). Lessen gaan vóór algemene regels hieronder.
+- **Na elke feedback** van Wes: voeg bovenaan `lessen.md` een regel toe
+  (`datum · video · wat Wes zei → nieuwe regel`), pas zo nodig deze skill of de code aan, commit en push.
+- **Onderzoek bijhouden**: elke 5 video's, of als Wes erom vraagt, opnieuw zoeken (WebSearch) naar hoe
+  top-creators nu editen (nieuwe trends, wat uitgekauwd raakt). Werk `onderzoek.md` bij met bronnen en
+  vertaal nieuwe inzichten naar concrete regels of code. Vermeld wat er veranderd is.
+- Probeer per video minstens één ding beter te doen dan de vorige keer en noem dat bij de oplevering.
+
 ## Werkwijze
 
 1. **Klaarzetten** (eenmalig per sessie):
@@ -48,6 +59,8 @@ en vóór storyboard.json definitief is, assets/cutouts worden gemaakt of er ger
    - **Achtergronden/B-roll**: per belangrijk moment 2–3 beeldideeën (bv. bij "love": publiek dat juicht / zonsopkomst / jij in kader voor sportschool),
      of de mate: veel scene-wissels (Jesse-tempo, elke 1,5 s) / gemiddeld (elke 3 s) / weinig (alleen kernmomenten).
    - **Effecten & geluid**: vol (pops, emoji, sfx) / gemiddeld / minimaal (alleen ondertitels + zooms).
+   - **Tempo per type video** (zie onderzoek.md): uitleg/mythe = elke 1,2–2 s / motivatie = 2–3 s / rustig, serieus = 3–6 s.
+   - **Hook-varianten**: bied aan om 3 versies met een andere hook te renderen voor een A/B-test.
    - **Knippen**: extra strak (`--gap 0.04`) / strak (`0.08`, standaard) / natuurlijk (`0.2`).
    - **Einde/CTA**: volg-kaart / vraag om reactie / niets.
 3. Bij fotokeuzes: toon het overzicht (`assets/kandidaten/<zoekterm>/sheet.jpg`) met SendUserFile en laat
@@ -114,7 +127,7 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 | Eerste 2 s (hook / titel / serie) | `words` met de kern in 2 regels, `label` met serie/dag, `whoosh` |
 | Emotie of ding dat je kunt zien (liefde, vuur, geld, tijd, hersenen…) | `emoji` (Fluent 3D, Engelse naam zoals "red heart", "fire", "money bag", "brain", "rocket"), `pop` |
 | Kernwoord | `pop` look `sticker` (max 2 woorden) en het woord in `captions.highlight` |
-| Punchline / climax | `pop` look `big` + `boom` + punch-zoom 1.12–1.15 |
+| Punchline / climax | `pop` look `big` + `"sfx": ["riser", "boom"]` (riser piekt op het woord) + punch-zoom 1.12–1.15 |
 | Concreet onderwerp (telefoon, sportschool, geld, natuur) | `image` met zoekterm + kort `label` (2–3 woorden) |
 | Les / conclusie / tip | `prompt`-kaartje dat typt, of `image` + `label`; `ding` bij afronding |
 | Opsomming ("ten eerste…") | `pop` look `label` per punt, `click` |
