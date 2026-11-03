@@ -31,6 +31,10 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
    Haalt mislukte takes
    (herhaalde zinnen, laatste take blijft) en elke pauze > 0,08 s eruit (op basis van het geluid zelf), maakt `cut.mp4`, `words.json`, `transcript.txt`.
    Controleer `words.json` op samengeplakte woorden en spraakfouten; verbeter met `tt.py fixwords <project> "juiste zin"`.
+   **Muziek eronder** (prepare meldt "Muziek gedetecteerd"): controleer de lengte na het knippen. Bij poses/body checks: vraag of pauzes
+   blijven (`--keep-pauses`). Daarna `tt.py beats <project>` en `"beatZooms": {"every": 2, "to": 1.04}` in storyboard.json voor zooms op de maat;
+   leg ook pops/stempels op beat-tijden uit `beats.json`.
+   **Lengte-check**: is er na het knippen minder dan 60% over, stop en kijk waarom vóór je verder gaat.
    **Meerdere takes** (bv. video 1–8 = één zin per take): `prepare` per take, daarna `tt.py combine <project> <take1> … <takeN>`.
 4. **Keuzes voorleggen** (zie hieronder) en daarna **storyboard schrijven**: lees `transcript.txt` + `words.json`, bepaal per zin wat
    de kijker moet voelen/onthouden en schrijf `<project>/storyboard.json` (regels hieronder).
@@ -152,7 +156,7 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 - Om de 1,5–3 s iets nieuws in beeld (kijktijd), maar nooit twee effecten tegelijk op dezelfde plek.
 - Max één punch-zoom per 1,5 s; wissel punch en langzaam af.
 - Alles boven y≈1000 of naast het gezicht; onder y=1400 en rechts van x=900 blijft leeg (TikTok-UI).
-- Ondertitels standaard op y≈1290; pas aan als ze over de mond vallen.
+- Ondertitels standaard op y≈1290; pas aan als ze over de mond vallen. Bij een body check (hoofd boven, lichaam in beeld): y≈800 en tekst op de borst/zijkant, nooit over gezicht of het lichaamsdeel waar het om gaat (behalve een bewust stempel).
 - Tekst-achter-de-persoon (`title` met `behind: true`, vereist `tt.py person`) is optioneel:
   alleen gebruiken als de gebruiker erom vraagt of het echt iets toevoegt.
 - Eigen stijl: niet de look van andermans video's kopiëren. Presets: **`wesbuilt` (standaard, huisstijl: wit met legergroen #A3B462 van de Wes.Built-website)**, `grip` (geel, niet meer gebruiken tenzij gevraagd), `editorial`, `moody`, `pop`.

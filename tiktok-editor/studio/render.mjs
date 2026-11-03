@@ -53,6 +53,19 @@ for (const b of sb.beats) {
   for (const r of b.rows ?? []) r.label = cleanText(r.label);
 }
 
+// Zooms op de beat: "beatZooms": {"every": 2, "to": 1.04} + beats.json (tt.py beats)
+const bz = sb.beatZooms;
+const beatsFile = path.join(project, "beats.json");
+if (bz && fs.existsSync(beatsFile)) {
+  const { beats } = JSON.parse(fs.readFileSync(beatsFile, "utf8"));
+  sb.zooms = sb.zooms ?? [];
+  const taken = sb.zooms.map((z) => z.start);
+  beats
+    .filter((_, i) => i % (bz.every ?? 2) === (bz.offset ?? 0))
+    .filter((t) => t > (bz.from ?? 0) && t < (bz.until ?? 1e9) && !taken.some((z) => Math.abs(z - t) < 0.45))
+    .forEach((t) => sb.zooms.push({ start: t, end: t + (bz.hold ?? 0.18), to: bz.to ?? 1.04, ease: "punch" }));
+}
+
 // Projectbestanden naar public/p (Remotion serveert alleen public/).
 const pub = path.join(here, "public", "p");
 fs.rmSync(pub, { recursive: true, force: true });

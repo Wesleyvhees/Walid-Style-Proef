@@ -47,10 +47,11 @@ def load_audio(video):
     return np.frombuffer(raw, dtype=np.float32)
 
 
-def transcribe(audio, lang, model="small"):
+def transcribe(audio, lang, model="medium", vad=True):
     from faster_whisper import WhisperModel
     m = WhisperModel(model, device="cpu", compute_type="int8")
-    segs, _ = m.transcribe(audio, language=lang, word_timestamps=True, beam_size=5, vad_filter=True)
+    segs, _ = m.transcribe(audio, language=lang, word_timestamps=True, beam_size=5, vad_filter=vad,
+                           condition_on_previous_text=False)
     out = []
     for s in segs:
         words = [{"w": w.word.strip(), "s": round(w.start, 3), "e": round(w.end, 3)} for w in (s.words or [])]
@@ -109,6 +110,16 @@ def speech_mask(audio, sr=16000, hop=0.01):
             else:
                 run = 0
     return out, hop
+
+
+def has_music(audio):
+    """Muziek onder de video: het geluid zakt (bijna) nooit weg naar de ruisvloer."""
+    import numpy as np
+    n = 160
+    f = audio[: len(audio) // n * n].reshape(-1, n)
+    db = 20 * np.log10(np.sqrt((f ** 2).mean(axis=1)) + 1e-9)
+    loud = np.percentile(db, 95)
+    return float(np.percentile(db, 10)) > loud - 14  # stiltes liggen bij spraak normaal >20 dB lager
 
 
 def keep_ranges(words, audio, total, lead=0.03, tail=0.05, max_gap=0.08, word_pad=0.25):
@@ -183,10 +194,26 @@ def cmd_prepare(a):
     total = duration(norm)
     print("Transcriberen...")
     audio = load_audio(norm)
-    segs = transcribe(audio, a.lang)
+    music = has_music(audio)
+    if music:
+        print("Muziek gedetecteerd: knippen op woorden i.p.v. geluidsniveau, spraakherkenning zonder VAD")
+    segs = transcribe(audio, a.lang, model=a.model, vad=not music)
     kept, dropped = drop_bad_takes(segs)
     words = [w for s in kept for w in s["words"]]
-    ranges = keep_ranges(words, audio, total, max_gap=a.gap)
+    if a.keep_pauses or not words:
+        ranges = [[0.0, round(total, 3)]]  # alles houden (bv. poses bij een body check)
+    elif music:
+        # op woordtijden knippen; muziek maakt het geluidsniveau onbruikbaar
+        ranges = []
+        for w in words:
+            s0, e0 = max(0.0, w["s"] - 0.08), min(total, w["e"] + 0.12)
+            if ranges and s0 - ranges[-1][1] < max(a.gap, 0.25):
+                ranges[-1][1] = max(ranges[-1][1], e0)
+            else:
+                ranges.append([s0, e0])
+        ranges = [[round(round(x * FPS) / FPS, 4), round(round(y * FPS) / FPS, 4)] for x, y in ranges]
+    else:
+        ranges = keep_ranges(words, audio, total, max_gap=a.gap)
     cut_len = sum(b - a_ for a_, b in ranges)
     print(f"Origineel {total:.1f}s -> {cut_len:.1f}s; {len(dropped)} mislukte take(s) en {len(ranges)} stukken")
 
@@ -225,6 +252,30 @@ def cmd_prepare(a):
         for d in dropped:
             print(f"  - {d['text']}")
     os.remove(norm)
+
+
+# ---------------------------------------------------------------------- beats
+def cmd_beats(a):
+    """Beat van de muziek vinden -> beats.json (tijden in s) voor zooms/pops op de maat."""
+    import numpy as np
+    audio = load_audio(os.path.join(a.project, "cut.mp4"))
+    sr, hop = 16000, 160
+    f = audio[: len(audio) // hop * hop].reshape(-1, hop)
+    env = np.sqrt((f ** 2).mean(axis=1))
+    on = np.maximum(0, np.diff(env, prepend=env[0]))  # alleen stijgingen = aanslagen
+    on = np.convolve(on, np.hanning(5), "same")
+    on = (on - on.mean()) / (on.std() + 1e-9)
+    ac = np.correlate(on, on, "full")[len(on) - 1:]
+    lo, hi = int(0.33 * 100), int(1.0 * 100)  # 60–180 BPM
+    period = lo + int(np.argmax(ac[lo:hi]))
+    phase = int(np.argmax([on[p::period].sum() for p in range(period)]))
+    beats = []
+    for t in range(phase, len(on), period):  # rond elke verwachte beat de echte piek zoeken
+        w0, w1 = max(0, t - 4), min(len(on), t + 5)
+        beats.append(round((w0 + int(np.argmax(on[w0:w1]))) / 100, 3))
+    bpm = round(6000 / period, 1)
+    json.dump({"bpm": bpm, "beats": beats}, open(os.path.join(a.project, "beats.json"), "w"), indent=1)
+    print(f"{bpm} BPM, {len(beats)} beats: {beats[:12]}...")
 
 
 # -------------------------------------------------------------------- combine
@@ -631,7 +682,10 @@ def main():
     c = sub.add_parser("prepare"); c.add_argument("input"); c.add_argument("project")
     c.add_argument("--mirror", action="store_true", help="beeld spiegelen (standaard uit; alleen op verzoek)")
     c.add_argument("--gap", type=float, default=0.08, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
+    c.add_argument("--keep-pauses", action="store_true", help="niets wegknippen (poses, muziekmomenten)")
+    c.add_argument("--model", default="medium", help="Whisper-model: medium (standaard, nauwkeurig) of small (sneller)")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
+    c = sub.add_parser("beats", help="beat van de muziek vinden"); c.add_argument("project"); c.set_defaults(fn=cmd_beats)
     c = sub.add_parser("combine", help="takes achter elkaar tot één project")
     c.add_argument("project"); c.add_argument("takes", nargs="+"); c.set_defaults(fn=cmd_combine)
     c = sub.add_parser("fixwords", help="tekst van words.json verbeteren")
