@@ -260,8 +260,16 @@ def photo_candidates(query, folder, n=6):
     os.makedirs(folder, exist_ok=True)
     q = urlencode({"q": query, "license": "cc0,pdm", "page_size": 20, "mature": "false"})
     req = urllib.request.Request(f"https://api.openverse.org/v1/images/?{q}", headers={"User-Agent": "tiktok-editor/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        results = json.load(r).get("results", [])
+    results = []
+    for attempt in range(4):  # Openverse is soms traag: opnieuw proberen
+        try:
+            with urllib.request.urlopen(req, timeout=45) as r:
+                results = json.load(r).get("results", [])
+            break
+        except Exception as e:
+            print(f"  Openverse: poging {attempt + 1} mislukt ({e})", flush=True)
+            import time
+            time.sleep(2 ** attempt * 2)
     results = [x for x in results if (x.get("width") or 0) >= 900 and (x.get("height") or 0) >= 600]
     found = []
     for res in results:
@@ -285,7 +293,8 @@ def photo_candidates(query, folder, n=6):
              scaled + "".join(f"[s{i}]" for i in range(len(found))) + f"xstack=inputs={len(found)}:layout="
              + "|".join(f"{(i % 3) * 360}_{(i // 3) * 270}" for i in range(len(found))) + ":fill=black" if len(found) > 1
              else scaled + "[s0]null", "-frames:v", "1", os.path.join(folder, "sheet.jpg")])
-    json.dump(found, open(os.path.join(folder, "credits.json"), "w"), ensure_ascii=False, indent=1)
+    if found:  # alleen onthouden als er iets gevonden is (anders volgende keer opnieuw zoeken)
+        json.dump(found, open(os.path.join(folder, "credits.json"), "w"), ensure_ascii=False, indent=1)
     return found
 
 

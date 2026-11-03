@@ -90,6 +90,10 @@ maar strakker uitgevoerd. Per video wisselen deze lagen elkaar af, nooit twee ke
 | `emoji` / `pop` | Emotie en kernwoorden tussen de grote wissels door | Zie effectregels |
 | Ondertitels | Altijd, 1–4 woorden per keer | Groter dan bij Jesse, kernwoorden geel (`captions.highlight`), altijd leesbaar |
 
+Overgangen zijn **hard** (achtergrond/cutaway schiet in één frame in en uit, geen overvloeier): voorkeur van de gebruiker.
+Effectdichtheid: **elke ~1,2 s iets nieuws** (bevestigd door de gebruiker bij dag 10).
+Fotobronnen: Openverse; ligt die eruit, gebruik eerdere kandidaten uit andere projecten of vraag de gebruiker om eigen beelden.
+
 Volgorde-ritme (herhalen): talking head + pop → scene/cutaway → talking head + emoji → image/chart → …
 Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen frames van die beats).
 

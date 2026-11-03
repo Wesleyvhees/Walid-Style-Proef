@@ -42,7 +42,8 @@ export const SceneLayer: React.FC<{
   const { fps } = useVideoConfig();
   if (!beat.src) return null;
   const inP = enter(frame, beat.start, fps, 20);
-  const outP = exit(frame, beat.end, fps, 0.12);
+  const t = frame / fps;
+  const outP = t < beat.end ? 1 : 0; // harde cut, geen overvloeier
   const mode = beat.mode === "cutout" && person ? "cutout" : "pip";
   const target = beat.scale ?? (mode === "cutout" ? 0.8 : 0.46);
   const sc = 1 + (target - 1) * inP;
@@ -50,7 +51,7 @@ export const SceneLayer: React.FC<{
   const origin = { bottom: "50% 100%", center: "50% 55%", left: "8% 100%", right: "92% 100%" }[anchor];
   return (
     <AbsoluteFill style={{ opacity: outP }}>
-      <AbsoluteFill style={{ opacity: Math.min(1, inP * 1.5) }}>
+      <AbsoluteFill>
         <KenBurns src={beat.src} start={beat.start} end={beat.end} dim={beat.dim ?? 0.12} />
       </AbsoluteFill>
       {mode === "cutout" ? (
@@ -93,9 +94,9 @@ export const CutawayLayer: React.FC<{ beat: CutawayBeat; style: StylePreset }> =
   const { fps } = useVideoConfig();
   if (!beat.src) return null;
   const p = enter(frame, beat.start, fps, 22);
-  const out = exit(frame, beat.end, fps, 0.08);
+  const out = frame / fps < beat.end ? 1 : 0; // harde cut
   return (
-    <AbsoluteFill style={{ opacity: out, transform: `scale(${1.08 - 0.08 * p})`, filter: `blur(${(1 - p) * 10}px)` }}>
+    <AbsoluteFill style={{ opacity: out, transform: `scale(${1.08 - 0.08 * p})` }}>
       <KenBurns src={beat.src} start={beat.start} end={beat.end} from={1.06} to={1.14} dim={0.05} />
       {beat.label ? (
         <div
@@ -163,12 +164,13 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
           style={{
             ...fontCss("mono"),
             display: "inline-block",
-            marginTop: 18,
-            fontSize: 30,
+            marginTop: 22,
+            fontSize: Math.round((beat.size ?? 80) * 0.42),
             color: style.cardInk,
             background: style.card,
-            padding: "10px 20px",
+            padding: "0.35em 0.8em",
             borderRadius: 999,
+            fontWeight: 700,
             opacity: enter(frame, beat.start + 0.35, fps),
             textTransform: "uppercase",
           }}
