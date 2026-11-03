@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-03 · cardio · "verander wél naar wel" → geen klemtoontekens (wél, échte, één als nadruk) in teksten in beeld; nadruk geven met kleur of een sticker.
 - 2026-11-03 · cardio · "Perfect!" → goedgekeurde formule (houden): takes samengevoegd, hook + MYTHE-stempel, uitleg-tempo (~1,5 s), cutout-scene + live meter, kernwoord-stickers, groot getal met label, riser+boem op de punchline, volg-kaart @wes.built, huisstijl `wesbuilt`.
 - 2026-11-03 · cardio · "ondertiteling die geel is naar de groen van mijn website" → standaardstijl `wesbuilt`: accent #A3B462 (legergroen uit de Wes.Built Coaching-site, donkere modus), donker #141310, crème #ECE8E0. Geel niet meer gebruiken.
 - 2026-11-03 · algemeen · "wissel met de verschillende plaatjes elke video" → nooit hetzelfde beeld in twee video's (register `kennis/gebruikte-beelden.json`, `assets` kiest automatisch een ongebruikte kandidaat en waarschuwt), en binnen één video geen icoon twee keer.
