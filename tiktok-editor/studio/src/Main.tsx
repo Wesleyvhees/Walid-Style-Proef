@@ -7,7 +7,7 @@ import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
 import { CommentCard, FloatingImages, FollowCard, PromptCard } from "./components/Cards";
 import { EmojiPop, PhotoPop, PopText } from "./components/Pops";
-import { ChartCard, CutawayLayer, HookTitle, SceneLayer } from "./components/Scenes";
+import { ChartCard, CutawayLayer, HookTitle, MeterGraphic, PersonaLabel, personaTransform, SceneLayer } from "./components/Scenes";
 
 loadFonts();
 
@@ -75,12 +75,13 @@ export const Main: React.FC<Storyboard> = (sb) => {
   ];
   const solid = behind.some((b) => b.background === "solid");
   const z = zoomAt(sb.zooms ?? [], t);
+  const pers = personaTransform(sb.beats, t);
   const videoStyle: React.CSSProperties = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    filter: s.filter,
-    transform: `scale(${z})`,
+    filter: s.filter + (pers?.filter ?? ""),
+    transform: `scale(${z * (pers?.scale ?? 1)}) rotate(${pers?.rotate ?? 0}deg)`,
     transformOrigin: "50% 42%",
   };
   const cap = sb.captions ?? {};
@@ -120,6 +121,8 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (b.type === "emoji") return <EmojiPop key={`c${i}`} beat={b} />;
         if (b.type === "image") return <PhotoPop key={`c${i}`} beat={b} style={s} />;
         if (b.type === "chart") return <ChartCard key={`c${i}`} beat={b} style={s} />;
+        if (b.type === "meter") return <MeterGraphic key={`c${i}`} beat={b} style={s} />;
+        if (b.type === "persona") return <PersonaLabel key={`c${i}`} beat={b} style={s} />;
         return null;
       })}
       {now.map((b, i) => (b.type === "hook" ? <HookTitle key={`h${i}`} beat={b} style={s} /> : null))}

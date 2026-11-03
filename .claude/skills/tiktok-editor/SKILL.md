@@ -100,6 +100,9 @@ maar strakker uitgevoerd. Per video wisselen deze lagen elkaar af, nooit twee ke
 | `cutaway` | Concreet ding of actie ("weegschaal", "cardio", "maaltijden skippen") 0,6–1,2 s schermvullend, evt. met `label` | Ken Burns + snelle in-zoom, eigen clips/rechtenvrije foto's i.p.v. stock met watermerk |
 | `image` | Voorbeeld/ding erbij terwijl jij in beeld blijft | Fotokaart die oppopt en weer wegklapt |
 | `chart` | Zodra er getallen vallen (gewicht per dag, grammen, %) | Geanimeerde staafjes die optellen, uitschieter in geel, i.p.v. een statisch zwart lijstje |
+| `meter` | Een analogie die terugkomt (batterij, tank, meter): steeds hetzelfde graphic met nieuw niveau op de woorden ("vol", "leeg", "aanvullen") | Live animatie groen→geel→rood met %, i.p.v. losse plaatjes (Jesse video 4) |
+| `persona` | Jij stelt de vraag van de kijker ("maar wat dan?", "ja maar…") | Automatische close-up + scheef + label "jij:"; max 1–2× per video |
+| `image` boven het hoofd | Formaat zonder achtergrondwissels: kaart (x 540, y ±230, w ±440) die elke 1–3 s wisselt | Nooit over ogen/mond |
 | `emoji` / `pop` | Emotie en kernwoorden tussen de grote wissels door | Zie effectregels |
 | Ondertitels | Altijd, 1–4 woorden per keer | Groter dan bij Jesse, kernwoorden geel (`captions.highlight`), altijd leesbaar |
 
@@ -116,9 +119,11 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 2. **Herkenning (3–8 s):** het gevoel/probleem van de kijker ("de weegschaal schiet omhoog").
 3. **Uitleg via één analogie** (tank, spons, batterij) — die analogie krijgt een `scene`.
 4. **Wetenschap in één zin**, simpel gehouden; vakterm mag als `pop`.
-5. **Praktisch advies met een getal** ("20–40 gram halverwege je training") → `chart` of `pop`.
-6. **CTA met een knipoog** die terugkoppelt aan het onderwerp ("je kijkt toch dagelijks naar mijn video's, dus…") → `follow`-kaart.
-7. Sponsor: eerlijk benoemen ("ja, ik word gesponsord") + code als `pop` look `label`.
+5. **Praktisch advies met een getal** ("20–40 gram halverwege je training") → `pop` look `big` met `sub` ("30 g" + "snelle koolhydraten") of `chart`.
+6. **Open lus kort houden**: beloof het antwoord en geef het vóór ±8 s (Jesse wacht 16 s; dat is te lang).
+7. **CTA met een knipoog** die terugkoppelt aan het onderwerp ("je kijkt toch dagelijks naar mijn video's, dus…") → `follow`-kaart.
+8. **Vaste afsluiter**: een eigen herkenbare slotzin voor Wes.Built (voorstellen als keuze).
+9. Sponsor: eerlijk benoemen ("ja, ik word gesponsord") + code als `pop` look `label`.
 
 ## Effectregels (wat bij welke tekst past)
 

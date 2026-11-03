@@ -86,6 +86,7 @@ export type PopBeat = {
   text: string;
   look?: "sticker" | "outline" | "big" | "label" | "stamp";
   color?: string; // voor stamp: bv. "#FF3B30" (mythe) of "#34C759" (feit)
+  sub?: string; // kleine regel onder een "big"-tekst, bv. "snelle koolhydraten" onder "30 g"
   x?: number; // midden, px (standaard midden van het beeld)
   y?: number;
   rotate?: number;
@@ -164,7 +165,26 @@ export type ChartBeat = {
   note?: string;
 };
 
-export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat) & {
+export type MeterBeat = {
+  type: "meter"; // terugkerende analogie als live graphic: batterij/tank die leegloopt of vol raakt
+  start: number;
+  end: number;
+  kind?: "battery" | "tank";
+  levels: { at: number; value: number }[]; // value 0..1 op tijdstip `at`
+  label?: string;
+  x?: number;
+  y?: number;
+  size?: number;
+};
+
+export type PersonaBeat = {
+  type: "persona"; // jij speelt de kijker ("Maar wat dan, Jesse?"): close-up, scheef, label
+  start: number;
+  end: number;
+  label?: string; // bv. "jij"
+};
+
+export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat | MeterBeat | PersonaBeat) & {
   sfx?: Sfx | Sfx[]; // bv. ["riser", "boom"] op een punchline
   note?: string;
 };

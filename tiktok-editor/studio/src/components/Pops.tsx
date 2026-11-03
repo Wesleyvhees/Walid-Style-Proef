@@ -28,18 +28,37 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
   };
   if (look === "big") {
     return (
-      <div
-        style={{
-          ...base,
-          ...fontCss("condensed"),
-          fontSize: beat.size ?? 230,
-          lineHeight: 0.9,
-          color: style.ink,
-          textTransform: "uppercase",
-          textShadow: "0 10px 40px rgba(0,0,0,0.55)",
-        }}
-      >
-        {beat.text}
+      <div style={{ ...base, textAlign: "center" }}>
+        <div
+          style={{
+            ...fontCss("condensed"),
+            fontSize: beat.size ?? 230,
+            lineHeight: 0.9,
+            color: style.ink,
+            textTransform: /\d/.test(beat.text) ? "none" : "uppercase", // "30 g" blijft "30 g"
+            textShadow: "0 10px 40px rgba(0,0,0,0.55)",
+          }}
+        >
+          {beat.text}
+        </div>
+        {beat.sub ? (
+          <div
+            style={{
+              ...fontCss("mono"),
+              display: "inline-block",
+              marginTop: 14,
+              fontSize: Math.round((beat.size ?? 230) * 0.17),
+              color: style.cardInk,
+              background: style.accent,
+              padding: "0.3em 0.7em",
+              borderRadius: 999,
+              textTransform: "uppercase",
+              fontWeight: 700,
+            }}
+          >
+            {beat.sub}
+          </div>
+        ) : null}
       </div>
     );
   }

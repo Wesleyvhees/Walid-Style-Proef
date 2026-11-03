@@ -56,7 +56,7 @@ Tijden in seconden op de tijdlijn van `cut.mp4` (= tijden in `words.json`).
 | type | wat | belangrijkste velden |
 |---|---|---|
 | `words` | grote tekst over beeld, regels komen op hun eigen moment binnen | `lines[] {text, font, size, at, color}`, `y` |
-| `pop` | tekst die oppopt | `text`, `look`: `sticker` / `big` / `outline` / `label` / `stamp` (+ `color`), `x`, `y`, `rotate`, `size` |
+| `pop` | tekst die oppopt | `text`, `look`: `sticker` / `big` (+ `sub`) / `outline` / `label` / `stamp` (+ `color`), `x`, `y`, `rotate`, `size` |
 | `emoji` | 3D-icoon (Microsoft Fluent Emoji, MIT) | `name` (Engels, bv. "red heart"), `x`, `y`, `size` |
 | `image` | foto-kaart (Openverse, CC0/publiek domein) | `query` + `pick`, of eigen `src`; `label`, `x`, `y`, `w`, `rotate` |
 | `prompt` | kaartje dat zichzelf typt, daarna vinkje | `text`, `typeFrom`, `typeTo`, `doneAt`, `doneText` |
@@ -66,6 +66,8 @@ Tijden in seconden op de tijdlijn van `cut.mp4` (= tijden in `words.json`).
 | `cutaway` | beeld schermvullend (0,6–1,5 s), jij blijft hoorbaar | `query`/`pick` of `src`, `label` |
 | `hook` | vaste hook-titel bovenin, `*woord*` = geel accent | `text`, `sub`, `y` |
 | `chart` | geanimeerde staafjes/lijst bij getallen | `title`, `rows[] {label, value}`, `unit`, `highlight[]`, `mode` |
+| `meter` | batterij/tank die live leegloopt of vol raakt | `kind` (`battery`/`tank`), `levels[] {at, value 0..1}`, `label` |
+| `persona` | jij als kijker: close-up, scheef, label | `label` (standaard "jij") |
 | `title` | titel, optioneel **achter** de persoon (`behind: true`, eerst `tt.py person`) | als `words` + `behind`, `background: "solid"` |
 
 Elke beat kan `sfx` (`pop`, `whoosh`, `ding`, `click`, `boom`, `riser`, of een lijst zoals `["riser", "boom"]`) en `note` (uitleg in het storyboard) hebben.

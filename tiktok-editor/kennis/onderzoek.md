@@ -44,6 +44,33 @@ motivatie/verhaal = gemiddeld, serieuze of kwetsbare boodschap = rustig (Leila/A
 - Het "beeld achter de spreker"-formaat is de standaard geworden voor uitleg- en commentaarvideo's: de telefoon wordt een presentatiescherm.
 - Werkt het best bij analogieën, plekken, schermen/screenshots en producten.
 
+## 6. Jesse, video 4: "De grootste fout die jij na je training maakt…" (63 s, eigen analyse)
+
+Ander formaat dan zijn eerste drie: **één camera, geen achtergrondwissels**. Het tempo komt uit overlays.
+
+- **Beeldkaarten direct boven zijn hoofd** (midden boven, ±40% breed), die elke 1–3 s wisselen: shake, collage,
+  eten, grafiek, anatomie, poeder. Grote scènewissels maar elke ~4 s; de kaarten doen het werk.
+- **Terugkerend motief:** de analogie "glycogeen = batterij" komt steeds terug als batterij-plaatje
+  (vol → geel → rood). Dat bindt de uitleg aan elkaar. Bij hem zijn dat losse stilstaande plaatjes.
+- **Kijker-stem:** "Maar wat dan, Jesse?" speelt hij zelf als de kijker, met de camera vlak voor zijn gezicht
+  (groothoek, scheef). Grappige pattern interrupt die de vraag van de kijker hardop stelt.
+- **Hook:** "Ik hou niet van gatekeepen, dus ik ga een van de grootste mythes ontrafelen…" + open lus
+  "Maar wat als ik jou vertel dat…". Titel in pixel/mono-letter in zwarte balkjes, 0–12 s.
+  Zwak punt: het antwoord komt pas na ±16 s (lang uitstel).
+- **Getallen** ("30 gram", "20–30 gram") worden alleen als productfoto getoond, niet als getal.
+- **Vaste afsluiter:** woordgrap die het onderwerp aan volgen koppelt ("over opnemen gesproken… volgen")
+  en altijd dezelfde slotzin ("Jij bent niet waar" / "jo prima"). Herkenbaar handtekening-einde.
+- **Zwakke punten:** kaarten bedekken soms zijn gezicht; ondertitels klein zonder nadruk; stilstaande plaatjes.
+
+**Wat het systeem beter doet:**
+| Jesse | Wes.Built |
+|---|---|
+| Batterij als losse plaatjes | `meter`-graphic die **live** leegloopt en vol raakt op de woorden (groen → geel → rood, met %) |
+| Getal alleen als foto | `pop` look `big` met `sub`: "30 g" + label "snelle koolhydraten" + riser/boom |
+| Kijker-stem door camera te verplaatsen | `persona`: automatische close-up (134%), scheef, iets andere kleur + label "jij:" |
+| Kaarten soms over het gezicht | `image`-kaarten altijd boven het hoofd (y ±230–520), nooit over ogen/mond |
+| Antwoord pas na 16 s | Open lus binnen 2 s sluiten met een tussenbelofte; antwoord vóór ±8 s |
+
 ## 5. Wat dit betekent voor Wes.Built (vertaald naar regels in SKILL.md)
 
 - Kies het tempo per video-type (vraag het als keuze): uitleg = elke 1,2–2 s iets nieuws, motivatie = 2–3 s, rustig = 3–6 s.

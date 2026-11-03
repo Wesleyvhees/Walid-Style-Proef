@@ -241,3 +241,117 @@ export const ChartCard: React.FC<{ beat: ChartBeat; style: StylePreset }> = ({ b
     </div>
   );
 };
+
+// Batterij/tank die live meebeweegt met de uitleg (kleur groen → geel → rood).
+export const MeterGraphic: React.FC<{ beat: import("../types").MeterBeat; style: StylePreset }> = ({ beat, style }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const p = enter(frame, beat.start, fps, 14) * exit(frame, beat.end, fps, 0.12);
+  const lv = [...beat.levels].sort((a, b) => a.at - b.at);
+  let v = lv[0]?.value ?? 1;
+  for (let i = 0; i < lv.length; i++) {
+    const cur = lv[i];
+    const prev = lv[i - 1];
+    if (t >= cur.at) v = cur.value;
+    else if (prev && t > prev.at) {
+      // vloeiend naar het volgende niveau in 0.5 s vóór `at`
+      v = interpolate(t, [Math.max(prev.at, cur.at - 0.5), cur.at], [prev.value, cur.value], { ...clamp, easing: Easing.inOut(Easing.cubic) });
+      break;
+    } else break;
+  }
+  const color = v > 0.6 ? "#34C759" : v > 0.3 ? "#FFCC00" : "#FF3B30";
+  const size = beat.size ?? 380;
+  const w = size;
+  const h = size * 0.5;
+  const segs = 5;
+  const filled = v * segs;
+  const kind = beat.kind ?? "battery";
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: (beat.x ?? 540) - w / 2 - 30,
+        top: beat.y ?? 250,
+        padding: 26,
+        borderRadius: 30,
+        background: "rgba(255,255,255,0.96)",
+        boxShadow: "0 24px 60px rgba(0,0,0,0.35)",
+        transform: `scale(${0.8 + 0.2 * p})`,
+        opacity: p,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 14,
+      }}
+    >
+      {kind === "battery" ? (
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div style={{ width: w, height: h, border: `${size * 0.035}px solid #111`, borderRadius: size * 0.07, padding: size * 0.025, display: "flex", gap: size * 0.02 }}>
+            {Array.from({ length: segs }).map((_, i) => {
+              const f = Math.max(0, Math.min(1, filled - i));
+              return (
+                <div key={i} style={{ flex: 1, borderRadius: size * 0.025, background: "rgba(0,0,0,0.07)", overflow: "hidden", display: "flex" }}>
+                  <div style={{ width: `${f * 100}%`, background: color }} />
+                </div>
+              );
+            })}
+          </div>
+          <div style={{ width: size * 0.05, height: h * 0.4, background: "#111", borderRadius: `0 ${size * 0.02}px ${size * 0.02}px 0` }} />
+        </div>
+      ) : (
+        <svg width={w} height={w * 0.62} viewBox="0 0 200 124">
+          <path d="M20 110 A80 80 0 0 1 180 110" stroke="rgba(0,0,0,0.12)" strokeWidth="18" fill="none" strokeLinecap="round" />
+          <path d="M20 110 A80 80 0 0 1 180 110" stroke={color} strokeWidth="18" fill="none" strokeLinecap="round" pathLength={100} strokeDasharray={`${v * 100} 100`} />
+          <line x1="100" y1="110" x2={100 + 70 * Math.cos(Math.PI * (1 - v))} y2={110 - 70 * Math.sin(Math.PI * (1 - v))} stroke="#111" strokeWidth="6" strokeLinecap="round" />
+          <circle cx="100" cy="110" r="10" fill="#111" />
+          <text x="14" y="122" fontSize="16" fontFamily="InterVar" fontWeight="900">E</text>
+          <text x="176" y="122" fontSize="16" fontFamily="InterVar" fontWeight="900">F</text>
+        </svg>
+      )}
+      <div style={{ ...fontCss("mono"), fontSize: 26, color: "#111", textTransform: "uppercase", display: "flex", gap: 14 }}>
+        {beat.label ? <span>{beat.label}</span> : null}
+        <span style={{ color: style.accent === "#FFFFFF" ? "#111" : "#111", fontWeight: 700 }}>{Math.round(v * 100)}%</span>
+      </div>
+    </div>
+  );
+};
+
+// "Kijker-stem": jij speelt de kijker. Close-up, iets scheef en een label.
+export const personaTransform = (beats: import("../types").Beat[], t: number) => {
+  const b = beats.find((x) => x.type === "persona" && t >= x.start && t < x.end);
+  return b ? { scale: 1.34, rotate: -3, filter: " saturate(0.75) contrast(1.1)" } : null;
+};
+
+export const PersonaLabel: React.FC<{ beat: import("../types").PersonaBeat; style: StylePreset }> = ({ beat, style }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = enter(frame, beat.start, fps, 12);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 260,
+        left: 0,
+        right: 0,
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{
+          ...fontCss("sans"),
+          fontSize: 96,
+          color: style.cardInk,
+          background: style.card,
+          padding: "14px 44px 20px",
+          borderRadius: 999,
+          transform: `rotate(-4deg) scale(${p})`,
+          boxShadow: "0 18px 40px rgba(0,0,0,0.35)",
+        }}
+      >
+        {beat.label ?? "jij"}:
+      </div>
+    </div>
+  );
+};
