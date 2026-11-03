@@ -2,6 +2,24 @@ import type { FontKind, StylePreset } from "./types";
 
 // Stijlpresets. "Maak het moody" = style: "moody", enz.
 export const PRESETS: Record<string, StylePreset> = {
+  // Huisstijl Wes.Built (kleuren van de Wes.Built Coaching-website): wit met legergroen accent.
+  wesbuilt: {
+    bg: "#141310",
+    ink: "#FFFFFF",
+    muted: "rgba(255,255,255,0.5)",
+    accent: "#A3B462",
+    card: "#ECE8E0",
+    cardInk: "#141310",
+    filter: "contrast(1.08) saturate(1.06) brightness(1.02)",
+    vignette: 0.28,
+    grain: 0.02,
+    captionFont: "sans",
+    captionSize: 74,
+    captionUpper: false,
+    captionBox: null,
+    captionShadow: true,
+    titleColor: "#FFFFFF",
+  },
   // Standaard: strak, energiek, goed leesbaar. Zwart/wit met warm geel accent.
   grip: {
     bg: "#111112",

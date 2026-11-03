@@ -3,7 +3,7 @@ import { Composition } from "remotion";
 import { Main } from "./Main";
 import type { Storyboard } from "./types";
 
-const empty: Storyboard = { style: "grip", duration: 3, video: "cut.mp4", words: [], beats: [] };
+const empty: Storyboard = { style: "wesbuilt", duration: 3, video: "cut.mp4", words: [], beats: [] };
 
 export const Root: React.FC = () => (
   <Composition

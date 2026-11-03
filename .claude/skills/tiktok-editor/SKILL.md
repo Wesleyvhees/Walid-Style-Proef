@@ -57,7 +57,7 @@ en vóór storyboard.json definitief is, assets/cutouts worden gemaakt of er ger
 1. Leg de keuzes voor met **AskUserQuestion** (max 4 vragen per keer, elk 2–4 opties, aanbevolen optie eerst
    met "(Aanbevolen)"). Gebruik `preview` om per optie te laten zien wat er gebeurt (tijdstip + effect).
 2. Standaard vragen (kies de 3–4 die voor deze video het meest uitmaken):
-   - **Stijl**: `grip` (strak, geel accent) / `moody` (donker, grote ondertitels) / `editorial` (rustig, chic) / `pop` (fel).
+   - **Stijl**: `wesbuilt` (huisstijl, groen accent) / `moody` (donker, grote ondertitels) / `editorial` (rustig, chic) / `pop` (fel).
    - **Hook**: 2–3 concrete hook-teksten voor de eerste 3 s (bv. serietitel, prikkelende vraag, mythe + stempel).
    - **Achtergronden/B-roll**: per belangrijk moment 2–3 beeldideeën (bv. bij "love": publiek dat juicht / zonsopkomst / jij in kader voor sportschool),
      of de mate: veel scene-wissels (Jesse-tempo, elke 1,5 s) / gemiddeld (elke 3 s) / weinig (alleen kernmomenten).
@@ -77,7 +77,7 @@ Rol: compromisloze video-editor en retentiespecialist voor **Wes.Built**. Doel: 
 
 1. **Dead air eruit**: elke stilte, aarzeling en adempauze weg (`prepare`, standaard `--gap 0.08`). Tight, constante beweging.
 2. **Micro-zoom om de 3–5 s** (100% → 110%, `ease: "punch"` of `"in"`, `to: 1.10`) en extra op cruciale momenten als visuele reset.
-3. **Kinetic typography**: per zin 1–2 kernwoorden die groot oppoppen (`pop`, wit met gele accenten = preset `grip`),
+3. **Kinetic typography**: per zin 1–2 kernwoorden die groot oppoppen (`pop`, wit met groene accenten = preset `wesbuilt`),
    pop-in met lichte schaalvergroting op het moment dat het woord wordt uitgesproken. Nooit lappen tekst.
 4. **Context-aware B-roll**: wat gezegd wordt direct koppelen aan een visueel element dat 1–2 s in beeld schiet
    en weer wegklapt (`image`, `emoji`, app-scherm zoals MacroFactor als eigen screenshot in de projectmap, grafiek, gym/wandel-beeld).
@@ -148,7 +148,7 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 - Ondertitels standaard op y≈1290; pas aan als ze over de mond vallen.
 - Tekst-achter-de-persoon (`title` met `behind: true`, vereist `tt.py person`) is optioneel:
   alleen gebruiken als de gebruiker erom vraagt of het echt iets toevoegt.
-- Eigen stijl: niet de look van andermans video's kopiëren. Presets: `grip` (standaard), `editorial`, `moody`, `pop`.
+- Eigen stijl: niet de look van andermans video's kopiëren. Presets: **`wesbuilt` (standaard, huisstijl: wit met legergroen #A3B462 van de Wes.Built-website)**, `grip` (geel, niet meer gebruiken tenzij gevraagd), `editorial`, `moody`, `pop`.
 
 ## Eén-zin-feedback vertalen
 

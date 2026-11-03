@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-03 · cardio · "ondertiteling die geel is naar de groen van mijn website" → standaardstijl `wesbuilt`: accent #A3B462 (legergroen uit de Wes.Built Coaching-site, donkere modus), donker #141310, crème #ECE8E0. Geel niet meer gebruiken.
 - 2026-11-03 · algemeen · "wissel met de verschillende plaatjes elke video" → nooit hetzelfde beeld in twee video's (register `kennis/gebruikte-beelden.json`, `assets` kiest automatisch een ongebruikte kandidaat en waarschuwt), en binnen één video geen icoon twee keer.
 - 2026-11-03 · cardio (video 1–8) · Wes neemt per zin een losse take op → altijd checken of losse video's één verhaal zijn en voorstellen om ze samen te voegen (`tt.py combine`). Gekozen: één video, hook "Cardio maakt je niet *strak*", uitleg-tempo, volg-kaart **@wes.built**.
 - 2026-11-03 · cardio · spraakherkenning maakt fouten in Wes' zinnen ("Dus weet jij je kapot…") → altijd de tekst nalezen en verbeteren met `tt.py fixwords`.

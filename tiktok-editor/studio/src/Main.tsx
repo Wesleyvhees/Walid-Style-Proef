@@ -65,7 +65,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const s: StylePreset = { ...(PRESETS[sb.style] ?? PRESETS.grip), ...(sb.overrides ?? {}) };
+  const s: StylePreset = { ...(PRESETS[sb.style] ?? PRESETS.wesbuilt), ...(sb.overrides ?? {}) };
   const now = sb.beats.filter((b) => active(b, t));
   const titleBeats = now.filter((b): b is TitleBeat => b.type === "title");
   const behind = titleBeats.filter((b) => b.behind && sb.person);

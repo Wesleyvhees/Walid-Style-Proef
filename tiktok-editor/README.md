@@ -14,7 +14,7 @@ ruw.mp4 ──prepare──▶ cut.mp4 + words.json ──(Claude)──▶ stor
 
 - `tt.py` – pipeline: `prepare`, `assets`, `person` (cutout, alleen voor `scene`-cutout/`title` behind), `storyboard` (tijdlijn & montage-instructieblad), `render`
 - `studio/` – Remotion-project (React) dat de video tekent; `render.mjs` rendert een projectmap
-- `studio/src/styles.ts` – stijlpresets `grip` (standaard), `editorial`, `moody`, `pop`
+- `studio/src/styles.ts` – stijlpresets `wesbuilt` (standaard, huisstijl), `grip`, `editorial`, `moody`, `pop`
 - `studio/public/sfx/` – zelfgemaakte geluidseffecten: pop, whoosh, ding, click, boom
 - `studio/public/fonts/` – Inter, Anton, Instrument Serif, DM Mono (allemaal OFL)
 - `../.claude/skills/tiktok-editor/SKILL.md` – werkwijze en effectregels voor Claude
