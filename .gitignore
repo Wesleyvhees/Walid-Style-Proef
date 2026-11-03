@@ -1,0 +1,40 @@
+# Secrets
+.env
+
+# Media working dirs — footage in, renders out. Keep the dirs, ignore contents.
+footage/*
+!footage/.gitkeep
+outputs/*
+!outputs/.gitkeep
+
+# Per-project scratch
+my-video/
+analysis/
+
+# Media files at repo root (skill assets in .claude/skills/**/assets stay tracked)
+/*.mp4
+/*.mov
+
+# Dependencies / OS noise
+node_modules/
+.DS_Store
+
+__pycache__/
+*.pyc
+
+# compiled per-machine (build with: swiftc -O avtest.swift -o avtest)
+.claude/skills/hook-variations/scripts/avtest
+
+# The personal layer: brand tokens, defaults, reviewer prefs, learnings, and any
+# machine-specific paths. Filled from MASTER_CONTEXT.template.md; never committed.
+MASTER_CONTEXT.md
+
+# Local publishing state belongs to the working machine, not the public skill pack.
+.herenow/
+
+# video-qa engine scratch (layer cache + generated test fixtures)
+tools/video-qa/.qa-cache/
+tools/video-qa/src/__tests__/fixtures/gen/
+
+# local deny-list for scripts/scrub-check.sh (names of clients, people, private repos)
+scripts/scrub-denylist.local.txt
