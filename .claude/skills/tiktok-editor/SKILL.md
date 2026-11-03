@@ -16,9 +16,9 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 2. **Video ophalen**: zoek met de Google Drive-connector (`search_files`, map "Tiktok Rauw"),
    download naar de scratchpad:
    `curl -L -o ruw.mp4 "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"`
-3. **Voorbereiden**: `python3 tt.py prepare ruw.mp4 <project> --mirror`
-   (`--mirror` bij selfie-opnames: tekst op kleding wordt weer leesbaar). Haalt mislukte takes
-   (herhaalde zinnen, laatste take blijft) en stiltes eruit, maakt `cut.mp4`, `words.json`, `transcript.txt`.
+3. **Voorbereiden**: `python3 tt.py prepare ruw.mp4 <project>` (niet spiegelen, tenzij de gebruiker erom vraagt)
+   Haalt mislukte takes
+   (herhaalde zinnen, laatste take blijft) en elke pauze > 0,08 s eruit (op basis van het geluid zelf), maakt `cut.mp4`, `words.json`, `transcript.txt`.
    Controleer `words.json` op samengeplakte woorden en splits ze zo nodig.
 4. **Analyseren en storyboard schrijven**: lees `transcript.txt` + `words.json`, bepaal per zin wat
    de kijker moet voelen/onthouden en schrijf `<project>/storyboard.json` (regels hieronder).
@@ -64,7 +64,7 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 | "maak het moody / donkerder" | `style: "moody"` |
 | "rustiger / chiquer" | `style: "editorial"`, minder `pop`/`emoji` |
 | "grotere ondertitels" | `captions.size` +20–30 |
-| "strakker knippen" | `prepare` opnieuw met `--gap 0.2` |
+| "strakker knippen" | `prepare` opnieuw met `--gap 0.04` (losser: `--gap 0.2`) |
 | "minder effecten" | elke tweede emoji/pop eruit, geen `sfx` behalve `boom`/`ding` |
 | "andere hook" | eerste `words`-beat herschrijven |
 | "geen geluidjes" | alle `sfx` weg |

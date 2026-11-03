@@ -38,12 +38,15 @@ def duration(path):
 
 
 # ----------------------------------------------------------------- transcribe
-def transcribe(video, lang, model="small"):
+def load_audio(video):
     import numpy as np
-    from faster_whisper import WhisperModel
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", video, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
                          check=True, capture_output=True).stdout
-    audio = np.frombuffer(raw, dtype=np.float32)
+    return np.frombuffer(raw, dtype=np.float32)
+
+
+def transcribe(audio, lang, model="small"):
+    from faster_whisper import WhisperModel
     m = WhisperModel(model, device="cpu", compute_type="int8")
     segs, _ = m.transcribe(audio, language=lang, word_timestamps=True, beam_size=5, vad_filter=True)
     out = []
@@ -78,24 +81,92 @@ def drop_bad_takes(segments, window=30.0):
     return [s for i, s in enumerate(segments) if i not in drop], [segments[i] for i in sorted(drop)]
 
 
-def keep_ranges(words, total, lead=0.12, tail=0.18, max_gap=0.35):
-    ranges = []
+def speech_mask(audio, sr=16000, hop=0.01):
+    """Per 10 ms: is hier spraak? Op basis van het geluidsniveau t.o.v. de ruisvloer."""
+    import numpy as np
+    n = int(sr * hop)
+    frames = audio[: len(audio) // n * n].reshape(-1, n)
+    db = 20 * np.log10(np.sqrt((frames ** 2).mean(axis=1)) + 1e-9)
+    floor = np.percentile(db, 10)
+    peak = np.percentile(db, 95)
+    thr = max(floor + 10, peak - 32)  # duidelijk boven de ruis = spraak
+    soft = floor + 7  # zachte klanken (s, f, uitademing van een woord)
+    m = db > thr
+    # hysterese: spraak loopt door zolang het nog boven 'soft' zit (max 0.08 s), zo blijven woordeinden heel
+    ext = int(0.08 / hop)
+    out = m.copy()
+    for direction in (1, -1):
+        run = 0
+        idx = range(len(m)) if direction == 1 else range(len(m) - 1, -1, -1)
+        for i in idx:
+            if m[i]:
+                run = ext
+            elif run > 0 and db[i] > soft:
+                out[i] = True
+                run -= 1
+            else:
+                run = 0
+    return out, hop
+
+
+def keep_ranges(words, audio, total, lead=0.03, tail=0.05, max_gap=0.08, word_pad=0.25):
+    """Houd alleen stukken waar echt gesproken wordt, en alleen rond herkende woorden
+    (dus geen gemompel, kuchjes of mislukte takes). Pauzes > max_gap gaan eruit."""
+    import numpy as np
+    mask, hop = speech_mask(audio)
+    near = np.zeros_like(mask)
+    for w in words:  # alleen geluid in de buurt van een woord telt
+        near[max(0, int((w["s"] - word_pad) / hop)): int((w["e"] + word_pad) / hop) + 1] = True
+    m = mask & near
+    # Woordtijden van Whisper zijn ruim; vertrouw op het geluid. Alleen een woord dat
+    # helemaal geen hoorbaar geluid heeft (heel zacht) houden we toch (middenstuk).
     for w in words:
-        s, e = max(0.0, w["s"] - lead), min(total, w["e"] + tail)
-        if ranges and s - ranges[-1][1] < max_gap:
-            ranges[-1][1] = max(ranges[-1][1], e)
+        a_, b_ = int(w["s"] / hop), int(w["e"] / hop) + 1
+        if not m[a_:b_].any():
+            d = b_ - a_
+            m[a_ + d // 5: b_ - d // 5] = True
+    ranges, i, N = [], 0, len(m)
+    while i < N:
+        if m[i]:
+            j = i
+            while j < N and m[j]:
+                j += 1
+            ranges.append([i * hop, j * hop])
+            i = j
         else:
-            ranges.append([s, e])
-    return [[round(a, 3), round(b, 3)] for a, b in ranges]
+            i += 1
+    ranges = [[r[0], r[1]] for r in ranges if r[1] - r[0] >= 0.06]
+    out = []
+    for a, b in ranges:
+        a, b = max(0.0, a - lead), min(total, b + tail)
+        if out and a - out[-1][1] < max_gap:
+            out[-1][1] = max(out[-1][1], b)
+        else:
+            out.append([a, b])
+    # op frames afronden, zodat beeld en geluid synchroon blijven
+    snap = lambda t: round(round(t * FPS) / FPS, 4)
+    out = [[snap(a), snap(b)] for a, b in out]
+    return [r for r in out if r[1] > r[0]]
+
+
+def remap_time(t, ranges):
+    """Tijd in het origineel -> tijd in cut.mp4 (in een geknipt stuk: naar de dichtstbijzijnde rand)."""
+    off = 0.0
+    for a, b in ranges:
+        if t < a:
+            return off
+        if t <= b:
+            return off + t - a
+        off += b - a
+    return off
 
 
 def remap(words, ranges):
-    out, offset = [], 0.0
-    for a, b in ranges:
-        for w in words:
-            if w["s"] >= a - 1e-3 and w["e"] <= b + 1e-3:
-                out.append({"w": w["w"], "s": round(w["s"] - a + offset, 3), "e": round(w["e"] - a + offset, 3)})
-        offset += b - a
+    out = []
+    for w in words:
+        s, e = remap_time(w["s"], ranges), remap_time(w["e"], ranges)
+        if e - s >= 0.02:
+            out.append({"w": w["w"], "s": round(s, 3), "e": round(e, 3)})
     return out
 
 
@@ -109,10 +180,11 @@ def cmd_prepare(a):
          "-c:a", "aac", "-b:a", "256k", "-ar", "48000", norm])
     total = duration(norm)
     print("Transcriberen...")
-    segs = transcribe(norm, a.lang)
+    audio = load_audio(norm)
+    segs = transcribe(audio, a.lang)
     kept, dropped = drop_bad_takes(segs)
     words = [w for s in kept for w in s["words"]]
-    ranges = keep_ranges(words, total, max_gap=a.gap)
+    ranges = keep_ranges(words, audio, total, max_gap=a.gap)
     cut_len = sum(b - a_ for a_, b in ranges)
     print(f"Origineel {total:.1f}s -> {cut_len:.1f}s; {len(dropped)} mislukte take(s) en {len(ranges)} stukken")
 
@@ -394,8 +466,8 @@ def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("prepare"); c.add_argument("input"); c.add_argument("project")
-    c.add_argument("--mirror", action="store_true", help="spiegel selfie-beeld (tekst op shirt weer leesbaar)")
-    c.add_argument("--gap", type=float, default=0.35, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
+    c.add_argument("--mirror", action="store_true", help="beeld spiegelen (standaard uit; alleen op verzoek)")
+    c.add_argument("--gap", type=float, default=0.08, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
     c = sub.add_parser("assets"); c.add_argument("project"); c.set_defaults(fn=cmd_assets)
     c = sub.add_parser("person"); c.add_argument("project")
