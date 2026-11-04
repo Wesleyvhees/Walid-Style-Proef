@@ -42,6 +42,7 @@ if (sb.template) {
   if (T.style && sb.style !== T.style) console.warn(`Let op: template ${sb.template} hoort stijl ${T.style}, storyboard zegt ${sb.style}`);
   sb.captions = { ...(T.captions ?? {}), ...(sb.captions ?? {}) };
   if (T.jumpZoom !== undefined && sb.jumpZoom === undefined) sb.jumpZoom = T.jumpZoom;
+  if (T.sfxVolume !== undefined && sb.sfxVolume === undefined) sb.sfxVolume = T.sfxVolume;
   if (T.sfxOpZoom === false) {
     // geen geluidseffect op een moment met een (punch-)zoom; overige geluiden blijven
     const zoomAt = (sb.zooms ?? []).filter((z) => (z.ease ?? "in") === "punch").map((z) => z.start);

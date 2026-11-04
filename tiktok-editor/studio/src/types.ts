@@ -238,6 +238,7 @@ export type Storyboard = {
   camShots?: { start: number; end: number; scale: number; tx: number; ty: number }[];
   // Om en om inzoomen na een knip (uit cuts.json, berekend in render.mjs). false = uit.
   jumpZoom?: { to?: number; minHold?: number } | false;
+  sfxVolume?: number; // vermenigvuldiger voor alle geluidseffecten (standaard 1)
   cutLevels?: { start: number; end: number; scale: number; ox: number; oy: number }[];
 };
 

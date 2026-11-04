@@ -79,7 +79,7 @@ Vraag bij een nieuwe video als eerste keuze bij welke serie hij hoort (of leid h
 | Template | Serie | Wat wel | Wat niet |
 |---|---|---|---|
 | `nulnaargrip` ✅ goedgekeurd, vast | **Van nul naar grip** (motivatie, dag X) — bouw elke aflevering exact als `voorbeelden/nulnaargrip-dag10/storyboard.json` (opbouw in `templates.json` → `vast`) | Witte ondertitels, `pop` look **`impact`** (groot wit woord slaat neer, witte lijn, holle echo), hook met "Dag X", `label`, zooms, whoosh (niet op zooms) | Geen geluid op zooms, geen kleur, geen 3D-iconen, foto's, achtergronden, meters, grafieken, stempels of stickers |
-| `slimmer20` | **Slimmer eten, drinken en trainen 2.0** (uitleg) | Hook + MYTHE/FEIT-stempel, groot getal met label, `chart`/`meter`, foto's eten/drinken (kaart of cutaway), scenes, groen accent | — |
+| `slimmer20` ✅ goedgekeurd | **Slimmer eten, drinken en trainen 2.0** (uitleg) — bouw elke aflevering als `voorbeelden/slimmer20-dag22/storyboard.json` (opbouw in `templates.json` → `vast`) | Hook serietitel + 'Dag X', MYTHE/FEIT-stempel, labels + 3D-iconen per punt, grafiek bij getallen, typend tip-kaartje, `checklist` bij een opsomming (komt terug bij de afsluiter), 1 cutaway, groene stickers, volg-stempel | — |
 | `blauwdruk75` | **De 75 kilo blauwdruk** (tips om geleidelijk af te vallen) | Layout van de cardio-video (goedgekeurd), plus per tip een `pop` look `label` "Tip 1", "Tip 2" … bij het begin van elke tip | — |
 | `los` | Losse video (bv. "Mijn shape na de vakantie") | Vrije keuze binnen de vaste indeling | — |
 
@@ -225,3 +225,4 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 | "minder effecten" | elke tweede emoji/pop eruit, geen `sfx` behalve `boom`/`ding` |
 | "andere hook" | eerste `words`-beat herschrijven |
 | "geen geluidjes" | alle `sfx` weg |
+| "geluiden zachter/harder" | `"sfxVolume": 0.7` (of 1.3) in storyboard of template; standaard staat al ±30% zachter (dag 22) |

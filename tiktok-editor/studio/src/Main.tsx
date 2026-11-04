@@ -12,7 +12,10 @@ import { ChartCard, CutawayLayer, HookTitle, MeterGraphic, PersonaLabel, persona
 loadFonts();
 
 const SFX_LEAD: Record<string, number> = { whoosh: 0.1, riser: 0.86 };
-const SFX_VOL: Record<string, number> = { riser: 0.35, boom: 0.55, click: 0.4 };
+// Volume per geluid (Wes, dag 22: "geluidseffecten mogen iets zachter" -> alles ±30% zachter dan eerst).
+// Per video of template nog zachter/harder met "sfxVolume" (vermenigvuldiger, standaard 1).
+const SFX_VOL: Record<string, number> = { riser: 0.25, boom: 0.38, click: 0.28 };
+const SFX_DEFAULT = 0.32;
 
 const zoomAt = (zooms: Zoom[], t: number) => {
   let z = 1;
@@ -158,7 +161,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
             durationInFrames={45}
             layout="none"
           >
-            <Audio src={staticFile(`sfx/${fx}.wav`)} volume={SFX_VOL[fx] ?? 0.45} />
+            <Audio src={staticFile(`sfx/${fx}.wav`)} volume={(SFX_VOL[fx] ?? SFX_DEFAULT) * (sb.sfxVolume ?? 1)} />
           </Sequence>
         ))}
     </AbsoluteFill>
