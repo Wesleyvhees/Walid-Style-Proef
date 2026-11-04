@@ -6,6 +6,7 @@
   (Claude schrijft <projectmap>/storyboard.json, zie README.md)
   python3 tt.py combine    <project> <take1> <take2> ...  -> meerdere takes tot één video
   python3 tt.py fixwords   <project> "juiste tekst"      -> spraakherkenningsfouten verbeteren
+  python3 tt.py drop       <project> <van> <tot>  -> stuk (bv. een los woord) uit cut.mp4 knippen
   python3 tt.py retime     <project>         -> woordtijden opnieuw strak op de stem leggen (gebeurt al in prepare)
   python3 tt.py assets     <projectmap>      -> 3D-iconen + rechtenvrije foto's uit storyboard.json ophalen
   python3 tt.py person     <projectmap>      -> person.webm (optioneel: cutout voor tekst-achter-persoon)
@@ -110,6 +111,36 @@ def refine_words(words, audio, hop=0.01):
         if cut - x["s"] >= 0.05 and y["e"] - cut >= 0.05:
             x["e"], y["s"] = cut, cut
     return out
+
+
+def cmd_drop(a):
+    """Een stuk (bv. één verspreken of een los woord) uit cut.mp4 knippen; woorden, knippen en gezicht schuiven mee."""
+    cut = os.path.join(a.project, "cut.mp4")
+    total = duration(cut)
+    t0, t1 = round(a.start * FPS) / FPS, round(a.end * FPS) / FPS
+    ranges = [r for r in ([0.0, t0], [t1, total]) if r[1] - r[0] > 0.04]
+    tmp = os.path.join(a.project, "cut_drop.mp4")
+    script = os.path.join(a.project, "drop_filter.txt")
+    open(script, "w").write(cut_filter(ranges, total))
+    run(["ffmpeg", "-y", "-v", "error", "-i", cut, "-filter_complex_script", script, "-map", "[v]", "-map", "[a]",
+         "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-r", str(FPS), "-c:a", "aac", "-b:a", "256k", tmp])
+    os.replace(tmp, cut)
+    d = t1 - t0
+    wp = os.path.join(a.project, "words.json")
+    words = json.load(open(wp))
+    keep = [w for w in words if not (w["s"] >= t0 - 0.03 and w["e"] <= t1 + 0.03)]
+    gone = [w["w"] for w in words if w not in keep]
+    sh = lambda t: round(t if t <= t0 else max(t0, t - d), 3)
+    json.dump([{"w": w["w"], "s": sh(w["s"]), "e": sh(w["e"])} for w in keep], open(wp, "w"), ensure_ascii=False, indent=0)
+    cf = os.path.join(a.project, "cuts.json")
+    cuts = json.load(open(cf))["cuts"] if os.path.exists(cf) else []
+    cuts = sorted({round(c if c <= t0 else c - d, 3) for c in cuts if not (t0 < c < t1)} | {round(t0, 3)})
+    json.dump({"cuts": cuts}, open(cf, "w"))
+    tk = os.path.join(a.project, "takes.json")
+    if os.path.exists(tk):
+        T = json.load(open(tk)); T.setdefault("drops", []).append([t0, t1, gone]); json.dump(T, open(tk, "w"), ensure_ascii=False, indent=1)
+    print(f"{t0:.2f}-{t1:.2f}s eruit ({d:.2f}s): {' '.join(gone) or '(geen heel woord)'}; nieuwe lengte {total - d:.2f}s")
+    cmd_layout(argparse.Namespace(project=a.project))
 
 
 def cmd_retime(a):
@@ -936,6 +967,8 @@ def main():
     c.add_argument("project"); c.add_argument("takes", nargs="+"); c.set_defaults(fn=cmd_combine)
     c = sub.add_parser("fixwords", help="tekst van words.json verbeteren")
     c.add_argument("project"); c.add_argument("text"); c.set_defaults(fn=cmd_fixwords)
+    c = sub.add_parser("drop", help="stuk uit cut.mp4 knippen (bv. een los woord)")
+    c.add_argument("project"); c.add_argument("start", type=float); c.add_argument("end", type=float); c.set_defaults(fn=cmd_drop)
     c = sub.add_parser("retime", help="woordtijden strak op de stem leggen"); c.add_argument("project"); c.set_defaults(fn=cmd_retime)
     c = sub.add_parser("assets"); c.add_argument("project"); c.set_defaults(fn=cmd_assets)
     c = sub.add_parser("person"); c.add_argument("project")
