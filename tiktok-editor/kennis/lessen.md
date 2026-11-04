@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-04 · algemeen · "tekst eerst uittypen zodat ik hem kan nalezen" → na `prepare` altijd de volledige tekst per zin met tijdstip tonen (aangepaste woorden vet + wat er gehoord werd) en wachten op Wes' akkoord vóór de vragenlijst.
 - 2026-11-04 · chocolade ei eiwitbrood · "de witte tekstballonnen mogen groter en duidelijker" → labels standaard 46 px vet (was 34), reactie-bubbel 50 px; voortaan zo.
 - 2026-11-04 · chocolade ei eiwitbrood · volg-stempel uit Wes' echte TikTok-profiel (zonder tekstballon en zonder cijfers) → `volgstempel`-beat als vaste afsluiter; eindbeeld mag 2 s verlengd worden zodat het einde goed te zien is. Wes wil vóór de render een **uitgebreid montage-overzicht** (tabel per zin + elk effect met eigen beeld).
 - 2026-11-04 · chocolade ei eiwitbrood · kookvideo = losse video; stille stukken (laten zien) 3× versnellen i.p.v. wegknippen; na het knippen zelf controleren door opnieuw te transcriberen en te vergelijken (Wes: "controleer jezelf of alles duidelijk hoorbaar is").

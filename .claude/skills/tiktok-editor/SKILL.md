@@ -89,6 +89,10 @@ Het **bewerkingsmenu** met alle opties, codes en voorbeeldbeelden: https://claud
 
 Werkwijze:
 1. Eerst `prepare` (knippen + transcript), zodat de vragen over de echte inhoud gaan. Lees de tekst; check de lengte.
+1b. **Tekst ter controle (verplicht, vóór de vragenlijst):** typ de volledige tekst uit, per zin met tijdstip
+   (`[0:05] …`). Verbeter eerst zelf duidelijke spraakfouten; zet elk aangepast woord **vet** met erachter wat de
+   spraakherkenning hoorde (bv. **craving** (gehoord: kreeving)). Vraag Wes de tekst goed te keuren of te verbeteren.
+   Pas na zijn akkoord: `tt.py fixwords` met de goedgekeurde tekst en daarna de vragenlijst.
 2. **Ronde 1** (AskUserQuestion, 4 vragen, telkens 3–4 opties met `description` en waar nuttig `preview` met tijdstip + effect;
    aanbevolen optie eerst met "(Aanbevolen)"):
    - **Serie/template** (S1 Van nul naar grip, S2 Slimmer 2.0, S3 75 kilo blauwdruk, S4 los). Aanbevelen op basis van de tekst.
