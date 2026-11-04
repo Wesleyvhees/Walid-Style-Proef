@@ -70,27 +70,32 @@ Vraag bij een nieuwe video als eerste keuze bij welke serie hij hoort (of leid h
 - Indeling tot nu toe: "Van nul naar grip dag 10" = `nulnaargrip`; "Cardio maakt je niet strak" = `blauwdruk75`; "Mijn shape na de vakantie" = `los`.
 - `impact`-woorden: standaard net boven de ondertitels; valt dat over het gezicht (bv. in de auto), dan boven het hoofd (y ±430) en de hook eerder laten eindigen.
 
-## Keuzes voorleggen (verplicht, vóór het bewerken)
+## Vragenlijst vóór elke bewerking (verplicht)
 
-De gebruiker wil **eerst kiezen, dan pas bewerken**. Na stap 3 (prepare) en een eerste analyse van de tekst,
-en vóór storyboard.json definitief is, assets/cutouts worden gemaakt of er gerenderd wordt:
+Wes wil bij **elke** video eerst een uitgebreide vragenlijst met opties en voorbeelden, en pas daarna bewerken.
+Het **bewerkingsmenu** met alle opties, codes en voorbeeldbeelden: https://claude.ai/artifact/3en4hgpLa7NrA616RPaHkK
+(codes S, D, H, T, B, G, C, K, A, O, E). Stuur die link altijd mee bij de eerste vraag, en zeg dat hij ook direct codes mag noemen
+(bv. "S3 D2 H1 T2+T4 B4 G1 K2 A1 O1 E1") of "jij kiest".
 
-1. Leg de keuzes voor met **AskUserQuestion** (max 4 vragen per keer, elk 2–4 opties, aanbevolen optie eerst
-   met "(Aanbevolen)"). Gebruik `preview` om per optie te laten zien wat er gebeurt (tijdstip + effect).
-2. Standaard vragen (kies de 3–4 die voor deze video het meest uitmaken):
-   - **Stijl**: `wesbuilt` (huisstijl, groen accent) / `moody` (donker, grote ondertitels) / `editorial` (rustig, chic) / `pop` (fel).
-   - **Hook**: 2–3 concrete hook-teksten voor de eerste 3 s (bv. serietitel, prikkelende vraag, mythe + stempel).
-   - **Achtergronden/B-roll**: per belangrijk moment 2–3 beeldideeën (bv. bij "love": publiek dat juicht / zonsopkomst / jij in kader voor sportschool),
-     of de mate: veel scene-wissels (Jesse-tempo, elke 1,5 s) / gemiddeld (elke 3 s) / weinig (alleen kernmomenten).
-   - **Effecten & geluid**: vol (pops, emoji, sfx) / gemiddeld / minimaal (alleen ondertitels + zooms).
-   - **Tempo per type video** (zie onderzoek.md): uitleg/mythe = elke 1,2–2 s / motivatie = 2–3 s / rustig, serieus = 3–6 s.
-   - **Hook-varianten**: bied aan om 3 versies met een andere hook te renderen voor een A/B-test.
-   - **Knippen**: extra strak (`--gap 0.04`) / strak (`0.08`, standaard) / natuurlijk (`0.2`).
-   - **Einde/CTA**: volg-kaart / vraag om reactie / niets.
-3. Bij fotokeuzes: toon het overzicht (`assets/kandidaten/<zoekterm>/sheet.jpg`) met SendUserFile en laat
-   de gebruiker het nummer kiezen (of kies zelf als de gebruiker dat zegt).
-4. Pas na de antwoorden: storyboard.json schrijven → assets → stills → montageblad (Artifact) → renderen.
-5. Na de render: vraag opnieuw met opties wat er beter kan (bv. "andere achtergrond bij X", "minder effecten", "andere hook", "zo laten").
+Werkwijze:
+1. Eerst `prepare` (knippen + transcript), zodat de vragen over de echte inhoud gaan. Lees de tekst; check de lengte.
+2. **Ronde 1** (AskUserQuestion, 4 vragen, telkens 3–4 opties met `description` en waar nuttig `preview` met tijdstip + effect;
+   aanbevolen optie eerst met "(Aanbevolen)"):
+   - **Serie/template** (S1 Van nul naar grip, S2 Slimmer 2.0, S3 75 kilo blauwdruk, S4 los). Aanbevelen op basis van de tekst.
+   - **Doel** (D1 kijktijd, D2 reacties, D3 volgers, D4 vertrouwen/uitleg).
+   - **Hook**: 3 concrete hook-teksten uit déze video (H1 mythe + stempel, H2 serietitel + dag, H3 vraag aan de kijker, H4 eerlijke titel),
+     met de echte tekst in label/preview.
+   - **Knippen** (K1–K5), met de gemeten lengtes (bv. "15,7 s → 12,2 s").
+3. **Ronde 2** (alleen opties die binnen de gekozen template mogen; multiSelect waar logisch):
+   - **Pop-tekst** (T1–T7) met per optie de concrete woorden uit de video (bv. "T4: '3 of 4' + 'keer per week' op 31,0 s").
+   - **Beelden** (B1–B5) met 2–3 concrete beeldideeën per moment (bij S1: overslaan, niet toegestaan).
+   - **Getallen/camera** (G1–G3, C1–C4) als de tekst getallen, een vergelijking of muziek heeft.
+   - **Geluid** (A1–A3) en **Einde** (E1–E4).
+4. **Ronde 3** (als er foto's zijn): stuur per moment het kandidatenoverzicht (A/B/C/D) en laat kiezen.
+5. Vat de keuzes in één tabel samen (code → wat er gebeurt → tijdstip), dan storyboard → stills → montageblad (Artifact) → renderen.
+6. Na de render: weer een vraag met opties wat beter kan.
+- Antwoordt Wes met eigen tekst in plaats van een optie: lees het goed, volg wat hij echt bedoelt, en vraag door bij twijfel (met voorbeelden).
+- Nieuwe effecten gebouwd? Voeg ze toe aan het bewerkingsmenu (nieuwe code + voorbeeldbeeld) en publiceer het opnieuw op dezelfde link.
 
 ## Wes.Built-montageregels (altijd toepassen)
 
