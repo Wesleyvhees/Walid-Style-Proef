@@ -6,7 +6,7 @@ import { loadFonts } from "./fonts";
 import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
 import { CommentCard, FloatingImages, FollowCard, PromptCard } from "./components/Cards";
-import { EmojiPop, PhotoPop, PopText } from "./components/Pops";
+import { EmojiPop, PhotoPop, PopText, VolgStempel } from "./components/Pops";
 import { ChartCard, CutawayLayer, HookTitle, MeterGraphic, PersonaLabel, personaTransform, SceneLayer } from "./components/Scenes";
 
 loadFonts();
@@ -133,10 +133,11 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (b.type === "chart") return <ChartCard key={`c${i}`} beat={b} style={s} />;
         if (b.type === "meter") return <MeterGraphic key={`c${i}`} beat={b} style={s} />;
         if (b.type === "persona") return <PersonaLabel key={`c${i}`} beat={b} style={s} />;
+        if (b.type === "volgstempel") return <VolgStempel key={`c${i}`} beat={b} />;
         return null;
       })}
       {now.map((b, i) => (b.type === "hook" ? <HookTitle key={`h${i}`} beat={b} style={s} /> : null))}
-      {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart") ? (
+      {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart" || b.type === "volgstempel") ? (
         <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} highlight={cap.highlight} layout={sb.layout} />
       ) : null}
       {sb.beats

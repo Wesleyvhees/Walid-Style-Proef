@@ -3,6 +3,8 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-04 · chocolade ei eiwitbrood · volg-stempel uit Wes' echte TikTok-profiel (zonder tekstballon en zonder cijfers) → `volgstempel`-beat als vaste afsluiter; eindbeeld mag 2 s verlengd worden zodat het einde goed te zien is. Wes wil vóór de render een **uitgebreid montage-overzicht** (tabel per zin + elk effect met eigen beeld).
+- 2026-11-04 · chocolade ei eiwitbrood · kookvideo = losse video; stille stukken (laten zien) 3× versnellen i.p.v. wegknippen; na het knippen zelf controleren door opnieuw te transcriberen en te vergelijken (Wes: "controleer jezelf of alles duidelijk hoorbaar is").
 - 2026-11-04 · algemeen · "vraag eerst toestemming voordat je iets uitvoert, dan kijk ik mee en besparen we tokens" → vóór elke actie een kort plan tonen en wachten op akkoord (ook in `CLAUDE.md`).
 - 2026-11-04 · algemeen · "aanpassingen aan een template hoef je niet meteen in de video te verwerken" → bij een template-aanpassing: template, skill en lessen bijwerken, committen en pushen, maar **niet opnieuw renderen**. De aanpassing geldt vanaf de volgende video van die serie. Alleen opnieuw renderen als Wes daar expliciet om vraagt.
 - 2026-11-04 · Van nul naar grip · "de FX-geluiden voor het inzoomen mogen weg" (verduidelijkt: alleen bij het inzoomen, niet alles) → in `nulnaargrip` **geen geluid op een moment met een zoom** (templates.json `sfxOpZoom: false`, renderer haalt ze weg). Whoosh bij hook en impact-woorden zonder zoom blijft.

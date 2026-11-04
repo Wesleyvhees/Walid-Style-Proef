@@ -1,6 +1,6 @@
 import React from "react";
 import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import type { EmojiBeat, ImageBeat, PopBeat, StylePreset } from "../types";
+import type { EmojiBeat, ImageBeat, PopBeat, StylePreset, VolgStempelBeat } from "../types";
 import { fontCss } from "../styles";
 import { exit } from "../anim";
 
@@ -271,5 +271,28 @@ export const PhotoPop: React.FC<{ beat: ImageBeat; style: StylePreset }> = ({ be
         </div>
       ) : null}
     </div>
+  );
+};
+
+// Volg-stempel: de echte Wes.Built-profielkaart slaat neer als een stempel.
+export const VolgStempel: React.FC<{ beat: VolgStempelBeat }> = ({ beat }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const sp = spring({ frame: frame - Math.round(beat.start * fps), fps, config: { damping: 11, mass: 0.45, stiffness: 240 } });
+  const out = exit(frame, beat.end, fps, 0.15);
+  const w = beat.width ?? 900;
+  return (
+    <Img
+      src={staticFile("merk/volgstempel.png")}
+      style={{
+        position: "absolute",
+        left: 540 - w / 2,
+        top: (beat.y ?? 980) - (w * 0.56) / 2,
+        width: w,
+        transform: `rotate(${(beat.rotate ?? -3) * sp}deg) scale(${(2.0 - 1.0 * sp) * out})`,
+        opacity: Math.min(1, sp * 2) * out,
+        filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.55))",
+      }}
+    />
   );
 };

@@ -182,7 +182,7 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 | Concreet onderwerp (telefoon, sportschool, geld, natuur) | `image` met zoekterm + kort `label` (2–3 woorden) |
 | Les / conclusie / tip | `prompt`-kaartje dat typt, of `image` + `label`; `ding` bij afronding |
 | Opsomming ("ten eerste…") | `pop` look `label` per punt, `click` |
-| Call-to-action ("volg", "comment") | `follow`- of `comment`-kaart |
+| Call-to-action ("volg", "comment") | **`volgstempel`** (echte Wes.Built-profielkaart, `studio/public/merk/volgstempel.png`, voorkeur boven `follow`) of `comment`-kaart |
 | Rustig stuk | langzame zoom (`ease: "in"`, 1.04–1.07) |
 
 - Om de 1,5–3 s iets nieuws in beeld (kijktijd), maar nooit twee effecten tegelijk op dezelfde plek.

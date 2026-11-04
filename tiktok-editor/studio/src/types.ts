@@ -184,7 +184,16 @@ export type PersonaBeat = {
   label?: string; // bv. "jij"
 };
 
-export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat | MeterBeat | PersonaBeat) & {
+export type VolgStempelBeat = {
+  type: "volgstempel"; // Wes.Built-profielkaart die als stempel neerslaat (public/merk/volgstempel.png)
+  start: number;
+  end: number;
+  y?: number; // midden van de kaart
+  width?: number;
+  rotate?: number;
+};
+
+export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat | MeterBeat | PersonaBeat | VolgStempelBeat) & {
   sfx?: Sfx | Sfx[]; // bv. ["riser", "boom"] op een punchline
   note?: string;
 };

@@ -168,7 +168,7 @@ export const CommentCard: React.FC<{ beat: CommentBeat; style: StylePreset }> = 
   const { p, frame, fps } = useIn(beat.start, beat.end);
   const bp = enter(frame, beat.start + 0.45, fps, 14);
   return (
-    <div style={{ position: "absolute", top: beat.y ?? SAFE.top, left: 60, right: 180, opacity: p }}>
+    <div style={{ position: "absolute", top: beat.y ?? SAFE.top, left: 120, right: 120, opacity: p }}>
       <div
         style={{
           ...fontCss("sans"),

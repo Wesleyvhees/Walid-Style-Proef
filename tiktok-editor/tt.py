@@ -664,13 +664,16 @@ DESCRIBE = {
     "scene": lambda b: ("Jij uitgeknipt voor" if b.get("mode") == "cutout" else "Jij in kader voor") + f" beeld: {b.get('query') or b.get('src')}",
     "cutaway": lambda b: f"Cutaway schermvullend: {b.get('query') or b.get('src')}" + (f" — “{b['label']}”" if b.get("label") else ""),
     "hook": lambda b: f"Hook-titel: “{b.get('text')}”" + (f" ({b['sub']})" if b.get("sub") else ""),
+    "volgstempel": lambda b: "Volg-stempel: Wes.Built-profielkaart slaat neer",
+    "meter": lambda b: f"Meter ({b.get('kind', 'battery')}): {b.get('label', '')}",
+    "persona": lambda b: f"Kijker-stem: close-up + label '{b.get('label', 'jij')}'",
     "chart": lambda b: f"Data-kaart: {b.get('title', '')} ({len(b.get('rows', []))} rijen)",
     "image": lambda b: f"Foto popt op: {b.get('query') or b.get('src')}" + (f" — “{b['label']}”" if b.get("label") else ""),
 }
 
 
 TEXT_TYPES = ("pop", "words", "hook", "title")
-VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment")
+VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment", "meter", "volgstempel")
 SFX_NL = {"pop": "pop", "whoosh": "whoosh", "ding": "ding", "click": "klik", "boom": "boem", "riser": "riser"}
 
 
@@ -709,6 +712,12 @@ def cmd_storyboard(a):
         times.append(round(min(t, total - 0.05), 2))
     shutil.rmtree(os.path.join(a.project, "stills"), ignore_errors=True)
     run(["node", os.path.join(STUDIO, "render.mjs"), a.project, "--stills", ",".join(map(str, times))], cwd=STUDIO)
+    # uitgebreid: één still per effect
+    fx = [b for b in beats if b["type"] in VISUAL_TYPES + TEXT_TYPES + ("persona", "volgstempel")]
+    fx_times = [round(min(total - 0.05, b["start"] + min(0.45, (b["end"] - b["start"]) * 0.5)), 2) for b in fx]
+    todo = sorted(set(fx_times) - set(times))
+    if todo:
+        run(["node", os.path.join(STUDIO, "render.mjs"), a.project, "--stills", ",".join(map(str, todo))], cwd=STUDIO)
     hl = {re.sub(r"[^a-z0-9à-ÿ]", "", h.lower()) for h in sb.get("captions", {}).get("highlight", [])}
     zooms = sb.get("zooms", [])
     rows = []
@@ -737,6 +746,18 @@ def cmd_storyboard(a):
 <td class="tc"><img src="data:image/jpeg;base64,{img}" alt=""><b>{s0:05.2f}</b><span class="dim">→ {s1:05.2f}</span></td>
 <td><p class="said">{said}</p>{('<p class="why">' + ' · '.join(notes) + '</p>') if notes else ''}</td>
 <td>{cell(cuts)}</td><td>{cell(texts)}</td><td>{cell(vis)}</td><td>{cell(sfx)}</td></tr>""")
+    fxrows = []
+    for b, t in zip(fx, fx_times):
+        png = os.path.join(a.project, "stills", f"still_{t}.png")
+        jpg = png.replace(".png", "_fx.jpg")
+        run(["ffmpeg", "-y", "-v", "error", "-i", png, "-vf", "scale=240:-1", "-q:v", "5", jpg])
+        img = base64.b64encode(open(jpg, "rb").read()).decode()
+        sfxs = b.get("sfx"); sfxs = (sfxs if isinstance(sfxs, list) else [sfxs]) if sfxs else []
+        wat = beat_text(b) or DESCRIBE.get(b["type"], lambda _: b["type"])(b)
+        fxrows.append(f"""<article class="fx"><img src="data:image/jpeg;base64,{img}" alt=""><div>
+<div class="tc"><b>{b['start']:05.2f}</b> → {b['end']:05.2f} · {html.escape(b['type'])}{(' / ' + html.escape(b['look'])) if b.get('look') else ''}</div>
+<p class="said">{html.escape(wat)}</p>
+<p class="why">{'Geluid: ' + html.escape(' + '.join(SFX_NL.get(x, x) for x in sfxs)) if sfxs else 'Geen geluid'}{(' · ' + html.escape(b['note'])) if b.get('note') else ''}</p></div></article>""")
     n_vis = sum(1 for b in beats if b["type"] in VISUAL_TYPES + TEXT_TYPES)
     page = f"""<title>Montageblad {html.escape(sb.get('title', ''))}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -757,6 +778,10 @@ td.tc{{width:110px;font-family:'DM Mono',monospace;font-size:12px}}td.tc img{{wi
 .said{{font-weight:600;font-size:16px;margin:0}}mark{{background:none;color:var(--accent)}}.why{{color:var(--muted);font-size:13px;margin:.4em 0 0}}
 small,.dim{{color:var(--muted)}}
 .next{{margin-top:28px;padding:18px;border-radius:14px;background:var(--panel)}}
+h2.sub{{font-weight:900;letter-spacing:-.03em;font-size:28px;margin:40px 0 14px}}
+.fxgrid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}}
+.fx{{display:grid;grid-template-columns:90px 1fr;gap:12px;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--panel);min-width:0}}
+.fx img{{width:90px;border-radius:8px;display:block}}.fx .said{{font-size:15px}}
 @media (max-width:820px){{thead{{display:none}}tr{{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line);padding:12px 0}}td{{border:0;padding:4px 8px}}td.tc{{grid-row:span 5}}
 td:nth-child(3)::before{{content:"Cuts & pacing";}}td:nth-child(4)::before{{content:"Tekst-overlays";}}td:nth-child(5)::before{{content:"B-roll & visueel";}}td:nth-child(6)::before{{content:"Audio FX";}}
 td:nth-child(n+3)::before{{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}}}}
@@ -767,6 +792,8 @@ td:nth-child(n+3)::before{{display:block;font-family:'DM Mono',monospace;font-si
 <span>{n_vis} effecten · gem. elke {total / max(1, n_vis):.1f}s iets nieuws</span><span>{len(zooms)} zooms</span></div>
 <table><thead><tr><th>Tijdstip</th><th>Wat je zegt</th><th>Cuts &amp; pacing</th><th>Tekst-overlays (keywords)</th><th>B-roll &amp; visuele effecten</th><th>Audio FX</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table>
+<h2 class="sub">Alle effecten op volgorde ({len(fx)})</h2>
+<div class="fxgrid">{''.join(fxrows)}</div>
 <div class="next"><div class="k">Aanpassen?</div><p>Zeg het in één zin, bijvoorbeeld: “maak het moody”, “strakker knippen”, “grotere ondertitels”, “meer achtergronden” of “andere hook”.</p></div>
 </main>"""
     out = os.path.join(a.project, "storyboard.html")
