@@ -200,10 +200,10 @@ export const CommentCard: React.FC<{ beat: CommentBeat; style: StylePreset }> = 
           transform: `scale(${0.9 + 0.1 * bp})`,
         }}
       >
-        <div style={{ width: 48, height: 48, borderRadius: 48, background: style.bg }} />
+        <div style={{ width: 64, height: 64, borderRadius: 64, background: style.bg }} />
         <div>
-          <div style={{ ...fontCss("mono"), fontSize: 19, opacity: 0.55 }}>{beat.user ?? "jij"}</div>
-          <div style={{ ...fontCss("sans"), fontSize: 34, fontWeight: 700, letterSpacing: "-0.01em" }}>{beat.comment}</div>
+          <div style={{ ...fontCss("mono"), fontSize: 26, opacity: 0.6 }}>{beat.user ?? "jij"}</div>
+          <div style={{ ...fontCss("sans"), fontSize: 50, fontWeight: 800, letterSpacing: "-0.01em" }}>{beat.comment}</div>
         </div>
       </div>
     </div>

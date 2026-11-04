@@ -148,16 +148,17 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
         style={{
           ...base,
           ...fontCss("mono"),
-          fontSize: beat.size ?? 34,
+          fontSize: beat.size ?? 46,
+          fontWeight: 700,
           textTransform: "uppercase",
           color: style.cardInk,
           background: style.card,
-          padding: "14px 22px",
+          padding: "18px 30px",
           borderRadius: 999,
           boxShadow: shadow,
         }}
       >
-        <span style={{ display: "inline-block", width: 14, height: 14, borderRadius: 14, background: style.accent, marginRight: 14 }} />
+        <span style={{ display: "inline-block", width: 18, height: 18, borderRadius: 18, background: style.accent, marginRight: 14 }} />
         {beat.text}
       </div>
     );
