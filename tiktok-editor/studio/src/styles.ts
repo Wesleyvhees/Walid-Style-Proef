@@ -2,6 +2,24 @@ import type { FontKind, StylePreset } from "./types";
 
 // Stijlpresets. "Maak het moody" = style: "moody", enz.
 export const PRESETS: Record<string, StylePreset> = {
+  // Serie "Van nul naar grip" (motivatie): geen kleur, alles wit/zwart, duidelijk en krachtig.
+  nulnaargrip: {
+    bg: "#111111",
+    ink: "#FFFFFF",
+    muted: "rgba(255,255,255,0.55)",
+    accent: "#FFFFFF",
+    card: "#FFFFFF",
+    cardInk: "#111111",
+    filter: "contrast(1.08) saturate(0.92) brightness(1.01)",
+    vignette: 0.32,
+    grain: 0.03,
+    captionFont: "sans",
+    captionSize: 78,
+    captionUpper: false,
+    captionBox: null,
+    captionShadow: true,
+    titleColor: "#FFFFFF",
+  },
   // Huisstijl Wes.Built (kleuren van de Wes.Built Coaching-website): wit met legergroen accent.
   wesbuilt: {
     bg: "#141310",

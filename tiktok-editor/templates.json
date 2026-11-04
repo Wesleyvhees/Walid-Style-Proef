@@ -1,0 +1,35 @@
+{
+  "nulnaargrip": {
+    "naam": "Van nul naar grip (motivatie)",
+    "style": "nulnaargrip",
+    "toegestaan": ["hook", "pop", "words", "follow", "comment", "prompt"],
+    "popLooks": ["impact", "label"],
+    "hookSub": "Dag {dag}",
+    "captions": {"y": 1290},
+    "uitleg": "Geen kleur en geen 3D-iconen, foto's, achtergronden, meters of grafieken. Alles duidelijk met witte ondertitels en 'impact'-woorden (wit, slaat neer, witte lijn, holle echo). Serie-label 'Dag X' onder de hook."
+  },
+  "slimmer20": {
+    "naam": "Slimmer eten, drinken en trainen 2.0 (uitleg)",
+    "style": "wesbuilt",
+    "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment", "title"],
+    "popLooks": ["stamp", "big", "sticker", "label", "outline"],
+    "hookSub": "Slimmer 2.0",
+    "captions": {"y": 1290},
+    "uitleg": "Uitleg-template: hook met MYTHE/FEIT-stempel, grote getallen met label, grafieken en meters bij getallen en analogieën, foto's van eten/drinken als kaart of cutaway, groen accent."
+  },
+  "blauwdruk75": {
+    "naam": "De 75 kilo blauwdruk (tips om geleidelijk af te vallen)",
+    "style": "wesbuilt",
+    "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment", "title"],
+    "popLooks": ["stamp", "big", "sticker", "label", "outline"],
+    "hookSub": "75 kilo blauwdruk",
+    "captions": {"y": 1290},
+    "uitleg": "Layout van de cardio-video (goedgekeurd): hook + stempel, uitleg-tempo, cutout-scene + live meter, kernwoord-stickers, groot getal met label, riser+boem op de punchline, volg-kaart. Elke tip krijgt een 'Tip X'-label."
+  },
+  "los": {
+    "naam": "Losse video",
+    "style": "wesbuilt",
+    "toegestaan": null,
+    "uitleg": "Geen vaste serie: kies per video, met de vaste indeling en huisstijl."
+  }
+}

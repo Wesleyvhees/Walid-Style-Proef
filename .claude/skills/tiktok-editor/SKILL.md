@@ -54,6 +54,22 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
    controleer een contactsheet van de output, stuur het bestand met SendUserFile.
 9. **Feedback in één zin** → pas `storyboard.json` aan → stills → opnieuw renderen.
 
+## Series en templates (eerst bepalen!)
+
+Wes heeft drie TikTok-series, elk met een eigen vaste template (`tiktok-editor/templates.json`).
+Zet in `storyboard.json` altijd `"template": "<naam>"`; `render.mjs` zet dan de stijl en **laat effecten weg die niet bij de serie passen** (met waarschuwing).
+Vraag bij een nieuwe video als eerste keuze bij welke serie hij hoort (of leid het af uit de tekst en laat het bevestigen).
+
+| Template | Serie | Wat wel | Wat niet |
+|---|---|---|---|
+| `nulnaargrip` | **Van nul naar grip** (motivatie, dag X) | Witte ondertitels, `pop` look **`impact`** (groot wit woord slaat neer, witte lijn, holle echo), hook met "Dag X", `label`, zooms, whoosh / riser+boem | Geen kleur, geen 3D-iconen, foto's, achtergronden, meters, grafieken, stempels of stickers |
+| `slimmer20` | **Slimmer eten, drinken en trainen 2.0** (uitleg) | Hook + MYTHE/FEIT-stempel, groot getal met label, `chart`/`meter`, foto's eten/drinken (kaart of cutaway), scenes, groen accent | — |
+| `blauwdruk75` | **De 75 kilo blauwdruk** (tips om geleidelijk af te vallen) | Layout van de cardio-video (goedgekeurd), plus per tip een `pop` look `label` "Tip 1", "Tip 2" … bij het begin van elke tip | — |
+| `los` | Losse video (bv. "Mijn shape na de vakantie") | Vrije keuze binnen de vaste indeling | — |
+
+- Indeling tot nu toe: "Van nul naar grip dag 10" = `nulnaargrip`; "Cardio maakt je niet strak" = `blauwdruk75`; "Mijn shape na de vakantie" = `los`.
+- `impact`-woorden: standaard net boven de ondertitels; valt dat over het gezicht (bv. in de auto), dan boven het hoofd (y ±430) en de hook eerder laten eindigen.
+
 ## Keuzes voorleggen (verplicht, vóór het bewerken)
 
 De gebruiker wil **eerst kiezen, dan pas bewerken**. Na stap 3 (prepare) en een eerste analyse van de tekst,

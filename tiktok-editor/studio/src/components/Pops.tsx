@@ -18,7 +18,7 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
   const look = beat.look ?? "sticker";
   const x = beat.x ?? 540;
   // standaardplek: gecentreerd, net boven de ondertitels (y 1290); grote tekst iets hoger zodat het label past
-  const y = beat.y ?? (look === "big" ? 1040 : 1120);
+  const y = beat.y ?? (look === "big" || look === "impact" ? 1040 : 1120);
   const rot = beat.rotate ?? (look === "sticker" ? -4 : 0);
   const base: React.CSSProperties = {
     position: "absolute",
@@ -27,6 +27,61 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
     transform: `translate(-50%,-50%) rotate(${rot * p}deg) scale(${p * out})`,
     whiteSpace: "nowrap",
   };
+  if (look === "impact") {
+    // Motivatie-stijl zonder kleur: woord slaat neer (groot -> normaal), witte lijn tekent eronder,
+    // en een holle echo van het woord dijt uit en vervaagt.
+    const t = frame / fps - beat.start;
+    const slam = interpolate(t, [0, 0.14], [1.55, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (v) => 1 - Math.pow(1 - v, 3) });
+    const vis = t >= 0 ? 1 : 0;
+    const line = interpolate(t, [0.1, 0.35], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    const echo = interpolate(t, [0.05, 0.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    const size = beat.size ?? 170;
+    const word: React.CSSProperties = {
+      ...fontCss("condensed"),
+      fontSize: size,
+      lineHeight: 0.9,
+      textTransform: /\d/.test(beat.text) ? "none" : "uppercase",
+      whiteSpace: "nowrap",
+    };
+    return (
+      <div style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${out})`, opacity: vis * out }}>
+        {/* holle echo */}
+        <div
+          style={{
+            ...word,
+            position: "absolute",
+            inset: 0,
+            color: "transparent",
+            WebkitTextStroke: `${Math.max(2, Math.round(size * 0.018))}px rgba(255,255,255,${0.7 * (1 - echo)})`,
+            transform: `scale(${1 + 0.35 * echo})`,
+            textAlign: "center",
+          }}
+        >
+          {beat.text}
+        </div>
+        <div
+          style={{
+            ...word,
+            position: "relative",
+            color: "#FFFFFF",
+            transform: `scale(${slam})`,
+            textShadow: "0 10px 40px rgba(0,0,0,0.55)",
+            WebkitTextStroke: `${Math.round(size * 0.05)}px rgba(0,0,0,0.6)`,
+            paintOrder: "stroke fill",
+            textAlign: "center",
+          }}
+        >
+          {beat.text}
+        </div>
+        <div style={{ height: Math.max(6, size * 0.045), marginTop: size * 0.06, background: "#FFFFFF", width: `${line * 100}%`, marginLeft: `${(1 - line) * 50}%`, borderRadius: 4, boxShadow: "0 2px 10px rgba(0,0,0,0.5)" }} />
+        {beat.sub ? (
+          <div style={{ ...fontCss("mono"), marginTop: 14, fontSize: Math.max(30, Math.round(size * 0.18)), color: "#FFFFFF", textAlign: "center", textTransform: "uppercase", letterSpacing: "0.16em", opacity: line, textShadow: "0 2px 10px rgba(0,0,0,0.7)" }}>
+            {beat.sub}
+          </div>
+        ) : null}
+      </div>
+    );
+  }
   if (look === "big") {
     return (
       <div style={{ ...base, textAlign: "center" }}>

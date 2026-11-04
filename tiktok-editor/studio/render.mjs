@@ -34,6 +34,20 @@ if (sb.person && !fs.existsSync(path.join(project, sb.person))) {
   delete sb.person;
 }
 
+// Serie-template: stijl en toegestane effecten per serie (templates.json)
+if (sb.template) {
+  const T = JSON.parse(fs.readFileSync(path.join(here, "..", "templates.json"), "utf8"))[sb.template];
+  if (!T) throw new Error(`Onbekende template: ${sb.template}`);
+  sb.style = sb.style ?? T.style;
+  if (T.style && sb.style !== T.style) console.warn(`Let op: template ${sb.template} hoort stijl ${T.style}, storyboard zegt ${sb.style}`);
+  sb.captions = { ...(T.captions ?? {}), ...(sb.captions ?? {}) };
+  if (T.toegestaan) {
+    const weg = sb.beats.filter((b) => !T.toegestaan.includes(b.type) || (b.type === "pop" && T.popLooks && !T.popLooks.includes(b.look ?? "sticker")));
+    weg.forEach((b) => console.warn(`Template ${sb.template}: ${b.type}${b.look ? "/" + b.look : ""} op ${b.start}s past niet bij deze serie, weggelaten`));
+    sb.beats = sb.beats.filter((b) => !weg.includes(b));
+  }
+}
+
 // Geen rare leestekens in tekst in beeld (wens van Wes): … – — × = * “ ” en klemtoontekens als nadruk.
 const cleanText = (t, keepStars = false) =>
   t

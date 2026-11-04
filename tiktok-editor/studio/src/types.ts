@@ -84,7 +84,7 @@ export type PopBeat = {
   start: number;
   end: number;
   text: string;
-  look?: "sticker" | "outline" | "big" | "label" | "stamp";
+  look?: "sticker" | "outline" | "big" | "label" | "stamp" | "impact";
   color?: string; // voor stamp: bv. "#FF3B30" (mythe) of "#34C759" (feit)
   sub?: string; // kleine regel onder een "big"-tekst, bv. "snelle koolhydraten" onder "30 g"
   x?: number; // midden, px (standaard midden van het beeld)
