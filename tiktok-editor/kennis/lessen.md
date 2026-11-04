@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-04 · Van nul naar grip dag 10 · "de template ziet er echt goed uit, houd die zo, sla hem op" → template `nulnaargrip` is **goedgekeurd en vastgezet** (zie `templates.json` → `vast`, referentie `voorbeelden/nulnaargrip-dag10/`). Elke nieuwe motivatievideo exact zo opbouwen; niets aan veranderen tenzij Wes erom vraagt.
 - 2026-11-04 · algemeen · "eerst een uitgebreide vragenlijst met opties en voorbeelden, ik weet niet welke opties er zijn" → bewerkingsmenu met codes en voorbeeldbeelden (https://claude.ai/artifact/3en4hgpLa7NrA616RPaHkK) + vaste vragenlijst in 2–3 rondes (serie, doel, hook, knippen → pop-tekst, beelden, getallen/camera, geluid, einde → foto's) vóór elke bewerking.
 - 2026-11-04 · algemeen · drie series met elk een eigen template → `nulnaargrip` (motivatie: geen kleur, geen 3D, wel duidelijke ondertitels + nieuwe 'impact'-woorden), `slimmer20` (uitleg-template), `blauwdruk75` (layout van de cardio-video; tips om geleidelijk af te vallen, 'Tip X'-labels). Dag 10 = motivatie, cardio = 75 kg, shape na de vakantie = los. Altijd eerst de serie bepalen.
 - 2026-11-03 · algemeen · Wes gaf een multicam-instructie (EDL + knipplan) → skill `multicam-editor` gebruiken als Wes om een multicam-montage, EDL of knipplan vraagt; huisstijl en lessen gelden daar ook.

@@ -2,28 +2,97 @@
   "nulnaargrip": {
     "naam": "Van nul naar grip (motivatie)",
     "style": "nulnaargrip",
-    "toegestaan": ["hook", "pop", "words", "follow", "comment", "prompt"],
-    "popLooks": ["impact", "label"],
+    "toegestaan": [
+      "hook",
+      "pop",
+      "words",
+      "follow",
+      "comment",
+      "prompt"
+    ],
+    "popLooks": [
+      "impact",
+      "label"
+    ],
     "hookSub": "Dag {dag}",
-    "captions": {"y": 1290},
-    "uitleg": "Geen kleur en geen 3D-iconen, foto's, achtergronden, meters of grafieken. Alles duidelijk met witte ondertitels en 'impact'-woorden (wit, slaat neer, witte lijn, holle echo). Serie-label 'Dag X' onder de hook."
+    "captions": {
+      "y": 1290
+    },
+    "uitleg": "Geen kleur en geen 3D-iconen, foto's, achtergronden, meters of grafieken. Alles duidelijk met witte ondertitels en 'impact'-woorden (wit, slaat neer, witte lijn, holle echo). Serie-label 'Dag X' onder de hook.",
+    "goedgekeurd": "2026-11-04: door Wes goedgekeurd, niet meer aanpassen zonder zijn vraag",
+    "referentie": "voorbeelden/nulnaargrip-dag10/storyboard.json",
+    "vast": {
+      "hook": "bovenaan (y 215, size ±100), 'Van nul naar *grip*' + sub 'Dag X', eindigt voordat het eerste impact-woord overlapt",
+      "impact": "pop look 'impact', 1 kernwoord per zin (±1,2–2 s), size 130–200, wit; net boven de ondertitels, of boven het hoofd (y ±430) als het gezicht laag in beeld staat",
+      "punchline": "impact + sfx ['riser','boom'] + punch-zoom 1.12",
+      "overige_sfx": "whoosh bij elk impact-woord",
+      "zooms": "punch 1.06–1.08 op kernwoorden, langzaam 1.05 op rustige stukken",
+      "afsluiter": "laatste impact-woord met sub 'dag X'",
+      "ondertitels": "wit, vaste hoogte y 1290, kernwoorden in highlight"
+    }
   },
   "slimmer20": {
     "naam": "Slimmer eten, drinken en trainen 2.0 (uitleg)",
     "style": "wesbuilt",
-    "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment", "title"],
-    "popLooks": ["stamp", "big", "sticker", "label", "outline"],
+    "toegestaan": [
+      "hook",
+      "pop",
+      "words",
+      "emoji",
+      "image",
+      "scene",
+      "cutaway",
+      "chart",
+      "meter",
+      "persona",
+      "prompt",
+      "follow",
+      "comment",
+      "title"
+    ],
+    "popLooks": [
+      "stamp",
+      "big",
+      "sticker",
+      "label",
+      "outline"
+    ],
     "hookSub": "Slimmer 2.0",
-    "captions": {"y": 1290},
+    "captions": {
+      "y": 1290
+    },
     "uitleg": "Uitleg-template: hook met MYTHE/FEIT-stempel, grote getallen met label, grafieken en meters bij getallen en analogieën, foto's van eten/drinken als kaart of cutaway, groen accent."
   },
   "blauwdruk75": {
     "naam": "De 75 kilo blauwdruk (tips om geleidelijk af te vallen)",
     "style": "wesbuilt",
-    "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment", "title"],
-    "popLooks": ["stamp", "big", "sticker", "label", "outline"],
+    "toegestaan": [
+      "hook",
+      "pop",
+      "words",
+      "emoji",
+      "image",
+      "scene",
+      "cutaway",
+      "chart",
+      "meter",
+      "persona",
+      "prompt",
+      "follow",
+      "comment",
+      "title"
+    ],
+    "popLooks": [
+      "stamp",
+      "big",
+      "sticker",
+      "label",
+      "outline"
+    ],
     "hookSub": "75 kilo blauwdruk",
-    "captions": {"y": 1290},
+    "captions": {
+      "y": 1290
+    },
     "uitleg": "Layout van de cardio-video (goedgekeurd): hook + stempel, uitleg-tempo, cutout-scene + live meter, kernwoord-stickers, groot getal met label, riser+boem op de punchline, volg-kaart. Elke tip krijgt een 'Tip X'-label."
   },
   "los": {

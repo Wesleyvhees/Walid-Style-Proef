@@ -62,7 +62,7 @@ Vraag bij een nieuwe video als eerste keuze bij welke serie hij hoort (of leid h
 
 | Template | Serie | Wat wel | Wat niet |
 |---|---|---|---|
-| `nulnaargrip` | **Van nul naar grip** (motivatie, dag X) | Witte ondertitels, `pop` look **`impact`** (groot wit woord slaat neer, witte lijn, holle echo), hook met "Dag X", `label`, zooms, whoosh / riser+boem | Geen kleur, geen 3D-iconen, foto's, achtergronden, meters, grafieken, stempels of stickers |
+| `nulnaargrip` ✅ goedgekeurd, vast | **Van nul naar grip** (motivatie, dag X) — bouw elke aflevering exact als `voorbeelden/nulnaargrip-dag10/storyboard.json` (opbouw in `templates.json` → `vast`) | Witte ondertitels, `pop` look **`impact`** (groot wit woord slaat neer, witte lijn, holle echo), hook met "Dag X", `label`, zooms, whoosh / riser+boem | Geen kleur, geen 3D-iconen, foto's, achtergronden, meters, grafieken, stempels of stickers |
 | `slimmer20` | **Slimmer eten, drinken en trainen 2.0** (uitleg) | Hook + MYTHE/FEIT-stempel, groot getal met label, `chart`/`meter`, foto's eten/drinken (kaart of cutaway), scenes, groen accent | — |
 | `blauwdruk75` | **De 75 kilo blauwdruk** (tips om geleidelijk af te vallen) | Layout van de cardio-video (goedgekeurd), plus per tip een `pop` look `label` "Tip 1", "Tip 2" … bij het begin van elke tip | — |
 | `los` | Losse video (bv. "Mijn shape na de vakantie") | Vrije keuze binnen de vaste indeling | — |
