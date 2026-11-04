@@ -801,6 +801,7 @@ DESCRIBE = {
     "cutaway": lambda b: f"Cutaway schermvullend: {b.get('query') or b.get('src')}" + (f" — “{b['label']}”" if b.get("label") else ""),
     "hook": lambda b: f"Hook-titel: “{b.get('text')}”" + (f" ({b['sub']})" if b.get("sub") else ""),
     "volgstempel": lambda b: "Volg-stempel: Wes.Built-profielkaart slaat neer",
+    "checklist": lambda b: f"Checklist {b.get('title', '')}: " + ", ".join(f"✓ {i['text']} ({i['at']:.1f}s)" for i in b.get("items", [])),
     "meter": lambda b: f"Meter ({b.get('kind', 'battery')}): {b.get('label', '')}",
     "persona": lambda b: f"Kijker-stem: close-up + label '{b.get('label', 'jij')}'",
     "chart": lambda b: f"Data-kaart: {b.get('title', '')} ({len(b.get('rows', []))} rijen)",
@@ -809,7 +810,7 @@ DESCRIBE = {
 
 
 TEXT_TYPES = ("pop", "words", "hook", "title")
-VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment", "meter", "volgstempel")
+VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment", "meter", "volgstempel", "checklist")
 SFX_NL = {"pop": "pop", "whoosh": "whoosh", "ding": "ding", "click": "klik", "boom": "boem", "riser": "riser"}
 
 

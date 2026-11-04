@@ -5,7 +5,7 @@ import { PRESETS } from "./styles";
 import { loadFonts } from "./fonts";
 import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
-import { CommentCard, FloatingImages, FollowCard, PromptCard } from "./components/Cards";
+import { ChecklistCard, CommentCard, FloatingImages, FollowCard, PromptCard } from "./components/Cards";
 import { EmojiPop, PhotoPop, PopText, VolgStempel } from "./components/Pops";
 import { ChartCard, CutawayLayer, HookTitle, MeterGraphic, PersonaLabel, personaTransform, SceneLayer } from "./components/Scenes";
 
@@ -135,6 +135,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (b.type === "meter") return <MeterGraphic key={`c${i}`} beat={b} style={s} />;
         if (b.type === "persona") return <PersonaLabel key={`c${i}`} beat={b} style={s} />;
         if (b.type === "volgstempel") return <VolgStempel key={`c${i}`} beat={b} />;
+        if (b.type === "checklist") return <ChecklistCard key={`c${i}`} beat={b} style={s} />;
         return null;
       })}
       {now.map((b, i) => (b.type === "hook" ? <HookTitle key={`h${i}`} beat={b} style={s} /> : null))}
@@ -142,7 +143,13 @@ export const Main: React.FC<Storyboard> = (sb) => {
         <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} />
       ) : null}
       {sb.beats
-        .flatMap((b) => (b.sfx ? (Array.isArray(b.sfx) ? b.sfx : [b.sfx]).map((fx) => ({ fx, start: b.start })) : []))
+        .flatMap((b) => [
+          ...(b.sfx ? (Array.isArray(b.sfx) ? b.sfx : [b.sfx]).map((fx) => ({ fx, start: b.start })) : []),
+          // checklist: een geluid per vinkje (alleen vinkjes die tijdens de beat aanspringen)
+          ...(b.type === "checklist" && b.itemSfx !== "none"
+            ? b.items.filter((it) => it.at > b.start + 0.05).map((it) => ({ fx: (b.itemSfx ?? "ding") as string, start: it.at }))
+            : []),
+        ])
         .map(({ fx, start }, i) => (
           // whoosh iets vóór de beweging; riser piekt precies op het moment zelf
           <Sequence

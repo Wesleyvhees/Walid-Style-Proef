@@ -193,7 +193,19 @@ export type VolgStempelBeat = {
   rotate?: number;
 };
 
-export type Beat = (TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat | MeterBeat | PersonaBeat | VolgStempelBeat) & {
+export type ChecklistBeat = {
+  type: "checklist"; // lijstje waarvan de vinkjes aanspringen op de woorden
+  start: number;
+  end: number;
+  title?: string;
+  items: { text: string; at: number }[]; // at = moment dat het vinkje aanspringt
+  itemSfx?: Sfx | "none"; // geluid per vinkje (standaard ding)
+  x?: number; // linkerkant
+  y?: number; // bovenkant
+  w?: number;
+};
+
+export type Beat = (ChecklistBeat | TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat | MeterBeat | PersonaBeat | VolgStempelBeat) & {
   sfx?: Sfx | Sfx[]; // bv. ["riser", "boom"] op een punchline
   note?: string;
 };

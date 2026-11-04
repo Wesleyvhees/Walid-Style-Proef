@@ -75,6 +75,7 @@ for (const b of sb.beats) {
   for (const k of TEXT_KEYS) if (typeof b[k] === "string") b[k] = cleanText(b[k], b.type === "hook" && k === "text");
   for (const l of b.lines ?? []) l.text = cleanText(l.text);
   for (const r of b.rows ?? []) r.label = cleanText(r.label);
+  for (const it of b.items ?? []) it.text = cleanText(it.text);
 }
 
 // Gezichtsposities voor automatische plaatsing (tt.py layout)

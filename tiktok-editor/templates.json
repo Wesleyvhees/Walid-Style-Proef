@@ -51,7 +51,8 @@
       "follow",
       "comment",
       "title",
-      "volgstempel"
+      "volgstempel",
+      "checklist"
     ],
     "popLooks": [
       "stamp",

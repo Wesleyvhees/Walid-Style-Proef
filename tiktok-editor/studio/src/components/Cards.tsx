@@ -1,6 +1,6 @@
 import React from "react";
 import { Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import type { CommentBeat, FollowBeat, ImagesBeat, PromptBeat, StylePreset } from "../types";
+import type { ChecklistBeat, CommentBeat, FollowBeat, ImagesBeat, PromptBeat, StylePreset } from "../types";
 import { fontCss, SAFE } from "../styles";
 import { enter, exit } from "../anim";
 
@@ -206,6 +206,64 @@ export const CommentCard: React.FC<{ beat: CommentBeat; style: StylePreset }> = 
           <div style={{ ...fontCss("sans"), fontSize: 50, fontWeight: 800, letterSpacing: "-0.01em" }}>{beat.comment}</div>
         </div>
       </div>
+    </div>
+  );
+};
+
+// Checklist: regels schuiven in, het vinkje springt aan op het woord (groen), nog niet afgevinkt = gedimd.
+export const ChecklistCard: React.FC<{ beat: ChecklistBeat; style: StylePreset }> = ({ beat, style }) => {
+  const { t, p, frame, fps } = useIn(beat.start, beat.end);
+  const w = beat.w ?? 560;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: beat.x ?? 540 - w / 2,
+        top: beat.y ?? SAFE.top,
+        width: w,
+        padding: "28px 34px 30px",
+        borderRadius: 30,
+        background: "rgba(17,17,18,0.9)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        boxShadow: cardShadow,
+        opacity: p,
+        transform: `translateY(${(1 - p) * -30}px) scale(${0.96 + 0.04 * p})`,
+      }}
+    >
+      {beat.title ? (
+        <div style={{ ...fontCss("mono"), fontSize: 26, color: style.accent, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 18 }}>
+          {beat.title}
+        </div>
+      ) : null}
+      {beat.items.map((it, i) => {
+        const appear = Math.min(it.at - 0.25, beat.start + 0.08 * i);
+        const q = enter(frame, Math.max(beat.start, appear), fps, 16);
+        const on = t >= it.at;
+        const c = on ? enter(frame, it.at, fps, 10) : 0;
+        return (
+          <div key={i} style={{ display: "flex", alignItems: "center", gap: 20, marginTop: i ? 14 : 0, opacity: q, transform: `translateX(${(1 - q) * -24}px)` }}>
+            <div
+              style={{
+                width: 52,
+                height: 52,
+                borderRadius: 14,
+                flex: "none",
+                border: `3px solid ${on ? style.accent : "rgba(255,255,255,0.35)"}`,
+                background: on ? style.accent : "transparent",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transform: `scale(${1 + 0.18 * Math.sin(Math.min(1, c) * Math.PI)})`,
+              }}
+            >
+              <svg width="30" height="30" viewBox="0 0 24 24" style={{ opacity: c, transform: `scale(${c})` }}>
+                <path d="M4 12.5l5 5L20 6.5" stroke="#141310" strokeWidth="3.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div style={{ ...fontCss("sans"), fontSize: 44, fontWeight: 700, letterSpacing: "-0.02em", color: "#fff", opacity: on ? 1 : 0.5 }}>{it.text}</div>
+          </div>
+        );
+      })}
     </div>
   );
 };
