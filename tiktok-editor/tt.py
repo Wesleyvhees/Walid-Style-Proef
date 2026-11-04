@@ -666,6 +666,35 @@ def search_openverse(query):
              "bank": "Openverse"} for x in d.get("results", [])]
 
 
+def search_pixabay(query, lang="en"):
+    """Pixabay (eerste bron): echte foto's, veilig, groot. Pixabay-licentie: vrij te gebruiken zonder naamsvermelding.
+    Vereist de gratis sleutel in PIXABAY_KEY; zonder sleutel wordt Pixabay overgeslagen."""
+    from urllib.parse import urlencode
+    key = os.environ.get("PIXABAY_KEY", "").strip()
+    if not key:
+        print("  Pixabay: geen PIXABAY_KEY, overgeslagen", flush=True)
+        return []
+    q = urlencode({"key": key, "q": query[:100], "lang": lang, "image_type": "photo", "safesearch": "true",
+                   "min_width": 900, "min_height": 600, "order": "popular", "per_page": 30})
+    d = _get_json(f"https://pixabay.com/api/?{q}", "Pixabay", tries=3) or {}
+    out = []
+    for x in d.get("hits", []):
+        url = x.get("largeImageURL") or x.get("webformatURL")
+        if not url:
+            continue
+        w, h = x.get("imageWidth") or 0, x.get("imageHeight") or 0
+        out.append({"url": url, "width": w, "height": h, "title": x.get("tags") or "", "creator": x.get("user"),
+                    "license": "Pixabay-licentie", "source": x.get("pageURL"), "bank": "Pixabay"})
+    # Pixabay sorteert op populariteit, niet op hoe goed het past: zoekwoorden in de eerste tags gaan voor
+    words = [w for w in re.findall(r"\w+", query.lower()) if len(w) > 2]
+
+    def score(x):
+        tags = [t.strip().lower() for t in x["title"].split(",")]
+        hit = lambda w, ts: any(re.search(rf"\b{re.escape(w)}", t) for t in ts)
+        return -(sum(2 * hit(w, tags[:3]) + hit(w, tags) for w in words))
+    return sorted(out, key=score)
+
+
 def search_commons(query):
     """Wikimedia Commons (geen sleutel nodig): alleen foto's die vrij zijn zonder naamsvermelding (CC0/publiek domein)."""
     from urllib.parse import urlencode
@@ -692,16 +721,22 @@ def search_commons(query):
 
 
 def photo_candidates(query, folder, n=9):
-    """Rechtenvrije foto's (CC0 / publiek domein) uit Wikimedia Commons + Openverse -> folder/0.jpg.. + sheet.jpg."""
+    """Vrij te gebruiken foto's -> folder/0.jpg.. + sheet.jpg. Pixabay eerst; is dat te weinig, dan aangevuld met
+    Wikimedia Commons + Openverse (om en om, CC0 / publiek domein)."""
     os.makedirs(folder, exist_ok=True)
-    banks = [search_commons(query), search_openverse(query)]
-    results, seen = [], set()
-    for i in range(max(len(x) for x in banks) if any(banks) else 0):  # om en om, zodat je uit beide banken kunt kiezen
-        for bank in banks:
-            if i < len(bank) and bank[i]["url"] not in seen:
-                seen.add(bank[i]["url"]); results.append(bank[i])
-    results = [x for x in results if x["width"] >= 900 and x["height"] >= 600 and 0.5 <= x["width"] / max(1, x["height"]) <= 2.2
-               and not NOT_PHOTO.search(x["title"] or "")]
+
+    def usable(x):
+        return (x["width"] >= 900 and x["height"] >= 600 and 0.5 <= x["width"] / max(1, x["height"]) <= 2.2
+                and not NOT_PHOTO.search(x["title"] or ""))
+
+    results = [x for x in search_pixabay(query) if usable(x)]
+    seen = {x["url"] for x in results}
+    if len(results) < n:  # Pixabay levert te weinig: aanvullen met de andere banken
+        banks = [search_commons(query), search_openverse(query)]
+        for i in range(max(len(x) for x in banks) if any(banks) else 0):
+            for bank in banks:
+                if i < len(bank) and bank[i]["url"] not in seen and usable(bank[i]):
+                    seen.add(bank[i]["url"]); results.append(bank[i])
     found = []
     for res in results:
         if len(found) >= n:

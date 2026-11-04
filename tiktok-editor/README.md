@@ -63,7 +63,7 @@ Tijden in seconden op de tijdlijn van `cut.mp4` (= tijden in `words.json`).
 | `words` | grote tekst over beeld, regels komen op hun eigen moment binnen | `lines[] {text, font, size, at, color}`, `y` |
 | `pop` | tekst die oppopt | `text`, `look`: `sticker` / `big` (+ `sub`) / `impact` (+ `sub`, zonder kleur) / `outline` / `label` / `stamp` (+ `color`), `x`, `y`, `rotate`, `size` |
 | `emoji` | 3D-icoon (Microsoft Fluent Emoji, MIT) | `name` (Engels, bv. "red heart"), `x`, `y`, `size` |
-| `image` | foto-kaart (Openverse, CC0/publiek domein) | `query` + `pick`, of eigen `src`; `label`, `x`, `y`, `w`, `rotate` |
+| `image` | foto-kaart (Pixabay; aangevuld met Commons/Openverse, CC0/publiek domein) | `query` + `pick`, of eigen `src`; `label`, `x`, `y`, `w`, `rotate` |
 | `prompt` | kaartje dat zichzelf typt, daarna vinkje | `text`, `typeFrom`, `typeTo`, `doneAt`, `doneText` |
 | `follow` | profielkaart "Volgen → Volgend" | `handle`, `sub`, `toggleAt` |
 | `comment` | "Reageer X"-kop + reactie | `headline`, `comment` |
