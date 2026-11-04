@@ -617,7 +617,7 @@ def slug(t):
 
 def fetch(url, dest):
     import urllib.request
-    req = urllib.request.Request(url, headers={"User-Agent": "tiktok-editor/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=30) as r, open(dest, "wb") as fh:
         fh.write(r.read())
 
@@ -635,24 +635,73 @@ def fetch_emoji(name, dest):
     return False
 
 
-def photo_candidates(query, folder, n=6):
-    """Rechtenvrije foto's (CC0 / publiek domein) via Openverse -> folder/0.jpg.. + sheet.jpg."""
+UA = "tiktok-editor/1.0 (https://github.com/wesleyvhees/walid-style-proef)"
+# Geen tekeningen, prenten, oude scans of AI-plaatjes: Wes wil echte, moderne foto's.
+NOT_PHOTO = re.compile(r"drawing|illustrat|engraving|etching|lithograph|painting|sketch|poster|diagram|\bmap\b|clipart|"
+                       r"cartoon|\bplate\b.*\(1[0-9]{3}\)|\(1[0-9]{3}\)|\b1[5-9][0-9]{2}\b|\bFLUX\b|AI[- ]generated|"
+                       r"stable diffusion|dall-?e|midjourney|render", re.I)
+
+
+def _get_json(url, label, tries=4, timeout=45, wait=2):
+    import time
     import urllib.request
-    from urllib.parse import urlencode
-    os.makedirs(folder, exist_ok=True)
-    q = urlencode({"q": query, "license": "cc0,pdm", "page_size": 20, "mature": "false"})
-    req = urllib.request.Request(f"https://api.openverse.org/v1/images/?{q}", headers={"User-Agent": "tiktok-editor/1.0"})
-    results = []
-    for attempt in range(4):  # Openverse is soms traag: opnieuw proberen
+    for attempt in range(tries):
         try:
-            with urllib.request.urlopen(req, timeout=45) as r:
-                results = json.load(r).get("results", [])
-            break
-        except Exception as e:
-            print(f"  Openverse: poging {attempt + 1} mislukt ({e})", flush=True)
-            import time
-            time.sleep(2 ** attempt * 2)
-    results = [x for x in results if (x.get("width") or 0) >= 900 and (x.get("height") or 0) >= 600]
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=timeout) as r:
+                return json.load(r)
+        except Exception as e:  # o.a. HTTP 500 (Openverse) en 429/lege antwoorden (Commons: te veel tegelijk)
+            print(f"  {label}: poging {attempt + 1} mislukt ({str(e)[:60]})", flush=True)
+            time.sleep(2 ** attempt * wait)
+    return None
+
+
+def search_openverse(query):
+    """Openverse, streng: alleen foto's (geen kunst/tekeningen), CC0/publiek domein, niets ongepasts, groot."""
+    from urllib.parse import urlencode
+    q = urlencode({"q": query, "license": "cc0,pdm", "category": "photograph", "mature": "false",
+                   "size": "large", "page_size": 20})
+    d = _get_json(f"https://api.openverse.org/v1/images/?{q}", "Openverse") or {}
+    return [{"url": x["url"], "width": x.get("width") or 0, "height": x.get("height") or 0, "title": x.get("title") or "",
+             "creator": x.get("creator"), "license": x.get("license"), "source": x.get("foreign_landing_url"),
+             "bank": "Openverse"} for x in d.get("results", [])]
+
+
+def search_commons(query):
+    """Wikimedia Commons (geen sleutel nodig): alleen foto's die vrij zijn zonder naamsvermelding (CC0/publiek domein)."""
+    from urllib.parse import urlencode
+    q = urlencode({"action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 30,
+                   "gsrsearch": f"{query} filetype:bitmap", "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata",
+                   "iiurlwidth": 1400})
+    # Commons geeft vanaf gedeelde cloud-adressen vaak 429 (te veel verzoeken): langer wachten tussen pogingen
+    d = _get_json(f"https://commons.wikimedia.org/w/api.php?{q}", "Commons", tries=5, wait=5) or {}
+    out = []
+    pages = sorted(d.get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 0))
+    for p in pages:
+        ii = (p.get("imageinfo") or [{}])[0]
+        meta = ii.get("extmetadata", {})
+        lic = meta.get("LicenseShortName", {}).get("value", "")
+        if ii.get("mime") not in ("image/jpeg", "image/png", "image/webp"):
+            continue
+        if not re.search(r"^(cc0|public domain|pd|no restrictions)", lic.strip(), re.I):
+            continue
+        out.append({"url": ii.get("thumburl") or ii.get("url"), "width": ii.get("width", 0), "height": ii.get("height", 0),
+                    "title": re.sub(r"^File:|\.[a-z]+$", "", p.get("title", ""), flags=re.I),
+                    "creator": re.sub(r"<[^>]+>", "", meta.get("Artist", {}).get("value", ""))[:80], "license": lic,
+                    "source": ii.get("descriptionurl"), "bank": "Wikimedia Commons"})
+    return out
+
+
+def photo_candidates(query, folder, n=9):
+    """Rechtenvrije foto's (CC0 / publiek domein) uit Wikimedia Commons + Openverse -> folder/0.jpg.. + sheet.jpg."""
+    os.makedirs(folder, exist_ok=True)
+    banks = [search_commons(query), search_openverse(query)]
+    results, seen = [], set()
+    for i in range(max(len(x) for x in banks) if any(banks) else 0):  # om en om, zodat je uit beide banken kunt kiezen
+        for bank in banks:
+            if i < len(bank) and bank[i]["url"] not in seen:
+                seen.add(bank[i]["url"]); results.append(bank[i])
+    results = [x for x in results if x["width"] >= 900 and x["height"] >= 600 and 0.5 <= x["width"] / max(1, x["height"]) <= 2.2
+               and not NOT_PHOTO.search(x["title"] or "")]
     found = []
     for res in results:
         if len(found) >= n:
@@ -662,8 +711,7 @@ def photo_candidates(query, folder, n=6):
             fetch(res["url"], dest + ".tmp")
             run(["ffmpeg", "-y", "-v", "error", "-i", dest + ".tmp", "-vf", "scale='min(1200,iw)':-2", "-q:v", "3", dest])
             os.remove(dest + ".tmp")
-            found.append({"title": res.get("title"), "creator": res.get("creator"), "license": res.get("license"),
-                          "source": res.get("foreign_landing_url")})
+            found.append({k: res.get(k) for k in ("title", "creator", "license", "source", "bank")})
         except Exception:
             if os.path.exists(dest + ".tmp"):
                 os.remove(dest + ".tmp")

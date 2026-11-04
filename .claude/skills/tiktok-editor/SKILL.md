@@ -159,7 +159,10 @@ maar strakker uitgevoerd. Per video wisselen deze lagen elkaar af, nooit twee ke
 
 Overgangen zijn **hard** (achtergrond/cutaway schiet in één frame in en uit, geen overvloeier): voorkeur van de gebruiker.
 Effectdichtheid: **elke ~1,2 s iets nieuws** (bevestigd door de gebruiker bij dag 10).
-Fotobronnen: Openverse; ligt die eruit, gebruik eerdere kandidaten uit andere projecten of vraag de gebruiker om eigen beelden.
+Fotobronnen (alleen vrij te gebruiken zonder naamsvermelding: CC0 / publiek domein): **Wikimedia Commons** + **Openverse** (streng:
+alleen echte foto's, geen tekeningen/prenten/oude scans/AI, niets ongepasts, groot), om en om 9 kandidaten per zoekterm. Pixabay komt erbij
+zodra Wes `PIXABAY_KEY` heeft toegevoegd (de gewone sleutel op pixabay.com/api/docs/ bij Parameters → key; "full API access" is niet nodig).
+Leveren beide banken niets bruikbaars (Commons 429 / Openverse 500 komt vaak voor), bied dan een 3D-icoon als alternatief aan.
 
 Volgorde-ritme (herhalen): talking head + pop → scene/cutaway → talking head + emoji → image/chart → …
 Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen frames van die beats).
