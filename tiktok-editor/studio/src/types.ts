@@ -157,7 +157,7 @@ export type ChartBeat = {
   start: number;
   end: number;
   title?: string;
-  rows: { label: string; value: number }[];
+  rows: { label: string; value: number; unit?: string; text?: string }[]; // text = vrije waarde i.p.v. getal
   unit?: string;
   decimals?: number;
   highlight?: number[]; // indexen van rijen in accentkleur

@@ -223,17 +223,15 @@ export const ChartCard: React.FC<{ beat: ChartBeat; style: StylePreset }> = ({ b
         const w = beat.mode === "list" ? 0 : 0.25 + (0.75 * (r.value - min)) / Math.max(1e-6, max - min);
         return (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: 22, marginTop: i ? 16 : 0, opacity: q, transform: `translateX(${(1 - q) * -30}px)` }}>
-            <div style={{ ...fontCss("sans"), fontWeight: 700, fontSize: 36, width: 110, color: "rgba(255,255,255,0.7)", letterSpacing: "-0.01em" }}>{r.label}</div>
+            <div style={{ ...fontCss("sans"), fontWeight: 700, fontSize: 36, width: beat.mode === "list" ? undefined : 110, flex: beat.mode === "list" ? 1 : undefined, color: "rgba(255,255,255,0.7)", letterSpacing: "-0.01em" }}>{r.label}</div>
             {beat.mode !== "list" ? (
               <div style={{ flex: 1, height: 38, borderRadius: 10, background: "rgba(255,255,255,0.08)", overflow: "hidden" }}>
                 <div style={{ width: `${w * 100 * count}%`, height: "100%", borderRadius: 10, background: hot ? style.accent : "rgba(255,255,255,0.85)" }} />
               </div>
-            ) : (
-              <div style={{ flex: 1 }} />
-            )}
+            ) : null}
             <div style={{ ...fontCss("sans"), fontSize: 44, width: 230, textAlign: "right", color: hot ? style.accent : "#fff" }}>
-              {v.toFixed(dec).replace(".", ",")}
-              {beat.unit ? <span style={{ fontSize: 28, opacity: 0.7 }}> {beat.unit}</span> : null}
+              {r.text ?? v.toFixed(dec).replace(".", ",")}
+              {beat.unit && !r.text ? <span style={{ fontSize: 28, opacity: 0.7 }}> {r.unit ?? beat.unit}</span> : null}
             </div>
           </div>
         );

@@ -258,6 +258,68 @@ def cmd_prepare(a):
     os.remove(norm)
 
 
+# -------------------------------------------------------------------- speedup
+def cmd_speedup(a):
+    """Kookvideo's e.d.: korte pauzes eruit, lange stukken zonder praten (laten zien) versneld afspelen.
+    Werkt op een project dat met --keep-pauses is voorbereid. Origineel blijft als full.mp4."""
+    src = os.path.join(a.project, "full.mp4")
+    if not os.path.exists(src):
+        os.rename(os.path.join(a.project, "cut.mp4"), src)
+        shutil.copy(os.path.join(a.project, "words.json"), os.path.join(a.project, "words_full.json"))
+    words = json.load(open(os.path.join(a.project, "words_full.json")))
+    total = duration(src)
+    audio = load_audio(src)
+    speech = keep_ranges(words, audio, total)
+    snap = lambda t: round(round(t * FPS) / FPS, 4)
+    segs, prev = [], 0.0  # [bron_start, bron_eind, snelheid]
+    for s0, e0 in speech + [[total, total]]:
+        gap = s0 - prev
+        if gap > a.min_gap:
+            segs.append([snap(prev), snap(s0), a.factor])
+        if e0 > s0:
+            segs.append([snap(s0), snap(e0), 1.0])
+        prev = e0
+    segs = [x for x in segs if x[1] - x[0] > 0.05]
+    parts, labels = [], []
+    for i, (s0, e0, f) in enumerate(segs):
+        d = (e0 - s0) / f
+        fade = min(0.03, d / 4)
+        tempo, rest = [], f
+        while rest > 2.0:
+            tempo.append("atempo=2.0"); rest /= 2.0
+        if rest > 1.001:
+            tempo.append(f"atempo={rest:.4f}")
+        vol = f",volume={a.volume}" if f > 1 else ""
+        parts.append(f"[0:v]trim={s0}:{e0},setpts=(PTS-STARTPTS)/{f}[v{i}];")
+        parts.append(f"[0:a]atrim={s0}:{e0},asetpts=PTS-STARTPTS{(',' + ','.join(tempo)) if tempo else ''}{vol},"
+                     f"afade=t=in:d={fade:.3f},afade=t=out:st={max(0, d - fade):.3f}:d={fade:.3f}[a{i}];")
+        labels.append(f"[v{i}][a{i}]")
+    parts.append("".join(labels) + f"concat=n={len(segs)}:v=1:a=1[vc][a];[vc]fps={FPS}[v]")
+    script = os.path.join(a.project, "speed_filter.txt")
+    open(script, "w").write("\n".join(parts))
+    run(["ffmpeg", "-y", "-v", "error", "-i", src, "-filter_complex_script", script, "-map", "[v]", "-map", "[a]",
+         "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-c:a", "aac", "-b:a", "256k",
+         os.path.join(a.project, "cut.mp4")])
+    # woordtijden omrekenen naar de nieuwe tijdlijn
+    def mt(t):
+        off = 0.0
+        for s0, e0, f in segs:
+            if t < s0:
+                return off
+            if t <= e0:
+                return off + (t - s0) / f
+            off += (e0 - s0) / f
+        return off
+    nw = [{"w": w["w"], "s": round(mt(w["s"]), 3), "e": round(mt(w["e"]), 3)} for w in words]
+    nw = [w for w in nw if w["e"] - w["s"] >= 0.02]
+    json.dump(nw, open(os.path.join(a.project, "words.json"), "w"), ensure_ascii=False, indent=0)
+    json.dump({"segments": segs, "factor": a.factor}, open(os.path.join(a.project, "speedup.json"), "w"), indent=1)
+    new_len = sum((e0 - s0) / f for s0, e0, f in segs)
+    sped = [(round(mt(s0), 2), round(mt(e0), 2)) for s0, e0, f in segs if f > 1]
+    print(f"Origineel {total:.1f}s -> {new_len:.1f}s; {len(sped)} stukken {a.factor}x versneld op (nieuwe tijden): {sped}")
+    cmd_layout(argparse.Namespace(project=a.project))
+
+
 # --------------------------------------------------------------------- layout
 def cmd_layout(a):
     """Waar staat het gezicht? -> layout.json (4x per seconde), voor automatische plaatsing van ondertitels."""
@@ -730,6 +792,11 @@ def main():
     c.add_argument("--keep-pauses", action="store_true", help="niets wegknippen (poses, muziekmomenten)")
     c.add_argument("--model", default="medium", help="Whisper-model: medium (standaard, nauwkeurig) of small (sneller)")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
+    c = sub.add_parser("speedup", help="pauzes eruit + lange stille stukken versneld (kookvideo's)")
+    c.add_argument("project"); c.add_argument("--factor", type=float, default=3.0)
+    c.add_argument("--min-gap", type=float, default=1.5, help="stiltes langer dan dit worden versneld i.p.v. geknipt")
+    c.add_argument("--volume", type=float, default=0.35, help="volume van versnelde stukken")
+    c.set_defaults(fn=cmd_speedup)
     c = sub.add_parser("layout", help="gezicht volgen voor automatische plaatsing"); c.add_argument("project"); c.set_defaults(fn=cmd_layout)
     c = sub.add_parser("beats", help="beat van de muziek vinden"); c.add_argument("project"); c.set_defaults(fn=cmd_beats)
     c = sub.add_parser("combine", help="takes achter elkaar tot één project")

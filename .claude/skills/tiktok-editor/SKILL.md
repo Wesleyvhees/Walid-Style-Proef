@@ -42,6 +42,8 @@ De vragenlijst (AskUserQuestion) zelf mag zonder toestemming. Na akkoord alleen 
    blijven (`--keep-pauses`). Daarna `tt.py beats <project>` en `"beatZooms": {"every": 2, "to": 1.04}` in storyboard.json voor zooms op de maat;
    leg ook pops/stempels op beat-tijden uit `beats.json`.
    **Lengte-check**: is er na het knippen minder dan 60% over, stop en kijk waarom vóór je verder gaat.
+   **Kookvideo / laten zien** (veel stukken zonder praten): `prepare --keep-pauses`, daarna `tt.py speedup <project>` (korte pauzes eruit,
+   stiltes > 1,5 s 3× versneld met zacht geluid, woordtijden mee omgerekend). Controleer daarna door `cut.mp4` opnieuw te transcriberen en te vergelijken.
    **Meerdere takes** (bv. video 1–8 = één zin per take): `prepare` per take, daarna `tt.py combine <project> <take1> … <takeN>`.
 4. **Keuzes voorleggen** (zie hieronder) en daarna **storyboard schrijven**: lees `transcript.txt` + `words.json`, bepaal per zin wat
    de kijker moet voelen/onthouden en schrijf `<project>/storyboard.json` (regels hieronder).
