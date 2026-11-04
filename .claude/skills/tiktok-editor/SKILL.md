@@ -8,6 +8,12 @@ description: Bewerkt ruwe TikTok/Reels-video's automatisch op basis van wat er g
 Systeem in `tiktok-editor/` (Python-pipeline `tt.py` + Remotion-renderer in `studio/`).
 Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 
+## Eerst toestemming (altijd)
+
+Vóór elke stap die iets uitvoert (prepare, assets, person, stills, storyboard, renderen, opnieuw renderen, bestanden of
+templates aanpassen): toon een kort plan met de stappen, verwachte duur en of er gerenderd wordt, en wacht op Wes' "ja".
+De vragenlijst (AskUserQuestion) zelf mag zonder toestemming. Na akkoord alleen het afgesprokene doen.
+
 ## Leren (altijd, bij elke video)
 
 - **Vóór het bewerken** lees je `tiktok-editor/kennis/lessen.md` (feedback van Wes, nieuwste eerst) en
