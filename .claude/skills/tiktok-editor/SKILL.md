@@ -35,7 +35,15 @@ De vragenlijst (AskUserQuestion) zelf mag zonder toestemming. Na akkoord alleen 
    `curl -L -o ruw.mp4 "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"`
 3. **Voorbereiden**: `python3 tt.py prepare ruw.mp4 <project>` (niet spiegelen, tenzij de gebruiker erom vraagt)
    Haalt mislukte takes
-   (herhaalde zinnen, laatste take blijft) en elke pauze > 0,08 s eruit (op basis van het geluid zelf), maakt `cut.mp4`, `words.json`, `transcript.txt`.
+   (herhaalde zinnen, laatste take blijft) en elke pauze > 0,08 s eruit (op basis van het geluid zelf), maakt `cut.mp4`, `words.json`, `transcript.txt`, `cuts.json`.
+   Gebeurt automatisch in `prepare`:
+   - **Schone stem**: gerommel en ruis eruit (±8 dB), scherpe s-klanken zachter, iets meer helderheid, milde compressor (`VOICE_AF` in tt.py;
+     uit met `--no-voice`). Knippen gebeurt op het onbewerkte geluid, transcriberen op de schone stem. Eindvolume -14 LUFS zet `render`.
+   - **Zachte knippen**: het geluid loopt bij elke knip 24 ms in elkaar over (geen klik, geen gaatje); beeld knipt op exacte frames.
+     `render` zoomt na een knip om en om naar 108% rond het gezicht (`cuts.json`), zodat een jump cut voelt als een camerawissel.
+     Niet sneller dan elke 0,8 s; niet bij virtuele camera's. Uit: `"jumpZoom": false`, anders: `"jumpZoom": {"to": 1.05, "minHold": 1.2}`.
+   - **Woordtijden strak op de stem**: begin/eind van een woord schuift naar waar het geluid echt begint/stopt en grenzen tussen woorden naar
+     het zachtste punt (niet bij muziek). Achteraf opnieuw: `tt.py retime <project>`. Ondertitels: max **3 woorden** per keer (`captions.maxWords`).
    Vereist: `pip install "opencv-python-headless==4.10.0.84"` (OpenCV 5 heeft geen gezichtsdetectie meer).
    Controleer `words.json` op samengeplakte woorden en spraakfouten; verbeter met `tt.py fixwords <project> "juiste zin"`.
    **Muziek eronder** (prepare meldt "Muziek gedetecteerd"): controleer de lengte na het knippen. Bij poses/body checks: vraag of pauzes
@@ -122,7 +130,7 @@ Rol: compromisloze video-editor en retentiespecialist voor **Wes.Built**. Doel: 
 4. **Context-aware B-roll**: wat gezegd wordt direct koppelen aan een visueel element dat 1–2 s in beeld schiet
    en weer wegklapt (`image`, `emoji`, app-scherm zoals MacroFactor als eigen screenshot in de projectmap, grafiek, gym/wandel-beeld).
 5. **Audio FX**: `whoosh` bij bewegingen en tekstwisselingen, subtiele `pop` bij keywords, `boom` op de punchline,
-   `ding` bij een afronding; harde cuts zonder ruis (korte fades zitten in `prepare`).
+   `ding` bij een afronding; harde cuts zonder klik (crossfades van 24 ms zitten in `prepare`).
 
 **Oplevering bij een tekst of video-idee** (zonder video): geen voorleesscript, maar een
 **Tijdlijn & Montage-Instructieblad** als tabel met kolommen
@@ -147,7 +155,7 @@ maar strakker uitgevoerd. Per video wisselen deze lagen elkaar af, nooit twee ke
 | `persona` | Jij stelt de vraag van de kijker ("maar wat dan?", "ja maar…") | Automatische close-up + scheef + label "jij:"; max 1–2× per video |
 | `image` boven het hoofd | Formaat zonder achtergrondwissels: kaart (x 540, y ±230, w ±440) die elke 1–3 s wisselt | Nooit over ogen/mond |
 | `emoji` / `pop` | Emotie en kernwoorden tussen de grote wissels door | Zie effectregels |
-| Ondertitels | Altijd, 1–4 woorden per keer | Groter dan bij Jesse, kernwoorden geel (`captions.highlight`), altijd leesbaar |
+| Ondertitels | Altijd, 1–3 woorden per keer | Groter dan bij Jesse, kernwoorden geel (`captions.highlight`), altijd leesbaar |
 
 Overgangen zijn **hard** (achtergrond/cutaway schiet in één frame in en uit, geen overvloeier): voorkeur van de gebruiker.
 Effectdichtheid: **elke ~1,2 s iets nieuws** (bevestigd door de gebruiker bij dag 10).
@@ -212,6 +220,8 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 | "rustiger / chiquer" | `style: "editorial"`, minder `pop`/`emoji` |
 | "grotere ondertitels" | `captions.size` +20–30 |
 | "strakker knippen" | `prepare` opnieuw met `--gap 0.04` (losser: `--gap 0.2`) |
+| "minder inzoomen bij de knippen" | `"jumpZoom": {"to": 1.05}`; helemaal uit: `"jumpZoom": false` |
+| "langere ondertitels" | `captions.maxWords` 4 |
 | "minder effecten" | elke tweede emoji/pop eruit, geen `sfx` behalve `boom`/`ding` |
 | "andere hook" | eerste `words`-beat herschrijven |
 | "geen geluidjes" | alle `sfx` weg |

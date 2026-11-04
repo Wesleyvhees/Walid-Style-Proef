@@ -6,6 +6,7 @@
   (Claude schrijft <projectmap>/storyboard.json, zie README.md)
   python3 tt.py combine    <project> <take1> <take2> ...  -> meerdere takes tot één video
   python3 tt.py fixwords   <project> "juiste tekst"      -> spraakherkenningsfouten verbeteren
+  python3 tt.py retime     <project>         -> woordtijden opnieuw strak op de stem leggen (gebeurt al in prepare)
   python3 tt.py assets     <projectmap>      -> 3D-iconen + rechtenvrije foto's uit storyboard.json ophalen
   python3 tt.py person     <projectmap>      -> person.webm (optioneel: cutout voor tekst-achter-persoon)
   python3 tt.py storyboard <projectmap>      -> storyboard.html (preview per beat, ter goedkeuring)
@@ -58,6 +59,70 @@ def transcribe(audio, lang, model="medium", vad=True):
         if words:
             out.append({"text": s.text.strip(), "s": words[0]["s"], "e": words[-1]["e"], "words": words})
     return out
+
+
+# Stem opschonen (vóór knippen en transcriberen): gerommel eruit, ruis eruit (volgt de ruisvloer),
+# scherpe s-klanken zachter, iets meer helderheid, en een milde compressor voor een gelijkmatige stem.
+# Het eindvolume (-14 LUFS) zet render.mjs na het mixen met de geluidseffecten.
+# Afgesteld op Wes' opnames: ruis ~8 dB lager zonder dat de stem "onder water" klinkt (anlmdn s=0.01).
+VOICE_AF = ("highpass=f=80,anlmdn=s=0.01,"
+            "deesser=i=0.4:m=0.5:f=0.5:s=o,equalizer=f=3200:t=q:w=1.2:g=2,"
+            "acompressor=threshold=-20dB:ratio=2:attack=8:release=150")
+
+
+def refine_words(words, audio, hop=0.01):
+    """Woordtijden van Whisper zitten er soms ~0,1 s naast. Leg ze strak op de stem:
+    (1) begin/eind dat in stilte valt schuift naar waar het geluid echt begint/stopt;
+    (2) een grens tussen twee aansluitende woorden schuift naar het zachtste punt ertussen (±60 ms)."""
+    import numpy as np
+    if not words:
+        return words
+    mask, hop = speech_mask(audio, hop=hop)
+    n = int(16000 * hop)
+    fr = audio[: len(audio) // n * n].reshape(-1, n)
+    db = 20 * np.log10(np.sqrt((fr ** 2).mean(axis=1)) + 1e-9)
+    db = np.convolve(db, np.ones(3) / 3, "same")
+    N = len(mask)
+    out = [dict(w) for w in words]
+    for i, w in enumerate(out):
+        a, b = int(w["s"] / hop), min(N, int(w["e"] / hop) + 1)
+        if b <= a:
+            continue
+        idx = np.nonzero(mask[a:b])[0]
+        if not len(idx):
+            continue
+        ns, ne = a + idx[0], a + idx[-1] + 1
+        lo = int(out[i - 1]["e"] / hop) if i else 0
+        k = ns  # klinkt het woord al iets eerder? max 60 ms terug, niet in het vorige woord
+        while k - 1 > lo and mask[k - 1] and ns - k < 6:
+            k -= 1
+        if (ne - k) * hop >= 0.06:
+            w["s"], w["e"] = round(k * hop, 3), round(ne * hop, 3)
+    for i in range(len(out) - 1):  # aansluitende woorden: grens op het zachtste punt
+        x, y = out[i], out[i + 1]
+        if y["s"] - x["e"] > 0.05:
+            continue
+        t = (x["e"] + y["s"]) / 2
+        a, b = max(int(x["s"] / hop) + 3, int((t - 0.06) / hop)), min(int(y["e"] / hop) - 3, int((t + 0.06) / hop) + 1)
+        if b - a < 2 or b > N:
+            continue
+        cut = round((a + int(np.argmin(db[a:b]))) * hop, 3)
+        if cut - x["s"] >= 0.05 and y["e"] - cut >= 0.05:
+            x["e"], y["s"] = cut, cut
+    return out
+
+
+def cmd_retime(a):
+    path = os.path.join(a.project, "words.json")
+    words = json.load(open(path))
+    audio = load_audio(os.path.join(a.project, "cut.mp4"))
+    if has_music(audio):
+        print("Muziek gedetecteerd: woordtijden niet aangepast (geluidsniveau onbetrouwbaar)")
+        return
+    new = refine_words(words, audio)
+    moved = [abs(x["s"] - y["s"]) + abs(x["e"] - y["e"]) for x, y in zip(words, new)]
+    json.dump(new, open(path, "w"), ensure_ascii=False, indent=0)
+    print(f"{sum(m > 0.02 for m in moved)} van {len(new)} woorden bijgesteld (gem. {1000 * sum(moved) / max(1, len(moved)):.0f} ms)")
 
 
 def norm_text(t):
@@ -162,6 +227,34 @@ def keep_ranges(words, audio, total, lead=0.03, tail=0.05, max_gap=0.08, word_pa
     return [r for r in out if r[1] > r[0]]
 
 
+def cut_filter(ranges, total, xf=0.024):
+    """ffmpeg-filter: stukken achter elkaar. Het geluid loopt bij elke knip 24 ms in elkaar over (crossfade)
+    i.p.v. uit- en weer infaden: geen klik en geen gaatje. Beeld knipt hard en blijft synchroon."""
+    h = xf / 2
+    n = len(ranges)
+    parts = []
+    for i, (s, e) in enumerate(ranges):
+        # beeld op exacte framenummers knippen (anders valt er per knip soms 1 frame weg en loopt het geluid uit sync)
+        sf, ef = round(s * FPS), round(e * FPS)
+        s, e = sf / FPS, ef / FPS
+        parts.append(f"[0:v]trim=start_frame={sf}:end_frame={ef},setpts=PTS-STARTPTS[v{i}];")
+        a0 = max(0.0, s - h) if i > 0 else s
+        a1 = min(total, e + h) if i < n - 1 else e
+        f = min(0.01, (e - s) / 4)
+        edge = (f"afade=t=in:d={f}," if i == 0 else "") + (f"afade=t=out:st={a1 - a0 - f:.4f}:d={f}," if i == n - 1 else "")
+        parts.append(f"[0:a]atrim={a0:.6f}:{a1:.6f},asetpts=PTS-STARTPTS,{edge}anull[a{i}];")
+    parts.append("".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[v];")
+    prev = "a0"
+    for i in range(1, n):
+        nxt = "a" if i == n - 1 else f"x{i}"
+        parts.append(f"[{prev}][a{i}]acrossfade=d={xf}:c1=qsin:c2=qsin[{nxt}];")
+        prev = nxt
+    if n == 1:
+        parts.append("[a0]anull[a];")
+    parts[-1] = parts[-1].rstrip(";")
+    return "\n".join(parts)
+
+
 def remap_time(t, ranges):
     """Tijd in het origineel -> tijd in cut.mp4 (in een geknipt stuk: naar de dichtstbijzijnde rand)."""
     off = 0.0
@@ -189,12 +282,15 @@ def cmd_prepare(a):
     vf = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},setsar=1"
     if a.mirror:
         vf = "hflip," + vf
+    af = [] if a.no_voice else ["-af", VOICE_AF]
     run(["ffmpeg", "-y", "-v", "error", "-i", a.input, "-vf", vf, "-c:v", "libx264", "-crf", "14", "-preset", "fast",
-         "-c:a", "aac", "-b:a", "256k", "-ar", "48000", norm])
+         *af, "-c:a", "aac", "-b:a", "256k", "-ar", "48000", norm])
     total = duration(norm)
     print("Transcriberen...")
     audio = load_audio(norm)
-    music = has_music(audio)
+    # knippen op het onbewerkte geluid (de afstelling van het knippen is daarop gemaakt); transcriberen op de schone stem
+    cut_audio = load_audio(a.input) if not a.no_voice else audio
+    music = has_music(cut_audio)
     if music:
         print("Muziek gedetecteerd: knippen op woorden i.p.v. geluidsniveau, spraakherkenning zonder VAD")
     segs = transcribe(audio, a.lang, model=a.model, vad=not music)
@@ -213,26 +309,26 @@ def cmd_prepare(a):
                 ranges.append([s0, e0])
         ranges = [[round(round(x * FPS) / FPS, 4), round(round(y * FPS) / FPS, 4)] for x, y in ranges]
     else:
-        ranges = keep_ranges(words, audio, total, max_gap=a.gap)
+        ranges = keep_ranges(words, cut_audio, total, max_gap=a.gap)
     cut_len = sum(b - a_ for a_, b in ranges)
     print(f"Origineel {total:.1f}s -> {cut_len:.1f}s; {len(dropped)} mislukte take(s) en {len(ranges)} stukken")
 
-    parts, labels = [], []
-    for i, (s, e) in enumerate(ranges):
-        d = e - s
-        f = min(0.03, d / 4)
-        parts.append(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}];")
-        parts.append(f"[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d={f},afade=t=out:st={d - f:.3f}:d={f}[a{i}];")
-        labels.append(f"[v{i}][a{i}]")
-    parts.append("".join(labels) + f"concat=n={len(ranges)}:v=1:a=1[v][a]")
     script = os.path.join(a.project, "cut_filter.txt")
-    open(script, "w").write("\n".join(parts))
+    open(script, "w").write(cut_filter(ranges, total))
     run(["ffmpeg", "-y", "-v", "error", "-i", norm, "-filter_complex_script", script, "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-r", str(FPS), "-c:a", "aac", "-b:a", "256k",
          os.path.join(a.project, "cut.mp4")])
 
     cw = remap(words, ranges)
+    if not music:  # woordtijden strak op de stem (bij muziek is het geluidsniveau onbetrouwbaar)
+        cw = refine_words(cw, load_audio(os.path.join(a.project, "cut.mp4")))
     json.dump(cw, open(os.path.join(a.project, "words.json"), "w"), ensure_ascii=False, indent=0)
+    # knipmomenten op de nieuwe tijdlijn: render.mjs zoomt om en om iets in zodat een knip niet "springt"
+    cuts, off = [], 0.0
+    for s0, e0 in ranges[:-1]:
+        off += e0 - s0
+        cuts.append(round(off, 3))
+    json.dump({"cuts": cuts}, open(os.path.join(a.project, "cuts.json"), "w"))
     json.dump({"source": os.path.abspath(a.input), "ranges": ranges,
                "dropped": [{"text": d["text"], "s": d["s"], "e": d["e"]} for d in dropped]},
               open(os.path.join(a.project, "takes.json"), "w"), ensure_ascii=False, indent=1)
@@ -283,7 +379,7 @@ def cmd_speedup(a):
     parts, labels = [], []
     for i, (s0, e0, f) in enumerate(segs):
         d = (e0 - s0) / f
-        fade = min(0.03, d / 4)
+        fade = min(0.012, d / 4)
         tempo, rest = [], f
         while rest > 2.0:
             tempo.append("atempo=2.0"); rest /= 2.0
@@ -314,6 +410,9 @@ def cmd_speedup(a):
     nw = [w for w in nw if w["e"] - w["s"] >= 0.02]
     json.dump(nw, open(os.path.join(a.project, "words.json"), "w"), ensure_ascii=False, indent=0)
     json.dump({"segments": segs, "factor": a.factor}, open(os.path.join(a.project, "speedup.json"), "w"), indent=1)
+    cuts = [round(mt(segs[i + 1][0]), 3) for i in range(len(segs) - 1)
+            if segs[i + 1][0] - segs[i][1] > 0.01 and segs[i][2] == 1 and segs[i + 1][2] == 1]
+    json.dump({"cuts": cuts}, open(os.path.join(a.project, "cuts.json"), "w"))
     new_len = sum((e0 - s0) / f for s0, e0, f in segs)
     sped = [(round(mt(s0), 2), round(mt(e0), 2)) for s0, e0, f in segs if f > 1]
     print(f"Origineel {total:.1f}s -> {new_len:.1f}s; {len(sped)} stukken {a.factor}x versneld op (nieuwe tijden): {sped}")
@@ -388,9 +487,14 @@ def cmd_beats(a):
 def cmd_combine(a):
     """Meerdere voorbereide takes (projectmappen met cut.mp4 + words.json) achter elkaar tot één project."""
     os.makedirs(a.project, exist_ok=True)
-    words, offset, lst = [], 0.0, os.path.join(a.project, "concat.txt")
+    words, offset, lst, cuts = [], 0.0, os.path.join(a.project, "concat.txt"), []
     with open(lst, "w") as fh:
         for src in a.takes:
+            if offset:
+                cuts.append(round(offset, 3))
+            cf = os.path.join(src, "cuts.json")
+            if os.path.exists(cf):
+                cuts += [round(c + offset, 3) for c in json.load(open(cf))["cuts"]]
             cut = os.path.abspath(os.path.join(src, "cut.mp4"))
             fh.write(f"file '{cut}'\n")
             for w in json.load(open(os.path.join(src, "words.json"))):
@@ -400,6 +504,7 @@ def cmd_combine(a):
          "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-r", str(FPS), "-c:a", "aac", "-b:a", "256k",
          os.path.join(a.project, "cut.mp4")])
     json.dump(words, open(os.path.join(a.project, "words.json"), "w"), ensure_ascii=False, indent=0)
+    json.dump({"cuts": cuts}, open(os.path.join(a.project, "cuts.json"), "w"))
     cmd_layout(argparse.Namespace(project=a.project))
     print(f"Klaar: {len(a.takes)} takes, {offset:.1f}s")
 
@@ -818,6 +923,7 @@ def main():
     c.add_argument("--gap", type=float, default=0.08, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
     c.add_argument("--keep-pauses", action="store_true", help="niets wegknippen (poses, muziekmomenten)")
     c.add_argument("--model", default="medium", help="Whisper-model: medium (standaard, nauwkeurig) of small (sneller)")
+    c.add_argument("--no-voice", action="store_true", help="stem niet opschonen (ruis/s-klanken/compressor)")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
     c = sub.add_parser("speedup", help="pauzes eruit + lange stille stukken versneld (kookvideo's)")
     c.add_argument("project"); c.add_argument("--factor", type=float, default=3.0)
@@ -830,6 +936,7 @@ def main():
     c.add_argument("project"); c.add_argument("takes", nargs="+"); c.set_defaults(fn=cmd_combine)
     c = sub.add_parser("fixwords", help="tekst van words.json verbeteren")
     c.add_argument("project"); c.add_argument("text"); c.set_defaults(fn=cmd_fixwords)
+    c = sub.add_parser("retime", help="woordtijden strak op de stem leggen"); c.add_argument("project"); c.set_defaults(fn=cmd_retime)
     c = sub.add_parser("assets"); c.add_argument("project"); c.set_defaults(fn=cmd_assets)
     c = sub.add_parser("person"); c.add_argument("project")
     c.add_argument("--model", default="isnet-general-use", help="isnet-general-use (standaard), birefnet-general-lite (beste, traag), u2net_human_seg (snel)"); c.set_defaults(fn=cmd_person)

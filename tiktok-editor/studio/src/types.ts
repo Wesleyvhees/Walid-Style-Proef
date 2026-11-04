@@ -212,6 +212,7 @@ export type Storyboard = {
     size?: number;
     y?: number | "auto"; // "auto" = net onder de kin (vereist tt.py layout)
     maxChars?: number;
+    maxWords?: number; // max woorden per ondertitel-regel (standaard 3)
     style?: string;
     highlight?: string[]; // kernwoorden in accentkleur
   };
@@ -223,6 +224,9 @@ export type Storyboard = {
   cams?: { start: number; end: number; cam: string; note?: string }[];
   camPresets?: Record<string, { scale: number; focus?: "face" | "chest" | "full" | "belly" }>;
   camShots?: { start: number; end: number; scale: number; tx: number; ty: number }[];
+  // Om en om inzoomen na een knip (uit cuts.json, berekend in render.mjs). false = uit.
+  jumpZoom?: { to?: number; minHold?: number } | false;
+  cutLevels?: { start: number; end: number; scale: number; ox: number; oy: number }[];
 };
 
 export type StylePreset = {

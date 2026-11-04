@@ -41,6 +41,7 @@ if (sb.template) {
   sb.style = sb.style ?? T.style;
   if (T.style && sb.style !== T.style) console.warn(`Let op: template ${sb.template} hoort stijl ${T.style}, storyboard zegt ${sb.style}`);
   sb.captions = { ...(T.captions ?? {}), ...(sb.captions ?? {}) };
+  if (T.jumpZoom !== undefined && sb.jumpZoom === undefined) sb.jumpZoom = T.jumpZoom;
   if (T.sfxOpZoom === false) {
     // geen geluidseffect op een moment met een (punch-)zoom; overige geluiden blijven
     const zoomAt = (sb.zooms ?? []).filter((z) => (z.ease ?? "in") === "punch").map((z) => z.start);
@@ -120,6 +121,32 @@ if (bz && fs.existsSync(beatsFile)) {
     .filter((_, i) => i % (bz.every ?? 2) === (bz.offset ?? 0))
     .filter((t) => t > (bz.from ?? 0) && t < (bz.until ?? 1e9) && !taken.some((z) => Math.abs(z - t) < 0.45))
     .forEach((t) => sb.zooms.push({ start: t, end: t + (bz.hold ?? 0.18), to: bz.to ?? 1.04, ease: "punch" }));
+}
+
+// Knippen zonder "springen": na een knip om en om 100% / 108% in beeld (zoals een cameraman die wisselt).
+// Uit met "jumpZoom": false; niet bij virtuele camera's (die wisselen zelf al).
+const cutsFile = path.join(project, "cuts.json");
+const jz = sb.jumpZoom === undefined ? {} : sb.jumpZoom;
+if (jz && !sb.cams?.length && fs.existsSync(cutsFile)) {
+  const to = jz.to ?? 1.08;
+  const minHold = jz.minHold ?? 0.8; // niet sneller wisselen dan dit
+  const cuts = JSON.parse(fs.readFileSync(cutsFile, "utf8")).cuts.filter((c) => c > 0.2 && c < sb.duration - 0.3).sort((a, b) => a - b);
+  const faces = sb.layout?.faces ?? [];
+  const lfps = sb.layout?.fps ?? 4;
+  const med = (arr) => { const a = [...arr].sort((x, y) => x - y); return a.length ? a[Math.floor(a.length / 2)] : undefined; };
+  sb.cutLevels = [];
+  let segStart = 0, zoomed = false;
+  for (const c of [...cuts, sb.duration]) {
+    if (c < sb.duration && c - segStart < minHold) continue;
+    if (zoomed) {
+      // inzoomen rond het gezicht, zodat dat op dezelfde plek blijft
+      const fs_ = faces.slice(Math.floor(segStart * lfps), Math.ceil(c * lfps) + 1).filter(Boolean);
+      sb.cutLevels.push({ start: segStart, end: c, scale: to, ox: Math.round(med(fs_.map((f) => f[0] + f[2] / 2)) ?? 540), oy: Math.round(med(fs_.map((f) => f[1] + f[3] / 2)) ?? 806) });
+    }
+    zoomed = !zoomed;
+    segStart = c;
+  }
+  console.log(`Knippen: ${cuts.length} knippen, ${sb.cutLevels.length} stukken op ${Math.round(to * 100)}%`);
 }
 
 // Projectbestanden naar public/p (Remotion serveert alleen public/).

@@ -14,7 +14,7 @@ const clean = (w: string) =>
     .replace(/[,.;:…"“”„*=×–—]+/g, "")
     .trim();
 
-export const chunkWords = (words: Word[], maxChars: number): Chunk[] => {
+export const chunkWords = (words: Word[], maxChars: number, maxWords = 3): Chunk[] => {
   const out: Chunk[] = [];
   let cur: Word[] = [];
   const flush = () => {
@@ -26,7 +26,7 @@ export const chunkWords = (words: Word[], maxChars: number): Chunk[] => {
     if (!text) return;
     const len = cur.map((c) => clean(c.w)).join(" ").length;
     const prev = cur[cur.length - 1];
-    if (cur.length && (len + 1 + text.length > maxChars || (prev && w.s - prev.e > 0.45))) flush();
+    if (cur.length && (cur.length >= maxWords || len + 1 + text.length > maxChars || (prev && w.s - prev.e > 0.45))) flush();
     cur.push({ ...w, w: text });
     if (/[.!?,;:…]$/.test(w.w.trim())) flush(); // breek op de oorspronkelijke leestekens
     if (i === words.length - 1) flush();
@@ -44,17 +44,18 @@ export const Captions: React.FC<{
   size?: number;
   y?: number | "auto";
   maxChars?: number;
+  maxWords?: number;
   highlight?: string[];
   layout?: { fps: number; faces: ([number, number, number, number] | null)[] };
-}> = ({ words, style, size, y, maxChars, highlight, layout }) => {
+}> = ({ words, style, size, y, maxChars, maxWords, highlight, layout }) => {
   const hl = React.useMemo(() => new Set((highlight ?? []).map(norm)), [highlight]);
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
   const fs = size ?? style.captionSize;
   const chunks = React.useMemo(
-    () => chunkWords(words, maxChars ?? (style.captionUpper ? 14 : 20)),
-    [words, maxChars, style.captionUpper],
+    () => chunkWords(words, maxChars ?? (style.captionUpper ? 14 : 20), maxWords ?? 3),
+    [words, maxChars, maxWords, style.captionUpper],
   );
   const chunk = chunks.find((c) => t >= c.s - 0.05 && t < c.e);
   if (!chunk) return null;

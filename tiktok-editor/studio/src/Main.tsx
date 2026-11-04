@@ -76,13 +76,14 @@ export const Main: React.FC<Storyboard> = (sb) => {
   const solid = behind.some((b) => b.background === "solid");
   const z = zoomAt(sb.zooms ?? [], t);
   const pers = personaTransform(sb.beats, t);
+  const lv = (sb.cutLevels ?? []).find((c) => t >= c.start && t < c.end);
   const videoStyle: React.CSSProperties = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
     filter: s.filter + (pers?.filter ?? ""),
-    transform: `scale(${z * (pers?.scale ?? 1)}) rotate(${pers?.rotate ?? 0}deg)`,
-    transformOrigin: "50% 42%",
+    transform: `scale(${z * (pers?.scale ?? 1) * (lv?.scale ?? 1)}) rotate(${pers?.rotate ?? 0}deg)`,
+    transformOrigin: lv ? `${lv.ox}px ${lv.oy}px` : "50% 42%",
   };
   const cap = sb.captions ?? {};
   const capStyle: StylePreset = cap.style ? { ...s, ...(PRESETS[cap.style] ?? {}) } : s;
@@ -138,7 +139,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
       })}
       {now.map((b, i) => (b.type === "hook" ? <HookTitle key={`h${i}`} beat={b} style={s} /> : null))}
       {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart" || b.type === "volgstempel") ? (
-        <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} highlight={cap.highlight} layout={sb.layout} />
+        <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} />
       ) : null}
       {sb.beats
         .flatMap((b) => (b.sfx ? (Array.isArray(b.sfx) ? b.sfx : [b.sfx]).map((fx) => ({ fx, start: b.start })) : []))

@@ -5,7 +5,7 @@ op je woorden: teksten en 3D-iconen die oppoppen, passende foto's, ondertitels m
 kernwoorden, zooms en geluidseffecten. Eerst een storyboard, daarna renderen, aanpassen met één zin.
 
 ```
-ruw.mp4 ──prepare──▶ cut.mp4 + words.json ──(Claude)──▶ storyboard.json
+ruw.mp4 ──prepare (schone stem, zachte knippen, strakke woordtijden)──▶ cut.mp4 + words.json + cuts.json ──(Claude)──▶ storyboard.json
         ──assets──▶ iconen/foto's ──storyboard──▶ storyboard.html (akkoord?)
         ──render──▶ final.mp4
 ```
