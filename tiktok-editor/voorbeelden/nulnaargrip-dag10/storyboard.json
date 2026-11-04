@@ -22,8 +22,8 @@
    "sub": "Dag 10",
    "size": 100,
    "y": 215,
-   "sfx": "whoosh",
-   "note": "Serietitel + dag, wit"
+   "note": "Serietitel + dag, wit",
+   "sfx": "whoosh"
   },
   {
    "type": "pop",
@@ -32,9 +32,9 @@
    "end": 4.1,
    "text": "Motivatie",
    "size": 150,
-   "sfx": "whoosh",
    "note": "Kernwoord slaat neer",
-   "y": 430
+   "y": 430,
+   "sfx": "whoosh"
   },
   {
    "type": "pop",
@@ -43,9 +43,9 @@
    "end": 5.83,
    "text": "Strong",
    "size": 200,
-   "sfx": "whoosh",
    "note": "Kernwoord",
-   "y": 430
+   "y": 430,
+   "sfx": "whoosh"
   },
   {
    "type": "pop",
@@ -54,9 +54,9 @@
    "end": 6.85,
    "text": "Hate",
    "size": 200,
-   "sfx": "whoosh",
    "note": "Tegenstelling met 'love'",
-   "y": 430
+   "y": 430,
+   "sfx": "whoosh"
   },
   {
    "type": "pop",
@@ -65,12 +65,12 @@
    "end": 7.8,
    "text": "Unstoppable",
    "size": 150,
+   "note": "Punchline: riser + boem",
+   "y": 430,
    "sfx": [
     "riser",
     "boom"
-   ],
-   "note": "Punchline: riser + boem",
-   "y": 430
+   ]
   },
   {
    "type": "pop",
@@ -79,9 +79,9 @@
    "end": 10.0,
    "text": "Niet afleiden",
    "size": 130,
-   "sfx": "whoosh",
    "note": "De les",
-   "y": 430
+   "y": 430,
+   "sfx": "whoosh"
   },
   {
    "type": "pop",
@@ -91,9 +91,9 @@
    "text": "Eigen pad",
    "size": 170,
    "sub": "dag 10",
-   "sfx": "whoosh",
    "note": "Afsluiter met dag-label",
-   "y": 430
+   "y": 430,
+   "sfx": "whoosh"
   }
  ],
  "zooms": [

@@ -41,6 +41,15 @@ if (sb.template) {
   sb.style = sb.style ?? T.style;
   if (T.style && sb.style !== T.style) console.warn(`Let op: template ${sb.template} hoort stijl ${T.style}, storyboard zegt ${sb.style}`);
   sb.captions = { ...(T.captions ?? {}), ...(sb.captions ?? {}) };
+  if (T.sfxOpZoom === false) {
+    // geen geluidseffect op een moment met een (punch-)zoom; overige geluiden blijven
+    const zoomAt = (sb.zooms ?? []).filter((z) => (z.ease ?? "in") === "punch").map((z) => z.start);
+    let n = 0;
+    sb.beats.forEach((b) => {
+      if (b.sfx && zoomAt.some((z) => Math.abs(z - b.start) < 0.15)) { delete b.sfx; n++; }
+    });
+    if (n) console.log(`Template ${sb.template}: ${n} geluid(en) op een zoom weggelaten`);
+  }
   if (T.toegestaan) {
     const weg = sb.beats.filter((b) => !T.toegestaan.includes(b.type) || (b.type === "pop" && T.popLooks && !T.popLooks.includes(b.look ?? "sticker")));
     weg.forEach((b) => console.warn(`Template ${sb.template}: ${b.type}${b.look ? "/" + b.look : ""} op ${b.start}s past niet bij deze serie, weggelaten`));
