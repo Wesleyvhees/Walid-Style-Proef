@@ -67,6 +67,8 @@ Vraag bij een nieuwe video als eerste keuze bij welke serie hij hoort (of leid h
 | `blauwdruk75` | **De 75 kilo blauwdruk** (tips om geleidelijk af te vallen) | Layout van de cardio-video (goedgekeurd), plus per tip een `pop` look `label` "Tip 1", "Tip 2" … bij het begin van elke tip | — |
 | `los` | Losse video (bv. "Mijn shape na de vakantie") | Vrije keuze binnen de vaste indeling | — |
 
+- **Template aanpassen ≠ video opnieuw maken**: past Wes iets aan in een template, werk dan `templates.json`, deze skill en `lessen.md` bij en push,
+  maar render bestaande video's **niet** opnieuw. Het geldt vanaf de volgende video van die serie (tenzij Wes vraagt om opnieuw te renderen).
 - Indeling tot nu toe: "Van nul naar grip dag 10" = `nulnaargrip`; "Cardio maakt je niet strak" = `blauwdruk75`; "Mijn shape na de vakantie" = `los`.
 - `impact`-woorden: standaard net boven de ondertitels; valt dat over het gezicht (bv. in de auto), dan boven het hoofd (y ±430) en de hook eerder laten eindigen.
 

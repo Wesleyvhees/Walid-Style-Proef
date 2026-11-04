@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-04 · algemeen · "aanpassingen aan een template hoef je niet meteen in de video te verwerken" → bij een template-aanpassing: template, skill en lessen bijwerken, committen en pushen, maar **niet opnieuw renderen**. De aanpassing geldt vanaf de volgende video van die serie. Alleen opnieuw renderen als Wes daar expliciet om vraagt.
 - 2026-11-04 · Van nul naar grip · "de FX-geluiden voor het inzoomen mogen weg" (verduidelijkt: alleen bij het inzoomen, niet alles) → in `nulnaargrip` **geen geluid op een moment met een zoom** (templates.json `sfxOpZoom: false`, renderer haalt ze weg). Whoosh bij hook en impact-woorden zonder zoom blijft.
 - 2026-11-04 · Van nul naar grip dag 10 · "de template ziet er echt goed uit, houd die zo, sla hem op" → template `nulnaargrip` is **goedgekeurd en vastgezet** (zie `templates.json` → `vast`, referentie `voorbeelden/nulnaargrip-dag10/`). Elke nieuwe motivatievideo exact zo opbouwen; niets aan veranderen tenzij Wes erom vraagt.
 - 2026-11-04 · algemeen · "eerst een uitgebreide vragenlijst met opties en voorbeelden, ik weet niet welke opties er zijn" → bewerkingsmenu met codes en voorbeeldbeelden (https://claude.ai/artifact/3en4hgpLa7NrA616RPaHkK) + vaste vragenlijst in 2–3 rondes (serie, doel, hook, knippen → pop-tekst, beelden, getallen/camera, geluid, einde → foto's) vóór elke bewerking.
