@@ -107,6 +107,13 @@ Werkwijze:
    body check, buiten/binnen, statief of uit de hand) en bij de tekst passen, uit alle templates incl. de **Nieuwe effect template**
    (N1–N17). Leg per zin een voorstel voor (tijdstip → effect → waarom), met 2–3 alternatieven waar het twijfel is, en overleg met Wes
    vóór het storyboard. Let op: vertigo alleen bij statief; effecten met uitsnede kosten ±2 s per frame rekentijd (noem de verwachte duur).
+   **Via het keuzemenu (Wes, 2026-11-05: "maak van mijn storyboard een keuzemenu zodat ik kan aanklikken"):** zet het voorstel in
+   `<project>/voorstel.json` (formaat: zie `voorbeelden/keuzemenu-voorstel.json`; `groepen` = keuzes voor de hele video zoals hook,
+   geluid, einde; `momenten` = per zin met `still` en `opties` {id, code, label, uitleg, advies}), draai `tt.py keuzemenu <project>`
+   en publiceer `keuzemenu.html` op de vaste link **https://claude.ai/artifact/HLNEnybLz1nj9jvo4sjYPm** (Artifact publish met `url`,
+   eerst `action: read`; capability `db` blijft staan). `project` uniek per video. Wes klikt aan, tikt Versturen en zegt "keuzes klaar";
+   lees dan `ArtifactData get` collection `keuzes`, doc_id = project (veld `sel` per blok, `notes`, `tekst` = samenvatting) en bouw
+   het storyboard daarop. Voorbeeldbeelden per code staan in `kennis/menu/thumbs/` (bijwerken met `kennis/menu/make_thumbs.py`).
 2. **Ronde 1** (AskUserQuestion, 4 vragen, telkens 3–4 opties met `description` en waar nuttig `preview` met tijdstip + effect;
    aanbevolen optie eerst met "(Aanbevolen)"):
    - **Serie/template** (S1 Van nul naar grip, S2 Slimmer 2.0, S3 75 kilo blauwdruk, S4 los). Aanbevelen op basis van de tekst.

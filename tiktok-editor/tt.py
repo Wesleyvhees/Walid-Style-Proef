@@ -11,6 +11,7 @@
   python3 tt.py assets     <projectmap>      -> 3D-iconen + rechtenvrije foto's uit storyboard.json ophalen
   python3 tt.py person     <projectmap>      -> person.webm (optioneel: cutout voor tekst-achter-persoon)
   python3 tt.py storyboard <projectmap>      -> storyboard.html (preview per beat, ter goedkeuring)
+  python3 tt.py keuzemenu  <projectmap>      -> keuzemenu.html uit voorstel.json (Wes klikt effecten aan)
   python3 tt.py render     <projectmap> [--draft]  -> final.mp4
 """
 import argparse
@@ -1034,6 +1035,37 @@ td:nth-child(n+3)::before{{display:block;font-family:'DM Mono',monospace;font-si
     print("Klaar:", out)
 
 
+def cmd_keuzemenu(a):
+    """voorstel.json -> keuzemenu.html: per zin de voorgestelde effecten als aanklikbare kaartjes (Artifact met db).
+    Wes klikt, ik lees de keuzes terug uit het db-document keuzes/<project>."""
+    v = json.load(open(os.path.join(a.project, "voorstel.json")))
+    thumbs = os.path.join(HERE, "kennis", "menu", "thumbs")
+
+    def b64(path, w):
+        tmp = os.path.join(a.project, ".km.jpg")
+        run(["ffmpeg", "-y", "-v", "error", "-i", path, "-vf", f"scale={w}:-2", "-q:v", "6", tmp])
+        out = "data:image/jpeg;base64," + base64.b64encode(open(tmp, "rb").read()).decode()
+        os.remove(tmp)
+        return out
+    for blok in v.get("groepen", []) + v.get("momenten", []):
+        if blok.get("still"):
+            sp = os.path.join(a.project, blok["still"])
+            blok["still"] = b64(sp, 200) if os.path.exists(sp) else None
+        for o in blok.get("opties", []):
+            img = o.get("img")
+            if img and os.path.exists(os.path.join(a.project, img)):
+                o["img"] = b64(os.path.join(a.project, img), 120)
+            elif o.get("code") and os.path.exists(os.path.join(thumbs, o["code"] + ".jpg")):
+                o["img"] = "data:image/jpeg;base64," + base64.b64encode(open(os.path.join(thumbs, o["code"] + ".jpg"), "rb").read()).decode()
+            else:
+                o.pop("img", None)
+    page = open(os.path.join(HERE, "kennis", "menu", "keuzemenu.html")).read()
+    data = json.dumps(v, ensure_ascii=False).replace("</", "<\\/")
+    out = os.path.join(a.project, "keuzemenu.html")
+    open(out, "w").write(page.replace("/*__DATA__*/", data))
+    print("Klaar:", out, f"({os.path.getsize(out) // 1024} KB)")
+
+
 def cmd_render(a):
     out = a.out or os.path.join(a.project, "final.mp4")
     extra = ["--draft"] if a.draft else []
@@ -1071,6 +1103,7 @@ def main():
     c = sub.add_parser("person"); c.add_argument("project")
     c.add_argument("--model", default="isnet-general-use", help="isnet-general-use (standaard), birefnet-general-lite (beste, traag), u2net_human_seg (snel)"); c.set_defaults(fn=cmd_person)
     c = sub.add_parser("storyboard"); c.add_argument("project"); c.set_defaults(fn=cmd_storyboard)
+    c = sub.add_parser("keuzemenu", help="voorstel.json -> aanklikbaar keuzemenu (keuzemenu.html)"); c.add_argument("project"); c.set_defaults(fn=cmd_keuzemenu)
     c = sub.add_parser("render"); c.add_argument("project"); c.add_argument("--out")
     c.add_argument("--draft", action="store_true"); c.set_defaults(fn=cmd_render)
     a = p.parse_args()
