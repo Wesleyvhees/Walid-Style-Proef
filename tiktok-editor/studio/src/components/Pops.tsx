@@ -31,7 +31,10 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
     // Motivatie-stijl zonder kleur: woord slaat neer (groot -> normaal), witte lijn tekent eronder,
     // en een holle echo van het woord dijt uit en vervaagt.
     const t = frame / fps - beat.start;
-    const slam = interpolate(t, [0, 0.14], [1.55, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (v) => 1 - Math.pow(1 - v, 3) });
+    const hard = !!beat.hard;
+    const slam = interpolate(t, [0, hard ? 0.09 : 0.14], [hard ? 1.9 : 1.55, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (v) => 1 - Math.pow(1 - v, 3) });
+    // korte natrilling van het woord na de inslag (alleen bij hard)
+    const jit = hard && t > 0.09 && t < 0.24 ? Math.sin(t * 160) * 7 * (1 - (t - 0.09) / 0.15) : 0;
     const vis = t >= 0 ? 1 : 0;
     const line = interpolate(t, [0.1, 0.35], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
     const echo = interpolate(t, [0.05, 0.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -44,7 +47,7 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
       whiteSpace: "nowrap",
     };
     return (
-      <div style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${out})`, opacity: vis * out }}>
+      <div style={{ position: "absolute", left: x, top: y, transform: `translate(calc(-50% + ${jit}px),-50%) scale(${out})`, opacity: vis * out }}>
         {/* holle echo */}
         <div
           style={{

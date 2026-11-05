@@ -91,6 +91,7 @@ export type PopBeat = {
   y?: number;
   rotate?: number;
   size?: number;
+  hard?: boolean; // impact: slaat harder en sneller neer, met een korte schok in beeld (motivatie)
 };
 
 export type EmojiBeat = {

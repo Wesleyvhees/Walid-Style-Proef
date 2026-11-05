@@ -80,12 +80,15 @@ export const Main: React.FC<Storyboard> = (sb) => {
   const z = zoomAt(sb.zooms ?? [], t);
   const pers = personaTransform(sb.beats, t);
   const lv = (sb.cutLevels ?? []).find((c) => t >= c.start && t < c.end);
+  // schok in beeld bij een harde impact: beeld schiet 3 frames omlaag en veert terug (geen zoom, dus geen invloed op geluid)
+  const hit = sb.beats.find((b) => b.type === "pop" && (b as any).hard && t >= b.start && t < b.start + 0.2);
+  const jolt = hit ? Math.sin(((t - hit.start) / 0.2) * Math.PI) * 14 * (1 - (t - hit.start) / 0.2) : 0;
   const videoStyle: React.CSSProperties = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
     filter: s.filter + (pers?.filter ?? ""),
-    transform: `scale(${z * (pers?.scale ?? 1) * (lv?.scale ?? 1)}) rotate(${pers?.rotate ?? 0}deg)`,
+    transform: `translateY(${jolt}px) scale(${z * (pers?.scale ?? 1) * (lv?.scale ?? 1) * (jolt ? 1.02 : 1)}) rotate(${pers?.rotate ?? 0}deg)`,
     transformOrigin: lv ? `${lv.ox}px ${lv.oy}px` : "50% 42%",
   };
   const cap = sb.captions ?? {};
