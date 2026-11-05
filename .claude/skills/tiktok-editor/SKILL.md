@@ -12,7 +12,7 @@ Lees `tiktok-editor/README.md` voor het volledige storyboard-formaat.
 
 Wes: "je hoeft me geen toestemming meer te vragen". Voer de stappen direct uit en meld kort wat je doet. Vaste keuzemomenten
 blijven: (1) tekst ter controle, (2) vragenlijst vóór het storyboard (mag in één AskUserQuestion samen met de tekstcheck),
-(3) fotokeuze als er foto's zijn. Daarna storyboard → stills → montage-overzicht (meesturen) → renderen → zelfcontrole → video sturen,
+(3) fotokeuze als er foto's zijn. Daarna storyboard → eigen controle met stills (niet naar Wes) → renderen → zelfcontrole → video + SEO-pakket sturen,
 zonder tussendoor te vragen. Alleen vragen bij echte twijfel of iets onomkeerbaars.
 
 ## Leren (altijd, bij elke video)
@@ -127,7 +127,9 @@ Werkwijze:
    - **Getallen/camera** (G1–G3, C1–C4) als de tekst getallen, een vergelijking of muziek heeft.
    - **Geluid** (A1–A3) en **Einde** (E1–E4).
 4. **Ronde 3** (als er foto's zijn): stuur per moment het kandidatenoverzicht (A/B/C/D) en laat kiezen.
-5. Vat de keuzes in één tabel samen (code → wat er gebeurt → tijdstip), dan storyboard → stills → montageblad (Artifact) → renderen.
+5. Storyboard schrijven op basis van de keuzes → zelf stills controleren (plaatsing, overlap met gezicht, ondertitels op één regel) → renderen.
+   **Geen montageblad/montage-overzicht meer naar Wes** (2026-11-05: het keuzemenu vervangt het); alleen als Wes erom vraagt of bij een
+   heel nieuw effect dat hij nog niet gezien heeft. In het antwoord bij de video: korte tabel tijd → wat je ziet.
 6. Na de render: stuur de video met meteen het **postklaar pakket, SEO-geoptimaliseerd** (Wes, 2026-11-05), om te kopiëren:
    - **Trefwoorden eerst bepalen**: 1 **hoofdtrefwoord** (waar de video over gaat, zoals mensen het zoeken, bv. "motivatie om te sporten"),
      3–4 **secundaire** trefwoorden en 3–4 **long-tail** zoekvragen ("hoe blijf je gemotiveerd om te sporten").
