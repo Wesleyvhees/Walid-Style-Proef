@@ -208,7 +208,7 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
 | Eerste 2 s (hook / titel / serie) | `words` met de kern in 2 regels, `label` met serie/dag, `whoosh` |
 | Emotie of ding dat je kunt zien (liefde, vuur, geld, tijd, hersenen…) | `emoji` (Fluent 3D, Engelse naam zoals "red heart", "fire", "money bag", "brain", "rocket"), `pop` |
 | Kernwoord | `pop` look `sticker` (max 2 woorden) en het woord in `captions.highlight` |
-| Punchline / climax | `pop` look `big` + `"sfx": ["riser", "boom"]` (riser piekt op het woord) + punch-zoom 1.12–1.15 |
+| Punchline / climax | `pop` look `big` + `"sfx": "boom"` + punch-zoom 1.12–1.15. **Geen `riser`**: klinkt als een pieptoon (Wes, dag 11); alleen als Wes erom vraagt |
 | Concreet onderwerp (telefoon, sportschool, geld, natuur) | `image` met zoekterm + kort `label` (2–3 woorden) |
 | Les / conclusie / tip | `prompt`-kaartje dat typt, of `image` + `label`; `ding` bij afronding |
 | Opsomming ("ten eerste…") | `pop` look `label` per punt, `click` |

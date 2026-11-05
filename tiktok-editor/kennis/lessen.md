@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-05 · Van nul naar grip dag 11 · "raar FX-geluid op grip, een pieptoon, moet weg" → de `riser` (zelfgemaakte toonzwaai) niet meer gebruiken; punchline alleen met `boom`. Dag 11 opnieuw gerenderd zonder riser.
 - 2026-11-05 · algemeen · "je hoeft me geen toestemming meer te vragen" → stappen direct uitvoeren en kort melden; alleen de keuzemomenten (tekstcheck, vragenlijst, fotokeuze) blijven (CLAUDE.md en skill bijgewerkt).
 - 2026-11-05 · Van nul naar grip dag 11 · "maak het meer motivatie, nu is het te vriendelijk" → bij motivatie: harder en donkerder (zie keuzes in de vragenlijst), niet vriendelijk.
 - 2026-11-05 · kijkcijfers dag 22, dag 10, cardio · Wes stuurde de videoanalyse → bij alle drie haken de meeste kijkers af op 0:01–0:02 (±95% via Voor jou); 12 s-video doet het best (78% bekeken, 9,5 s). Nieuwe regels: hook = pakkende uitspraak die een vreemde in 1 s snapt, vanaf frame 1; serie + dag klein in de pill (ook in de templates `nulnaargrip` en `slimmer20`); eerste woord op 0,0 s met meteen beweging; mik op 12–20 s. Kijkcijfers bijhouden in `kennis/kijkcijfers.md`.
