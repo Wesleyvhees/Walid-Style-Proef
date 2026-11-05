@@ -125,8 +125,11 @@ Werkwijze:
    - **Verborgen woorden**: alle trefwoorden als één regel met komma's (hoofd + secundair + long-tail + varianten/meervoud),
      voor het zoekwoordenveld of onderaan de beschrijving onder een paar lege regels.
    - **Hashtags**: 3–5 relevante (hoofdtrefwoord als hashtag, serie-hashtag, #wesbuilt); geen #fyp/#viral.
-   - **Tip voor de opname** als het hoofdtrefwoord nog niet in de video zit: noem het in je eerste of tweede zin, dan staat het ook
-     in de ondertitels.
+   - **Claude zorgt dat het hoofdtrefwoord in de video zit** (Wes: "daar moet jij voor zorgen"), niet Wes:
+     bepaal de trefwoorden al **vóór de vragenlijst** (na de tekstcheck) en verwerk het hoofdtrefwoord in de tekst in beeld:
+     in de hook of het pilletje eronder (bv. pill "Motivatie om te sporten · dag 11"), en waar het past als impact-woord/sticker.
+     Hook-opties in de vragenlijst bevatten het hoofdtrefwoord. Schrijft Claude het script, dan staat het hoofdtrefwoord letterlijk
+     in de eerste of tweede zin.
    Daarna weer een vraag met opties wat beter kan.
 - Antwoordt Wes met eigen tekst in plaats van een optie: lees het goed, volg wat hij echt bedoelt, en vraag door bij twijfel (met voorbeelden).
 - Nieuwe effecten gebouwd? Voeg ze toe aan het bewerkingsmenu (nieuwe code + voorbeeldbeeld) en publiceer het opnieuw op dezelfde link.
@@ -194,6 +197,8 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
 - Stuurt Wes kijkcijfers: zet ze in `kennis/kijkcijfers.md`, koppel het afhaakmoment aan het storyboard, en werk de conclusies bij.
 
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
+
+0. **SEO**: kies eerst het hoofdtrefwoord (zoals mensen het in TikTok zoeken) en zet het letterlijk in de eerste of tweede zin.
 
 1. **Hook (0–3 s):** val een bekende overtuiging aan, in de jij-vorm. "Hoe kan het nou dat…", "Ben je nou echt nog steeds…", "Als jij maar … doet, dan…". Geen intro, geen "hoi".
 2. **Herkenning (3–8 s):** het gevoel/probleem van de kijker ("de weegschaal schiet omhoog").

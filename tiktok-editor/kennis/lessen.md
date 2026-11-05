@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-05 · algemeen · "daar moet jij voor zorgen" (trefwoord in de video) → Claude bepaalt de trefwoorden vóór de vragenlijst en zet het hoofdtrefwoord in de tekst in beeld (hook of pill, waar het past ook als impact-woord); in scripts van Claude staat het in de eerste of tweede zin.
 - 2026-11-05 · algemeen · "SEO-geoptimaliseerd, denk ook aan trefwoorden" → postklaar pakket begint met trefwoorden (1 hoofd, 3–4 secundair, 3–4 long-tail zoekvragen); hoofdtrefwoord in de eerste zin van de beschrijving; verborgen woorden = alle trefwoorden + varianten; 3–5 hashtags zonder #fyp.
 - 2026-11-05 · algemeen · "geef me voortaan ook de verborgen woorden en beschrijving na het maken van de video" → bij elke opgeleverde video een postklaar pakket: beschrijving (hook eerst), 8–12 verborgen zoekwoorden, 4–6 hashtags incl. #wesbuilt.
 - 2026-11-05 · Van nul naar grip · "maak deze harde look vast" → preset `nulnaargrip` is nu de harde look (grayscale 0.85, contrast 1.22, vignet 0.55, korrel 0.06); template `impactHard: true` (impact-woorden slaan hard neer met schok), boem onder impact-woorden zonder zoom, punchline zonder zoom, volg-stempel als afsluiter; referentie = `voorbeelden/nulnaargrip-dag11/`. Niet opnieuw renderen.
