@@ -1,9 +1,9 @@
 # Werkafspraken met Wes
 
-- **Eerst toestemming, dan uitvoeren.** Vertel vóór elke actie kort wat je gaat doen (stappen, welke bestanden,
-  verwachte duur, of er gerenderd wordt) en wacht op Wes' akkoord. Pas daarna uitvoeren. Dit bespaart tokens
-  en Wes kijkt mee. Lezen om een plan te kunnen maken mag zonder vragen, maar houd het beperkt.
-- Na akkoord: alleen doen wat is afgesproken; nieuwe of extra stappen eerst weer voorleggen.
+- **Geen toestemming meer vragen** (Wes, 2026-11-05: "je hoeft me geen toestemming meer te vragen"). Voer de stappen gewoon uit
+  en meld kort wat je doet. Wél blijven: de tekst ter controle en de vragenlijst met keuzes vóór het storyboard (dat zijn
+  keuzes van Wes, geen toestemming), en het montage-overzicht meesturen. Vraag alleen nog iets bij echte twijfel of bij iets
+  dat niet terug te draaien is (bv. bestanden in Drive weggooien).
 - Antwoord in het Nederlands, kort en duidelijk.
 - Video's bewerken: skill `tiktok-editor` (en `multicam-editor` voor meerdere hoeken); lees eerst
   `tiktok-editor/kennis/lessen.md`.
