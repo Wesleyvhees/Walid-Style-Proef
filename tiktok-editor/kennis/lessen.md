@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-05 · 75 kilo blauwdruk dag 10 · eerste video via het keuzemenu; "batterij-meter is goed, alleen het icoontje is niet professioneel genoeg" → 3 nieuwe looks, Wes koos **A Glas** (meter `look: "glas"`, voortaan standaard). "Stem versnellen mag alleen als de klank niet verandert" → `tt.py tempo <project> 1.1` (atempo: toonhoogte gelijk, gemeten 186 Hz voor en na). Laag in beeld zittend gezicht → effecten bovenin (boven het hoofd).
 - 2026-11-05 · algemeen · "bij elke nieuwe video" → het keuzemenu is vast onderdeel van elke bewerking (na de tekstcheck, vóór het storyboard).
 - 2026-11-05 · algemeen · "maak van mijn storyboard een keuzemenu zodat ik de voorgestelde effecten en bewerkingen kan aanklikken" → effectvoorstel per zin als aanklikbaar keuzemenu (`tt.py keuzemenu`, vaste link https://claude.ai/artifact/HLNEnybLz1nj9jvo4sjYPm); keuzes terugleven uit de db (`keuzes/<project>`).
 - 2026-11-05 · Nieuwe effect template · "Goed! Volgende video eerst zelf bekijken welke effecten bij de soort video en tekst passen en overleggen met mij" → v2 goedgekeurd; bij elke video eerst zelf een effectvoorstel per zin maken (uit alle templates, incl. N1–N17) en dat met Wes bespreken vóór het storyboard.

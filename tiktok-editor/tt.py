@@ -7,6 +7,7 @@
   python3 tt.py combine    <project> <take1> <take2> ...  -> meerdere takes tot één video
   python3 tt.py fixwords   <project> "juiste tekst"      -> spraakherkenningsfouten verbeteren
   python3 tt.py drop       <project> <van> <tot>  -> stuk (bv. een los woord) uit cut.mp4 knippen
+  python3 tt.py tempo      <project> 1.1  -> hele video 10% sneller, toonhoogte van je stem blijft gelijk
   python3 tt.py retime     <project>         -> woordtijden opnieuw strak op de stem leggen (gebeurt al in prepare)
   python3 tt.py assets     <projectmap>      -> 3D-iconen + rechtenvrije foto's uit storyboard.json ophalen
   python3 tt.py person     <projectmap>      -> person.webm (optioneel: cutout voor tekst-achter-persoon)
@@ -141,6 +142,33 @@ def cmd_drop(a):
     if os.path.exists(tk):
         T = json.load(open(tk)); T.setdefault("drops", []).append([t0, t1, gone]); json.dump(T, open(tk, "w"), ensure_ascii=False, indent=1)
     print(f"{t0:.2f}-{t1:.2f}s eruit ({d:.2f}s): {' '.join(gone) or '(geen heel woord)'}; nieuwe lengte {total - d:.2f}s")
+    cmd_layout(argparse.Namespace(project=a.project))
+
+
+def cmd_tempo(a):
+    """Hele video sneller (of trager) zonder dat de klank van je stem verandert: atempo rekt de tijd op,
+    de toonhoogte blijft gelijk. Woordtijden, knippen en gezicht schuiven mee. Origineel blijft als cut_tempo1.mp4."""
+    cut = os.path.join(a.project, "cut.mp4")
+    keep = os.path.join(a.project, "cut_tempo1.mp4")
+    if not os.path.exists(keep):
+        shutil.copy(cut, keep)
+    f = a.factor
+    run(["ffmpeg", "-y", "-v", "error", "-i", keep, "-filter_complex", f"[0:v]setpts=PTS/{f},fps={FPS}[v];[0:a]atempo={f}[a]",
+         "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-c:a", "aac", "-b:a", "256k", cut])
+    for name in ("words.json",):
+        wp = os.path.join(a.project, name)
+        src = os.path.join(a.project, "words_tempo1.json")
+        if not os.path.exists(src):
+            shutil.copy(wp, src)
+        w = json.load(open(src))
+        json.dump([{"w": x["w"], "s": round(x["s"] / f, 3), "e": round(x["e"] / f, 3)} for x in w], open(wp, "w"), ensure_ascii=False, indent=0)
+    cf = os.path.join(a.project, "cuts.json")
+    if os.path.exists(cf):
+        src = os.path.join(a.project, "cuts_tempo1.json")
+        if not os.path.exists(src):
+            shutil.copy(cf, src)
+        json.dump({"cuts": [round(c / f, 3) for c in json.load(open(src))["cuts"]]}, open(cf, "w"))
+    print(f"Tempo {f}x: {duration(keep):.1f}s -> {duration(cut):.1f}s (toonhoogte gelijk)")
     cmd_layout(argparse.Namespace(project=a.project))
 
 
@@ -1098,6 +1126,8 @@ def main():
     c.add_argument("project"); c.add_argument("text"); c.set_defaults(fn=cmd_fixwords)
     c = sub.add_parser("drop", help="stuk uit cut.mp4 knippen (bv. een los woord)")
     c.add_argument("project"); c.add_argument("start", type=float); c.add_argument("end", type=float); c.set_defaults(fn=cmd_drop)
+    c = sub.add_parser("tempo", help="hele video sneller zonder dat je stem anders klinkt")
+    c.add_argument("project"); c.add_argument("factor", type=float); c.set_defaults(fn=cmd_tempo)
     c = sub.add_parser("retime", help="woordtijden strak op de stem leggen"); c.add_argument("project"); c.set_defaults(fn=cmd_retime)
     c = sub.add_parser("assets"); c.add_argument("project"); c.set_defaults(fn=cmd_assets)
     c = sub.add_parser("person"); c.add_argument("project")
