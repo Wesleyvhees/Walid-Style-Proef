@@ -10,9 +10,10 @@ export const PRESETS: Record<string, StylePreset> = {
     accent: "#FFFFFF",
     card: "#FFFFFF",
     cardInk: "#111111",
-    filter: "contrast(1.08) saturate(0.92) brightness(1.01)",
-    vignette: 0.32,
-    grain: 0.03,
+    // harde look (Wes, dag 11): bijna zwart-wit, veel contrast, donkere rand, filmkorrel
+    filter: "grayscale(0.85) contrast(1.22) brightness(0.98)",
+    vignette: 0.55,
+    grain: 0.06,
     captionFont: "sans",
     captionSize: 78,
     captionUpper: false,

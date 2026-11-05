@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-05 · Van nul naar grip · "maak deze harde look vast" → preset `nulnaargrip` is nu de harde look (grayscale 0.85, contrast 1.22, vignet 0.55, korrel 0.06); template `impactHard: true` (impact-woorden slaan hard neer met schok), boem onder impact-woorden zonder zoom, punchline zonder zoom, volg-stempel als afsluiter; referentie = `voorbeelden/nulnaargrip-dag11/`. Niet opnieuw renderen.
 - 2026-11-05 · Van nul naar grip dag 11 · "raar FX-geluid op grip, een pieptoon, moet weg" → de `riser` (zelfgemaakte toonzwaai) niet meer gebruiken; punchline alleen met `boom`. Dag 11 opnieuw gerenderd zonder riser.
 - 2026-11-05 · algemeen · "je hoeft me geen toestemming meer te vragen" → stappen direct uitvoeren en kort melden; alleen de keuzemomenten (tekstcheck, vragenlijst, fotokeuze) blijven (CLAUDE.md en skill bijgewerkt).
 - 2026-11-05 · Van nul naar grip dag 11 · "maak het meer motivatie, nu is het te vriendelijk" → bij motivatie: harder en donkerder (zie keuzes in de vragenlijst), niet vriendelijk.

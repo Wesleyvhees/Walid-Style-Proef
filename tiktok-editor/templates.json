@@ -21,14 +21,16 @@
     },
     "uitleg": "Geen kleur en geen 3D-iconen, foto's, achtergronden, meters of grafieken. Alles duidelijk met witte ondertitels en 'impact'-woorden (wit, slaat neer, witte lijn, holle echo). Serie-label 'Dag X' onder de hook. Geen geluidseffecten op zooms.",
     "goedgekeurd": "2026-11-04: door Wes goedgekeurd, niet meer aanpassen zonder zijn vraag",
-    "referentie": "voorbeelden/nulnaargrip-dag10/storyboard.json",
+    "referentie": "voorbeelden/nulnaargrip-dag11/storyboard.json",
+    "impactHard": true,
     "vast": {
       "hook": "bovenaan vanaf frame 1 (y 215, size ±100): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (geen serienaam), sub 'Van nul naar grip dag X' klein in de pill; eindigt voordat het eerste impact-woord overlapt (aangepast 2026-11-05 na kijkcijfers)",
-      "impact": "pop look 'impact', 1 kernwoord per zin (±1,2–2 s), size 130–200, wit; net boven de ondertitels, of boven het hoofd (y ±430) als het gezicht laag in beeld staat",
-      "punchline": "impact + punch-zoom 1.12, zonder geluid (geluid valt samen met de zoom)",
-      "overige_sfx": "whoosh bij hook en impact-woorden, BEHALVE op momenten met een zoom: daar geen geluid (Wes 2026-11-04)",
+      "impact": "pop look 'impact' HARD (slaat snel neer, trilt na, korte schok in beeld; automatisch via impactHard), 1 kernwoord per zin (±1,2–2 s), size 170–220, wit; boven het hoofd (y ±380) zodat het gezicht vrij blijft",
+      "punchline": "laatste impact-woord groot (220) met sub 'dag X' en een boem, zonder zoom (zodat de boem blijft); geen riser",
+      "overige_sfx": "whoosh bij de hook; diepe boem onder elk impact-woord, BEHALVE op momenten met een punch-zoom: daar geen geluid (Wes 2026-11-04)",
       "zooms": "punch 1.06–1.08 op kernwoorden, langzaam 1.05 op rustige stukken",
-      "afsluiter": "laatste impact-woord met sub 'dag X'",
+      "afsluiter": "punchline met sub 'dag X', daarna volg-stempel (2 s eindbeeld verlengd)",
+      "look": "harde look vast sinds dag 11 (2026-11-05): bijna zwart-wit, contrast, donkere rand, filmkorrel (preset nulnaargrip)",
       "ondertitels": "wit, vaste hoogte y 1290, kernwoorden in highlight"
     },
     "sfxOpZoom": false

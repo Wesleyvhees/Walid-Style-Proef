@@ -43,6 +43,8 @@ if (sb.template) {
   sb.captions = { ...(T.captions ?? {}), ...(sb.captions ?? {}) };
   if (T.jumpZoom !== undefined && sb.jumpZoom === undefined) sb.jumpZoom = T.jumpZoom;
   if (T.sfxVolume !== undefined && sb.sfxVolume === undefined) sb.sfxVolume = T.sfxVolume;
+  // harde impact-woorden als vaste stijl van de serie (per woord uit te zetten met "hard": false)
+  if (T.impactHard) sb.beats.forEach((b) => { if (b.type === "pop" && b.look === "impact" && b.hard === undefined) b.hard = true; });
   if (T.sfxOpZoom === false) {
     // geen geluidseffect op een moment met een (punch-)zoom; overige geluiden blijven
     const zoomAt = (sb.zooms ?? []).filter((z) => (z.ease ?? "in") === "punch").map((z) => z.start);

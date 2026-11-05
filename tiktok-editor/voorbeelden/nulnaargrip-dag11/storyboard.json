@@ -1,0 +1,135 @@
+{
+ "title": "Van nul naar grip dag 11",
+ "template": "nulnaargrip",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "perfect",
+   "grip",
+   "training",
+   "maaltijd",
+   "stapjes",
+   "elke",
+   "dag"
+  ],
+  "maxChars": 17
+ },
+ "overrides": {
+  "filter": "grayscale(0.85) contrast(1.22) brightness(0.98)",
+  "vignette": 0.55,
+  "grain": 0.06
+ },
+ "zooms": [
+  {
+   "start": 0.92,
+   "end": 1.5,
+   "to": 1.08,
+   "ease": "punch"
+  },
+  {
+   "start": 1.86,
+   "end": 3.9,
+   "to": 1.05,
+   "ease": "in"
+  },
+  {
+   "start": 10.64,
+   "end": 11.5,
+   "to": 1.08,
+   "ease": "punch"
+  }
+ ],
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 1.8,
+   "text": "Je hoeft niet *perfect* te zijn",
+   "sub": "Van nul naar grip dag 11",
+   "size": 100,
+   "y": 215,
+   "sfx": "whoosh",
+   "note": "Hook = eerste zin, vanaf frame 1 (kijkcijfers)"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 3.21,
+   "end": 4.02,
+   "text": "Dag 11",
+   "size": 170,
+   "y": 380,
+   "hard": true,
+   "sfx": "boom",
+   "note": "Serie-dag, hard"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 4.37,
+   "end": 6.25,
+   "text": "Training",
+   "size": 190,
+   "y": 380,
+   "hard": true,
+   "sfx": "boom",
+   "note": "Kernwoord zin 3"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 6.64,
+   "end": 8.15,
+   "text": "Maaltijd",
+   "size": 190,
+   "y": 380,
+   "hard": true,
+   "sfx": "boom",
+   "note": "Kernwoord zin 4"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 9.99,
+   "end": 10.6,
+   "text": "Stapjes",
+   "size": 190,
+   "y": 380,
+   "hard": true,
+   "sfx": "boom",
+   "note": "Kernwoord zin 5"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 10.64,
+   "end": 11.75,
+   "text": "Elke dag",
+   "size": 180,
+   "y": 380,
+   "hard": true,
+   "note": "Op de punch-zoom: geen geluid (regel)"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 12.35,
+   "end": 13.2,
+   "text": "Grip",
+   "size": 220,
+   "y": 380,
+   "hard": true,
+   "sfx": "boom",
+   "sub": "dag 11",
+   "note": "Punchline: alleen boem (riser klonk als een pieptoon, Wes)"
+  },
+  {
+   "type": "volgstempel",
+   "start": 13.2,
+   "end": 15.2,
+   "y": 1000,
+   "sfx": "boom",
+   "note": "Volg-stempel, eindbeeld 2 s verlengd"
+  }
+ ]
+}
