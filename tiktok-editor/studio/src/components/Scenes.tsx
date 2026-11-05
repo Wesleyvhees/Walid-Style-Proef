@@ -259,6 +259,7 @@ export const MeterGraphic: React.FC<{ beat: import("../types").MeterBeat; style:
     } else break;
   }
   const color = v > 0.6 ? "#34C759" : v > 0.3 ? "#FFCC00" : "#FF3B30";
+  if (beat.look && beat.look !== "classic") return <MeterPro beat={beat} v={v} p={p} t={t} />;
   const size = beat.size ?? 380;
   const w = size;
   const h = size * 0.5;
@@ -349,6 +350,86 @@ export const PersonaLabel: React.FC<{ beat: import("../types").PersonaBeat; styl
         }}
       >
         {beat.label ?? "jij"}:
+      </div>
+    </div>
+  );
+};
+
+// Professionele batterijen (Wes, blauwdruk dag 10: "het icoontje is niet professioneel genoeg"): 3 looks.
+const meterColor = (v: number) => (v > 0.6 ? "#A3D45A" : v > 0.3 ? "#F2B33D" : "#F0533D");
+const MeterPro: React.FC<{ beat: import("../types").MeterBeat; v: number; p: number; t: number }> = ({ beat, v, p, t }) => {
+  const c = meterColor(v);
+  const pct = Math.round(v * 100);
+  const lv = [...beat.levels].sort((a, b) => a.at - b.at);
+  const next = lv.find((l) => l.at > t);
+  const prev = [...lv].reverse().find((l) => l.at <= t);
+  const charging = !!(next && prev && next.value > prev.value && next.at - t < 0.6);
+  const cx = beat.x ?? 540;
+  const top = beat.y ?? 300;
+  const bolt = (size: number, fill: string) => (
+    <svg width={size} height={size} viewBox="0 0 24 24"><path d="M13 2 L4 14 H11 L10 22 L20 9 H13 Z" fill={fill} /></svg>
+  );
+  const wrap: React.CSSProperties = { position: "absolute", left: cx, top, transform: `translate(-50%,0) scale(${0.85 + 0.15 * p})`, opacity: p };
+  if (beat.look === "glas") {
+    // A: donker glazen kaartje, liggende batterij met glanzende vulling, groot percentage
+    return (
+      <div style={{ ...wrap, display: "flex", alignItems: "center", gap: 28, padding: "26px 34px", borderRadius: 34, background: "rgba(16,16,18,0.62)", border: "1px solid rgba(255,255,255,0.16)", boxShadow: `0 30px 70px rgba(0,0,0,0.45), 0 0 60px ${c}33`, backdropFilter: "blur(18px)" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div style={{ position: "relative", width: 230, height: 110, borderRadius: 28, border: "5px solid rgba(255,255,255,0.9)", padding: 7 }}>
+            <div style={{ height: "100%", width: `${Math.max(6, pct)}%`, borderRadius: 18, background: `linear-gradient(180deg, ${c} 0%, ${c}CC 100%)`, boxShadow: `0 0 24px ${c}AA` }} />
+            <div style={{ position: "absolute", left: 7, right: 7, top: 7, height: "34%", borderRadius: "18px 18px 40px 40px", background: "linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0))" }} />
+            {charging ? <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center" }}>{bolt(58, "#fff")}</div> : null}
+          </div>
+          <div style={{ width: 12, height: 40, marginLeft: 6, borderRadius: "0 8px 8px 0", background: "rgba(255,255,255,0.9)" }} />
+        </div>
+        <div>
+          <div style={{ ...fontCss("condensed"), fontSize: 118, lineHeight: 0.9, color: "#fff" }}>{pct}<span style={{ fontSize: 60, color: c }}>%</span></div>
+          {beat.label ? <div style={{ ...fontCss("mono"), fontSize: 24, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", marginTop: 6 }}>{beat.label}</div> : null}
+        </div>
+      </div>
+    );
+  }
+  if (beat.look === "ios") {
+    // B: grote, strakke batterij zoals op je telefoon, percentage in de batterij
+    return (
+      <div style={{ ...wrap, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+        <div style={{ display: "flex", alignItems: "center", filter: "drop-shadow(0 18px 30px rgba(0,0,0,0.45))" }}>
+          <div style={{ position: "relative", width: 420, height: 190, borderRadius: 52, background: "rgba(255,255,255,0.28)", overflow: "hidden" }}>
+            <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: `${pct}%`, background: c }} />
+            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, ...fontCss("sans"), fontSize: 112, color: "#fff", textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}>
+              {charging ? bolt(80, "#fff") : null}
+              {pct}
+            </div>
+          </div>
+          <div style={{ width: 18, height: 64, marginLeft: 8, borderRadius: "0 14px 14px 0", background: "rgba(255,255,255,0.45)" }} />
+        </div>
+        {beat.label ? <div style={{ ...fontCss("sans"), fontSize: 40, color: "#fff", padding: "8px 22px", borderRadius: 999, background: "rgba(0,0,0,0.5)" }}>{beat.label}</div> : null}
+      </div>
+    );
+  }
+  // C: ring zoals een smartwatch, met verloop en batterijtje in het midden
+  const R = 120;
+  const L = 2 * Math.PI * R;
+  return (
+    <div style={{ ...wrap, width: 340, height: 340, borderRadius: 340, background: "radial-gradient(circle, rgba(20,20,22,0.85) 0%, rgba(20,20,22,0.7) 70%)", boxShadow: `0 30px 70px rgba(0,0,0,0.45), 0 0 70px ${c}33`, display: "grid", placeItems: "center" }}>
+      <svg width="340" height="340" viewBox="0 0 340 340" style={{ position: "absolute", inset: 0 }}>
+        <defs>
+          <linearGradient id="mring" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor={c} />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.9" />
+          </linearGradient>
+        </defs>
+        <circle cx="170" cy="170" r={R} stroke="rgba(255,255,255,0.12)" strokeWidth="26" fill="none" />
+        <circle cx="170" cy="170" r={R} stroke="url(#mring)" strokeWidth="26" fill="none" strokeLinecap="round" strokeDasharray={`${L * v} ${L}`} transform="rotate(-90 170 170)" style={{ filter: `drop-shadow(0 0 10px ${c})` }} />
+      </svg>
+      <div style={{ textAlign: "center", position: "relative" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 2 }}>
+          {charging ? bolt(40, c) : (
+            <svg width="46" height="24" viewBox="0 0 46 24"><rect x="1.5" y="1.5" width="38" height="21" rx="5" stroke="#fff" strokeWidth="3" fill="none" /><rect x="5" y="5" width={Math.max(2, 31 * v)} height="14" rx="2.5" fill={c} /><rect x="41" y="8" width="4" height="8" rx="2" fill="#fff" /></svg>
+          )}
+        </div>
+        <div style={{ ...fontCss("condensed"), fontSize: 100, lineHeight: 0.95, color: "#fff" }}>{pct}<span style={{ fontSize: 48, color: c }}>%</span></div>
+        {beat.label ? <div style={{ ...fontCss("mono"), fontSize: 20, color: "rgba(255,255,255,0.75)", textTransform: "uppercase" }}>{beat.label}</div> : null}
       </div>
     </div>
   );

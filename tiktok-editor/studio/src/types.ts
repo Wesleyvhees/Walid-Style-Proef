@@ -173,6 +173,7 @@ export type MeterBeat = {
   start: number;
   end: number;
   kind?: "battery" | "tank";
+  look?: "classic" | "glas" | "ios" | "ring"; // ontwerp van de batterij
   levels: { at: number; value: number }[]; // value 0..1 op tijdstip `at`
   label?: string;
   x?: number;
