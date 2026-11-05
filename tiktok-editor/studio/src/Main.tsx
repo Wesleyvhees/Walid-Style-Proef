@@ -107,6 +107,18 @@ export const Main: React.FC<Storyboard> = (sb) => {
             style={shot ? { transform: `translate(${shot.tx}px, ${shot.ty}px) scale(${shot.scale})`, transformOrigin: "0 0" } : undefined}
           >
             <OffthreadVideo src={staticFile(`p/${sb.video}`)} style={videoStyle} />
+            {/* zoomstrepen: uitvergrote, doorschijnende kopieën tijdens een digitale zoom of zoom-through cut */}
+            {cf.trail > 0.05
+              ? [1, 2, 3, 4].map((k) => (
+                  <AbsoluteFill key={`tr${k}`} style={{ opacity: 0.22 * cf.trail }}>
+                    <OffthreadVideo
+                      src={staticFile(`p/${sb.video}`)}
+                      muted
+                      style={{ ...videoStyle, transform: `${videoStyle.transform} scale(${1 + 0.05 * k * cf.trail})` }}
+                    />
+                  </AbsoluteFill>
+                ))
+              : null}
           </AbsoluteFill>
         );
       })()}
