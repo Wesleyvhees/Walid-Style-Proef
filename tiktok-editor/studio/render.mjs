@@ -88,7 +88,7 @@ for (const b of sb.beats) {
 const layoutFile = path.join(project, "layout.json");
 if (fs.existsSync(layoutFile)) {
   sb.layout = JSON.parse(fs.readFileSync(layoutFile, "utf8"));
-}  // ondertitels standaard op vaste hoogte (y 1290, zoals Wes wil); "auto" alleen als dat in het storyboard staat
+}  // ondertitels standaard onder de kin ("auto", Wes 2026-11-05); een vast getal in het storyboard wint
 if (sb.captions?.y === "auto" && !sb.layout) console.warn("Let op: captions.y = auto maar layout.json ontbreekt (draai tt.py layout)");
 
 // Virtuele camera's: per shot schaal + verschuiving zodat het focuspunt (gezicht/borst) goed in beeld staat

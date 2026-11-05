@@ -251,10 +251,12 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
 - **Vaste indeling** (wens van Wes): alle tekst **exact gecentreerd op x 540**, altijd met donkere letterrand (leesbaar op elke achtergrond).
   - Bovenaan: hook-titel (y ±215, `size` ±86).
   - Onderaan: stickers, stempels en grote woorden **net boven de ondertitels** (standaard in de code: y 1120, `big` y 1040; geef in het storyboard dus géén `x`/`y` mee tenzij nodig).
-  - Daaronder: ondertitels op y 1290.
+  - Ondertitels: **altijd net onder je kin** (automatisch, per regel stil).
   - Iconen, fotokaarten en meters mogen opzij of bovenin, nooit over het gezicht.
   - Wijk alleen af als de standaardplek iets belangrijks bedekt; kies dan de dichtstbijzijnde vrije plek en meld dat.
-- Ondertitels: **altijd vast op y≈1290** (wens van Wes, ook bij een body check). Stickers, stempels en kaarten blijven erboven (y ≤ 1100) zodat ze niet overlappen.
+- Ondertitels: **altijd net onder de kin** (Wes, 2026-11-05: "een nieuwe regel: ondertiteling altijd onder mijn kin"; vervangt de oude vaste y 1290).
+  Standaard in de code (`captions.y` leeg of `"auto"`, via `layout.json`); zonder gezicht in beeld y 1290. Stickers, stempels en kaarten niet
+  over het gezicht of de ondertitels: bij een hoog gezicht net boven de ondertitels, bij een laag gezicht boven het hoofd.
   `captions.y: "auto"` (net onder de kin, via `layout.json`) bestaat als optie, alleen gebruiken als Wes erom vraagt.
 - Tekst-achter-de-persoon (`title` met `behind: true`, vereist `tt.py person`) is optioneel:
   alleen gebruiken als de gebruiker erom vraagt of het echt iets toevoegt.

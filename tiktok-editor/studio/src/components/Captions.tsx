@@ -60,14 +60,15 @@ export const Captions: React.FC<{
   const chunk = chunks.find((c) => t >= c.s - 0.05 && t < c.e);
   if (!chunk) return null;
   const p = enter(frame, chunk.s - 0.05, fps, 22);
-  // Automatische plaats: net onder de kin op het moment dat deze regel begint (staat per regel stil).
+  // Standaard (Wes, 2026-11-05: "ondertiteling altijd onder mijn kin"): net onder de kin, per regel stil
+  // (mediaan over de duur van de regel). Zonder gezicht in beeld: vaste hoogte 1290. Een getal in het storyboard wint.
   let top = typeof y === "number" ? y : 1290;
-  if (y === "auto" && layout?.faces?.length) {
+  if (typeof y !== "number" && layout?.faces?.length) {
     // mediaan van de kin over de hele duur van deze regel
     const i0 = Math.max(0, Math.floor(chunk.s * layout.fps));
     const i1 = Math.min(layout.faces.length - 1, Math.ceil(chunk.e * layout.fps));
     const chins = layout.faces.slice(i0, i1 + 1).filter(Boolean).map((f) => f![1] + f![3] * 1.22).sort((a, b) => a - b);
-    if (chins.length) top = Math.max(420, Math.min(1330, Math.round(chins[Math.floor(chins.length / 2)] + 10)));
+    if (chins.length) top = Math.max(420, Math.min(1470, Math.round(chins[Math.floor(chins.length / 2)] + 10)));
   }
   return (
     <div

@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-05 · algemeen · "een nieuwe regel: ondertiteling altijd onder mijn kin" → captions standaard `"auto"` (onder de kin via layout.json, per regel stil, max y 1470), in alle templates. Vervangt de vaste y 1290 van 2026-11-03. Niet opnieuw renderen.
 - 2026-11-05 · algemeen · "is een storyboard nog nodig na het keuzemenu?" → het montage-overzicht als aparte stap vervalt (scheelt 2–3 min en een wachtmoment). storyboard.json en mijn eigen stills-controle blijven. Overzicht alleen op verzoek of bij een heel nieuw effect.
 - 2026-11-05 · 75 kilo blauwdruk dag 10 · eerste video via het keuzemenu; "batterij-meter is goed, alleen het icoontje is niet professioneel genoeg" → 3 nieuwe looks, Wes koos **A Glas** (meter `look: "glas"`, voortaan standaard). "Stem versnellen mag alleen als de klank niet verandert" → `tt.py tempo <project> 1.1` (atempo: toonhoogte gelijk, gemeten 186 Hz voor en na). Laag in beeld zittend gezicht → effecten bovenin (boven het hoofd).
 - 2026-11-05 · algemeen · "bij elke nieuwe video" → het keuzemenu is vast onderdeel van elke bewerking (na de tekstcheck, vóór het storyboard).
