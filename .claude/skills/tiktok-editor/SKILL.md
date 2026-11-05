@@ -78,8 +78,8 @@ Vraag bij een nieuwe video als eerste keuze bij welke serie hij hoort (of leid h
 
 | Template | Serie | Wat wel | Wat niet |
 |---|---|---|---|
-| `nulnaargrip` ✅ goedgekeurd, vast | **Van nul naar grip** (motivatie, dag X) — bouw elke aflevering exact als `voorbeelden/nulnaargrip-dag10/storyboard.json` (opbouw in `templates.json` → `vast`) | Witte ondertitels, `pop` look **`impact`** (groot wit woord slaat neer, witte lijn, holle echo), hook met "Dag X", `label`, zooms, whoosh (niet op zooms) | Geen geluid op zooms, geen kleur, geen 3D-iconen, foto's, achtergronden, meters, grafieken, stempels of stickers |
-| `slimmer20` ✅ goedgekeurd | **Slimmer eten, drinken en trainen 2.0** (uitleg) — bouw elke aflevering als `voorbeelden/slimmer20-dag22/storyboard.json` (opbouw in `templates.json` → `vast`) | Hook serietitel + 'Dag X', MYTHE/FEIT-stempel, labels + 3D-iconen per punt, grafiek bij getallen, typend tip-kaartje, `checklist` bij een opsomming (komt terug bij de afsluiter), 1 cutaway, groene stickers, volg-stempel | — |
+| `nulnaargrip` ✅ goedgekeurd, vast | **Van nul naar grip** (motivatie, dag X) — bouw elke aflevering exact als `voorbeelden/nulnaargrip-dag10/storyboard.json` (opbouw in `templates.json` → `vast`) | Witte ondertitels, `pop` look **`impact`** (groot wit woord slaat neer, witte lijn, holle echo), hook = pakkende uitspraak met pill "Van nul naar grip dag X", `label`, zooms, whoosh (niet op zooms) | Geen geluid op zooms, geen kleur, geen 3D-iconen, foto's, achtergronden, meters, grafieken, stempels of stickers |
+| `slimmer20` ✅ goedgekeurd | **Slimmer eten, drinken en trainen 2.0** (uitleg) — bouw elke aflevering als `voorbeelden/slimmer20-dag22/storyboard.json` (opbouw in `templates.json` → `vast`) | Hook = pakkende uitspraak met pill "Slimmer 2.0 dag X", MYTHE/FEIT-stempel, labels + 3D-iconen per punt, grafiek bij getallen, typend tip-kaartje, `checklist` bij een opsomming (komt terug bij de afsluiter), 1 cutaway, groene stickers, volg-stempel | — |
 | `blauwdruk75` | **De 75 kilo blauwdruk** (tips om geleidelijk af te vallen) | Layout van de cardio-video (goedgekeurd), plus per tip een `pop` look `label` "Tip 1", "Tip 2" … bij het begin van elke tip | — |
 | `los` | Losse video (bv. "Mijn shape na de vakantie") | Vrije keuze binnen de vaste indeling | — |
 
@@ -105,8 +105,8 @@ Werkwijze:
    aanbevolen optie eerst met "(Aanbevolen)"):
    - **Serie/template** (S1 Van nul naar grip, S2 Slimmer 2.0, S3 75 kilo blauwdruk, S4 los). Aanbevelen op basis van de tekst.
    - **Doel** (D1 kijktijd, D2 reacties, D3 volgers, D4 vertrouwen/uitleg).
-   - **Hook**: 3 concrete hook-teksten uit déze video (H1 mythe + stempel, H2 serietitel + dag, H3 vraag aan de kijker, H4 eerlijke titel),
-     met de echte tekst in label/preview.
+   - **Hook**: 3 concrete hook-teksten uit déze video die een vreemde in 1 s snapt (zie "Hook in de eerste seconde"): H1 mythe + stempel,
+     H3 vraag/uitspraak aan de kijker, H4 eerlijke titel; serie + dag altijd klein in de pill. Met de echte tekst in label/preview.
    - **Knippen** (K1–K5), met de gemeten lengtes (bv. "15,7 s → 12,2 s").
 3. **Ronde 2** (alleen opties die binnen de gekozen template mogen; multiSelect waar logisch):
    - **Pop-tekst** (T1–T7) met per optie de concrete woorden uit de video (bv. "T4: '3 of 4' + 'keer per week' op 31,0 s").
@@ -166,6 +166,20 @@ Leveren beide banken niets bruikbaars (Commons 429 / Openverse 500 komt vaak voo
 
 Volgorde-ritme (herhalen): talking head + pop → scene/cutaway → talking head + emoji → image/chart → …
 Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen frames van die beats).
+
+### Hook in de eerste seconde (verplicht, uit de kijkcijfers)
+
+Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01–0:02, en ±95% zijn vreemden via "Voor jou".
+- **Hooktekst bovenin vanaf frame 1** = een concrete, prikkelende uitspraak die een vreemde in 1 s snapt
+  ("Stop met je elke dag wegen", "Cardio maakt je niet strak"). **Nooit de serienaam als hook**: serie + dag staan klein in de
+  `sub`-pill ("Slimmer 2.0 dag 22", "Van nul naar grip dag 10").
+- **Eerste woord op 0,0 s** (prepare knipt de stilte ervoor weg) en **meteen beweging**: in de eerste 0,5 s een punch-zoom of
+  pop/stempel.
+- **Sterkste zin eerst**: staat de pakkendste zin later in de video, stel voor om die naar voren te knippen (als koude opening).
+- **Kort**: mik op 12–20 s; stel bij een langere video voor wat eruit kan.
+- In de vragenlijst: alle hook-opties zijn zulke uitspraken (H1 mythe + stempel, H3 vraag/uitspraak aan de kijker, H4 eerlijke titel);
+  H2 (serietitel als hook) alleen als Wes erom vraagt.
+- Stuurt Wes kijkcijfers: zet ze in `kennis/kijkcijfers.md`, koppel het afhaakmoment aan het storyboard, en werk de conclusies bij.
 
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
 

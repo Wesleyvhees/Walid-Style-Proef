@@ -15,7 +15,7 @@
       "impact",
       "label"
     ],
-    "hookSub": "Dag {dag}",
+    "hookSub": "Van nul naar grip dag {dag}",
     "captions": {
       "y": 1290
     },
@@ -23,7 +23,7 @@
     "goedgekeurd": "2026-11-04: door Wes goedgekeurd, niet meer aanpassen zonder zijn vraag",
     "referentie": "voorbeelden/nulnaargrip-dag10/storyboard.json",
     "vast": {
-      "hook": "bovenaan (y 215, size ±100), 'Van nul naar *grip*' + sub 'Dag X', eindigt voordat het eerste impact-woord overlapt",
+      "hook": "bovenaan vanaf frame 1 (y 215, size ±100): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (geen serienaam), sub 'Van nul naar grip dag X' klein in de pill; eindigt voordat het eerste impact-woord overlapt (aangepast 2026-11-05 na kijkcijfers)",
       "impact": "pop look 'impact', 1 kernwoord per zin (±1,2–2 s), size 130–200, wit; net boven de ondertitels, of boven het hoofd (y ±430) als het gezicht laag in beeld staat",
       "punchline": "impact + punch-zoom 1.12, zonder geluid (geluid valt samen met de zoom)",
       "overige_sfx": "whoosh bij hook en impact-woorden, BEHALVE op momenten met een zoom: daar geen geluid (Wes 2026-11-04)",
@@ -61,14 +61,14 @@
       "label",
       "outline"
     ],
-    "hookSub": "Slimmer 2.0",
+    "hookSub": "Slimmer 2.0 dag {dag}",
     "captions": {
       "y": 1290
     },
     "goedgekeurd": "2026-11-04: dag 22 door Wes goedgekeurd ('perfect zo'), opbouw vasthouden",
     "referentie": "voorbeelden/slimmer20-dag22/storyboard.json",
     "vast": {
-      "hook": "bovenaan (y 215, size 86): 'Slimmer eten drinken en *trainen*' + sub 'Dag X', 0 tot ±5,7 s",
+      "hook": "bovenaan vanaf frame 1 (y 215, size 86): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (bv. 'Stop met je elke dag *wegen*'), sub 'Slimmer 2.0 dag X' klein in de pill, 0 tot ±5 s; geen serienaam als hook (aangepast 2026-11-05 na kijkcijfers)",
       "mythe_feit": "rood MYTHE-stempel op de mythe in de eerste 2 s, groen FEIT-stempel op het antwoord; boem",
       "uitleg": "per oorzaak/punt een label (click) + 3D-icoon rechtsboven (x 820, y 450)",
       "getallen": "grafiek (bars) bovenin bij getallen; voorbeeldgetallen altijd met 'voorbeeld' erbij",
