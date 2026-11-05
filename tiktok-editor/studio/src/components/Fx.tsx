@@ -55,11 +55,11 @@ const Orbit: React.FC<Props> = ({ beat, sb, videoStyle }) => {
   const imgs = beat.images ?? [];
   const f = faceAt(sb, beat.start);
   const cx = f[0] + f[2] / 2;
-  const cy = f[1] + f[3] * 1.05;
-  const rx = beat.rx ?? 430;
-  const ry = 120;
-  const w = 220;
-  const h = 330;
+  const cy = f[1] + f[3] * 0.62;
+  const rx = beat.rx ?? 440;
+  const ry = 130;
+  const w = 260;
+  const h = 390;
   const cards = imgs.map((src, i) => {
     const th = (t - beat.start) * (beat.speed ?? 1.7) + (i * 2 * Math.PI) / imgs.length - Math.PI / 2;
     const d = Math.sin(th);
@@ -144,7 +144,7 @@ const UiWorld: React.FC<Props> = ({ beat, sb, style }) => {
   const p = enter(frame, beat.start, fps, 16);
   return (
     <AbsoluteFill style={{ background: "linear-gradient(180deg,#F6F3EE 0%,#ECE8E0 100%)" }}>
-      <div style={{ position: "absolute", top: 130, left: 0, right: 0, textAlign: "center", ...fontCss("sans"), fontSize: 34, color: "#3a3832", opacity: p }}>
+      <div style={{ position: "absolute", top: 100, left: 0, right: 0, textAlign: "center", ...fontCss("sans"), fontSize: 34, color: "#3a3832", opacity: p }}>
         <span style={{ display: "inline-block", width: 22, height: 22, borderRadius: 22, background: style.accent, marginRight: 14, verticalAlign: "middle" }} />
         {beat.title ?? "Studio"}
       </div>
@@ -153,7 +153,7 @@ const UiWorld: React.FC<Props> = ({ beat, sb, style }) => {
           position: "absolute",
           left: 70,
           right: 70,
-          top: 250,
+          top: 190,
           padding: "30px 34px 22px",
           borderRadius: 30,
           background: "#fff",
@@ -503,8 +503,8 @@ const Doodle: React.FC<Props> = ({ beat, sb, videoStyle }) => {
   const id = `boil${Math.round(beat.start * 100)}`;
   const f = faceAt(sb, beat.start);
   const stickers = [
-    { x: f[0] - 80, y: f[1] - 40, kind: "heart", at: beat.start + 0.25, c: "#F7A8C8" },
-    { x: f[0] + f[2] + 80, y: f[1] - 70, kind: "spark", at: beat.start + 0.1, c: "#F2D64B" },
+    { x: Math.max(120, f[0] - 60), y: Math.max(260, f[1] - 40), kind: "heart", at: beat.start + 0.25, c: "#F7A8C8" },
+    { x: Math.min(960, f[0] + f[2] + 60), y: Math.max(240, f[1] - 70), kind: "spark", at: beat.start + 0.1, c: "#F2D64B" },
   ];
   return (
     <AbsoluteFill>
@@ -591,7 +591,7 @@ const Cover: React.FC<Props> = ({ beat, sb, videoStyle }) => {
             top: 150 + size + i * 44,
             ...(i % 2 ? { right: 70, textAlign: "right" as const } : { left: 70 }),
             ...fontCss("mono"),
-            fontSize: 28,
+            fontSize: 34,
             color: "#fff",
             textTransform: "uppercase",
             opacity: lp,
@@ -602,7 +602,7 @@ const Cover: React.FC<Props> = ({ beat, sb, videoStyle }) => {
         </div>
       ))}
       {hl ? (
-        <div style={{ position: "absolute", left: 70, right: 70, top: 1020, ...fontCss("italic"), fontSize: 76, lineHeight: 1, color: "#fff", textShadow: "0 4px 24px rgba(0,0,0,0.7)" }}>
+        <div style={{ position: "absolute", left: 70, right: 70, top: 920, ...fontCss("italic"), fontSize: 76, lineHeight: 1, color: "#fff", textShadow: "0 4px 24px rgba(0,0,0,0.7)" }}>
           {hl.slice(0, shown)}
         </div>
       ) : null}
