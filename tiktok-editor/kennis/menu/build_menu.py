@@ -10,8 +10,8 @@ def img(rel):
 
 SECTIONS=[
  ("S","Serie en template","Bepaalt de hele stijl. Kies er altijd één.",[
-  ("S1","Van nul naar grip","Motivatie, dag X. Zwart-wit, geen 3D, alleen ondertitels en impact-woorden.","Dag 10: 'Laat je niet afleiden'","dag10grip/stills/still_5.3.png"),
-  ("S2","Slimmer eten, drinken en trainen 2.0","Uitleg: stempels, getallen, grafieken, foto's van eten en drinken, groen accent.","'Eiwit direct na je training?'","menu/stills/still_9.8.png"),
+  ("S1","Van nul naar grip","Motivatie, dag X. Harde look: bijna zwart-wit, veel contrast, harde impact-woorden met boem. Geen kleur, geen plaatjes.","Dag 11: 'Je hoeft niet perfect te zijn'","dag11/stills/still_7.14.png"),
+  ("S2","Slimmer eten, drinken en trainen 2.0","Uitleg: MYTHE/FEIT, labels, grafiek, tip-kaartje, checklist, foto's, groen accent.","Dag 22: weegschaal","dag22/stills/still_17.66.png"),
   ("S3","75 kilo blauwdruk","Tips om geleidelijk af te vallen. Layout van de cardio-video, met Tip 1, Tip 2.","'Cardio maakt je niet strak'","cardio/stills/still_2.8.png"),
   ("S4","Losse video","Geen serie. Vrije keuze binnen de vaste indeling.","'Mijn shape na de vakantie'","v9/stills/still_0.6.png"),
  ]),
@@ -21,13 +21,15 @@ SECTIONS=[
   ("D3","Volgers erbij","Eindigt met de volg-kaart en een reden om te volgen.","'Volg voor dag 11'",None),
   ("D4","Vertrouwen en uitleg","Rustiger, meer getallen en bewijs, minder geluidjes.","Coaching en resultaten",None),
  ]),
- ("H","Hook, de eerste 3 seconden","De titel bovenaan die de kijker vasthoudt.",[
+ ("H","Hook, de eerste seconde","Groot bovenaan vanaf het eerste beeld: een uitspraak die een vreemde in 1 seconde snapt, met het hoofdtrefwoord. Serie en dag klein in het pilletje.",[
   ("H1","Mythe + stempel","Valt een overtuiging aan, met een rood MYTHE-stempel en een boem.","'Cardio maakt je niet strak' + MYTHE","cardio/stills/still_2.8.png"),
-  ("H2","Serietitel + dag","Herkenbaar voor vaste kijkers.","'Van nul naar grip' + 'Dag 10'","dag10grip/stills/still_1.0.png"),
+  ("H2","Serietitel + dag","Alleen op verzoek: uit je kijkcijfers blijkt dat een serienaam vreemden niet pakt.","'Van nul naar grip' + 'Dag 10'","dag10grip/stills/still_1.0.png"),
+  ("H5","Eerste zin als hook","Je eerste zin groot bovenin, het pilletje eronder. Standaard sinds dag 11.","'Je hoeft niet perfect te zijn'","dag11/stills/still_0.96.png"),
   ("H3","Vraag aan de kijker","Herkenning: de kijker denkt 'dat ben ik'.","'Zweet jij je kapot op de hometrainer?'","cardio/stills/still_0.8.png"),
   ("H4","Eerlijke titel","Persoonlijk en open, past bij een body check of update.","'Mijn shape na de vakantie' + 'body check'","v9/stills/still_0.6.png"),
  ]),
  ("T","Tekst die oppopt","Kernwoorden op het moment dat je ze zegt. Staat gecentreerd, net boven de ondertitels.",[
+  ("T8","Hard impact-woord","Slaat snel neer, trilt na en geeft een schok in beeld, met een diepe boem. Vast bij Van nul naar grip.","TRAINING, MAALTIJD, GRIP","dag11/stills/still_4.87.png"),
   ("T1","Impact-woord","Groot wit woord slaat neer, witte lijn en holle echo. Zonder kleur (motivatie).","STRONG, UNSTOPPABLE","dag10grip/stills/still_5.3.png"),
   ("T2","Sticker","Kernwoord op een groen vlak, iets scheef.","KRACHTTRAINING","cardio/stills/still_12.8.png"),
   ("T3","Stempel","Rood of groen stempel dat neerslaat, bij mythe/feit of een punchline.","MYTHE, FLUFFY","v9/stills/still_6.0.png"),
@@ -46,12 +48,15 @@ SECTIONS=[
  ("G","Getallen en vergelijkingen","Maakt uitleg zichtbaar.",[
   ("G1","Batterij-meter","Loopt live leeg of vol op je woorden.","Glycogeen 100% → 18%","test/stills/still_1.0.png"),
   ("G2","Tank-meter","Wijzer die oploopt.","Uithouding 35% → 90%","cardio/stills/still_10.5.png"),
-  ("G3","Grafiek","Staafjes die optellen, uitschieter in groen.","Gewicht per dag","menu/stills/still_9.8.png"),
+  ("G3","Grafiek","Staafjes die optellen, uitschieter in groen.","Gewicht per dag","dag22/stills/still_10.3.png"),
+  ("G4","Checklist","Lijstje waarvan de vinkjes aanspringen op je woorden. Komt terug bij de afsluiter.","Omtrekken, spiegel, kleding","dag22/stills/still_20.69.png"),
+  ("G5","Typend tip-kaartje","Kaartje typt de fout en springt met een vinkje naar het betere advies.","'Weeg je elke ochtend' > 'Kijk naar de trend'","dag22/stills/still_16.0.png"),
  ]),
  ("C","Camera en beweging","Zorgt voor beweging zonder dat je opnieuw hoeft te filmen.",[
   ("C1","Zooms op kernwoorden","Korte punch-zoom op belangrijke woorden, langzame zoom op rustige stukken.","Standaard aan",None),
   ("C2","Zooms op de beat","Kleine zooms op de maat van je muziek.","Bij video's met muziek",None),
   ("C3","Virtuele multicam","Wide, medium en close-up uit één opname, wissels op de beat.","'Mijn shape na de vakantie' multicam","v9multi/stills/still_7.3.png"),
+  ("C5","Om en om inzoomen na een knip","Na elke knip 100% of 108% rond je gezicht, zodat een knip voelt als een camerawissel. Standaard aan.","Alle video's",None),
   ("C4","Kijker-stem","Close-up, scheef, met label 'jij:' als je de vraag van de kijker stelt.","'Maar wat dan?'","test/stills/still_5.0.png"),
  ]),
  ("K","Knippen","Hoe strak de stiltes eruit gaan.",[
@@ -62,7 +67,7 @@ SECTIONS=[
   ("K5","Takes samenvoegen","Losse takes (één zin per video) achter elkaar tot één video.","Video 1 t/m 8 = cardio",None),
  ]),
  ("A","Geluid","Geluidseffecten op de beelden en woorden.",[
-  ("A1","Vol","Whoosh bij wissels, pop bij kernwoorden, riser + boem op de punchline, ding bij de afsluiter.","Uitleg-video's",None),
+  ("A1","Vol","Whoosh bij wissels, pop bij kernwoorden, boem op stempels en de punchline, ding bij vinkjes. Iets zachter sinds dag 22, geen pieptoon (riser).","Uitleg-video's",None),
   ("A2","Alleen de grote momenten","Whoosh bij wissels en boem op de punchline.","Motivatie",None),
   ("A3","Geen geluidjes","Alleen je stem (en je eigen muziek).","Serieuze boodschap",None),
  ]),
@@ -72,6 +77,7 @@ SECTIONS=[
   ("O3","Geen","Geen ondertitels (bijvoorbeeld als je ze zelf in TikTok toevoegt).","",None),
  ]),
  ("E","Einde","Wat de kijker als laatste ziet.",[
+  ("E5","Volg-stempel","Je echte TikTok-profielkaart slaat neer als stempel, met 2 s eindbeeld. Voorkeur.","@wes.built","dag22/stills/still_27.28.png"),
   ("E1","Volg-kaart","Profielkaart @wes.built die naar 'Volgend' springt.","'Volg mij'","v9/stills/still_10.2.png"),
   ("E2","Reactie-kaart","Vraagt om een reactie met een codewoord.","'Comment SCHEMA'",None),
   ("E3","Groot advies","Eindigt op het advies als groot getal.","'3 of 4 keer per week'","cardio/stills/still_31.6.png"),
@@ -132,7 +138,8 @@ footer{{margin-top:44px;padding:18px;border-radius:14px;border:1px solid var(--a
 <div class="how"><div class="k">Zo kies je</div><div>Noem per groep een code, bijvoorbeeld <code>S3 D2 H1 T2+T4 B4 G1 K2 A1 O1 E1</code>. Meerdere opties in één groep mag met een plus.</div><div>Geen idee? Zeg <code>jij kiest</code>, dan stel ik een combinatie voor die bij de serie past.</div></div>
 <nav aria-label="Groepen">{nav}</nav>
 {''.join(cards)}
-<footer><div class="k">Vaste regels (gelden altijd)</div><p>Tekst gecentreerd · hook bovenaan · pop-tekst net boven de ondertitels · ondertitels onderaan · donkere letterrand · geen rare leestekens · stiltes eruit · nooit gespiegeld · elke video andere plaatjes.</p></footer>
+<footer><div class="k">Vaste regels (gelden altijd)</div><p>Tekst gecentreerd · hook bovenaan vanaf het eerste beeld · pop-tekst net boven de ondertitels (of boven je hoofd) · ondertitels onderaan, max 3 woorden · donkere letterrand · geen rare leestekens · stiltes eruit · nooit gespiegeld · elke video andere plaatjes.</p>
+<p><b>Altijd automatisch:</b> schone stem (ruis eruit, s-klanken zachter) · zachte knippen zonder klik · ondertitels strak op je stem · eerst de tekst ter controle · foto's uit vrije beeldbanken (Wikimedia Commons, Openverse, Pixabay zodra de sleutel werkt) · na de video een SEO-pakket met beschrijving, trefwoorden, verborgen woorden en hashtags.</p></footer>
 </main>'''
 open(f"{OUT}/bewerkingsmenu.html","w").write(page)
 print("ok", os.path.getsize(f"{OUT}/bewerkingsmenu.html"))
