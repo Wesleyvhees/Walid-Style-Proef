@@ -107,7 +107,7 @@ Werkwijze:
    body check, buiten/binnen, statief of uit de hand) en bij de tekst passen, uit alle templates incl. de **Nieuwe effect template**
    (N1–N17). Leg per zin een voorstel voor (tijdstip → effect → waarom), met 2–3 alternatieven waar het twijfel is, en overleg met Wes
    vóór het storyboard. Let op: vertigo alleen bij statief; effecten met uitsnede kosten ±2 s per frame rekentijd (noem de verwachte duur).
-   **Via het keuzemenu (Wes, 2026-11-05: "maak van mijn storyboard een keuzemenu zodat ik kan aanklikken"):** zet het voorstel in
+   **Altijd via het keuzemenu, bij elke nieuwe video (Wes, 2026-11-05)** — dit vervangt de losse AskUserQuestion-rondes voor effecten: zet het voorstel in
    `<project>/voorstel.json` (formaat: zie `voorbeelden/keuzemenu-voorstel.json`; `groepen` = keuzes voor de hele video zoals hook,
    geluid, einde; `momenten` = per zin met `still` en `opties` {id, code, label, uitleg, advies}), draai `tt.py keuzemenu <project>`
    en publiceer `keuzemenu.html` op de vaste link **https://claude.ai/artifact/HLNEnybLz1nj9jvo4sjYPm** (Artifact publish met `url`,
