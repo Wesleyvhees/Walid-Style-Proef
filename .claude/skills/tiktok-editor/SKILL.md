@@ -103,6 +103,10 @@ Werkwijze:
    (`[0:05] …`). Verbeter eerst zelf duidelijke spraakfouten; zet elk aangepast woord **vet** met erachter wat de
    spraakherkenning hoorde (bv. **craving** (gehoord: kreeving)). Vraag Wes de tekst goed te keuren of te verbeteren.
    Pas na zijn akkoord: `tt.py fixwords` met de goedgekeurde tekst en daarna de vragenlijst.
+1c. **Effectvoorstel (verplicht, Wes 2026-11-05):** bekijk zelf welke effecten bij de soort video (praten, kookvideo,
+   body check, buiten/binnen, statief of uit de hand) en bij de tekst passen, uit alle templates incl. de **Nieuwe effect template**
+   (N1–N17). Leg per zin een voorstel voor (tijdstip → effect → waarom), met 2–3 alternatieven waar het twijfel is, en overleg met Wes
+   vóór het storyboard. Let op: vertigo alleen bij statief; effecten met uitsnede kosten ±2 s per frame rekentijd (noem de verwachte duur).
 2. **Ronde 1** (AskUserQuestion, 4 vragen, telkens 3–4 opties met `description` en waar nuttig `preview` met tijdstip + effect;
    aanbevolen optie eerst met "(Aanbevolen)"):
    - **Serie/template** (S1 Van nul naar grip, S2 Slimmer 2.0, S3 75 kilo blauwdruk, S4 los). Aanbevelen op basis van de tekst.
