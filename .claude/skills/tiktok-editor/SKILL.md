@@ -116,13 +116,17 @@ Werkwijze:
    - **Geluid** (A1–A3) en **Einde** (E1–E4).
 4. **Ronde 3** (als er foto's zijn): stuur per moment het kandidatenoverzicht (A/B/C/D) en laat kiezen.
 5. Vat de keuzes in één tabel samen (code → wat er gebeurt → tijdstip), dan storyboard → stills → montageblad (Artifact) → renderen.
-6. Na de render: stuur de video met meteen het **postklaar pakket** (Wes, 2026-11-05), om te kopiëren:
-   - **Beschrijving**: eerste regel = de hook (wat een vreemde in de zoekresultaten ziet), daarna 2–4 korte zinnen met de kern,
-     serie + dag, en een vraag aan de kijker (reacties). Emoji mag hier spaarzaam. Geen merknamen tenzij Wes ze noemt.
-   - **Verborgen woorden** (zoekwoorden voor TikTok-zoeken): 8–12 Nederlandse zoektermen die mensen echt typen
-     (bv. "afvallen zonder dieet", "fitness motivatie"), als één regel met komma's. Wes plakt ze in het zoekwoordenveld
-     of verstopt ze onder de beschrijving.
-   - **Hashtags**: 4–6, mix van breed (#motivatie) en specifiek (#vannulnaargrip), altijd #wesbuilt.
+6. Na de render: stuur de video met meteen het **postklaar pakket, SEO-geoptimaliseerd** (Wes, 2026-11-05), om te kopiëren:
+   - **Trefwoorden eerst bepalen**: 1 **hoofdtrefwoord** (waar de video over gaat, zoals mensen het zoeken, bv. "motivatie om te sporten"),
+     3–4 **secundaire** trefwoorden en 3–4 **long-tail** zoekvragen ("hoe blijf je gemotiveerd om te sporten").
+     Nederlands, zoals mensen het in TikTok-zoeken typen; liefst woorden die Wes ook uitspreekt (ondertitels tellen mee).
+   - **Beschrijving**: hoofdtrefwoord in de **eerste zin** (die zie je in zoekresultaten), secundaire trefwoorden natuurlijk in de
+     volgende 2–3 zinnen, serie + dag, en een vraag aan de kijker (reacties). Emoji spaarzaam. Geen merknamen tenzij Wes ze noemt.
+   - **Verborgen woorden**: alle trefwoorden als één regel met komma's (hoofd + secundair + long-tail + varianten/meervoud),
+     voor het zoekwoordenveld of onderaan de beschrijving onder een paar lege regels.
+   - **Hashtags**: 3–5 relevante (hoofdtrefwoord als hashtag, serie-hashtag, #wesbuilt); geen #fyp/#viral.
+   - **Tip voor de opname** als het hoofdtrefwoord nog niet in de video zit: noem het in je eerste of tweede zin, dan staat het ook
+     in de ondertitels.
    Daarna weer een vraag met opties wat beter kan.
 - Antwoordt Wes met eigen tekst in plaats van een optie: lees het goed, volg wat hij echt bedoelt, en vraag door bij twijfel (met voorbeelden).
 - Nieuwe effecten gebouwd? Voeg ze toe aan het bewerkingsmenu (nieuwe code + voorbeeldbeeld) en publiceer het opnieuw op dezelfde link.
