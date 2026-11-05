@@ -782,9 +782,14 @@ def cmd_assets(a):
 
 
 # --------------------------------------------------------------------- person
+# effecten die de uitsnede van de persoon nodig hebben (Nieuwe effect template)
+PERSON_TYPES = ("orbit", "couchwall", "uiworld", "framebreak", "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass")
+
+
 def behind_ranges(sb, pad=0.2):
     return [(b["start"] - pad, b["end"] + pad) for b in sb["beats"]
-            if (b.get("type") == "title" and b.get("behind")) or (b.get("type") == "scene" and b.get("mode") == "cutout")]
+            if (b.get("type") == "title" and b.get("behind")) or (b.get("type") == "scene" and b.get("mode") == "cutout")
+            or b.get("type") in PERSON_TYPES]
 
 
 def cmd_person(a):
@@ -823,6 +828,31 @@ def cmd_person(a):
         else:
             prev = None
             black.save(out)
+    # Vertigo: achtergrond zonder persoon ("clean plate"), per frame ingevuld (OpenCV inpaint) waar het effect zit
+    vr = [(b["start"] - 0.1, b["end"] + 0.1) for b in sb["beats"] if b.get("type") == "vertigo"]
+    if vr:
+        import cv2
+        pdir = os.path.join(a.project, "plate_tmp")
+        shutil.rmtree(pdir, ignore_errors=True)
+        os.makedirs(pdir)
+        kern = np.ones((25, 25), np.uint8)
+        for i in range(n_frames):
+            src = os.path.join(fdir, f"{i + 1:05d}.png")
+            if not os.path.exists(src):
+                break
+            img = cv2.imread(src)
+            if any(s <= i / FPS <= e for s, e in vr):
+                m = cv2.imread(os.path.join(mdir, f"{i:05d}.png"), cv2.IMREAD_GRAYSCALE)
+                m = cv2.dilate((m > 40).astype(np.uint8) * 255, kern)
+                img = cv2.inpaint(img, m, 7, cv2.INPAINT_TELEA)
+                img = cv2.GaussianBlur(img, (0, 0), 1.2)
+            cv2.imwrite(os.path.join(pdir, f"{i:05d}.png"), img)
+        run(["ffmpeg", "-y", "-v", "error", "-framerate", str(FPS), "-i", os.path.join(pdir, "%05d.png"),
+             "-vf", f"scale={W}:{H}:flags=bicubic", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p",
+             os.path.join(a.project, "plate.mp4")])
+        shutil.rmtree(pdir)
+        sb["plate"] = "plate.mp4"
+        print("Achtergrond zonder persoon (vertigo): plate.mp4")
     shutil.rmtree(fdir)
     out = os.path.join(a.project, "person.webm")
     run(["ffmpeg", "-y", "-v", "error", "-i", video, "-framerate", str(FPS), "-i", os.path.join(mdir, "%05d.png"),
@@ -849,6 +879,22 @@ DESCRIBE = {
     "cutaway": lambda b: f"Cutaway schermvullend: {b.get('query') or b.get('src')}" + (f" — “{b['label']}”" if b.get("label") else ""),
     "hook": lambda b: f"Hook-titel: “{b.get('text')}”" + (f" ({b['sub']})" if b.get("sub") else ""),
     "volgstempel": lambda b: "Volg-stempel: Wes.Built-profielkaart slaat neer",
+    "orbit": lambda b: f"Orbit: {len(b.get('images', []))} kaartjes draaien om je heen",
+    "couchwall": lambda b: "Couch wall: muur van screenshots achter je",
+    "uiworld": lambda b: f"UI world: app-scherm, getypt: {b.get('text', '')}",
+    "framebreak": lambda b: "Frame break: video in een kader, jij breekt eruit",
+    "digitalzoom": lambda b: f"Digitale zoom naar {b.get('to', 1.7)}x",
+    "phone": lambda b: f"Telefoon schuift in: {b.get('title', '')}" + (f", knop '{b['button']}'" if b.get("button") else ""),
+    "headlines": lambda b: "Krantenkoppen: " + ", ".join(i["text"] for i in b.get("items", [])),
+    "zoomcut": lambda b: f"Zoom-through overgang op {b.get('at', b['start']):.1f}s",
+    "linechart": lambda b: f"Lijngrafiek tekent zich ({len(b.get('values', []))} punten)" + (f", label {b['label']}" if b.get("label") else ""),
+    "pullback": lambda b: "Pull-back: video in een app-venster met voortgang",
+    "greenscreen": lambda b: "Green screen: jij voor een donker vlak, clip als scherm",
+    "papercut": lambda b: f"Paper cut: papieren uitsnede + knipletters {b.get('title', '')}",
+    "doodle": lambda b: "Doodle boil: getekende lijn om je heen + krabbels",
+    "vertigo": lambda b: "Vertigo: achtergrond zoomt, jij blijft even groot",
+    "cover": lambda b: f"Cover story: {b.get('masthead', '')} achter je hoofd",
+    "glass": lambda b: f"Glazen 3D-letters: {b.get('text', '')}",
     "checklist": lambda b: f"Checklist {b.get('title', '')}: " + ", ".join(f"✓ {i['text']} ({i['at']:.1f}s)" for i in b.get("items", [])),
     "meter": lambda b: f"Meter ({b.get('kind', 'battery')}): {b.get('label', '')}",
     "persona": lambda b: f"Kijker-stem: close-up + label '{b.get('label', 'jij')}'",
@@ -858,7 +904,9 @@ DESCRIBE = {
 
 
 TEXT_TYPES = ("pop", "words", "hook", "title")
-VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment", "meter", "volgstempel", "checklist")
+VISUAL_TYPES = ("scene", "cutaway", "image", "emoji", "chart", "images", "prompt", "follow", "comment", "meter", "volgstempel", "checklist",
+                "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut", "linechart", "pullback",
+                "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass")
 SFX_NL = {"pop": "pop", "whoosh": "whoosh", "ding": "ding", "click": "klik", "boom": "boem", "riser": "riser"}
 
 

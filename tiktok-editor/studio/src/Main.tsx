@@ -7,6 +7,8 @@ import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
 import { ChecklistCard, CommentCard, FloatingImages, FollowCard, PromptCard } from "./components/Cards";
 import { EmojiPop, PhotoPop, PopText, VolgStempel } from "./components/Pops";
+import { camFx, FX_TYPES, FxLayer } from "./components/Fx";
+import type { FxBeat } from "./types";
 import { ChartCard, CutawayLayer, HookTitle, MeterGraphic, PersonaLabel, personaTransform, SceneLayer } from "./components/Scenes";
 
 loadFonts();
@@ -80,6 +82,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
   const z = zoomAt(sb.zooms ?? [], t);
   const pers = personaTransform(sb.beats, t);
   const lv = (sb.cutLevels ?? []).find((c) => t >= c.start && t < c.end);
+  const cf = camFx(sb, t); // digitale zoom / zoom-through cut
   // schok in beeld bij een harde impact: beeld schiet 3 frames omlaag en veert terug (geen zoom, dus geen invloed op geluid)
   const hit = sb.beats.find((b) => b.type === "pop" && (b as any).hard && t >= b.start && t < b.start + 0.2);
   const jolt = hit ? Math.sin(((t - hit.start) / 0.2) * Math.PI) * 14 * (1 - (t - hit.start) / 0.2) : 0;
@@ -87,9 +90,9 @@ export const Main: React.FC<Storyboard> = (sb) => {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    filter: s.filter + (pers?.filter ?? ""),
-    transform: `translateY(${jolt}px) scale(${z * (pers?.scale ?? 1) * (lv?.scale ?? 1) * (jolt ? 1.02 : 1)}) rotate(${pers?.rotate ?? 0}deg)`,
-    transformOrigin: lv ? `${lv.ox}px ${lv.oy}px` : "50% 42%",
+    filter: s.filter + (pers?.filter ?? "") + (cf.blur ? ` blur(${cf.blur.toFixed(1)}px)` : ""),
+    transform: `translateY(${jolt}px) scale(${z * (pers?.scale ?? 1) * (lv?.scale ?? 1) * cf.scale * (jolt ? 1.02 : 1)}) rotate(${pers?.rotate ?? 0}deg)`,
+    transformOrigin: cf.origin ?? (lv ? `${lv.ox}px ${lv.oy}px` : "50% 42%"),
   };
   const cap = sb.captions ?? {};
   const capStyle: StylePreset = cap.style ? { ...s, ...(PRESETS[cap.style] ?? {}) } : s;
@@ -120,6 +123,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
         b.type === "scene" ? <SceneLayer key={`sc${i}`} beat={b} video={sb.video} person={sb.person} filter={s.filter} /> : null,
       )}
       {now.map((b, i) => (b.type === "cutaway" ? <CutawayLayer key={`ca${i}`} beat={b} style={s} /> : null))}
+      {now.map((b, i) => (FX_TYPES.includes(b.type) ? <FxLayer key={`fx${i}`} beat={b as FxBeat} sb={sb} style={s} videoStyle={videoStyle} /> : null))}
       {s.vignette ? (
         <AbsoluteFill
           style={{ background: `radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 45%, rgba(0,0,0,${s.vignette}) 100%)` }}

@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-05 · algemeen · Wes stuurde een video met 17 effecten ("leer deze en verwerk ze", "maak er een geheel nieuwe template voor: nieuwe effect template") → template `nieuweeffecten` met alle 17 (components/Fx.tsx, beat-types zie README/types.ts), in de Wes.Built-stijl (niet het gele uiterlijk uit de voorbeeldvideo). Teller "NN/MM" als open lus.
 - 2026-11-05 · algemeen · "daar moet jij voor zorgen" (trefwoord in de video) → Claude bepaalt de trefwoorden vóór de vragenlijst en zet het hoofdtrefwoord in de tekst in beeld (hook of pill, waar het past ook als impact-woord); in scripts van Claude staat het in de eerste of tweede zin.
 - 2026-11-05 · algemeen · "SEO-geoptimaliseerd, denk ook aan trefwoorden" → postklaar pakket begint met trefwoorden (1 hoofd, 3–4 secundair, 3–4 long-tail zoekvragen); hoofdtrefwoord in de eerste zin van de beschrijving; verborgen woorden = alle trefwoorden + varianten; 3–5 hashtags zonder #fyp.
 - 2026-11-05 · algemeen · "geef me voortaan ook de verborgen woorden en beschrijving na het maken van de video" → bij elke opgeleverde video een postklaar pakket: beschrijving (hook eerst), 8–12 verborgen zoekwoorden, 4–6 hashtags incl. #wesbuilt.

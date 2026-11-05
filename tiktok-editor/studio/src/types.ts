@@ -84,7 +84,9 @@ export type PopBeat = {
   start: number;
   end: number;
   text: string;
-  look?: "sticker" | "outline" | "big" | "label" | "stamp" | "impact";
+  look?: "sticker" | "outline" | "big" | "label" | "stamp" | "impact" | "counter";
+  n?: number; // counter: nummer ("03/17")
+  of?: number;
   color?: string; // voor stamp: bv. "#FF3B30" (mythe) of "#34C759" (feit)
   sub?: string; // kleine regel onder een "big"-tekst, bv. "snelle koolhydraten" onder "30 g"
   x?: number; // midden, px (standaard midden van het beeld)
@@ -206,7 +208,34 @@ export type ChecklistBeat = {
   w?: number;
 };
 
-export type Beat = (ChecklistBeat | TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat | MeterBeat | PersonaBeat | VolgStempelBeat) & {
+// Nieuwe effect template (zie components/Fx.tsx)
+export type FxBeat = {
+  type: "orbit" | "couchwall" | "uiworld" | "framebreak" | "digitalzoom" | "phone" | "headlines" | "zoomcut" | "linechart"
+    | "pullback" | "greenscreen" | "papercut" | "doodle" | "vertigo" | "cover" | "glass";
+  start: number;
+  end: number;
+  images?: string[]; // orbit, couchwall: screenshots/thumbnails
+  text?: string; // uiworld (getypte opdracht), glass (woord)
+  title?: string; // uiworld/pullback (app-naam), phone (kop), papercut (knipletters)
+  to?: number; // digitalzoom, vertigo
+  speed?: number;
+  rx?: number;
+  values?: number[]; // linechart
+  label?: string;
+  y?: number;
+  items?: { text: string; at: number }[]; // headlines
+  rows?: string[]; // phone
+  button?: string;
+  pressAt?: number;
+  at?: number; // zoomcut: moment van de knip
+  src?: string; // greenscreen: andere clip in het scherm
+  masthead?: string; // cover
+  coverLines?: string[];
+  headline?: string;
+  steps?: { text: string; at: number }[]; // pullback
+};
+
+export type Beat = (FxBeat | ChecklistBeat | TitleBeat | PromptBeat | FollowBeat | CommentBeat | WordsBeat | ImagesBeat | PopBeat | EmojiBeat | ImageBeat | SceneBeat | CutawayBeat | HookBeat | ChartBeat | MeterBeat | PersonaBeat | VolgStempelBeat) & {
   sfx?: Sfx | Sfx[]; // bv. ["riser", "boom"] op een punchline
   note?: string;
 };
@@ -241,6 +270,7 @@ export type Storyboard = {
   jumpZoom?: { to?: number; minHold?: number } | false;
   sfxVolume?: number; // vermenigvuldiger voor alle geluidseffecten (standaard 1)
   cutLevels?: { start: number; end: number; scale: number; ox: number; oy: number }[];
+  plate?: string; // achtergrond zonder persoon (vertigo), gemaakt door tt.py person
 };
 
 export type StylePreset = {

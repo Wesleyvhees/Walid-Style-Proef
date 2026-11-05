@@ -121,5 +121,16 @@
     "style": "wesbuilt",
     "toegestaan": null,
     "uitleg": "Geen vaste serie: kies per video, met de vaste indeling en huisstijl."
+  },
+  "nieuweeffecten": {
+    "naam": "Nieuwe effect template",
+    "style": "wesbuilt",
+    "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment",
+      "title", "volgstempel", "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",
+      "linechart", "pullback", "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass"],
+    "popLooks": ["counter", "sticker", "label", "big", "stamp", "impact", "outline"],
+    "captions": {"y": 1290},
+    "jumpZoom": false,
+    "uitleg": "17 effecten uit Wes' voorbeeldvideo (2026-11-05), in de Wes.Built-stijl: orbit, couch wall, ui world, frame break, digital zoom, phone mockup, checklist, headline wall, zoom-through cut, chart grow (linechart), pull-back reveal, green screen, paper cut, doodle boil, vertigo, cover story, glass type. Elk effect 1 tot 2 s, snel na elkaar; teller 'NN/MM' (pop look counter) als open lus. Effecten met de uitsnede vereisen tt.py person (vertigo maakt ook plate.mp4)."
   }
 }

@@ -85,6 +85,20 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
       </div>
     );
   }
+  if (look === "counter") {
+    // teller + naam, bv. "03/17" boven "Frame break": open lus, de kijker wil de rest zien
+    const pad = (v?: number) => String(v ?? 0).padStart(2, "0");
+    return (
+      <div style={{ ...base, textAlign: "center" }}>
+        <div style={{ ...fontCss("mono"), fontSize: 30, color: "#fff", textShadow: "0 2px 10px rgba(0,0,0,0.7)", marginBottom: 4 }}>
+          {pad(beat.n)}/{pad(beat.of)}
+        </div>
+        <div style={{ ...fontCss("sans"), fontSize: beat.size ?? 92, lineHeight: 1, color: style.accent, WebkitTextStroke: "8px rgba(0,0,0,0.55)", paintOrder: "stroke fill", textShadow: "0 8px 30px rgba(0,0,0,0.5)" }}>
+          {beat.text}
+        </div>
+      </div>
+    );
+  }
   if (look === "big") {
     return (
       <div style={{ ...base, textAlign: "center" }}>

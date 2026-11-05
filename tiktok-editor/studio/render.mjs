@@ -73,12 +73,15 @@ const cleanText = (t, keepStars = false) =>
     .replace(/\b(w|d|z|h)él\b/gi, (m) => m.replace(/é/, "e").replace(/É/, "E"))
     .replace(/\s{2,}/g, " ")
     .trim();
-const TEXT_KEYS = ["text", "sub", "label", "doneText", "doneLabel", "headline", "comment", "kicker", "title"];
+const TEXT_KEYS = ["text", "sub", "label", "doneText", "doneLabel", "headline", "comment", "kicker", "title", "masthead", "button"];
 for (const b of sb.beats) {
   for (const k of TEXT_KEYS) if (typeof b[k] === "string") b[k] = cleanText(b[k], b.type === "hook" && k === "text");
   for (const l of b.lines ?? []) l.text = cleanText(l.text);
-  for (const r of b.rows ?? []) r.label = cleanText(r.label);
+  for (const r of b.rows ?? []) if (r && typeof r === "object") r.label = cleanText(r.label);
   for (const it of b.items ?? []) it.text = cleanText(it.text);
+  for (const it of b.steps ?? []) it.text = cleanText(it.text);
+  if (b.rows && typeof b.rows[0] === "string") b.rows = b.rows.map((r) => cleanText(r));
+  if (b.coverLines) b.coverLines = b.coverLines.map((r) => cleanText(r));
 }
 
 // Gezichtsposities voor automatische plaatsing (tt.py layout)
@@ -165,8 +168,10 @@ const copy = (rel) => {
 };
 copy(sb.video);
 if (sb.person) copy(sb.person);
+if (sb.plate) copy(sb.plate);
 for (const b of sb.beats) {
   if (b.type === "images") b.src.forEach(copy);
+  if (Array.isArray(b.images)) b.images.forEach(copy);
   else if (typeof b.src === "string") copy(b.src);
 }
 
