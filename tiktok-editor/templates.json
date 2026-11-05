@@ -101,7 +101,9 @@
       "follow",
       "comment",
       "title",
-      "volgstempel"
+      "volgstempel",
+      "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",
+      "linechart", "pullback", "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass"
     ],
     "popLooks": [
       "stamp",
