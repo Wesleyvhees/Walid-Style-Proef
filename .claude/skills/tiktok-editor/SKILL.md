@@ -294,6 +294,7 @@ In het keuzemenu: markeer elke hoek/re-hook als moment en bied per moment een vi
 - **Geen rare leestekens**: geen … – — × = * of aanhalingstekens, geen klemtoontekens als nadruk (wél). Nadruk = groen/sticker.
   `render.mjs` filtert ze ook automatisch; schrijf ze dus al niet in het storyboard. (`*woord*` in een hook is alleen opmaak.)
 - Ondertitels zonder komma's en punten; ? en ! blijven.
+- **Hoofdletters in ondertitels** (Wes 2026-11-06): alles klein, alleen het eerste woord van een nieuwe zin met een hoofdletter; nooit alles in hoofdletters (automatisch in Captions.tsx, ook namen zoals 'slimmer' worden klein).
 - Getallen en bereiken voluit: "3 of 4", "20 tot 30 gram".
 
 ## Effectregels (wat bij welke tekst past)

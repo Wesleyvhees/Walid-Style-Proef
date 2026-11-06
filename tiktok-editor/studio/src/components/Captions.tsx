@@ -22,9 +22,12 @@ export const chunkWords = (words: Word[], maxChars: number, maxWords = 3): Chunk
     cur = [];
   };
   words.forEach((w, i) => {
-    const text = clean(w.w);
+    // Hoofdletters (Wes 2026-11-06): alles klein, alleen het eerste woord van een zin met een hoofdletter.
+    const startsSentence = i === 0 || /[.!?…]$/.test(words[i - 1].w.trim());
+    const low = clean(w.w).toLocaleLowerCase("nl-NL");
+    const text = startsSentence ? low.charAt(0).toLocaleUpperCase("nl-NL") + low.slice(1) : low;
     if (!text) return;
-    const len = cur.map((c) => clean(c.w)).join(" ").length;
+    const len = cur.map((c) => c.w).join(" ").length;
     const prev = cur[cur.length - 1];
     if (cur.length && (cur.length >= maxWords || len + 1 + text.length > maxChars || (prev && w.s - prev.e > 0.45))) flush();
     cur.push({ ...w, w: text });
@@ -96,7 +99,7 @@ export const Captions: React.FC<{
           flexWrap: "wrap",
           justifyContent: "center",
           columnGap: "0.24em",
-          textTransform: style.captionUpper ? "uppercase" : "none",
+          textTransform: "none", // nooit alles in hoofdletters (Wes 2026-11-06)
           textShadow: style.captionShadow ? "0 4px 24px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.6)" : "none",
           // donkere rand om elke letter: altijd leesbaar, ook op lichte muren of lucht
           WebkitTextStroke: style.captionShadow ? `${Math.round(fs * 0.09)}px rgba(0,0,0,0.55)` : undefined,
