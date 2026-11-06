@@ -24,6 +24,8 @@
     "goedgekeurd": "2026-11-04: door Wes goedgekeurd, niet meer aanpassen zonder zijn vraag",
     "referentie": "voorbeelden/nulnaargrip-dag11/storyboard.json",
     "impactHard": true,
+    "impactFont": "barlow",
+    "impactScale": 0.9,
     "vast": {
       "hook": "bovenaan vanaf frame 1 (y 215, size ±100): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (geen serienaam), sub 'Van nul naar grip dag X' klein in de pill; eindigt voordat het eerste impact-woord overlapt (aangepast 2026-11-05 na kijkcijfers)",
       "impact": "pop look 'impact' HARD (slaat snel neer, trilt na, korte schok in beeld; automatisch via impactHard), 1 kernwoord per zin (±1,2–2 s), size 170–220, wit; boven het hoofd (y ±380) zodat het gezicht vrij blijft",

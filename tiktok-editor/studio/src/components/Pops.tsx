@@ -40,7 +40,7 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
     const echo = interpolate(t, [0.05, 0.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
     const size = beat.size ?? 170;
     const word: React.CSSProperties = {
-      ...fontCss("condensed"),
+      ...fontCss(beat.font ?? "condensed"),
       fontSize: size,
       lineHeight: 0.9,
       textTransform: /\d/.test(beat.text) ? "none" : "uppercase",

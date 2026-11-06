@@ -118,6 +118,7 @@ export const FONT_FAMILY: Record<FontKind, string> = {
   italic: "InstrumentSerifItalic",
   sans: "InterVar",
   condensed: "Anton",
+  barlow: "BarlowCondensedBlackItalic",
   mono: "DMMono",
 };
 
@@ -127,6 +128,8 @@ export const fontCss = (kind: FontKind): React.CSSProperties => {
       return { fontFamily: FONT_FAMILY.sans, fontWeight: 900, letterSpacing: "-0.045em" };
     case "condensed":
       return { fontFamily: FONT_FAMILY.condensed, fontWeight: 400, letterSpacing: "-0.01em" };
+    case "barlow":
+      return { fontFamily: FONT_FAMILY.barlow, fontWeight: 900, fontStyle: "normal", letterSpacing: "0em" };
     case "italic":
       return { fontFamily: FONT_FAMILY.italic, fontStyle: "normal", letterSpacing: "-0.02em" };
     case "mono":

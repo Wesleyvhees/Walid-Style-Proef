@@ -2,7 +2,7 @@
 
 export type Word = { w: string; s: number; e: number };
 
-export type FontKind = "serif" | "italic" | "sans" | "condensed" | "mono";
+export type FontKind = "serif" | "italic" | "sans" | "condensed" | "mono" | "barlow";
 
 export type TitleLine = {
   text: string;
@@ -94,6 +94,7 @@ export type PopBeat = {
   rotate?: number;
   size?: number;
   hard?: boolean; // impact: slaat harder en sneller neer, met een korte schok in beeld (motivatie)
+  font?: FontKind; // lettertype van het woord (impact), bv. "barlow"
 };
 
 export type EmojiBeat = {

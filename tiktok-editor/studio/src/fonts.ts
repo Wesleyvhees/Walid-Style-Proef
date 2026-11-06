@@ -5,6 +5,7 @@ const FILES: [string, string, string?][] = [
   [FONT_FAMILY.serif, "fonts/InstrumentSerif-Regular.ttf"],
   [FONT_FAMILY.italic, "fonts/InstrumentSerif-Italic.ttf"],
   [FONT_FAMILY.condensed, "fonts/Anton-Regular.ttf"],
+  [FONT_FAMILY.barlow, "fonts/BarlowCondensed-BlackItalic.ttf", "900"],
   [FONT_FAMILY.mono, "fonts/DMMono-Regular.ttf"],
   [FONT_FAMILY.sans, "fonts/Inter-Variable.ttf", "100 900"],
 ];

@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-06 · Van nul naar grip dag 12 · lettertype-keuzemenu → Wes koos **Barlow Condensed Black Italic** op **90%** voor de woorden bovenin (template nulnaargrip: `impactFont: "barlow"`, `impactScale: 0.9`). Eerste video met hoekstapeling, 15,5% sneller (14,4 s) en loop zonder eindbeeld.
 - 2026-11-06 · algemeen · "ondertiteling altijd zonder hoofdletters, of elk begin van een nieuwe zin met hoofdletter" → ondertitels automatisch klein met alleen een hoofdletter aan het begin van een zin; nooit meer alles in hoofdletters (ook niet in presets met captionUpper).
 - 2026-11-06 · algemeen · "de tekst niet meer in tabellen, gewoon zinnen onder elkaar, zodat ik kan kopiëren voor het opnemen" → scripts als losse zinnen in een codeblok, één per regel, zonder tijden of labels.
 - 2026-11-06 · algemeen · "tempo sneller, ik moet sneller praten, filmpjes inkorten, reloop maken" → prepare standaard 10% sneller (`--tempo 1.1`) en `--gap 0.06`; doel 12–20 s; loop in alle templates: geen eindbeeld meer, volg-stempel als overlay tijdens de laatste zin, laatste zin loopt door in de hook, laatste stuk op 100%. Dit vervangt "eindbeeld 2 s verlengen" van eerder.
