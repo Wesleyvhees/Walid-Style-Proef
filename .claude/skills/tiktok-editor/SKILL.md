@@ -136,7 +136,8 @@ Werkwijze:
      Nederlands, zoals mensen het in TikTok-zoeken typen; liefst woorden die Wes ook uitspreekt (ondertitels tellen mee).
    - **Beschrijving**: hoofdtrefwoord in de **eerste zin** (die zie je in zoekresultaten), secundaire trefwoorden natuurlijk in de
      volgende 2–3 zinnen, serie + dag, en een vraag aan de kijker (reacties). Emoji spaarzaam. Geen merknamen tenzij Wes ze noemt.
-   - **Verborgen woorden**: alle trefwoorden als één regel met komma's (hoofd + secundair + long-tail + varianten/meervoud),
+   - **Verborgen woorden / trefwoorden**: als **lijstje onder elkaar** in een codeblok, één trefwoord per regel, zonder komma's (Wes 2026-11-06)
+     (hoofd + secundair + long-tail + varianten/meervoud),
      voor het zoekwoordenveld of onderaan de beschrijving onder een paar lege regels.
    - **Hashtags: precies 3** (Wes 2026-11-06): hoofdtrefwoord als hashtag, serie-hashtag, #wesbuilt; geen #fyp/#viral.
    - **Claude zorgt dat het hoofdtrefwoord in de video zit** (Wes: "daar moet jij voor zorgen"), niet Wes:
