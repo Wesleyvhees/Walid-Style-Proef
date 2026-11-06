@@ -10,6 +10,23 @@ Let op: onder ±1000 weergaven zijn dit aanwijzingen, geen harde conclusies.
 | Van nul naar grip dag 10 | `nulnaargrip` | 12,2 s | 11 u | 236 | 9,5 s | 78% | 11,4% | 0:02 | Serienaam "Van nul naar grip" + "Dag 10" bovenin | 94,7% | 8 / 0 / 3 / 0 | 0 |
 | Cardio maakt je niet strak | `blauwdruk75` | 34,1 s | 23 u | 258 | 7,5 s | 22% | 3,7% | 0:01 | Hook "Cardio maakt je niet strak" + MYTHE-stempel | 90,7% | 7 / 1 / 2 / 1 | 0 |
 
+## Grote analyse (2026-11-06: gegevensdownload 175 video's + TikTok Studio 60 dagen)
+
+- 60 dagen (6 sep tot 4 nov): 30K weergaven (+59,6%), 2,5K profielweergaven (+137,8%), 1,2K likes, 144 reacties, 73 keer gedeeld,
+  €59 beloningen. Verkeer: Voor jou 79,3%, profiel 18,5%, volgend 1,3%, zoeken 0,9%.
+- Volgers per week: tot eind augustus ±5, sinds september 70 tot 160 (piek week 43: 161). Totaal 1.020.
+- Likes per video: gemiddeld 17, mediaan 16, max 97. Mei sterkst (24 per video), oktober 15 (46 video's). Meer dan 1 post per dag
+  maakt geen verschil (18 tegen 19). Dinsdag sterkst (22), zondag zwakst (15); per uur kleine verschillen.
+- **174 van 175 video's zonder beschrijving** → bijna geen zoekverkeer. Zoektermen die al kijkers geven: bekkenkanteling,
+  dun worden van rondje wandelen, kleine stapjes, door onderrug gegaan, "Wessbuild" (verkeerd gespeld).
+- **Toppers** (97, 57, 45, 40, 36, 36 likes): 30 MIN LOPEN -6 KG VET · CAKE VOOR EEN SIXPACK · ENERGIE VS KOFFIE · 80/20 REGEL ·
+  HALLO ALLEMAAL (luchtig) · ETEN NA 20:00 MAAKT JE DIK. Patroon: één concrete titel met getal of mythe **de hele video** in beeld,
+  9 tot 23 s (meestal 9 tot 14), buiten, simpele ondertitels, muziek eronder, duidelijke afsluiter ("recept bij 50 likes").
+- Nieuwe zwaar bewerkte video's (29 tot 36 s) scoren tot nu toe minder en verliezen kijkers op 0:02 → eerst het begin en de titel
+  goed, effecten daarna.
+- Plan (pagina https://claude.ai/artifact/1fixHET5RWtq8p1QtPmRSh): nieuwe bio, altijd beschrijving, titel de hele video in beeld,
+  12 tot 20 s, video's op zoektermen, toppers herhalen, dinsdag posten, na een week opnieuw meten.
+
 ## Conclusies tot nu toe (2026-11-05, 3 video's)
 
 1. **De eerste 1–2 s beslissen alles**: bij alle drie zit het grootste afhaakmoment op 0:01–0:02, en ±95% komt via "Voor jou"
