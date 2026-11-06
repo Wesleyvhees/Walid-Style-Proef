@@ -138,7 +138,7 @@ Werkwijze:
      volgende 2–3 zinnen, serie + dag, en een vraag aan de kijker (reacties). Emoji spaarzaam. Geen merknamen tenzij Wes ze noemt.
    - **Verborgen woorden**: alle trefwoorden als één regel met komma's (hoofd + secundair + long-tail + varianten/meervoud),
      voor het zoekwoordenveld of onderaan de beschrijving onder een paar lege regels.
-   - **Hashtags**: 3–5 relevante (hoofdtrefwoord als hashtag, serie-hashtag, #wesbuilt); geen #fyp/#viral.
+   - **Hashtags: precies 3** (Wes 2026-11-06): hoofdtrefwoord als hashtag, serie-hashtag, #wesbuilt; geen #fyp/#viral.
    - **Claude zorgt dat het hoofdtrefwoord in de video zit** (Wes: "daar moet jij voor zorgen"), niet Wes:
      bepaal de trefwoorden al **vóór de vragenlijst** (na de tekstcheck) en verwerk het hoofdtrefwoord in de tekst in beeld:
      in de hook of het pilletje eronder (bv. pill "Motivatie om te sporten · dag 11"), en waar het past als impact-woord/sticker.
