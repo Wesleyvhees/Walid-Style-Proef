@@ -1085,7 +1085,7 @@ def cmd_keuzemenu(a):
         for o in blok.get("opties", []):
             img = o.get("img")
             if img and os.path.exists(os.path.join(a.project, img)):
-                o["img"] = b64(os.path.join(a.project, img), 120)
+                o["img"] = b64(os.path.join(a.project, img), 420 if o.get("wide") else 120)
             elif o.get("code") and os.path.exists(os.path.join(thumbs, o["code"] + ".jpg")):
                 o["img"] = "data:image/jpeg;base64," + base64.b64encode(open(os.path.join(thumbs, o["code"] + ".jpg"), "rb").read()).decode()
             else:

@@ -29,6 +29,8 @@ section{margin-top:26px}
 .opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .opt[aria-pressed="true"]{border-color:var(--pick);background:color-mix(in srgb,var(--pick) 14%,var(--bg))}
 .opt img,.opt .ni{width:54px;aspect-ratio:9/16;border-radius:7px;object-fit:cover;display:block;background:var(--soft)}
+.opt.wide{grid-template-columns:1fr}
+.opt.wide img{width:100%;aspect-ratio:auto;border-radius:9px}
 .opt .ni{display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-size:18px;color:var(--muted)}
 .opt b{display:block;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:19px;line-height:1}
 .opt .code{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
@@ -78,12 +80,12 @@ textarea:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
   const thumb = (o) => (o.img ? `<img src="${o.img}" alt="">` : `<span class="ni">${o.code || ""}</span>`);
   function optHtml(b, o) {
     const on = state.sel[b.id].includes(o.id);
-    return `<button class="opt" type="button" aria-pressed="${on}" data-b="${b.id}" data-o="${o.id}">${thumb(o)}<span style="min-width:0"><span class="code">${o.code || ""}</span>${o.advies ? '<span class="tag">advies</span>' : ""}<b>${esc(o.label)}</b><p>${esc(o.uitleg || "")}</p></span><span class="tick" aria-hidden="true"></span></button>`;
+    return `<button class="opt${o.wide ? " wide" : ""}" type="button" aria-pressed="${on}" data-b="${b.id}" data-o="${o.id}">${thumb(o)}<span style="min-width:0"><span class="code">${o.code || ""}</span>${o.advies ? '<span class="tag">advies</span>' : ""}<b>${esc(o.label)}</b><p>${esc(o.uitleg || "")}</p></span><span class="tick" aria-hidden="true"></span></button>`;
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
   function render() {
     $("groups").innerHTML = (D.groepen || []).length ? `<h2>Hele video</h2><p class="note">${D.groepenUitleg || "Keuzes die voor de hele video gelden."}</p>` + D.groepen.map((g) => `<div class="group"><div><span class="k">${g.keuze === "een" ? "kies één" : "meerdere mogelijk"}</span><h2 style="font-size:22px">${esc(g.titel)}</h2></div><div class="opts">${g.opties.map((o) => optHtml(g, o)).join("")}</div></div>`).join("") : "";
-    $("moments").innerHTML = `<h2>Per zin</h2><p class="note">Niets aangeklikt bij een zin = alleen ondertitels.</p>` + (D.momenten || []).map((m) => `<div class="moment">${m.still ? `<div><img class="still" src="${m.still}" alt="Beeld op ${m.tijd}"><div class="tc">${m.tijd}${m.tot ? "–" + m.tot : ""}</div></div>` : `<div class="tc">${m.tijd}</div>`}<div style="display:grid;gap:10px;min-width:0"><p class="said">“${esc(m.tekst)}”</p><div class="opts">${m.opties.map((o) => optHtml(m, o)).join("")}</div><textarea id="n_${m.id}" data-n="${m.id}" placeholder="Iets anders bij deze zin? Typ het hier">${esc(state.notes[m.id] || "")}</textarea></div></div>`).join("");
+    $("moments").innerHTML = !(D.momenten || []).length ? "" : `<h2>Per zin</h2><p class="note">Niets aangeklikt bij een zin = alleen ondertitels.</p>` + (D.momenten || []).map((m) => `<div class="moment">${m.still ? `<div><img class="still" src="${m.still}" alt="Beeld op ${m.tijd}"><div class="tc">${m.tijd}${m.tot ? "–" + m.tot : ""}</div></div>` : `<div class="tc">${m.tijd}</div>`}<div style="display:grid;gap:10px;min-width:0"><p class="said">“${esc(m.tekst)}”</p><div class="opts">${m.opties.map((o) => optHtml(m, o)).join("")}</div><textarea id="n_${m.id}" data-n="${m.id}" placeholder="Iets anders bij deze zin? Typ het hier">${esc(state.notes[m.id] || "")}</textarea></div></div>`).join("");
     summary();
   }
   function summary() {
