@@ -43,6 +43,7 @@ if (sb.template) {
   sb.captions = { ...(T.captions ?? {}), ...(sb.captions ?? {}) };
   if (T.jumpZoom !== undefined && sb.jumpZoom === undefined) sb.jumpZoom = T.jumpZoom;
   if (T.sfxVolume !== undefined && sb.sfxVolume === undefined) sb.sfxVolume = T.sfxVolume;
+  if (T.hookHeleVideo !== undefined && sb.hookHeleVideo === undefined) sb.hookHeleVideo = T.hookHeleVideo;
   // harde impact-woorden als vaste stijl van de serie (per woord uit te zetten met "hard": false)
   if (T.impactHard) sb.beats.forEach((b) => { if (b.type === "pop" && b.look === "impact" && b.hard === undefined) b.hard = true; });
   if (T.sfxOpZoom === false) {
@@ -59,6 +60,13 @@ if (sb.template) {
     weg.forEach((b) => console.warn(`Template ${sb.template}: ${b.type}${b.look ? "/" + b.look : ""} op ${b.start}s past niet bij deze serie, weggelaten`));
     sb.beats = sb.beats.filter((b) => !weg.includes(b));
   }
+}
+
+// Hook-titel de hele video in beeld (zoals Wes' toppers, analyse 2026-11-06): loopt door tot de afsluiter
+// (volg-stempel/-kaart/reactie) of het einde. Main.tsx verbergt hem even zolang iets anders bovenin staat.
+if (sb.hookHeleVideo !== false) {
+  const endAt = Math.min(sb.duration, ...sb.beats.filter((b) => ["volgstempel", "follow", "comment"].includes(b.type)).map((b) => b.start));
+  for (const b of sb.beats) if (b.type === "hook" && b.start < 1 && endAt > b.end) { b.pinAt = b.end; b.end = endAt; }
 }
 
 // Geen rare leestekens in tekst in beeld (wens van Wes): … – — × = * “ ” en klemtoontekens als nadruk.

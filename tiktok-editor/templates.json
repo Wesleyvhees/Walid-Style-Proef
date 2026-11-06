@@ -1,6 +1,7 @@
 {
   "nulnaargrip": {
     "naam": "Van nul naar grip (motivatie)",
+    "hookHeleVideo": true,
     "style": "nulnaargrip",
     "toegestaan": [
       "hook",
@@ -37,6 +38,7 @@
   },
   "slimmer20": {
     "naam": "Slimmer eten, drinken en trainen 2.0 (uitleg)",
+    "hookHeleVideo": true,
     "style": "wesbuilt",
     "toegestaan": [
       "hook",
@@ -85,6 +87,7 @@
   },
   "blauwdruk75": {
     "naam": "De 75 kilo blauwdruk (tips om geleidelijk af te vallen)",
+    "hookHeleVideo": true,
     "style": "wesbuilt",
     "toegestaan": [
       "hook",
@@ -120,12 +123,14 @@
   },
   "los": {
     "naam": "Losse video",
+    "hookHeleVideo": true,
     "style": "wesbuilt",
     "toegestaan": null,
     "uitleg": "Geen vaste serie: kies per video, met de vaste indeling en huisstijl."
   },
   "nieuweeffecten": {
     "naam": "Nieuwe effect template",
+    "hookHeleVideo": true,
     "style": "wesbuilt",
     "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment",
       "title", "volgstempel", "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",

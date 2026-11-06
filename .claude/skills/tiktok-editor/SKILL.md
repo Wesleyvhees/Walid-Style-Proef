@@ -198,6 +198,15 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 
 ### Hook in de eerste seconde (verplicht, uit de kijkcijfers)
 
+**Aangepast na de grote analyse (2026-11-06, Wes' toppers):**
+- De hook-titel blijft **de hele video** in beeld (template `hookHeleVideo: true`): na de eerste seconden schuift hij kleiner naar
+  boven (`pinAt`), en hij wijkt even zolang er een kaart, grafiek, scene of cutaway bovenin of over het hele beeld staat.
+  Schrijf de hook dus als een titel die de hele video klopt: concreet, met een getal of mythe ("30 MIN LOPEN -6 KG VET").
+- **Eerste 2 seconden rustig:** alleen de hook-titel en hooguit één beweging (punch-zoom of digital zoom). Geen iconen, meters of
+  kaarten vóór 2 s.
+- **Lengte 12 tot 20 s:** zet in het keuzemenu altijd een groep "Lengte" (zo laten · stem 10% sneller met `tt.py tempo` ·
+  mijn voorstel welke zin eruit kan). Bij een script van Claude: max ±50 woorden.
+
 Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01–0:02, en ±95% zijn vreemden via "Voor jou".
 - **Hooktekst bovenin vanaf frame 1** = een concrete, prikkelende uitspraak die een vreemde in 1 s snapt
   ("Stop met je elke dag wegen", "Cardio maakt je niet strak"). **Nooit de serienaam als hook**: serie + dag staan klein in de

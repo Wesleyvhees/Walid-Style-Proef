@@ -14,6 +14,9 @@ import { ChartCard, CutawayLayer, HookTitle, MeterGraphic, PersonaLabel, persona
 loadFonts();
 
 const SFX_LEAD: Record<string, number> = { whoosh: 0.1, riser: 0.86 };
+// beats die bovenin of schermvullend staan: de hook-titel maakt dan even plaats
+const HOOK_YIELD = ["prompt", "chart", "linechart", "checklist", "headlines", "cutaway", "scene", "title", "words", "cover", "glass", "papercut",
+  "uiworld", "pullback", "greenscreen", "couchwall", "framebreak", "orbit", "phone", "comment", "follow", "volgstempel", "persona"];
 // Volume per geluid (Wes, dag 22: "geluidseffecten mogen iets zachter" -> alles ±30% zachter dan eerst).
 // Per video of template nog zachter/harder met "sfxVolume" (vermenigvuldiger, standaard 1).
 const SFX_VOL: Record<string, number> = { riser: 0.25, boom: 0.38, click: 0.28 };
@@ -160,7 +163,20 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (b.type === "checklist") return <ChecklistCard key={`c${i}`} beat={b} style={s} />;
         return null;
       })}
-      {now.map((b, i) => (b.type === "hook" ? <HookTitle key={`h${i}`} beat={b} style={s} /> : null))}
+      {/* hook staat de hele video; hij wijkt zolang iets anders bovenin of over het hele beeld staat */}
+      {now.some((b) => HOOK_YIELD.includes(b.type) || ((b.type === "pop" || b.type === "meter") && ((b as any).y ?? 1120) < 320))
+        ? null
+        : now.map((b, i) => {
+            if (b.type !== "hook") return null;
+            // na de eerste seconden schuift de titel kleiner naar boven ("vastgepind"), zodat er ruimte komt voor effecten
+            const pinAt = (b as any).pinAt as number | undefined;
+            const q = pinAt !== undefined ? interpolate(t, [pinAt, pinAt + 0.3], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.inOut(Easing.cubic) }) : 0;
+            return (
+              <AbsoluteFill key={`h${i}`} style={{ transform: `translateY(${-115 * q}px) scale(${1 - 0.42 * q})`, transformOrigin: "50% 120px" }}>
+                <HookTitle beat={b} style={s} />
+              </AbsoluteFill>
+            );
+          })}
       {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart" || b.type === "volgstempel") ? (
         <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} />
       ) : null}
