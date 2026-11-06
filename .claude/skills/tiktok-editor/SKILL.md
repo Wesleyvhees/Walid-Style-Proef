@@ -249,6 +249,10 @@ Regels:
 
 ### Hoekstapeling: pijn → meer pijn → oplossing (Wes, 2026-11-06) + de 3-secondenoorlog
 
+**Scripts aan Wes leveren als losse zinnen onder elkaar, NIET in een tabel** (Wes 2026-11-06: zodat hij ze kan kopiëren naar zijn
+teleprompter/tekst bij het opnemen). Eerst het kale script in een codeblok (alleen de zinnen, één per regel, geen tijden of labels),
+daarna eventueel kort wat er in beeld komt.
+
 Structuur voor elk script (±15–20 s, ±45 woorden):
 | Tijd | Hoek | Doel | Voorbeeld (slaap) |
 |---|---|---|---|
