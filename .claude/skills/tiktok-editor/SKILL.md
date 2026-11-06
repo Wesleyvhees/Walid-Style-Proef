@@ -218,6 +218,23 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
   H2 (serietitel als hook) alleen als Wes erom vraagt.
 - Stuurt Wes kijkcijfers: zet ze in `kennis/kijkcijfers.md`, koppel het afhaakmoment aan het storyboard, en werk de conclusies bij.
 
+### Hooks schrijven (uit Wes' eigen toppers vs. flops, analyse 2026-11-06)
+
+Toppers begonnen zo (likes): "Een kleine eye-opener: **30 minuten lopen per dag**…" (97) · "**Dit eet ik elke ochtend** voor een
+sixpack" (57) · "Mensen vinden het vreemd dat ik 's ochtends **een Monster** drink, maar als Henk tien koffie drinkt…" (45) ·
+"**De grootste fout** die je maakt is vanaf dag 1 alles 100% goed willen doen" (40) · "Als je na 8 uur nog wat eet word je zeker
+dik. **Hey jo, tuurlijk niet.**" (36). Zwakker: "Waarom een enkel meetmoment niet het hele verhaal vertelt" · "Je hoeft niet perfect te
+zijn" · "Heb jij in de middag continu trek naar snelle snacks en een gigantische energiedip?" (4,4 s lang).
+Regels:
+1. **Eerste zin max ±8 woorden / 2 seconden.** Het kernwoord of getal valt in de eerste 3 woorden.
+2. **Concreet boven abstract:** een getal, eten, een tijdstip, een persoon (Henk) of jij zelf ("Dit eet ik…"); geen
+   "meetmoment", "energiebalans", "perfect".
+3. Gebruik één van de bewezen vormen: **getal-verrassing** (30 min lopen → 6 kilo vet) · **ik-bewijs** (dit eet ik / dit doe ik) ·
+   **grootste fout** · **mythe als feit, dan omdraaien** ("…word je dik. Tuurlijk niet.") · **herkenbare tegenstelling**
+   (Monster vs. tien koffie).
+4. **Spanning in zin 1, antwoord pas daarna**: verklap de oplossing niet in de hook.
+5. Bij elk script: 3 hook-varianten in deze vormen voorstellen; in het keuzemenu de hook-groep met die varianten.
+
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
 
 0. **SEO**: kies eerst het hoofdtrefwoord (zoals mensen het in TikTok zoeken) en zet het letterlijk in de eerste of tweede zin.
