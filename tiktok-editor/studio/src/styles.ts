@@ -20,6 +20,7 @@ export const PRESETS: Record<string, StylePreset> = {
     captionBox: null,
     captionShadow: true,
     titleColor: "#FFFFFF",
+    captionAccent: "#C3D27E", // een klein beetje kleur in de ondertitels (Wes 2026-11-06), verder zwart-wit
   },
   // Huisstijl Wes.Built (kleuren van de Wes.Built Coaching-website): wit met legergroen accent.
   wesbuilt: {

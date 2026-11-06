@@ -22,10 +22,8 @@ export const chunkWords = (words: Word[], maxChars: number, maxWords = 3): Chunk
     cur = [];
   };
   words.forEach((w, i) => {
-    // Hoofdletters (Wes 2026-11-06): alles klein, alleen het eerste woord van een zin met een hoofdletter.
-    const startsSentence = i === 0 || /[.!?…]$/.test(words[i - 1].w.trim());
-    const low = clean(w.w).toLocaleLowerCase("nl-NL");
-    const text = startsSentence ? low.charAt(0).toLocaleUpperCase("nl-NL") + low.slice(1) : low;
+    // Wes 2026-11-06: alleen kleine letters in de ondertitels, ook aan het begin van een zin
+    const text = clean(w.w).toLocaleLowerCase("nl-NL");
     if (!text) return;
     const len = cur.map((c) => c.w).join(" ").length;
     const prev = cur[cur.length - 1];
@@ -122,7 +120,7 @@ export const Captions: React.FC<{
             <span
               key={i}
               style={{
-                color: spoken ? (key ? style.accent : style.ink) : style.muted,
+                color: spoken ? (key ? style.captionAccent ?? style.accent : style.ink) : style.muted,
                 display: "inline-block",
                 transform: `translateY(${hop.toFixed(1)}px) scale(${1 + 0.08 * kp})`,
                 // ruimte meeschalen zodat het grotere woord niet tegen de buren aan komt

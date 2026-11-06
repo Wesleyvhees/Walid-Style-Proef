@@ -101,7 +101,18 @@ const layoutFile = path.join(project, "layout.json");
 if (fs.existsSync(layoutFile)) {
   sb.layout = JSON.parse(fs.readFileSync(layoutFile, "utf8"));
 }  // ondertitels standaard onder de kin ("auto", Wes 2026-11-05); een vast getal in het storyboard wint
-if (sb.captions?.y === "auto" && !sb.layout) console.warn("Let op: captions.y = auto maar layout.json ontbreekt (draai tt.py layout)");
+// Ondertitels op één VASTE hoogte per video (Wes 2026-11-06: "nu verspringt de hoogte"): net onder je kin zoals die
+// meestal staat (mediaan over de hele video). Een getal in het storyboard wint; "regel" = oude per-regel-plaatsing.
+sb.captions = sb.captions ?? {};
+if (typeof sb.captions.y !== "number" && sb.captions.y !== "regel") {
+  const chins = (sb.layout?.faces ?? []).filter(Boolean).map((f) => f[1] + f[3] * 1.22).sort((a, b) => a - b);
+  sb.captions.y = chins.length ? Math.max(900, Math.min(1470, Math.round(chins[Math.floor(chins.length / 2)] + 10))) : 1290;
+  console.log(`Ondertitels vast op y ${sb.captions.y}`);
+} else if (sb.captions.y === "regel") sb.captions.y = "auto";
+// Kernwoorden kleuren: de woorden uit stickers/impact-woorden/labels automatisch ook in de ondertitels
+const hlWords = new Set((sb.captions.highlight ?? []).map((w) => w.toLowerCase()));
+for (const b of sb.beats) if (b.type === "pop" && typeof b.text === "string") for (const w of b.text.toLowerCase().split(/\s+/)) if (w.length > 2 && !/^\d/.test(w)) hlWords.add(w);
+sb.captions.highlight = [...hlWords];
 
 // Virtuele camera's: per shot schaal + verschuiving zodat het focuspunt (gezicht/borst) goed in beeld staat
 if (sb.cams?.length) {

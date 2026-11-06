@@ -291,4 +291,5 @@ export type StylePreset = {
   captionBox: string | null; // achtergrond achter ondertitel, null = geen
   captionShadow: boolean;
   titleColor: string;
+  captionAccent?: string; // kleur van kernwoorden in de ondertitels (standaard accent)
 };

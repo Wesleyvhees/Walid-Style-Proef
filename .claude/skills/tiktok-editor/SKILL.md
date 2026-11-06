@@ -295,7 +295,7 @@ In het keuzemenu: markeer elke hoek/re-hook als moment en bied per moment een vi
   `render.mjs` filtert ze ook automatisch; schrijf ze dus al niet in het storyboard. (`*woord*` in een hook is alleen opmaak.)
 - Ondertitels zonder komma's en punten; ? en ! blijven.
 - **Ondertitels altijd op één regel** (nooit twee regels onder elkaar; te lang = letter iets kleiner) en **elk woord springt een klein beetje omhoog** op het moment dat het wordt uitgesproken (Wes 2026-11-06; automatisch in Captions.tsx).
-- **Hoofdletters in ondertitels** (Wes 2026-11-06): alles klein, alleen het eerste woord van een nieuwe zin met een hoofdletter; nooit alles in hoofdletters (automatisch in Captions.tsx, ook namen zoals 'slimmer' worden klein).
+- **Alleen kleine letters in de ondertitels** (Wes 2026-11-06, update): ook geen hoofdletter aan het begin van een zin. **Kernwoorden licht gekleurd**: woorden uit `captions.highlight` plus automatisch alle woorden uit stickers/impact-woorden/labels; in `nulnaargrip` een zacht groen (`captionAccent`), verder de accentkleur.
 - Getallen en bereiken voluit: "3 of 4", "20 tot 30 gram".
 
 ## Effectregels (wat bij welke tekst past)
@@ -321,9 +321,10 @@ In het keuzemenu: markeer elke hoek/re-hook als moment en bied per moment een vi
   - Ondertitels: **altijd net onder je kin** (automatisch, per regel stil).
   - Iconen, fotokaarten en meters mogen opzij of bovenin, nooit over het gezicht.
   - Wijk alleen af als de standaardplek iets belangrijks bedekt; kies dan de dichtstbijzijnde vrije plek en meld dat.
-- Ondertitels: **altijd net onder de kin** (Wes, 2026-11-05: "een nieuwe regel: ondertiteling altijd onder mijn kin"; vervangt de oude vaste y 1290).
-  Standaard in de code (`captions.y` leeg of `"auto"`, via `layout.json`); zonder gezicht in beeld y 1290. Stickers, stempels en kaarten niet
-  over het gezicht of de ondertitels: bij een hoog gezicht net boven de ondertitels, bij een laag gezicht boven het hoofd.
+- Ondertitels: **één vaste hoogte per video** (Wes 2026-11-06: "geef de ondertitels een vaste plaats, nu verspringt de hoogte"):
+  render.mjs zet ze net onder je kin zoals die meestal staat (mediaan over de hele video, y 900–1470). Wes houdt zijn camera
+  steeds op dezelfde plek. Een getal in het storyboard wint; `captions.y: "regel"` = oude per-regel-plaatsing (alleen op verzoek).
+  Stickers, stempels en kaarten niet over het gezicht of de ondertitels.
   `captions.y: "auto"` (net onder de kin, via `layout.json`) bestaat als optie, alleen gebruiken als Wes erom vraagt.
 - Tekst-achter-de-persoon (`title` met `behind: true`, vereist `tt.py person`) is optioneel:
   alleen gebruiken als de gebruiker erom vraagt of het echt iets toevoegt.
