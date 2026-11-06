@@ -199,9 +199,8 @@ Een `scene` cutout vereist `tt.py person` (ISNet, ±1,8 s per frame; alleen fram
 ### Hook in de eerste seconde (verplicht, uit de kijkcijfers)
 
 **Aangepast na de grote analyse (2026-11-06, Wes' toppers):**
-- De hook-titel blijft **de hele video** in beeld (template `hookHeleVideo: true`): na de eerste seconden schuift hij kleiner naar
-  boven (`pinAt`), en hij wijkt even zolang er een kaart, grafiek, scene of cutaway bovenin of over het hele beeld staat.
-  Schrijf de hook dus als een titel die de hele video klopt: concreet, met een getal of mythe ("30 MIN LOPEN -6 KG VET").
+- De hook-titel staat alleen in het begin (zoals voorheen), **niet** de hele video (Wes 2026-11-06: teruggedraaid).
+  Waar het om draait is **hoe de hook geschreven is** (zie "Hooks schrijven" hieronder).
 - **Eerste 2 seconden rustig:** alleen de hook-titel en hooguit één beweging (punch-zoom of digital zoom). Geen iconen, meters of
   kaarten vóór 2 s.
 - **Lengte 12 tot 20 s:** zet in het keuzemenu altijd een groep "Lengte" (zo laten · stem 10% sneller met `tt.py tempo` ·

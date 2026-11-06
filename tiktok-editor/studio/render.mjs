@@ -62,9 +62,9 @@ if (sb.template) {
   }
 }
 
-// Hook-titel de hele video in beeld (zoals Wes' toppers, analyse 2026-11-06): loopt door tot de afsluiter
-// (volg-stempel/-kaart/reactie) of het einde. Main.tsx verbergt hem even zolang iets anders bovenin staat.
-if (sb.hookHeleVideo !== false) {
+// Hook-titel de hele video in beeld: UIT (Wes 2026-11-06: "maak dit ongedaan"). Alleen als een storyboard of
+// template expliciet hookHeleVideo: true zet. Main.tsx pint hem dan kleiner bovenin.
+if (sb.hookHeleVideo === true) {
   const endAt = Math.min(sb.duration, ...sb.beats.filter((b) => ["volgstempel", "follow", "comment"].includes(b.type)).map((b) => b.start));
   for (const b of sb.beats) if (b.type === "hook" && b.start < 1 && endAt > b.end) { b.pinAt = b.end; b.end = endAt; }
 }
