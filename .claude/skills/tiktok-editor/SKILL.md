@@ -321,9 +321,9 @@ In het keuzemenu: markeer elke hoek/re-hook als moment en bied per moment een vi
   - Ondertitels: **altijd net onder je kin** (automatisch, per regel stil).
   - Iconen, fotokaarten en meters mogen opzij of bovenin, nooit over het gezicht.
   - Wijk alleen af als de standaardplek iets belangrijks bedekt; kies dan de dichtstbijzijnde vrije plek en meld dat.
-- Ondertitels: **één vaste hoogte per video** (Wes 2026-11-06: "geef de ondertitels een vaste plaats, nu verspringt de hoogte"):
-  render.mjs zet ze net onder je kin zoals die meestal staat (mediaan over de hele video, y 900–1470). Wes houdt zijn camera
-  steeds op dezelfde plek. Een getal in het storyboard wint; `captions.y: "regel"` = oude per-regel-plaatsing (alleen op verzoek).
+- Ondertitels: **altijd op y 1264** in elke video (Wes 2026-11-06, keuzemenu: optie C "net onder je kin" + "altijd precies deze
+  hoogte"). Staat in alle templates (`captions.y: 1264`). Ruim boven de TikTok-beschrijving (grens ±y 1500) en links van de knoppen
+  (tekstvak x 180–900). Wes houdt zijn camera steeds op dezelfde plek. Afwijken alleen op verzoek.
   Stickers, stempels en kaarten niet over het gezicht of de ondertitels.
   `captions.y: "auto"` (net onder de kin, via `layout.json`) bestaat als optie, alleen gebruiken als Wes erom vraagt.
 - Tekst-achter-de-persoon (`title` met `behind: true`, vereist `tt.py person`) is optioneel:

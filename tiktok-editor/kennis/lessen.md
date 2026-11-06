@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-06 · algemeen · keuzemenu plaats ondertitels → **C net onder je kin, altijd precies deze hoogte**: y 1264 in alle templates, voor elke video. Boven de TikTok-beschrijving en links van de knoppen.
 - 2026-11-06 · algemeen · "ondertitels een vaste plaats (ik hou mijn beeld op dezelfde plek), alleen kleine letters, belangrijke woorden een klein beetje kleur" → vaste hoogte per video (mediaan kin, bv. dag 12 y 1264), geen hoofdletters meer (vervangt 'hoofdletter aan begin van zin'), kernwoorden automatisch licht gekleurd (in nulnaargrip zacht groen #C3D27E).
 - 2026-11-06 · Van nul naar grip dag 12 · "hadden we niet afgesproken dat de ondertitels een beetje omhoog springen als ik het woord uitspreek? En nooit onder elkaar, één regel" → was eerder alleen als idee voorgesteld, nu gebouwd: elk woord springt ±16% van de lettergrootte omhoog bij uitspreken; ondertitels altijd één regel (nowrap, letter krimpt als het niet past).
 - 2026-11-06 · Van nul naar grip dag 12 · lettertype-keuzemenu → Wes koos **Barlow Condensed Black Italic** op **90%** voor de woorden bovenin (template nulnaargrip: `impactFont: "barlow"`, `impactScale: 0.9`). Eerste video met hoekstapeling, 15,5% sneller (14,4 s) en loop zonder eindbeeld.
