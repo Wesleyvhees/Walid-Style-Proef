@@ -1,6 +1,7 @@
 {
   "nulnaargrip": {
     "naam": "Van nul naar grip (motivatie)",
+    "loop": true,
     "style": "nulnaargrip",
     "toegestaan": [
       "hook",
@@ -29,7 +30,7 @@
       "punchline": "laatste impact-woord groot (220) met sub 'dag X' en een boem, zonder zoom (zodat de boem blijft); geen riser",
       "overige_sfx": "whoosh bij de hook; diepe boem onder elk impact-woord, BEHALVE op momenten met een punch-zoom: daar geen geluid (Wes 2026-11-04)",
       "zooms": "punch 1.06–1.08 op kernwoorden, langzaam 1.05 op rustige stukken",
-      "afsluiter": "punchline met sub 'dag X', daarna volg-stempel (2 s eindbeeld verlengd)",
+      "afsluiter": "punchline met sub 'dag X' en volg-stempel als overlay tijdens de laatste zin; geen eindbeeld (loop)",
       "look": "harde look vast sinds dag 11 (2026-11-05): bijna zwart-wit, contrast, donkere rand, filmkorrel (preset nulnaargrip)",
       "ondertitels": "wit, vaste hoogte y 1290, kernwoorden in highlight"
     },
@@ -37,6 +38,7 @@
   },
   "slimmer20": {
     "naam": "Slimmer eten, drinken en trainen 2.0 (uitleg)",
+    "loop": true,
     "style": "wesbuilt",
     "toegestaan": [
       "hook",
@@ -78,13 +80,14 @@
       "opsomming": "checklist linksboven (x 60, y 230) met vinkjes op de woorden + fotokaart/icoon rechtsboven; komt terug bij de afsluiter",
       "cutaway": "1 cutaway schermvullend op het hoofdonderwerp (bv. weegschaal)",
       "kernwoorden": "groene stickers net boven de ondertitels",
-      "einde": "checklist terug + volg-stempel, eindbeeld 2 s verlengd",
+      "einde": "checklist terug + volg-stempel als overlay tijdens de laatste zin; geen eindbeeld (loop)",
       "plaatsing": "bij een groot gezicht stempels/labels/stickers op y 1175-1180 (mond vrij), ondertitels max 17 tekens"
     },
     "uitleg": "Uitleg-template: hook met MYTHE/FEIT-stempel, grote getallen met label, grafieken en meters bij getallen en analogieën, foto's van eten/drinken als kaart of cutaway, groen accent."
   },
   "blauwdruk75": {
     "naam": "De 75 kilo blauwdruk (tips om geleidelijk af te vallen)",
+    "loop": true,
     "style": "wesbuilt",
     "toegestaan": [
       "hook",
@@ -120,12 +123,14 @@
   },
   "los": {
     "naam": "Losse video",
+    "loop": true,
     "style": "wesbuilt",
     "toegestaan": null,
     "uitleg": "Geen vaste serie: kies per video, met de vaste indeling en huisstijl."
   },
   "nieuweeffecten": {
     "naam": "Nieuwe effect template",
+    "loop": true,
     "style": "wesbuilt",
     "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment",
       "title", "volgstempel", "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",

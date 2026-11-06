@@ -412,6 +412,9 @@ def cmd_prepare(a):
         for d in dropped:
             print(f"  - {d['text']}")
     os.remove(norm)
+    # sneller tempo als standaard (Wes 2026-11-06: "ons tempo moet sneller"); toonhoogte blijft gelijk
+    if a.tempo and abs(a.tempo - 1) > 0.001:
+        cmd_tempo(argparse.Namespace(project=a.project, factor=a.tempo))
 
 
 # -------------------------------------------------------------------- speedup
@@ -1108,7 +1111,8 @@ def main():
     sub = p.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("prepare"); c.add_argument("input"); c.add_argument("project")
     c.add_argument("--mirror", action="store_true", help="beeld spiegelen (standaard uit; alleen op verzoek)")
-    c.add_argument("--gap", type=float, default=0.08, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
+    c.add_argument("--gap", type=float, default=0.06, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
+    c.add_argument("--tempo", type=float, default=1.1, help="hele video sneller (toonhoogte gelijk); 1 = origineel tempo")
     c.add_argument("--keep-pauses", action="store_true", help="niets wegknippen (poses, muziekmomenten)")
     c.add_argument("--model", default="medium", help="Whisper-model: medium (standaard, nauwkeurig) of small (sneller)")
     c.add_argument("--no-voice", action="store_true", help="stem niet opschonen (ruis/s-klanken/compressor)")

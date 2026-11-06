@@ -44,6 +44,7 @@ if (sb.template) {
   if (T.jumpZoom !== undefined && sb.jumpZoom === undefined) sb.jumpZoom = T.jumpZoom;
   if (T.sfxVolume !== undefined && sb.sfxVolume === undefined) sb.sfxVolume = T.sfxVolume;
   if (T.hookHeleVideo !== undefined && sb.hookHeleVideo === undefined) sb.hookHeleVideo = T.hookHeleVideo;
+  if (T.loop !== undefined && sb.loop === undefined) sb.loop = T.loop;
   // harde impact-woorden als vaste stijl van de serie (per woord uit te zetten met "hard": false)
   if (T.impactHard) sb.beats.forEach((b) => { if (b.type === "pop" && b.look === "impact" && b.hard === undefined) b.hard = true; });
   if (T.sfxOpZoom === false) {
@@ -161,6 +162,8 @@ if (jz && !sb.cams?.length && fs.existsSync(cutsFile)) {
     zoomed = !zoomed;
     segStart = c;
   }
+  // loop: het laatste stuk staat op 100%, net als het begin, zodat einde en begin naadloos op elkaar aansluiten
+  if (sb.loop) sb.cutLevels = sb.cutLevels.filter((c) => c.end < sb.duration - 0.05);
   console.log(`Knippen: ${cuts.length} knippen, ${sb.cutLevels.length} stukken op ${Math.round(to * 100)}%`);
 }
 

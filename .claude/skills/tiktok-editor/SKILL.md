@@ -218,6 +218,18 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
   H2 (serietitel als hook) alleen als Wes erom vraagt.
 - Stuurt Wes kijkcijfers: zet ze in `kennis/kijkcijfers.md`, koppel het afhaakmoment aan het storyboard, en werk de conclusies bij.
 
+### Tempo, lengte en loop (Wes, 2026-11-06: "tempo sneller, filmpjes inkorten, reloop maken")
+
+- **Sneller:** `prepare` versnelt standaard 10% (`--tempo 1.1`, toonhoogte gelijk) en knipt pauzes vanaf 0,06 s (`--gap 0.06`).
+  Origineel tempo: `--tempo 1`. Tip voor Wes bij het opnemen: praat ±10% sneller dan normaal, met energie, en begin meteen.
+- **Korter:** doel 12–20 s na het knippen. Stel in het keuzemenu (groep "Lengte") concreet voor welke zin eruit kan.
+  Scripts: max ±45 woorden.
+- **Loop (alle templates `loop: true`):** het einde moet naadloos in het begin overlopen, zodat de kijker ongemerkt opnieuw kijkt.
+  - **Script:** de laatste zin loopt grammaticaal door in de eerste. Voorbeeld: begin "…slecht slapen maakt je dikker." /
+    einde "Volg voor dag 11, want onthoud:" → start opnieuw: "Slecht slapen maakt je dikker." Of eindig met een vraag die de hook beantwoordt.
+  - **Montage:** **geen 2 s eindbeeld** meer; de video stopt ±0,1 s na het laatste woord. De volg-stempel komt als overlay tijdens de laatste
+    zin (±1,5 s), niet als los eindbeeld. Het laatste stuk staat op 100% (geen jump-zoom), net als het begin. Geen fade-out.
+
 ### Hooks schrijven (uit Wes' eigen toppers vs. flops, analyse 2026-11-06)
 
 Toppers begonnen zo (likes): "Een kleine eye-opener: **30 minuten lopen per dag**…" (97) · "**Dit eet ik elke ochtend** voor een
