@@ -70,3 +70,9 @@ Formaat: datum · video · wat Wes zei → wat de regel nu is.
 - 2026-11-03 · algemeen · uitknippen is niet het doel → cutout alleen waar het iets toevoegt (scene bij analogie/plek).
 - 2026-11-03 · algemeen · geen kopie van andermans look (groen/crème) → eigen stijl `grip`: wit met geel accent.
 - 2026-11-03 · algemeen · eerste versie (ffmpeg-tekst, flitsen, schudden) "niet professioneel" → geen flitsen/schudden; zachte veer-animaties, echte lettertypes, kaarten.
+
+## 2026-11-06 — Talking head minder "talking head" laten voelen
+- Wes: "alweer een talking head video" haakt mensen af. Montage: groep "Vorm" in het keuzemenu (zie SKILL.md), gezicht max ~40% in beeld.
+- Film-tips voor Wes: (1) begin midden in een actie (weegschaal opstappen, koelkast open, schoenen strikken) en praat daaroverheen;
+  (2) 2 plekken/hoeken per video (bv. keuken + buiten), wissel per hoek-zin; (3) een voorwerp in de hand (bord, weegschaal, telefoon met app);
+  (4) 3–5 s losse beelden zonder praten (eten pakken, wandelen, sporten) als B-roll; (5) loop of beweeg tijdens het praten (walk-and-talk).
