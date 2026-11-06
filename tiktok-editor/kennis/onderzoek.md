@@ -97,3 +97,14 @@ Ander formaat dan zijn eerste drie: **één camera, geen achtergrondwissels**. H
 - PostEverywhere – TikTok green screen: https://posteverywhere.ai/social-media-terms/tiktok-green-screen
 - The Social Cat – video loops: https://thesocialcat.com/glossary/video-loop-short-form-content
 - Opus – editing-esthetiek 2026: https://www.opus.pro/blog/editing-aesthetics-dominating-short-form-2026
+
+
+## 2026-11-06 · De 3-secondenoorlog en hoekstapeling (online onderzoek)
+- Kijker beslist in ±0,5–1,5 s; hook binnen 1–1,5 s. TikTok's eigen creative-advies: propositie in de eerste 3 s.
+- Tekst in beeld + fysieke beweging in de eerste 2 s geeft volgens een (vendor)bron tot ±50% betere 3-secondenretentie dan een statische opening.
+- Doel: ±65%+ kijkers nog aanwezig op 3 s (bronnen lopen uiteen; check de retentiecurve in TikTok Studio).
+- Aandacht dwaalt na ±2–4 s zonder verandering → re-hook/visuele onderbreking elke paar seconden (extrapolatie, geen vaste regel).
+- Open lussen (nieuwsgierigheid) zijn de betrouwbaarste hooks; twee intrige-elementen in één zin stapelen.
+- Ranking: kijktijd, completion, herbekijken, shares en saves (zwaarder dan likes), reacties, volgen.
+- SEO: TikTok leest beschrijving, tekst in beeld, gesproken woord en hashtags → hetzelfde trefwoord natuurlijk in alle drie, vroeg in de video; geen keyword-stuffing.
+Bronnen: insights.ttsvibes.com/?p=533 · opus.pro/blog/tiktok-length-format-retention-data · dev.to/bulkdl/hook-engineering-the-science-of-the-first-3-seconds-in-short-form-video-2026-2jp9 · teleprompter.com/blog/tiktok-3-second-rule · nestscale.com/?p=47200 · adamconnell.me/improve-video-retention-social-media · openclip.app/guides/hook-optimization-guide · seosherpa.com/tiktok-search-engine · socialpilot.co/blog/tiktok-seo · capcut.com/create/tiktok-caption-keywords-discoverability · darkroomagency.com/observatory/tiktok-algorithm-guide-2026 · socialchamp.com/blog/tiktok-algorithm

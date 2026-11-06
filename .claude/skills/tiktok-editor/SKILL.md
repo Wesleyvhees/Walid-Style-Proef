@@ -235,6 +235,30 @@ Regels:
 4. **Spanning in zin 1, antwoord pas daarna**: verklap de oplossing niet in de hook.
 5. Bij elk script: 3 hook-varianten in deze vormen voorstellen; in het keuzemenu de hook-groep met die varianten.
 
+### Hoekstapeling: pijn → meer pijn → oplossing (Wes, 2026-11-06) + de 3-secondenoorlog
+
+Structuur voor elk script (±15–20 s, ±45 woorden):
+| Tijd | Hoek | Doel | Voorbeeld (slaap) |
+|---|---|---|---|
+| 0–2 s | **Pijnhoek** | kijker herkent zich, concreet, ≤8 woorden | "Slecht slapen maakt je dikker." |
+| 2–6 s | **Nog pijnlijkere hoek** (draai) | het is erger dan hij dacht | "En nee, niet door wat je eet. Je hersenen schreeuwen om suiker." |
+| 6–10 s | **Bewijs/getal** (re-hook) | geloofwaardig, alleen echte cijfers | "Na één korte nacht eet je meer, blijkt uit onderzoek." |
+| 10–15 s | **Oplossingshoek** | één simpele actie | "7 tot 8 uur. Scherm een uur eerder uit." |
+| 15–18 s | **Open lus + CTA** | reden om te volgen/reageren | "Morgen: hoe ik in 10 minuten slaap. Volg voor dag 11." |
+Re-hook-zinnetjes: "En het gekke is…", "Maar dat is niet eens het ergste", "Let op wat er gebeurt als…", "Wacht, het wordt beter".
+
+**Checklist eerste 3 seconden** (online onderzoek 2026-11-06; cijfers in bronnen lopen uiteen, de richting is consistent):
+1. Hook binnen 1 à 1,5 s, geen intro.
+2. **Drie lagen stapelen** die hetzelfde zeggen: gesproken zin + tekst in beeld + beweging (zoom, gebaar, iets vasthouden).
+3. Waarde/belofte meteen duidelijk (TikTok-advies: je propositie in de eerste 3 s).
+4. Nieuwsgierigheid of patroononderbreking (open lus, mythe, verrassend getal).
+5. Hoofdtrefwoord in de eerste gesproken zin, in de tekst in beeld én in de beschrijving (SEO: TikTok leest alle drie).
+
+**Vasthouden en amuseren:** elke 2–4 s iets nieuws in beeld of geluid (visuele onderbreking op elke re-hook: zoom, sticker
+met kernwoord, overgang); een beetje humor of herkenbare tegenstelling (zoals "Henk met zijn tien koffie"); kort houden
+(completion en herbekijken tellen zwaar; shares en saves wegen zwaarder dan likes); eindigen met een open lus of loop naar het begin.
+In het keuzemenu: markeer elke hoek/re-hook als moment en bied per moment een visuele onderbreking aan.
+
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
 
 0. **SEO**: kies eerst het hoofdtrefwoord (zoals mensen het in TikTok zoeken) en zet het letterlijk in de eerste of tweede zin.

@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-06 · algemeen · "hoekstapeling: pijnhoek, nog pijnlijkere hoek, oplossingshoek; SEO, amuseren, vasthouden, 3 seconden oorlog" → vaste scriptstructuur + checklist eerste 3 s in de skill (sectie "Hoekstapeling"), op basis van online onderzoek.
 - 2026-11-06 · algemeen · "maak die titel niet de hele video zichtbaar, maak dit ongedaan. Ik denk dat het aan de manier ligt waarop ik de hook heb geschreven" → `hookHeleVideo` uit in alle templates (alleen nog opt-in). Focus: hooks schrijven.
 - 2026-11-06 · grote analyse · "pas de editor aan" → hook-titel de hele video (vastgepind kleiner bovenin, wijkt voor kaarten/scenes), eerste 2 s rustig, lengte 12–20 s als vaste keuze in het keuzemenu. Wes is **gewichtsconsulent in opleiding** en begeleidt al mensen: dat mag terug in bio, afsluiters en CTA's (eerlijk "i.o.", nooit doen alsof hij al gediplomeerd is).
 - 2026-11-05 · algemeen · "een nieuwe regel: ondertiteling altijd onder mijn kin" → captions standaard `"auto"` (onder de kin via layout.json, per regel stil, max y 1470), in alle templates. Vervangt de vaste y 1290 van 2026-11-03. Niet opnieuw renderen.
