@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-06 · algemeen · "per woord op kopiëren kunnen klikken" → elk trefwoord in een eigen codeblok.
 - 2026-11-06 · algemeen · "lijstje onder elkaar voortaan" → trefwoorden en verborgen woorden in een codeblok, één per regel, geen komma's.
 - 2026-11-06 · algemeen · "volgende video maar 3 hashtags" → postklaar pakket altijd met precies 3 hashtags (hoofdtrefwoord, serie, #wesbuilt).
 - 2026-11-06 · algemeen · keuzemenu plaats ondertitels → **C net onder je kin, altijd precies deze hoogte**: y 1264 in alle templates, voor elke video. Boven de TikTok-beschrijving en links van de knoppen.
