@@ -49,6 +49,8 @@ if (sb.template) {
   if (T.impactHard) sb.beats.forEach((b) => { if (b.type === "pop" && b.look === "impact" && b.hard === undefined) b.hard = true; });
   // lettertype en grootte van de impact-woorden per serie (Wes 2026-11-06: Barlow Condensed Black Italic, 90%)
   if (T.impactFont) sb.beats.forEach((b) => { if (b.type === "pop" && b.look === "impact" && !b.font) b.font = T.impactFont; });
+  // ook de hook-titel bovenin in hetzelfde lettertype (Wes' keuze "lettertype voor de woorden bovenin")
+  if (T.impactFont) sb.beats.forEach((b) => { if (b.type === "hook" && !b.font) b.font = T.impactFont; });
   if (T.impactScale) sb.beats.forEach((b) => { if (b.type === "pop" && b.look === "impact" && !b.scaled) { b.size = Math.round((b.size ?? 170) * T.impactScale); b.scaled = true; } });
   if (T.sfxOpZoom === false) {
     // geen geluidseffect op een moment met een (punch-)zoom; overige geluiden blijven
