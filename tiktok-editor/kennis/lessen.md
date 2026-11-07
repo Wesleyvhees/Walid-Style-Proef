@@ -80,3 +80,5 @@ Formaat: datum · video · wat Wes zei → wat de regel nu is.
   Vorm-groep in het keuzemenu; de afwisseling komt uit de vaste template (jump-zooms, impact-woorden). Vorm-tips alleen voor de andere series.
 - 2026-11-07: **Loop-einde wisselen**, niet steeds "Volg voor dag X, want…". Vormen: afmaak, aanwijs, vraag, herhaling, soms "want".
   "Volg" hoeft niet gesproken te worden (volg-stempel staat in beeld).
+- 2026-11-07: **Loop-test**: laatste + eerste zin moeten samen één kloppende zin vormen (geen dubbele woorden). Fout was dag 13
+  "Dus de volgende keer dat je denkt: / Eén dag gemist en je denkt: …". Altijd de regel "Loop: …" onder het script zetten.

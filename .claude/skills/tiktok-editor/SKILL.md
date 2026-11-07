@@ -232,6 +232,9 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
     Wissel tussen: afmaak ("Dus de volgende keer dat je denkt:" → hook), aanwijs ("Dus kijk niet meer naar dit:" → hook),
     vraag ("En weet je wat het ergste is?" → hook beantwoordt), herhaling (laatste zin = hook in andere woorden), en soms "want…".
     "Volg voor dag X" hoeft niet gesproken: de volg-stempel staat al in beeld; zeg het hooguit om de video.
+  - **Loop-test (verplicht, Wes 2026-11-07: "de laatste zin moet altijd matchen met de eerste")**: lees laatste + eerste zin hardop als
+    één zin. Moet kloppen zonder dubbele woorden (dus niet "dat je denkt: … en je denkt:") én de eerste zin moet los als hook werken.
+    Schrijf de hook dus als losse uitspraak die ook als citaat/antwoord kan dienen. Zet bij elk script de regel "Loop: <laatste> <eerste>" eronder.
   - **Montage:** **geen 2 s eindbeeld** meer; de video stopt ±0,1 s na het laatste woord. De volg-stempel komt als overlay tijdens de laatste
     zin (±1,5 s), niet als los eindbeeld. Het laatste stuk staat op 100% (geen jump-zoom), net als het begin. Geen fade-out.
 
