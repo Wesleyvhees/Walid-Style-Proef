@@ -1,0 +1,272 @@
+{
+ "project": "voorbeeld-dag22",
+ "titel": "Voorbeeld: Slimmer 2.0 dag 22",
+ "intro": "Zo ziet je keuzemenu eruit. Klik per zin aan wat je wilt; wat ik aanraad staat al aan. Klaar? Tik op Versturen en zeg in de chat 'keuzes klaar'.",
+ "groepen": [
+  {
+   "id": "hook",
+   "titel": "Hook bovenin",
+   "keuze": "een",
+   "opties": [
+    {
+     "id": "h5",
+     "code": "H5",
+     "label": "Je eerste zin",
+     "uitleg": "'Waarom 1 meetmoment niet het hele verhaal vertelt', pill 'Slimmer 2.0 dag 22'",
+     "advies": true
+    },
+    {
+     "id": "h1",
+     "code": "H1",
+     "label": "Mythe + stempel",
+     "uitleg": "'De weegschaal liegt' met rood MYTHE-stempel",
+     "advies": false
+    },
+    {
+     "id": "h3",
+     "code": "H3",
+     "label": "Vraag aan de kijker",
+     "uitleg": "'Schrik jij ook elke ochtend van de weegschaal?'",
+     "advies": false
+    }
+   ]
+  },
+  {
+   "id": "geluid",
+   "titel": "Geluid",
+   "keuze": "een",
+   "opties": [
+    {
+     "id": "a1",
+     "code": "A1",
+     "label": "Vol",
+     "uitleg": "Whoosh, pop, boem en ding",
+     "advies": true
+    },
+    {
+     "id": "a2",
+     "code": "A2",
+     "label": "Alleen grote momenten",
+     "uitleg": "Whoosh en boem",
+     "advies": false
+    },
+    {
+     "id": "a3",
+     "code": "A3",
+     "label": "Geen geluidjes",
+     "uitleg": "Alleen je stem",
+     "advies": false
+    }
+   ]
+  },
+  {
+   "id": "einde",
+   "titel": "Einde",
+   "keuze": "meer",
+   "opties": [
+    {
+     "id": "e5",
+     "code": "E5",
+     "label": "Volg-stempel",
+     "uitleg": "Je profielkaart, 2 s eindbeeld",
+     "advies": true
+    },
+    {
+     "id": "e2",
+     "code": "E2",
+     "label": "Reactie-kaart",
+     "uitleg": "'Reageer METEN'",
+     "advies": false
+    }
+   ]
+  }
+ ],
+ "momenten": [
+  {
+   "id": "m1",
+   "tijd": "0:00",
+   "tot": "0:03",
+   "tekst": "Waarom een enkel meetmoment niet het hele verhaal vertelt?",
+   "still": "stills/still_1.55.png",
+   "keuze": "meer",
+   "opties": [
+    {
+     "id": "a",
+     "code": "T3",
+     "label": "MYTHE-stempel",
+     "uitleg": "Op 'meetmoment', met boem",
+     "advies": true
+    },
+    {
+     "id": "b",
+     "code": "N5",
+     "label": "Digital zoom",
+     "uitleg": "Snel naar close-up op 'niet'",
+     "advies": false
+    },
+    {
+     "id": "c",
+     "code": "N1",
+     "label": "Orbit",
+     "uitleg": "Je oude video's draaien om je heen",
+     "advies": false
+    }
+   ]
+  },
+  {
+   "id": "m2",
+   "tijd": "0:03",
+   "tot": "0:08",
+   "tekst": "Dit is dag 22 van Slimmer eten, drinken en trainen.",
+   "still": "stills/still_6.14.png",
+   "keuze": "meer",
+   "opties": [
+    {
+     "id": "a",
+     "code": "B1",
+     "label": "3D-iconen",
+     "uitleg": "Salade, beker, biceps bij eten, drinken, trainen",
+     "advies": true
+    },
+    {
+     "id": "b",
+     "code": "N3",
+     "label": "UI world",
+     "uitleg": "Typ 'Dag 22: slimmer eten' in een app-scherm",
+     "advies": false
+    }
+   ]
+  },
+  {
+   "id": "m3",
+   "tijd": "0:08",
+   "tot": "0:13",
+   "tekst": "Je gewicht schommelt dagelijks door vochtretentie, spijsvertering en stress.",
+   "still": "stills/still_8.86.png",
+   "keuze": "meer",
+   "opties": [
+    {
+     "id": "a",
+     "code": "N6",
+     "label": "Chart grow",
+     "uitleg": "Lichtgevende lijn die op en neer gaat",
+     "advies": true
+    },
+    {
+     "id": "b",
+     "code": "G3",
+     "label": "Staafgrafiek",
+     "uitleg": "7 staafjes, voorbeeldweek",
+     "advies": false
+    },
+    {
+     "id": "c",
+     "code": "N8",
+     "label": "Headline wall",
+     "uitleg": "Krantenkoppen: Vocht, Spijsvertering, Stress",
+     "advies": true
+    },
+    {
+     "id": "d",
+     "code": "T6",
+     "label": "Labels",
+     "uitleg": "Vocht, Spijsvertering, Stress als label",
+     "advies": false
+    }
+   ]
+  },
+  {
+   "id": "m4",
+   "tijd": "0:13",
+   "tot": "0:16",
+   "tekst": "Daarom zeg ik altijd: kijk liever naar de trends op lange termijn.",
+   "still": "stills/still_15.97.png",
+   "keuze": "meer",
+   "opties": [
+    {
+     "id": "a",
+     "code": "N9",
+     "label": "Zoom-through cut",
+     "uitleg": "Overgang op 'Daarom'",
+     "advies": true
+    },
+    {
+     "id": "b",
+     "code": "G5",
+     "label": "Tip-kaartje",
+     "uitleg": "'Weeg je elke ochtend' > 'Kijk naar de trend'",
+     "advies": true
+    },
+    {
+     "id": "c",
+     "code": "N11",
+     "label": "Vertigo",
+     "uitleg": "Achtergrond zoomt, jij blijft (beter met statief)",
+     "advies": false
+    }
+   ]
+  },
+  {
+   "id": "m5",
+   "tijd": "0:16",
+   "tot": "0:21",
+   "tekst": "Zoals je omtrekken, de spiegel en natuurlijk je kleding.",
+   "still": "stills/still_18.81.png",
+   "keuze": "meer",
+   "opties": [
+    {
+     "id": "a",
+     "code": "G4",
+     "label": "Checklist",
+     "uitleg": "Vinkjes op omtrekken, spiegel, kleding",
+     "advies": true
+    },
+    {
+     "id": "b",
+     "code": "N12",
+     "label": "Doodle boil",
+     "uitleg": "Getekende lijn en krabbels om je heen",
+     "advies": false
+    },
+    {
+     "id": "c",
+     "code": "B2",
+     "label": "Fotokaarten",
+     "uitleg": "Meetlint, spiegel, spijkerbroek",
+     "advies": false
+    }
+   ]
+  },
+  {
+   "id": "m6",
+   "tijd": "0:21",
+   "tot": "0:27",
+   "tekst": "De weegschaal is oke, maar word je te obsessief met de weegschaal? Skip die weegschaal.",
+   "still": "stills/still_23.61.png",
+   "keuze": "meer",
+   "opties": [
+    {
+     "id": "a",
+     "code": "B3",
+     "label": "Cutaway weegschaal",
+     "uitleg": "Foto over het hele scherm",
+     "advies": true
+    },
+    {
+     "id": "b",
+     "code": "T2",
+     "label": "Stickers",
+     "uitleg": "OBSESSIEF en SKIP",
+     "advies": true
+    },
+    {
+     "id": "c",
+     "code": "N16",
+     "label": "Cover story",
+     "uitleg": "'GRIP' als tijdschrifttitel achter je hoofd",
+     "advies": false
+    }
+   ]
+  }
+ ]
+}

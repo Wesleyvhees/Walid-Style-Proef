@@ -1,0 +1,145 @@
+{
+  "nulnaargrip": {
+    "naam": "Van nul naar grip (motivatie)",
+    "loop": true,
+    "style": "nulnaargrip",
+    "toegestaan": [
+      "hook",
+      "pop",
+      "words",
+      "follow",
+      "comment",
+      "prompt",
+      "volgstempel"
+    ],
+    "popLooks": [
+      "impact",
+      "label"
+    ],
+    "hookSub": "Van nul naar grip dag {dag}",
+    "captions": {
+      "y": 1264
+    },
+    "uitleg": "Geen kleur en geen 3D-iconen, foto's, achtergronden, meters of grafieken. Alles duidelijk met witte ondertitels en 'impact'-woorden (wit, slaat neer, witte lijn, holle echo). Serie-label 'Dag X' onder de hook. Geen geluidseffecten op zooms.",
+    "goedgekeurd": "2026-11-04: door Wes goedgekeurd, niet meer aanpassen zonder zijn vraag",
+    "referentie": "voorbeelden/nulnaargrip-dag11/storyboard.json",
+    "impactHard": true,
+    "impactFont": "barlow",
+    "impactScale": 0.9,
+    "vast": {
+      "hook": "bovenaan vanaf frame 1 (y 215, size ±100): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (geen serienaam), sub 'Van nul naar grip dag X' klein in de pill; eindigt voordat het eerste impact-woord overlapt (aangepast 2026-11-05 na kijkcijfers)",
+      "impact": "pop look 'impact' HARD (slaat snel neer, trilt na, korte schok in beeld; automatisch via impactHard), 1 kernwoord per zin (±1,2–2 s), size 170–220, wit; boven het hoofd (y ±380) zodat het gezicht vrij blijft",
+      "punchline": "laatste impact-woord groot (220) met sub 'dag X' en een boem, zonder zoom (zodat de boem blijft); geen riser",
+      "overige_sfx": "whoosh bij de hook; diepe boem onder elk impact-woord, BEHALVE op momenten met een punch-zoom: daar geen geluid (Wes 2026-11-04)",
+      "zooms": "punch 1.06–1.08 op kernwoorden, langzaam 1.05 op rustige stukken",
+      "afsluiter": "punchline met sub 'dag X' en volg-stempel als overlay tijdens de laatste zin; geen eindbeeld (loop)",
+      "look": "harde look vast sinds dag 11 (2026-11-05): bijna zwart-wit, contrast, donkere rand, filmkorrel (preset nulnaargrip)",
+      "ondertitels": "wit, vaste hoogte y 1290, kernwoorden in highlight"
+    },
+    "sfxOpZoom": false
+  },
+  "slimmer20": {
+    "naam": "Slimmer eten, drinken en trainen 2.0 (uitleg)",
+    "loop": true,
+    "style": "wesbuilt",
+    "toegestaan": [
+      "hook",
+      "pop",
+      "words",
+      "emoji",
+      "image",
+      "scene",
+      "cutaway",
+      "chart",
+      "meter",
+      "persona",
+      "prompt",
+      "follow",
+      "comment",
+      "title",
+      "volgstempel",
+      "checklist"
+    ],
+    "popLooks": [
+      "stamp",
+      "big",
+      "sticker",
+      "label",
+      "outline"
+    ],
+    "hookSub": "Slimmer 2.0 dag {dag}",
+    "captions": {
+      "y": 1264
+    },
+    "goedgekeurd": "2026-11-04: dag 22 door Wes goedgekeurd ('perfect zo'), opbouw vasthouden",
+    "referentie": "voorbeelden/slimmer20-dag22/storyboard.json",
+    "vast": {
+      "hook": "bovenaan vanaf frame 1 (y 215, size 86): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (bv. 'Stop met je elke dag *wegen*'), sub 'Slimmer 2.0 dag X' klein in de pill, 0 tot ±5 s; geen serienaam als hook (aangepast 2026-11-05 na kijkcijfers)",
+      "mythe_feit": "rood MYTHE-stempel op de mythe in de eerste 2 s, groen FEIT-stempel op het antwoord; boem",
+      "uitleg": "per oorzaak/punt een label (click) + 3D-icoon rechtsboven (x 820, y 450)",
+      "getallen": "grafiek (bars) bovenin bij getallen; voorbeeldgetallen altijd met 'voorbeeld' erbij",
+      "tip": "typend kaartje bovenin (Tip -> vinkje met het betere advies)",
+      "opsomming": "checklist linksboven (x 60, y 230) met vinkjes op de woorden + fotokaart/icoon rechtsboven; komt terug bij de afsluiter",
+      "cutaway": "1 cutaway schermvullend op het hoofdonderwerp (bv. weegschaal)",
+      "kernwoorden": "groene stickers net boven de ondertitels",
+      "einde": "checklist terug + volg-stempel als overlay tijdens de laatste zin; geen eindbeeld (loop)",
+      "plaatsing": "bij een groot gezicht stempels/labels/stickers op y 1175-1180 (mond vrij), ondertitels max 17 tekens"
+    },
+    "uitleg": "Uitleg-template: hook met MYTHE/FEIT-stempel, grote getallen met label, grafieken en meters bij getallen en analogieën, foto's van eten/drinken als kaart of cutaway, groen accent."
+  },
+  "blauwdruk75": {
+    "naam": "De 75 kilo blauwdruk (tips om geleidelijk af te vallen)",
+    "loop": true,
+    "style": "wesbuilt",
+    "toegestaan": [
+      "hook",
+      "pop",
+      "words",
+      "emoji",
+      "image",
+      "scene",
+      "cutaway",
+      "chart",
+      "meter",
+      "persona",
+      "prompt",
+      "follow",
+      "comment",
+      "title",
+      "volgstempel",
+      "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",
+      "linechart", "pullback", "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass"
+    ],
+    "popLooks": [
+      "stamp",
+      "big",
+      "sticker",
+      "label",
+      "outline"
+    ],
+    "hookSub": "75 kilo blauwdruk",
+    "captions": {
+      "y": 1264
+    },
+    "uitleg": "Layout van de cardio-video (goedgekeurd): hook + stempel, uitleg-tempo, cutout-scene + live meter, kernwoord-stickers, groot getal met label, riser+boem op de punchline, volg-kaart. Elke tip krijgt een 'Tip X'-label."
+  },
+  "los": {
+    "naam": "Losse video",
+    "loop": true,
+    "style": "wesbuilt",
+    "toegestaan": null,
+    "uitleg": "Geen vaste serie: kies per video, met de vaste indeling en huisstijl."
+  },
+  "nieuweeffecten": {
+    "naam": "Nieuwe effect template",
+    "loop": true,
+    "style": "wesbuilt",
+    "toegestaan": ["hook", "pop", "words", "emoji", "image", "scene", "cutaway", "chart", "meter", "persona", "prompt", "follow", "comment",
+      "title", "volgstempel", "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",
+      "linechart", "pullback", "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass"],
+    "popLooks": ["counter", "sticker", "label", "big", "stamp", "impact", "outline"],
+    "captions": {"y": 1264},
+    "jumpZoom": false,
+    "uitleg": "17 effecten uit Wes' voorbeeldvideo (2026-11-05), in de Wes.Built-stijl: orbit, couch wall, ui world, frame break, digital zoom, phone mockup, checklist, headline wall, zoom-through cut, chart grow (linechart), pull-back reveal, green screen, paper cut, doodle boil, vertigo, cover story, glass type. Elk effect 1 tot 2 s, snel na elkaar; teller 'NN/MM' (pop look counter) als open lus. Effecten met de uitsnede vereisen tt.py person (vertigo maakt ook plate.mp4)."
+  }
+}
