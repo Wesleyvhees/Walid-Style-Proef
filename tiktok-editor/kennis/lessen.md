@@ -78,3 +78,5 @@ Formaat: datum · video · wat Wes zei → wat de regel nu is.
   (4) 3–5 s losse beelden zonder praten (eten pakken, wandelen, sporten) als B-roll; (5) loop of beweeg tijdens het praten (walk-and-talk).
 - 2026-11-07: **Van nul naar grip blijft altijd talking head.** Geen film-aanwijzingen (plekken, acties, B-roll) bij die scripts en geen
   Vorm-groep in het keuzemenu; de afwisseling komt uit de vaste template (jump-zooms, impact-woorden). Vorm-tips alleen voor de andere series.
+- 2026-11-07: **Loop-einde wisselen**, niet steeds "Volg voor dag X, want…". Vormen: afmaak, aanwijs, vraag, herhaling, soms "want".
+  "Volg" hoeft niet gesproken te worden (volg-stempel staat in beeld).

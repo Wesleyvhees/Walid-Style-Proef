@@ -228,6 +228,10 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
 - **Loop (alle templates `loop: true`):** het einde moet naadloos in het begin overlopen, zodat de kijker ongemerkt opnieuw kijkt.
   - **Script:** de laatste zin loopt grammaticaal door in de eerste. Voorbeeld: begin "…slecht slapen maakt je dikker." /
     einde "Volg voor dag 11, want onthoud:" → start opnieuw: "Slecht slapen maakt je dikker." Of eindig met een vraag die de hook beantwoordt.
+  - **Einde wisselen (Wes 2026-11-07: "niet elke keer eindigen met want")**: nooit twee scripts achter elkaar met dezelfde loop-vorm.
+    Wissel tussen: afmaak ("Dus de volgende keer dat je denkt:" → hook), aanwijs ("Dus kijk niet meer naar dit:" → hook),
+    vraag ("En weet je wat het ergste is?" → hook beantwoordt), herhaling (laatste zin = hook in andere woorden), en soms "want…".
+    "Volg voor dag X" hoeft niet gesproken: de volg-stempel staat al in beeld; zeg het hooguit om de video.
   - **Montage:** **geen 2 s eindbeeld** meer; de video stopt ±0,1 s na het laatste woord. De volg-stempel komt als overlay tijdens de laatste
     zin (±1,5 s), niet als los eindbeeld. Het laatste stuk staat op 100% (geen jump-zoom), net als het begin. Geen fade-out.
 
