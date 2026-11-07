@@ -76,3 +76,5 @@ Formaat: datum · video · wat Wes zei → wat de regel nu is.
 - Film-tips voor Wes: (1) begin midden in een actie (weegschaal opstappen, koelkast open, schoenen strikken) en praat daaroverheen;
   (2) 2 plekken/hoeken per video (bv. keuken + buiten), wissel per hoek-zin; (3) een voorwerp in de hand (bord, weegschaal, telefoon met app);
   (4) 3–5 s losse beelden zonder praten (eten pakken, wandelen, sporten) als B-roll; (5) loop of beweeg tijdens het praten (walk-and-talk).
+- 2026-11-07: **Van nul naar grip blijft altijd talking head.** Geen film-aanwijzingen (plekken, acties, B-roll) bij die scripts en geen
+  Vorm-groep in het keuzemenu; de afwisseling komt uit de vaste template (jump-zooms, impact-woorden). Vorm-tips alleen voor de andere series.

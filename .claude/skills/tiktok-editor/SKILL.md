@@ -276,7 +276,9 @@ met kernwoord, overgang); een beetje humor of herkenbare tegenstelling (zoals "H
 (completion en herbekijken tellen zwaar; shares en saves wegen zwaarder dan likes); eindigen met een open lus of loop naar het begin.
 In het keuzemenu: markeer elke hoek/re-hook als moment en bied per moment een visuele onderbreking aan.
 
-**Niet als talking head laten voelen (Wes, 2026-11-06):** zet in het keuzemenu altijd een groep "Vorm" met: (a) gezicht max.
+**Niet als talking head laten voelen (Wes, 2026-11-06):** geldt **niet** voor `nulnaargrip`: Van nul naar grip is altijd een
+talking head (Wes 2026-11-07), dus daar geen Vorm-groep en geen film-aanwijzingen bij het script, alleen tekst + hooks.
+Bij de andere series: zet in het keuzemenu altijd een groep "Vorm" met: (a) gezicht max.
 ~40% van de tijd, rest beeldvullend beeld/fx (foto, linechart, headlines, phone, uiworld); (b) split-screen gezicht klein boven
 + bewijs onder; (c) greenscreen: Wes klein vóór een groot beeld; (d) cover/vertigo/zoomcut als opener zodat het eerste frame
 geen gezicht-in-kamer is. Doel: elke 2 s een ander kader; nooit 3 zinnen achter elkaar hetzelfde shot. Film-tips voor Wes
