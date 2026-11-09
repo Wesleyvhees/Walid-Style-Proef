@@ -1,119 +1,148 @@
 # Scripts Slimmer eten, drinken en trainen 2.0 (klaar om op te nemen)
 
-Ruwe versie van Wes (2026-11-09), herschreven volgens de regels: hoekstapeling (pijn → meer pijn → bewijs → oplossing),
-hoofdtrefwoord in zin 1 of 2, 12–20 s (max ±52 woorden), "een" nooit "één", loop (laatste + eerste zin = één zin, vorm wisselt),
-"volg" niet uitspreken (volg-stempel staat in beeld). Status: `klaar` → `opgenomen` → `geplaatst`.
-Tekst van de oude CTA's (vragen) gaat naar de beschrijving.
+Herschreven 2026-11-09 volgens de vaste regels (SKILL.md "Korte scripts: 3 seconden oorlog" + "Waarheid gaat vóór kort"):
+15–20 s (±40–55 woorden, Wes: "75 kilo blauwdruk en slimmer eten ongeveer 15 tot 20 seconden"), eerste zin max 6 woorden met
+de uitkomst of een getal, zinnen max 8 woorden, dubbele hook (In beeld ≠ gesproken), actie vanaf frame 1, antwoord zo laat
+mogelijk, een boodschap, loop (laatste + eerste zin = één zin), "een" nooit "één", niets absoluuts dat niet klopt.
+Het "waarom" en de bron gaan naar de beschrijving. Status: klaar → opgenomen → geplaatst.
 
 ## Dag 23 · Eten voor het sporten · klaar
-Trefwoord: eten voor het sporten · loop-vorm: afmaak
+Trefwoord: eten voor het sporten
 ```
-Na tien minuten trainen ben je al leeg.
-Dan eet je verkeerd voor het sporten.
-Lege maag? Geen brandstof.
-Grote maaltijd vlak ervoor? Een baksteen in je maag.
-Eet 1 tot 2 uur ervoor koolhydraten met wat eiwit.
-Havermout met kwark, of een banaan met yoghurt.
-Doe je dat niet, dan merk je het:
+Bord pasta vlak voor het sporten?
+Dat kan als een baksteen liggen.
+Dan voelt je training vaak zwaarder.
+Een grote maaltijd? 2 tot 3 uur ervoor.
+Koolhydraten met wat eiwit.
+Rijst met kip, of havermout met kwark.
+Vlak ervoor? Iets kleins, zoals een banaan.
+Dus niet meer:
 ```
-Loop: "Doe je dat niet, dan merk je het: na tien minuten trainen ben je al leeg."
-Andere hooks: "Wat eet je voor het sporten?" · "De grootste fout voor je training." · "Train jij op een lege maag?"
-Effect-idee: MYTHE-stempel op "lege maag", 3D-iconen havermout/banaan, label "1–2 uur".
+In beeld: "Wat eet je voor de gym?"  
+Frame 1: je houdt een bord pasta naar de camera.  
+Loop: "Dus niet meer: bord pasta vlak voor het sporten?"  
+Feiten: maagklachten bij een volle maag verschillen per persoon; sportvoedingsrichtlijnen (ACSM/ISSN): maaltijd 1–4 uur vooraf, kleine snack 30–60 min vooraf.
 
 ## Dag 24 · Eten na het sporten · klaar
-Trefwoord: eten na het sporten · loop-vorm: vraag
+Trefwoord: eten na het sporten
 ```
-Je traint keihard en daarna eet je bijna niks.
-Zonde, want eten na het sporten bepaalt wat je training oplevert.
-Eiwit helpt je spieren herstellen, koolhydraten vullen je energie aan.
-Binnen een paar uur: kip met rijst, of kwark met fruit.
-En weet je wat de meeste mensen doen?
+Binnen 30 minuten een shake?
+Hoeft niet.
+Eten na het sporten mag rustig later.
+Dat venster is veel ruimer dan gedacht.
+Wat wel telt: genoeg eiwit per dag.
+Zo'n 1,6 gram per kilo als je traint.
+Kip met rijst, kwark of eieren.
+Dus stress niet meer over:
 ```
-Loop: "En weet je wat de meeste mensen doen? Je traint keihard en daarna eet je bijna niks."
-Andere hooks: "Wat eet je na het sporten?" · "Hierdoor levert je training niks op." · "Na de gym niks eten? Zonde."
-Beschrijving-vraag: "Wat is jouw vaste maaltijd na een training?"
-Effect-idee: labels "eiwit = herstel" / "koolhydraten = energie", 3D-iconen kip/rijst/kwark.
+In beeld: "30 minuten-regel = mythe?"  
+Frame 1: je schudt een shake en zet hem neer.  
+Loop: "Dus stress niet meer over: binnen 30 minuten een shake?"  
+Feiten: Schoenfeld & Aragon 2013 (anabool venster is ruim, totale eiwitinname telt het meest); Morton e.a. 2018 meta-analyse (±1,6 g/kg/dag bij krachttraining).
 
 ## Dag 25 · Stress verminderen · klaar
-Trefwoord: stress verminderen · loop-vorm: afmaak
+Trefwoord: stress verminderen
 ```
-Hele dag druk en 's avonds lig je in de snoeppot.
-Stress verminderen begint niet met een vakantie, maar met je adem.
-Twee keer kort inademen door je neus.
-Een keer lang uitademen door je mond.
-Drie keer. Je hartslag zakt.
-Doe het vandaag, voor je weer zegt:
+Hele dag stress, 's avonds snoepen?
+Stress verminderen kan met je adem.
+Twee keer inademen door je neus.
+Dan lang uitademen door je mond.
+Doe dat vijf minuten.
+Lang uitademen remt je hartslag af.
+Stanford-onderzoek: na een maand beter humeur.
+Probeer het vanavond, in plaats van:
 ```
-Loop: "Doe het vandaag, voor je weer zegt: hele dag druk en 's avonds lig je in de snoeppot."
-Andere hooks: "Stress? Doe dit 3 keer." · "Waarom je bij stress meer snoept." · "De snelste manier om rustig te worden."
-Effect-idee: checklist met de 3 ademstappen, teller 1/2/3, sla-op-sticker.
+In beeld: "5 minuten tegen stress"  
+Frame 1: je ploft op de bank en blaast lang uit.  
+Loop: "Probeer het vanavond, in plaats van: hele dag stress, 's avonds snoepen?"  
+Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag, na 28 dagen beter humeur en rustiger ademhaling; lange uitademing verlaagt de hartslag.
 
 ## Dag 26 · Vezels · klaar
-Trefwoord: vezels · loop-vorm: vraag
+Trefwoord: vezels
 ```
-Een uur na het eten heb je alweer trek.
-Grote kans dat je te weinig vezels eet.
-Advies: 30 tot 40 gram. De meeste mensen halen er 20.
-Vezels houden je langer vol.
-Bonen door je pasta, volkoren in plaats van wit, een appel met schil.
+Na een uur alweer trek?
+Dan kunnen meer vezels helpen.
+Vezels vertragen je spijsvertering.
+Daardoor zit je vaak langer vol.
+Advies: 30 tot 40 gram per dag.
+Gemiddeld halen we er zo'n 20.
+Bonen door je pasta.
+Volkoren in plaats van wit.
 Herken je dit?
 ```
-Loop: "Herken je dit? Een uur na het eten heb je alweer trek."
-Andere hooks: "Altijd trek? Dit mis je." · "Eet jij genoeg vezels? Bijna niemand." · "Een simpele toevoeging tegen trek."
-Effect-idee: grafiek 20 g → 30–40 g, checklist bonen/volkoren/appel.
+In beeld: "20 gram vs 40 gram"  
+Frame 1: je houdt een blik bonen omhoog.  
+Loop: "Herken je dit? Na een uur alweer trek?"  
+Feiten: Gezondheidsraad 2015 (30–40 g/dag); RIVM Voedselconsumptiepeiling 2012–2016 (volwassenen gemiddeld ±18–22 g).
 
 ## Dag 27 · Volgorde krachttraining · klaar
-Trefwoord: krachttraining · loop-vorm: aanwijs
+Trefwoord: krachttraining
 ```
-Je begint met biceps curls en squat pas aan het eind.
-Daarom ga je niet vooruit met je krachttraining.
-Squat, deadlift en bankdrukken kosten de meeste energie.
-Doe ze eerst, nu je nog scherp bent. Kleine oefeningen als laatste.
-Doe je het andersom? Dan is dit jouw training:
+Biceps eerst, squat als laatste?
+Slecht plan voor je krachttraining.
+Wat je eerst doet, daarin ben je sterkst.
+Dus zware oefeningen vooraan.
+Squat, deadlift of bankdrukken.
+Daarna pas armen en schouders.
+Zo til je het zwaarst waar het telt.
+Of blijf je doen:
 ```
-Loop: "Doe je het andersom? Dan is dit jouw training: je begint met biceps curls en squat pas aan het eind."
-Andere hooks: "De grootste fout in je trainingsschema." · "Hierdoor word je niet sterker." · "Welke oefening doe jij als eerste?"
-Effect-idee: checklist zwaar → licht, MYTHE/FEIT, 3D-icoon halter.
+In beeld: "Welke oefening doe jij eerst?"  
+Frame 1: je legt schijven op de stang.  
+Loop: "Of blijf je doen: biceps eerst, squat als laatste?"  
+Feiten: Simão e.a. 2012 (Sports Medicine review): oefeningen vroeg in de training halen meer herhalingen en kracht.
 
 ## Dag 28 · Alcohol en afvallen · klaar
-Trefwoord: alcohol en afvallen · loop-vorm: afmaak
+Trefwoord: alcohol en afvallen
 ```
-Zaterdag uit en zondag eet je de hele koelkast leeg.
-Alcohol en afvallen: het ligt niet alleen aan de drank.
-Alcohol maakt je slaap slechter, en slecht slapen geeft trek.
-Uitgaan mag. Eet goed voordat je gaat en drink water na elk drankje.
-Anders gaat het weer zo:
+Na het stappen de koelkast leeg.
+Alcohol en afvallen is meer dan calorieën.
+Alcohol maakt je slaap onrustiger.
+Slecht slapen geeft vaak meer trek.
+Dat is geen gebrek aan wilskracht.
+Uitgaan mag gewoon.
+Eet goed voordat je gaat.
+Water tussen je drankjes door.
+Anders wordt het weer:
 ```
-Loop: "Anders gaat het weer zo: zaterdag uit en zondag eet je de hele koelkast leeg."
-Andere hooks: "Daarom heb je na het uitgaan zoveel trek." · "Uitgaan en toch afvallen? Zo doe je dat." · "Alcohol maakt je niet alleen dik door de calorieën."
-Effect-idee: 3D-iconen glas/water/bed, checklist 2 tips.
+In beeld: "Waarom je na het stappen zo'n trek hebt"  
+Frame 1: je doet de koelkast open met een kater-blik.  
+Loop: "Anders wordt het weer: na het stappen de koelkast leeg."  
+Feiten: Ebrahim e.a. 2013 (alcohol verstoort vooral de tweede helft van de nacht); Spiegel e.a. 2004 (slaaptekort → meer ghreline, minder leptine, meer trek).
 
 ## Dag 29 · Creatine · klaar
-Trefwoord: creatine · loop-vorm: vraag
+Trefwoord: creatine
 ```
-Creatine maakt je dik.
-Daarom laten veel mensen het staan.
-Ja, je kunt de eerste weken 1 tot 2 kilo aankomen.
-Maar dat is vocht in je spieren, geen vet.
+Creatine maakt je dik?
+Dat denken veel mensen.
+Eerste weken soms 1 à 2 kilo erbij.
+Maar dat is vocht in je spieren.
+Geen vet.
+Creatine helpt bij korte, zware inspanning.
 Een van de best onderzochte supplementen.
-3 tot 5 gram per dag. Voor gezonde mensen veilig.
+3 tot 5 gram per dag.
+Voor gezonde mensen veilig.
 Dus wie zegt er nog:
 ```
-Loop: "Dus wie zegt er nog: creatine maakt je dik."
-Andere hooks: "Word je dik van creatine?" · "Na een week creatine 2 kilo zwaarder? Mooi." · "Het meest onderzochte supplement dat iedereen verkeerd begrijpt."
-Effect-idee: MYTHE-stempel op zin 1, FEIT-stempel op "vocht, geen vet", label "3–5 g per dag".
-Let op: geen medisch advies; bij nierproblemen of medicijnen eerst de huisarts (zet dit in de beschrijving).
+In beeld: "+2 kilo door creatine?"  
+Frame 1: je doet een schepje creatine in je shake.  
+Loop: "Dus wie zegt er nog: creatine maakt je dik?"  
+Feiten: Kreider e.a. 2017 (ISSN position stand): veilig voor gezonde mensen, 3–5 g/dag, gewichtstoename door vocht in de spier.
+Beschrijving: "Nierproblemen of medicijnen? Overleg eerst met je huisarts."
 
 ## Dag 30 · Gezonde gewoontes · klaar
-Trefwoord: gezonde gewoontes · loop-vorm: want
+Trefwoord: gezonde gewoontes
 ```
-Een gezonde dag doet niks.
-Een ongezonde dag ook niet, het gaat om gezonde gewoontes.
-Wat je elke dag herhaalt, dat zie je later in de spiegel.
-Gewoontes werken als rente: eerst zie je niks, daarna gaat het hard.
-Dag 30. Kies vandaag een gewoonte en herhaal hem elke dag.
+Een gezonde dag doet weinig.
+Gezonde gewoontes maken het verschil.
+Een ongezonde dag doet ook weinig.
+Een nieuwe gewoonte kost gemiddeld 66 dagen.
+Bij de een sneller, bij de ander langer.
+Dus dag 30 is pas het begin.
+Kies een gewoonte en houd vol.
 Want onthoud:
 ```
-Loop: "Want onthoud: een gezonde dag doet niks."
-Andere hooks: "Een ongezonde dag maakt je niet dik." · "Waarom je na 30 dagen nog niks ziet." · "Resultaat is rente."
-Effect-idee: grafiek die eerst vlak loopt en dan omhoog schiet (rente-curve), checklist met 3 gewoontes uit de serie.
+In beeld: "66 dagen voor een gewoonte"  
+Frame 1: je streept dag 30 af op een kalender.  
+Loop: "Want onthoud: een gezonde dag doet weinig."  
+Feiten: Lally e.a. 2010 (European Journal of Social Psychology): gemiddeld 66 dagen tot een gewoonte automatisch gaat, spreiding 18–254 dagen.

@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-09 · scriptbank · "75 kilo blauwdruk en slimmer eten ongeveer 15 tot 20 seconden" → die twee series 40–55 woorden; alle 28 scripts herschreven met korte zinnen (max 8 woorden), dubbele hook, frame-1-actie, loop en per script een Feiten-regel met bron.
 - 2026-11-09 · proefscripts · "het klopt niet wat de scripts zeggen, ze moeten wel waarheid hebben" → bij het inkorten werden claims te absoluut (ijskoffie = maaltijd, leeg na 10 min = verkeerd eten, 80/20 "zegt"). Regel: waarheid vóór kort; geen absolute woorden, getallen met voorwaarde, geen verzonnen oorzaak, per script "Feiten:" met bron.
 - 2026-11-09 · scripts · "3 seconden oorlog, de kijker blijven aangrijpen, deze scripts zijn te lang" → keuzemenu: kort 8–12 s (25–35 woorden), eerste zin max 6 woorden met uitkomst/getal, dubbele hook (beeld ≠ gesproken), actie vanaf frame 1, zinnen max 8 woorden, geen uitleg, antwoord zo laat mogelijk, een boodschap per video. Eerst 3 proefscripts, na akkoord de rest.
 - 2026-11-09 · scriptbank · "je hoeft ze nog niet door te sturen, pas als ik erom vraag" → scripts voor de scriptbank alleen opslaan en kort melden; pas tonen als Wes om een dag vraagt. Blauwdruk dag 11–30 en Slimmer dag 23–30 staan in `scripts/`.
