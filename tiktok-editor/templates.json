@@ -40,6 +40,7 @@
     "sfxOpZoom": false
   },
   "slimmer20": {
+    "fxLook": {"pil": 2, "tip": 2, "label": 2, "checklist": 2, "foto": 2, "icoon": 1},
     "naam": "Slimmer eten, drinken en trainen 2.0 (uitleg)",
     "loop": true,
     "style": "wesbuilt",
@@ -90,6 +91,7 @@
     "uitleg": "Uitleg-template: hook met MYTHE/FEIT-stempel, grote getallen met label, grafieken en meters bij getallen en analogieën, foto's van eten/drinken als kaart of cutaway, groen accent."
   },
   "blauwdruk75": {
+    "fxLook": {"pil": 2, "tip": 2, "label": 2, "checklist": 2, "foto": 2, "icoon": 1},
     "naam": "De 75 kilo blauwdruk (tips om geleidelijk af te vallen)",
     "loop": true,
     "style": "wesbuilt",

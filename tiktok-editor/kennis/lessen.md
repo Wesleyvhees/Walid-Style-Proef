@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-09 · effecten · keuzemenu fxv → **Slimmer 2.0 en 75 kilo blauwdruk: pil, tip-kaart, label, checklist = zwart met groene rand (2), fotokaart = zwarte rand + langzame zoom (2), 3D-iconen los (1)**. Vast in templates.json (`fxLook`). Niet opnieuw renderen; vanaf de volgende video.
 - 2026-11-09 · effecten · "Nee stop, dat bedoel ik niet. Alleen de effecten aanpassen, niet het beeld. 5 opties per effect" → geen kleurlook/grading; effecten krijgen varianten 1–5 via `fxLook` {pil, tip, label, checklist, foto, icoon} (src/fxlook.tsx). Keuzemenu fxv met 30 voorbeelden; keuze geldt vanaf Slimmer dag 24.
 - 2026-11-09 · Slimmer 2.0 dag 23 · "de serietitel is Slimmer eten, drinken en trainen 2.0" → pill = volledige serietitel + dag (hookSub), altijd één regel (krimpt). "Ik wil echt dat het cinematic gaat ogen" + "zwarte effecten, alles wat donkerder; eerst voorbeelden" → VOOR DE VOLGENDE SLIMMER-VIDEO: kleurlook + donkere kaartjes (cardLook licht/glas/mat/groen, `skin()` in styles.ts) + upgrades via keuzemenu effect-upgrade; eerst demo-video, dan pas in een echte video.
 - 2026-11-09 · algemeen · "als we dan nog steeds te lang zijn, versnellen we het gewoon een beetje" → te lang na knippen: eerst tempo omhoog (max ±1,25× totaal, stem klinkt gelijk), pas daarna woorden schrappen.
