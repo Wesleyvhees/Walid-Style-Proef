@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-09 · scriptbank · "je hoeft ze nog niet door te sturen, pas als ik erom vraag" → scripts voor de scriptbank alleen opslaan en kort melden; pas tonen als Wes om een dag vraagt. Blauwdruk dag 11–30 en Slimmer dag 23–30 staan in `scripts/`.
 - 2026-11-09 · algemeen · "los en alles in een keer" → trefwoorden en verborgen woorden: eerst elk woord in een eigen codeblok, daarna één codeblok met alles onder elkaar.
 - 2026-11-09 · Van nul naar grip dag 13 · "verborgen woorden ook altijd geven" → postklaar pakket heeft altijd een apart kopje Verborgen woorden (naast Trefwoorden), elk woord in een eigen codeblok.
 - 2026-11-09 · algemeen · keuzemenu plek hook → **C: hook + serienaam altijd op y 300** in alle series (onder de TikTok-knoppen Volgend/Voor jou, vrij van je hoofd). Bij dag 12/13 stond hij op y 105 en viel deels achter de TikTok-knoppen. render.mjs zet het vast (`hookY` in templates.json), storyboard-y wordt genegeerd.
