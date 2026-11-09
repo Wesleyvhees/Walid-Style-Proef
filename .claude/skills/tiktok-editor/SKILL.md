@@ -301,6 +301,11 @@ staan in `kennis/lessen.md`.
 - **Elke zin max 8 woorden**, geen uitlegzinnen (het waarom gaat naar de beschrijving), **antwoord zo laat mogelijk**, dan de loop.
 - **Een boodschap per video**; de rest gaat naar de beschrijving (niet splitsen in delen).
 - Bij elk script: gesproken tekst (codeblok), "In beeld:", "Frame 1:", "Loop:".
+- **Waarheid gaat vóór kort (Wes 2026-11-09: "het klopt niet wat de scripts zeggen, ze moeten wel waarheid hebben")**: elke zin moet
+  los kloppen, ook zonder de beschrijving. Geen absolute woorden (nooit, altijd, niemand, niks) tenzij het echt zo is; liever "kan",
+  "vaak", "meestal". Getallen alleen met de voorwaarde erbij (bv. "twee blikjes cola en een glas sap: bijna 400 kcal", niet "je
+  ijskoffie is een maaltijd"). Geen oorzaak verzinnen ("leeg na 10 min = verkeerd gegeten"). Vuistregels (80/20) als advies brengen,
+  niet als wetenschap. Nooit iets over Wes zelf verzinnen. Per script in de scriptbank een regel "Feiten:" met de bron of rekensom.
 
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
 
