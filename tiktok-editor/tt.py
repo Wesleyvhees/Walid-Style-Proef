@@ -698,6 +698,20 @@ def search_openverse(query):
              "bank": "Openverse"} for x in d.get("results", [])]
 
 
+def search_pixabay(query):
+    """Pixabay (Pixabay-licentie: gratis te gebruiken, geen naamsvermelding nodig). Alleen met PIXABAY_KEY; alleen echte foto's."""
+    key = os.environ.get("PIXABAY_KEY")
+    if not key:
+        return []
+    from urllib.parse import urlencode
+    q = urlencode({"key": key, "q": query[:100], "image_type": "photo", "safesearch": "true", "per_page": 30,
+                   "min_width": 1000, "order": "popular"})
+    d = _get_json(f"https://pixabay.com/api/?{q}", "Pixabay") or {}
+    return [{"url": x["largeImageURL"], "width": x.get("imageWidth") or 0, "height": x.get("imageHeight") or 0,
+             "title": x.get("tags") or "", "creator": x.get("user"), "license": "Pixabay", "source": x.get("pageURL"),
+             "bank": "Pixabay"} for x in d.get("hits", []) if not x.get("isAiGenerated") and not re.search(r"\bai\b|generated", x.get("tags") or "", re.I)]
+
+
 def search_commons(query):
     """Wikimedia Commons (geen sleutel nodig): alleen foto's die vrij zijn zonder naamsvermelding (CC0/publiek domein)."""
     from urllib.parse import urlencode
@@ -724,9 +738,12 @@ def search_commons(query):
 
 
 def photo_candidates(query, folder, n=9):
-    """Rechtenvrije foto's (CC0 / publiek domein) uit Wikimedia Commons + Openverse -> folder/0.jpg.. + sheet.jpg."""
+    """Rechtenvrije foto's uit Pixabay (met PIXABAY_KEY) + Wikimedia Commons + Openverse (CC0 / publiek domein) -> folder/0.jpg.. + sheet.jpg."""
     os.makedirs(folder, exist_ok=True)
-    banks = [search_commons(query), search_openverse(query)]
+    # Pixabay eerst (beste moderne foto's, Wes 2026-11-04), daarna Commons en Openverse
+    pix = search_pixabay(query)
+    # genoeg Pixabay-foto's? Dan Commons overslaan (geeft vanaf cloud-adressen vaak 429 en wacht dan lang)
+    banks = [b for b in ([pix] if len(pix) >= 2 * n else [pix, search_commons(query), search_openverse(query)]) if b] or [[]]
     results, seen = [], set()
     for i in range(max(len(x) for x in banks) if any(banks) else 0):  # om en om, zodat je uit beide banken kunt kiezen
         for bank in banks:
