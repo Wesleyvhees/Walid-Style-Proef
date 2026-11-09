@@ -165,7 +165,9 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
             ...fontCss("mono"),
             display: "inline-block",
             marginTop: 22,
-            fontSize: Math.round((beat.size ?? 80) * 0.42),
+            // altijd één regel: lange serietitels krimpen tot ze passen (Wes 2026-11-09, volledige serietitel)
+            fontSize: Math.round(Math.min((beat.size ?? 80) * 0.42, 880 / (String(beat.sub).length * 0.66 + 1.6))),
+            whiteSpace: "nowrap",
             color: style.cardInk,
             background: style.card,
             padding: "0.35em 0.8em",

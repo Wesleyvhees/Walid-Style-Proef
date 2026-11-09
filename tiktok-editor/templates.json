@@ -68,7 +68,7 @@
       "label",
       "outline"
     ],
-    "hookSub": "Slimmer 2.0 dag {dag}",
+    "hookSub": "Slimmer eten, drinken en trainen 2.0 dag {dag}",
     "hookY": 300,
     "captions": {
       "y": 1264
@@ -76,7 +76,7 @@
     "goedgekeurd": "2026-11-04: dag 22 door Wes goedgekeurd ('perfect zo'), opbouw vasthouden",
     "referentie": "voorbeelden/slimmer20-dag22/storyboard.json",
     "vast": {
-      "hook": "bovenaan vanaf frame 1 (y 215, size 86): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (bv. 'Stop met je elke dag *wegen*'), sub 'Slimmer 2.0 dag X' klein in de pill, 0 tot ±5 s; geen serienaam als hook (aangepast 2026-11-05 na kijkcijfers)",
+      "hook": "bovenaan vanaf frame 1 (y 215, size 86): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (bv. 'Stop met je elke dag *wegen*'), sub 'Slimmer eten, drinken en trainen 2.0 dag X' klein in de pill (volledige serietitel, Wes 2026-11-09), 0 tot ±5 s; geen serienaam als hook (aangepast 2026-11-05 na kijkcijfers)",
       "mythe_feit": "rood MYTHE-stempel op de mythe in de eerste 2 s, groen FEIT-stempel op het antwoord; boem",
       "uitleg": "per oorzaak/punt een label (click) + 3D-icoon rechtsboven (x 820, y 450)",
       "getallen": "grafiek (bars) bovenin bij getallen; voorbeeldgetallen altijd met 'voorbeeld' erbij",
