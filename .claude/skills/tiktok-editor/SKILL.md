@@ -296,6 +296,10 @@ staan in `kennis/lessen.md`.
 
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
 
+**Scriptbank:** scripts die Wes later opneemt staan in `tiktok-editor/scripts/<serie>.md` (bv. `slimmer20.md`, `blauwdruk75.md`)
+met status klaar → opgenomen → geplaatst. Vraagt Wes "script dag X", haal het daar op. Bewerkt Wes een video uit de scriptbank,
+vergelijk de gesproken tekst met het script en zet de status op opgenomen; na plaatsen op geplaatst.
+
 0. **SEO**: kies eerst het hoofdtrefwoord (zoals mensen het in TikTok zoeken) en zet het letterlijk in de eerste of tweede zin.
 
 1. **Hook (0–3 s):** val een bekende overtuiging aan, in de jij-vorm. "Hoe kan het nou dat…", "Ben je nou echt nog steeds…", "Als jij maar … doet, dan…". Geen intro, geen "hoi".
