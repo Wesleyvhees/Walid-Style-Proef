@@ -1,7 +1,7 @@
 # Scripts Slimmer eten, drinken en trainen 2.0 (klaar om op te nemen)
 
 Ruwe versie van Wes (2026-11-09), herschreven volgens de regels: hoekstapeling (pijn → meer pijn → bewijs → oplossing),
-hoofdtrefwoord in zin 1 of 2, 12–20 s, "een" nooit "één", loop (laatste + eerste zin = één zin, vorm wisselt),
+hoofdtrefwoord in zin 1 of 2, 12–20 s (max ±52 woorden), "een" nooit "één", loop (laatste + eerste zin = één zin, vorm wisselt),
 "volg" niet uitspreken (volg-stempel staat in beeld). Status: `klaar` → `opgenomen` → `geplaatst`.
 Tekst van de oude CTA's (vragen) gaat naar de beschrijving.
 
@@ -10,10 +10,10 @@ Trefwoord: eten voor het sporten · loop-vorm: afmaak
 ```
 Na tien minuten trainen ben je al leeg.
 Dan eet je verkeerd voor het sporten.
-Op een lege maag? Geen brandstof.
-Vlak ervoor een grote maaltijd? Een baksteen in je maag.
-Eet 1 tot 2 uur ervoor koolhydraten met een beetje eiwit.
-Havermout met kwark. Of een banaan met yoghurt.
+Lege maag? Geen brandstof.
+Grote maaltijd vlak ervoor? Een baksteen in je maag.
+Eet 1 tot 2 uur ervoor koolhydraten met wat eiwit.
+Havermout met kwark, of een banaan met yoghurt.
 Doe je dat niet, dan merk je het:
 ```
 Loop: "Doe je dat niet, dan merk je het: na tien minuten trainen ben je al leeg."
@@ -25,8 +25,7 @@ Trefwoord: eten na het sporten · loop-vorm: vraag
 ```
 Je traint keihard en daarna eet je bijna niks.
 Zonde, want eten na het sporten bepaalt wat je training oplevert.
-Je spieren hebben bouwstoffen nodig en je energie is op.
-Eiwit voor herstel, koolhydraten om je energie aan te vullen.
+Eiwit helpt je spieren herstellen, koolhydraten vullen je energie aan.
 Binnen een paar uur: kip met rijst, of kwark met fruit.
 En weet je wat de meeste mensen doen?
 ```
@@ -38,15 +37,14 @@ Effect-idee: labels "eiwit = herstel" / "koolhydraten = energie", 3D-iconen kip/
 ## Dag 25 · Stress verminderen · klaar
 Trefwoord: stress verminderen · loop-vorm: afmaak
 ```
-Hele dag druk en 's avonds kun je niet uitschakelen.
-Dat is stress, en stress verminderen begint niet met een vakantie.
-Want gestreste mensen pakken sneller de snoeppot.
-Doe dit: twee keer kort inademen door je neus.
+Hele dag druk en 's avonds lig je in de snoeppot.
+Stress verminderen begint niet met een vakantie, maar met je adem.
+Twee keer kort inademen door je neus.
 Een keer lang uitademen door je mond.
-Drie keer. Je hartslag zakt en je lijf schakelt naar rust.
+Drie keer. Je hartslag zakt.
 Doe het vandaag, voor je weer zegt:
 ```
-Loop: "Doe het vandaag, voor je weer zegt: hele dag druk en 's avonds kun je niet uitschakelen."
+Loop: "Doe het vandaag, voor je weer zegt: hele dag druk en 's avonds lig je in de snoeppot."
 Andere hooks: "Stress? Doe dit 3 keer." · "Waarom je bij stress meer snoept." · "De snelste manier om rustig te worden."
 Effect-idee: checklist met de 3 ademstappen, teller 1/2/3, sla-op-sticker.
 
@@ -55,9 +53,9 @@ Trefwoord: vezels · loop-vorm: vraag
 ```
 Een uur na het eten heb je alweer trek.
 Grote kans dat je te weinig vezels eet.
-De meeste mensen halen maar zo'n 20 gram, het advies is 30 tot 40.
-Vezels houden je langer vol en zijn goed voor je darmen.
-Makkelijk erbij: bonen door je pasta, volkoren in plaats van wit, een appel met schil.
+Advies: 30 tot 40 gram. De meeste mensen halen er 20.
+Vezels houden je langer vol.
+Bonen door je pasta, volkoren in plaats van wit, een appel met schil.
 Herken je dit?
 ```
 Loop: "Herken je dit? Een uur na het eten heb je alweer trek."
@@ -69,9 +67,8 @@ Trefwoord: krachttraining · loop-vorm: aanwijs
 ```
 Je begint met biceps curls en squat pas aan het eind.
 Daarom ga je niet vooruit met je krachttraining.
-Squat, deadlift en bankdrukken vragen de meeste energie.
-Doe je ze als laatste, dan til je minder en groei je minder.
-Dus zwaar eerst, als je nog scherp bent. Kleine oefeningen als laatste.
+Squat, deadlift en bankdrukken kosten de meeste energie.
+Doe ze eerst, nu je nog scherp bent. Kleine oefeningen als laatste.
 Doe je het andersom? Dan is dit jouw training:
 ```
 Loop: "Doe je het andersom? Dan is dit jouw training: je begint met biceps curls en squat pas aan het eind."
@@ -82,10 +79,9 @@ Effect-idee: checklist zwaar → licht, MYTHE/FEIT, 3D-icoon halter.
 Trefwoord: alcohol en afvallen · loop-vorm: afmaak
 ```
 Zaterdag uit en zondag eet je de hele koelkast leeg.
-Alcohol en afvallen, het ligt niet alleen aan de drank.
-Alcohol maakt je slaap slechter, en slecht slapen geeft meer trek.
-Uitgaan mag, het hoort bij het leven.
-Eet goed voordat je gaat, en neem een glas water na elk drankje.
+Alcohol en afvallen: het ligt niet alleen aan de drank.
+Alcohol maakt je slaap slechter, en slecht slapen geeft trek.
+Uitgaan mag. Eet goed voordat je gaat en drink water na elk drankje.
 Anders gaat het weer zo:
 ```
 Loop: "Anders gaat het weer zo: zaterdag uit en zondag eet je de hele koelkast leeg."
@@ -96,11 +92,11 @@ Effect-idee: 3D-iconen glas/water/bed, checklist 2 tips.
 Trefwoord: creatine · loop-vorm: vraag
 ```
 Creatine maakt je dik.
-Dat hoor je vaak, en daarom laten veel mensen het staan.
-Ja, de weegschaal kan de eerste weken 1 tot 2 kilo omhoog.
+Daarom laten veel mensen het staan.
+Ja, je kunt de eerste weken 1 tot 2 kilo aankomen.
 Maar dat is vocht in je spieren, geen vet.
-Een van de best onderzochte supplementen: meer kracht bij korte, zware sets.
-3 tot 5 gram per dag, elke dag. Voor gezonde mensen veilig.
+Een van de best onderzochte supplementen.
+3 tot 5 gram per dag. Voor gezonde mensen veilig.
 Dus wie zegt er nog:
 ```
 Loop: "Dus wie zegt er nog: creatine maakt je dik."
