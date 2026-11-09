@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-09 · Van nul naar grip dag 13 · "eén is altijd een" → nooit één/eén schrijven, altijd "een" (ondertitels doen het automatisch, ook in hooks en impact-woorden zelf zo schrijven). Dag 13: 27,1 → 19,7 s (2× namelijk + gewoon eruit, totaal 15,5% sneller).
 - 2026-11-07 · algemeen · "de laatste zin moet altijd matchen met de eerste" → loop-test: laatste + eerste zin samen hardop als één kloppende zin, zonder dubbele woorden; regel "Loop: …" onder elk script.
 - 2026-11-07 · algemeen · "niet elke keer eindigen met want" → loop-einde wisselen (afmaak, aanwijs, vraag, herhaling, soms want); "volg voor dag X" hoeft niet gesproken (volg-stempel staat in beeld).
 - 2026-11-07 · Van nul naar grip · "de motivatievideo's zijn altijd talking head" → bij nulnaargrip geen film-aanwijzingen en geen Vorm-groep; afwisseling komt uit de template.

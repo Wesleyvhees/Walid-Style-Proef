@@ -23,7 +23,7 @@ export const chunkWords = (words: Word[], maxChars: number, maxWords = 3): Chunk
   };
   words.forEach((w, i) => {
     // Wes 2026-11-06: alleen kleine letters in de ondertitels, ook aan het begin van een zin
-    const text = clean(w.w).toLocaleLowerCase("nl-NL");
+    const text = clean(w.w).toLocaleLowerCase("nl-NL").replace(/^(één|eén|éen)(?=$|[^a-zà-ÿ])/, "een"); // Wes 2026-11-09: één is altijd een
     if (!text) return;
     const len = cur.map((c) => c.w).join(" ").length;
     const prev = cur[cur.length - 1];
