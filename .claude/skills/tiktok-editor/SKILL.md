@@ -142,7 +142,7 @@ Werkwijze:
    - **Hashtags: precies 3** (Wes 2026-11-06): hoofdtrefwoord als hashtag, serie-hashtag, #wesbuilt; geen #fyp/#viral.
    - **Claude zorgt dat het hoofdtrefwoord in de video zit** (Wes: "daar moet jij voor zorgen"), niet Wes:
      bepaal de trefwoorden al **vóór de vragenlijst** (na de tekstcheck) en verwerk het hoofdtrefwoord in de tekst in beeld:
-     in de hook of het pilletje eronder (bv. pill "Motivatie om te sporten · dag 11"), en waar het past als impact-woord/sticker.
+     in de hook of het pilletje eronder (pill met zoekwoord alleen buiten nulnaargrip; bij Van nul naar grip is de pill altijd "Van nul naar grip dag X" en komt het zoekwoord als label in beeld), en waar het past als impact-woord/sticker.
      Hook-opties in de vragenlijst bevatten het hoofdtrefwoord. Schrijft Claude het script, dan staat het hoofdtrefwoord letterlijk
      in de eerste of tweede zin.
    Daarna weer een vraag met opties wat beter kan.
