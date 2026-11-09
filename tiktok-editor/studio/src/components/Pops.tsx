@@ -2,6 +2,7 @@ import React from "react";
 import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { EmojiBeat, ImageBeat, PopBeat, StylePreset, VolgStempelBeat } from "../types";
 import { fontCss, skin } from "../styles";
+import { fxSkin, useFxLook, GREEN } from "../fxlook";
 import { exit } from "../anim";
 
 // Veer met overshoot: 0 -> ~1.1 -> 1. Voelt als "oppoppen".
@@ -16,6 +17,7 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
   const p = pop(frame, beat.start, fps);
   const out = exit(frame, beat.end, fps, 0.15);
   const look = beat.look ?? "sticker";
+  const lv = useFxLook("label");
   const x = beat.x ?? 540;
   // standaardplek: gecentreerd, net boven de ondertitels (y 1290); grote tekst iets hoger zodat het label past
   const y = beat.y ?? (look === "big" || look === "impact" ? 1040 : 1120);
@@ -169,13 +171,14 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
           fontWeight: 700,
           textTransform: "uppercase",
           color: style.cardInk,
-          ...skin(style),
-          padding: "18px 30px",
-          borderRadius: 999,
-          boxShadow: shadow,
+          ...(lv === 5
+            ? { background: "#0B0B0B", color: "#FFFFFF", borderRadius: 6, borderBottom: `7px solid ${GREEN}`, padding: "16px 28px 12px", boxShadow: shadow }
+            : { ...fxSkin(lv, style), padding: "18px 30px", borderRadius: 999, boxShadow: lv === 2 ? undefined : shadow, ...(lv === 2 ? { boxShadow: fxSkin(2, style).boxShadow } : {}) }),
         }}
       >
-        <span style={{ display: "inline-block", width: 18, height: 18, borderRadius: 18, background: style.accent, marginRight: 14 }} />
+        {lv === 5 ? null : (
+          <span style={{ display: "inline-block", width: 18, height: 18, borderRadius: 18, background: lv === 4 ? "#0B0B0B" : style.accent, marginRight: 14 }} />
+        )}
         {beat.text}
       </div>
     );
@@ -240,6 +243,64 @@ export const EmojiPop: React.FC<{ beat: EmojiBeat }> = ({ beat }) => {
   const size = beat.size ?? 280;
   const bob = Math.sin(t * 3.2) * 10;
   const wobble = Math.sin(t * 2.4) * 4;
+  const iv = useFxLook("icoon");
+  if (iv >= 2 && iv <= 3) {
+    // icoon in een zwarte cirkel met groene rand (2) of in een glazen tegel (3)
+    const box = size * 1.18;
+    return (
+      <div
+        style={{
+          position: "absolute",
+          left: (beat.x ?? 780) - box / 2,
+          top: (beat.y ?? 520) - box / 2 + bob,
+          width: box,
+          height: box,
+          borderRadius: iv === 2 ? box : box * 0.26,
+          ...(iv === 2
+            ? { background: "#0A0A0A", border: `3px solid ${GREEN}`, boxShadow: "0 0 26px rgba(163,180,98,0.4), 0 20px 40px rgba(0,0,0,0.45)" }
+            : { background: "rgba(14,14,14,0.5)", border: "1.5px solid rgba(255,255,255,0.22)", backdropFilter: "blur(16px)", boxShadow: "0 20px 40px rgba(0,0,0,0.35)" }),
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          transform: `rotate(${(beat.rotate ?? 8) * (1 - p) * 3 + wobble * 0.5}deg) scale(${p * out})`,
+        }}
+      >
+        <Img src={staticFile(`p/${beat.src}`)} style={{ width: size * 0.78, height: size * 0.78 }} />
+      </div>
+    );
+  }
+  if (iv === 5) {
+    // zwevend icoon met losse schaduw op de 'grond'
+    const lift = 18 + Math.sin(t * 2.6) * 16;
+    return (
+      <>
+        <div
+          style={{
+            position: "absolute",
+            left: (beat.x ?? 780) - size * 0.32,
+            top: (beat.y ?? 520) + size * 0.52,
+            width: size * 0.64,
+            height: size * 0.12,
+            borderRadius: "50%",
+            background: "rgba(0,0,0,0.55)",
+            filter: "blur(10px)",
+            transform: `scale(${(1.15 - lift / 120) * p * out})`,
+          }}
+        />
+        <Img
+          src={staticFile(`p/${beat.src}`)}
+          style={{
+            position: "absolute",
+            left: (beat.x ?? 780) - size / 2,
+            top: (beat.y ?? 520) - size / 2 - lift,
+            width: size,
+            height: size,
+            transform: `rotate(${wobble}deg) scale(${p * out})`,
+          }}
+        />
+      </>
+    );
+  }
   return (
     <Img
       src={staticFile(`p/${beat.src}`)}
@@ -250,7 +311,7 @@ export const EmojiPop: React.FC<{ beat: EmojiBeat }> = ({ beat }) => {
         width: size,
         height: size,
         transform: `rotate(${(beat.rotate ?? 8) * (1 - p) * 3 + wobble}deg) scale(${p * out})`,
-        filter: "drop-shadow(0 22px 30px rgba(0,0,0,0.4))",
+        filter: iv === 4 ? `drop-shadow(0 0 22px rgba(163,180,98,0.85)) drop-shadow(0 18px 26px rgba(0,0,0,0.4))` : "drop-shadow(0 22px 30px rgba(0,0,0,0.4))",
       }}
     />
   );
@@ -265,6 +326,19 @@ export const PhotoPop: React.FC<{ beat: ImageBeat; style: StylePreset }> = ({ be
   const t = frame / fps - beat.start;
   const w = beat.w ?? 560;
   const rot = beat.rotate ?? -5;
+  const fv = useFxLook("foto");
+  // 1 wit polaroid, 2 zwarte rand, 3 groene rand met gloed, 4 randloos met schaduw, 5 zwart polaroid met dikke onderrand
+  const frameCss: React.CSSProperties =
+    fv === 2
+      ? { padding: 10, background: "#0A0A0A", borderRadius: 24, border: "1.5px solid rgba(255,255,255,0.12)", boxShadow: shadow }
+      : fv === 3
+      ? { padding: 0, background: "#0A0A0A", borderRadius: 22, border: `4px solid ${GREEN}`, boxShadow: "0 0 30px rgba(163,180,98,0.45), 0 18px 40px rgba(0,0,0,0.4)", overflow: "hidden" }
+      : fv === 4
+      ? { padding: 0, background: "transparent", borderRadius: 26, boxShadow: "0 26px 50px rgba(0,0,0,0.55)", overflow: "hidden" }
+      : fv === 5
+      ? { padding: 12, paddingBottom: 64, background: "#0B0B0B", borderRadius: 10, boxShadow: shadow }
+      : { padding: 14, paddingBottom: beat.label ? 0 : 14, background: "#fff", borderRadius: 18, boxShadow: shadow };
+  const zoom = fv >= 2 ? 1 + 0.06 * Math.min(1, t / Math.max(0.5, beat.end - beat.start)) : 1;
   return (
     <div
       style={{
@@ -272,16 +346,15 @@ export const PhotoPop: React.FC<{ beat: ImageBeat; style: StylePreset }> = ({ be
         left: (beat.x ?? 470) - w / 2,
         top: (beat.y ?? 300) + (1 - p) * 140 + Math.sin(t * 1.8) * 6,
         width: w,
-        padding: 14,
-        paddingBottom: beat.label ? 0 : 14,
-        background: "#fff",
-        borderRadius: 18,
-        boxShadow: shadow,
-        transform: `rotate(${rot + (1 - p) * -10}deg) scale(${(0.7 + 0.3 * p) * out})`,
+        ...frameCss,
+        transform: `rotate(${(fv === 4 || fv === 3 ? rot * 0.5 : rot) + (1 - p) * -10}deg) scale(${(0.7 + 0.3 * p) * out})`,
         opacity: Math.min(1, p * 2) * out,
       }}
     >
-      <Img src={staticFile(`p/${beat.src}`)} style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover", borderRadius: 8, display: "block" }} />
+      <div style={{ width: "100%", aspectRatio: "4 / 3", overflow: "hidden", borderRadius: fv === 3 || fv === 4 ? 0 : fv === 2 ? 16 : 8 }}>
+        <Img src={staticFile(`p/${beat.src}`)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transform: `scale(${zoom})` }} />
+      </div>
+      {fv === 5 ? <div style={{ position: "absolute", left: 22, bottom: 20, width: 46, height: 6, borderRadius: 6, background: GREEN }} /> : null}
       {beat.label ? (
         <div style={{ ...fontCss("sans"), fontSize: 38, color: "#111", padding: "14px 6px 18px", letterSpacing: "-0.02em" }}>
           {beat.label}

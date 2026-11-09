@@ -2,6 +2,7 @@ import React from "react";
 import { Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { ChecklistBeat, CommentBeat, FollowBeat, ImagesBeat, PromptBeat, StylePreset } from "../types";
 import { fontCss, SAFE, skin } from "../styles";
+import { fxSkin, isDarkFx, useFxLook, GREEN } from "../fxlook";
 import { enter, exit } from "../anim";
 
 const cardShadow = "0 24px 60px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.25)";
@@ -40,6 +41,10 @@ export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({
   const done = beat.doneAt !== undefined && t >= beat.doneAt;
   const dp = beat.doneAt !== undefined ? enter(frame, beat.doneAt, fps, 14) : 0;
   const cursor = !done && Math.floor(t * 2.2) % 2 === 0;
+  const tv = useFxLook("tip");
+  const term = tv === 5; // terminal: zwart, groene mono-letters, blokcursor
+  const dark = term || isDarkFx(tv, style);
+  const ink = tv === 4 ? "#0B0B0B" : dark ? "#FFFFFF" : style.cardInk;
   return (
     <div
       style={{
@@ -49,9 +54,10 @@ export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({
         right: 50,
         padding: "26px 30px 30px",
         borderRadius: 26,
-        ...skin(style),
-        color: style.cardInk,
-        boxShadow: cardShadow,
+        ...(term
+          ? { background: "#050505", border: `1.5px solid rgba(163,180,98,0.55)`, boxShadow: cardShadow }
+          : { ...fxSkin(tv, style), ...(tv === 2 ? {} : { boxShadow: cardShadow }) }),
+        color: ink,
         opacity: p,
         transform: `translateY(${(1 - p) * -40}px) scale(${0.97 + 0.03 * p})`,
         display: "flex",
@@ -60,23 +66,23 @@ export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({
       }}
     >
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ ...fontCss("mono"), fontSize: 22, opacity: 0.6, textTransform: "uppercase", marginBottom: 8 }}>
-          {done ? `• ${beat.doneLabel ?? "klaar"}` : beat.label ?? "Aan jezelf"}
+        <div style={{ ...fontCss("mono"), fontSize: 22, opacity: term ? 1 : 0.6, color: term ? GREEN : undefined, textTransform: "uppercase", marginBottom: 8 }}>
+          {term ? (done ? `✓ ${beat.doneLabel ?? "klaar"}` : `> ${beat.label ?? "tip"}`) : done ? `• ${beat.doneLabel ?? "klaar"}` : beat.label ?? "Aan jezelf"}
         </div>
         <div
           style={{
-            ...(done ? fontCss("italic") : fontCss("sans")),
-            ...(done ? { fontSize: 64 } : { fontSize: 44, fontWeight: 500, letterSpacing: "-0.02em" }),
+            ...(term ? fontCss("mono") : done ? fontCss("italic") : fontCss("sans")),
+            ...(term ? { fontSize: done ? 50 : 44, fontWeight: 700, color: done ? "#FFFFFF" : GREEN } : done ? { fontSize: 64 } : { fontSize: 44, fontWeight: 500, letterSpacing: "-0.02em" }),
             lineHeight: 1.1,
           }}
         >
           {done ? beat.doneText ?? beat.text : beat.text.slice(0, n)}
-          {cursor ? <span style={{ opacity: 0.7 }}>|</span> : null}
+          {term ? (!done && Math.floor(t * 2.2) % 2 === 0 ? <span style={{ color: GREEN }}>▋</span> : null) : cursor ? <span style={{ opacity: 0.7 }}>|</span> : null}
         </div>
       </div>
       {done ? (
         <div style={{ transform: `scale(${dp})` }}>
-          <Check bg={style.cardInk === "#FFFFFF" ? style.accent : style.bg} fg={style.cardInk === "#FFFFFF" ? "#0B0B0B" : style.card} />
+          <Check bg={tv === 4 ? "#0B0B0B" : dark ? GREEN : style.bg} fg={tv === 4 ? GREEN : dark ? "#0B0B0B" : style.card} />
         </div>
       ) : (
         <div
@@ -84,7 +90,7 @@ export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({
             width: 60,
             height: 60,
             borderRadius: 60,
-            background: style.bg,
+            background: tv === 4 ? "#0B0B0B" : dark ? "rgba(255,255,255,0.12)" : style.bg,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -92,7 +98,7 @@ export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({
           }}
         >
           <svg width="26" height="26" viewBox="0 0 24 24">
-            <path d="M12 19V5M5 12l7-7 7 7" stroke={style.card} strokeWidth="2.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M12 19V5M5 12l7-7 7 7" stroke={tv === 4 ? GREEN : dark ? "#FFFFFF" : style.card} strokeWidth="2.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       )}
@@ -214,6 +220,16 @@ export const CommentCard: React.FC<{ beat: CommentBeat; style: StylePreset }> = 
 export const ChecklistCard: React.FC<{ beat: ChecklistBeat; style: StylePreset }> = ({ beat, style }) => {
   const { t, p, frame, fps } = useIn(beat.start, beat.end);
   const w = beat.w ?? 560;
+  const cv = useFxLook("checklist");
+  // 1 huidig, 2 zwart + groene rand, 3 glas, 4 zonder kaart, 5 genummerd
+  const box: React.CSSProperties =
+    cv === 2
+      ? { background: "#0A0A0A", border: `2px solid ${GREEN}`, boxShadow: "0 0 22px rgba(163,180,98,0.35), 0 18px 40px rgba(0,0,0,0.45)" }
+      : cv === 3
+      ? { background: "rgba(14,14,14,0.5)", border: "1.5px solid rgba(255,255,255,0.2)", backdropFilter: "blur(18px)", boxShadow: cardShadow }
+      : cv === 4
+      ? { background: "transparent", border: "none", boxShadow: "none" }
+      : { background: "rgba(17,17,18,0.9)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: cardShadow };
   return (
     <div
       style={{
@@ -223,9 +239,7 @@ export const ChecklistCard: React.FC<{ beat: ChecklistBeat; style: StylePreset }
         width: w,
         padding: "28px 34px 30px",
         borderRadius: 30,
-        background: "rgba(17,17,18,0.9)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        boxShadow: cardShadow,
+        ...box,
         opacity: p,
         transform: `translateY(${(1 - p) * -30}px) scale(${0.96 + 0.04 * p})`,
       }}
@@ -248,19 +262,23 @@ export const ChecklistCard: React.FC<{ beat: ChecklistBeat; style: StylePreset }
                 height: 52,
                 borderRadius: 14,
                 flex: "none",
-                border: `3px solid ${on ? style.accent : "rgba(255,255,255,0.35)"}`,
-                background: on ? style.accent : "transparent",
+                border: cv === 5 ? "none" : `3px solid ${on ? style.accent : "rgba(255,255,255,0.35)"}`,
+                background: cv === 5 ? (on ? style.accent : "rgba(255,255,255,0.08)") : on ? style.accent : cv === 4 ? "rgba(0,0,0,0.35)" : "transparent",
+                boxShadow: cv === 4 ? "0 6px 18px rgba(0,0,0,0.5)" : undefined,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 transform: `scale(${1 + 0.18 * Math.sin(Math.min(1, c) * Math.PI)})`,
               }}
             >
-              <svg width="30" height="30" viewBox="0 0 24 24" style={{ opacity: c, transform: `scale(${c})` }}>
+              {cv === 5 && !on ? (
+                <span style={{ ...fontCss("mono"), fontSize: 24, fontWeight: 700, color: GREEN }}>{String(i + 1).padStart(2, "0")}</span>
+              ) : null}
+              <svg width="30" height="30" viewBox="0 0 24 24" style={{ opacity: c, transform: `scale(${c})`, display: cv === 5 && !on ? "none" : undefined }}>
                 <path d="M4 12.5l5 5L20 6.5" stroke="#141310" strokeWidth="3.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <div style={{ ...fontCss("sans"), fontSize: 44, fontWeight: 700, letterSpacing: "-0.02em", color: "#fff", opacity: on ? 1 : 0.5 }}>{it.text}</div>
+            <div style={{ ...fontCss("sans"), fontSize: 44, fontWeight: 700, letterSpacing: "-0.02em", color: "#fff", opacity: on ? 1 : 0.5, textShadow: cv === 4 ? "0 3px 14px rgba(0,0,0,0.85)" : undefined }}>{it.text}</div>
           </div>
         );
       })}

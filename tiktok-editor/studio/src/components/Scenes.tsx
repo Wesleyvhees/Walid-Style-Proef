@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, Easing, Img, interpolate, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { ChartBeat, CutawayBeat, HookBeat, SceneBeat, StylePreset } from "../types";
 import { fontCss, SAFE, skin } from "../styles";
+import { fxSkin, useFxLook, GREEN } from "../fxlook";
 import { enter, exit } from "../anim";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -127,6 +128,11 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
   const { fps } = useVideoConfig();
   const words = beat.text.split(" ");
   const out = exit(frame, beat.end, fps, 0.2);
+  const pv = useFxLook("pil");
+  const pilSkin: React.CSSProperties =
+    pv === 5
+      ? { background: "transparent", color: GREEN, borderTop: `2px solid ${GREEN}`, borderBottom: `2px solid ${GREEN}`, borderRadius: 0, padding: "0.3em 0.2em" }
+      : fxSkin(pv, style);
   return (
     <div
       style={{
@@ -169,7 +175,7 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
             fontSize: Math.round(Math.min((beat.size ?? 80) * 0.42, 880 / (String(beat.sub).length * 0.66 + 1.6))),
             whiteSpace: "nowrap",
             color: style.cardInk,
-            ...skin(style),
+            ...pilSkin,
             padding: "0.35em 0.8em",
             borderRadius: 999,
             fontWeight: 700,

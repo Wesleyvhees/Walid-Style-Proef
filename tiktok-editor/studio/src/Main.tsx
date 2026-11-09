@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, Audio, interpolate, Easing, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Beat, Storyboard, StylePreset, TitleBeat, WordsBeat, Zoom } from "./types";
 import { PRESETS, CARD_LOOKS } from "./styles";
+import { FxLookCtx } from "./fxlook";
 import { loadFonts } from "./fonts";
 import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
@@ -101,6 +102,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
   const capStyle: StylePreset = cap.style ? { ...s, ...(PRESETS[cap.style] ?? {}) } : s;
 
   return (
+    <FxLookCtx.Provider value={(sb as any).fxLook ?? {}}>
     <AbsoluteFill style={{ background: "#000" }}>
       {/* virtuele camera: vaste uitsnede per shot (multicam uit één opname) */}
       {(() => {
@@ -200,5 +202,6 @@ export const Main: React.FC<Storyboard> = (sb) => {
           </Sequence>
         ))}
     </AbsoluteFill>
+    </FxLookCtx.Provider>
   );
 };
