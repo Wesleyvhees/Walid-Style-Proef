@@ -59,6 +59,18 @@
    "videos": [
     "75 kilo blauwdruk dag 10"
    ]
+  },
+  "03f83e289e2c656c": {
+   "omschrijving": "chicken rice bowl",
+   "videos": [
+    "Slimmer 2.0 dag 23"
+   ]
+  },
+  "17ef7122182fa8ee": {
+   "omschrijving": "oatmeal yogurt bowl",
+   "videos": [
+    "Slimmer 2.0 dag 23"
+   ]
   }
  },
  "iconen": {
@@ -88,7 +100,8 @@
    "Slimmer eten drinken en trainen dag 22"
   ],
   "brick": [
-   "Cardio maakt je niet strak"
+   "Cardio maakt je niet strak",
+   "Slimmer 2.0 dag 23"
   ],
   "sparkles": [
    "Cardio maakt je niet strak"
@@ -146,6 +159,15 @@
   ],
   "doughnut": [
    "75 kilo blauwdruk dag 10"
+  ],
+  "person lifting weights": [
+   "Slimmer 2.0 dag 23"
+  ],
+  "banana": [
+   "Slimmer 2.0 dag 23"
+  ],
+  "honey pot": [
+   "Slimmer 2.0 dag 23"
   ]
  }
 }
