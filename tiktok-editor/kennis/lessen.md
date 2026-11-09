@@ -3,6 +3,10 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-07 · algemeen · "de laatste zin moet altijd matchen met de eerste" → loop-test: laatste + eerste zin samen hardop als één kloppende zin, zonder dubbele woorden; regel "Loop: …" onder elk script.
+- 2026-11-07 · algemeen · "niet elke keer eindigen met want" → loop-einde wisselen (afmaak, aanwijs, vraag, herhaling, soms want); "volg voor dag X" hoeft niet gesproken (volg-stempel staat in beeld).
+- 2026-11-07 · Van nul naar grip · "de motivatievideo's zijn altijd talking head" → bij nulnaargrip geen film-aanwijzingen en geen Vorm-groep; afwisseling komt uit de template.
+- 2026-11-06 · algemeen · "alweer een talking head video" → groep "Vorm" in het keuzemenu bij de andere series (gezicht max ±40%, split-screen, greenscreen, opener met effect). Film-tips: begin in een actie, 2 plekken, voorwerp in de hand, 3–5 s B-roll, walk-and-talk.
 - 2026-11-06 · algemeen · "per woord op kopiëren kunnen klikken" → elk trefwoord in een eigen codeblok.
 - 2026-11-06 · algemeen · "lijstje onder elkaar voortaan" → trefwoorden en verborgen woorden in een codeblok, één per regel, geen komma's.
 - 2026-11-06 · algemeen · "volgende video maar 3 hashtags" → postklaar pakket altijd met precies 3 hashtags (hoofdtrefwoord, serie, #wesbuilt).
@@ -70,15 +74,3 @@ Formaat: datum · video · wat Wes zei → wat de regel nu is.
 - 2026-11-03 · algemeen · uitknippen is niet het doel → cutout alleen waar het iets toevoegt (scene bij analogie/plek).
 - 2026-11-03 · algemeen · geen kopie van andermans look (groen/crème) → eigen stijl `grip`: wit met geel accent.
 - 2026-11-03 · algemeen · eerste versie (ffmpeg-tekst, flitsen, schudden) "niet professioneel" → geen flitsen/schudden; zachte veer-animaties, echte lettertypes, kaarten.
-
-## 2026-11-06 — Talking head minder "talking head" laten voelen
-- Wes: "alweer een talking head video" haakt mensen af. Montage: groep "Vorm" in het keuzemenu (zie SKILL.md), gezicht max ~40% in beeld.
-- Film-tips voor Wes: (1) begin midden in een actie (weegschaal opstappen, koelkast open, schoenen strikken) en praat daaroverheen;
-  (2) 2 plekken/hoeken per video (bv. keuken + buiten), wissel per hoek-zin; (3) een voorwerp in de hand (bord, weegschaal, telefoon met app);
-  (4) 3–5 s losse beelden zonder praten (eten pakken, wandelen, sporten) als B-roll; (5) loop of beweeg tijdens het praten (walk-and-talk).
-- 2026-11-07: **Van nul naar grip blijft altijd talking head.** Geen film-aanwijzingen (plekken, acties, B-roll) bij die scripts en geen
-  Vorm-groep in het keuzemenu; de afwisseling komt uit de vaste template (jump-zooms, impact-woorden). Vorm-tips alleen voor de andere series.
-- 2026-11-07: **Loop-einde wisselen**, niet steeds "Volg voor dag X, want…". Vormen: afmaak, aanwijs, vraag, herhaling, soms "want".
-  "Volg" hoeft niet gesproken te worden (volg-stempel staat in beeld).
-- 2026-11-07: **Loop-test**: laatste + eerste zin moeten samen één kloppende zin vormen (geen dubbele woorden). Fout was dag 13
-  "Dus de volgende keer dat je denkt: / Eén dag gemist en je denkt: …". Altijd de regel "Loop: …" onder het script zetten.
