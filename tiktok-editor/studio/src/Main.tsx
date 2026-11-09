@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Audio, interpolate, Easing, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Beat, Storyboard, StylePreset, TitleBeat, WordsBeat, Zoom } from "./types";
-import { PRESETS } from "./styles";
+import { PRESETS, CARD_LOOKS } from "./styles";
 import { loadFonts } from "./fonts";
 import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
@@ -73,7 +73,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const s: StylePreset = { ...(PRESETS[sb.style] ?? PRESETS.wesbuilt), ...(sb.overrides ?? {}) };
+  const s: StylePreset = { ...(PRESETS[sb.style] ?? PRESETS.wesbuilt), ...(CARD_LOOKS[(sb as any).cardLook ?? "licht"] ?? {}), ...(sb.overrides ?? {}) };
   const now = sb.beats.filter((b) => active(b, t));
   const titleBeats = now.filter((b): b is TitleBeat => b.type === "title");
   const behind = titleBeats.filter((b) => b.behind && sb.person);

@@ -292,4 +292,7 @@ export type StylePreset = {
   captionShadow: boolean;
   titleColor: string;
   captionAccent?: string; // kleur van kernwoorden in de ondertitels (standaard accent)
+  cardBorder?: string; // rand om kaartjes/pillen (donkere effecten, Wes 2026-11-09)
+  cardGlow?: string; // extra gloed om kaartjes, bv. "0 0 24px rgba(163,180,98,0.45)"
+  cardBlur?: number; // glas-effect: achtergrond achter het kaartje wazig (px)
 };

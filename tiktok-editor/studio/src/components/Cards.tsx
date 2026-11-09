@@ -1,7 +1,7 @@
 import React from "react";
 import { Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { ChecklistBeat, CommentBeat, FollowBeat, ImagesBeat, PromptBeat, StylePreset } from "../types";
-import { fontCss, SAFE } from "../styles";
+import { fontCss, SAFE, skin } from "../styles";
 import { enter, exit } from "../anim";
 
 const cardShadow = "0 24px 60px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.25)";
@@ -49,7 +49,7 @@ export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({
         right: 50,
         padding: "26px 30px 30px",
         borderRadius: 26,
-        background: style.card,
+        ...skin(style),
         color: style.cardInk,
         boxShadow: cardShadow,
         opacity: p,
@@ -76,7 +76,7 @@ export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({
       </div>
       {done ? (
         <div style={{ transform: `scale(${dp})` }}>
-          <Check bg={style.bg} fg={style.card} />
+          <Check bg={style.cardInk === "#FFFFFF" ? style.accent : style.bg} fg={style.cardInk === "#FFFFFF" ? "#0B0B0B" : style.card} />
         </div>
       ) : (
         <div
@@ -114,7 +114,7 @@ export const FollowCard: React.FC<{ beat: FollowBeat; style: StylePreset }> = ({
         width: 720,
         padding: "20px 22px",
         borderRadius: 999,
-        background: style.card,
+        ...skin(style),
         color: style.cardInk,
         boxShadow: cardShadow,
         display: "flex",
@@ -190,7 +190,7 @@ export const CommentCard: React.FC<{ beat: CommentBeat; style: StylePreset }> = 
           marginTop: 22,
           padding: "18px 24px",
           borderRadius: 22,
-          background: style.card,
+          ...skin(style),
           color: style.cardInk,
           boxShadow: cardShadow,
           display: "flex",

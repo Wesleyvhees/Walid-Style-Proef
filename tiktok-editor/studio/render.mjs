@@ -45,6 +45,7 @@ if (sb.template) {
   if (T.sfxVolume !== undefined && sb.sfxVolume === undefined) sb.sfxVolume = T.sfxVolume;
   if (T.hookHeleVideo !== undefined && sb.hookHeleVideo === undefined) sb.hookHeleVideo = T.hookHeleVideo;
   if (T.loop !== undefined && sb.loop === undefined) sb.loop = T.loop;
+  if (T.cardLook && sb.cardLook === undefined) sb.cardLook = T.cardLook;
   // vaste hoogte voor hook + serienaam in elke video (Wes 2026-11-09, keuzemenu optie C: onder de TikTok-knoppen, vrij van je hoofd)
   sb.beats.forEach((b) => { if (b.type === "hook") b.y = T.hookY ?? 300; });
   // harde impact-woorden als vaste stijl van de serie (per woord uit te zetten met "hard": false)

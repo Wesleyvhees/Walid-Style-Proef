@@ -1,3 +1,4 @@
+import React from "react";
 import type { FontKind, StylePreset } from "./types";
 
 // Stijlpresets. "Maak het moody" = style: "moody", enz.
@@ -142,3 +143,20 @@ export const fontCss = (kind: FontKind): React.CSSProperties => {
 
 // Veilige zones van TikTok (1080x1920).
 export const SAFE = { top: 230, bottom: 1400, left: 70, right: 900 };
+
+// Huid van kaartjes, pillen en labels: licht (standaard) of donker (zwart glas, mat zwart, groene rand).
+export const skin = (s: StylePreset): React.CSSProperties => ({
+  background: s.card,
+  color: s.cardInk,
+  ...(s.cardBorder ? { border: s.cardBorder } : {}),
+  ...(s.cardBlur ? { backdropFilter: `blur(${s.cardBlur}px) saturate(1.2)`, WebkitBackdropFilter: `blur(${s.cardBlur}px)` } : {}),
+  ...(s.cardGlow ? { outline: "none", filter: `drop-shadow(${s.cardGlow})` } : {}),
+});
+
+// Donkere kaart-looks om uit te kiezen (overrides in storyboard of template "cardLook")
+export const CARD_LOOKS: Record<string, Partial<StylePreset>> = {
+  licht: {},
+  glas: { card: "rgba(12,12,12,0.62)", cardInk: "#FFFFFF", cardBorder: "1.5px solid rgba(255,255,255,0.16)", cardBlur: 18 },
+  mat: { card: "#0B0B0B", cardInk: "#FFFFFF", cardBorder: "1.5px solid rgba(255,255,255,0.06)" },
+  groen: { card: "#0A0A0A", cardInk: "#FFFFFF", cardBorder: "2px solid rgba(163,180,98,0.9)", cardGlow: "0 0 18px rgba(163,180,98,0.45)" },
+};

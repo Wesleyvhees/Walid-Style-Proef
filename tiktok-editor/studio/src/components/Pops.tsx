@@ -1,7 +1,7 @@
 import React from "react";
 import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { EmojiBeat, ImageBeat, PopBeat, StylePreset, VolgStempelBeat } from "../types";
-import { fontCss } from "../styles";
+import { fontCss, skin } from "../styles";
 import { exit } from "../anim";
 
 // Veer met overshoot: 0 -> ~1.1 -> 1. Voelt als "oppoppen".
@@ -169,7 +169,7 @@ export const PopText: React.FC<{ beat: PopBeat; style: StylePreset }> = ({ beat,
           fontWeight: 700,
           textTransform: "uppercase",
           color: style.cardInk,
-          background: style.card,
+          ...skin(style),
           padding: "18px 30px",
           borderRadius: 999,
           boxShadow: shadow,

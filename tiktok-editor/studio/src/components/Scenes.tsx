@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, interpolate, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { ChartBeat, CutawayBeat, HookBeat, SceneBeat, StylePreset } from "../types";
-import { fontCss, SAFE } from "../styles";
+import { fontCss, SAFE, skin } from "../styles";
 import { enter, exit } from "../anim";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -169,7 +169,7 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
             fontSize: Math.round(Math.min((beat.size ?? 80) * 0.42, 880 / (String(beat.sub).length * 0.66 + 1.6))),
             whiteSpace: "nowrap",
             color: style.cardInk,
-            background: style.card,
+            ...skin(style),
             padding: "0.35em 0.8em",
             borderRadius: 999,
             fontWeight: 700,
@@ -344,7 +344,7 @@ export const PersonaLabel: React.FC<{ beat: import("../types").PersonaBeat; styl
           ...fontCss("sans"),
           fontSize: 96,
           color: style.cardInk,
-          background: style.card,
+          ...skin(style),
           padding: "14px 44px 20px",
           borderRadius: 999,
           transform: `rotate(-4deg) scale(${p})`,
