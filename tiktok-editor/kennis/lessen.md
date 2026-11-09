@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-09 · algemeen · keuzemenu plek hook → **C: hook + serienaam altijd op y 300** in alle series (onder de TikTok-knoppen Volgend/Voor jou, vrij van je hoofd). Bij dag 12/13 stond hij op y 105 en viel deels achter de TikTok-knoppen. render.mjs zet het vast (`hookY` in templates.json), storyboard-y wordt genegeerd.
 - 2026-11-09 · Van nul naar grip dag 13 · "maar dit is een Van nul naar grip video" → pill onder de hook is in nulnaargrip ALTIJD "Van nul naar grip dag X", nooit het zoekwoord. Hoofdtrefwoord dan via label in beeld + gesproken tekst + beschrijving.
 - 2026-11-09 · Van nul naar grip dag 13 · "eén is altijd een" → nooit één/eén schrijven, altijd "een" (ondertitels doen het automatisch, ook in hooks en impact-woorden zelf zo schrijven). Dag 13: 27,1 → 19,7 s (2× namelijk + gewoon eruit, totaal 15,5% sneller).
 - 2026-11-07 · algemeen · "de laatste zin moet altijd matchen met de eerste" → loop-test: laatste + eerste zin samen hardop als één kloppende zin, zonder dubbele woorden; regel "Loop: …" onder elk script.

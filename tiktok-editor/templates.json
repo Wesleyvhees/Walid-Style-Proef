@@ -17,6 +17,7 @@
       "label"
     ],
     "hookSub": "Van nul naar grip dag {dag}",
+    "hookY": 300,
     "captions": {
       "y": 1264
     },
@@ -27,7 +28,7 @@
     "impactFont": "barlow",
     "impactScale": 0.9,
     "vast": {
-      "hook": "bovenaan vanaf frame 1 (y 215, size ±100): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (geen serienaam), sub 'Van nul naar grip dag X' klein in de pill; eindigt voordat het eerste impact-woord overlapt (aangepast 2026-11-05 na kijkcijfers)",
+      "hook": "bovenaan vanaf frame 1 (vaste y 300 via hookY, size ±100): een pakkende uitspraak uit de video die een vreemde in 1 s snapt (geen serienaam), sub 'Van nul naar grip dag X' klein in de pill; eindigt voordat het eerste impact-woord overlapt (aangepast 2026-11-05 na kijkcijfers)",
       "impact": "pop look 'impact' HARD (slaat snel neer, trilt na, korte schok in beeld; automatisch via impactHard), 1 kernwoord per zin (±1,2–2 s), size 170–220, wit; boven het hoofd (y ±380) zodat het gezicht vrij blijft",
       "punchline": "laatste impact-woord groot (220) met sub 'dag X' en een boem, zonder zoom (zodat de boem blijft); geen riser",
       "overige_sfx": "whoosh bij de hook; diepe boem onder elk impact-woord, BEHALVE op momenten met een punch-zoom: daar geen geluid (Wes 2026-11-04)",
@@ -68,6 +69,7 @@
       "outline"
     ],
     "hookSub": "Slimmer 2.0 dag {dag}",
+    "hookY": 300,
     "captions": {
       "y": 1264
     },
@@ -118,6 +120,7 @@
       "outline"
     ],
     "hookSub": "75 kilo blauwdruk",
+    "hookY": 300,
     "captions": {
       "y": 1264
     },
@@ -138,6 +141,7 @@
       "title", "volgstempel", "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",
       "linechart", "pullback", "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass"],
     "popLooks": ["counter", "sticker", "label", "big", "stamp", "impact", "outline"],
+    "hookY": 300,
     "captions": {"y": 1264},
     "jumpZoom": false,
     "uitleg": "17 effecten uit Wes' voorbeeldvideo (2026-11-05), in de Wes.Built-stijl: orbit, couch wall, ui world, frame break, digital zoom, phone mockup, checklist, headline wall, zoom-through cut, chart grow (linechart), pull-back reveal, green screen, paper cut, doodle boil, vertigo, cover story, glass type. Elk effect 1 tot 2 s, snel na elkaar; teller 'NN/MM' (pop look counter) als open lus. Effecten met de uitsnede vereisen tt.py person (vertigo maakt ook plate.mp4)."

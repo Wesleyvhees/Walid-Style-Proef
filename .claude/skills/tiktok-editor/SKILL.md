@@ -337,6 +337,7 @@ staan in `kennis/lessen.md`.
   - Ondertitels: **altijd net onder je kin** (automatisch, per regel stil).
   - Iconen, fotokaarten en meters mogen opzij of bovenin, nooit over het gezicht.
   - Wijk alleen af als de standaardplek iets belangrijks bedekt; kies dan de dichtstbijzijnde vrije plek en meld dat.
+- Hook + serienaam (pill): **altijd op y 300** in elke serie (Wes 2026-11-09, keuzemenu optie C); render.mjs zet dit vast via `hookY`, nooit hoger (TikTok-knoppen).
 - Ondertitels: **altijd op y 1264** in elke video (Wes 2026-11-06, keuzemenu: optie C "net onder je kin" + "altijd precies deze
   hoogte"). Staat in alle templates (`captions.y: 1264`). Ruim boven de TikTok-beschrijving (grens ±y 1500) en links van de knoppen
   (tekstvak x 180–900). Wes houdt zijn camera steeds op dezelfde plek. Afwijken alleen op verzoek.
