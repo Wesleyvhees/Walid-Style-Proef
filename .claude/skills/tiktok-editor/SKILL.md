@@ -295,7 +295,9 @@ geen gezicht-in-kamer is. Doel: elke 2 s een ander kader; nooit 3 zinnen achter 
 staan in `kennis/lessen.md`.
 
 ### Korte scripts: 3 seconden oorlog (Wes 2026-11-09, keuzemenu scripts-aanpak — gaat vóór oudere lengteregels)
-- **Lengte:** Slimmer 2.0 en 75 kilo blauwdruk **15–20 s (±40–55 woorden)** (Wes 2026-11-09); overige 8–12 s (25–35 woorden). Eerste zin max 6 woorden met de uitkomst of een getal in de eerste 5 woorden; geen opbouw.
+- **Lengte:** Slimmer 2.0 en 75 kilo blauwdruk **15–20 s (±40–55 woorden)** (Wes 2026-11-09); overige 8–12 s (25–35 woorden).
+  Na het knippen nog te lang? **Eerst versnellen** (Wes 2026-11-09: "dan versnellen we het gewoon een beetje"): `tt.py tempo` tot max
+  ±1,25× totaal (toonhoogte gelijk), daarna pas woorden schrappen. In het keuzemenu staat de versnelde versie als advies in de groep Lengte. Eerste zin max 6 woorden met de uitkomst of een getal in de eerste 5 woorden; geen opbouw.
 - **Dubbele hook**: de tekst in beeld is iets anders dan de gesproken eerste zin (bv. zeg "Je ijskoffie is een maaltijd", beeld "400 kcal in je koffie?").
 - **Actie vanaf frame 1** (iets in de hand, beweging) bij Slimmer 2.0 en blauwdruk; Van nul naar grip blijft talking head.
 - **Elke zin max 8 woorden**, geen uitlegzinnen (het waarom gaat naar de beschrijving), **antwoord zo laat mogelijk**, dan de loop.
