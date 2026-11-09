@@ -294,6 +294,14 @@ Bij de andere series: zet in het keuzemenu altijd een groep "Vorm" met: (a) gezi
 geen gezicht-in-kamer is. Doel: elke 2 s een ander kader; nooit 3 zinnen achter elkaar hetzelfde shot. Film-tips voor Wes
 staan in `kennis/lessen.md`.
 
+### Korte scripts: 3 seconden oorlog (Wes 2026-11-09, keuzemenu scripts-aanpak — gaat vóór oudere lengteregels)
+- **8–12 s, 25–35 woorden.** Eerste zin max 6 woorden met de uitkomst of een getal in de eerste 5 woorden; geen opbouw.
+- **Dubbele hook**: de tekst in beeld is iets anders dan de gesproken eerste zin (bv. zeg "Je ijskoffie is een maaltijd", beeld "400 kcal in je koffie?").
+- **Actie vanaf frame 1** (iets in de hand, beweging) bij Slimmer 2.0 en blauwdruk; Van nul naar grip blijft talking head.
+- **Elke zin max 8 woorden**, geen uitlegzinnen (het waarom gaat naar de beschrijving), **antwoord zo laat mogelijk**, dan de loop.
+- **Een boodschap per video**; de rest gaat naar de beschrijving (niet splitsen in delen).
+- Bij elk script: gesproken tekst (codeblok), "In beeld:", "Frame 1:", "Loop:".
+
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
 
 **Scriptbank:** scripts die Wes later opneemt staan in `tiktok-editor/scripts/<serie>.md` (bv. `slimmer20.md`, `blauwdruk75.md`)
