@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-09 · algemeen · "los en alles in een keer" → trefwoorden en verborgen woorden: eerst elk woord in een eigen codeblok, daarna één codeblok met alles onder elkaar.
 - 2026-11-09 · Van nul naar grip dag 13 · "verborgen woorden ook altijd geven" → postklaar pakket heeft altijd een apart kopje Verborgen woorden (naast Trefwoorden), elk woord in een eigen codeblok.
 - 2026-11-09 · algemeen · keuzemenu plek hook → **C: hook + serienaam altijd op y 300** in alle series (onder de TikTok-knoppen Volgend/Voor jou, vrij van je hoofd). Bij dag 12/13 stond hij op y 105 en viel deels achter de TikTok-knoppen. render.mjs zet het vast (`hookY` in templates.json), storyboard-y wordt genegeerd.
 - 2026-11-09 · Van nul naar grip dag 13 · "maar dit is een Van nul naar grip video" → pill onder de hook is in nulnaargrip ALTIJD "Van nul naar grip dag X", nooit het zoekwoord. Hoofdtrefwoord dan via label in beeld + gesproken tekst + beschrijving.
