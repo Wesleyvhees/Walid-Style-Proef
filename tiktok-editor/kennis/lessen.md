@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-10 · Van nul naar grip dag 14 · "die uitsneden moeten veel scherper, nu wazige zooi" → `tt.py mini` gebruikt BiRefNet (strakke randen, geen halo), volle resolutie (tot 1600 px) en verscherping. Eén foto per keer draaien (geheugen).
 - 2026-11-10 · Van nul naar grip dag 14 · eigen voor/na-foto's → "kleine miniatuur uitsnedes die oppoppen tijdens het praten", "geen witte omlijsting" → `tt.py mini <project> <foto's>` (rembg, in kleur, geen rand; Wes: "kan je de miniatuur in kleur doen") + emoji-beat met `"toestaan": true` (uitzondering op de template). Voor-figuurtje op "110 kilo", voor + na op "dag na dag". Foto's van Wes niet in git zetten (privé).
 - 2026-11-10 · Van nul naar grip dag 14 · "dit is goed, mag nog iets harder" → v3 met confronterende vragen en korte klappen is de referentie-toon voor nulnaargrip-scripts.
 - 2026-11-10 · Van nul naar grip dag 14 · "de bedoeling was echte motivatievideo's, ik heb het gevoel dat we afzwakken" → klopt: de nieuwe piek/feiten-regels trokken het naar uitleg (vocht, vetverlies). Regel: nulnaargrip = motivatie zonder uitleg; pieken = pijn, meer pijn, ik-bewijs, confrontatie, opdracht.

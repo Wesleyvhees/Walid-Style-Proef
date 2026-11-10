@@ -845,8 +845,12 @@ def cmd_mini(a):
     """Eigen foto -> uitgeknipt figuurtje (in kleur, geen rand, Wes 2026-11-10) als vierkante PNG voor een emoji-beat.
     Gebruik in storyboard: {"type": "emoji", "src": "assets/mini_<naam>.png", "size": 680, "toestaan": true}."""
     from rembg import remove, new_session
-    from PIL import Image, ImageOps
-    sess = new_session("u2net_human_seg")
+    from PIL import Image, ImageFilter, ImageOps
+    # BiRefNet: veel strakkere randen dan u2net (Wes 2026-11-10: "veel scherper, nu wazige zooi"); valt terug op isnet
+    try:
+        sess = new_session("birefnet-portrait")
+    except Exception:
+        sess = new_session("isnet-general-use")
     os.makedirs(os.path.join(a.project, "assets"), exist_ok=True)
     for f in a.fotos:
         im = Image.open(f).convert("RGB")
@@ -854,12 +858,14 @@ def cmd_mini(a):
         cut = cut.crop(cut.getbbox())
         rgb = ImageOps.grayscale(cut.convert("RGB")) if a.zwartwit else cut.convert("RGB")  # standaard kleur (Wes 2026-11-10)
         rgb = (ImageOps.autocontrast(rgb, cutoff=1) if a.zwartwit else rgb).convert("RGB")
+        # verscherpen: telefoonfoto's (vaak WhatsApp-kwaliteit) ogen anders wazig als klein figuurtje
+        rgb = rgb.filter(ImageFilter.UnsharpMask(radius=2, percent=140, threshold=2)).filter(ImageFilter.UnsharpMask(radius=0.8, percent=80, threshold=0))
         out = Image.merge("RGBA", (*rgb.split(), cut.split()[3]))
         w, h = out.size
         S = max(w, h) + 20
         sq = Image.new("RGBA", (S, S), (0, 0, 0, 0))
         sq.paste(out, ((S - w) // 2, (S - h) // 2), out)
-        sq.thumbnail((900, 900))
+        sq.thumbnail((1600, 1600), Image.LANCZOS)
         dest = os.path.join(a.project, "assets", "mini_" + slug(os.path.splitext(os.path.basename(f))[0]) + ".png")
         sq.save(dest)
         print("✓", dest)
