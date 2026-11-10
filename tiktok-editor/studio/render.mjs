@@ -66,7 +66,8 @@ if (sb.template) {
     if (n) console.log(`Template ${sb.template}: ${n} geluid(en) op een zoom weggelaten`);
   }
   if (T.toegestaan) {
-    const weg = sb.beats.filter((b) => !T.toegestaan.includes(b.type) || (b.type === "pop" && T.popLooks && !T.popLooks.includes(b.look ?? "sticker")));
+    // "toestaan": true = uitzondering die Wes zelf koos (bv. eigen voor/na-foto's in Van nul naar grip, 2026-11-10)
+    const weg = sb.beats.filter((b) => b.toestaan !== true && (!T.toegestaan.includes(b.type) || (b.type === "pop" && T.popLooks && !T.popLooks.includes(b.look ?? "sticker"))));
     weg.forEach((b) => console.warn(`Template ${sb.template}: ${b.type}${b.look ? "/" + b.look : ""} op ${b.start}s past niet bij deze serie, weggelaten`));
     sb.beats = sb.beats.filter((b) => !weg.includes(b));
   }
