@@ -377,7 +377,7 @@ export const VolgStempel: React.FC<{ beat: VolgStempelBeat }> = ({ beat }) => {
       src={staticFile("merk/volgstempel.png")}
       style={{
         position: "absolute",
-        left: 540 - w / 2,
+        left: ((beat as any).x ?? 540) - w / 2,
         top: (beat.y ?? 980) - (w * 0.56) / 2,
         width: w,
         transform: `rotate(${(beat.rotate ?? -3) * sp}deg) scale(${(2.0 - 1.0 * sp) * out})`,
