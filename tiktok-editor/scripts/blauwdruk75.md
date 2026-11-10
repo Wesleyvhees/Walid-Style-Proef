@@ -11,34 +11,42 @@ Trefwoord: calorieën in drinken
 ```
 Bijna 400 calorieën, en niks gegeten.
 Twee blikjes cola en een glas sap.
-Calorieën in drinken vullen minder dan eten.
-Vaak eet je daarna gewoon door.
-Dat bleek ook uit onderzoek.
+En ja, dat sap telt ook mee.
+Drinken vult minder dan eten.
+Een glas sap: 110 calorieën.
+Een sinaasappel: 60, en die vult wél.
 Kies water, thee of zwarte koffie.
-Of light frisdrank, als je zoet wilt.
+Bijna nul calorieën.
 Wat dat scheelt?
 ```
-In beeld: "Drink jij je calorieën?"  
-Frame 1: je zet twee blikjes cola en een glas sap op tafel.  
+In beeld: "400 kcal zonder te [eten]"  
+Frame 1: je zet twee blikjes cola en een glas sap op tafel; in beeld '139 + 139 + 110 = 388 kcal' (bewijs-beeld).  
 Loop: "Wat dat scheelt? Bijna 400 calorieën, en niks gegeten."  
-Feiten: blikje cola 330 ml = 139 kcal, glas sinaasappelsap 250 ml ≈ 110 kcal, samen ≈ 388; DiMeglio & Mattes 2000 (calorieën uit drinken worden minder gecompenseerd dan uit eten).
+Feiten: blikje cola 330 ml = 139 kcal; glas sinaasappelsap 250 ml ≈ 110 kcal; sinaasappel ±130 g ≈ 60 kcal (NEVO); zwarte koffie ±2 kcal; DiMeglio & Mattes 2000 (vloeibare calorieën worden minder gecompenseerd).
+Pieken: Getal (0 s) → Tegendraads 'sap telt ook mee' (±4 s) → Contrast sap 110 vs sinaasappel 60 (±9 s) → antwoord (±14 s).  
+Montage: split-screen bij 'glas sap vs sinaasappel' met twee foto's boven; opstapelende labels Water / Thee / Zwarte koffie.  
+Status: PROEF nieuwe stijl (wacht op akkoord Wes).
 
 ## Dag 12 · 80/20 · klaar
 Trefwoord: 80/20 regel
 ```
 Een stuk taart maakt niks kapot.
-Denk in 80/20, niet in alles of niets.
+Denk in 80/20.
+Zo'n stuk is ongeveer 350 calorieën.
+Op een hele week stelt dat weinig voor.
+Niet die ene taart telt.
+Maar wat je meestal eet.
 80 procent: eiwitrijk en onbewerkt.
 20 procent: ruimte voor wat lekkers.
-Wat je meestal eet, telt.
-Een stuk taart is zo'n 350 calorieën.
-Op een hele week stelt dat weinig voor.
 Dus onthoud:
 ```
-In beeld: "Taart = week verpest?"  
-Frame 1: je neemt een hap taart.  
+In beeld: "Taart = week [verpest?]"  
+Frame 1: je neemt een hap taart; in beeld '±350 kcal' (bewijs-beeld).  
 Loop: "Dus onthoud: een stuk taart maakt niks kapot."  
-Feiten: stuk taart ±300–400 kcal; 80/20 is een vuistregel (advies), geen onderzoek. Lijkt op Van nul naar grip dag 13; hier gaat het over eten.
+Feiten: stuk taart ±300–400 kcal; een week ±14.000–17.500 kcal bij 2000–2500 per dag; 80/20 is een vuistregel (advies), geen onderzoek.
+Pieken: Tegendraads (0 s) → Getal 350 kcal (±3 s) → Contrast 'niet die taart, maar wat je meestal eet' (±8 s) → antwoord 80/20 (±12 s).  
+Montage: split-screen met een balk 80% / 20%; opstapelende labels '80% eiwitrijk' / '20% lekkers'.  
+Status: PROEF nieuwe stijl (wacht op akkoord Wes).
 
 ## Dag 13 · Gewicht schommelt · klaar
 Trefwoord: gewicht schommelt

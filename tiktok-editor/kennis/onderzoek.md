@@ -108,3 +108,15 @@ Ander formaat dan zijn eerste drie: **één camera, geen achtergrondwissels**. H
 - Ranking: kijktijd, completion, herbekijken, shares en saves (zwaarder dan likes), reacties, volgen.
 - SEO: TikTok leest beschrijving, tekst in beeld, gesproken woord en hashtags → hetzelfde trefwoord natuurlijk in alle drie, vroeg in de video; geen keyword-stuffing.
 Bronnen: insights.ttsvibes.com/?p=533 · opus.pro/blog/tiktok-length-format-retention-data · dev.to/bulkdl/hook-engineering-the-science-of-the-first-3-seconds-in-short-form-video-2026-2jp9 · teleprompter.com/blog/tiktok-3-second-rule · nestscale.com/?p=47200 · adamconnell.me/improve-video-retention-social-media · openclip.app/guides/hook-optimization-guide · seosherpa.com/tiktok-search-engine · socialpilot.co/blog/tiktok-seo · capcut.com/create/tiktok-caption-keywords-discoverability · darkroomagency.com/observatory/tiktok-algorithm-guide-2026 · socialchamp.com/blog/tiktok-algorithm
+
+
+## 2026-11-10 · Video "hooks" (Kallaway, @kallaway.marketing, 82 s, Engels) — door Wes gestuurd
+- Klassiek verhaal (conflict → opbouw → climax → afloop → oplossing) werkt niet op social: mensen scrollen weg vóór de opbouw goed wordt.
+- **Modern story arc**: begint op 70/100. Hook (eerste ±5 s) geeft razendsnel context. Binnen 5–10 s piek naar 90: contrast-moment,
+  tegendraadse uitspraak of schokkend getal ("dopamine"). Daarna ontlading → nieuwe piek, steeds opnieuw haken tot het einde;
+  geen climax in het midden maar gestapelde pieken.
+- Montage: frame 1 = bewijs-screenshot (retentiegrafiek met dip) + titel met rode kernwoorden; split-screen (graphic bovenin op zwart,
+  spreker onderin in afgerond kader) afgewisseld met volledig gezicht om de 2–4 s; lijngrafiek die zichzelf tekent met een tijdsbalk;
+  rode labels die zich opstapelen (Contrast Moment / Contrarian Take / Shocking Stat); titels vet + schuin schreeflettertype;
+  ondertitel 1 woord tegelijk; CTA "Comment LAUNCH" (reageer-woord → link in DM); eindkaart TikTok-logo + zoekbalk.
+- Toegepast: zie lessen.md 2026-11-10 en SKILL.md "Pieken stapelen".

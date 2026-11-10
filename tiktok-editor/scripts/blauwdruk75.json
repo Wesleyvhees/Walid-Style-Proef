@@ -1,0 +1,388 @@
+[
+ {
+  "dag": 11,
+  "titel": "Calorieën in drinken",
+  "kw": "calorieën in drinken",
+  "tekst": [
+   "Bijna 400 calorieën, en niks gegeten.",
+   "Twee blikjes cola en een glas sap.",
+   "En ja, dat sap telt ook mee.",
+   "Drinken vult minder dan eten.",
+   "Een glas sap: 110 calorieën.",
+   "Een sinaasappel: 60, en die vult wél.",
+   "Kies water, thee of zwarte koffie.",
+   "Bijna nul calorieën.",
+   "Wat dat scheelt?"
+  ],
+  "beeld": "400 kcal zonder te [eten]",
+  "frame": "je zet twee blikjes cola en een glas sap op tafel; in beeld '139 + 139 + 110 = 388 kcal' (bewijs-beeld).",
+  "loop": "Wat dat scheelt? Bijna 400 calorieën, en niks gegeten.",
+  "feiten": "blikje cola 330 ml = 139 kcal; glas sinaasappelsap 250 ml ≈ 110 kcal; sinaasappel ±130 g ≈ 60 kcal (NEVO); zwarte koffie ±2 kcal; DiMeglio & Mattes 2000 (vloeibare calorieën worden minder gecompenseerd).",
+  "extra": "Pieken: Getal (0 s) → Tegendraads 'sap telt ook mee' (±4 s) → Contrast sap 110 vs sinaasappel 60 (±9 s) → antwoord (±14 s).  \nMontage: split-screen bij 'glas sap vs sinaasappel' met twee foto's boven; opstapelende labels Water / Thee / Zwarte koffie.  \nStatus: PROEF nieuwe stijl (wacht op akkoord Wes)."
+ },
+ {
+  "dag": 12,
+  "titel": "80/20",
+  "kw": "80/20 regel",
+  "tekst": [
+   "Een stuk taart maakt niks kapot.",
+   "Denk in 80/20.",
+   "Zo'n stuk is ongeveer 350 calorieën.",
+   "Op een hele week stelt dat weinig voor.",
+   "Niet die ene taart telt.",
+   "Maar wat je meestal eet.",
+   "80 procent: eiwitrijk en onbewerkt.",
+   "20 procent: ruimte voor wat lekkers.",
+   "Dus onthoud:"
+  ],
+  "beeld": "Taart = week [verpest?]",
+  "frame": "je neemt een hap taart; in beeld '±350 kcal' (bewijs-beeld).",
+  "loop": "Dus onthoud: een stuk taart maakt niks kapot.",
+  "feiten": "stuk taart ±300–400 kcal; een week ±14.000–17.500 kcal bij 2000–2500 per dag; 80/20 is een vuistregel (advies), geen onderzoek.",
+  "extra": "Pieken: Tegendraads (0 s) → Getal 350 kcal (±3 s) → Contrast 'niet die taart, maar wat je meestal eet' (±8 s) → antwoord 80/20 (±12 s).  \nMontage: split-screen met een balk 80% / 20%; opstapelende labels '80% eiwitrijk' / '20% lekkers'.  \nStatus: PROEF nieuwe stijl (wacht op akkoord Wes)."
+ },
+ {
+  "dag": 13,
+  "titel": "Gewicht schommelt",
+  "kw": "gewicht schommelt",
+  "tekst": [
+   "Vandaag ineens een kilo zwaarder?",
+   "Je gewicht schommelt, dat is normaal.",
+   "Een kilo vet is zo'n 7000 calorieën.",
+   "Die eet je niet in een avond.",
+   "Meestal is het vocht.",
+   "Door zout, koolhydraten of een zware training.",
+   "Kijk naar je weekgemiddelde.",
+   "Dus geen paniek bij:"
+  ],
+  "beeld": "+1 kilo in een nacht?",
+  "frame": "je stapt op de weegschaal en kijkt geschrokken.",
+  "loop": "Dus geen paniek bij: vandaag ineens een kilo zwaarder?",
+  "feiten": "1 kg lichaamsvet ≈ 7000–7700 kcal (Hall 2008, vereenvoudigd); glycogeen bindt ±3 g water per gram; dagschommelingen van 0,5–2 kg zijn normaal. Slimmer 2.0 dag 22 ging over trends; hier waarom +1 kilo in een nacht."
+ },
+ {
+  "dag": 14,
+  "titel": "Geen truc",
+  "kw": "afvallen",
+  "tekst": [
+   "Geen truc. Van 110 naar 75 kilo.",
+   "Zo viel ik af, met vijf basics.",
+   "Eiwit bij elke maaltijd.",
+   "Veel groente, dus veel volume.",
+   "Krachttraining.",
+   "Elke dag bewegen.",
+   "Zeven uur slaap.",
+   "Saai? Ja. Het werkte wel.",
+   "Dus stop met zoeken, want er is"
+  ],
+  "beeld": "-35 kilo zonder truc",
+  "frame": "je houdt een oude foto van jezelf omhoog (als je die hebt).",
+  "loop": "Dus stop met zoeken, want er is geen truc. Van 110 naar 75 kilo.",
+  "feiten": "eigen ervaring Wes (110 → 75 kg, vijf pijlers uit zijn eigen script)."
+ },
+ {
+  "dag": 15,
+  "titel": "Gezonde boodschappen",
+  "kw": "gezonde boodschappen",
+  "tekst": [
+   "Lege koelkast, dus weer de snackbar?",
+   "Gezonde boodschappen lossen dat op.",
+   "Wat makkelijk ligt, eet je sneller.",
+   "Dus zorg dat dit er altijd is:",
+   "Kwark, eieren, groente en volkoren.",
+   "Dan is gezond kiezen de makkelijke keuze.",
+   "Zonder boodschappen wordt het weer:"
+  ],
+  "beeld": "Je fysiek begint in de supermarkt",
+  "frame": "je doet een lege koelkast open.",
+  "loop": "Zonder boodschappen wordt het weer: lege koelkast, dus weer de snackbar?",
+  "feiten": "beschikbaarheid en gemak sturen wat mensen eten (voedselomgeving-onderzoek); geen exacte getallen gebruikt."
+ },
+ {
+  "dag": 16,
+  "titel": "Progressive overload",
+  "kw": "spieren opbouwen",
+  "tekst": [
+   "Al maanden dezelfde gewichten?",
+   "Dan krijgen je spieren geen nieuwe prikkel.",
+   "Spieren opbouwen vraagt steeds iets meer.",
+   "Dat heet progressive overload.",
+   "Een herhaling extra.",
+   "Of net iets meer gewicht.",
+   "Schrijf je gewichten op.",
+   "Dan zie je of je vooruitgaat.",
+   "Anders blijft het:"
+  ],
+  "beeld": "Daarom groeien je spieren niet",
+  "frame": "je pakt dezelfde dumbbells als altijd en zucht.",
+  "loop": "Anders blijft het: al maanden dezelfde gewichten?",
+  "feiten": "progressieve belasting is het basisprincipe van krachttraining (ACSM position stand 2009)."
+ },
+ {
+  "dag": 17,
+  "titel": "Opgeblazen buik",
+  "kw": "opgeblazen buik",
+  "tekst": [
+   "Vaak een opgeblazen buik?",
+   "Soms: te weinig vezels en water.",
+   "Dan loopt je spijsvertering trager.",
+   "Vezels zitten in havermout, groente, fruit en bonen.",
+   "Maar bouw het rustig op.",
+   "Te veel ineens geeft juist meer last.",
+   "En drink er genoeg bij.",
+   "Anders blijf je zitten met:"
+  ],
+  "beeld": "Opgeblazen? Check dit eerst",
+  "frame": "je wrijft over je buik.",
+  "loop": "Anders blijf je zitten met: vaak een opgeblazen buik?",
+  "feiten": "vezels + vocht helpen bij een trage stoelgang; te snel veel vezels kan gasvorming en een opgeblazen gevoel geven (MDL Fonds/Voedingscentrum). Opgeblazen buik heeft veel oorzaken, daarom 'soms'.",
+  "extra": "Beschrijving: \"Blijven de klachten? Ga naar je huisarts.\" Slimmer 2.0 dag 26 ging over vezels tegen trek; hier spijsvertering."
+ },
+ {
+  "dag": 18,
+  "titel": "Stress en afvallen",
+  "kw": "stress en afvallen",
+  "tekst": [
+   "Alles goed doen, toch stilstand?",
+   "Stress kan afvallen lastiger maken.",
+   "Bij veel stress grijp je sneller naar snacks.",
+   "En je spieren herstellen trager.",
+   "Dat blijkt uit onderzoek.",
+   "Plan vandaag een half uur rust.",
+   "Wandelen, zonder telefoon.",
+   "Want wat gebeurt er anders?"
+  ],
+  "beeld": "Stress houdt je tegen",
+  "frame": "je legt je telefoon weg en trekt je jas aan.",
+  "loop": "Want wat gebeurt er anders? Alles goed doen, toch stilstand?",
+  "feiten": "Adam & Epel 2007 (stress → meer trek in calorierijk eten); Stults-Kolehmainen e.a. 2014 (chronische stress vertraagt spierherstel). Slimmer 2.0 dag 25 = ademhaling; hier stress → trek + herstel."
+ },
+ {
+  "dag": 19,
+  "titel": "Gezonde vetten",
+  "kw": "gezonde vetten",
+  "tekst": [
+   "Geen gram vet meer?",
+   "Dan mis je gezonde vetten.",
+   "Vitamine A, D, E, K hebben vet nodig.",
+   "Olijfolie, noten, vette vis, eieren.",
+   "Wel opletten: vet is 9 calorieën per gram.",
+   "Dus een handje noten, geen hele zak.",
+   "Dus stop met:"
+  ],
+  "beeld": "Vet schrappen = fout?",
+  "frame": "je giet olijfolie over je salade.",
+  "loop": "Dus stop met: geen gram vet meer?",
+  "feiten": "vitamine A, D, E en K zijn vetoplosbaar (Voedingscentrum); vet = 9 kcal/g."
+ },
+ {
+  "dag": 20,
+  "titel": "Mealprep",
+  "kw": "mealprep",
+  "tekst": [
+   "Geen eten mee, weer de kantine?",
+   "Mealprep lost dat op.",
+   "Met honger kies je vaak het snelste.",
+   "Kook twee keer per week voor.",
+   "Kip, rijst en groente in bakjes.",
+   "Of kook vanavond dubbel, voor je lunch.",
+   "Dan ligt je eten al klaar.",
+   "Zo hoef je nooit meer te zeggen:"
+  ],
+  "beeld": "Nooit meer de kantine",
+  "frame": "je zet drie gevulde bakjes in de koelkast.",
+  "loop": "Zo hoef je nooit meer te zeggen: geen eten mee, weer de kantine?",
+  "feiten": "plannen en voorbereiden hangt samen met een gezonder eetpatroon (Ducrot e.a. 2017); geen exacte getallen gebruikt."
+ },
+ {
+  "dag": 21,
+  "titel": "Afvallen en verjaardagen",
+  "kw": "afvallen",
+  "tekst": [
+   "Verjaardag overslaan om af te vallen?",
+   "Afvallen hoeft je leven niet kleiner te maken.",
+   "Je week telt, niet een avond.",
+   "Overdag eiwit en groente.",
+   "'s Avonds bewust genieten.",
+   "De dag erna gewoon je ritme weer op.",
+   "Zo houd je het lang vol.",
+   "Dus nooit meer:"
+  ],
+  "beeld": "Afvallen en toch naar elk feest",
+  "frame": "je stapt binnen met een cadeautje.",
+  "loop": "Dus nooit meer: verjaardag overslaan om af te vallen?",
+  "feiten": "gewicht volgt de energiebalans over langere tijd, niet over een avond. Slimmer 2.0 dag 28 = uitgaan/alcohol; hier eten op feestjes."
+ },
+ {
+  "dag": 22,
+  "titel": "Rustdag",
+  "kw": "rustdag",
+  "tekst": [
+   "Spieren groeien niet in de gym.",
+   "Ze groeien op je rustdag.",
+   "Training is de prikkel.",
+   "Daarna bouwt je lijf tot twee dagen op.",
+   "Met genoeg eiwit en slaap.",
+   "Elke dag zwaar trainen kan dat afremmen.",
+   "Dus schuldig op je rustdag? Hoeft niet.",
+   "Plan je rustdagen, en onthoud:"
+  ],
+  "beeld": "Je spieren groeien op de bank",
+  "frame": "je ploft op de bank met je sporttas naast je.",
+  "loop": "Plan je rustdagen, en onthoud: spieren groeien niet in de gym.",
+  "feiten": "spiereiwitsynthese blijft tot 24–48 uur na training verhoogd (MacDougall e.a. 1995, Phillips e.a. 1997)."
+ },
+ {
+  "dag": 23,
+  "titel": "Genoeg water drinken",
+  "kw": "genoeg water drinken",
+  "tekst": [
+   "Elke middag suf en wazig?",
+   "Check eens of je genoeg water drinkt.",
+   "Een klein tekort kan al moe maken.",
+   "En het kost je kracht in de gym.",
+   "Advies: 1,5 tot 2 liter per dag.",
+   "Meer als je sport of het warm is.",
+   "Zet een fles op je bureau.",
+   "Herkenbaar?"
+  ],
+  "beeld": "Moe of gewoon dorst?",
+  "frame": "je zet een grote fles water op je bureau.",
+  "loop": "Herkenbaar? Elke middag suf en wazig?",
+  "feiten": "Voedingscentrum: 1,5–2 liter vocht per dag; Armstrong e.a. 2012 (licht vochttekort → vermoeidheid, slechter humeur); ±2% vochtverlies verlaagt sportprestaties. De '2 tot 3 liter' en 'dorst voelt als honger' uit de ruwe versie zijn geschrapt (onvoldoende bewijs)."
+ },
+ {
+  "dag": 24,
+  "titel": "Langzaam eten",
+  "kw": "langzaam eten",
+  "tekst": [
+   "Bord leeg in twee minuten?",
+   "Langzaam eten helpt je minder te eten.",
+   "Dat blijkt uit meerdere onderzoeken.",
+   "Je verzadiging loopt achter op je vork.",
+   "Leg je bestek neer tussen elke hap.",
+   "Telefoon weg aan tafel.",
+   "Kauw rustig door.",
+   "En kijk eens hoe jij nu eet:"
+  ],
+  "beeld": "Eet jij te snel?",
+  "frame": "je schuift snel eten naar binnen met je telefoon in je hand.",
+  "loop": "En kijk eens hoe jij nu eet: bord leeg in twee minuten?",
+  "feiten": "Robinson e.a. 2014 (meta-analyse: langzamer eten → minder inname); Robinson e.a. 2013 (afleiding tijdens eten → meer eten)."
+ },
+ {
+  "dag": 25,
+  "titel": "Vast trainingsschema",
+  "kw": "trainingsschema",
+  "tekst": [
+   "Elke training maar wat apparaten?",
+   "Zonder trainingsschema zie je je vooruitgang niet.",
+   "Kies een paar grote oefeningen.",
+   "Squat, drukken en roeien.",
+   "Die trainen veel spieren tegelijk.",
+   "Doe ze elke week opnieuw.",
+   "Schrijf op wat je tilt.",
+   "Of je blijft doen:"
+  ],
+  "beeld": "3 oefeningen die alles doen",
+  "frame": "je loopt langs een rij apparaten en twijfelt.",
+  "loop": "Of je blijft doen: elke training maar wat apparaten?",
+  "feiten": "samengestelde oefeningen trainen meerdere spiergroepen tegelijk (ACSM 2009). Slimmer 2.0 dag 27 = volgorde; hier vast plan."
+ },
+ {
+  "dag": 26,
+  "titel": "Afvalplateau",
+  "kw": "plateau afvallen",
+  "tekst": [
+   "Drie weken geen gram eraf?",
+   "Een plateau bij afvallen is normaal.",
+   "Een lichter lichaam verbruikt minder.",
+   "En vaak beweeg je ongemerkt minder.",
+   "Of zijn je porties gegroeid.",
+   "Check eerst je stappen en porties.",
+   "Pas een ding aan, niet alles.",
+   "Want anders zeg je straks weer:"
+  ],
+  "beeld": "Plateau? Check dit eerst",
+  "frame": "je kijkt naar je stappenteller op je telefoon.",
+  "loop": "Want anders zeg je straks weer: drie weken geen gram eraf?",
+  "feiten": "een lager gewicht verbruikt minder energie; spontane beweging (NEAT) daalt vaak bij afvallen (Rosenbaum & Leibel 2010)."
+ },
+ {
+  "dag": 27,
+  "titel": "Supplementen",
+  "kw": "supplementen",
+  "tekst": [
+   "Honderden euro's aan pillen en poeders?",
+   "Supplementen maken slecht eten niet goed.",
+   "En slecht slapen ook niet.",
+   "Ze zijn de kers, niet de taart.",
+   "Eiwitpoeder is handig voor je eiwit.",
+   "Creatine is goed onderzocht voor kracht.",
+   "Veel andere: weinig bewijs.",
+   "Dus eerst de basis, voordat je weer koopt:"
+  ],
+  "beeld": "Bespaar je geld",
+  "frame": "je veegt een rij potjes van tafel.",
+  "loop": "Dus eerst de basis, voordat je weer koopt: honderden euro's aan pillen en poeders?",
+  "feiten": "IOC consensus 2018 (Maughan e.a.): slechts een paar supplementen hebben goed bewijs (o.a. creatine, cafeïne); eiwitpoeder is voeding in poedervorm. Slimmer 2.0 dag 29 = creatine; hier basis eerst."
+ },
+ {
+  "dag": 28,
+  "titel": "Eiwitbronnen",
+  "kw": "eiwitbronnen",
+  "tekst": [
+   "Eiwit is eiwit.",
+   "Niet helemaal: eiwitbronnen verschillen.",
+   "Eieren, kwark, vis en vlees zijn compleet.",
+   "Alle bouwstenen voor je spieren zitten erin.",
+   "Linzen en bonen hebben er minder van.",
+   "Combineer ze met granen, zoals rijst.",
+   "Hoeft niet in dezelfde maaltijd.",
+   "Dus zeg nooit meer:"
+  ],
+  "beeld": "Niet elk eiwit is gelijk",
+  "frame": "je zet een bakje kwark naast een pot linzen.",
+  "loop": "Dus zeg nooit meer: eiwit is eiwit.",
+  "feiten": "dierlijke eiwitten bevatten alle essentiële aminozuren in ruime mate; de meeste peulvruchten zijn laag in methionine, granen laag in lysine, samen compleet; combineren over de dag is genoeg (Voedingscentrum). Tofu (soja) is zelf al compleet, daarom niet genoemd."
+ },
+ {
+  "dag": 29,
+  "titel": "Gezonde leefstijl",
+  "kw": "gezonde leefstijl",
+  "tekst": [
+   "Afgevallen en alles weer terug?",
+   "Een dieet stopt, een gezonde leefstijl niet.",
+   "Terugvallen gebeurt bij veel mensen.",
+   "Vraag dus niet: wat moet ik schrappen?",
+   "Maar: wat zou iemand die fit is kiezen?",
+   "Kies wat je over een jaar nog doet.",
+   "Word die persoon. Anders wordt het weer:"
+  ],
+  "beeld": "Stop met op dieet gaan",
+  "frame": "je gooit een dieetboekje in de prullenbak.",
+  "loop": "Word die persoon. Anders wordt het weer: afgevallen en alles weer terug?",
+  "feiten": "Anderson e.a. 2001 (meta-analyse: het grootste deel van het verloren gewicht komt binnen 5 jaar terug); 'wat zou iemand die fit is kiezen' is een denkwijze (advies), geen onderzoek. Slimmer 2.0 dag 30 = gewoontes; hier identiteit."
+ },
+ {
+  "dag": 30,
+  "titel": "Samenvatting 110 naar 75 kilo",
+  "kw": "afvallen",
+  "tekst": [
+   "Van 110 naar 75 kilo.",
+   "Zo viel ik af, in vijf regels.",
+   "Eiwit en vezels bij elke maaltijd.",
+   "Elke week iets sterker in de gym.",
+   "Elke dag je stappen.",
+   "Zeven tot acht uur slaap.",
+   "Consistent, niet perfect.",
+   "Hulp met jouw plan? Stuur me een bericht.",
+   "Zo ging ik"
+  ],
+  "beeld": "De hele blauwdruk in 15 seconden",
+  "frame": "je houdt een oude foto naast je huidige zelf (als je die hebt).",
+  "loop": "Zo ging ik van 110 naar 75 kilo.",
+  "feiten": "eigen ervaring Wes; coaching als gewichtsconsulent i.o. (eerlijk 'i.o.' in de beschrijving).",
+  "extra": "Beschrijving: \"Sla deze serie op.\" + coaching (gewichtsconsulent i.o.)."
+ }
+]

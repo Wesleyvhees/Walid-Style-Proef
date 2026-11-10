@@ -387,3 +387,40 @@ export const VolgStempel: React.FC<{ beat: VolgStempelBeat }> = ({ beat }) => {
     />
   );
 };
+
+// Labels die zich opstapelen (Wes 2026-11-10, analyse 'hooks'): elk punt komt als blok onder het vorige.
+export const StackLabels: React.FC<{ beat: any; style: StylePreset }> = ({ beat, style }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const lv = useFxLook("label");
+  const out = exit(frame, beat.end, fps, 0.15);
+  const items: { text: string; at: number }[] = beat.items ?? [];
+  return (
+    <div style={{ position: "absolute", left: beat.x ?? 70, top: beat.y ?? 380, display: "flex", flexDirection: "column", alignItems: beat.align === "center" ? "center" : "flex-start", gap: 16, opacity: out, ...(beat.align === "center" ? { right: beat.x ?? 70 } : {}) }}>
+      {items.map((it, i) => {
+        if (t < it.at - 0.02) return null;
+        const p = pop(frame, it.at, fps, 11);
+        return (
+          <div
+            key={i}
+            style={{
+              ...fontCss("mono"),
+              fontSize: beat.size ?? 44,
+              fontWeight: 700,
+              textTransform: "uppercase",
+              padding: "14px 26px",
+              borderRadius: 14,
+              ...fxSkin(lv === 5 ? 2 : lv, style),
+              opacity: Math.min(1, p * 1.5),
+              transform: `translateX(${(1 - p) * -60}px) scale(${0.9 + 0.1 * p})`,
+              filter: p < 0.6 ? `blur(${(0.6 - p) * 8}px)` : undefined,
+            }}
+          >
+            {it.text}
+          </div>
+        );
+      })}
+    </div>
+  );
+};

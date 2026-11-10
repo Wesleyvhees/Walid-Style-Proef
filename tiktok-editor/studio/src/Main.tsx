@@ -7,8 +7,8 @@ import { loadFonts } from "./fonts";
 import { Captions } from "./components/Captions";
 import { TitleText } from "./components/TitleText";
 import { ChecklistCard, CommentCard, FloatingImages, FollowCard, PromptCard } from "./components/Cards";
-import { EmojiPop, PhotoPop, PopText, VolgStempel } from "./components/Pops";
-import { camFx, FX_TYPES, FxLayer } from "./components/Fx";
+import { EmojiPop, PhotoPop, PopText, StackLabels, VolgStempel } from "./components/Pops";
+import { camFx, faceAt, FX_TYPES, FxLayer } from "./components/Fx";
 import type { FxBeat } from "./types";
 import { ChartCard, CutawayLayer, HookTitle, MeterGraphic, PersonaLabel, personaTransform, SceneLayer } from "./components/Scenes";
 
@@ -107,6 +107,20 @@ export const Main: React.FC<Storyboard> = (sb) => {
       {/* virtuele camera: vaste uitsnede per shot (multicam uit één opname) */}
       {(() => {
         const shot = (sb.camShots ?? []).find((c) => t >= c.start && t < c.end);
+        // split-screen (Wes 2026-11-10): uitleg bovenin op zwart, jij onderin in een afgerond kader rond je gezicht
+        const split = ((sb as any).split ?? []).find((c: { start: number; end: number }) => t >= c.start && t < c.end);
+        if (split) {
+          const [fx, fy, fw, fh] = faceAt(sb, t);
+          const W = 1000, H = 800, k = 0.95;
+          const cx = fx + fw / 2, cy = fy + fh * 0.62;
+          return (
+            <div style={{ position: "absolute", left: 40, top: 1000, width: W, height: H, borderRadius: 36, overflow: "hidden", boxShadow: "0 0 0 2px rgba(163,180,98,0.55), 0 30px 60px rgba(0,0,0,0.6)" }}>
+              <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920, transformOrigin: "0 0", transform: `translate(${W / 2 - cx * k}px, ${H / 2 - cy * k}px) scale(${k})` }}>
+                <OffthreadVideo src={staticFile(`p/${sb.video}`)} style={{ width: "100%", height: "100%", objectFit: "cover", filter: s.filter }} />
+              </div>
+            </div>
+          );
+        }
         return (
           <AbsoluteFill
             style={shot ? { transform: `translate(${shot.tx}px, ${shot.ty}px) scale(${shot.scale})`, transformOrigin: "0 0" } : undefined}
@@ -157,6 +171,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (b.type === "images") return <FloatingImages key={`c${i}`} beat={b} />;
         if (b.type === "pop") return <PopText key={`c${i}`} beat={b} style={s} />;
         if (b.type === "emoji") return <EmojiPop key={`c${i}`} beat={b} />;
+        if ((b as any).type === "stack") return <StackLabels key={`c${i}`} beat={b} style={s} />;
         if (b.type === "image") return <PhotoPop key={`c${i}`} beat={b} style={s} />;
         if (b.type === "chart") return <ChartCard key={`c${i}`} beat={b} style={s} />;
         if (b.type === "meter") return <MeterGraphic key={`c${i}`} beat={b} style={s} />;
@@ -180,7 +195,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
             );
           })}
       {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart" || b.type === "volgstempel") ? (
-        <Captions words={sb.words} style={capStyle} size={cap.size} y={cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} />
+        <Captions words={sb.words} style={capStyle} size={cap.size} y={((sb as any).split ?? []).some((c: { start: number; end: number }) => t >= c.start && t < c.end) ? 925 : cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} />
       ) : null}
       {sb.beats
         .flatMap((b) => [

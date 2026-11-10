@@ -61,7 +61,7 @@
       "title",
       "volgstempel",
       "checklist"
-    ],
+    , "stack", "linechart"],
     "popLooks": [
       "stamp",
       "big",
@@ -113,7 +113,7 @@
       "volgstempel",
       "checklist", "orbit", "couchwall", "uiworld", "framebreak", "digitalzoom", "phone", "headlines", "zoomcut",
       "linechart", "pullback", "greenscreen", "papercut", "doodle", "vertigo", "cover", "glass"
-    ],
+    , "stack"],
     "popLooks": [
       "stamp",
       "big",

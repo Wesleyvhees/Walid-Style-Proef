@@ -128,6 +128,20 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
   const { fps } = useVideoConfig();
   const words = beat.text.split(" ");
   const out = exit(frame, beat.end, fps, 0.2);
+  const groups: { text: string; block: boolean }[] = [];
+  {
+    let cur: string[] | null = null;
+    for (const w of words) {
+      if (cur) {
+        cur.push(w.replace(/\]$/, ""));
+        if (w.endsWith("]")) { groups.push({ text: cur.join(" "), block: true }); cur = null; }
+      } else if (w.startsWith("[")) {
+        if (w.endsWith("]")) groups.push({ text: w.slice(1, -1), block: true });
+        else cur = [w.slice(1)];
+      } else groups.push({ text: w, block: false });
+    }
+    if (cur) groups.push({ text: cur.join(" "), block: true });
+  }
   const pv = useFxLook("pil");
   const pilSkin: React.CSSProperties =
     pv === 5
@@ -146,9 +160,13 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
       }}
     >
       <div style={{ ...fontCss((beat as any).font ?? "sans"), fontSize: beat.size ?? 80, lineHeight: 1.04, color: "#fff", textShadow: "0 6px 28px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.6)", WebkitTextStroke: `${Math.round((beat.size ?? 80) * 0.09)}px rgba(0,0,0,0.55)`, paintOrder: "stroke fill" }}>
-        {words.map((w, i) => {
+        {groups.map((g, i) => {
           const p = enter(frame, beat.start + i * 0.06, fps, 14);
-          const hot = /\*[^*]+\*/.test(w);
+          const hot = /\*[^*]+\*/.test(g.text);
+          // [woorden] = kernwoorden in een groen blok (Wes 2026-11-10, analyse 'hooks': 'No Longer Works' in een blok)
+          const blk: React.CSSProperties = g.block
+            ? { background: GREEN, color: "#0B0B0B", padding: "0.02em 0.18em 0.06em", borderRadius: 10, WebkitTextStroke: "0px transparent", textShadow: "none", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }
+            : {};
           return (
             <span
               key={i}
@@ -158,9 +176,10 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
                 opacity: p,
                 transform: `translateY(${(1 - p) * 24}px)`,
                 color: hot ? style.accent : "#fff",
+                ...blk,
               }}
             >
-              {w.replace(/\*/g, "")}
+              {g.text.replace(/\*/g, "")}
             </span>
           );
         })}

@@ -303,6 +303,16 @@ staan in `kennis/lessen.md`.
 - **Elke zin max 8 woorden**, geen uitlegzinnen (het waarom gaat naar de beschrijving), **antwoord zo laat mogelijk**, dan de loop.
 - **Een boodschap per video**; de rest gaat naar de beschrijving (niet splitsen in delen).
 - Bij elk script: gesproken tekst (codeblok), "In beeld:", "Frame 1:", "Loop:".
+- **Pieken stapelen (Wes 2026-11-10, analyse video 'hooks', modern story arc)**: begin op 70/100 (hook = meteen context),
+  **piek 1 binnen 5 s**, daarna piek → één korte ontlading → piek, **minstens 3 pieken** in 15–20 s (±0, ±4, ±9, ±14 s).
+  Elk script **minstens 2 piek-soorten**: Contrast (fout↔goed, voor↔na), Tegendraads (tegen wat iedereen denkt), Getal (met bron).
+  Geen climax bewaren: de eerste pieken geven al waarde, de laatste piek is het antwoord. In de scriptbank per script een regel "Pieken:".
+- **Hook in beeld**: bewijs-beeld vanaf frame 1 (foto/etiket/grafiek/screenshot met getal) en 1–2 kernwoorden in een groen blok:
+  zet ze in de hooktekst tussen `[ ]` (bv. "30 minuten-regel = [mythe]").
+- **Montage Slimmer 2.0 + blauwdruk**: `"split": [{start,end}]` in storyboard.json = split-screen (uitleg bovenin op zwart, gezicht
+  onderin in een kader; ondertitels dan op y 925), afwisselen met volledig gezicht om de 3–5 s; `linechart` (fx) bij getallen;
+  beat `stack` {items:[{text, at}], x, y} = labels die zich opstapelen bij opsommingen. Van nul naar grip blijft talking head.
+- **Coaching-video's** (bv. blauwdruk dag 30): afsluiter met reageer-woord ("Reageer PLAN en ik stuur je…"); Wes stuurt de berichten zelf. Loop blijft.
 - **Waarheid gaat vóór kort (Wes 2026-11-09: "het klopt niet wat de scripts zeggen, ze moeten wel waarheid hebben")**: elke zin moet
   los kloppen, ook zonder de beschrijving. Geen absolute woorden (nooit, altijd, niemand, niks) tenzij het echt zo is; liever "kan",
   "vaak", "meestal". Getallen alleen met de voorwaarde erbij (bv. "twee blikjes cola en een glas sap: bijna 400 kcal", niet "je
@@ -311,7 +321,7 @@ staan in `kennis/lessen.md`.
 
 ### Schrijfstijl (bij script/idee-aanvragen, en voor hook-teksten)
 
-**Scriptbank:** scripts die Wes later opneemt staan in `tiktok-editor/scripts/<serie>.md` (bv. `slimmer20.md`, `blauwdruk75.md`)
+**Scriptbank:** scripts die Wes later opneemt staan in `tiktok-editor/scripts/<serie>.md` (bron: `<serie>.json`, opnieuw maken met `python3 scripts/bank.py <serie> scripts/<serie>.json scripts/<serie>.md`; let op dat opgenomen/geplaatst-statussen in de .md blijven staan) (bv. `slimmer20.md`, `blauwdruk75.md`)
 met status klaar → opgenomen → geplaatst. Vraagt Wes "script dag X", haal het daar op. Bewerkt Wes een video uit de scriptbank,
 vergelijk de gesproken tekst met het script en zet de status op opgenomen; na plaatsen op geplaatst.
 

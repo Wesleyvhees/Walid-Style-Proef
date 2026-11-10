@@ -29,16 +29,19 @@ Trefwoord: eten na het sporten
 Binnen 30 minuten een shake?
 Hoeft niet.
 Eten na het sporten mag rustig later.
-Dat venster is veel ruimer dan gedacht.
-Wat wel telt: genoeg eiwit per dag.
-Zo'n 1,6 gram per kilo als je traint.
+Je hebt uren, geen 30 minuten.
+Wat wel telt: eiwit over de hele dag.
+Zo'n 1,6 gram per kilo, als je traint.
 Kip met rijst, kwark of eieren.
 Dus stress niet meer over:
 ```
-In beeld: "30 minuten-regel = mythe?"  
-Frame 1: je schudt een shake en zet hem neer.  
+In beeld: "30 minuten-regel = [mythe]"  
+Frame 1: je schudt een shake met een timer op 29:59 ernaast (bewijs-beeld).  
 Loop: "Dus stress niet meer over: binnen 30 minuten een shake?"  
-Feiten: Schoenfeld & Aragon 2013 (anabool venster is ruim, totale eiwitinname telt het meest); Morton e.a. 2018 meta-analyse (±1,6 g/kg/dag bij krachttraining).
+Feiten: Schoenfeld & Aragon 2013 (het venster is ruim, uren); Morton e.a. 2018 meta-analyse (±1,6 g eiwit per kg per dag bij krachttraining).
+Pieken: Tegendraads (0 s) → Contrast 'uren, geen 30 minuten' (±4 s) → Getal 1,6 g/kg (±9 s) → antwoord voorbeelden (±13 s).  
+Montage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip met rijst / Kwark / Eieren.  
+Status: PROEF nieuwe stijl (wacht op akkoord Wes).
 
 ## Dag 25 · Stress verminderen · klaar
 Trefwoord: stress verminderen
