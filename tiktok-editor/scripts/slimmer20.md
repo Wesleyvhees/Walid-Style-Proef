@@ -45,21 +45,26 @@ Montage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip
 ## Dag 25 · Stress verminderen · klaar
 Trefwoord: stress verminderen
 ```
-Hele dag stress, 's avonds snoepen?
-Stress verminderen kost geen vakantie.
-Maar vijf minuten per dag.
-Twee keer inademen door je neus.
-Dan lang uitademen door je mond.
-Lang uitademen remt je hartslag af.
-Stanford-onderzoek: na een maand beter humeur.
-Probeer het vanavond, in plaats van:
+HOOK (letterlijk)
+Stress? Dit kan binnen 5 minuten helpen.
+En het is geen vakantie.
+
+IN JE EIGEN WOORDEN
+• Bij stress grijp jij sneller naar snacks.
+• Dat is geen wilskracht: je lijf staat gewoon 'aan'.
+• [jouw ervaring, zie vraag]
+
+ANTWOORD (letterlijk, laatste 3 s)
+Twee keer kort in door je neus, een keer lang uit.
+Vijf minuten. Want onthoud:
 ```
 In beeld: "Stress? [5 minuten]"  
-Frame 1: je kijkt naar je hartslag op je horloge of telefoon (bewijs-beeld).  
-Loop: "Probeer het vanavond, in plaats van: hele dag stress, 's avonds snoepen?"  
+Frame 1: ONVERWACHT: je smijt je telefoon vol meldingen op de stoel naast je en blaast hard uit.  
+Loop: "Want onthoud: stress? Dit kan binnen 5 minuten helpen."  
 Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag → na 28 dagen beter humeur; lange uitademing verlaagt de hartslag.
-Pieken: herkenning (0 s) → Tegendraads 'geen vakantie' (±2 s) → Getal 5 minuten (±4 s) → Getal/bewijs Stanford (±13 s).  
-Montage: split-screen met opstapelende labels '2× in door je neus' / '1× lang uit'.
+Vraag aan Wes (A2): wanneer grijp(t) jij bij stress naar snacks? Eén zin of spraakmemo.  
+Gap: hook belooft 'dit' → antwoord (ademhaling) pas in de laatste 3 s.  
+Status: PROEF script-upgrade (wacht op akkoord Wes).
 
 ## Dag 26 · Vezels · klaar
 Trefwoord: vezels

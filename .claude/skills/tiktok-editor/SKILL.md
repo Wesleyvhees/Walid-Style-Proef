@@ -343,6 +343,11 @@ staan in `kennis/lessen.md`.
 - **Elke zin max 8 woorden**, geen uitlegzinnen (het waarom gaat naar de beschrijving), **antwoord zo laat mogelijk**, dan de loop.
 - **Een boodschap per video**; de rest gaat naar de beschrijving (niet splitsen in delen).
 - Bij elk script: gesproken tekst (codeblok), "In beeld:", "Frame 1:", "Loop:".
+- **Script-upgrade (Wes 2026-11-10, keuzemenu "contentpiramide")**: scriptvorm = **HOOK letterlijk** (opent één concrete vraag,
+  curiosity gap) → **3 praat-punten die Wes in eigen woorden zegt** (één daarvan is zijn **echte ervaring**: vraag hem er per script om,
+  nooit verzinnen) → **ANTWOORD letterlijk in de laatste 2–3 s** (het antwoord op de hook-vraag), daarna de loop. Tussendoor kleine pieken.
+  Frame 1: iets **onverwachts dóen** (niet alleen vasthouden); bij Van nul naar grip via een harde eerste zin (talking head).
+  Schrijf zoals Wes praat: `kennis/wes-woorden.md`. Geen voortgangs-piramide (niet gekozen).
 - **Pieken stapelen (Wes 2026-11-10, analyse video 'hooks', modern story arc)**: begin op 70/100 (hook = meteen context),
   **piek 1 binnen 5 s**, daarna piek → één korte ontlading → piek, **minstens 3 pieken** in 15–20 s (±0, ±4, ±9, ±14 s).
   Elk script **minstens 2 piek-soorten**: Contrast (fout↔goed, voor↔na), Tegendraads (tegen wat iedereen denkt), Getal (met bron).

@@ -29,22 +29,26 @@ Montage: split-screen bij 'glas sap vs sinaasappel' met twee foto's boven; opsta
 ## Dag 12 · 80/20 · klaar
 Trefwoord: 80/20 regel
 ```
+HOOK (letterlijk)
 Een stuk taart maakt niks kapot.
-Denk in 80/20.
-Zo'n stuk is ongeveer 350 calorieën.
-Op een hele week stelt dat weinig voor.
-Niet die ene taart telt.
-Maar wat je meestal eet.
-80 procent: eiwitrijk en onbewerkt.
-20 procent: ruimte voor wat lekkers.
-Dus onthoud:
+Maar dit wel.
+
+IN JE EIGEN WOORDEN
+• Een stuk taart is zo'n 350 calorieën, op een hele week stelt dat weinig voor.
+• Wat jij meestal eet, dat telt. Denk in 80/20.
+• [jouw ervaring, zie vraag]
+
+ANTWOORD (letterlijk, laatste 3 s)
+Alles of niets denken.
+Onthoud dus:
 ```
 In beeld: "Taart = week [verpest?]"  
-Frame 1: je neemt een hap taart; in beeld '±350 kcal' (bewijs-beeld).  
-Loop: "Dus onthoud: een stuk taart maakt niks kapot."  
+Frame 1: ONVERWACHT: je neemt een grote hap taart recht voor de camera, zonder schuldig te kijken.  
+Loop: "Onthoud dus: een stuk taart maakt niks kapot."  
 Feiten: stuk taart ±300–400 kcal; een week ±14.000–17.500 kcal bij 2000–2500 per dag; 80/20 is een vuistregel (advies), geen onderzoek.
-Pieken: Tegendraads (0 s) → Getal 350 kcal (±3 s) → Contrast 'niet die taart, maar wat je meestal eet' (±8 s) → antwoord 80/20 (±12 s).  
-Montage: split-screen met een balk 80% / 20%; opstapelende labels '80% eiwitrijk' / '20% lekkers'.
+Vraag aan Wes (A2): gooide jij vroeger na één 'foute' dag de hele week overboord? Wat gebeurde er dan? Eén zin.  
+Gap: 'maar dit wel' → antwoord (alles of niets denken) pas aan het eind.  
+Status: PROEF script-upgrade (wacht op akkoord Wes).
 
 ## Dag 13 · Gewicht schommelt · klaar
 Trefwoord: gewicht schommelt
