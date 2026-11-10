@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-10 · Van nul naar grip dag 14 · "meer trefwoorden" → voortaan 15–20 trefwoorden per video (hoofd, varianten, zoekvragen, spreektaal), los én alles in één blok.
 - 2026-11-10 · Van nul naar grip dag 14 · "'ook als je denkt' staat niet meer in de ondertiteling" → ondertitels gingen uit tijdens de volg-stempel (oude regel, toen hij over de ondertitels stond). Nu alleen uit als de stempel laag staat (y > 900); boven het hoofd blijven ze aan. Altijd de laatste zin checken in de stills.
 - 2026-11-10 · Van nul naar grip dag 14 · "volgstempel valt over de ondertiteling, boven mijn hoofd en iets kleiner" → volg-stempel voortaan boven het hoofd (y 330, width 560, x 450), na de punchline. "Twee setjes voor- en na-foto's" → set 1 (voorkant) op 110 kilo / dag na dag, set 2 (zijkant + gym-selfie, afgeknipt boven de spiegelstang) op makkelijk → moeilijk.
 - 2026-11-10 · Van nul naar grip dag 14 · "die uitsneden moeten veel scherper, nu wazige zooi" → `tt.py mini` gebruikt BiRefNet (strakke randen, geen halo), volle resolutie (tot 1600 px) en verscherping. Eén foto per keer draaien (geheugen).
