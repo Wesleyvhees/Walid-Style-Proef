@@ -307,6 +307,9 @@ staan in `kennis/lessen.md`.
   **piek 1 binnen 5 s**, daarna piek → één korte ontlading → piek, **minstens 3 pieken** in 15–20 s (±0, ±4, ±9, ±14 s).
   Elk script **minstens 2 piek-soorten**: Contrast (fout↔goed, voor↔na), Tegendraads (tegen wat iedereen denkt), Getal (met bron).
   Geen climax bewaren: de eerste pieken geven al waarde, de laatste piek is het antwoord. In de scriptbank per script een regel "Pieken:".
+- **Van nul naar grip = pure motivatie (Wes 2026-11-10: "ik heb het gevoel dat we afzwakken")**: géén uitleg, wetenschap of getallen
+  met bron. Pieken zijn hier: pijn → meer pijn → ik-bewijs (alleen echte feiten van Wes, bv. 110 → 75 kg) → confrontatie/contrast →
+  opdracht ("train morgen"). Hard en direct in de jij-vorm, donker van toon. Uitleg hoort bij Slimmer 2.0 en de blauwdruk.
 - **Hook in beeld**: bewijs-beeld vanaf frame 1 (foto/etiket/grafiek/screenshot met getal) en 1–2 kernwoorden in een groen blok:
   zet ze in de hooktekst tussen `[ ]` (bv. "30 minuten-regel = [mythe]").
 - **Montage Slimmer 2.0 + blauwdruk**: `"split": [{start,end}]` in storyboard.json = split-screen (uitleg bovenin op zwart, gezicht

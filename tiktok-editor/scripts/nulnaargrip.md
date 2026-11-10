@@ -7,17 +7,18 @@ Regels: 8–12 s (±25–36 woorden), eerste zin max 6 woorden met getal of uitk
 ## Dag 13 · Een dag gemist · opgenomen (bewerkt 2026-11-09, 19,7 s)
 Trefwoord: volhouden met sporten
 
-## Dag 14 · Twee weken geen resultaat · klaar
-Trefwoord: geen resultaat met sporten
+## Dag 14 · Twee weken niks te zien · klaar (v2, harder: motivatie, geen uitleg)
+Trefwoord: motivatie om door te gaan
 ```
-Twee weken sporten, nul kilo eraf?
-Dat betekent niet dat het niet werkt.
-Vocht kan je vetverlies verbergen.
-Kijk naar wat je wél merkt.
-Meer herhalingen. Beter slapen. Minder trek.
-Dat is grip. Ook als je denkt:
+Twee weken, en nog niks te zien.
+Dus je wilt stoppen.
+Ik woog ooit 110 kilo.
+Dat ging niet weg in twee weken.
+Grip krijg je niet van resultaat.
+Grip krijg je van doorgaan zonder resultaat.
+Dus train morgen. Ook als je denkt:
 ```
-In beeld: "2 weken, [0 kilo]?" · impact-woorden: NUL / VOCHT / GRIP  
-Loop: "Dat is grip. Ook als je denkt: twee weken sporten, nul kilo eraf?"  
-Pieken: Getal 'nul kilo' (0 s) → Tegendraads 'betekent niet dat het niet werkt' (±2,5 s) → Contrast vocht verbergt vet (±5 s) → antwoord wat je wél merkt (±8 s).  
-Feiten: vochtschommelingen (zout, koolhydraten, training) kunnen vetverlies op de weegschaal wekenlang maskeren; kracht stijgt in de eerste weken vooral door zenuwstelsel-aanpassing (Moritani & deVries 1979), dus meer herhalingen is vroeg al te merken.
+In beeld: "Niks te zien? [Doorgaan]" · impact-woorden: STOPPEN / 110 KILO / GRIP / MORGEN  
+Loop: "Dus train morgen. Ook als je denkt: twee weken, en nog niks te zien."  
+Pieken: pijn (0 s) → meer pijn 'je wilt stoppen' (±2 s) → ik-bewijs 110 kilo (±4 s) → contrast resultaat vs doorgaan (±9 s) → opdracht (±12 s).  
+Feiten: alleen Wes' eigen 110 → 75 kg; verder geen claims.
