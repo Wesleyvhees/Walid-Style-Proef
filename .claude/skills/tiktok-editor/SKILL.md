@@ -316,7 +316,7 @@ staan in `kennis/lessen.md`.
 - **Montage Slimmer 2.0 + blauwdruk**: `"split": [{start,end}]` in storyboard.json = split-screen (uitleg bovenin op zwart, gezicht
   onderin in een kader; ondertitels dan op y 925), afwisselen met volledig gezicht om de 3–5 s; `linechart` (fx) bij getallen;
   beat `stack` {items:[{text, at}], x, y} = labels die zich opstapelen bij opsommingen. Van nul naar grip blijft talking head.
-- **Eigen voor/na-foto's**: `tt.py mini <project> <foto's>` → uitgeknipte figuurtjes zonder rand (zwart-wit) die oppoppen naast je hoofd (emoji-beat, size ±680, `"toestaan": true`). Foto's van Wes nooit in git (privé); ze staan in de scratchpad `projects/eigen-fotos/`.
+- **Eigen voor/na-foto's**: `tt.py mini <project> <foto's>` → uitgeknipte figuurtjes zonder rand, in kleur (`--zwartwit` optioneel) die oppoppen naast je hoofd (emoji-beat, size ±680, `"toestaan": true`). Foto's van Wes nooit in git (privé); ze staan in de scratchpad `projects/eigen-fotos/`.
 - **Coaching-video's** (bv. blauwdruk dag 30): afsluiter met reageer-woord ("Reageer PLAN en ik stuur je…"); Wes stuurt de berichten zelf. Loop blijft.
 - **Waarheid gaat vóór kort (Wes 2026-11-09: "het klopt niet wat de scripts zeggen, ze moeten wel waarheid hebben")**: elke zin moet
   los kloppen, ook zonder de beschrijving. Geen absolute woorden (nooit, altijd, niemand, niks) tenzij het echt zo is; liever "kan",
