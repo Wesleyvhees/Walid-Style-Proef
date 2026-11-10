@@ -15,6 +15,23 @@ blijven: (1) tekst ter controle, (2) vragenlijst vóór het storyboard (mag in �
 (3) fotokeuze als er foto's zijn. Daarna storyboard → eigen controle met stills (niet naar Wes) → renderen → zelfcontrole → video + SEO-pakket sturen,
 zonder tussendoor te vragen. Alleen vragen bij echte twijfel of iets onomkeerbaars.
 
+## Stijl "Donker Bewijs" — vaste stijl voor Slimmer 2.0 en 75 kilo blauwdruk vanaf 2026-11-10 (Wes: "maak een stijl die we vanaf nu gaan gebruiken")
+
+Gaat vóór alle oudere effectregels voor deze twee series. Alles donker (zwart, witte tekst, groen #A3B462 als accent), nooit wit.
+Oude effecten (labels, stempels, emoji-icoontjes, tip-kaart, stack, checklist, fotokaartjes) **niet meer gebruiken**; wel blijven:
+ondertitels (met `"marker": true` = groene markeerstift onder de kernwoorden), hook + serienaam-pil (y 300), volg-stempel boven het hoofd.
+Kies één stijl en houd hem minstens twee weken vast (onderzoek: steeds wisselen is de grootste fout). Per moment in de video:
+| Moment | Effect (beat-type, components/Dark.tsx) |
+|---|---|
+| mythe / fout / "hoeft niet" | `freeze` (beeld bevriest, zwart-wit, zoomt in, rode cirkel, onderschrift `caption`) |
+| de vraag die mensen zoeken | `search` (donkere zoekbalk typt het hoofdtrefwoord, `suggestions`) |
+| klap / contrast-woord | `kinetic` (één woord schermbreed, beeld dimt, `sub` in groen) |
+| "wat wel telt" / het antwoord | `zoomcard` (video krimpt tot kaart, `title` + `sub` erboven) |
+| een getal | `counter` (rollende teller, `value` "1,6"/"388", `unit`, `sub`) |
+| één kernwoord groot | `title` met `behind: true` (tekst áchter je hoofd; eerst `tt.py person`), donkere letters op lichte lucht, `pill` voor context |
+| lijstje / voorbeelden | `notes` (donkere notities-app die afvinkt, `items` met `at`) |
+Per video 5–7 van deze momenten, nooit twee tegelijk. Referentie: Slimmer dag 24 v2 (`voorbeelden/donker-bewijs-dag24/`).
+
 ## Systeem-upgrade 2026-11-10 (Wes koos alles uit de systeemanalyse) — gaat vóór oudere regels
 
 - **Werkwijze (F1):** bewerk zelfstandig volgens de vaste stijl van de serie (zoals blauwdruk dag 11) en lever op; Wes geeft daarna

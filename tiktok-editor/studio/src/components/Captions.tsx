@@ -50,7 +50,8 @@ export const Captions: React.FC<{
   maxWords?: number;
   highlight?: string[];
   layout?: { fps: number; faces: ([number, number, number, number] | null)[] };
-}> = ({ words, style, size, y, maxChars, maxWords, highlight, layout }) => {
+  marker?: boolean;
+}> = ({ words, style, size, y, maxChars, maxWords, highlight, layout, marker }) => {
   const hl = React.useMemo(() => new Set((highlight ?? []).map(norm)), [highlight]);
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -122,7 +123,9 @@ export const Captions: React.FC<{
             <span
               key={i}
               style={{
-                color: spoken ? (key ? style.captionAccent ?? style.accent : style.ink) : style.muted,
+                color: spoken ? (key && !marker ? style.captionAccent ?? style.accent : style.ink) : style.muted,
+                // L · groene markeerstift onder het kernwoord (Wes 2026-11-10, stijl Donker Bewijs)
+                ...(key && marker ? { backgroundImage: "linear-gradient(transparent 58%, rgba(163,180,98,0.92) 58%, rgba(163,180,98,0.92) 92%, transparent 92%)", backgroundRepeat: "no-repeat", backgroundSize: `${Math.round(kp * 100)}% 100%`, padding: "0 0.06em", borderRadius: 6 } : {}),
                 display: "inline-block",
                 transform: `translateY(${hop.toFixed(1)}px) scale(${1 + 0.08 * kp})`,
                 // ruimte meeschalen zodat het grotere woord niet tegen de buren aan komt

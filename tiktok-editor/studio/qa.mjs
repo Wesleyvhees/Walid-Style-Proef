@@ -33,6 +33,9 @@ function box(b) {
   if (b.type === "volgstempel") { const w = b.width ?? 900, x = b.x ?? 540, y = b.y ?? 980; return { x0: x - w / 2, x1: x + w / 2, y0: y - w * 0.28, y1: y + w * 0.28, center: true }; }
   if (b.type === "prompt") { const y = b.y ?? 230; return { x0: 50, x1: 1030, y0: y, y1: y + 190 }; }
   if (b.type === "checklist") { const w = b.w ?? 560, x = b.x ?? 540 - w / 2, y = b.y ?? 230; return { x0: x, x1: x + w, y0: y, y1: y + 90 + (b.items ?? []).length * 70 }; }
+  if (b.type === "search") { const y = b.y ?? 250; return { x0: 60, x1: 1020, y0: y, y1: y + 118 + (b.suggestions?.length ? 50 + b.suggestions.length * 70 : 0) }; }
+  if (b.type === "counter") { const s = b.size ?? 230, y = b.y ?? 330; return { x0: 160, x1: 920, y0: y, y1: y + s * 1.18 + 24 + (b.unit ? s * 0.5 : 0) + (b.sub ? 60 : 0) }; }
+  if (b.type === "notes") { const y = b.y ?? 240; return { x0: 80, x1: 1000, y0: y, y1: y + 170 + (b.items ?? []).length * 92 }; }
   return null;
 }
 

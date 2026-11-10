@@ -1,5 +1,6 @@
 import React from "react";
-import { AbsoluteFill, Audio, interpolate, Easing, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, interpolate, Easing, Freeze, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { Counter, DarkPill, FreezeOverlay, KineticWord, NotesCard, SearchBar, ZoomCardTitle, zoomCardScale } from "./components/Dark";
 import type { Beat, Storyboard, StylePreset, TitleBeat, WordsBeat, Zoom } from "./types";
 import { PRESETS, CARD_LOOKS } from "./styles";
 import { FxLookCtx } from "./fxlook";
@@ -109,6 +110,33 @@ export const Main: React.FC<Storyboard> = (sb) => {
         const shot = (sb.camShots ?? []).find((c) => t >= c.start && t < c.end);
         // split-screen (Wes 2026-11-10): uitleg bovenin op zwart, jij onderin in een afgerond kader rond je gezicht
         const split = ((sb as any).split ?? []).find((c: { start: number; end: number }) => t >= c.start && t < c.end);
+        // E · reality-tv bevriezing: beeld staat stil, zwart-wit, zoomt langzaam in op je gezicht
+        const frz = now.find((b) => (b as any).type === "freeze") as any;
+        if (frz) {
+          const zf = interpolate(t, [frz.start, frz.start + 0.45], [1, frz.zoom ?? 1.18], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+          const [fx0, fy0, fw0, fh0] = faceAt(sb, frz.start);
+          return (
+            <AbsoluteFill style={{ transform: `scale(${zf})`, transformOrigin: `${fx0 + fw0 / 2}px ${fy0 + fh0 / 2}px` }}>
+              <Freeze frame={Math.round(frz.start * fps)}>
+                <OffthreadVideo src={staticFile(`p/${sb.video}`)} muted style={{ ...videoStyle, transform: undefined, filter: `${s.filter} grayscale(1) contrast(1.18)` }} />
+              </Freeze>
+            </AbsoluteFill>
+          );
+        }
+        // F · uitzoomen naar kaart: video krimpt tot afgeronde kaart op een wazige, donkere achtergrond
+        const zc = now.find((b) => (b as any).type === "zoomcard") as any;
+        if (zc) {
+          const k = zoomCardScale(zc, t);
+          const W = 1080 * k, H = 1920 * k, top = (zc.cardY ?? 470) * ((1 - k) / (1 - (zc.scale ?? 0.68))) ;
+          return (
+            <AbsoluteFill>
+              <OffthreadVideo src={staticFile(`p/${sb.video}`)} muted style={{ ...videoStyle, filter: `${s.filter} blur(30px) brightness(0.4)`, transform: "scale(1.15)" }} />
+              <div style={{ position: "absolute", left: (1080 - W) / 2, top, width: W, height: H, borderRadius: 48 * (1 - k) / 0.32, overflow: "hidden", boxShadow: "0 40px 90px rgba(0,0,0,0.6)", border: k < 0.99 ? "2px solid rgba(163,180,98,0.6)" : undefined }}>
+                <OffthreadVideo src={staticFile(`p/${sb.video}`)} style={{ ...videoStyle, width: 1080, height: 1920, transform: `scale(${k})`, transformOrigin: "0 0" }} />
+              </div>
+            </AbsoluteFill>
+          );
+        }
         if (split) {
           const [fx, fy, fw, fh] = faceAt(sb, t);
           const W = 1000, H = 800, k = 0.95;
@@ -172,6 +200,18 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (b.type === "pop") return <PopText key={`c${i}`} beat={b} style={s} />;
         if (b.type === "emoji") return <EmojiPop key={`c${i}`} beat={b} />;
         if ((b as any).type === "stack") return <StackLabels key={`c${i}`} beat={b} style={s} />;
+        if ((b as any).type === "search") return <SearchBar key={`c${i}`} beat={b} />;
+        if ((b as any).type === "kinetic") return (
+          <React.Fragment key={`c${i}`}>
+            <AbsoluteFill style={{ background: `rgba(0,0,0,${0.45 * Math.min(1, (t - b.start) / 0.15)})` }} />
+            <KineticWord beat={b} />
+          </React.Fragment>
+        );
+        if ((b as any).type === "counter") return <Counter key={`c${i}`} beat={b} />;
+        if ((b as any).type === "pill") return <DarkPill key={`c${i}`} beat={b} />;
+        if ((b as any).type === "notes") return <NotesCard key={`c${i}`} beat={b} />;
+        if ((b as any).type === "freeze") return <FreezeOverlay key={`c${i}`} beat={b} />;
+        if ((b as any).type === "zoomcard") return <ZoomCardTitle key={`c${i}`} beat={b} />;
         if (b.type === "image") return <PhotoPop key={`c${i}`} beat={b} style={s} />;
         if (b.type === "chart") return <ChartCard key={`c${i}`} beat={b} style={s} />;
         if (b.type === "meter") return <MeterGraphic key={`c${i}`} beat={b} style={s} />;
@@ -195,7 +235,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
             );
           })}
       {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart" || (b.type === "volgstempel" && ((b as any).y ?? 980) > 900)) ? (
-        <Captions words={sb.words} style={capStyle} size={cap.size} y={((sb as any).split ?? []).some((c: { start: number; end: number }) => t >= c.start && t < c.end) ? 925 : cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} />
+        <Captions words={sb.words} style={capStyle} size={cap.size} y={((sb as any).split ?? []).some((c: { start: number; end: number }) => t >= c.start && t < c.end) ? 925 : cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} marker={(cap as any).marker} />
       ) : null}
       {sb.beats
         .flatMap((b) => [
