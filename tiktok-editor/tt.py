@@ -841,6 +841,30 @@ def behind_ranges(sb, pad=0.2):
             or b.get("type") in PERSON_TYPES]
 
 
+def cmd_mini(a):
+    """Eigen foto -> uitgeknipt figuurtje (zwart-wit, geen rand, Wes 2026-11-10) als vierkante PNG voor een emoji-beat.
+    Gebruik in storyboard: {"type": "emoji", "src": "assets/mini_<naam>.png", "size": 680, "toestaan": true}."""
+    from rembg import remove, new_session
+    from PIL import Image, ImageOps
+    sess = new_session("u2net_human_seg")
+    os.makedirs(os.path.join(a.project, "assets"), exist_ok=True)
+    for f in a.fotos:
+        im = Image.open(f).convert("RGB")
+        cut = remove(im, session=sess)
+        cut = cut.crop(cut.getbbox())
+        rgb = ImageOps.grayscale(cut.convert("RGB")) if not a.kleur else cut.convert("RGB")
+        rgb = ImageOps.autocontrast(rgb, cutoff=1).convert("RGB")
+        out = Image.merge("RGBA", (*rgb.split(), cut.split()[3]))
+        w, h = out.size
+        S = max(w, h) + 20
+        sq = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        sq.paste(out, ((S - w) // 2, (S - h) // 2), out)
+        sq.thumbnail((900, 900))
+        dest = os.path.join(a.project, "assets", "mini_" + slug(os.path.splitext(os.path.basename(f))[0]) + ".png")
+        sq.save(dest)
+        print("✓", dest)
+
+
 def cmd_person(a):
     import numpy as np
     from PIL import Image, ImageFilter
@@ -1153,6 +1177,7 @@ def main():
     c = sub.add_parser("assets"); c.add_argument("project"); c.set_defaults(fn=cmd_assets)
     c = sub.add_parser("person"); c.add_argument("project")
     c.add_argument("--model", default="isnet-general-use", help="isnet-general-use (standaard), birefnet-general-lite (beste, traag), u2net_human_seg (snel)"); c.set_defaults(fn=cmd_person)
+    c = sub.add_parser("mini", help="eigen foto's -> uitgeknipte figuurtjes (assets/mini_*.png)"); c.add_argument("project"); c.add_argument("fotos", nargs="+"); c.add_argument("--kleur", action="store_true"); c.set_defaults(fn=cmd_mini)
     c = sub.add_parser("storyboard"); c.add_argument("project"); c.set_defaults(fn=cmd_storyboard)
     c = sub.add_parser("keuzemenu", help="voorstel.json -> aanklikbaar keuzemenu (keuzemenu.html)"); c.add_argument("project"); c.set_defaults(fn=cmd_keuzemenu)
     c = sub.add_parser("render"); c.add_argument("project"); c.add_argument("--out")

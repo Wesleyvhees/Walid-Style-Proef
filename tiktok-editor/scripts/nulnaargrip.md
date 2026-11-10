@@ -7,7 +7,7 @@ Regels: 8–12 s (±25–36 woorden), eerste zin max 6 woorden met getal of uitk
 ## Dag 13 · Een dag gemist · opgenomen (bewerkt 2026-11-09, 19,7 s)
 Trefwoord: volhouden met sporten
 
-## Dag 14 · Twee weken niks te zien · klaar (v3, nog harder — goedgekeurde toon)
+## Dag 14 · Twee weken niks te zien · opgenomen (bewerkt 2026-11-10, 15,6 s; v3 toon)
 Trefwoord: motivatie om door te gaan
 ```
 Twee weken, niks te zien.
