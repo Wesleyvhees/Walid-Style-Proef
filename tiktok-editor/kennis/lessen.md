@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-10 · systeemanalyse · keuzes: alles volgens advies → automatische eindcontrole (qa.mjs), ondertitel- en scriptcheck, vulwoorden automatisch eruit, SFX zachter op woorden, TikTok-geluid op 1–5% bij posten (geen muziek in de video), lichte stabilisatie, crf 16, cover per video, kijkcijfer-loop, post-checklist, eigen B-roll-bank + fotomap, zelfstandig bewerken met één feedbackronde, tekstfilter laat = en accenten staan, hashtag-normalisatie.
 - 2026-11-10 · 75 kilo blauwdruk dag 11 · "je hoeft niks te vragen, bewerk zoals jij denkt dat optimaal is" → zonder keuzemenu bewerkt: "psst" eruit, 15,5% sneller (18,5 s), hook met kernwoord-blok, opstapelende som (139 + 139 + 110 = 388), TELT MEE-stempel, split-screen sap vs sinaasappel (Pixabay), opstapelende antwoorden, BIJNA 0 KCAL, volg-stempel boven het hoofd. Let op: "=" valt weg in teksten (sanitizer) → schrijf "Totaal:".
 - 2026-11-10 · Van nul naar grip dag 14 · "meer trefwoorden" → voortaan 15–20 trefwoorden per video (hoofd, varianten, zoekvragen, spreektaal), los én alles in één blok.
 - 2026-11-10 · Van nul naar grip dag 14 · "'ook als je denkt' staat niet meer in de ondertiteling" → ondertitels gingen uit tijdens de volg-stempel (oude regel, toen hij over de ondertitels stond). Nu alleen uit als de stempel laag staat (y > 900); boven het hoofd blijven ze aan. Altijd de laatste zin checken in de stills.

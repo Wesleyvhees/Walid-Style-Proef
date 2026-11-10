@@ -5,6 +5,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { qa } from "./qa.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -86,10 +87,9 @@ const cleanText = (t, keepStars = false) =>
     .replace(/\.\.\.|…/g, "")
     .replace(/[–—]/g, "-")
     .replace(/×/g, "x")
-    .replace(/[=“”„"«»]/g, "")
+    .replace(/[“”„"«»]/g, "")
     .replace(/[‘’]/g, "'")
     .replace(keepStars ? /(?!)/g : /\*/g, "")
-    .replace(/\b(w|d|z|h)él\b/gi, (m) => m.replace(/é/, "e").replace(/É/, "E"))
     .replace(/\s{2,}/g, " ")
     .trim();
 const TEXT_KEYS = ["text", "sub", "label", "doneText", "doneLabel", "headline", "comment", "kicker", "title", "masthead", "button"];
@@ -120,6 +120,8 @@ if (typeof sb.captions.y !== "number" && sb.captions.y !== "regel") {
 const hlWords = new Set((sb.captions.highlight ?? []).map((w) => w.toLowerCase()));
 for (const b of sb.beats) if (b.type === "pop" && typeof b.text === "string") for (const w of b.text.toLowerCase().split(/\s+/)) if (w.length > 2 && !/^\d/.test(w)) hlWords.add(w);
 sb.captions.highlight = [...hlWords];
+// Automatische eindcontrole (Wes 2026-11-10): verschuift beats die over gezicht/ondertitels/rand vallen en meldt de rest
+if (!args.includes("--no-qa")) qa(sb);
 
 // Virtuele camera's: per shot schaal + verschuiving zodat het focuspunt (gezicht/borst) goed in beeld staat
 if (sb.cams?.length) {
@@ -237,7 +239,7 @@ await renderMedia({
   outputLocation: tmp,
   inputProps: sb,
   browserExecutable,
-  crf: draft ? 26 : 20, // 20 = visueel gelijk, half zo groot (prettig voor telefoon/TikTok)
+  crf: draft ? 26 : 16, // 16 = meer scherpte over na TikToks eigen compressie (Wes 2026-11-10, C3)
   concurrency: Number(process.env.CONCURRENCY ?? 4),
   scale: draft ? 0.5 : 1,
   onProgress: ({ progress }) => {

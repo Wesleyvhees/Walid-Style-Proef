@@ -15,6 +15,28 @@ blijven: (1) tekst ter controle, (2) vragenlijst vóór het storyboard (mag in �
 (3) fotokeuze als er foto's zijn. Daarna storyboard → eigen controle met stills (niet naar Wes) → renderen → zelfcontrole → video + SEO-pakket sturen,
 zonder tussendoor te vragen. Alleen vragen bij echte twijfel of iets onomkeerbaars.
 
+## Systeem-upgrade 2026-11-10 (Wes koos alles uit de systeemanalyse) — gaat vóór oudere regels
+
+- **Werkwijze (F1):** bewerk zelfstandig volgens de vaste stijl van de serie (zoals blauwdruk dag 11) en lever op; Wes geeft daarna
+  één feedbackronde. Keuzemenu alleen bij een nieuw effect of als Wes erom vraagt. De tekst die gehoord is staat in het opleverbericht
+  (verbeterde woorden + wat er automatisch is weggeknipt), zodat Wes het kan nalezen.
+- **prepare doet nu automatisch:** lichte stabilisatie (vidstab, ±3% uitsnede; `--no-stab`) en vulwoorden/dubbele woorden/gemompel
+  eruit (`--keep-fillers` om te houden). Meld wat eruit is ("Vulwoorden/verspreken eruit: …").
+- **render.mjs doet nu automatisch:** eindcontrole `qa.mjs` (buiten beeld → schuiven, over ondertitels → omhoog, over gezicht → boven
+  het hoofd als er plek is, anders melden; achter TikTok-knoppen melden; verborgen ondertitelwoorden melden). Lees de QA-regels en los
+  elke melding op vóór het opleveren. Export crf 16. Geluidseffecten die op een woord vallen ±40% zachter; opstapelende labels klikken.
+- **Script-check (A3):** komt de video uit de scriptbank: `tt.py scriptcheck <project> <serie> <dag>` en noem de afwijkingen in de tekstcheck.
+- **Cover (D1):** `tt.py cover <project> --title "<hook kort>" --sub "<serie> · dag X" --font <Inter-Variable.ttf | BarlowCondensed-BlackItalic.ttf> [--zwartwit]`
+  (zwart-wit + Barlow voor Van nul naar grip) en stuur `cover.jpg` mee: Wes kiest hem bij het posten als omslag.
+- **Hashtags (G2):** altijd door `tt.py hashtags …` (kleine letters, geen accenten: #calorieenindrinken).
+- **Post-checklist (D3/B4)** onder elk SEO-pakket: HD-upload aan · TikTok-ondertitels uit (anders dubbel) · cover.jpg als omslag ·
+  trending TikTok-geluid toevoegen op 1–5% (geen muziek in de video zelf) · zelf de eerste reactie plaatsen en vastpinnen ·
+  na 2 dagen screenshot van de kijkgrafiek sturen.
+- **Kijkcijfers (D2):** elke screenshot die Wes stuurt in `kennis/kijkcijfers.md` zetten: per video de seconde waar kijkers afhaken +
+  wat er op dat moment in beeld/tekst gebeurde; na elke 3 video's de regels bijstellen en melden wat er verandert.
+- **Eigen B-roll (E1):** clips van Wes in Drive-map "Tiktok B-roll" (zoek met search_files); gebruik ze als tussenbeeld in plaats van
+  stockfoto's waar het past. **Eigen foto's (E2):** map "Wes fotos" (submap van Tiktok Rauw, zodat de downloadlink werkt); nooit in git.
+
 ## Leren (altijd, bij elke video)
 
 - **Vóór het bewerken** lees je `tiktok-editor/kennis/lessen.md` (feedback van Wes, nieuwste eerst) en

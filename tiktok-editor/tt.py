@@ -247,6 +247,47 @@ def has_music(audio):
     return float(np.percentile(db, 10)) > loud - 14  # stiltes liggen bij spraak normaal >20 dB lager
 
 
+# Vulwoorden en verspreken (Wes 2026-11-10, systeemanalyse B1): automatisch eruit, met verslag in de tekstcheck.
+FILLERS = re.compile(r"^(e+h+m*|u+h+m*|e+u+h+|hm+|mm+|ps+t+|pf+|tja|eh+m+)[.,!?]*$", re.I)
+
+
+def _subtract(ranges, cut):
+    out = []
+    for a0, b0 in ranges:
+        if cut[1] <= a0 or cut[0] >= b0:
+            out.append([a0, b0]); continue
+        if cut[0] > a0 + 0.04:
+            out.append([a0, round(cut[0], 4)])
+        if cut[1] < b0 - 0.04:
+            out.append([round(cut[1], 4), b0])
+    return out
+
+
+def remove_fillers(words, ranges, audio, sr=16000):
+    """Haalt herkende vulwoorden (eh, uhm, psst …), dubbel uitgesproken woorden ('de de') en stemgeluid zonder woord
+    (een niet-uitgeschreven 'eh' tussen twee woorden) uit de knip-ranges."""
+    import numpy as np
+    removed, keep = [], []
+    rms = lambda t0, t1: float(np.sqrt(np.mean(audio[int(t0 * sr):max(int(t0 * sr) + 1, int(t1 * sr))] ** 2)))
+    speech = np.median([rms(w["s"], w["e"]) for w in words]) if words else 0
+    for i, w in enumerate(words):
+        base = re.sub(r"[^\wéëèï']", "", w["w"].lower())
+        nxt = words[i + 1] if i + 1 < len(words) else None
+        if FILLERS.match(w["w"].strip()):
+            removed.append((w["s"], w["e"], w["w"])); continue
+        if nxt and base and base == re.sub(r"[^\wéëèï']", "", nxt["w"].lower()) and len(base) > 1 and nxt["s"] - w["e"] < 0.6:
+            removed.append((w["s"], nxt["s"] - 0.02, w["w"] + " (dubbel)")); continue
+        keep.append(w)
+    for a_, b_ in zip(keep, keep[1:]):
+        g0, g1 = a_["e"] + 0.04, b_["s"] - 0.04
+        if g1 - g0 > 0.18 and speech and rms(g0, g1) > 0.35 * speech:
+            removed.append((g0, g1, "(gemompel)"))
+    for s0, e0, _ in removed:
+        ranges = _subtract(ranges, [s0 - 0.02, e0 + 0.02])
+    ranges = [[round(round(x * FPS) / FPS, 4), round(round(y * FPS) / FPS, 4)] for x, y in ranges if y - x > 0.05]
+    return keep, ranges, removed
+
+
 def keep_ranges(words, audio, total, lead=0.03, tail=0.05, max_gap=0.08, word_pad=0.25):
     """Houd alleen stukken waar echt gesproken wordt, en alleen rond herkende woorden
     (dus geen gemompel, kuchjes of mislukte takes). Pauzes > max_gap gaan eruit."""
@@ -343,6 +384,11 @@ def cmd_prepare(a):
     if a.mirror:
         vf = "hflip," + vf
     af = [] if a.no_voice else ["-af", VOICE_AF]
+    if not a.no_stab:
+        # lichte stabilisatie (Wes 2026-11-10, C1): kleine trillingen uit de hand weg, ±3% uitsnede
+        trf = os.path.join(a.project, "stab.trf")
+        run(["ffmpeg", "-y", "-v", "error", "-i", a.input, "-vf", f"vidstabdetect=shakiness=4:accuracy=9:result={trf}", "-f", "null", "-"])
+        vf = f"vidstabtransform=input={trf}:smoothing=18:zoom=3:optzoom=0:interpol=bicubic," + vf
     run(["ffmpeg", "-y", "-v", "error", "-i", a.input, "-vf", vf, "-c:v", "libx264", "-crf", "14", "-preset", "fast",
          *af, "-c:a", "aac", "-b:a", "256k", "-ar", "48000", norm])
     total = duration(norm)
@@ -370,6 +416,10 @@ def cmd_prepare(a):
         ranges = [[round(round(x * FPS) / FPS, 4), round(round(y * FPS) / FPS, 4)] for x, y in ranges]
     else:
         ranges = keep_ranges(words, cut_audio, total, max_gap=a.gap)
+    if words and not a.keep_fillers and not a.keep_pauses:
+        words, ranges, fill = remove_fillers(words, ranges, cut_audio)
+        if fill:
+            print("Vulwoorden/verspreken eruit: " + ", ".join(f"{t} @{s0:.1f}s" for s0, _, t in fill))
     cut_len = sum(b - a_ for a_, b in ranges)
     print(f"Origineel {total:.1f}s -> {cut_len:.1f}s; {len(dropped)} mislukte take(s) en {len(ranges)} stukken")
 
@@ -841,6 +891,113 @@ def behind_ranges(sb, pad=0.2):
             or b.get("type") in PERSON_TYPES]
 
 
+# ---------------------------------------------------------------- seo / script / cover (systeemanalyse 2026-11-10)
+def norm_tag(t):
+    """Hashtag/trefwoord netjes: kleine letters, accenten weg (ë→e), geen spaties of leestekens."""
+    import unicodedata
+    t = unicodedata.normalize("NFKD", t.strip().lstrip("#").lower())
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]", "", t)
+
+
+def cmd_hashtags(a):
+    for t in a.tags:
+        n = "#" + norm_tag(t)
+        print(n if n == t.strip().lower() else f"{n}   (was: {t})")
+
+
+def cmd_scriptcheck(a):
+    """Vergelijk wat Wes zei (words.json) met het script uit de scriptbank en meld alleen de afwijkingen."""
+    import difflib
+    bank = json.load(open(os.path.join(HERE, "scripts", f"{a.serie}.json")))
+    it = next((x for x in bank if x["dag"] == a.dag), None)
+    if not it:
+        sys.exit(f"Dag {a.dag} niet in scripts/{a.serie}.json")
+    clean = lambda ws: [re.sub(r"[^\wéëèï']", "", w.lower()) for w in ws if re.sub(r"[^\wéëèï']", "", w)]
+    said = clean(w["w"] for w in json.load(open(os.path.join(a.project, "words.json"))))
+    script = clean(" ".join(it["tekst"]).split())
+    sm = difflib.SequenceMatcher(a=script, b=said, autojunk=False)
+    diffs = [(op, " ".join(script[i1:i2]), " ".join(said[j1:j2])) for op, i1, i2, j1, j2 in sm.get_opcodes() if op != "equal"]
+    print(f"Script-check dag {a.dag}: {round(sm.ratio() * 100)}% gelijk")
+    for op, sc, sa in diffs:
+        print({"replace": f"  script '{sc}' → gezegd '{sa}'", "delete": f"  niet gezegd: '{sc}'", "insert": f"  extra gezegd: '{sa}'"}[op])
+
+
+def cmd_cover(a):
+    """Coverbeeld voor het profielraster (Wes 2026-11-10, D1): scherpste frame met gezicht uit de eerste seconden,
+    titel groot in het midden (TikTok-raster toont het midden 3:4), serie + dag in een pil. -> <project>/cover.jpg"""
+    import cv2
+    import numpy as np
+    from PIL import Image, ImageDraw, ImageFilter, ImageFont
+    vid = os.path.join(a.project, "cut.mp4")
+    cap = cv2.VideoCapture(vid)
+    det = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    best, score = None, -1
+    for t in np.arange(0.2, min(duration(vid), 6.0), 0.25):
+        cap.set(cv2.CAP_PROP_POS_MSEC, t * 1000)
+        ok, fr = cap.read()
+        if not ok:
+            continue
+        g = cv2.cvtColor(fr, cv2.COLOR_BGR2GRAY)
+        faces = det.detectMultiScale(g, 1.2, 5, minSize=(200, 200))
+        if not len(faces):
+            continue
+        x, y, w, h = max(faces, key=lambda f: f[2] * f[3])
+        sharp = cv2.Laplacian(g[y:y + h, x:x + w], cv2.CV_64F).var()
+        if sharp > score:
+            best, score = fr, sharp
+    if best is None:
+        cap.set(cv2.CAP_PROP_POS_MSEC, 500); _, best = cap.read()
+    img = Image.fromarray(cv2.cvtColor(best, cv2.COLOR_BGR2RGB)).convert("RGB")
+    if a.zwartwit:
+        from PIL import ImageOps, ImageEnhance
+        img = ImageEnhance.Contrast(ImageOps.grayscale(img).convert("RGB")).enhance(1.22)
+    # donkere gradient achter de titel voor leesbaarheid
+    ov = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+    for i in range(760):
+        d.line([(0, 1000 + i), (W, 1000 + i)], fill=(0, 0, 0, int(170 * (1 - abs(i - 380) / 380))))
+    img = Image.alpha_composite(img.convert("RGBA"), ov)
+    fonts = os.path.join(STUDIO, "public", "fonts")
+    font = os.path.join(fonts, a.font) if a.font else None
+    if not font or not os.path.exists(font):
+        cands = [f for f in os.listdir(fonts) if re.search(r"(black|heavy|extrabold|bold)", f, re.I) and f.endswith((".ttf", ".otf"))]
+        font = os.path.join(fonts, sorted(cands)[0]) if cands else None
+    title = a.title.upper()
+    size = 150
+    while size > 70:
+        F = ImageFont.truetype(font, size) if font else ImageFont.load_default()
+        if font and "Variable" in font:
+            try:
+                F.set_variation_by_axes([32, 900])
+            except Exception:
+                pass
+        lines, cur = [], ""
+        for w_ in title.split():
+            test = (cur + " " + w_).strip()
+            if d.textlength(test, font=F) > W - 140 and cur:
+                lines.append(cur); cur = w_
+            else:
+                cur = test
+        lines.append(cur)
+        if len(lines) <= 3:
+            break
+        size -= 8
+    d = ImageDraw.Draw(img)
+    lh = int(size * 1.02); y0 = 1330 - lh * len(lines) // 2  # onder het gezicht, binnen het 3:4-midden van het raster
+    for i, l in enumerate(lines):
+        tw = d.textlength(l, font=F)
+        d.text(((W - tw) / 2, y0 + i * lh), l, font=F, fill=(255, 255, 255), stroke_width=max(4, size // 18), stroke_fill=(0, 0, 0))
+    if a.sub:
+        Fs = ImageFont.truetype(os.path.join(fonts, "DMMono-Regular.ttf"), 42)
+        sw = d.textlength(a.sub.upper(), font=Fs)
+        bx0, by0 = (W - sw) / 2 - 30, y0 + lh * len(lines) + 30
+        d.rounded_rectangle([bx0, by0, bx0 + sw + 60, by0 + 78], 39, fill=(10, 10, 10), outline=(163, 180, 98), width=3)
+        d.text((bx0 + 30, by0 + 12), a.sub.upper(), font=Fs, fill=(255, 255, 255))
+    out = os.path.join(a.project, "cover.jpg")
+    img.convert("RGB").save(out, quality=92)
+    print("Cover:", out)
+
+
 def cmd_mini(a):
     """Eigen foto -> uitgeknipt figuurtje (in kleur, geen rand, Wes 2026-11-10) als vierkante PNG voor een emoji-beat.
     Gebruik in storyboard: {"type": "emoji", "src": "assets/mini_<naam>.png", "size": 680, "toestaan": true}."""
@@ -1161,6 +1318,8 @@ def main():
     c.add_argument("--gap", type=float, default=0.06, help="pauzes langer dan dit (s) worden geknipt; kleiner = strakker")
     c.add_argument("--tempo", type=float, default=1.1, help="hele video sneller (toonhoogte gelijk); 1 = origineel tempo")
     c.add_argument("--keep-pauses", action="store_true", help="niets wegknippen (poses, muziekmomenten)")
+    c.add_argument("--keep-fillers", action="store_true", help="vulwoorden (eh, uhm) en dubbele woorden laten staan")
+    c.add_argument("--no-stab", action="store_true", help="geen beeldstabilisatie")
     c.add_argument("--model", default="medium", help="Whisper-model: medium (standaard, nauwkeurig) of small (sneller)")
     c.add_argument("--no-voice", action="store_true", help="stem niet opschonen (ruis/s-klanken/compressor)")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
@@ -1184,6 +1343,9 @@ def main():
     c = sub.add_parser("person"); c.add_argument("project")
     c.add_argument("--model", default="isnet-general-use", help="isnet-general-use (standaard), birefnet-general-lite (beste, traag), u2net_human_seg (snel)"); c.set_defaults(fn=cmd_person)
     c = sub.add_parser("mini", help="eigen foto's -> uitgeknipte figuurtjes (assets/mini_*.png)"); c.add_argument("project"); c.add_argument("fotos", nargs="+"); c.add_argument("--zwartwit", action="store_true"); c.set_defaults(fn=cmd_mini)
+    c = sub.add_parser("hashtags", help="hashtags/trefwoorden normaliseren (accenten, spaties)"); c.add_argument("tags", nargs="+"); c.set_defaults(fn=cmd_hashtags)
+    c = sub.add_parser("scriptcheck", help="gesproken tekst vs scriptbank"); c.add_argument("project"); c.add_argument("serie"); c.add_argument("dag", type=int); c.set_defaults(fn=cmd_scriptcheck)
+    c = sub.add_parser("cover", help="coverbeeld voor het profiel"); c.add_argument("project"); c.add_argument("--title", required=True); c.add_argument("--sub"); c.add_argument("--font"); c.add_argument("--zwartwit", action="store_true"); c.set_defaults(fn=cmd_cover)
     c = sub.add_parser("storyboard"); c.add_argument("project"); c.set_defaults(fn=cmd_storyboard)
     c = sub.add_parser("keuzemenu", help="voorstel.json -> aanklikbaar keuzemenu (keuzemenu.html)"); c.add_argument("project"); c.set_defaults(fn=cmd_keuzemenu)
     c = sub.add_parser("render"); c.add_argument("project"); c.add_argument("--out")

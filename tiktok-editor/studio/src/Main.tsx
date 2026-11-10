@@ -201,6 +201,8 @@ export const Main: React.FC<Storyboard> = (sb) => {
         .flatMap((b) => [
           ...(b.sfx ? (Array.isArray(b.sfx) ? b.sfx : [b.sfx]).map((fx) => ({ fx, start: b.start })) : []),
           // checklist: een geluid per vinkje (alleen vinkjes die tijdens de beat aanspringen)
+          // opstapelende labels: zacht klikje per label
+          ...((b as any).type === "stack" ? ((b as any).items ?? []).filter((it: any) => it.at > b.start + 0.05).map((it: any) => ({ fx: "click", start: it.at })) : []),
           ...(b.type === "checklist" && b.itemSfx !== "none"
             ? b.items.filter((it) => it.at > b.start + 0.05).map((it) => ({ fx: (b.itemSfx ?? "ding") as string, start: it.at }))
             : []),
@@ -213,7 +215,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
             durationInFrames={45}
             layout="none"
           >
-            <Audio src={staticFile(`sfx/${fx}.wav`)} volume={(SFX_VOL[fx] ?? SFX_DEFAULT) * (sb.sfxVolume ?? 1)} />
+            <Audio src={staticFile(`sfx/${fx}.wav`)} volume={(SFX_VOL[fx] ?? SFX_DEFAULT) * (sb.sfxVolume ?? 1) * (sb.words?.some((w) => w.s <= start + 0.12 && w.e >= start - 0.05) ? 0.62 : 1)} />
           </Sequence>
         ))}
     </AbsoluteFill>
