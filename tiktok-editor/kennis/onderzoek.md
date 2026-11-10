@@ -120,3 +120,13 @@ Bronnen: insights.ttsvibes.com/?p=533 · opus.pro/blog/tiktok-length-format-rete
   rode labels die zich opstapelen (Contrast Moment / Contrarian Take / Shocking Stat); titels vet + schuin schreeflettertype;
   ondertitel 1 woord tegelijk; CTA "Comment LAUNCH" (reageer-woord → link in DM); eindkaart TikTok-logo + zoekbalk.
 - Toegepast: zie lessen.md 2026-11-10 en SKILL.md "Pieken stapelen".
+
+## 2026-11-10 · Nieuwe effecten (Wes: "deze effecten zijn ruk, ik wil totaal wat anders")
+Bronnen (zoekresultaten; de pagina's zelf waren hier niet bereikbaar): teleprompter.com TikTok trends 2026, newengen.com feb-2026
+TikTok trends (reality-tv-montage: frankenbiting, agressieve face zoom-ins, spannende muziek, cliffhanger-freezes), goldmine-blog
+(beat-sync is standaard geworden, geen onderscheid meer), lightreel.ai (knippen moet de informatie volgen, niet elke adem),
+fontmirror.com en pixflow.net (kinetische typografie is hoofdzaak, kernwoord-kleur is standaard, rustiger tempo), offshoreclipping.com
+(kleine animaties, voortgangsbalken), joyspace.ai (Hormozi-stijl 2026: zachte overgangen i.p.v. harde pops, echte B-roll i.p.v.
+stock-emoji's), recapio/Hormozi-tutorials (uitzoom-overgangen, lichtstreep over tekst), opus.pro (brainrot-stack, video-essay-stijl).
+Voorstellen (keuzemenu nieuwfx): A tekst achter je hoofd, B groot kinetisch woord, C zoekbalk die typt, D rollende teller,
+E reality-tv bevriezing, F uitzoomen naar kaart, G lichtstreep-titel, H notities-app, I voortgangsbalk, J snelheidssprong.
