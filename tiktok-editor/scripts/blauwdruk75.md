@@ -6,7 +6,7 @@ de uitkomst of een getal, zinnen max 8 woorden, dubbele hook (In beeld ≠ gespr
 mogelijk, een boodschap, loop (laatste + eerste zin = één zin), "een" nooit "één", niets absoluuts dat niet klopt.
 Het "waarom" en de bron gaan naar de beschrijving. Status: klaar → opgenomen → geplaatst.
 
-## Dag 11 · Calorieën in drinken · klaar
+## Dag 11 · Calorieën in drinken · opgenomen (bewerkt 2026-11-10, 18,5 s)
 Trefwoord: calorieën in drinken
 ```
 Bijna 400 calorieën, en niks gegeten.
