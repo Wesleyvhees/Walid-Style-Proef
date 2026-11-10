@@ -4,7 +4,7 @@ Regels: 8–12 s (±25–36 woorden), eerste zin max 6 woorden met getal of uitk
 (piek 1 < 5 s, min. 2 soorten), waarheid vóór kort, loop (laatste + eerste zin = één zin, vorm wisselt), geen film-aanwijzingen
 (talking head), pill = "Van nul naar grip dag X". Status: klaar → opgenomen → geplaatst.
 
-## Dag 13 · Een dag gemist · geplaatst/opgenomen (bewerkt 2026-11-09, 19,7 s)
+## Dag 13 · Een dag gemist · opgenomen (bewerkt 2026-11-09, 19,7 s)
 Trefwoord: volhouden met sporten
 
 ## Dag 14 · Twee weken geen resultaat · klaar
