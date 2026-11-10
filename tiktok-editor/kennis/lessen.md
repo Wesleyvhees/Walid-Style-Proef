@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-10 · Van nul naar grip dag 14 · "dit is goed, mag nog iets harder" → v3 met confronterende vragen en korte klappen is de referentie-toon voor nulnaargrip-scripts.
 - 2026-11-10 · Van nul naar grip dag 14 · "de bedoeling was echte motivatievideo's, ik heb het gevoel dat we afzwakken" → klopt: de nieuwe piek/feiten-regels trokken het naar uitleg (vocht, vetverlies). Regel: nulnaargrip = motivatie zonder uitleg; pieken = pijn, meer pijn, ik-bewijs, confrontatie, opdracht.
 - 2026-11-10 · scriptbank · proefscripts goedgekeurd ("herschrijf de rest maar") → alle 27 niet-opgenomen scripts (Slimmer 24–30, blauwdruk 11–30) met gestapelde pieken, bewijs-beeld, kernwoord-blok en per script Pieken/Montage/Feiten. Blauwdruk dag 30 met reageer-woord PLAN.
 - 2026-11-10 · analyse video "hooks" (modern story arc) · keuzemenu: alles volgens advies → pieken stapelen (piek 1 < 5 s, min. 3 pieken, min. 2 soorten), bewijs-beeld frame 1 + kernwoord-blok `[ ]` in de hook, split-screen + linechart + opstapelende labels (Slimmer/blauwdruk), reageer-woord bij coaching-video's, loop blijft. Eerst 3 proefscripts (blauwdruk 11, 12, Slimmer 24).

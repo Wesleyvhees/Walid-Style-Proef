@@ -309,7 +309,8 @@ staan in `kennis/lessen.md`.
   Geen climax bewaren: de eerste pieken geven al waarde, de laatste piek is het antwoord. In de scriptbank per script een regel "Pieken:".
 - **Van nul naar grip = pure motivatie (Wes 2026-11-10: "ik heb het gevoel dat we afzwakken")**: géén uitleg, wetenschap of getallen
   met bron. Pieken zijn hier: pijn → meer pijn → ik-bewijs (alleen echte feiten van Wes, bv. 110 → 75 kg) → confrontatie/contrast →
-  opdracht ("train morgen"). Hard en direct in de jij-vorm, donker van toon. Uitleg hoort bij Slimmer 2.0 en de blauwdruk.
+  opdracht ("train morgen"). Hard en direct in de jij-vorm, donker van toon; confronterende vragen ("En nu wil je al stoppen?"),
+  korte klappen, geen verzachters. Referentie-toon: dag 14 v3 (Wes 2026-11-10: "goed, mag nog iets harder"). Uitleg hoort bij Slimmer 2.0 en de blauwdruk.
 - **Hook in beeld**: bewijs-beeld vanaf frame 1 (foto/etiket/grafiek/screenshot met getal) en 1–2 kernwoorden in een groen blok:
   zet ze in de hooktekst tussen `[ ]` (bv. "30 minuten-regel = [mythe]").
 - **Montage Slimmer 2.0 + blauwdruk**: `"split": [{start,end}]` in storyboard.json = split-screen (uitleg bovenin op zwart, gezicht
