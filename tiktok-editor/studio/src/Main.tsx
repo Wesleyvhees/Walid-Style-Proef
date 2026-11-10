@@ -194,7 +194,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
               </AbsoluteFill>
             );
           })}
-      {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart" || b.type === "volgstempel") ? (
+      {cap.enabled !== false && !now.some((b) => b.type === "follow" || b.type === "chart" || (b.type === "volgstempel" && ((b as any).y ?? 980) > 900)) ? (
         <Captions words={sb.words} style={capStyle} size={cap.size} y={((sb as any).split ?? []).some((c: { start: number; end: number }) => t >= c.start && t < c.end) ? 925 : cap.y} maxChars={cap.maxChars} maxWords={cap.maxWords} highlight={cap.highlight} layout={sb.layout} />
       ) : null}
       {sb.beats
