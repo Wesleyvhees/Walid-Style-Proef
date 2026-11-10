@@ -23,7 +23,7 @@ Frame 1: je houdt een bord pasta naar de camera.
 Loop: "Dus niet meer: bord pasta vlak voor het sporten?"  
 Feiten: maagklachten bij een volle maag verschillen per persoon; sportvoedingsrichtlijnen (ACSM/ISSN): maaltijd 1–4 uur vooraf, kleine snack 30–60 min vooraf.
 
-## Dag 24 · Eten na het sporten · klaar
+## Dag 24 · Eten na het sporten · opgenomen (bewerkt 2026-11-10, 18,4 s)
 Trefwoord: eten na het sporten
 ```
 Binnen 30 minuten een shake?

@@ -88,6 +88,16 @@ export function qa(sb) {
       }
     }
   }
+  // overlays die elkaar raken op hetzelfde moment (melden)
+  const vis = sb.beats.filter((b) => b.type !== "hook" && b.qa !== false && box(b));
+  for (let i = 0; i < vis.length; i++) for (let j = i + 1; j < vis.length; j++) {
+    const a = vis[i], c = vis[j];
+    if (a.start < c.end && c.start < a.end) {
+      const A = box(a), C = box(c);
+      if (!A.soft && !C.soft && inter(A, C) > 0.15 * Math.min(area(A), area(C)))
+        report.push(`${a.type} '${a.text ?? ""}' @${a.start}s en ${c.type} '${c.text ?? ""}' @${c.start}s overlappen elkaar (controleer)`);
+    }
+  }
   // A2: ondertitels – verborgen woorden en 'één'
   const hidden = sb.beats.filter(hidesCaps);
   const lost = (sb.words ?? []).filter((w) => hidden.some((h) => w.s >= h.start && w.s < h.end)).map((w) => w.w);

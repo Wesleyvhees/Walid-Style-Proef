@@ -25,6 +25,7 @@ zonder tussendoor te vragen. Alleen vragen bij echte twijfel of iets onomkeerbaa
 - **render.mjs doet nu automatisch:** eindcontrole `qa.mjs` (buiten beeld → schuiven, over ondertitels → omhoog, over gezicht → boven
   het hoofd als er plek is, anders melden; achter TikTok-knoppen melden; verborgen ondertitelwoorden melden). Lees de QA-regels en los
   elke melding op vóór het opleveren. Export crf 16. Geluidseffecten die op een woord vallen ±40% zachter; opstapelende labels klikken.
+- **Wandelen / camera beweegt / gezicht schuift weg:** `prepare --no-stab --tempo 1`, dan `tt.py facelock <project>` (gezicht rustig vast, schrijft layout.json), daarna pas `drop` en `tempo` (na drop/tempo de layout.json van facelock mee verschuiven).
 - **Script-check (A3):** komt de video uit de scriptbank: `tt.py scriptcheck <project> <serie> <dag>` en noem de afwijkingen in de tekstcheck.
 - **Cover (D1):** `tt.py cover <project> --title "<hook kort>" --sub "<serie> · dag X" --font <Inter-Variable.ttf | BarlowCondensed-BlackItalic.ttf> [--zwartwit]`
   (zwart-wit + Barlow voor Van nul naar grip) en stuur `cover.jpg` mee: Wes kiest hem bij het posten als omslag.

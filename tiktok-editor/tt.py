@@ -998,6 +998,74 @@ def cmd_cover(a):
     print("Cover:", out)
 
 
+def cmd_facelock(a):
+    """Virtuele camera die je gezicht rustig volgt (Wes 2026-11-10: wandelvideo, 'mijn gezicht vertrekt, de camera beweegt').
+    Gezicht per frame zoeken (YuNet), pad gladstrijken (±1,2 s), licht inzoomen en het beeld zo verschuiven dat je gezicht
+    stil op dezelfde plek blijft. Vervangt cut.mp4 (origineel blijft als cut_los.mp4)."""
+    import cv2
+    import numpy as np
+    model = os.path.expanduser("~/.cache/yunet/yunet.onnx")
+    if not os.path.exists(model):
+        os.makedirs(os.path.dirname(model), exist_ok=True)
+        fetch("https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx", model)
+    src = os.path.join(a.project, "cut_los.mp4")
+    if not os.path.exists(src):
+        os.rename(os.path.join(a.project, "cut.mp4"), src)
+    cap = cv2.VideoCapture(src)
+    n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)); fps = cap.get(cv2.CAP_PROP_FPS) or FPS
+    det = cv2.FaceDetectorYN.create(model, "", (540, 960), 0.6, 0.3, 5000)
+    cx, cy, fs = np.full(n, np.nan), np.full(n, np.nan), np.full(n, np.nan)
+    for i in range(n):
+        ok, fr = cap.read()
+        if not ok:
+            break
+        if i % 2:
+            continue
+        _, faces = det.detect(cv2.resize(fr, (540, 960)))
+        if faces is not None and len(faces):
+            x, y, w, h = max(faces, key=lambda f: f[2] * f[3])[:4] * 2
+            cx[i], cy[i], fs[i] = x + w / 2, y + h / 2, h
+    idx = np.arange(n); good = ~np.isnan(cx)
+    print(f"Gezicht gevonden in {good.sum()} van {(n + 1) // 2} gecontroleerde frames")
+    if good.sum() < 5:
+        os.rename(src, os.path.join(a.project, "cut.mp4")); print("Te weinig gezicht: niets veranderd"); return
+    for arr in (cx, cy, fs):
+        arr[:] = np.interp(idx, idx[good], arr[good])
+    k = max(3, int(fps * a.smooth)) | 1
+    ker = np.exp(-0.5 * (np.linspace(-2.5, 2.5, k)) ** 2); ker /= ker.sum()
+    sm = lambda v: np.convolve(np.pad(v, k // 2, mode="edge"), ker, mode="valid")
+    cx, cy, fs = sm(cx), sm(cy), sm(fs)
+    z = a.zoom
+    tx_, ty_ = a.x, a.y  # doelplek van het gezichtsmidden op het scherm
+    tmp = os.path.join(a.project, "facelock_v.mp4")
+    enc = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(fps), "-i", "-",
+                            "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-pix_fmt", "yuv420p", tmp], stdin=subprocess.PIPE)
+    cap = cv2.VideoCapture(src)
+    track = []
+    for i in range(n):
+        ok, fr = cap.read()
+        if not ok:
+            break
+        # verschuiving zodat (cx,cy)*z op de doelplek komt, begrensd zodat er nooit een zwarte rand ontstaat
+        ox = min(0, max(W - W * z, tx_ - cx[i] * z)); oy = min(0, max(H - H * z, ty_ - cy[i] * z))
+        M = np.float32([[z, 0, ox], [0, z, oy]])
+        track.append((cx[i] * z + ox, cy[i] * z + oy, fs[i] * z))
+        enc.stdin.write(cv2.warpAffine(fr, M, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT).tobytes())
+    enc.stdin.close(); enc.wait()
+    run(["ffmpeg", "-y", "-v", "error", "-i", tmp, "-i", src, "-map", "0:v", "-map", "1:a", "-c", "copy", "-shortest", os.path.join(a.project, "cut.mp4")])
+    os.remove(tmp)
+    print(f"Gezicht vastgezet: zoom {z}, gladstrijken {a.smooth}s")
+    # gezichtsposities op de nieuwe beelden (4 per seconde) voor ondertitels en eindcontrole; YuNet vindt meer dan Haar
+    lay = []
+    for j in range(int(len(track) / fps * 4) + 1):
+        i = min(len(track) - 1, int(j * fps / 4))
+        x_, y_, h_ = track[i]
+        w_ = h_ * 1.0
+        lay.append([int(x_ - w_ / 2), int(y_ - h_ * 0.55), int(w_), int(h_ * 1.05)])
+    json.dump({"fps": 4, "faces": lay}, open(os.path.join(a.project, "layout.json"), "w"))
+    print(f"Layout: {len(lay)} gezichtsposities")
+
+
 def cmd_mini(a):
     """Eigen foto -> uitgeknipt figuurtje (in kleur, geen rand, Wes 2026-11-10) als vierkante PNG voor een emoji-beat.
     Gebruik in storyboard: {"type": "emoji", "src": "assets/mini_<naam>.png", "size": 680, "toestaan": true}."""
@@ -1346,6 +1414,7 @@ def main():
     c = sub.add_parser("hashtags", help="hashtags/trefwoorden normaliseren (accenten, spaties)"); c.add_argument("tags", nargs="+"); c.set_defaults(fn=cmd_hashtags)
     c = sub.add_parser("scriptcheck", help="gesproken tekst vs scriptbank"); c.add_argument("project"); c.add_argument("serie"); c.add_argument("dag", type=int); c.set_defaults(fn=cmd_scriptcheck)
     c = sub.add_parser("cover", help="coverbeeld voor het profiel"); c.add_argument("project"); c.add_argument("--title", required=True); c.add_argument("--sub"); c.add_argument("--font"); c.add_argument("--zwartwit", action="store_true"); c.set_defaults(fn=cmd_cover)
+    c = sub.add_parser("facelock", help="virtuele camera die je gezicht rustig volgt (wandel/uit de hand)"); c.add_argument("project"); c.add_argument("--zoom", type=float, default=1.18); c.add_argument("--smooth", type=float, default=1.2); c.add_argument("--x", type=float, default=540); c.add_argument("--y", type=float, default=760); c.set_defaults(fn=cmd_facelock)
     c = sub.add_parser("storyboard"); c.add_argument("project"); c.set_defaults(fn=cmd_storyboard)
     c = sub.add_parser("keuzemenu", help="voorstel.json -> aanklikbaar keuzemenu (keuzemenu.html)"); c.add_argument("project"); c.set_defaults(fn=cmd_keuzemenu)
     c = sub.add_parser("render"); c.add_argument("project"); c.add_argument("--out")

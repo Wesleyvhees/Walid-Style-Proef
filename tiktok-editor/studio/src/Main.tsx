@@ -112,7 +112,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if (split) {
           const [fx, fy, fw, fh] = faceAt(sb, t);
           const W = 1000, H = 800, k = 0.95;
-          const cx = fx + fw / 2, cy = fy + fh * 0.62;
+          const cx = fx + fw / 2, cy = fy + fh * 0.5;
           return (
             <div style={{ position: "absolute", left: 40, top: 1000, width: W, height: H, borderRadius: 36, overflow: "hidden", boxShadow: "0 0 0 2px rgba(163,180,98,0.55), 0 30px 60px rgba(0,0,0,0.6)" }}>
               <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920, transformOrigin: "0 0", transform: `translate(${W / 2 - cx * k}px, ${H / 2 - cy * k}px) scale(${k})` }}>
