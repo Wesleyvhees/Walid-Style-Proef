@@ -40,43 +40,46 @@ Frame 1: je schudt een shake met een timer op 29:59 ernaast (bewijs-beeld).
 Loop: "Dus stress niet meer over: binnen 30 minuten een shake?"  
 Feiten: Schoenfeld & Aragon 2013 (het venster is ruim, uren); Morton e.a. 2018 meta-analyse (±1,6 g eiwit per kg per dag bij krachttraining).
 Pieken: Tegendraads (0 s) → Contrast 'uren, geen 30 minuten' (±4 s) → Getal 1,6 g/kg (±9 s) → antwoord voorbeelden (±13 s).  
-Montage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip met rijst / Kwark / Eieren.  
-Status: PROEF nieuwe stijl (wacht op akkoord Wes).
+Montage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip met rijst / Kwark / Eieren.
 
 ## Dag 25 · Stress verminderen · klaar
 Trefwoord: stress verminderen
 ```
 Hele dag stress, 's avonds snoepen?
-Stress verminderen kan met je adem.
+Stress verminderen kost geen vakantie.
+Maar vijf minuten per dag.
 Twee keer inademen door je neus.
 Dan lang uitademen door je mond.
-Doe dat vijf minuten.
 Lang uitademen remt je hartslag af.
 Stanford-onderzoek: na een maand beter humeur.
 Probeer het vanavond, in plaats van:
 ```
-In beeld: "5 minuten tegen stress"  
-Frame 1: je ploft op de bank en blaast lang uit.  
+In beeld: "Stress? [5 minuten]"  
+Frame 1: je kijkt naar je hartslag op je horloge of telefoon (bewijs-beeld).  
 Loop: "Probeer het vanavond, in plaats van: hele dag stress, 's avonds snoepen?"  
-Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag, na 28 dagen beter humeur en rustiger ademhaling; lange uitademing verlaagt de hartslag.
+Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag → na 28 dagen beter humeur; lange uitademing verlaagt de hartslag.
+Pieken: herkenning (0 s) → Tegendraads 'geen vakantie' (±2 s) → Getal 5 minuten (±4 s) → Getal/bewijs Stanford (±13 s).  
+Montage: split-screen met opstapelende labels '2× in door je neus' / '1× lang uit'.
 
 ## Dag 26 · Vezels · klaar
 Trefwoord: vezels
 ```
 Na een uur alweer trek?
-Dan kunnen meer vezels helpen.
-Vezels vertragen je spijsvertering.
-Daardoor zit je vaak langer vol.
+Check eerst je vezels.
 Advies: 30 tot 40 gram per dag.
 Gemiddeld halen we er zo'n 20.
+Vezels vertragen je spijsvertering.
+Daardoor zit je vaak langer vol.
 Bonen door je pasta.
 Volkoren in plaats van wit.
 Herken je dit?
 ```
-In beeld: "20 gram vs 40 gram"  
-Frame 1: je houdt een blik bonen omhoog.  
+In beeld: "Advies 40 gram, wij eten [20]"  
+Frame 1: je houdt een broodzak met het etiket 'vezels per 100 g' in beeld (bewijs-beeld).  
 Loop: "Herken je dit? Na een uur alweer trek?"  
 Feiten: Gezondheidsraad 2015 (30–40 g/dag); RIVM Voedselconsumptiepeiling 2012–2016 (volwassenen gemiddeld ±18–22 g).
+Pieken: herkenning (0 s) → Getal 30–40 g (±3 s) → Contrast 'wij halen 20' (±5 s) → Contrast volkoren vs wit (±13 s).  
+Montage: staafgrafiek 20 g vs 30–40 g; opstapelende labels Bonen / Volkoren / Groente.
 
 ## Dag 27 · Volgorde krachttraining · klaar
 Trefwoord: krachttraining
@@ -84,68 +87,76 @@ Trefwoord: krachttraining
 Biceps eerst, squat als laatste?
 Slecht plan voor je krachttraining.
 Wat je eerst doet, daarin ben je sterkst.
+Dat blijkt uit meerdere onderzoeken.
 Dus zware oefeningen vooraan.
 Squat, deadlift of bankdrukken.
 Daarna pas armen en schouders.
-Zo til je het zwaarst waar het telt.
+Dan til je zwaar waar het telt.
 Of blijf je doen:
 ```
-In beeld: "Welke oefening doe jij eerst?"  
-Frame 1: je legt schijven op de stang.  
+In beeld: "[Biceps eerst?] Slecht plan"  
+Frame 1: je schema op je telefoon met biceps bovenaan (bewijs-beeld).  
 Loop: "Of blijf je doen: biceps eerst, squat als laatste?"  
 Feiten: Simão e.a. 2012 (Sports Medicine review): oefeningen vroeg in de training halen meer herhalingen en kracht.
+Pieken: Tegendraads (0–2 s) → feit 'eerst = sterkst' (±4 s) → Contrast zwaar vs armen (±11 s).  
+Montage: opstapelende labels 1 Squat / 2 Deadlift / 3 Bankdrukken / 4 Armen.
 
 ## Dag 28 · Alcohol en afvallen · klaar
 Trefwoord: alcohol en afvallen
 ```
-Na het stappen de koelkast leeg.
-Alcohol en afvallen is meer dan calorieën.
+Na het stappen de koelkast leeg?
+Alcohol en afvallen: let op je slaap.
+Een glas wijn: zo'n 85 calorieën.
+En dat is niet het enige probleem.
 Alcohol maakt je slaap onrustiger.
 Slecht slapen geeft vaak meer trek.
-Dat is geen gebrek aan wilskracht.
-Uitgaan mag gewoon.
 Eet goed voordat je gaat.
 Water tussen je drankjes door.
 Anders wordt het weer:
 ```
-In beeld: "Waarom je na het stappen zo'n trek hebt"  
-Frame 1: je doet de koelkast open met een kater-blik.  
-Loop: "Anders wordt het weer: na het stappen de koelkast leeg."  
-Feiten: Ebrahim e.a. 2013 (alcohol verstoort vooral de tweede helft van de nacht); Spiegel e.a. 2004 (slaaptekort → meer ghreline, minder leptine, meer trek).
+In beeld: "Trek na het stappen? Je [slaap]"  
+Frame 1: je houdt een glas wijn omhoog met '85 kcal' in beeld (bewijs-beeld).  
+Loop: "Anders wordt het weer: na het stappen de koelkast leeg?"  
+Feiten: glas wijn 125 ml ≈ 85 kcal (NEVO); Ebrahim e.a. 2013 (alcohol verstoort de slaap); Spiegel e.a. 2004 (slaaptekort → meer trek).
+Pieken: herkenning (0 s) → Getal 85 kcal (±4 s) → Tegendraads 'niet het enige probleem' (±6 s) → Contrast slaap → trek (±10 s).  
+Montage: split-screen met labels 'Eet vooraf' / 'Water ertussen'.
 
 ## Dag 29 · Creatine · klaar
 Trefwoord: creatine
 ```
 Creatine maakt je dik?
 Dat denken veel mensen.
-Eerste weken soms 1 à 2 kilo erbij.
+Soms 1 à 2 kilo erbij, ja.
 Maar dat is vocht in je spieren.
 Geen vet.
-Creatine helpt bij korte, zware inspanning.
 Een van de best onderzochte supplementen.
 3 tot 5 gram per dag.
 Voor gezonde mensen veilig.
 Dus wie zegt er nog:
 ```
-In beeld: "+2 kilo door creatine?"  
-Frame 1: je doet een schepje creatine in je shake.  
+In beeld: "+2 kilo? [Geen vet]"  
+Frame 1: je doet een schepje creatine in je shake (bewijs-beeld met '3–5 g').  
 Loop: "Dus wie zegt er nog: creatine maakt je dik?"  
 Feiten: Kreider e.a. 2017 (ISSN position stand): veilig voor gezonde mensen, 3–5 g/dag, gewichtstoename door vocht in de spier.
-Beschrijving: "Nierproblemen of medicijnen? Overleg eerst met je huisarts."
+Pieken: mythe (0 s) → Getal 1–2 kilo (±3 s) → Contrast vocht vs vet (±5 s) → Getal 3–5 g (±11 s).  
+Montage: MYTHE/FEIT-stempel, split-screen met label '3–5 g per dag'.  
+Beschrijving: 'Nierproblemen of medicijnen? Overleg eerst met je huisarts.'
 
 ## Dag 30 · Gezonde gewoontes · klaar
 Trefwoord: gezonde gewoontes
 ```
 Een gezonde dag doet weinig.
 Gezonde gewoontes maken het verschil.
-Een ongezonde dag doet ook weinig.
-Een nieuwe gewoonte kost gemiddeld 66 dagen.
+Een gewoonte kost gemiddeld 66 dagen.
+Niet 21, zoals vaak wordt gezegd.
 Bij de een sneller, bij de ander langer.
 Dus dag 30 is pas het begin.
 Kies een gewoonte en houd vol.
 Want onthoud:
 ```
-In beeld: "66 dagen voor een gewoonte"  
-Frame 1: je streept dag 30 af op een kalender.  
+In beeld: "Geen 21 dagen, maar [66]"  
+Frame 1: je streept dag 30 af op een kalender (bewijs-beeld).  
 Loop: "Want onthoud: een gezonde dag doet weinig."  
-Feiten: Lally e.a. 2010 (European Journal of Social Psychology): gemiddeld 66 dagen tot een gewoonte automatisch gaat, spreiding 18–254 dagen.
+Feiten: Lally e.a. 2010 (European Journal of Social Psychology): gemiddeld 66 dagen tot een gewoonte automatisch gaat (spreiding 18–254); '21 dagen' is een populaire mythe.
+Pieken: Tegendraads (0 s) → Getal 66 dagen (±4 s) → Contrast 'niet 21' (±6 s) → open eind 'pas het begin' (±11 s).  
+Montage: lijngrafiek die langzaam stijgt en afvlakt (gewoonte wordt automatisch).

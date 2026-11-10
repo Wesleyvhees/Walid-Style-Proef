@@ -13,7 +13,7 @@ Het "waarom" en de bron gaan naar de beschrijving. Status: klaar → opgenomen �
 def render(serie, items):
     out = [HEAD[serie], INTRO]
     for it in items:
-        out.append(f"\n## Dag {it['dag']} · {it['titel']} · klaar\nTrefwoord: {it['kw']}\n```\n" + "\n".join(it['tekst']) + "\n```\n")
+        out.append(f"\n## Dag {it['dag']} · {it['titel']} · {it.get('status', 'klaar')}\nTrefwoord: {it['kw']}\n```\n" + "\n".join(it['tekst']) + "\n```\n")
         out.append(f"In beeld: \"{it['beeld']}\"  \nFrame 1: {it['frame']}  \nLoop: \"{it['loop']}\"  \nFeiten: {it['feiten']}\n")
         if it.get('extra'): out.append(it['extra'] + "\n")
     return "".join(out)

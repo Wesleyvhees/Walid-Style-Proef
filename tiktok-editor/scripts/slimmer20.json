@@ -16,7 +16,8 @@
   "beeld": "Wat eet je voor de gym?",
   "frame": "je houdt een bord pasta naar de camera.",
   "loop": "Dus niet meer: bord pasta vlak voor het sporten?",
-  "feiten": "maagklachten bij een volle maag verschillen per persoon; sportvoedingsrichtlijnen (ACSM/ISSN): maaltijd 1–4 uur vooraf, kleine snack 30–60 min vooraf."
+  "feiten": "maagklachten bij een volle maag verschillen per persoon; sportvoedingsrichtlijnen (ACSM/ISSN): maaltijd 1–4 uur vooraf, kleine snack 30–60 min vooraf.",
+  "status": "opgenomen (bewerkt 2026-11-09, 18,0 s)"
  },
  {
   "dag": 24,
@@ -36,7 +37,7 @@
   "frame": "je schudt een shake met een timer op 29:59 ernaast (bewijs-beeld).",
   "loop": "Dus stress niet meer over: binnen 30 minuten een shake?",
   "feiten": "Schoenfeld & Aragon 2013 (het venster is ruim, uren); Morton e.a. 2018 meta-analyse (±1,6 g eiwit per kg per dag bij krachttraining).",
-  "extra": "Pieken: Tegendraads (0 s) → Contrast 'uren, geen 30 minuten' (±4 s) → Getal 1,6 g/kg (±9 s) → antwoord voorbeelden (±13 s).  \nMontage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip met rijst / Kwark / Eieren.  \nStatus: PROEF nieuwe stijl (wacht op akkoord Wes)."
+  "extra": "Pieken: Tegendraads (0 s) → Contrast 'uren, geen 30 minuten' (±4 s) → Getal 1,6 g/kg (±9 s) → antwoord voorbeelden (±13 s).  \nMontage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip met rijst / Kwark / Eieren."
  },
  {
   "dag": 25,
@@ -44,18 +45,19 @@
   "kw": "stress verminderen",
   "tekst": [
    "Hele dag stress, 's avonds snoepen?",
-   "Stress verminderen kan met je adem.",
+   "Stress verminderen kost geen vakantie.",
+   "Maar vijf minuten per dag.",
    "Twee keer inademen door je neus.",
    "Dan lang uitademen door je mond.",
-   "Doe dat vijf minuten.",
    "Lang uitademen remt je hartslag af.",
    "Stanford-onderzoek: na een maand beter humeur.",
    "Probeer het vanavond, in plaats van:"
   ],
-  "beeld": "5 minuten tegen stress",
-  "frame": "je ploft op de bank en blaast lang uit.",
+  "beeld": "Stress? [5 minuten]",
+  "frame": "je kijkt naar je hartslag op je horloge of telefoon (bewijs-beeld).",
   "loop": "Probeer het vanavond, in plaats van: hele dag stress, 's avonds snoepen?",
-  "feiten": "Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag, na 28 dagen beter humeur en rustiger ademhaling; lange uitademing verlaagt de hartslag."
+  "feiten": "Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag → na 28 dagen beter humeur; lange uitademing verlaagt de hartslag.",
+  "extra": "Pieken: herkenning (0 s) → Tegendraads 'geen vakantie' (±2 s) → Getal 5 minuten (±4 s) → Getal/bewijs Stanford (±13 s).  \nMontage: split-screen met opstapelende labels '2× in door je neus' / '1× lang uit'."
  },
  {
   "dag": 26,
@@ -63,19 +65,20 @@
   "kw": "vezels",
   "tekst": [
    "Na een uur alweer trek?",
-   "Dan kunnen meer vezels helpen.",
-   "Vezels vertragen je spijsvertering.",
-   "Daardoor zit je vaak langer vol.",
+   "Check eerst je vezels.",
    "Advies: 30 tot 40 gram per dag.",
    "Gemiddeld halen we er zo'n 20.",
+   "Vezels vertragen je spijsvertering.",
+   "Daardoor zit je vaak langer vol.",
    "Bonen door je pasta.",
    "Volkoren in plaats van wit.",
    "Herken je dit?"
   ],
-  "beeld": "20 gram vs 40 gram",
-  "frame": "je houdt een blik bonen omhoog.",
+  "beeld": "Advies 40 gram, wij eten [20]",
+  "frame": "je houdt een broodzak met het etiket 'vezels per 100 g' in beeld (bewijs-beeld).",
   "loop": "Herken je dit? Na een uur alweer trek?",
-  "feiten": "Gezondheidsraad 2015 (30–40 g/dag); RIVM Voedselconsumptiepeiling 2012–2016 (volwassenen gemiddeld ±18–22 g)."
+  "feiten": "Gezondheidsraad 2015 (30–40 g/dag); RIVM Voedselconsumptiepeiling 2012–2016 (volwassenen gemiddeld ±18–22 g).",
+  "extra": "Pieken: herkenning (0 s) → Getal 30–40 g (±3 s) → Contrast 'wij halen 20' (±5 s) → Contrast volkoren vs wit (±13 s).  \nMontage: staafgrafiek 20 g vs 30–40 g; opstapelende labels Bonen / Volkoren / Groente."
  },
  {
   "dag": 27,
@@ -85,36 +88,39 @@
    "Biceps eerst, squat als laatste?",
    "Slecht plan voor je krachttraining.",
    "Wat je eerst doet, daarin ben je sterkst.",
+   "Dat blijkt uit meerdere onderzoeken.",
    "Dus zware oefeningen vooraan.",
    "Squat, deadlift of bankdrukken.",
    "Daarna pas armen en schouders.",
-   "Zo til je het zwaarst waar het telt.",
+   "Dan til je zwaar waar het telt.",
    "Of blijf je doen:"
   ],
-  "beeld": "Welke oefening doe jij eerst?",
-  "frame": "je legt schijven op de stang.",
+  "beeld": "[Biceps eerst?] Slecht plan",
+  "frame": "je schema op je telefoon met biceps bovenaan (bewijs-beeld).",
   "loop": "Of blijf je doen: biceps eerst, squat als laatste?",
-  "feiten": "Simão e.a. 2012 (Sports Medicine review): oefeningen vroeg in de training halen meer herhalingen en kracht."
+  "feiten": "Simão e.a. 2012 (Sports Medicine review): oefeningen vroeg in de training halen meer herhalingen en kracht.",
+  "extra": "Pieken: Tegendraads (0–2 s) → feit 'eerst = sterkst' (±4 s) → Contrast zwaar vs armen (±11 s).  \nMontage: opstapelende labels 1 Squat / 2 Deadlift / 3 Bankdrukken / 4 Armen."
  },
  {
   "dag": 28,
   "titel": "Alcohol en afvallen",
   "kw": "alcohol en afvallen",
   "tekst": [
-   "Na het stappen de koelkast leeg.",
-   "Alcohol en afvallen is meer dan calorieën.",
+   "Na het stappen de koelkast leeg?",
+   "Alcohol en afvallen: let op je slaap.",
+   "Een glas wijn: zo'n 85 calorieën.",
+   "En dat is niet het enige probleem.",
    "Alcohol maakt je slaap onrustiger.",
    "Slecht slapen geeft vaak meer trek.",
-   "Dat is geen gebrek aan wilskracht.",
-   "Uitgaan mag gewoon.",
    "Eet goed voordat je gaat.",
    "Water tussen je drankjes door.",
    "Anders wordt het weer:"
   ],
-  "beeld": "Waarom je na het stappen zo'n trek hebt",
-  "frame": "je doet de koelkast open met een kater-blik.",
-  "loop": "Anders wordt het weer: na het stappen de koelkast leeg.",
-  "feiten": "Ebrahim e.a. 2013 (alcohol verstoort vooral de tweede helft van de nacht); Spiegel e.a. 2004 (slaaptekort → meer ghreline, minder leptine, meer trek)."
+  "beeld": "Trek na het stappen? Je [slaap]",
+  "frame": "je houdt een glas wijn omhoog met '85 kcal' in beeld (bewijs-beeld).",
+  "loop": "Anders wordt het weer: na het stappen de koelkast leeg?",
+  "feiten": "glas wijn 125 ml ≈ 85 kcal (NEVO); Ebrahim e.a. 2013 (alcohol verstoort de slaap); Spiegel e.a. 2004 (slaaptekort → meer trek).",
+  "extra": "Pieken: herkenning (0 s) → Getal 85 kcal (±4 s) → Tegendraads 'niet het enige probleem' (±6 s) → Contrast slaap → trek (±10 s).  \nMontage: split-screen met labels 'Eet vooraf' / 'Water ertussen'."
  },
  {
   "dag": 29,
@@ -123,20 +129,19 @@
   "tekst": [
    "Creatine maakt je dik?",
    "Dat denken veel mensen.",
-   "Eerste weken soms 1 à 2 kilo erbij.",
+   "Soms 1 à 2 kilo erbij, ja.",
    "Maar dat is vocht in je spieren.",
    "Geen vet.",
-   "Creatine helpt bij korte, zware inspanning.",
    "Een van de best onderzochte supplementen.",
    "3 tot 5 gram per dag.",
    "Voor gezonde mensen veilig.",
    "Dus wie zegt er nog:"
   ],
-  "beeld": "+2 kilo door creatine?",
-  "frame": "je doet een schepje creatine in je shake.",
+  "beeld": "+2 kilo? [Geen vet]",
+  "frame": "je doet een schepje creatine in je shake (bewijs-beeld met '3–5 g').",
   "loop": "Dus wie zegt er nog: creatine maakt je dik?",
   "feiten": "Kreider e.a. 2017 (ISSN position stand): veilig voor gezonde mensen, 3–5 g/dag, gewichtstoename door vocht in de spier.",
-  "extra": "Beschrijving: \"Nierproblemen of medicijnen? Overleg eerst met je huisarts.\""
+  "extra": "Pieken: mythe (0 s) → Getal 1–2 kilo (±3 s) → Contrast vocht vs vet (±5 s) → Getal 3–5 g (±11 s).  \nMontage: MYTHE/FEIT-stempel, split-screen met label '3–5 g per dag'.  \nBeschrijving: 'Nierproblemen of medicijnen? Overleg eerst met je huisarts.'"
  },
  {
   "dag": 30,
@@ -145,16 +150,17 @@
   "tekst": [
    "Een gezonde dag doet weinig.",
    "Gezonde gewoontes maken het verschil.",
-   "Een ongezonde dag doet ook weinig.",
-   "Een nieuwe gewoonte kost gemiddeld 66 dagen.",
+   "Een gewoonte kost gemiddeld 66 dagen.",
+   "Niet 21, zoals vaak wordt gezegd.",
    "Bij de een sneller, bij de ander langer.",
    "Dus dag 30 is pas het begin.",
    "Kies een gewoonte en houd vol.",
    "Want onthoud:"
   ],
-  "beeld": "66 dagen voor een gewoonte",
-  "frame": "je streept dag 30 af op een kalender.",
+  "beeld": "Geen 21 dagen, maar [66]",
+  "frame": "je streept dag 30 af op een kalender (bewijs-beeld).",
   "loop": "Want onthoud: een gezonde dag doet weinig.",
-  "feiten": "Lally e.a. 2010 (European Journal of Social Psychology): gemiddeld 66 dagen tot een gewoonte automatisch gaat, spreiding 18–254 dagen."
+  "feiten": "Lally e.a. 2010 (European Journal of Social Psychology): gemiddeld 66 dagen tot een gewoonte automatisch gaat (spreiding 18–254); '21 dagen' is een populaire mythe.",
+  "extra": "Pieken: Tegendraads (0 s) → Getal 66 dagen (±4 s) → Contrast 'niet 21' (±6 s) → open eind 'pas het begin' (±11 s).  \nMontage: lijngrafiek die langzaam stijgt en afvlakt (gewoonte wordt automatisch)."
  }
 ]

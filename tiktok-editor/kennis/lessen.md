@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-10 · scriptbank · proefscripts goedgekeurd ("herschrijf de rest maar") → alle 27 niet-opgenomen scripts (Slimmer 24–30, blauwdruk 11–30) met gestapelde pieken, bewijs-beeld, kernwoord-blok en per script Pieken/Montage/Feiten. Blauwdruk dag 30 met reageer-woord PLAN.
 - 2026-11-10 · analyse video "hooks" (modern story arc) · keuzemenu: alles volgens advies → pieken stapelen (piek 1 < 5 s, min. 3 pieken, min. 2 soorten), bewijs-beeld frame 1 + kernwoord-blok `[ ]` in de hook, split-screen + linechart + opstapelende labels (Slimmer/blauwdruk), reageer-woord bij coaching-video's, loop blijft. Eerst 3 proefscripts (blauwdruk 11, 12, Slimmer 24).
 - 2026-11-09 · effecten · keuzemenu fxv → **Slimmer 2.0 en 75 kilo blauwdruk: pil, tip-kaart, label, checklist = zwart met groene rand (2), fotokaart = zwarte rand + langzame zoom (2), 3D-iconen los (1)**. Vast in templates.json (`fxLook`). Niet opnieuw renderen; vanaf de volgende video.
 - 2026-11-09 · effecten · "Nee stop, dat bedoel ik niet. Alleen de effecten aanpassen, niet het beeld. 5 opties per effect" → geen kleurlook/grading; effecten krijgen varianten 1–5 via `fxLook` {pil, tip, label, checklist, foto, icoon} (src/fxlook.tsx). Keuzemenu fxv met 30 voorbeelden; keuze geldt vanaf Slimmer dag 24.
