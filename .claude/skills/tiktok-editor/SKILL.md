@@ -34,7 +34,7 @@ Per video 5–7 van deze momenten, nooit twee tegelijk. Referentie: Slimmer dag 
 
 ## Systeem-upgrade 2026-11-10 (Wes koos alles uit de systeemanalyse) — gaat vóór oudere regels
 
-- **Werkwijze (F1):** bewerk zelfstandig volgens de vaste stijl van de serie (zoals blauwdruk dag 11) en lever op; Wes geeft daarna
+- **Werkwijze (F1) — VERVANGEN 2026-11-11:** weer **altijd eerst het keuzemenu** vóór effecten (Wes: "eerst een keuzemenu voordat je überhaupt verder gaat met effecten toepassen, voortaan weer"). Oude tekst: bewerk zelfstandig volgens de vaste stijl van de serie (zoals blauwdruk dag 11) en lever op; Wes geeft daarna
   één feedbackronde. Keuzemenu alleen bij een nieuw effect of als Wes erom vraagt. De tekst die gehoord is staat in het opleverbericht
   (verbeterde woorden + wat er automatisch is weggeknipt), zodat Wes het kan nalezen.
 - **prepare doet nu automatisch:** lichte stabilisatie (vidstab, ±3% uitsnede; `--no-stab`) en vulwoorden/dubbele woorden/gemompel
@@ -362,7 +362,7 @@ staan in `kennis/lessen.md`.
   onderin in een kader; ondertitels dan op y 925), afwisselen met volledig gezicht om de 3–5 s; `linechart` (fx) bij getallen;
   beat `stack` {items:[{text, at}], x, y} = labels die zich opstapelen bij opsommingen. Van nul naar grip blijft talking head.
 - **Volg-stempel (Wes 2026-11-10)**: altijd **boven het hoofd** (y ±330, `width` 560, `x` ±450 want de kaart zit rechts in de png), nooit over de ondertitels; start pas ná het laatste impact-woord/punchline zodat ze niet overlappen.
-- **Eigen voor/na-foto's**: `tt.py mini <project> <foto's>` → uitgeknipte figuurtjes zonder rand, in kleur (`--zwartwit` optioneel) die oppoppen naast je hoofd (emoji-beat, size ±680, `"toestaan": true`). Foto's van Wes nooit in git (privé); ze staan in de scratchpad `projects/eigen-fotos/`.
+- **Eigen voor/na-foto's** (niet standaard! alleen als het verhaal over afvallen/transformatie gaat en Wes het kiest; Wes 2026-11-11: "je hoeft niet elke dag mijn miniatuur te gebruiken"): `tt.py mini <project> <foto's>` → uitgeknipte figuurtjes zonder rand, in kleur (`--zwartwit` optioneel) die oppoppen naast je hoofd (emoji-beat, size ±680, `"toestaan": true`). Foto's van Wes nooit in git (privé); ze staan in de scratchpad `projects/eigen-fotos/`.
 - **Coaching-video's** (bv. blauwdruk dag 30): afsluiter met reageer-woord ("Reageer PLAN en ik stuur je…"); Wes stuurt de berichten zelf. Loop blijft.
 - **Waarheid gaat vóór kort (Wes 2026-11-09: "het klopt niet wat de scripts zeggen, ze moeten wel waarheid hebben")**: elke zin moet
   los kloppen, ook zonder de beschrijving. Geen absolute woorden (nooit, altijd, niemand, niks) tenzij het echt zo is; liever "kan",
