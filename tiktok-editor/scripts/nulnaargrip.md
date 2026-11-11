@@ -25,23 +25,23 @@ Loop: "Ook als je denkt: twee weken, niks te zien."
 Pieken: pijn (0 s) → confrontatie 'al stoppen?' (±2 s) → ik-bewijs 110 kilo (±4 s) → retorische vraag (±6 s) → contrast makkelijk vs moeilijk (±11 s) → opdracht (±13 s).  
 Feiten: alleen Wes' eigen 110 kg.
 
-## Dag 15 · Je stopt om een reden · klaar (nieuwe scriptvorm)
+## Dag 15 · Je stopt om een reden · klaar (nieuwe scriptvorm, met Wes' echte verhaal)
 Trefwoord: motivatie om door te gaan
 ```
 HOOK (letterlijk)
 Je stopt steeds om een reden.
 En het is niet je motivatie.
 
-IN JE EIGEN WOORDEN (voorbeeldzinnen)
-• Maandag vol goede moed. Woensdag ben jij er alweer klaar mee.
-• Ik woog 110 kilo. Zin had ik echt niet elke dag.   [jouw ervaring – pas aan als het anders was]
-• Motivatie komt en gaat. Wat jij elke dag doet, dat blijft.
+IN JE EIGEN WOORDEN (jouw verhaal)
+• Ik heb zelf twee keer mijn sportschool afgezegd.
+• De derde keer schreef een vriend mij in. Toen kon ik niet meer terug.
+• Nu heb ik ook niet altijd zin. Maar mijn structuur neemt het over.
 
 ANTWOORD (letterlijk, laatste 3 s)
-Jij wacht tot het makkelijk voelt. Dat wordt het nooit.
-En daarom:
+Het is je structuur. Bouw die eerst.
+Anders:
 ```
-In beeld: "Je stopt om [een reden]" · impact-woorden: STOPPEN / 110 KILO / NOOIT · voor-figuurtje op "110 kilo"  
-Loop: "En daarom: je stopt steeds om een reden."  
-Pieken: pijn/vraag (0 s) → herkenning maandag-woensdag (±3 s) → ik-bewijs 110 kilo (±6 s) → contrast motivatie vs gewoonte (±9 s) → antwoord (±12 s).  
-Feiten: alleen Wes' eigen 110 kg; de ervaringszin bevestigt Wes zelf.
+In beeld: "Je stopt om [een reden]" · impact-woorden: STOPPEN / 2X AFGEZEGD / STRUCTUUR  
+Loop: "Anders: je stopt steeds om een reden."  
+Pieken: vraag (0 s) → ik-bewijs 2x afgezegd (±3 s) → wending: vriend schreef me in (±6 s) → contrast zin vs structuur (±9 s) → antwoord (±12 s).  
+Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-11).
