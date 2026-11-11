@@ -40,3 +40,24 @@ Let op: onder ±1000 weergaven zijn dit aanwijzingen, geen harde conclusies.
 
 - Hook-regels uit de skill (sectie "Hook in de eerste seconde") toepassen en vergelijken: gaat het afhaakmoment voorbij 0:02
   en stijgt "deel bekeken"?
+
+## Analyse 2026-11-11 (screenshots TikTok Studio, 9 video's van 3–9 nov)
+| Video | Lengte | Weergaven | Gem. kijktijd | Retentie | Volledig | Likes | Volgers | Afhaak |
+|---|---|---|---|---|---|---|---|---|
+| Blauwdruk: Cardio maakt je niet strak | 34,1 s | 328 | 7,9 s | 23% | 4,4% | 11 | 0 | 0:01 |
+| Van nul naar grip dag 10 | 12,2 s | 314 | 8,6 s | **70%** | 12,7% | 11 | 0 | 0:02 |
+| Slimmer dag 22 | 28,8 s | 328 | 6,0 s | 21% | 4,4% | 11 | 1 | 0:02 |
+| Van nul naar grip dag 11 | 15,2 s | 301 | 4,6 s | 30% | 5,5% | 15 | 0 | 0:02 |
+| Blauwdruk dag 10 (middagdip) | 36,2 s | 311 | 6,0 s | 17% | 1,9% | 13 | 0 | 0:01 |
+| Van nul naar grip dag 12 | 14,4 s | 348 | 5,5 s | 38% | 10,4% | 9 | 1 | 0:01 |
+| Chocolade eiwitbrood (recept) | 90,7 s | **483** | 9,6 s | 11% | 2,1% | 10 | 1 | 0:02 (profiel 33%!) |
+| Van nul naar grip dag 13 | 19,6 s | 304 | 5,6 s | 29% | 8,6% | 16 | 0 | 0:01 |
+| Slimmer dag 23 (nieuwe regels) | 17,9 s | 294* | 7,0 s | **39%** | **16,0%** | **21** | 0 | 0:01 |
+*na 46 uur, nog lopend.
+
+Conclusies (kleine aantallen, richting geen bewijs):
+1. Elke video blijft op ±300 weergaven: TikTok test hem bij ±300 mensen en hij breekt niet door. Bij álle video's haken de meesten af op 0:01–0:02 → de eerste seconde is de bottleneck.
+2. Kijkers blijven ±5–9 s, ongeacht de lengte → korter = hoger percentage en vaker afkijken (12 s: 70%; 14–20 s: 29–39%; 29–36 s: 17–23%; 90 s: 11%).
+3. Slimmer dag 23 (dubbele hook, bewijs-beeld pasta, 18 s, nieuwe scriptregels) scoort het best van de uitlegvideo's: 39% retentie, 16% afgekeken, meeste likes.
+4. Recept (chocolade eiwitbrood) haalt de meeste weergaven en 33% profielbezoek → mensen willen meer van je zien; maar volgers blijven 0–1 per video → profiel/bio zet niet om.
+5. Zoeken 0–1%: de SEO-trefwoorden trekken nog niets; mensen zoeken alleen op je naam.
