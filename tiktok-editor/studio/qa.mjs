@@ -63,6 +63,12 @@ export function qa(sb) {
     if (!bx) continue;
     const t = (b.start + b.end) / 2;
     const tag = `${b.type}${b.text ? ` '${b.text}'` : b.name ? ` '${b.name}'` : ""} @${b.start}s`;
+    // 1a. te breed voor het beeld (gecentreerde tekst): kleiner maken i.p.v. verschuiven
+    if (b.type === "pop" && bx.x1 - bx.x0 > W - 32) {
+      const k = (W - 40) / (bx.x1 - bx.x0), old = b.size ?? 170;
+      b.size = Math.floor(old * k); b.x = 540;
+      report.push(`${tag}: te breed → letter ${old} → ${b.size}`); bx = box(b);
+    }
     // 1. buiten beeld
     const dx = bx.x0 < 16 ? 16 - bx.x0 : bx.x1 > W - 16 ? W - 16 - bx.x1 : 0;
     if (dx && !bx.soft) { move(b, dx, 0); report.push(`${tag}: viel ${Math.round(Math.abs(dx))} px buiten beeld → verschoven`); bx = box(b); }
