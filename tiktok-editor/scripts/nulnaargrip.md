@@ -25,24 +25,23 @@ Loop: "Ook als je denkt: twee weken, niks te zien."
 Pieken: pijn (0 s) → confrontatie 'al stoppen?' (±2 s) → ik-bewijs 110 kilo (±4 s) → retorische vraag (±6 s) → contrast makkelijk vs moeilijk (±11 s) → opdracht (±13 s).  
 Feiten: alleen Wes' eigen 110 kg.
 
-## Dag 15 · Je stopt om een reden · PROEF script-upgrade (wacht op akkoord Wes)
+## Dag 15 · Je stopt om een reden · klaar (nieuwe scriptvorm)
 Trefwoord: motivatie om door te gaan
 ```
 HOOK (letterlijk)
 Je stopt steeds om een reden.
 En het is niet je motivatie.
 
-IN JE EIGEN WOORDEN
-• Maandag vol goede moed, woensdag ben jij er alweer klaar mee.
-• [jouw ervaring: jouw moment dat je bijna stopte, zie vraag]
+IN JE EIGEN WOORDEN (voorbeeldzinnen)
+• Maandag vol goede moed. Woensdag ben jij er alweer klaar mee.
+• Ik woog 110 kilo. Zin had ik echt niet elke dag.   [jouw ervaring – pas aan als het anders was]
 • Motivatie komt en gaat. Wat jij elke dag doet, dat blijft.
 
 ANTWOORD (letterlijk, laatste 3 s)
 Jij wacht tot het makkelijk voelt. Dat wordt het nooit.
 En daarom:
 ```
-In beeld: "Je stopt om [een reden]" · impact-woorden: STOPPEN / MAANDAG / NOOIT  
+In beeld: "Je stopt om [een reden]" · impact-woorden: STOPPEN / 110 KILO / NOOIT · voor-figuurtje op "110 kilo"  
 Loop: "En daarom: je stopt steeds om een reden."  
-Onverwacht (talking head, dus via tekst): eerste zin hard en direct in de camera, zonder intro.  
-Vraag aan Wes (A2): wanneer stond jij op het punt om te stoppen, en waarom ging je toch door? Eén zin.  
-Gap: 'om een reden' → antwoord pas in de laatste 3 s.
+Pieken: pijn/vraag (0 s) → herkenning maandag-woensdag (±3 s) → ik-bewijs 110 kilo (±6 s) → contrast motivatie vs gewoonte (±9 s) → antwoord (±12 s).  
+Feiten: alleen Wes' eigen 110 kg; de ervaringszin bevestigt Wes zelf.
