@@ -988,11 +988,14 @@ def cmd_cover(a):
         tw = d.textlength(l, font=F)
         d.text(((W - tw) / 2, y0 + i * lh), l, font=F, fill=(255, 255, 255), stroke_width=max(4, size // 18), stroke_fill=(0, 0, 0))
     if a.sub:
-        Fs = ImageFont.truetype(os.path.join(fonts, "DMMono-Regular.ttf"), 42)
+        fsz = 42
+        Fs = ImageFont.truetype(os.path.join(fonts, "DMMono-Regular.ttf"), fsz)
+        while d.textlength(a.sub.upper(), font=Fs) > W - 160 and fsz > 22:  # lange serietitel past altijd op één regel
+            fsz -= 2; Fs = ImageFont.truetype(os.path.join(fonts, "DMMono-Regular.ttf"), fsz)
         sw = d.textlength(a.sub.upper(), font=Fs)
         bx0, by0 = (W - sw) / 2 - 30, y0 + lh * len(lines) + 30
-        d.rounded_rectangle([bx0, by0, bx0 + sw + 60, by0 + 78], 39, fill=(10, 10, 10), outline=(163, 180, 98), width=3)
-        d.text((bx0 + 30, by0 + 12), a.sub.upper(), font=Fs, fill=(255, 255, 255))
+        d.rounded_rectangle([bx0, by0, bx0 + sw + 60, by0 + fsz + 36], 39, fill=(10, 10, 10), outline=(163, 180, 98), width=3)
+        d.text((bx0 + 30, by0 + 14), a.sub.upper(), font=Fs, fill=(255, 255, 255))
     out = os.path.join(a.project, "cover.jpg")
     img.convert("RGB").save(out, quality=92)
     print("Cover:", out)
