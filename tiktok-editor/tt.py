@@ -928,12 +928,14 @@ def cmd_cover(a):
     titel groot in het midden (TikTok-raster toont het midden 3:4), serie + dag in een pil. -> <project>/cover.jpg"""
     import cv2
     import numpy as np
-    from PIL import Image, ImageDraw, ImageFilter, ImageFont
-    vid = os.path.join(a.project, "cut.mp4")
+    from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+    # scherpste beeld: uit de originele opname (ruw.mp4, geen zoom/compressie van het knippen), anders cut.mp4
+    raw = os.path.join(a.project, "ruw.mp4")
+    vid = raw if os.path.exists(raw) else os.path.join(a.project, "cut.mp4")
     cap = cv2.VideoCapture(vid)
     det = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
     best, score = None, -1
-    for t in np.arange(0.2, min(duration(vid), 6.0), 0.25):
+    for t in np.arange(0.2, min(duration(vid), 30.0), 0.2):
         cap.set(cv2.CAP_PROP_POS_MSEC, t * 1000)
         ok, fr = cap.read()
         if not ok:
@@ -943,12 +945,15 @@ def cmd_cover(a):
         if not len(faces):
             continue
         x, y, w, h = max(faces, key=lambda f: f[2] * f[3])
-        sharp = cv2.Laplacian(g[y:y + h, x:x + w], cv2.CV_64F).var()
+        sharp = cv2.Laplacian(g[y:y + h, x:x + w], cv2.CV_64F).var() * min(1.0, w / 380)  # scherp én groot genoeg
         if sharp > score:
             best, score = fr, sharp
     if best is None:
         cap.set(cv2.CAP_PROP_POS_MSEC, 500); _, best = cap.read()
     img = Image.fromarray(cv2.cvtColor(best, cv2.COLOR_BGR2RGB)).convert("RGB")
+    if img.size != (W, H):
+        img = ImageOps.fit(img, (W, H), Image.LANCZOS)
+    img = img.filter(ImageFilter.UnsharpMask(radius=1.6, percent=90, threshold=2))
     if a.zwartwit:
         from PIL import ImageOps, ImageEnhance
         img = ImageEnhance.Contrast(ImageOps.grayscale(img).convert("RGB")).enhance(1.22)
@@ -997,7 +1002,7 @@ def cmd_cover(a):
         d.rounded_rectangle([bx0, by0, bx0 + sw + 60, by0 + fsz + 36], 39, fill=(10, 10, 10), outline=(163, 180, 98), width=3)
         d.text((bx0 + 30, by0 + 14), a.sub.upper(), font=Fs, fill=(255, 255, 255))
     out = os.path.join(a.project, "cover.jpg")
-    img.convert("RGB").save(out, quality=92)
+    img.convert("RGB").save(out, quality=96, subsampling=0)
     print("Cover:", out)
 
 
