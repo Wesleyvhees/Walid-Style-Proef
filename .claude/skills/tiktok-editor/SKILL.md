@@ -278,6 +278,7 @@ Uit `kennis/kijkcijfers.md`: bij elke video haken de meeste kijkers af op 0:01�
   - **Loop-test (verplicht, Wes 2026-11-07: "de laatste zin moet altijd matchen met de eerste")**: lees laatste + eerste zin hardop als
     één zin. Moet kloppen zonder dubbele woorden (dus niet "dat je denkt: … en je denkt:") én de eerste zin moet los als hook werken.
     Schrijf de hook dus als losse uitspraak die ook als citaat/antwoord kan dienen. Zet bij elk script de regel "Loop: <laatste> <eerste>" eronder.
+  - **Strak einde (Wes 2026-11-11):** in de laatste 2 zinnen geen pauzes > 0,15 s (`tt.py drop`) en de video stopt ±0,05 s na het laatste woord.
   - **Montage:** **geen 2 s eindbeeld** meer; de video stopt ±0,1 s na het laatste woord. De volg-stempel komt als overlay tijdens de laatste
     zin (±1,5 s), niet als los eindbeeld. Het laatste stuk staat op 100% (geen jump-zoom), net als het begin. Geen fade-out.
 

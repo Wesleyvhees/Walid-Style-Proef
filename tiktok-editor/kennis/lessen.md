@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-11 · Van nul naar grip dag 15 · "iets strakker knippen aan het eind" → laatste 2 zinnen: pauzes > 0,15 s eruit en de video stopt ±0,05 s na het laatste woord (dag 15: 17,3 → 16,7 s). Voortaan standaard bij elke video controleren vóór de render.
 - 2026-11-11 · Van nul naar grip dag 15 · "je hoeft niet elke dag mijn miniatuur te gebruiken" + "eerst een keuzemenu voordat je verder gaat met effecten, voortaan weer" → voor/na-figuurtjes alleen als optie in het menu (niet standaard); keuzemenu weer verplicht vóór effecten (vervangt zelfstandig bewerken).
 - 2026-11-10 · video "script upgrade" (contentpiramide) · keuzes: praat-punten i.p.v. letterlijke tekst, één echte ervaring per video (vragen, nooit verzinnen), Wes' eigen woorden (kennis/wes-woorden.md), iets onverwachts in de eerste seconde, hook opent één vraag en het antwoord komt pas in de laatste 2–3 s. Geen voortgangs-piramide. Eerst 3 proefscripts (Slimmer 25, blauwdruk 12, nul naar grip 15).
 - 2026-11-10 · Slimmer 2.0 dag 24 · "deze effecten zijn ruk" → "maak een stijl die we vanaf nu gaan gebruiken en doe dag 24 opnieuw" → stijl "Donker Bewijs" (SKILL.md): freeze, search, kinetic, zoomcard, counter, tekst achter je hoofd, notes, marker in ondertitels; oude kaartjes/labels/stempels/emoji vervallen voor Slimmer en blauwdruk. Minstens 2 weken vasthouden.

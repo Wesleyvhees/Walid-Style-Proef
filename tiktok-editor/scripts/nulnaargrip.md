@@ -25,7 +25,7 @@ Loop: "Ook als je denkt: twee weken, niks te zien."
 Pieken: pijn (0 s) → confrontatie 'al stoppen?' (±2 s) → ik-bewijs 110 kilo (±4 s) → retorische vraag (±6 s) → contrast makkelijk vs moeilijk (±11 s) → opdracht (±13 s).  
 Feiten: alleen Wes' eigen 110 kg.
 
-## Dag 15 · Je stopt om een reden · opgenomen (bewerkt 2026-11-11, 17,3 s)
+## Dag 15 · Je stopt om een reden · opgenomen (bewerkt 2026-11-11, 16,7 s)
 Trefwoord: motivatie om door te gaan
 ```
 HOOK (letterlijk)
