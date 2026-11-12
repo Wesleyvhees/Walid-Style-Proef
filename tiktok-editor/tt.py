@@ -937,7 +937,8 @@ def cmd_cover(a):
     cap = cv2.VideoCapture(vid)
     det = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
     best, score = None, -1
-    for t in np.arange(0.2, min(duration(vid), 30.0), 0.2):
+    times = [a.at] if getattr(a, "at", None) is not None else np.arange(0.2, min(duration(vid), 30.0), 0.2)
+    for t in times:  # --at <s in ruw.mp4>: zelf het moment kiezen (bv. als het scherpste beeld een rare gezichtsuitdrukking heeft)
         cap.set(cv2.CAP_PROP_POS_MSEC, t * 1000)
         ok, fr = cap.read()
         if not ok:
@@ -1423,7 +1424,7 @@ def main():
     c = sub.add_parser("mini", help="eigen foto's -> uitgeknipte figuurtjes (assets/mini_*.png)"); c.add_argument("project"); c.add_argument("fotos", nargs="+"); c.add_argument("--zwartwit", action="store_true"); c.set_defaults(fn=cmd_mini)
     c = sub.add_parser("hashtags", help="hashtags/trefwoorden normaliseren (accenten, spaties)"); c.add_argument("tags", nargs="+"); c.set_defaults(fn=cmd_hashtags)
     c = sub.add_parser("scriptcheck", help="gesproken tekst vs scriptbank"); c.add_argument("project"); c.add_argument("serie"); c.add_argument("dag", type=int); c.set_defaults(fn=cmd_scriptcheck)
-    c = sub.add_parser("cover", help="coverbeeld voor het profiel"); c.add_argument("project"); c.add_argument("--title", required=True); c.add_argument("--sub"); c.add_argument("--font"); c.add_argument("--zwartwit", action="store_true"); c.set_defaults(fn=cmd_cover)
+    c = sub.add_parser("cover", help="coverbeeld voor het profiel"); c.add_argument("project"); c.add_argument("--title", required=True); c.add_argument("--sub"); c.add_argument("--font"); c.add_argument("--zwartwit", action="store_true"); c.add_argument("--at", type=float, help="tijd in ruw.mp4"); c.set_defaults(fn=cmd_cover)
     c = sub.add_parser("facelock", help="virtuele camera die je gezicht rustig volgt (wandel/uit de hand)"); c.add_argument("project"); c.add_argument("--zoom", type=float, default=1.18); c.add_argument("--smooth", type=float, default=1.2); c.add_argument("--x", type=float, default=540); c.add_argument("--y", type=float, default=760); c.set_defaults(fn=cmd_facelock)
     c = sub.add_parser("storyboard"); c.add_argument("project"); c.set_defaults(fn=cmd_storyboard)
     c = sub.add_parser("keuzemenu", help="voorstel.json -> aanklikbaar keuzemenu (keuzemenu.html)"); c.add_argument("project"); c.set_defaults(fn=cmd_keuzemenu)

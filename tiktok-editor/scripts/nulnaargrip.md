@@ -46,7 +46,7 @@ Loop: "Anders: je stopt steeds om een reden."
 Pieken: vraag (0 s) → ik-bewijs 2x afgezegd (±3 s) → wending: vriend schreef me in (±6 s) → contrast zin vs structuur (±9 s) → antwoord (±12 s).  
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-11).
 
-## Dag 16 · Vergelijken · opgenomen (2026-11-12, nieuwe scriptvorm, met Wes' echte verhaal)
+## Dag 16 · Vergelijken · opgenomen (bewerkt 2026-11-12, 17,5 s, nieuwe scriptvorm, met Wes' echte verhaal)
 Trefwoord: motivatie afvallen
 ```
 HOOK (letterlijk)
