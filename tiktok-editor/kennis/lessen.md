@@ -3,7 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
-- 2026-11-12 · stemgeluid · "het klinkt heel blikkerig" → stemtest: alleen de huidige keten (A) klinkt als Wes; warme/rubberband-varianten niet ("klinkt niet als mij"). Keuze: "een klein beetje zwaarder, blijf bij mijn eigen stemgeluid" → zelfde keten + 2 dB rond 150 Hz. Nooit de stem merkbaar anders laten klinken; altijd eerst een korte A/B-test sturen.
+- 2026-11-12 · stemgeluid · "het klinkt heel blikkerig" → stemtest: alleen de huidige keten (A) klinkt als Wes; warme/rubberband-varianten niet ("klinkt niet als mij"). Keuze: "een klein beetje zwaarder, blijf bij mijn eigen stemgeluid" → zelfde keten + 2 dB rond 150 Hz; daarna "nog iets zwaarder" → +3.5 dB. Nooit de stem merkbaar anders laten klinken; altijd eerst een korte A/B-test sturen.
 - 2026-11-11 · cover Slimmer dag 24 · "slechte kwaliteit" → cover komt nu uit de originele opname (ruw.mp4, geen zoom of knip-compressie), scherpste beeld met een groot gezicht uit de hele video, licht verscherpt, JPEG 96% zonder kleurcompressie.
 - 2026-11-11 · Van nul naar grip dag 15 · "iets strakker knippen aan het eind" → laatste 2 zinnen: pauzes > 0,15 s eruit en de video stopt ±0,05 s na het laatste woord (dag 15: 17,3 → 16,7 s). Voortaan standaard bij elke video controleren vóór de render.
 - 2026-11-11 · Van nul naar grip dag 15 · "je hoeft niet elke dag mijn miniatuur te gebruiken" + "eerst een keuzemenu voordat je verder gaat met effecten, voortaan weer" → voor/na-figuurtjes alleen als optie in het menu (niet standaard); keuzemenu weer verplicht vóór effecten (vervangt zelfstandig bewerken).
