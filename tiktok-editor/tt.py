@@ -69,9 +69,9 @@ def transcribe(audio, lang, model="medium", vad=True):
 # Het eindvolume (-14 LUFS) zet render.mjs na het mixen met de geluidseffecten.
 # Afgesteld op Wes' opnames: ruis ~8 dB lager zonder dat de stem "onder water" klinkt (anlmdn s=0.01).
 # Wes 2026-11-12: "gewoon een klein beetje zwaarder, maar blijf bij mijn eigen stemgeluid" -> zelfde keten als voorheen
-# (versnellen met atempo laten zoals het is; rubberband/warme varianten klonken niet als hem) + +3.5 dB rond 150 Hz (2026-11-12: "nog iets zwaarder").
+# (versnellen met atempo laten zoals het is; rubberband/warme varianten klonken niet als hem) + +4.5 dB rond 150 Hz, +2 dB low-shelf 110 Hz, 3200 Hz-boost 2→1.5 (2026-11-12: "nog iets dieper, nog iets zwaarder").
 VOICE_AF = ("highpass=f=80,anlmdn=s=0.01,"
-            "deesser=i=0.4:m=0.5:f=0.5:s=o,equalizer=f=150:t=q:w=1.0:g=3.5,equalizer=f=3200:t=q:w=1.2:g=2,"
+            "deesser=i=0.4:m=0.5:f=0.5:s=o,bass=f=110:g=2:w=0.6,equalizer=f=150:t=q:w=1.0:g=4.5,equalizer=f=3200:t=q:w=1.2:g=1.5,"
             "acompressor=threshold=-20dB:ratio=2:attack=8:release=150")
 
 
