@@ -45,3 +45,24 @@ In beeld: "Je stopt om [een reden]" · impact-woorden: STOPPEN / 2X AFGEZEGD / S
 Loop: "Anders: je stopt steeds om een reden."  
 Pieken: vraag (0 s) → ik-bewijs 2x afgezegd (±3 s) → wending: vriend schreef me in (±6 s) → contrast zin vs structuur (±9 s) → antwoord (±12 s).  
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-11).
+
+## Dag 16 · Wat anderen vinden · klaar (nieuwe scriptvorm; ervaringsregel wacht op Wes)
+Trefwoord: motivatie afvallen
+```
+HOOK (letterlijk)
+Een ding houdt je tegen.
+En het zit niet in de gym.
+
+IN JE EIGEN WOORDEN
+• Je vergelijkt jezelf met die gast die al jaren traint.
+• Of je bent bang wat ze zeggen als jij ineens kip met rijst eet.
+• [jouw ervaring: wat zeiden mensen toen jij begon?]
+
+ANTWOORD (letterlijk, laatste 3 s)
+Het is wat anderen vinden. Bewandel je eigen pad.
+Onthoud dus:
+```
+In beeld: "Een ding houdt je [tegen]" · impact-woorden: VERGELIJKEN / BANG / EIGEN PAD  
+Loop: "Onthoud dus: een ding houdt je tegen."  
+Pieken: vraag (0 s) → herkenning vergelijken (±3 s) → herkenning collega's (±6 s) → ik-bewijs (±9 s) → antwoord (±12 s).  
+Feiten: 'bewandel je eigen pad' is Wes' eigen zin (intro Van nul naar grip); de ervaringsregel vult Wes zelf in.
