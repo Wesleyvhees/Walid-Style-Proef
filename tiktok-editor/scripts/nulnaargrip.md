@@ -67,26 +67,27 @@ Loop: "Onthoud dus: een ding houdt je tegen."
 Pieken: vraag (0 s) → ik-bewijs 'ik keek naar gasten die al jaren trainden' (±3 s) → 'dat werkte niet' (±6 s) → contrast level 10 vs level 1 (±9 s) → antwoord (±12 s).  
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-12); 'bewandel je eigen pad' is zijn eigen zin.
 
-## Dag 17 · Opgeven begint met een zin · klaar (nieuwe scriptvorm, 2 acties uit de bus)
-Trefwoord: geen zin om te sporten
+## Dag 17 · Geen luiheid, maar angst · klaar (nieuwe scriptvorm, 2 acties uit de bus, met Wes' echte verhaal)
+Trefwoord: geen zin om te sporten (+ in beschrijving: bang voor de sportschool)
 ```
 HOOK (letterlijk, terwijl je het flesje/blikje kapot knijpt)
 Zo voelt opgeven.
-En het begint met een zin.
+En vaak is het geen luiheid.
 
 IN JE EIGEN WOORDEN
-• Geen zin om te sporten. Moe, slecht geslapen. Dat heeft iedereen weleens.
-• [koffiebeker omdraaien] Leeg? Juist dan telt het. Op je goede dagen gaat het vanzelf.
-• [jouw ervaring, zie vraag]
+• Geen zin om te sporten? Moe? [koffiebeker omdraaien] Leeg? Dat is het vaak niet.
+• Ik zei vroeger ook dingen af. Niet omdat ik geen zin had.
+• Het duurde lang voordat ik de sportschool in ging.
 
-ANTWOORD (letterlijk, laatste 3 s)
-"Ik sla vandaag even over."
-En voor je het weet:
+ANTWOORD (letterlijk, laatste 3-4 s)
+Ik was bang om toe te geven hoe zwaar ik was.
+Tot ik er klaar mee was.
+Of kies jij weer voor dit:
 ```
 Frame 1: leeg waterflesje (dop eraf) of leeg blikje kapot knijpen vlak voor de lens, krak-geluid, hook tijdens het knijpen.  
 Halverwege: lege koffiebeker omdraaien boven je hand op "Leeg?" (er komt niks uit).  
-In beeld: "Zo voelt [opgeven]" · impact-woorden: GEEN ZIN / LEEG? / JUIST DAN / OVERSLAAN  
-Loop: "En voor je het weet: zo voelt opgeven."  
-Pieken: krak + opgeven (0 s) → herkenning geen zin/moe (±3 s) → beker om: "Leeg? Juist dan" (±6 s) → ik-bewijs (±9 s) → antwoord: de zin "ik sla vandaag even over" (±13 s).  
-Feiten: geen claims met getallen; ervaring alleen van Wes zelf.  
-Vraag aan Wes: welke smoes gebruikte jij vroeger het vaakst om een training over te slaan, en wat gebeurde er daarna? Eén zin.
+Einde: op "voor dit:" houd je het geknakte flesje naar de lens → loopt naadloos in het begin.  
+In beeld: "Zo voelt [opgeven]" · impact-woorden: GEEN LUIHEID / LEEG? / AFGEZEGD / BANG / KLAAR ERMEE  
+Loop: "Of kies jij weer voor dit: zo voelt opgeven."  
+Pieken: krak + opgeven (0 s) → tegendraads 'geen luiheid' (±2 s) → beker om: "Leeg? Dat is het vaak niet" (±5 s) → ik-bewijs 'ik zei ook dingen af' (±8 s) → antwoord: bang om toe te geven (±12 s) → klaar ermee (±14 s).  
+Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-13): geen smoesjes, maar bang om toe te geven dat hij te zwaar was; zei daarom dingen af; pas toen hij 100% klaar was met zichzelf zette hij de stap, daarna stap voor stap.
