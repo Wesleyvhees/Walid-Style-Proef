@@ -1,0 +1,323 @@
+import React from "react";
+import { Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import type { ChecklistBeat, CommentBeat, FollowBeat, ImagesBeat, PromptBeat, StylePreset } from "../types";
+import { fontCss, SAFE, skin } from "../styles";
+import { fxSkin, isDarkFx, useFxLook, GREEN } from "../fxlook";
+import { enter, exit } from "../anim";
+
+const cardShadow = "0 24px 60px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.25)";
+
+const useIn = (start: number, end: number) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = enter(frame, start, fps, 16) * exit(frame, end, fps);
+  return { frame, fps, t: frame / fps, p };
+};
+
+const Check: React.FC<{ bg: string; fg: string; size?: number }> = ({ bg, fg, size = 64 }) => (
+  <div
+    style={{
+      width: size,
+      height: size,
+      borderRadius: size,
+      background: bg,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <svg width={size * 0.45} height={size * 0.45} viewBox="0 0 24 24">
+      <path d="M4 12.5l5 5L20 6.5" stroke={fg} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </div>
+);
+
+// Promptvak dat zichzelf typt, en daarna "klaar" met een vinkje.
+export const PromptCard: React.FC<{ beat: PromptBeat; style: StylePreset }> = ({ beat, style }) => {
+  const { t, p, frame, fps } = useIn(beat.start, beat.end);
+  const from = beat.typeFrom ?? beat.start + 0.2;
+  const to = beat.typeTo ?? from + beat.text.length * 0.045;
+  const n = Math.round(Math.max(0, Math.min(1, (t - from) / Math.max(0.01, to - from))) * beat.text.length);
+  const done = beat.doneAt !== undefined && t >= beat.doneAt;
+  const dp = beat.doneAt !== undefined ? enter(frame, beat.doneAt, fps, 14) : 0;
+  const cursor = !done && Math.floor(t * 2.2) % 2 === 0;
+  const tv = useFxLook("tip");
+  const term = tv === 5; // terminal: zwart, groene mono-letters, blokcursor
+  const dark = term || isDarkFx(tv, style);
+  const ink = tv === 4 ? "#0B0B0B" : dark ? "#FFFFFF" : style.cardInk;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: beat.y ?? SAFE.top,
+        left: 50,
+        right: 50,
+        padding: "26px 30px 30px",
+        borderRadius: 26,
+        ...(term
+          ? { background: "#050505", border: `1.5px solid rgba(163,180,98,0.55)`, boxShadow: cardShadow }
+          : { ...fxSkin(tv, style), ...(tv === 2 ? {} : { boxShadow: cardShadow }) }),
+        color: ink,
+        opacity: p,
+        transform: `translateY(${(1 - p) * -40}px) scale(${0.97 + 0.03 * p})`,
+        display: "flex",
+        alignItems: "center",
+        gap: 24,
+      }}
+    >
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ ...fontCss("mono"), fontSize: 22, opacity: term ? 1 : 0.6, color: term ? GREEN : undefined, textTransform: "uppercase", marginBottom: 8 }}>
+          {term ? (done ? `✓ ${beat.doneLabel ?? "klaar"}` : `> ${beat.label ?? "tip"}`) : done ? `• ${beat.doneLabel ?? "klaar"}` : beat.label ?? "Aan jezelf"}
+        </div>
+        <div
+          style={{
+            ...(term ? fontCss("mono") : done ? fontCss("italic") : fontCss("sans")),
+            ...(term ? { fontSize: done ? 50 : 44, fontWeight: 700, color: done ? "#FFFFFF" : GREEN } : done ? { fontSize: 64 } : { fontSize: 44, fontWeight: 500, letterSpacing: "-0.02em" }),
+            lineHeight: 1.1,
+          }}
+        >
+          {done ? beat.doneText ?? beat.text : beat.text.slice(0, n)}
+          {term ? (!done && Math.floor(t * 2.2) % 2 === 0 ? <span style={{ color: GREEN }}>▋</span> : null) : cursor ? <span style={{ opacity: 0.7 }}>|</span> : null}
+        </div>
+      </div>
+      {done ? (
+        <div style={{ transform: `scale(${dp})` }}>
+          <Check bg={tv === 4 ? "#0B0B0B" : dark ? GREEN : style.bg} fg={tv === 4 ? GREEN : dark ? "#0B0B0B" : style.card} />
+        </div>
+      ) : (
+        <div
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 60,
+            background: tv === 4 ? "#0B0B0B" : dark ? "rgba(255,255,255,0.12)" : style.bg,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            opacity: n > 0 ? 1 : 0.35,
+          }}
+        >
+          <svg width="26" height="26" viewBox="0 0 24 24">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke={tv === 4 ? GREEN : dark ? "#FFFFFF" : style.card} strokeWidth="2.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Profielkaart met "Volgen" -> "Volgend".
+export const FollowCard: React.FC<{ beat: FollowBeat; style: StylePreset }> = ({ beat, style }) => {
+  const { t, p } = useIn(beat.start, beat.end);
+  const on = beat.toggleAt !== undefined && t >= beat.toggleAt;
+  const initial = beat.handle.replace(/^@/, "").slice(0, 1).toUpperCase();
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: beat.y ?? 1020,
+        left: 90,
+        width: 720,
+        padding: "20px 22px",
+        borderRadius: 999,
+        ...skin(style),
+        color: style.cardInk,
+        boxShadow: cardShadow,
+        display: "flex",
+        alignItems: "center",
+        gap: 20,
+        opacity: p,
+        transform: `translateY(${(1 - p) * 40}px)`,
+      }}
+    >
+      <div
+        style={{
+          width: 74,
+          height: 74,
+          borderRadius: 74,
+          background: style.bg,
+          color: style.card,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          ...fontCss("serif"),
+          fontSize: 46,
+        }}
+      >
+        {initial}
+      </div>
+      <div style={{ flex: 1 }}>
+        <div style={{ ...fontCss("sans"), fontSize: 34, fontWeight: 700, letterSpacing: "-0.02em" }}>{beat.handle}</div>
+        {beat.sub ? <div style={{ ...fontCss("mono"), fontSize: 21, opacity: 0.6, marginTop: 4 }}>{beat.sub}</div> : null}
+      </div>
+      <div
+        style={{
+          ...fontCss("sans"),
+          fontSize: 28,
+          fontWeight: 700,
+          letterSpacing: "-0.01em",
+          padding: "16px 28px",
+          borderRadius: 999,
+          background: on ? "transparent" : style.bg,
+          color: on ? style.cardInk : style.card,
+          border: `2px solid ${on ? "rgba(0,0,0,0.18)" : style.bg}`,
+        }}
+      >
+        {on ? "✓ Volgend" : "Volgen"}
+      </div>
+    </div>
+  );
+};
+
+// "Reageer 'X'"-kop met een reactie-bubbel.
+export const CommentCard: React.FC<{ beat: CommentBeat; style: StylePreset }> = ({ beat, style }) => {
+  const { p, frame, fps } = useIn(beat.start, beat.end);
+  const bp = enter(frame, beat.start + 0.45, fps, 14);
+  return (
+    <div style={{ position: "absolute", top: beat.y ?? SAFE.top, left: 120, right: 120, opacity: p }}>
+      <div
+        style={{
+          ...fontCss("sans"),
+          fontSize: 50,
+          fontWeight: 800,
+          letterSpacing: "-0.03em",
+          lineHeight: 1.12,
+          color: "#fff",
+          background: "rgba(0,0,0,0.0)",
+          textShadow: "0 3px 18px rgba(0,0,0,0.6)",
+          textAlign: "center",
+          transform: `translateY(${(1 - p) * -24}px)`,
+        }}
+      >
+        {beat.headline}
+      </div>
+      <div
+        style={{
+          marginTop: 22,
+          padding: "18px 24px",
+          borderRadius: 22,
+          ...skin(style),
+          color: style.cardInk,
+          boxShadow: cardShadow,
+          display: "flex",
+          alignItems: "center",
+          gap: 16,
+          opacity: bp,
+          transform: `scale(${0.9 + 0.1 * bp})`,
+        }}
+      >
+        <div style={{ width: 64, height: 64, borderRadius: 64, background: style.bg }} />
+        <div>
+          <div style={{ ...fontCss("mono"), fontSize: 26, opacity: 0.6 }}>{beat.user ?? "jij"}</div>
+          <div style={{ ...fontCss("sans"), fontSize: 50, fontWeight: 800, letterSpacing: "-0.01em" }}>{beat.comment}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Checklist: regels schuiven in, het vinkje springt aan op het woord (groen), nog niet afgevinkt = gedimd.
+export const ChecklistCard: React.FC<{ beat: ChecklistBeat; style: StylePreset }> = ({ beat, style }) => {
+  const { t, p, frame, fps } = useIn(beat.start, beat.end);
+  const w = beat.w ?? 560;
+  const cv = useFxLook("checklist");
+  // 1 huidig, 2 zwart + groene rand, 3 glas, 4 zonder kaart, 5 genummerd
+  const box: React.CSSProperties =
+    cv === 2
+      ? { background: "#0A0A0A", border: `2px solid ${GREEN}`, boxShadow: "0 0 22px rgba(163,180,98,0.35), 0 18px 40px rgba(0,0,0,0.45)" }
+      : cv === 3
+      ? { background: "rgba(14,14,14,0.5)", border: "1.5px solid rgba(255,255,255,0.2)", backdropFilter: "blur(18px)", boxShadow: cardShadow }
+      : cv === 4
+      ? { background: "transparent", border: "none", boxShadow: "none" }
+      : { background: "rgba(17,17,18,0.9)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: cardShadow };
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: beat.x ?? 540 - w / 2,
+        top: beat.y ?? SAFE.top,
+        width: w,
+        padding: "28px 34px 30px",
+        borderRadius: 30,
+        ...box,
+        opacity: p,
+        transform: `translateY(${(1 - p) * -30}px) scale(${0.96 + 0.04 * p})`,
+      }}
+    >
+      {beat.title ? (
+        <div style={{ ...fontCss("mono"), fontSize: 26, color: style.accent, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 18 }}>
+          {beat.title}
+        </div>
+      ) : null}
+      {beat.items.map((it, i) => {
+        const appear = Math.min(it.at - 0.25, beat.start + 0.08 * i);
+        const q = enter(frame, Math.max(beat.start, appear), fps, 16);
+        const on = t >= it.at;
+        const c = on ? enter(frame, it.at, fps, 10) : 0;
+        return (
+          <div key={i} style={{ display: "flex", alignItems: "center", gap: 20, marginTop: i ? 14 : 0, opacity: q, transform: `translateX(${(1 - q) * -24}px)` }}>
+            <div
+              style={{
+                width: 52,
+                height: 52,
+                borderRadius: 14,
+                flex: "none",
+                border: cv === 5 ? "none" : `3px solid ${on ? style.accent : "rgba(255,255,255,0.35)"}`,
+                background: cv === 5 ? (on ? style.accent : "rgba(255,255,255,0.08)") : on ? style.accent : cv === 4 ? "rgba(0,0,0,0.35)" : "transparent",
+                boxShadow: cv === 4 ? "0 6px 18px rgba(0,0,0,0.5)" : undefined,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transform: `scale(${1 + 0.18 * Math.sin(Math.min(1, c) * Math.PI)})`,
+              }}
+            >
+              {cv === 5 && !on ? (
+                <span style={{ ...fontCss("mono"), fontSize: 24, fontWeight: 700, color: GREEN }}>{String(i + 1).padStart(2, "0")}</span>
+              ) : null}
+              <svg width="30" height="30" viewBox="0 0 24 24" style={{ opacity: c, transform: `scale(${c})`, display: cv === 5 && !on ? "none" : undefined }}>
+                <path d="M4 12.5l5 5L20 6.5" stroke="#141310" strokeWidth="3.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div style={{ ...fontCss("sans"), fontSize: 44, fontWeight: 700, letterSpacing: "-0.02em", color: "#fff", opacity: on ? 1 : 0.5, textShadow: cv === 4 ? "0 3px 14px rgba(0,0,0,0.85)" : undefined }}>{it.text}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// Zwevende screenshots / beelden die binnen komen drijven.
+export const FloatingImages: React.FC<{ beat: ImagesBeat }> = ({ beat }) => {
+  const { frame, fps, p } = useIn(beat.start, beat.end);
+  const spots = [
+    { x: 60, y: 260, r: -6, w: 300 },
+    { x: 400, y: 200, r: 4, w: 280 },
+    { x: 640, y: 330, r: -3, w: 260 },
+    { x: 200, y: 560, r: 5, w: 260 },
+  ];
+  return (
+    <>
+      {beat.src.slice(0, 4).map((s, i) => {
+        const sp = spots[i];
+        const q = enter(frame, beat.start + i * 0.12, fps, 14) * p;
+        const bob = Math.sin((frame / fps) * 1.6 + i) * 8;
+        return (
+          <Img
+            key={s}
+            src={staticFile(`p/${s}`)}
+            style={{
+              position: "absolute",
+              left: sp.x,
+              top: sp.y + bob + (1 - q) * 80,
+              width: sp.w,
+              borderRadius: 14,
+              boxShadow: cardShadow,
+              transform: `rotate(${sp.r}deg) scale(${0.85 + 0.15 * q})`,
+              opacity: q,
+            }}
+          />
+        );
+      })}
+    </>
+  );
+};

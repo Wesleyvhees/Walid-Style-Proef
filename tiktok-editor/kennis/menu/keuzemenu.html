@@ -1,0 +1,159 @@
+<title>Wes.Built keuzemenu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Archivo:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: een montagetafel. Per zin een strook met het beeld links en de voorgestelde effecten als aanklikbare kaartjes; onderaan een vaste balk met Versturen. Huisstijl Wes.Built. */
+:root{--bg:#e7e4de;--panel:#f4f2ee;--ink:#16140f;--muted:#5e5a51;--line:#c5c0b5;--accent:#4b5320;--accent-ink:#ffffff;--pick:#4b5320;--soft:#dcd8cf;
+--f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-body:"Archivo",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141310;--panel:#1d1b17;--ink:#ece8e0;--muted:#a39d91;--line:#35322b;--accent:#a3b462;--accent-ink:#141310;--pick:#a3b462;--soft:#2a2822;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141310;--panel:#1d1b17;--ink:#ece8e0;--muted:#a39d91;--line:#35322b;--accent:#a3b462;--accent-ink:#141310;--pick:#a3b462;--soft:#2a2822;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:1000px;margin:0 auto;padding-block:24px 140px}
+.k{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(38px,9vw,72px);line-height:.92;margin:.15em 0 .2em;text-wrap:balance}
+h2{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:28px;line-height:1;margin:0;text-wrap:balance}
+.lead{max-width:62ch;color:var(--muted);margin:0 0 12px}
+.status{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.status i{width:9px;height:9px;border-radius:9px;background:var(--muted)}
+.status.sent i{background:var(--accent)}
+section{margin-top:26px}
+.group,.moment{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:12px}
+.moment{grid-template-columns:96px 1fr;align-items:start}
+.moment+.moment,.group+.group{margin-top:12px}
+.still{width:96px;max-width:100%;aspect-ratio:9/16;border-radius:10px;object-fit:cover;display:block;background:var(--soft)}
+.tc{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:6px;font-variant-numeric:tabular-nums}
+.said{font-weight:600;font-size:17px;margin:0;min-width:0}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;min-width:0}
+.opt{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:start;padding:8px;border-radius:12px;border:2px solid var(--line);background:var(--bg);min-width:0;position:relative}
+.opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opt[aria-pressed="true"]{border-color:var(--pick);background:color-mix(in srgb,var(--pick) 14%,var(--bg))}
+.opt img,.opt .ni{width:54px;aspect-ratio:9/16;border-radius:7px;object-fit:cover;display:block;background:var(--soft)}
+.opt.wide{grid-template-columns:1fr}
+.opt.wide img{width:100%;aspect-ratio:auto;border-radius:9px}
+.opt .ni{display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-size:18px;color:var(--muted)}
+.opt b{display:block;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:19px;line-height:1}
+.opt .code{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.opt p{margin:4px 0 0;font-size:13px;color:var(--muted);line-height:1.35}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:var(--soft);color:var(--ink);border-radius:5px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.tick{position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:22px;border:2px solid var(--line);display:grid;place-items:center}
+.opt[aria-pressed="true"] .tick{background:var(--pick);border-color:var(--pick)}
+.opt[aria-pressed="true"] .tick::after{content:"";width:9px;height:5px;border-left:2.5px solid var(--accent-ink);border-bottom:2.5px solid var(--accent-ink);transform:rotate(-45deg) translate(1px,-1px)}
+textarea{width:100%;min-height:42px;resize:vertical;font:14px/1.4 var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+textarea:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.bar .in{max-width:1000px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bar .sum{flex:1;min-width:0;font-size:14px;color:var(--muted)}
+.btn{all:unset;cursor:pointer;font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:20px;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:10px 22px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line);padding:8px 18px}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.note{font-size:13px;color:var(--muted)}
+@media (max-width:560px){.moment{grid-template-columns:72px 1fr}.still{width:72px}.opts{grid-template-columns:1fr}.bar .sum{flex:1 1 100%}.bar .btn{flex:1;text-align:center}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<main>
+<div class="k" id="kicker">Wes.Built · keuzemenu</div>
+<h1 id="title">Keuzemenu</h1>
+<p class="lead" id="intro"></p>
+<span class="status" id="status"><i></i><span id="statusText">Nog niet verstuurd</span></span>
+<section id="groups"></section>
+<section id="moments"></section>
+</main>
+<div class="bar"><div class="in">
+<div class="sum" id="sum" aria-live="polite"></div>
+<button class="btn ghost" id="copy" type="button">Kopieer keuzes</button>
+<button class="btn" id="send" type="button">Versturen</button>
+</div></div>
+<script id="data" type="application/json">/*__DATA__*/</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("data").textContent);
+  const $ = (id) => document.getElementById(id);
+  $("title").textContent = D.titel || "Keuzemenu";
+  $("intro").textContent = D.intro || "Klik per zin de effecten aan die je wilt. Groen = gekozen. Wat ik aanraad staat al aan.";
+  const all = [...(D.groepen || []), ...(D.momenten || [])];
+  // keuze per blok: lijst met optie-ids; start met het advies
+  const state = { sel: {}, notes: {}, status: "concept" };
+  for (const b of all) state.sel[b.id] = (b.opties || []).filter((o) => o.advies).map((o) => o.id);
+  let db = null, ref = null, saveTimer = null, writing = Promise.resolve(), dirty = false;
+
+  const thumb = (o) => (o.img ? `<img src="${o.img}" alt="">` : `<span class="ni">${o.code || ""}</span>`);
+  function optHtml(b, o) {
+    const on = state.sel[b.id].includes(o.id);
+    return `<button class="opt${o.wide ? " wide" : ""}" type="button" aria-pressed="${on}" data-b="${b.id}" data-o="${o.id}">${thumb(o)}<span style="min-width:0"><span class="code">${o.code || ""}</span>${o.advies ? '<span class="tag">advies</span>' : ""}<b>${esc(o.label)}</b><p>${esc(o.uitleg || "")}</p></span><span class="tick" aria-hidden="true"></span></button>`;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+  function render() {
+    $("groups").innerHTML = (D.groepen || []).length ? `<h2>Hele video</h2><p class="note">${D.groepenUitleg || "Keuzes die voor de hele video gelden."}</p>` + D.groepen.map((g) => `<div class="group"><div><span class="k">${g.keuze === "een" ? "kies één" : "meerdere mogelijk"}</span><h2 style="font-size:22px">${esc(g.titel)}</h2></div><div class="opts">${g.opties.map((o) => optHtml(g, o)).join("")}</div></div>`).join("") : "";
+    $("moments").innerHTML = !(D.momenten || []).length ? "" : `<h2>Per zin</h2><p class="note">Niets aangeklikt bij een zin = alleen ondertitels.</p>` + (D.momenten || []).map((m) => `<div class="moment">${m.still ? `<div><img class="still" src="${m.still}" alt="Beeld op ${m.tijd}"><div class="tc">${m.tijd}${m.tot ? "–" + m.tot : ""}</div></div>` : `<div class="tc">${m.tijd}</div>`}<div style="display:grid;gap:10px;min-width:0"><p class="said">“${esc(m.tekst)}”</p><div class="opts">${m.opties.map((o) => optHtml(m, o)).join("")}</div><textarea id="n_${m.id}" data-n="${m.id}" placeholder="Iets anders bij deze zin? Typ het hier">${esc(state.notes[m.id] || "")}</textarea></div></div>`).join("");
+    summary();
+  }
+  function summary() {
+    const n = Object.values(state.sel).reduce((a, v) => a + v.length, 0);
+    $("sum").textContent = `${n} keuzes` + (db ? (dirty ? " · opslaan..." : " · opgeslagen") : " · opslaan kan hier niet: kopieer je keuzes en plak ze in de chat");
+    const sent = state.status === "verstuurd";
+    $("status").classList.toggle("sent", sent);
+    $("statusText").textContent = sent ? "Verstuurd: zeg in de chat 'keuzes klaar'" : "Nog niet verstuurd";
+  }
+  function text() {
+    const lines = [D.titel || ""];
+    for (const b of all) {
+      const ch = (b.opties || []).filter((o) => state.sel[b.id].includes(o.id)).map((o) => (o.code ? o.code + " " : "") + o.label);
+      lines.push(`${b.tijd || b.titel}: ${ch.join(", ") || "niets"}` + (state.notes[b.id] ? ` (${state.notes[b.id]})` : ""));
+    }
+    return lines.join("\n");
+  }
+  function queueSave() {
+    dirty = true; summary();
+    if (!db) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      const body = { project: D.project, sel: state.sel, notes: state.notes, status: state.status, tekst: text(), bijgewerkt: new Date().toISOString() };
+      writing = writing.then(() => ref.set(body)).then(() => { dirty = false; summary(); }).catch(() => { $("sum").textContent = "Opslaan mislukt. Kopieer je keuzes en plak ze in de chat."; });
+    }, 700);
+  }
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".opt");
+    if (!btn) return;
+    const b = all.find((x) => x.id === btn.dataset.b);
+    const id = btn.dataset.o;
+    let cur = state.sel[b.id];
+    if (cur.includes(id)) cur = cur.filter((x) => x !== id);
+    else cur = b.keuze === "een" ? [id] : [...cur, id];
+    state.sel[b.id] = cur;
+    if (state.status === "verstuurd") state.status = "concept";
+    for (const el of document.querySelectorAll(`.opt[data-b="${b.id}"]`)) el.setAttribute("aria-pressed", String(cur.includes(el.dataset.o)));
+    queueSave();
+  });
+  document.addEventListener("input", (e) => {
+    const t = e.target.closest("textarea[data-n]");
+    if (!t) return;
+    state.notes[t.dataset.n] = t.value;
+    queueSave();
+  });
+  $("send").addEventListener("click", () => { state.status = "verstuurd"; queueSave(); summary(); });
+  $("copy").addEventListener("click", () => {
+    const s = text();
+    navigator.clipboard?.writeText(s).then(() => { $("sum").textContent = "Gekopieerd. Plak het in de chat."; }).catch(() => { $("sum").textContent = s; });
+  });
+  render();
+  // opslag: keuzes per video in db-document keuzes/<project>
+  if (window.claude?.use) {
+    window.claude.use("db").then((d) => {
+      if (!d) { summary(); return; }
+      db = d;
+      ref = db.doc("keuzes/" + String(D.project || "video").replace(/[^A-Za-z0-9_.~:@+-]/g, "-"));
+      ref.get().then((snap) => {
+        if (snap.exists) {
+          const v = snap.data();
+          for (const b of all) if (Array.isArray(v.sel?.[b.id])) state.sel[b.id] = v.sel[b.id];
+          Object.assign(state.notes, v.notes || {});
+          state.status = v.status || "concept";
+          render();
+        }
+        summary();
+      }).catch(() => summary());
+    }).catch(() => summary());
+  }
+})();
+</script>
