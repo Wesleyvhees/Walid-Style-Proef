@@ -70,18 +70,22 @@ Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-12); 'bewandel je 
 ## Dag 17 · Geen luiheid, maar angst · klaar (nieuwe scriptvorm, 2 acties uit de bus, met Wes' echte verhaal)
 Trefwoord: geen zin om te sporten (+ in beschrijving: bang voor de sportschool)
 ```
-HOOK (letterlijk, terwijl je het flesje/blikje kapot knijpt)
+HOOK (letterlijk)
+▶ ACTIE: knijp het lege flesje/blikje kapot vlak voor de lens (begin al te knijpen vóór je praat)
 Zo voelt opgeven.
 En vaak is het geen luiheid.
 
 IN JE EIGEN WOORDEN
-• Geen zin om te sporten? Moe? [koffiebeker omdraaien] Leeg? Dat is het vaak niet.
+• Geen zin om te sporten? Moe?
+▶ ACTIE: draai je lege koffiebeker om boven je hand
+• Leeg? Dat is het vaak niet.
 • Ik zei vroeger ook dingen af. Niet omdat ik geen zin had.
 • Het duurde lang voordat ik de sportschool in ging.
 
 ANTWOORD (letterlijk, laatste 3-4 s)
 Ik was bang om toe te geven hoe zwaar ik was.
 Tot ik er klaar mee was.
+▶ ACTIE: houd het geknakte flesje naar de lens
 Of kies jij weer voor dit:
 ```
 Frame 1: leeg waterflesje (dop eraf) of leeg blikje kapot knijpen vlak voor de lens, krak-geluid, hook tijdens het knijpen.  

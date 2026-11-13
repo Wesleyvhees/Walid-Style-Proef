@@ -46,6 +46,7 @@ Montage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip
 Trefwoord: stress verminderen
 ```
 HOOK (letterlijk)
+▶ ACTIE: je smijt je telefoon (of je tweede telefoon) vol meldingen op de stoel naast je en blaast hard uit.
 Stress? Dit kan binnen 5 minuten helpen.
 En het is geen vakantie.
 

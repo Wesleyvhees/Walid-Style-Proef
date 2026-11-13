@@ -30,6 +30,7 @@ Montage: split-screen bij 'glas sap vs sinaasappel' met twee foto's boven; opsta
 Trefwoord: 80/20 regel
 ```
 HOOK (letterlijk)
+▶ ACTIE: je knijpt een rijstwafel kapot in je vuist, vlak voor de lens (kruimels vliegen), terwijl je de hook zegt.
 Een stuk taart maakt niks kapot.
 Maar dit wel.
 

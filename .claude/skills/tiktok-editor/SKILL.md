@@ -344,6 +344,7 @@ staan in `kennis/lessen.md`.
 - **Elke zin max 8 woorden**, geen uitlegzinnen (het waarom gaat naar de beschrijving), **antwoord zo laat mogelijk**, dan de loop.
 - **Een boodschap per video**; de rest gaat naar de beschrijving (niet splitsen in delen).
 - Bij elk script: gesproken tekst (codeblok), "In beeld:", "Frame 1:", "Loop:".
+- **Handelingen in de tekst (Wes 2026-11-13)**: zet in het script-codeblok een regel `▶ ACTIE: …` precies vóór de zin waarop Wes iets moet doen (frame 1, halverwege, einde/loop). Acties alleen met wat in de bus ligt (`kennis/wes-bus.md`).
 - **Script-upgrade (Wes 2026-11-10, keuzemenu "contentpiramide")**: scriptvorm = **HOOK letterlijk** (opent één concrete vraag,
   curiosity gap) → **3 praat-punten die Wes in eigen woorden zegt** (één daarvan is zijn **echte ervaring**: vraag hem er per script om,
   nooit verzinnen) → **ANTWOORD letterlijk in de laatste 2–3 s** (het antwoord op de hook-vraag), daarna de loop. Tussendoor kleine pieken.
