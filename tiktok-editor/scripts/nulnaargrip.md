@@ -66,3 +66,27 @@ In beeld: "Een ding houdt je [tegen]" · impact-woorden: VERGELIJKEN / LEVEL 1 V
 Loop: "Onthoud dus: een ding houdt je tegen."  
 Pieken: vraag (0 s) → ik-bewijs 'ik keek naar gasten die al jaren trainden' (±3 s) → 'dat werkte niet' (±6 s) → contrast level 10 vs level 1 (±9 s) → antwoord (±12 s).  
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-12); 'bewandel je eigen pad' is zijn eigen zin.
+
+## Dag 17 · Opgeven begint met een zin · klaar (nieuwe scriptvorm, 2 acties uit de bus)
+Trefwoord: geen zin om te sporten
+```
+HOOK (letterlijk, terwijl je het flesje/blikje kapot knijpt)
+Zo voelt opgeven.
+En het begint met een zin.
+
+IN JE EIGEN WOORDEN
+• Geen zin om te sporten. Moe, slecht geslapen. Dat heeft iedereen weleens.
+• [koffiebeker omdraaien] Leeg? Juist dan telt het. Op je goede dagen gaat het vanzelf.
+• [jouw ervaring, zie vraag]
+
+ANTWOORD (letterlijk, laatste 3 s)
+"Ik sla vandaag even over."
+En voor je het weet:
+```
+Frame 1: leeg waterflesje (dop eraf) of leeg blikje kapot knijpen vlak voor de lens, krak-geluid, hook tijdens het knijpen.  
+Halverwege: lege koffiebeker omdraaien boven je hand op "Leeg?" (er komt niks uit).  
+In beeld: "Zo voelt [opgeven]" · impact-woorden: GEEN ZIN / LEEG? / JUIST DAN / OVERSLAAN  
+Loop: "En voor je het weet: zo voelt opgeven."  
+Pieken: krak + opgeven (0 s) → herkenning geen zin/moe (±3 s) → beker om: "Leeg? Juist dan" (±6 s) → ik-bewijs (±9 s) → antwoord: de zin "ik sla vandaag even over" (±13 s).  
+Feiten: geen claims met getallen; ervaring alleen van Wes zelf.  
+Vraag aan Wes: welke smoes gebruikte jij vroeger het vaakst om een training over te slaan, en wat gebeurde er daarna? Eén zin.
