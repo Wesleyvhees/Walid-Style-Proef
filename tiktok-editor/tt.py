@@ -477,10 +477,10 @@ def cmd_prepare(a):
             print(f"  - {d['text']}")
     os.remove(norm)
     # sneller tempo als standaard (Wes 2026-11-06: "ons tempo moet sneller"); toonhoogte blijft gelijk
+    for stale in ("cut_tempo1.mp4", "words_tempo1.json", "cuts_tempo1.json"):  # oude versie van een eerdere prepare
+        if os.path.exists(os.path.join(a.project, stale)):
+            os.remove(os.path.join(a.project, stale))
     if a.tempo and abs(a.tempo - 1) > 0.001:
-        for stale in ("cut_tempo1.mp4", "words_tempo1.json", "cuts_tempo1.json"):  # oude versie van een eerdere prepare
-            if os.path.exists(os.path.join(a.project, stale)):
-                os.remove(os.path.join(a.project, stale))
         cmd_tempo(argparse.Namespace(project=a.project, factor=a.tempo))
 
 
@@ -966,6 +966,10 @@ def cmd_cover(a):
         sharp = cv2.Laplacian(g[y:y + h, x:x + w], cv2.CV_64F).var() * min(1.0, w / 380)  # scherp én groot genoeg
         if sharp > score:
             best, score = fr, sharp
+    if getattr(a, "at", None) is not None:  # exact frame via ffmpeg (OpenCV-seek is onnauwkeurig bij telefoonvideo's)
+        tmp = os.path.join(a.project, "_cover_at.png")
+        run(["ffmpeg", "-y", "-v", "error", "-ss", str(a.at), "-i", vid, "-frames:v", "1", tmp])
+        best = cv2.imread(tmp); os.remove(tmp)
     if best is None:
         cap.set(cv2.CAP_PROP_POS_MSEC, 500); _, best = cap.read()
     img = Image.fromarray(cv2.cvtColor(best, cv2.COLOR_BGR2RGB)).convert("RGB")

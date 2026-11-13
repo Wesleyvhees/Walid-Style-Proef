@@ -67,7 +67,7 @@ Loop: "Onthoud dus: een ding houdt je tegen."
 Pieken: vraag (0 s) → ik-bewijs 'ik keek naar gasten die al jaren trainden' (±3 s) → 'dat werkte niet' (±6 s) → contrast level 10 vs level 1 (±9 s) → antwoord (±12 s).  
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-12); 'bewandel je eigen pad' is zijn eigen zin.
 
-## Dag 17 · Geen luiheid, maar angst · opgenomen (2026-11-13) (nieuwe scriptvorm, 2 acties uit de bus, met Wes' echte verhaal)
+## Dag 17 · Geen luiheid, maar angst · opgenomen (bewerkt 2026-11-13, 21,1 s) (nieuwe scriptvorm, 2 acties uit de bus, met Wes' echte verhaal)
 Trefwoord: geen zin om te sporten (+ in beschrijving: bang voor de sportschool)
 ```
 HOOK (letterlijk)

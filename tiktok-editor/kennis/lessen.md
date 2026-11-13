@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-13 · Van nul naar grip dag 17 · keuzes: 5% sneller + zin eruit (24,4 → 21,1 s), "echt, echt" allebei houden (met --hold teruggezet), geen figuurtje. Cover `--at` pakt nu het exacte frame via ffmpeg (OpenCV-seek zat ernaast). Schijf vol tijdens renderen → oude tussenbestanden (cut*.mp4, ruw.mp4, .trf) van afgeronde projecten in de scratchpad opruimen.
 - 2026-11-13 · Van nul naar grip dag 17 · acties (blikje knijpen vóór het eerste woord, beker omdraaien in een pauze) werden door de pauze-knip half weggeknipt → nieuw `prepare --hold s-e,s-e` (tijden in ruw.mp4) houdt actie-stukken heel. Bij elk script met ▶ ACTIE eerst de ruwe frames bekijken en de acties met --hold vastzetten. Ook gerepareerd: prepare gebruikte een oude cut_tempo1.mp4 bij een tweede prepare in dezelfde map.
 - 2026-11-13 · scripts · "voortaan wil ik in het script zien wanneer ik de handeling moet uitvoeren" → in elk script een regel "▶ ACTIE: …" precies op de plek in de tekst waar de handeling moet (vóór de zin waarop hij gebeurt), ook in het kale codeblok dat ik Wes stuur.
 - 2026-11-13 · Frame-1-acties · "ik neem veel op in mijn bus, ik heb niet zomaar taart" → acties alleen met wat in de bus ligt (kennis/wes-bus.md): water, blikjes, rijstwafels, koffiebeker, telefoons, deur/gordel/sleutel. Blauwdruk 12: rijstwafel kapot knijpen i.p.v. hap taart.
