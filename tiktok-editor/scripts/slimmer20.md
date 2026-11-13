@@ -59,7 +59,7 @@ Twee keer kort in door je neus, een keer lang uit.
 Vijf minuten. Want onthoud:
 ```
 In beeld: "Stress? [5 minuten]"  
-Frame 1: ONVERWACHT: je smijt je telefoon vol meldingen op de stoel naast je en blaast hard uit.  
+Frame 1: ONVERWACHT: je smijt je telefoon (of je tweede telefoon) vol meldingen op de stoel naast je en blaast hard uit.  
 Loop: "Want onthoud: stress? Dit kan binnen 5 minuten helpen."  
 Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag → na 28 dagen beter humeur; lange uitademing verlaagt de hartslag.
 Vraag aan Wes (A2): wanneer grijp(t) jij bij stress naar snacks? Eén zin of spraakmemo.  

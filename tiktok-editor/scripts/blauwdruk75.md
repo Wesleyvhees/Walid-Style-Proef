@@ -43,7 +43,7 @@ Alles of niets denken.
 Onthoud dus:
 ```
 In beeld: "Taart = week [verpest?]"  
-Frame 1: ONVERWACHT: je neemt een grote hap taart recht voor de camera, zonder schuldig te kijken.  
+Frame 1: ONVERWACHT: je knijpt een rijstwafel kapot in je vuist, vlak voor de lens (kruimels vliegen), terwijl je de hook zegt.  
 Loop: "Onthoud dus: een stuk taart maakt niks kapot."  
 Feiten: stuk taart ±300–400 kcal; een week ±14.000–17.500 kcal bij 2000–2500 per dag; 80/20 is een vuistregel (advies), geen onderzoek.
 Vraag aan Wes (A2): gooide jij vroeger na één 'foute' dag de hele week overboord? Wat gebeurde er dan? Eén zin.  
