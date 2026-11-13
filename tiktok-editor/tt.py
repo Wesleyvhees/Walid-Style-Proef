@@ -422,6 +422,18 @@ def cmd_prepare(a):
         words, ranges, fill = remove_fillers(words, ranges, cut_audio)
         if fill:
             print("Vulwoorden/verspreken eruit: " + ", ".join(f"{t} @{s0:.1f}s" for s0, _, t in fill))
+    if getattr(a, "hold", None):  # acties (flesje knijpen, beker omdraaien) heel houden, ook als er niet gepraat wordt
+        for span in a.hold.split(","):
+            h0, h1 = (float(x) for x in span.split("-"))
+            ranges = sorted(ranges + [[round(round(h0 * FPS) / FPS, 4), round(round(min(h1, total) * FPS) / FPS, 4)]])
+            merged = []
+            for r in ranges:
+                if merged and r[0] <= merged[-1][1] + 0.01:
+                    merged[-1][1] = max(merged[-1][1], r[1])
+                else:
+                    merged.append(list(r))
+            ranges = merged
+        print("Acties heel gehouden: " + a.hold)
     cut_len = sum(b - a_ for a_, b in ranges)
     print(f"Origineel {total:.1f}s -> {cut_len:.1f}s; {len(dropped)} mislukte take(s) en {len(ranges)} stukken")
 
@@ -466,6 +478,9 @@ def cmd_prepare(a):
     os.remove(norm)
     # sneller tempo als standaard (Wes 2026-11-06: "ons tempo moet sneller"); toonhoogte blijft gelijk
     if a.tempo and abs(a.tempo - 1) > 0.001:
+        for stale in ("cut_tempo1.mp4", "words_tempo1.json", "cuts_tempo1.json"):  # oude versie van een eerdere prepare
+            if os.path.exists(os.path.join(a.project, stale)):
+                os.remove(os.path.join(a.project, stale))
         cmd_tempo(argparse.Namespace(project=a.project, factor=a.tempo))
 
 
@@ -1399,6 +1414,7 @@ def main():
     c.add_argument("--keep-pauses", action="store_true", help="niets wegknippen (poses, muziekmomenten)")
     c.add_argument("--keep-fillers", action="store_true", help="vulwoorden (eh, uhm) en dubbele woorden laten staan")
     c.add_argument("--no-stab", action="store_true", help="geen beeldstabilisatie")
+    c.add_argument("--hold", help="stukken uit de ruwe video die heel moeten blijven (acties zonder praten), bv. 0.6-1.2,8.6-10.8")
     c.add_argument("--model", default="medium", help="Whisper-model: medium (standaard, nauwkeurig) of small (sneller)")
     c.add_argument("--no-voice", action="store_true", help="stem niet opschonen (ruis/s-klanken/compressor)")
     c.add_argument("--lang", default="nl"); c.set_defaults(fn=cmd_prepare)
