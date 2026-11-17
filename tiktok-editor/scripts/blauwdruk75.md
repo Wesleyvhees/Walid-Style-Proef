@@ -26,30 +26,32 @@ Feiten: blikje cola 330 ml = 139 kcal; glas sinaasappelsap 250 ml ≈ 110 kcal; 
 Pieken: Getal (0 s) → Tegendraads 'sap telt ook mee' (±4 s) → Contrast sap 110 vs sinaasappel 60 (±9 s) → antwoord (±14 s).  
 Montage: split-screen bij 'glas sap vs sinaasappel' met twee foto's boven; opstapelende labels Water / Thee / Zwarte koffie.
 
-## Dag 12 · 80/20 · klaar
-Trefwoord: 80/20 regel
+## Dag 12 · Een paar dagen overgeslagen · klaar (was nul naar grip 18, 2026-11-17)
+Trefwoord: opnieuw beginnen met afvallen
 ```
 HOOK (letterlijk)
-▶ ACTIE: je knijpt een rijstwafel kapot in je vuist, vlak voor de lens (kruimels vliegen), terwijl je de hook zegt.
-Een stuk taart maakt niks kapot.
-Maar dit wel.
+▶ ACTIE: klik je gordel vast en draai de sleutel om (motor aan), al bezig bij de start
+Een paar dagen overgeslagen?
+Dat verpest je afvallen niet.
 
 IN JE EIGEN WOORDEN
-• Een stuk taart is zo'n 350 calorieën, op een hele week stelt dat weinig voor.
-• Wat jij meestal eet, dat telt. Denk in 80/20.
-• [jouw ervaring, zie vraag]
+• Ik ben zelf twee keer gestopt met de sportschool. En toch weer begonnen.
+• Uit onderzoek: een dag missen maakt voor een nieuwe gewoonte bijna niks uit.
+▶ ACTIE: tik met je vinger op je slaap
+• Het gevaar zit in je hoofd: nu is alles verpest. Zo wordt een paar dagen een paar maanden.
 
 ANTWOORD (letterlijk, laatste 3 s)
-Alles of niets denken.
-Onthoud dus:
+Dat is alles of niets denken. Begin vandaag weer.
+▶ ACTIE: wijs recht in de lens
+Dus de volgende keer:
 ```
-In beeld: "Taart = week [verpest?]"  
-Frame 1: ONVERWACHT: je knijpt een rijstwafel kapot in je vuist, vlak voor de lens (kruimels vliegen), terwijl je de hook zegt.  
-Loop: "Onthoud dus: een stuk taart maakt niks kapot."  
-Feiten: stuk taart ±300–400 kcal; een week ±14.000–17.500 kcal bij 2000–2500 per dag; 80/20 is een vuistregel (advies), geen onderzoek.
-Vraag aan Wes (A2): gooide jij vroeger na één 'foute' dag de hele week overboord? Wat gebeurde er dan? Eén zin.  
-Gap: 'maar dit wel' → antwoord (alles of niets denken) pas aan het eind.  
-Status: PROEF script-upgrade (wacht op akkoord Wes).
+In beeld: "Paar dagen gemist = [alles verpest?]"  
+Loop: "Dus de volgende keer: een paar dagen overgeslagen? Dat verpest je afvallen niet."  
+Feiten: Lally e.a. 2010 (European Journal of Social Psychology): een keer een gelegenheid missen had geen wezenlijk effect op het vormen van een gewoonte. Wes: twee keer gestopt met de sportschool, de derde keer gebleven (kennis/wes-ervaringen.md).  
+Herkomst: was Van nul naar grip dag 18; Wes 2026-11-17: 'verander naar een andere serie'. Wes had zelf een paar dagen niet opgenomen.  
+Pieken: gordel+motor + vraag (0 s) → tegendraads 'verpest niks' (±2 s) → ik-bewijs 2x gestopt (±4 s) → getal/onderzoek (±7 s) → dagen → maanden (±11 s) → antwoord alles-of-niets (±14 s).  
+Montage (Donker Bewijs): kinetic VERPEST? · search 'opnieuw beginnen met afvallen' · freeze op 'alles is verpest' · zoomcard antwoord.  
+Status: klaar.
 
 ## Dag 13 · Gewicht schommelt · klaar
 Trefwoord: gewicht schommelt
@@ -399,3 +401,30 @@ Feiten: eigen ervaring Wes; coaching als gewichtsconsulent i.o. (eerlijk 'i.o.' 
 Pieken: Getal (0 s) → open lus 'vijf regels' (±2 s) → elke regel een label (±4–10 s) → Contrast 'consistent, niet perfect' (±11 s) → reageer-woord PLAN (±13 s).  
 Montage: opstapelende labels met de 5 regels.  
 Beschrijving: 'Reageer PLAN, dan stuur ik je een bericht. Gewichtsconsulent i.o.' (Wes stuurt de berichten zelf.)
+
+
+## Reserve · 80/20 taart (oude dag 12, vervangen 2026-11-17)
+Trefwoord: 80/20 regel
+```
+HOOK (letterlijk)
+▶ ACTIE: je knijpt een rijstwafel kapot in je vuist, vlak voor de lens (kruimels vliegen), terwijl je de hook zegt.
+Een stuk taart maakt niks kapot.
+Maar dit wel.
+
+IN JE EIGEN WOORDEN
+• Een stuk taart is zo'n 350 calorieën, op een hele week stelt dat weinig voor.
+• Wat jij meestal eet, dat telt. Denk in 80/20.
+• [jouw ervaring, zie vraag]
+
+ANTWOORD (letterlijk, laatste 3 s)
+Alles of niets denken.
+Onthoud dus:
+```
+In beeld: "Taart = week [verpest?]"  
+Frame 1: ONVERWACHT: je knijpt een rijstwafel kapot in je vuist, vlak voor de lens (kruimels vliegen), terwijl je de hook zegt.  
+Loop: "Onthoud dus: een stuk taart maakt niks kapot."  
+Feiten: stuk taart ±300–400 kcal; een week ±14.000–17.500 kcal bij 2000–2500 per dag; 80/20 is een vuistregel (advies), geen onderzoek.
+Vraag aan Wes (A2): gooide jij vroeger na één 'foute' dag de hele week overboord? Wat gebeurde er dan? Eén zin.  
+Gap: 'maar dit wel' → antwoord (alles of niets denken) pas aan het eind.  
+Status: PROEF script-upgrade (wacht op akkoord Wes).
+
