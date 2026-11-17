@@ -27,12 +27,12 @@ Pieken: Getal (0 s) → Tegendraads 'sap telt ook mee' (±4 s) → Contrast sap 
 Montage: split-screen bij 'glas sap vs sinaasappel' met twee foto's boven; opstapelende labels Water / Thee / Zwarte koffie.
 
 ## Dag 12 · Een paar dagen overgeslagen · klaar (was nul naar grip 18, 2026-11-17)
-Trefwoord: opnieuw beginnen met afvallen
+Trefwoord: progressie (+ in beschrijving: opnieuw beginnen met afvallen)
 ```
 HOOK (letterlijk)
 ▶ ACTIE: klik je gordel vast en draai de sleutel om (motor aan), al bezig bij de start
 Een paar dagen overgeslagen?
-Dat verpest je afvallen niet.
+Dat verpest je progressie niet.
 
 IN JE EIGEN WOORDEN
 • Ik heb zelf ook weleens weken overgeslagen. Ik was niet consistent in mijn plan. En toch ben ik doorgegaan.
@@ -46,7 +46,7 @@ Dat is alles of niets denken. Begin vandaag weer.
 Dus de volgende keer:
 ```
 In beeld: "Paar dagen gemist = [alles verpest?]"  
-Loop: "Dus de volgende keer: een paar dagen overgeslagen? Dat verpest je afvallen niet."  
+Loop: "Dus de volgende keer: een paar dagen overgeslagen? Dat verpest je progressie niet."  
 Feiten: Lally e.a. 2010 (European Journal of Social Psychology): een keer een gelegenheid missen had geen wezenlijk effect op het vormen van een gewoonte. Wes (2026-11-17): liet weleens weken tussen het trainen omdat hij niet consistent was in zijn plan.  
 Herkomst: was Van nul naar grip dag 18; Wes 2026-11-17: 'verander naar een andere serie'. Wes had zelf een paar dagen niet opgenomen.  
 Pieken: gordel+motor + vraag (0 s) → tegendraads 'verpest niks' (±2 s) → ik-bewijs weken overgeslagen (±4 s) → getal/onderzoek (±7 s) → dagen → maanden (±11 s) → antwoord alles-of-niets (±14 s).  
