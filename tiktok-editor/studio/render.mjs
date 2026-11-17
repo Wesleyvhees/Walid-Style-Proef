@@ -217,6 +217,8 @@ const browserExecutable =
 
 console.log("Bundelen...");
 const serveUrl = await bundle({ entryPoint: path.join(here, "src", "index.ts"), publicDir: path.join(here, "public") });
+// eigen bundel na afloop opruimen (elke render maakte ±230 MB in /tmp en liep de schijf vol)
+process.on("exit", () => { try { if (serveUrl.startsWith("/tmp/remotion-webpack-bundle-")) fs.rmSync(serveUrl, { recursive: true, force: true }); } catch {} });
 const composition = await selectComposition({ serveUrl, id: "Main", inputProps: sb, browserExecutable });
 
 if (stills) {
