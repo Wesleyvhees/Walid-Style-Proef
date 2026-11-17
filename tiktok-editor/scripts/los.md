@@ -25,7 +25,7 @@ Pieken: foto-bewijs (0 s) → belofte 3 dingen (±2 s) → 1 structuur (±4 s) �
 Waarom het werkt: bewijs in frame 1 (foto), genummerde lijst houdt vast tot 3, re-hook vlak voor de laatste, beste punt als laatste, deelbaar (citaat).  
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md): 110 → 75 kg; structuur neemt het over van motivatie; vergelijken level 10 vs 1; pas de stap gezet toen hij "100% klaar met mezelf" was.
 
-## Los 2 · Rijstwafels zijn geen dieetvoer · klaar (2026-11-13)
+## Los 2 · Rijstwafels zijn geen dieetvoer · vervallen (Wes 2026-11-17: "vergeet het script van die rijstwafels")
 Trefwoord: rijstwafels
 ```
 ▶ ACTIE: breek een rijstwafel doormidden vlak bij de microfoon (krak), al bezig bij de start

@@ -51,11 +51,12 @@ Stress? Dit kan binnen 5 minuten helpen.
 En het is geen vakantie.
 
 IN JE EIGEN WOORDEN
-• Bij stress grijp jij sneller naar snacks.
+• Bij stress grijp je vaak sneller naar snacks.
 • Dat is geen wilskracht: je lijf staat gewoon 'aan'.
 • [jouw ervaring, zie vraag]
 
 ANTWOORD (letterlijk, laatste 3 s)
+▶ ACTIE: doe het voor: twee keer kort in door je neus, een keer lang uit door je mond
 Twee keer kort in door je neus, een keer lang uit.
 Vijf minuten. Want onthoud:
 ```
