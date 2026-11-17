@@ -95,3 +95,27 @@ In beeld: "Zo voelt [opgeven]" · impact-woorden: GEEN LUIHEID / LEEG? / AFGEZEG
 Loop: "Of kies jij weer voor dit: zo voelt opgeven."  
 Pieken: krak + opgeven (0 s) → tegendraads 'geen luiheid' (±2 s) → beker om: "Leeg? Dat is het vaak niet" (±5 s) → ik-bewijs 'ik zei ook dingen af' (±8 s) → antwoord: bang om toe te geven (±12 s) → klaar ermee (±14 s).  
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, 2026-11-13): geen smoesjes, maar bang om toe te geven dat hij te zwaar was; zei daarom dingen af; pas toen hij 100% klaar was met zichzelf zette hij de stap, daarna stap voor stap.
+
+## Dag 18 · Een paar dagen overgeslagen · klaar (2026-11-17, Wes' echte situatie: paar dagen niet opgenomen)
+Trefwoord: opnieuw beginnen met sporten
+```
+HOOK (letterlijk)
+▶ ACTIE: klik je gordel vast en draai de sleutel om (motor aan), al bezig bij de start
+Ik heb een paar dagen overgeslagen.
+En dat is niet eens het probleem.
+
+IN JE EIGEN WOORDEN
+• Een paar dagen missen overkomt iedereen.
+• Het gevaar is wat je daarna denkt: nu is alles verpest.
+▶ ACTIE: tik met je vinger op je slaap
+• Zo wordt een paar dagen ineens een paar maanden.
+
+ANTWOORD (letterlijk, laatste 3 s)
+Begin vandaag weer. Niet maandag. Vandaag.
+▶ ACTIE: wijs recht in de lens
+Dus ook als je denkt:
+```
+In beeld: "Een paar dagen [overgeslagen]" · impact-woorden: NIET HET PROBLEEM / ALLES VERPEST? / PAAR MAANDEN / VANDAAG  
+Loop: "Dus ook als je denkt: ik heb een paar dagen overgeslagen."  
+Pieken: gordel+motor + bekentenis (0 s) → tegendraads 'niet het probleem' (±2 s) → het echte gevaar (±5 s) → dagen → maanden (±8 s) → opdracht vandaag (±11 s).  
+Feiten: Wes heeft echt een paar dagen niet opgenomen (2026-11-17). Lally e.a. 2010: een keer missen schaadt het vormen van een gewoonte nauwelijks.
