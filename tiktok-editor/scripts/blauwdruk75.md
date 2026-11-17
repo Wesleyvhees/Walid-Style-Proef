@@ -35,7 +35,7 @@ Een paar dagen overgeslagen?
 Dat verpest je afvallen niet.
 
 IN JE EIGEN WOORDEN
-• Ik ben zelf twee keer gestopt met de sportschool. En toch weer begonnen.
+• Ik heb zelf ook weleens weken overgeslagen. Ik was niet consistent in mijn plan. En toch ben ik doorgegaan.
 • Uit onderzoek: een dag missen maakt voor een nieuwe gewoonte bijna niks uit.
 ▶ ACTIE: tik met je vinger op je slaap
 • Het gevaar zit in je hoofd: nu is alles verpest. Zo wordt een paar dagen een paar maanden.
@@ -47,9 +47,9 @@ Dus de volgende keer:
 ```
 In beeld: "Paar dagen gemist = [alles verpest?]"  
 Loop: "Dus de volgende keer: een paar dagen overgeslagen? Dat verpest je afvallen niet."  
-Feiten: Lally e.a. 2010 (European Journal of Social Psychology): een keer een gelegenheid missen had geen wezenlijk effect op het vormen van een gewoonte. Wes: twee keer gestopt met de sportschool, de derde keer gebleven (kennis/wes-ervaringen.md).  
+Feiten: Lally e.a. 2010 (European Journal of Social Psychology): een keer een gelegenheid missen had geen wezenlijk effect op het vormen van een gewoonte. Wes (2026-11-17): liet weleens weken tussen het trainen omdat hij niet consistent was in zijn plan.  
 Herkomst: was Van nul naar grip dag 18; Wes 2026-11-17: 'verander naar een andere serie'. Wes had zelf een paar dagen niet opgenomen.  
-Pieken: gordel+motor + vraag (0 s) → tegendraads 'verpest niks' (±2 s) → ik-bewijs 2x gestopt (±4 s) → getal/onderzoek (±7 s) → dagen → maanden (±11 s) → antwoord alles-of-niets (±14 s).  
+Pieken: gordel+motor + vraag (0 s) → tegendraads 'verpest niks' (±2 s) → ik-bewijs weken overgeslagen (±4 s) → getal/onderzoek (±7 s) → dagen → maanden (±11 s) → antwoord alles-of-niets (±14 s).  
 Montage (Donker Bewijs): kinetic VERPEST? · search 'opnieuw beginnen met afvallen' · freeze op 'alles is verpest' · zoomcard antwoord.  
 Status: klaar.
 
