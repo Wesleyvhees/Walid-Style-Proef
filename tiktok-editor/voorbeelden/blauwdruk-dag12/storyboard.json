@@ -1,0 +1,149 @@
+{
+ "title": "75 kilo blauwdruk dag 12",
+ "template": "blauwdruk75",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "overgeslagen",
+   "progressie",
+   "weken",
+   "consistent",
+   "doorgaan",
+   "onderzoek",
+   "gewoonte",
+   "hoofd",
+   "verpest",
+   "maanden",
+   "alles",
+   "niets",
+   "vandaag"
+  ],
+  "maxChars": 15,
+  "marker": true
+ },
+ "split": [
+  {
+   "start": 4.0,
+   "end": 9.98
+  },
+  {
+   "start": 10.5,
+   "end": 14.45
+  }
+ ],
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 2.2,
+   "text": "Paar dagen gemist = [alles verpest?]",
+   "sub": "75 kilo blauwdruk dag 12",
+   "size": 84,
+   "sfx": "whoosh",
+   "note": "Dubbele hook"
+  },
+  {
+   "type": "kinetic",
+   "start": 2.95,
+   "end": 3.95,
+   "text": "Niet verpest",
+   "sub": "je progressie",
+   "size": 180,
+   "y": 560,
+   "sfx": "boom",
+   "note": "Tegendraads"
+  },
+  {
+   "type": "notes",
+   "start": 4.05,
+   "end": 9.95,
+   "title": "Mijn eerlijke log",
+   "subtitle": "toen ik begon",
+   "y": 200,
+   "items": [
+    {
+     "text": "Weken overgeslagen",
+     "at": 5.27
+    },
+    {
+     "text": "Niet consistent",
+     "at": 7.04
+    },
+    {
+     "text": "Toch doorgegaan",
+     "at": 9.65
+    }
+   ],
+   "sfx": "ding",
+   "note": "Ik-bewijs",
+   "strike": false
+  },
+  {
+   "type": "search",
+   "start": 10.55,
+   "end": 12.6,
+   "text": "dag overslaan sportschool",
+   "typeFrom": 10.6,
+   "typeTo": 11.5,
+   "suggestions": [
+    "dag overslaan sportschool erg",
+    "dag overslaan progressie kwijt"
+   ],
+   "y": 220,
+   "sfx": "click",
+   "note": "De vraag die mensen zoeken"
+  },
+  {
+   "type": "counter",
+   "start": 12.65,
+   "end": 14.42,
+   "value": "1",
+   "unit": "dag gemist",
+   "sub": "maakt bijna niks uit",
+   "size": 230,
+   "y": 230,
+   "sfx": "click",
+   "note": "Getal + onderzoek"
+  },
+  {
+   "type": "freeze",
+   "start": 16.3,
+   "end": 17.4,
+   "caption": "* alles verpest? *",
+   "sfx": "boom",
+   "note": "Reality-tv bevriezing op de gedachte"
+  },
+  {
+   "type": "kinetic",
+   "start": 19.6,
+   "end": 20.4,
+   "text": "Maanden",
+   "sub": "zo snel gaat het",
+   "size": 300,
+   "y": 560,
+   "sfx": "boom",
+   "note": "Dagen worden maanden"
+  },
+  {
+   "type": "zoomcard",
+   "start": 21.05,
+   "end": 23.15,
+   "title": "Alles of niets",
+   "sub": "begin gewoon vandaag weer",
+   "scale": 0.68,
+   "cardY": 470,
+   "sfx": "whoosh",
+   "note": "Antwoord"
+  },
+  {
+   "type": "volgstempel",
+   "start": 23.56,
+   "end": 24.73,
+   "y": 330,
+   "x": 450,
+   "width": 560,
+   "sfx": "boom",
+   "note": "Boven het hoofd terwijl je wijst; loop"
+  }
+ ]
+}

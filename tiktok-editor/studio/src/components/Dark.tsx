@@ -124,7 +124,7 @@ export const NotesCard: React.FC<{ beat: any }> = ({ beat }) => {
             <div style={{ width: 58, height: 58, borderRadius: 58, border: `4px solid ${G}`, background: on ? G : "transparent", display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 + 0.18 * Math.sin(Math.min(1, c) * Math.PI)})` }}>
               <svg width="30" height="30" viewBox="0 0 24 24" style={{ opacity: c }}><path d="M4 12.5l5 5L20 6.5" stroke="#101010" strokeWidth="3.4" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </div>
-            <div style={{ ...fontCss("sans"), fontSize: 52, fontWeight: 700, color: on ? "rgba(255,255,255,0.5)" : "#fff", textDecoration: on ? "line-through" : "none", textDecorationColor: G }}>{it.text}</div>
+            <div style={{ ...fontCss("sans"), fontSize: 52, fontWeight: 700, color: on && beat.strike !== false ? "rgba(255,255,255,0.5)" : "#fff", textDecoration: on && beat.strike !== false ? "line-through" : "none", textDecorationColor: G }}>{it.text}</div>
           </div>
         );
       })}

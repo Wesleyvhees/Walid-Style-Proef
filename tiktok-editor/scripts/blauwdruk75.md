@@ -26,7 +26,7 @@ Feiten: blikje cola 330 ml = 139 kcal; glas sinaasappelsap 250 ml ≈ 110 kcal; 
 Pieken: Getal (0 s) → Tegendraads 'sap telt ook mee' (±4 s) → Contrast sap 110 vs sinaasappel 60 (±9 s) → antwoord (±14 s).  
 Montage: split-screen bij 'glas sap vs sinaasappel' met twee foto's boven; opstapelende labels Water / Thee / Zwarte koffie.
 
-## Dag 12 · Een paar dagen overgeslagen · klaar (was nul naar grip 18, 2026-11-17)
+## Dag 12 · Een paar dagen overgeslagen · opgenomen (bewerkt 2026-11-17, 24,8 s)
 Trefwoord: progressie (+ in beschrijving: opnieuw beginnen met afvallen)
 ```
 HOOK (letterlijk)
