@@ -360,7 +360,7 @@ staan in `kennis/lessen.md`.
   korte klappen, geen verzachters. Referentie-toon: dag 14 v3 (Wes 2026-11-10: "goed, mag nog iets harder"). Uitleg hoort bij Slimmer 2.0 en de blauwdruk.
 - **Hook in beeld**: bewijs-beeld vanaf frame 1 (foto/etiket/grafiek/screenshot met getal) en 1–2 kernwoorden in een groen blok:
   zet ze in de hooktekst tussen `[ ]` (bv. "30 minuten-regel = [mythe]").
-- **Montage Slimmer 2.0 + blauwdruk**: `"split": [{start,end}]` in storyboard.json = split-screen (uitleg bovenin op zwart, gezicht
+- **GEEN split-screen meer (Wes 2026-11-17: "het effect waarin je mij klein ziet en de rest zwart is, verwijder die").** Oud: **Montage Slimmer 2.0 + blauwdruk**: `"split": [{start,end}]` in storyboard.json = split-screen (uitleg bovenin op zwart, gezicht
   onderin in een kader; ondertitels dan op y 925), afwisselen met volledig gezicht om de 3–5 s; `linechart` (fx) bij getallen;
   beat `stack` {items:[{text, at}], x, y} = labels die zich opstapelen bij opsommingen. Van nul naar grip blijft talking head.
 - **Volg-stempel (Wes 2026-11-10)**: altijd **boven het hoofd** (y ±330, `width` 560, `x` ±450 want de kaart zit rechts in de png), nooit over de ondertitels; start pas ná het laatste impact-woord/punchline zodat ze niet overlappen.

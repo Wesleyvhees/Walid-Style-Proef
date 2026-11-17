@@ -21,16 +21,6 @@
   "maxChars": 15,
   "marker": true
  },
- "split": [
-  {
-   "start": 4.0,
-   "end": 9.98
-  },
-  {
-   "start": 10.5,
-   "end": 14.45
-  }
- ],
  "beats": [
   {
    "type": "hook",
@@ -59,7 +49,7 @@
    "end": 9.95,
    "title": "Mijn eerlijke log",
    "subtitle": "toen ik begon",
-   "y": 200,
+   "y": 170,
    "items": [
     {
      "text": "Weken overgeslagen",
@@ -81,7 +71,7 @@
   {
    "type": "search",
    "start": 10.55,
-   "end": 12.6,
+   "end": 14.4,
    "text": "dag overslaan sportschool",
    "typeFrom": 10.6,
    "typeTo": 11.5,
@@ -89,21 +79,9 @@
     "dag overslaan sportschool erg",
     "dag overslaan progressie kwijt"
    ],
-   "y": 220,
+   "y": 200,
    "sfx": "click",
    "note": "De vraag die mensen zoeken"
-  },
-  {
-   "type": "counter",
-   "start": 12.65,
-   "end": 14.42,
-   "value": "1",
-   "unit": "dag gemist",
-   "sub": "maakt bijna niks uit",
-   "size": 230,
-   "y": 230,
-   "sfx": "click",
-   "note": "Getal + onderzoek"
   },
   {
    "type": "freeze",
