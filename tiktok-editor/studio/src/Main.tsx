@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Audio, interpolate, Easing, Freeze, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AllOrNothing, ContinueScreen, Escalate, GlassCrack, HabitGrid, ProgressBar, shakeAt, ThoughtBubble, ZigzagChart } from "./components/Fun";
 import { Counter, DarkPill, FreezeOverlay, KineticWord, NotesCard, SearchBar, ZoomCardTitle, zoomCardScale } from "./components/Dark";
 import type { Beat, Storyboard, StylePreset, TitleBeat, WordsBeat, Zoom } from "./types";
 import { PRESETS, CARD_LOOKS } from "./styles";
@@ -21,7 +22,7 @@ const HOOK_YIELD = ["prompt", "chart", "linechart", "checklist", "headlines", "c
   "uiworld", "pullback", "greenscreen", "couchwall", "framebreak", "orbit", "phone", "comment", "follow", "volgstempel", "persona"];
 // Volume per geluid (Wes, dag 22: "geluidseffecten mogen iets zachter" -> alles ±30% zachter dan eerst).
 // Per video of template nog zachter/harder met "sfxVolume" (vermenigvuldiger, standaard 1).
-const SFX_VOL: Record<string, number> = { riser: 0.25, boom: 0.38, click: 0.28 };
+const SFX_VOL: Record<string, number> = { riser: 0.25, boom: 0.38, click: 0.28, crack: 0.42, arcade: 0.3, error: 0.26, rumble: 0.5, tick: 0.2 };
 const SFX_DEFAULT = 0.32;
 
 const zoomAt = (zooms: Zoom[], t: number) => {
@@ -104,7 +105,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
 
   return (
     <FxLookCtx.Provider value={(sb as any).fxLook ?? {}}>
-    <AbsoluteFill style={{ background: "#000" }}>
+    <AbsoluteFill style={{ background: "#000", transform: (() => { const [sx, sy] = shakeAt(now as any[], t); return sx || sy ? `translate(${sx}px, ${sy}px) scale(1.03)` : undefined; })() }}>
       {/* virtuele camera: vaste uitsnede per shot (multicam uit één opname) */}
       {(() => {
         const shot = (sb.camShots ?? []).find((c) => t >= c.start && t < c.end);
@@ -212,6 +213,14 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if ((b as any).type === "notes") return <NotesCard key={`c${i}`} beat={b} />;
         if ((b as any).type === "freeze") return <FreezeOverlay key={`c${i}`} beat={b} />;
         if ((b as any).type === "zoomcard") return <ZoomCardTitle key={`c${i}`} beat={b} />;
+        if ((b as any).type === "progress") return <ProgressBar key={`c${i}`} beat={b} />;
+        if ((b as any).type === "zigzag") return <ZigzagChart key={`c${i}`} beat={b} />;
+        if ((b as any).type === "habitgrid") return <HabitGrid key={`c${i}`} beat={b} />;
+        if ((b as any).type === "thought") return <ThoughtBubble key={`c${i}`} beat={b} />;
+        if ((b as any).type === "crack") return <GlassCrack key={`c${i}`} beat={b} />;
+        if ((b as any).type === "escalate") return <Escalate key={`c${i}`} beat={b} />;
+        if ((b as any).type === "allornothing") return <AllOrNothing key={`c${i}`} beat={b} />;
+        if ((b as any).type === "continue") return <ContinueScreen key={`c${i}`} beat={b} />;
         if (b.type === "image") return <PhotoPop key={`c${i}`} beat={b} style={s} />;
         if (b.type === "chart") return <ChartCard key={`c${i}`} beat={b} style={s} />;
         if (b.type === "meter") return <MeterGraphic key={`c${i}`} beat={b} style={s} />;
@@ -242,6 +251,18 @@ export const Main: React.FC<Storyboard> = (sb) => {
           ...(b.sfx ? (Array.isArray(b.sfx) ? b.sfx : [b.sfx]).map((fx) => ({ fx, start: b.start })) : []),
           // checklist: een geluid per vinkje (alleen vinkjes die tijdens de beat aanspringen)
           // opstapelende labels: zacht klikje per label
+          // Spel & Verhaal-effecten (Fun.tsx): eigen geluid per moment
+          ...(((bb: any) => {
+            const o: { fx: string; start: number }[] = [];
+            if (bb.type === "progress") { if (bb.pauseAt) o.push({ fx: "error", start: bb.pauseAt }); if (bb.resumeAt) o.push({ fx: "ding", start: bb.resumeAt }); }
+            if (bb.type === "allornothing") { (bb.flips ?? []).forEach((f: number) => o.push({ fx: "click", start: f })); if (bb.xAt) o.push({ fx: "error", start: bb.xAt }); }
+            if (bb.type === "continue") { o.push({ fx: "error", start: bb.start }); o.push({ fx: "arcade", start: bb.pressAt ?? bb.end - 0.45 }); }
+            if (bb.type === "escalate") (bb.items ?? []).forEach((it: any, k: number, a: any[]) => o.push({ fx: k === a.length - 1 ? "rumble" : "whoosh", start: it.at }));
+            if (bb.type === "habitgrid") { const fa = bb.fillAt ?? bb.start + 0.3, fd = bb.fillDur ?? 2.4, N = bb.days ?? 66; o.push({ fx: "error", start: fa + ((bb.miss ?? 23) + 1) / N * fd }); o.push({ fx: "ding", start: fa + fd }); }
+            if (bb.type === "zigzag") { const ra = bb.realAt ?? bb.start + 0.8, rd = bb.realDur ?? 2.2, np = (bb.points ?? new Array(12)).length - 1; (bb.dips ?? []).forEach((d: any) => o.push({ fx: "pop", start: d.at ?? ra + rd * (d.i / np) })); }
+            if (bb.type === "thought") { o.push({ fx: "pop", start: bb.start }); if (bb.crackAt) o.push({ fx: "crack", start: bb.crackAt }); }
+            return o;
+          })(b as any)),
           ...((b as any).type === "stack" ? ((b as any).items ?? []).filter((it: any) => it.at > b.start + 0.05).map((it: any) => ({ fx: "click", start: it.at })) : []),
           ...(b.type === "checklist" && b.itemSfx !== "none"
             ? b.items.filter((it) => it.at > b.start + 0.05).map((it) => ({ fx: (b.itemSfx ?? "ding") as string, start: it.at }))
