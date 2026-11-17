@@ -301,7 +301,7 @@ Regels:
 
 ### Hoekstapeling: pijn → meer pijn → oplossing (Wes, 2026-11-06) + de 3-secondenoorlog
 
-**Scripts aan Wes leveren als losse zinnen onder elkaar, NIET in een tabel** (Wes 2026-11-06: zodat hij ze kan kopiëren naar zijn
+**Codeblokken max ±30 tekens per regel** (Wes 2026-11-17: anders moet hij op zijn telefoon naar rechts scrollen). **Scripts aan Wes leveren als losse zinnen onder elkaar, NIET in een tabel** (Wes 2026-11-06: zodat hij ze kan kopiëren naar zijn
 teleprompter/tekst bij het opnemen). Eerst het kale script in een codeblok (alleen de zinnen, één per regel, geen tijden of labels),
 daarna eventueel kort wat er in beeld komt.
 

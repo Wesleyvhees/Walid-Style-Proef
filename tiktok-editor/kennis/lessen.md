@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-17 · scripts sturen · "zorg dat alle scripts volledig leesbaar zijn op mijn scherm, nu moet ik naar rechts scrollen" → in codeblokken max ±30 tekens per regel (telefoonbreedte); lange zinnen afbreken op een natuurlijke adempauze, ▶ ACTIE-regels ook kort.
 - 2026-11-17 · blauwdruk dag 12 · "ik ben niet 2 keer gestopt met de sportschool, wel eens weken ertussen gelaten" → ervaringen van Wes letterlijk overnemen, niet parafraseren ("afgezegd" ≠ "gestopt"). Bij twijfel zijn eigen woorden uit wes-ervaringen.md gebruiken.
 - 2026-11-13 · losse video · "we gaan niet te veel blijven hangen over die 110 kilo, daar hebben we al filmpjes over" → 110 kilo/transformatie niet als hoofdonderwerp van nieuwe video's; hooguit een bijzin. Kies onderwerpen uit Wes' dagelijkse leven (bus, eten, werk).
 - 2026-11-13 · losse video · "tussendoor een random video, word beter in script schrijven, gewoon een goede video" → scriptbank `scripts/los.md`. Aandacht-recept: bewijs in frame 1 (foto/ding), genummerde lijst (kijkers wachten op het laatste punt), re-hook vlak voor het laatste punt ("de derde had ik het hardst nodig"), sterkste punt als laatste, deelbare citaatzin, eindigen met een vraag die in de hook loopt.
