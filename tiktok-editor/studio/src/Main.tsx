@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Audio, interpolate, Easing, Freeze, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { FingerCard } from "./components/Pointer";
 import { AllOrNothing, ContinueScreen, Escalate, GlassCrack, HabitGrid, ProgressBar, shakeAt, ThoughtBubble, ZigzagChart } from "./components/Fun";
 import { Counter, DarkPill, FreezeOverlay, KineticWord, NotesCard, SearchBar, ZoomCardTitle, zoomCardScale } from "./components/Dark";
 import type { Beat, Storyboard, StylePreset, TitleBeat, WordsBeat, Zoom } from "./types";
@@ -213,6 +214,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if ((b as any).type === "notes") return <NotesCard key={`c${i}`} beat={b} />;
         if ((b as any).type === "freeze") return <FreezeOverlay key={`c${i}`} beat={b} />;
         if ((b as any).type === "zoomcard") return <ZoomCardTitle key={`c${i}`} beat={b} />;
+        if ((b as any).type === "fingercard") return <FingerCard key={`c${i}`} beat={b} />;
         if ((b as any).type === "progress") return <ProgressBar key={`c${i}`} beat={b} />;
         if ((b as any).type === "zigzag") return <ZigzagChart key={`c${i}`} beat={b} />;
         if ((b as any).type === "habitgrid") return <HabitGrid key={`c${i}`} beat={b} />;
