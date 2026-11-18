@@ -42,31 +42,44 @@ Feiten: Schoenfeld & Aragon 2013 (het venster is ruim, uren); Morton e.a. 2018 m
 Pieken: Tegendraads (0 s) → Contrast 'uren, geen 30 minuten' (±4 s) → Getal 1,6 g/kg (±9 s) → antwoord voorbeelden (±13 s).  
 Montage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip met rijst / Kwark / Eieren.
 
-## Dag 25 · Stress verminderen · klaar
-Trefwoord: stress verminderen
+## Dag 25 · Snacken door geen plan · klaar (2026-11-18, met Wes' echte ervaring)
+Trefwoord: snacken
 ```
 HOOK (letterlijk)
-▶ ACTIE: je smijt je telefoon (of je tweede telefoon) vol meldingen op de stoel naast je en blaast hard uit.
-Stress? Dit kan binnen 5 minuten helpen.
-En het is geen vakantie.
+▶ ACTIE: graai snel een rijstwafel uit de zak en neem een hap
+Je snackt vaak niet
+door honger.
+Maar door dit.
 
 IN JE EIGEN WOORDEN
-• Bij stress grijp je vaak sneller naar snacks.
-• Dat is geen wilskracht: je lijf staat gewoon 'aan'.
-• [jouw ervaring, zie vraag]
+• Bij mij is het vaak
+  verveling.
+• Of ik heb mijn maaltijden
+  niet klaar.
+  Dan weet ik niet
+  wat ik ga eten.
+• Dus pak ik snel
+  iets tussendoor.
+▶ ACTIE: pak je telefoon, laat je notities/agenda zien
+• Onderzoek onder
+  40.000 mensen:
+  wie zijn eten plant,
+  eet vaak gezonder.
 
 ANTWOORD (letterlijk, laatste 3 s)
-▶ ACTIE: doe het voor: twee keer kort in door je neus, een keer lang uit door je mond
-Twee keer kort in door je neus, een keer lang uit.
-Vijf minuten. Want onthoud:
+Het is geen plan hebben.
+Plan vandaag je eten
+van morgen.
+▶ ACTIE: wijs in de lens
+En nu weet je het:
 ```
-In beeld: "Stress? [5 minuten]"  
-Frame 1: ONVERWACHT: je smijt je telefoon (of je tweede telefoon) vol meldingen op de stoel naast je en blaast hard uit.  
-Loop: "Want onthoud: stress? Dit kan binnen 5 minuten helpen."  
-Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag → na 28 dagen beter humeur; lange uitademing verlaagt de hartslag.
-Vraag aan Wes (A2): wanneer grijp(t) jij bij stress naar snacks? Eén zin of spraakmemo.  
-Gap: hook belooft 'dit' → antwoord (ademhaling) pas in de laatste 3 s.  
-Status: PROEF script-upgrade (wacht op akkoord Wes).
+In beeld: "Snacken = [geen honger?]"  
+Loop: "En nu weet je het: je snackt vaak niet door honger."  
+Feiten: Wes (2026-11-18): snackt vooral uit verveling of als zijn meal prep niet klaar is en hij niet weet wat hij gaat eten. Ducrot e.a. 2017 (Int J Behav Nutr Phys Act, NutriNet-Santé, ±40.000 Franse volwassenen): maaltijden plannen hangt samen met gezonder en gevarieerder eten.  
+Pieken: tegendraads 'niet door honger' (0 s) → ik-bewijs verveling (±3 s) → contrast geen plan (±6 s) → getal 40.000 (±10 s) → antwoord plannen (±14 s).  
+Beelden (Wes 2026-11-18: veel achtergrond- en pop-plaatjes): verveling = jij vóór een saaie bank/tv-avond · lege koelkast/lege bakjes (cutaway) · hand in een zak chips (cutaway) · meal prep bakjes in de koelkast (achtergrond) · agenda/boodschappenlijst (pop) · '40.000' teller.  
+Vervangt het stress-script (staat als reserve onderaan), want Wes herkent snacken door stress niet: bij hem is het verveling/geen plan.  
+Status: klaar.
 
 ## Dag 26 · Vezels · klaar
 Trefwoord: vezels
@@ -167,3 +180,31 @@ Loop: "Want onthoud: een gezonde dag doet weinig."
 Feiten: Lally e.a. 2010 (European Journal of Social Psychology): gemiddeld 66 dagen tot een gewoonte automatisch gaat (spreiding 18–254); '21 dagen' is een populaire mythe.
 Pieken: Tegendraads (0 s) → Getal 66 dagen (±4 s) → Contrast 'niet 21' (±6 s) → open eind 'pas het begin' (±11 s).  
 Montage: lijngrafiek die langzaam stijgt en afvlakt (gewoonte wordt automatisch).
+
+
+## Reserve · Stress verminderen (oude dag 25)
+Trefwoord: stress verminderen
+```
+HOOK (letterlijk)
+▶ ACTIE: je smijt je telefoon (of je tweede telefoon) vol meldingen op de stoel naast je en blaast hard uit.
+Stress? Dit kan binnen 5 minuten helpen.
+En het is geen vakantie.
+
+IN JE EIGEN WOORDEN
+• Bij stress grijp je vaak sneller naar snacks.
+• Dat is geen wilskracht: je lijf staat gewoon 'aan'.
+• [jouw ervaring, zie vraag]
+
+ANTWOORD (letterlijk, laatste 3 s)
+▶ ACTIE: doe het voor: twee keer kort in door je neus, een keer lang uit door je mond
+Twee keer kort in door je neus, een keer lang uit.
+Vijf minuten. Want onthoud:
+```
+In beeld: "Stress? [5 minuten]"  
+Frame 1: ONVERWACHT: je smijt je telefoon (of je tweede telefoon) vol meldingen op de stoel naast je en blaast hard uit.  
+Loop: "Want onthoud: stress? Dit kan binnen 5 minuten helpen."  
+Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighing' per dag → na 28 dagen beter humeur; lange uitademing verlaagt de hartslag.
+Vraag aan Wes (A2): wanneer grijp(t) jij bij stress naar snacks? Eén zin of spraakmemo.  
+Gap: hook belooft 'dit' → antwoord (ademhaling) pas in de laatste 3 s.  
+Status: PROEF script-upgrade (wacht op akkoord Wes).
+
