@@ -60,7 +60,7 @@ IN JE EIGEN WOORDEN
   wat ik ga eten.
 • Dus pak ik snel
   iets tussendoor.
-▶ ACTIE: pak je telefoon, laat je notities/agenda zien
+▶ ACTIE: wijs met je vinger schuin omhoog naast je hoofd (daar komt het onderzoek in 3D in beeld); houd je vinger ±1 s stil
 • Onderzoek onder
   40.000 mensen:
   wie zijn eten plant,
@@ -77,7 +77,7 @@ In beeld: "Snacken = [geen honger?]"
 Loop: "En nu weet je het: je snackt vaak niet door honger."  
 Feiten: Wes (2026-11-18): snackt vooral uit verveling of als zijn meal prep niet klaar is en hij niet weet wat hij gaat eten. Ducrot e.a. 2017 (Int J Behav Nutr Phys Act, NutriNet-Santé, ±40.000 Franse volwassenen): maaltijden plannen hangt samen met gezonder en gevarieerder eten.  
 Pieken: tegendraads 'niet door honger' (0 s) → ik-bewijs verveling (±3 s) → contrast geen plan (±6 s) → getal 40.000 (±10 s) → antwoord plannen (±14 s).  
-Beelden (Wes 2026-11-18: veel achtergrond- en pop-plaatjes): verveling = jij vóór een saaie bank/tv-avond · lege koelkast/lege bakjes (cutaway) · hand in een zak chips (cutaway) · meal prep bakjes in de koelkast (achtergrond) · agenda/boodschappenlijst (pop) · '40.000' teller.  
+Beelden (Wes 2026-11-18: veel achtergrond- en pop-plaatjes): verveling = jij vóór een saaie bank/tv-avond · lege koelkast/lege bakjes (cutaway) · hand in een zak chips (cutaway) · meal prep bakjes in de koelkast (achtergrond) · agenda/boodschappenlijst (pop) · '40.000' kaart die in 3D uit je vingertop klapt (nieuw effect, plek = waar je wijst).  
 Vervangt het stress-script (staat als reserve onderaan), want Wes herkent snacken door stress niet: bij hem is het verveling/geen plan.  
 Status: klaar.
 
