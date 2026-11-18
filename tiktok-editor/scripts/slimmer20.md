@@ -101,7 +101,13 @@ IN JE EIGEN WOORDEN
   vasten tegen gewoon
   minder eten.
   Bijna hetzelfde resultaat.
-• [jouw ervaring, zie vraag]
+• Ik deed het zelf,
+  samen met keto.
+  Ik at daardoor minder.
+• Nu eet ik meteen
+  's ochtends.
+  Daar presteer ik
+  veel beter op.
 
 ANTWOORD (letterlijk, laatste 3 s)
 Het is niet het vasten.
@@ -113,11 +119,10 @@ Dus ja:
 In beeld: "Vasten = [magisch?]"  
 Loop: "Dus ja: intermittent fasting werkt. Maar niet om wat je denkt."  
 Feiten: Semnani-Azad e.a. 2025, BMJ (PubMed 40533200): netwerk-meta-analyse van 99 RCT's, 6582 volwassenen. Alle vormen van intermittent fasting en gewone calorierestrictie lieten gewicht dalen t.o.v. vrij eten; tussen fasting en gewone calorierestrictie nauwelijks verschil (alleen om-de-dag-vasten ±1,3 kg meer, op korte termijn; bij ≥24 weken geen verschil). Bron gestuurd door Wes 2026-11-18.  
-Vraag aan Wes: doe jij aan intermittent fasting, of heb je het geprobeerd? Wat merkte je? Eén zin.  
 Pieken: tegendraads 'niet om wat je denkt' (0 s) → uitleg korter tijdvak = minder eten (±4 s) → getal 99 studies (±8 s) → ik-bewijs (±12 s) → antwoord (±15 s).  
 Beelden (veel achtergrond/pop): klok/horloge · leeg bord · stapel onderzoeken (3D-kaart uit vingertop) · weegschaal · twee borden naast elkaar.  
 Vervangt vezels (staat als reserve onderaan).  
-Status: klaar (wacht op ervaring Wes).
+Status: klaar.
 
 ## Dag 27 · Volgorde krachttraining · klaar
 Trefwoord: krachttraining
