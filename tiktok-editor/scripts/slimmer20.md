@@ -81,7 +81,7 @@ Beelden (Wes 2026-11-18: veel achtergrond- en pop-plaatjes): verveling = jij vó
 Vervangt het stress-script (staat als reserve onderaan), want Wes herkent snacken door stress niet: bij hem is het verveling/geen plan.  
 Status: klaar.
 
-## Dag 26 · Intermittent fasting · klaar (2026-11-18, bron van Wes)
+## Dag 26 · Intermittent fasting · opgenomen (bewerkt 2026-11-18, 26,6 s)
 Trefwoord: intermittent fasting
 ```
 HOOK (letterlijk)
