@@ -81,25 +81,43 @@ Beelden (Wes 2026-11-18: veel achtergrond- en pop-plaatjes): verveling = jij vó
 Vervangt het stress-script (staat als reserve onderaan), want Wes herkent snacken door stress niet: bij hem is het verveling/geen plan.  
 Status: klaar.
 
-## Dag 26 · Vezels · klaar
-Trefwoord: vezels
+## Dag 26 · Intermittent fasting · klaar (2026-11-18, bron van Wes)
+Trefwoord: intermittent fasting
 ```
-Na een uur alweer trek?
-Check eerst je vezels.
-Advies: 30 tot 40 gram per dag.
-Gemiddeld halen we er zo'n 20.
-Vezels vertragen je spijsvertering.
-Daardoor zit je vaak langer vol.
-Bonen door je pasta.
-Volkoren in plaats van wit.
-Herken je dit?
+HOOK (letterlijk)
+▶ ACTIE: tik twee keer op je horloge
+Intermittent fasting werkt.
+Maar niet om
+wat je denkt.
+
+IN JE EIGEN WOORDEN
+• Je eet in een korter
+  tijdvak.
+• Daardoor eet je
+  vaak gewoon minder.
+▶ ACTIE: wijs schuin omhoog naast je hoofd, vinger ±1 s stil (3D-kaart '99 studies')
+• 99 studies,
+  6500 mensen:
+  vasten tegen gewoon
+  minder eten.
+  Bijna hetzelfde resultaat.
+• [jouw ervaring, zie vraag]
+
+ANTWOORD (letterlijk, laatste 3 s)
+Het is niet het vasten.
+Het is minder eten.
+Kies wat jij volhoudt.
+▶ ACTIE: wijs in de lens
+Dus ja:
 ```
-In beeld: "Advies 40 gram, wij eten [20]"  
-Frame 1: je houdt een broodzak met het etiket 'vezels per 100 g' in beeld (bewijs-beeld).  
-Loop: "Herken je dit? Na een uur alweer trek?"  
-Feiten: Gezondheidsraad 2015 (30–40 g/dag); RIVM Voedselconsumptiepeiling 2012–2016 (volwassenen gemiddeld ±18–22 g).
-Pieken: herkenning (0 s) → Getal 30–40 g (±3 s) → Contrast 'wij halen 20' (±5 s) → Contrast volkoren vs wit (±13 s).  
-Montage: staafgrafiek 20 g vs 30–40 g; opstapelende labels Bonen / Volkoren / Groente.
+In beeld: "Vasten = [magisch?]"  
+Loop: "Dus ja: intermittent fasting werkt. Maar niet om wat je denkt."  
+Feiten: Semnani-Azad e.a. 2025, BMJ (PubMed 40533200): netwerk-meta-analyse van 99 RCT's, 6582 volwassenen. Alle vormen van intermittent fasting en gewone calorierestrictie lieten gewicht dalen t.o.v. vrij eten; tussen fasting en gewone calorierestrictie nauwelijks verschil (alleen om-de-dag-vasten ±1,3 kg meer, op korte termijn; bij ≥24 weken geen verschil). Bron gestuurd door Wes 2026-11-18.  
+Vraag aan Wes: doe jij aan intermittent fasting, of heb je het geprobeerd? Wat merkte je? Eén zin.  
+Pieken: tegendraads 'niet om wat je denkt' (0 s) → uitleg korter tijdvak = minder eten (±4 s) → getal 99 studies (±8 s) → ik-bewijs (±12 s) → antwoord (±15 s).  
+Beelden (veel achtergrond/pop): klok/horloge · leeg bord · stapel onderzoeken (3D-kaart uit vingertop) · weegschaal · twee borden naast elkaar.  
+Vervangt vezels (staat als reserve onderaan).  
+Status: klaar (wacht op ervaring Wes).
 
 ## Dag 27 · Volgorde krachttraining · klaar
 Trefwoord: krachttraining
@@ -207,4 +225,26 @@ Feiten: Balban e.a. 2023 (Stanford, Cell Reports Medicine): 5 min 'cyclic sighin
 Vraag aan Wes (A2): wanneer grijp(t) jij bij stress naar snacks? Eén zin of spraakmemo.  
 Gap: hook belooft 'dit' → antwoord (ademhaling) pas in de laatste 3 s.  
 Status: PROEF script-upgrade (wacht op akkoord Wes).
+
+
+
+## Reserve · Vezels (oude dag 26)
+Trefwoord: vezels
+```
+Na een uur alweer trek?
+Check eerst je vezels.
+Advies: 30 tot 40 gram per dag.
+Gemiddeld halen we er zo'n 20.
+Vezels vertragen je spijsvertering.
+Daardoor zit je vaak langer vol.
+Bonen door je pasta.
+Volkoren in plaats van wit.
+Herken je dit?
+```
+In beeld: "Advies 40 gram, wij eten [20]"  
+Frame 1: je houdt een broodzak met het etiket 'vezels per 100 g' in beeld (bewijs-beeld).  
+Loop: "Herken je dit? Na een uur alweer trek?"  
+Feiten: Gezondheidsraad 2015 (30–40 g/dag); RIVM Voedselconsumptiepeiling 2012–2016 (volwassenen gemiddeld ±18–22 g).
+Pieken: herkenning (0 s) → Getal 30–40 g (±3 s) → Contrast 'wij halen 20' (±5 s) → Contrast volkoren vs wit (±13 s).  
+Montage: staafgrafiek 20 g vs 30–40 g; opstapelende labels Bonen / Volkoren / Groente.
 
