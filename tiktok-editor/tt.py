@@ -1126,6 +1126,41 @@ def cmd_mini(a):
         print("✓", dest)
 
 
+def face_at(lay, t):
+    """Gezichtsvak (x, y, w, h) uit layout.json op tijd t, of None."""
+    if not lay or not lay.get("faces"):
+        return None
+    f = lay["faces"][min(len(lay["faces"]) - 1, max(0, int(round(t * lay.get("fps", 4)))))]
+    return f if f and len(f) == 4 and f[2] > 0 else None
+
+
+def refine_alpha(m, gray, face=None):
+    """Uitknip-masker strak maken (Wes 2026-11-18: "greenscreen moet echt veel beter"):
+    halfdoorzichtige 'spookrand' (hoofdsteun/stoel achter je) weg, randen langs het echte beeld (guided filter),
+    en boven de ogen alleen binnen de vorm van hoofd + muts."""
+    import cv2
+    import numpy as np
+    h, w = m.shape
+    a = np.clip((m - 0.62) / 0.2, 0, 1)
+    lim = cv2.dilate((a > 0.05).astype(np.uint8), np.ones((5, 5), np.uint8)).astype(np.float32)
+    def gf(I, p, r, eps):
+        mI, mp = cv2.boxFilter(I, -1, (r, r)), cv2.boxFilter(p, -1, (r, r))
+        A = (cv2.boxFilter(I * p, -1, (r, r)) - mI * mp) / (cv2.boxFilter(I * I, -1, (r, r)) - mI * mI + eps)
+        B = mp - A * mI
+        return cv2.boxFilter(A, -1, (r, r)) * I + cv2.boxFilter(B, -1, (r, r))
+    sm = (w // 2, h // 2)
+    g = gf(cv2.resize(gray, sm, interpolation=cv2.INTER_AREA), cv2.resize(a, sm, interpolation=cv2.INTER_AREA), 7, 2e-4)
+    a = np.clip(cv2.resize(g, (w, h), interpolation=cv2.INTER_LINEAR), 0, 1) * lim
+    if face:
+        x, y, fw, fh = face
+        Y, X = np.mgrid[0:h, 0:w].astype(np.float32)
+        d = ((X - (x + fw / 2)) / (fw * 0.56)) ** 2 + ((Y - (y + fh * 0.12)) / (fh * 0.78)) ** 2
+        ell = np.clip((1.08 - d) / 0.16, 0, 1)
+        band = np.clip((y + fh * 0.45 - Y) / 30, 0, 1)
+        a = a * (1 - band * (1 - ell))
+    return cv2.GaussianBlur(a, (0, 0), 0.7)
+
+
 def cmd_person(a):
     import numpy as np
     from PIL import Image, ImageFilter
@@ -1142,21 +1177,24 @@ def cmd_person(a):
     fdir = os.path.join(a.project, "frames_tmp")
     shutil.rmtree(fdir, ignore_errors=True)
     os.makedirs(fdir)
-    run(["ffmpeg", "-v", "error", "-i", video, "-vf", "scale=540:960", os.path.join(fdir, "%05d.png")])
+    run(["ffmpeg", "-v", "error", "-i", video, os.path.join(fdir, "%05d.png")])  # volle resolutie (scherpere randen)
     session = new_session(a.model)
-    black = Image.new("L", (540, 960), 0)
+    lp = os.path.join(a.project, "layout.json")
+    lay = json.load(open(lp)) if os.path.exists(lp) else None
+    black = Image.new("L", (W, H), 0)
     prev = None
     needset = set(need)
     for i in range(n_frames):
         out = os.path.join(mdir, f"{i:05d}.png")
         src = os.path.join(fdir, f"{i + 1:05d}.png")
         if i in needset and os.path.exists(src):
-            m = np.asarray(remove(Image.open(src).convert("RGB"), session=session, only_mask=True), dtype=np.float32)
+            rgb = Image.open(src).convert("RGB")
+            m = np.asarray(remove(rgb, session=session, only_mask=True), dtype=np.float32) / 255
+            m = refine_alpha(m, np.asarray(rgb.convert("L"), dtype=np.float32) / 255, face_at(lay, i / FPS))
             if prev is not None and (i - 1) in needset:
-                m = 0.65 * m + 0.35 * prev  # rustiger randen tussen frames
+                m = 0.7 * m + 0.3 * prev  # rustiger randen tussen frames
             prev = m
-            img = Image.fromarray(np.clip(m, 0, 255).astype("uint8")).filter(ImageFilter.GaussianBlur(0.8))
-            img.save(out)
+            Image.fromarray(np.clip(m * 255, 0, 255).astype("uint8")).save(out)
             if len(need) > 20 and need.index(i) % 30 == 0:
                 print(f"  {need.index(i)}/{len(need)}", flush=True)
         else:
@@ -1192,7 +1230,7 @@ def cmd_person(a):
     run(["ffmpeg", "-y", "-v", "error", "-i", video, "-framerate", str(FPS), "-i", os.path.join(mdir, "%05d.png"),
          "-filter_complex", f"[1:v]scale={W}:{H}:flags=bicubic,format=gray[m];[0:v][m]alphamerge,format=yuva420p[v]",
          "-map", "[v]", "-an", "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-auto-alt-ref", "0",
-         "-b:v", "0", "-crf", "28", "-deadline", "realtime", "-cpu-used", "8", "-row-mt", "1", out])
+         "-b:v", "0", "-crf", "16", "-deadline", "good", "-cpu-used", "4", "-row-mt", "1", out])
     sb["person"] = "person.webm"
     json.dump(sb, open(os.path.join(a.project, "storyboard.json"), "w"), ensure_ascii=False, indent=1)
     print("Klaar:", out)

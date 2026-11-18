@@ -8,13 +8,14 @@ import { enter, exit } from "../anim";
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // Langzame Ken Burns-beweging zodat een stilstaand beeld leeft.
-const KenBurns: React.FC<{ src: string; start: number; end: number; from?: number; to?: number; dim?: number }> = ({
+const KenBurns: React.FC<{ src: string; start: number; end: number; from?: number; to?: number; dim?: number; blur?: number }> = ({
   src,
   start,
   end,
   from = 1.12,
   to = 1.02,
   dim = 0,
+  blur = 0,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -25,7 +26,7 @@ const KenBurns: React.FC<{ src: string; start: number; end: number; from?: numbe
     <AbsoluteFill style={{ overflow: "hidden", background: "#000" }}>
       <Img
         src={staticFile(`p/${src}`)}
-        style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${z}) translateX(${dx}px)` }}
+        style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${z * (blur ? 1.04 : 1)}) translateX(${dx}px)`, filter: blur ? `blur(${blur}px)` : undefined }}
       />
       {dim ? <AbsoluteFill style={{ background: `rgba(0,0,0,${dim})` }} /> : null}
     </AbsoluteFill>
@@ -53,7 +54,8 @@ export const SceneLayer: React.FC<{
   return (
     <AbsoluteFill style={{ opacity: outP }}>
       <AbsoluteFill>
-        <KenBurns src={beat.src} start={beat.start} end={beat.end} dim={beat.dim ?? 0.12} />
+        <KenBurns src={beat.src} start={beat.start} end={beat.end} dim={beat.dim ?? 0.12} blur={mode === "cutout" ? ((beat as any).bgBlur ?? 3) : 0} />
+        {mode === "cutout" ? <AbsoluteFill style={{ background: "radial-gradient(ellipse at 50% 75%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.45) 100%)" }} /> : null}
       </AbsoluteFill>
       {mode === "cutout" ? (
         <AbsoluteFill style={{ transform: `scale(${sc})`, transformOrigin: origin }}>
@@ -65,7 +67,10 @@ export const SceneLayer: React.FC<{
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              filter: `${filter} drop-shadow(0 0 3px rgba(255,255,255,0.9)) drop-shadow(0 26px 40px rgba(0,0,0,0.55))`,
+              // realistisch (Wes 2026-11-18): geen witte stickerrand meer, wel zachte schaduw op de achtergrond
+              filter: (beat as any).outline
+                ? `${filter} drop-shadow(0 0 3px rgba(255,255,255,0.9)) drop-shadow(0 26px 40px rgba(0,0,0,0.55))`
+                : `${filter} contrast(1.04) drop-shadow(0 0 1.5px rgba(0,0,0,0.35)) drop-shadow(-14px 22px 34px rgba(0,0,0,0.5))`,
             }}
           />
         </AbsoluteFill>
