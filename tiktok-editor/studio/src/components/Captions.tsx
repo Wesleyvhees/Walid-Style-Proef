@@ -11,9 +11,11 @@ const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9à-ÿ]/g, "");
 const clean = (w: string) =>
   w
     .replace(/^[-–]+/, "")
-    .replace(/(\d)[,.](\d)/g, "$1\u0001$2") // komma/punt ín een getal laten staan (1,6 gram)
+    .replace(/(\d),(\d)/g, "$1\u0001$2") // komma ín een getal laten staan (1,6 gram)
+    .replace(/(\d)\.(\d{3})/g, "$1\u0002$2") // duizendtal-punt laten staan (40.000)
     .replace(/[,.;:…"“”„*=×–—]+/g, "")
     .replace(/\u0001/g, ",")
+    .replace(/\u0002/g, ".")
     .trim();
 
 export const chunkWords = (words: Word[], maxChars: number, maxWords = 3): Chunk[] => {
