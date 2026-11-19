@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-19 · script wandelen · "volgens mij klopt 6 kilo niet" → klopt: ik rekende met bruto verbranding. Bij beweging altijd NETTO rekenen (MET − 1 rustverbranding), afronden naar beneden en de voorwaarde erbij ("als je verder hetzelfde eet"). Wandelen 30 min/dag ≈ 100 kcal extra ≈ 4 kilo vet per jaar.
 - 2026-11-19 · cover Slimmer dag 25 · "'Snacken is geen honger' is echt een slechte titel" → covertitels als nieuwsgierigheids-vraag of belofte in gewone spreektaal ("Waarom je blijft snacken", "Hierom pak je steeds een snack"), geen = -tekens of ontkenningen; altijd 3 opties sturen met advies.
 - 2026-11-19 · Slimmer dag 25 · "haal dat gedeelte met die wind eruit, ik spreek het opnieuw in" → voice-over per zinsdeel op de originele woordtijden gelegd (VOICE_AF + licht afftdn, atempo per blok 0,9–1,55, pauzes uit de nieuwe opname eruit, volume gelijk aan het stuk ervoor, 30 ms overvloei). Controle: opnieuw transcriberen en woordtijden vergelijken, doel < 0,2 s verschil. Tip voor Wes: spreek in hetzelfde tempo als in de video, zonder pauzes tussen de zinsdelen.
 - 2026-11-19 · Slimmer dag 25 · wind "nog steeds ruk", Wes wil niet opnieuw inspreken ("bewerk hem gewoon goed") → extra: `agate` (zachter tussen woorden, daar hoor je wind het meest) op het windstuk; rest volgens advies uit het keuzemenu. Bij buiten filmen: tip microfoon afschermen/rug naar de wind.

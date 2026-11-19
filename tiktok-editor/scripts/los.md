@@ -59,11 +59,11 @@ En bijna niemand doet het.
 30 minuten wandelen
 per dag.
 Dat is zo'n
-150 calorieën.
+100 calorieën extra.
 ▶ ACTIE: wijs schuin omhoog,
 vinger ±1 s stil
 Keer 365 dagen.
-Tot 6 kilo vet per jaar.
+Zo'n 4 kilo vet per jaar.
 Als je verder
 hetzelfde eet.
 
@@ -81,8 +81,8 @@ gaan lopen.
 ▶ ACTIE: wijs in de lens
 Dus onthoud:
 ```
-In beeld: hook "Makkelijkste manier om [af te vallen]" · 3D-kaart uit vingertop: 150 kcal × 365 = 54.750 kcal ≈ 7 kg (7.700 kcal per kilo vet) → "tot 6 kilo" · achtergrond: park/bos-pad (cutout) · stappenteller pop.
+In beeld: hook "Makkelijkste manier om [af te vallen]" · 3D-kaart uit vingertop: 100 kcal × 365 = 36.500 kcal ≈ 4,7 kg (7.700 kcal per kilo vet) → "zo'n 4 kilo" · achtergrond: park/bos-pad (cutout) · stappenteller pop.
 Loop: "Dus onthoud: dit is de makkelijkste manier om af te vallen."
-Pieken: deur dicht + lopen + belofte (0 s) → tegendraads 'bijna niemand doet het' (±2 s) → getal 150 kcal (±5 s) → rekensom 6 kilo (±8 s) → ik-bewijs (±11 s) → antwoord (±15 s).
-Feiten: wandelen 5 km/u bij ±80 kg ≈ 3,5 MET ≈ 140–150 kcal per 30 min (Compendium of Physical Activities, Ainsworth e.a. 2011); 1 kg lichaamsvet ≈ 7.700 kcal; 150 × 365 = 54.750 kcal ≈ 7 kg bruto → "tot 6 kilo", alleen als je verder hetzelfde eet (in de praktijk eet je vaak iets meer).
+Pieken: deur dicht + lopen + belofte (0 s) → tegendraads 'bijna niemand doet het' (±2 s) → getal 100 kcal extra (±5 s) → rekensom 4 kilo (±8 s) → ik-bewijs (±11 s) → antwoord (±15 s).
+Feiten (nagerekend 2026-11-19, Wes: "6 kilo klopt niet"): wandelen 5 km/u ≈ 3,5 MET (Compendium of Physical Activities, Ainsworth e.a. 2011). Bij 70–80 kg is dat 120–140 kcal per 30 min, maar je verbrandt in rust ook ±1 MET, dus EXTRA is ±90–100 kcal. 100 × 365 = 36.500 kcal; 1 kg vet ≈ 7.700 kcal → ±4,7 kg op papier. In de praktijk minder (lichaam past zich aan, je eet vaak iets meer) → "zo'n 4 kilo", altijd met "als je verder hetzelfde eet". De oude 6 kilo rekende met bruto verbranding.
 Wes (2026-11-19): dacht eerst dat hij moest hardlopen; ging van 5.000 naar 10.000, 12.000 en nu 20.000 stappen per dag; kan meer eten, minder honger; heeft hem veel geholpen van 110 naar 75 kg.
