@@ -45,3 +45,38 @@ In beeld (dubbele hook): "Meer calorieën dan [brood]?" · impact/counter: 380 v
 Loop: "Dus vergeet niet: rijstwafels zijn geen dieetvoer."  
 Pieken: krak + tegendraads (0 s) → getal per gram (±2 s) → herkenning 'nog een, en nog een' (±7 s) → re-hook 'het geheim zit in wat erop gaat' (±11 s) → antwoord eiwit (±13 s).  
 Feiten: NEVO/etiketten: rijstwafel ±380–390 kcal per 100 g (±30 kcal per stuk), volkorenbrood ±240 kcal per 100 g (±85 kcal per boterham); weinig vezels in rijstwafels; eiwit verhoogt verzadiging (Leidy e.a. 2015, review). Per stuk is een rijstwafel wél minder dan een boterham: zeg daarom 'per gram'.
+
+## Los 3 · Makkelijkste manier om af te vallen (wandelen) · klaar (2026-11-19, herhaling van Wes' topper "30 min lopen", 97 likes)
+Trefwoord: wandelen afvallen
+```
+▶ ACTIE: stap uit de bus,
+sla de deur dicht
+en begin te lopen
+Dit is de makkelijkste
+manier om af te vallen.
+En bijna niemand doet het.
+
+30 minuten wandelen
+per dag.
+Dat is zo'n
+150 calorieën.
+▶ ACTIE: wijs schuin omhoog,
+vinger ±1 s stil
+Keer 365 dagen.
+Tot 6 kilo vet per jaar.
+Als je verder
+hetzelfde eet.
+[jouw ervaring]
+
+Je hoeft niet
+harder te trainen.
+Je moet gewoon
+gaan lopen.
+▶ ACTIE: wijs in de lens
+Dus onthoud:
+```
+In beeld: hook "Makkelijkste manier om [af te vallen]" · 3D-kaart uit vingertop: 150 kcal × 365 = 54.750 kcal ≈ 7 kg (7.700 kcal per kilo vet) → "tot 6 kilo" · achtergrond: park/bos-pad (cutout) · stappenteller pop.
+Loop: "Dus onthoud: dit is de makkelijkste manier om af te vallen."
+Pieken: deur dicht + lopen + belofte (0 s) → tegendraads 'bijna niemand doet het' (±2 s) → getal 150 kcal (±5 s) → rekensom 6 kilo (±8 s) → ik-bewijs (±11 s) → antwoord (±15 s).
+Feiten: wandelen 5 km/u bij ±80 kg ≈ 3,5 MET ≈ 140–150 kcal per 30 min (Compendium of Physical Activities, Ainsworth e.a. 2011); 1 kg lichaamsvet ≈ 7.700 kcal; 150 × 365 = 54.750 kcal ≈ 7 kg bruto → "tot 6 kilo", alleen als je verder hetzelfde eet (in de praktijk eet je vaak iets meer).
+Vraag aan Wes: heeft wandelen jou geholpen van 110 naar 75 kilo? Hoeveel liep je? Eén zin (alleen als het klopt).
