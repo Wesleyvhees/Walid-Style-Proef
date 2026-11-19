@@ -157,7 +157,7 @@ Geen excuses.
 ▶ ACTIE: wijs in de lens
 Want nu is het zo:
 ```
-In beeld: hook "Alles in [een week]?" · impact-woorden: SMOES / 5.000 → 20.000 (oplopend) / MAANDEN / ZONDER DE WEG / GEEN EXCUSES
+In beeld: hook "Alles in [een week]?" · impact-woorden: SMOES / 5.000 → 20.000 (oplopend) / MAANDEN / ZONDER DE WEG / GEEN EXCUSES · bewijs op "Nu 20.000": Garmin-screenshot popt op (gemiddeld 19.687 per dag, 4 weken)
 Loop: "Want nu is het zo: je wilt alles in een week. En daarom sta je nog steeds op nul."
 Pieken: sleutels + harde stelling (0 s) → maandag/vrijdag (±3 s) → klap 'dat is een smoes' (±5 s) → ik-bewijs 5.000 → 20.000 (±7–10 s) → confrontatie 'zonder de weg' (±12 s) → opdracht (±14 s).
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md: 5.000 → 10.000 → 12.000 → 20.000 stappen in maanden, "stap voor stap"). 'Op nul' = serienaam, geen feitelijke claim.
