@@ -66,7 +66,13 @@ Keer 365 dagen.
 Tot 6 kilo vet per jaar.
 Als je verder
 hetzelfde eet.
-[jouw ervaring]
+
+Ik dacht eerst
+dat ik moest hardlopen.
+Nu loop ik
+20.000 stappen per dag.
+Ik kan meer eten
+en heb minder honger.
 
 Je hoeft niet
 harder te trainen.
@@ -79,4 +85,4 @@ In beeld: hook "Makkelijkste manier om [af te vallen]" · 3D-kaart uit vingertop
 Loop: "Dus onthoud: dit is de makkelijkste manier om af te vallen."
 Pieken: deur dicht + lopen + belofte (0 s) → tegendraads 'bijna niemand doet het' (±2 s) → getal 150 kcal (±5 s) → rekensom 6 kilo (±8 s) → ik-bewijs (±11 s) → antwoord (±15 s).
 Feiten: wandelen 5 km/u bij ±80 kg ≈ 3,5 MET ≈ 140–150 kcal per 30 min (Compendium of Physical Activities, Ainsworth e.a. 2011); 1 kg lichaamsvet ≈ 7.700 kcal; 150 × 365 = 54.750 kcal ≈ 7 kg bruto → "tot 6 kilo", alleen als je verder hetzelfde eet (in de praktijk eet je vaak iets meer).
-Vraag aan Wes: heeft wandelen jou geholpen van 110 naar 75 kilo? Hoeveel liep je? Eén zin (alleen als het klopt).
+Wes (2026-11-19): dacht eerst dat hij moest hardlopen; ging van 5.000 naar 10.000, 12.000 en nu 20.000 stappen per dag; kan meer eten, minder honger; heeft hem veel geholpen van 110 naar 75 kg.
