@@ -174,7 +174,7 @@ Werkwijze:
    - **Trefwoorden eerst bepalen**: 1 **hoofdtrefwoord** (waar de video over gaat, zoals mensen het zoeken, bv. "motivatie om te sporten"),
      3–4 **secundaire** trefwoorden en 3–4 **long-tail** zoekvragen ("hoe blijf je gemotiveerd om te sporten").
      Nederlands, zoals mensen het in TikTok-zoeken typen; liefst woorden die Wes ook uitspreekt (ondertitels tellen mee).
-   - **Beschrijving**: hoofdtrefwoord in de **eerste zin** (die zie je in zoekresultaten), secundaire trefwoorden natuurlijk in de
+   - **Beschrijving KORT (Wes 2026-11-19)**: max 2 korte zinnen + vraag (±150 tekens). Oud: hoofdtrefwoord in de **eerste zin** (die zie je in zoekresultaten), secundaire trefwoorden natuurlijk in de
      volgende 2–3 zinnen, serie + dag, en een vraag aan de kijker (reacties). Emoji spaarzaam. Geen merknamen tenzij Wes ze noemt.
    - **Altijd twee aparte kopjes (Wes 2026-11-09: "verborgen woorden ook altijd geven")**: **Trefwoorden** (hoofd + secundair) én
      **Verborgen woorden** (8–12: varianten, meervoud, spreektaal, schrijffouten, long-tail zoekvragen), allebei elk woord in een eigen codeblok, en daaronder per lijst nog één codeblok met alle woorden onder elkaar
