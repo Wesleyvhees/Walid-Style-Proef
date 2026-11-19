@@ -1,0 +1,41 @@
+{
+ "project": "slim25",
+ "titel": "Slimmer 2.0 dag 25 · snacken zonder plan",
+ "intro": "Wind weggehaald in het stuk 0:14–0:21 (alleen daar, de rest van je stem blijft hetzelfde). Je rijstwafel-actie aan het begin en het wijzen blijven heel. Tekst: 'Onderzoek' (gehoord: om te zoeken), 'wie zijn eten plant'. Lengte 19,4 s (al 10% sneller). Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "wind", "titel": "Wind (0:14–0:21)", "keuze": "een", "opties": [
+   {"id": "weg", "code": "A", "label": "Wind weg", "uitleg": "Lage dreun eruit + ruisfilter, alleen in dat stuk; volume gelijk getrokken", "advies": true},
+   {"id": "zo", "code": "A", "label": "Origineel laten", "uitleg": "Met wind", "advies": false}
+  ]},
+  {"id": "lengte", "titel": "Lengte (nu 19,4 s)", "keuze": "een", "opties": [
+   {"id": "zo", "code": "K2", "label": "Zo laten", "uitleg": "Past binnen 15–20 s", "advies": true},
+   {"id": "s5", "code": "K1", "label": "5% sneller", "uitleg": "±18,5 s", "advies": false}
+  ]},
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop boven je hoofd op 'en nu weet jij het'", "uitleg": "Terwijl je naar de lens wijst; loopt door in de hook", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "'Snacken = geen honger?'", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:03", "tekst": "[rijstwafels] Je snackt vaak niet door honger, maar door dit.", "still": "menu/k_1.5.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Snacken = [geen honger?]'", "uitleg": "Pill met de volledige serietitel", "advies": true},
+   {"id": "b", "code": "H5", "label": "Hook 'Snacken uit [verveling?]'", "uitleg": "Verklapt meer", "advies": false}
+  ]},
+  {"id": "m2", "tijd": "0:04", "tot": "0:07", "tekst": "Bij mij is het namelijk vaak verveling, of ik heb mijn maaltijden niet voorbereid.", "still": "menu/k_6.8.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "B", "label": "Jij vóór een lege woonkamer op 'verveling'", "uitleg": "Uitgeknipt met de nieuwe, strakke uitsnede", "advies": true},
+   {"id": "b", "code": "B", "label": "Bijna lege koelkast schermvullend", "uitleg": "Op 'maaltijden niet voorbereid'", "advies": true}
+  ]},
+  {"id": "m3", "tijd": "0:08", "tot": "0:11", "tekst": "Dan weet ik ook niet wat ik ga eten, dus ik pak snel gewoon iets tussendoor.", "still": "menu/k_10.4.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Plaatje chips popt op", "uitleg": "Op 'snel iets tussendoor'", "advies": true},
+   {"id": "b", "code": "-", "label": "Niks", "uitleg": "Rustig", "advies": false}
+  ]},
+  {"id": "m4", "tijd": "0:11", "tot": "0:15", "tekst": "[wijzen] Onderzoek onder 40.000 mensen: wie zijn eten plant, eet vaak gezonder.", "still": "menu/k_14.9.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "N", "label": "3D-kaart uit je vingertop", "uitleg": "Zoals dag 26: 40.000 mensen / wie zijn eten plant / eet vaak gezonder, bron eronder", "advies": true},
+   {"id": "b", "code": "B", "label": "Zoekbalk (oude stijl)", "uitleg": "Zonder 3D", "advies": false}
+  ]},
+  {"id": "m5", "tijd": "0:16", "tot": "0:18", "tekst": "Plan vandaag je eten voor morgen.", "still": "menu/k_17.0.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Jij vóór meal prep-bakjes", "uitleg": "Het antwoord in beeld", "advies": true},
+   {"id": "b", "code": "B", "label": "Groot woord PLAN", "uitleg": "Kinetic", "advies": false}
+  ]}
+ ]
+}

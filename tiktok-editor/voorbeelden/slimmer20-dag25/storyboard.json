@@ -1,0 +1,130 @@
+{
+ "title": "Slimmer 2.0 dag 25",
+ "template": "slimmer20",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "snackt",
+   "honger",
+   "verveling",
+   "maaltijden",
+   "voorbereid",
+   "tussendoor",
+   "onderzoek",
+   "40.000",
+   "plant",
+   "gezonder",
+   "plan",
+   "morgen"
+  ],
+  "maxChars": 15,
+  "marker": true
+ },
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 2.6,
+   "text": "Snacken = [geen honger?]",
+   "sub": "Slimmer eten, drinken en trainen 2.0 dag 25",
+   "size": 84,
+   "sfx": "whoosh"
+  },
+  {
+   "type": "scene",
+   "mode": "cutout",
+   "start": 4.85,
+   "end": 6.3,
+   "query": "bored on couch television",
+   "scale": 0.85,
+   "dim": 0.2,
+   "sfx": "whoosh",
+   "note": "Verveling",
+   "src": "assets/kandidaten/bored_on_couch_television/4.jpg",
+   "pick": 4
+  },
+  {
+   "type": "cutaway",
+   "start": 6.4,
+   "end": 7.25,
+   "query": "empty fridge",
+   "label": "niks klaar",
+   "sfx": "whoosh",
+   "note": "Maaltijden niet voorbereid",
+   "src": "assets/kandidaten/empty_fridge/2.jpg",
+   "pick": 2
+  },
+  {
+   "type": "image",
+   "start": 9.85,
+   "end": 10.95,
+   "query": "potato chips bag",
+   "label": "snel iets",
+   "x": 290,
+   "y": 190,
+   "w": 440,
+   "rotate": -6,
+   "sfx": "pop",
+   "note": "Snel iets tussendoor",
+   "src": "assets/kandidaten/potato_chips_bag/4.jpg",
+   "pick": 4
+  },
+  {
+   "type": "fingercard",
+   "start": 11.25,
+   "end": 15.35,
+   "x": 930,
+   "y": 580,
+   "w": 880,
+   "h": 470,
+   "cardX": 540,
+   "cardY": 150,
+   "kicker": "ONDERZOEK",
+   "source": "Ducrot e.a. 2017 · NutriNet-Santé",
+   "lines": [
+    {
+     "text": "40.000 mensen",
+     "at": 12.0,
+     "size": 96,
+     "color": "#A3B462"
+    },
+    {
+     "text": "wie zijn eten plant",
+     "at": 13.18,
+     "size": 66
+    },
+    {
+     "text": "eet vaak gezonder",
+     "at": 14.57,
+     "size": 66,
+     "color": "#A3B462"
+    }
+   ],
+   "sfx": "whoosh",
+   "note": "3D-kaart uit je vingertop"
+  },
+  {
+   "type": "scene",
+   "mode": "cutout",
+   "start": 16.2,
+   "end": 17.95,
+   "query": "meal prep containers",
+   "scale": 0.85,
+   "dim": 0.2,
+   "sfx": "whoosh",
+   "note": "Plan je eten",
+   "src": "assets/kandidaten/meal_prep_containers/0.jpg",
+   "pick": 0
+  },
+  {
+   "type": "volgstempel",
+   "start": 18.2,
+   "end": 19.4,
+   "y": 330,
+   "x": 450,
+   "width": 560,
+   "sfx": "boom"
+  }
+ ],
+ "person": "person.webm"
+}

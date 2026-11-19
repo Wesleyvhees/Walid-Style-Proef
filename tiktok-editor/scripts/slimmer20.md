@@ -42,7 +42,7 @@ Feiten: Schoenfeld & Aragon 2013 (het venster is ruim, uren); Morton e.a. 2018 m
 Pieken: Tegendraads (0 s) → Contrast 'uren, geen 30 minuten' (±4 s) → Getal 1,6 g/kg (±9 s) → antwoord voorbeelden (±13 s).  
 Montage: split-screen met MYTHE-stempel en klok bovenin; opstapelende labels Kip met rijst / Kwark / Eieren.
 
-## Dag 25 · Snacken door geen plan · klaar (2026-11-18, met Wes' echte ervaring)
+## Dag 25 · Snacken door geen plan · opgenomen (bewerkt 2026-11-19, 19,5 s)
 Trefwoord: snacken
 ```
 HOOK (letterlijk)
