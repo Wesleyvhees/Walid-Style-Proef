@@ -120,7 +120,7 @@ Loop: "Dus ook als je denkt: ik heb een paar dagen overgeslagen."
 Pieken: gordel+motor + bekentenis (0 s) → tegendraads 'niet het probleem' (±2 s) → het echte gevaar (±5 s) → dagen → maanden (±8 s) → opdracht vandaag (±11 s).  
 Feiten: Wes heeft echt een paar dagen niet opgenomen (2026-11-17). Lally e.a. 2010: een keer missen schaadt het vormen van een gewoonte nauwelijks.
 
-## Dag 18 (nieuw) · Alles in een week · klaar (2026-11-19, Wes' echte stappen-verhaal)
+## Dag 18 (nieuw) · Alles in een week · klaar (2026-11-19, v2 harder op verzoek van Wes; Wes' echte stappen-verhaal)
 Trefwoord: motivatie om vol te houden
 ```
 HOOK (letterlijk)
@@ -128,32 +128,36 @@ HOOK (letterlijk)
 hard op het dashboard
 Je wilt alles
 in een week.
-Daarom hou je
-het niet vol.
+En daarom sta je
+nog steeds op nul.
 
 IN JE EIGEN WOORDEN
 • Elke maandag
   een nieuw plan.
   Vrijdag weer gestopt.
-• En dan ben je verbaasd?
+• Dat is geen plan.
+  Dat is een smoes.
 ▶ ACTIE: steek een vinger op
   bij elke stap
 • Ik begon met
-  5.000 stappen per dag.
-  Toen 10.000.
-  Toen 12.000.
+  5.000 stappen.
+  10.000.
+  12.000.
   Nu 20.000.
-• Niet in een week.
-  Stap voor stap.
+• Geen week.
+  Maanden.
+• Jij wilt het resultaat.
+  Zonder de weg.
 
 ANTWOORD (letterlijk, laatste 3 s)
-Doe vandaag een stap
-meer dan gisteren.
-Meer niet.
+Een stap meer
+dan gisteren.
+Elke dag.
+Geen excuses.
 ▶ ACTIE: wijs in de lens
-Want weet je wat het is?
+Want nu is het zo:
 ```
-In beeld: hook "Alles in [een week]?" · impact-woorden: ELKE MAANDAG / VERBAASD? / 5.000 → 20.000 (oplopend) / STAP VOOR STAP / EEN STAP MEER
-Loop: "Want weet je wat het is? Je wilt alles in een week."
-Pieken: sleutels + confrontatie (0 s) → herkenning maandag/vrijdag (±3 s) → harde vraag 'en dan ben je verbaasd?' (±5 s) → ik-bewijs 5.000 → 20.000 (±7–10 s) → antwoord een stap meer (±13 s).
-Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, wandelen 2026-11-19: 5.000 → 10.000 → 12.000 → 20.000 stappen, "stap voor stap" uit 2026-11-13). Geen getallen met bron nodig (motivatie).
+In beeld: hook "Alles in [een week]?" · impact-woorden: SMOES / 5.000 → 20.000 (oplopend) / MAANDEN / ZONDER DE WEG / GEEN EXCUSES
+Loop: "Want nu is het zo: je wilt alles in een week. En daarom sta je nog steeds op nul."
+Pieken: sleutels + harde stelling (0 s) → maandag/vrijdag (±3 s) → klap 'dat is een smoes' (±5 s) → ik-bewijs 5.000 → 20.000 (±7–10 s) → confrontatie 'zonder de weg' (±12 s) → opdracht (±14 s).
+Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md: 5.000 → 10.000 → 12.000 → 20.000 stappen in maanden, "stap voor stap"). 'Op nul' = serienaam, geen feitelijke claim.

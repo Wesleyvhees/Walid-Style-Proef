@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-19 · Van nul naar grip dag 18 · "mag nog iets harder" → v2: kortere klappen, oordeel uitspreken ("Dat is geen plan. Dat is een smoes."), geen zachte vragen, opdracht als bevel ("Elke dag. Geen excuses."). Dit is nu het hardheidsniveau voor de serie.
 - 2026-11-19 · beschrijving · "de beschrijvingen voortaan wat korter maken" → max 2 korte zinnen + vraag aan de kijker (±150 tekens): zin 1 met hoofdtrefwoord, zin 2 serie + dag (of de bron/voorwaarde als dat moet), dan de vraag met 👇. Rest van de uitleg niet in de beschrijving.
 - 2026-11-19 · berekeningen · "ga gewoon van een gemiddeld persoon uit" → rekenvoorbeelden altijd voor de gemiddelde Nederlandse volwassene: ±78 kg (CBS: mannen ±85, vrouwen ±70), ±1,75 m, onderhoud ±2.300 kcal/dag; netto beweging (MET − 1), naar beneden afronden, voorwaarde erbij. Noem in de beschrijving "voor een gemiddeld persoon van ±78 kilo".
 - 2026-11-19 · script wandelen · "volgens mij klopt 6 kilo niet" → klopt: ik rekende met bruto verbranding. Bij beweging altijd NETTO rekenen (MET − 1 rustverbranding), afronden naar beneden en de voorwaarde erbij ("als je verder hetzelfde eet"). Wandelen 30 min/dag ≈ 100 kcal extra ≈ 4 kilo vet per jaar.
