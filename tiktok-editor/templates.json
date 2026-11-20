@@ -256,5 +256,40 @@
   },
   "jumpZoom": false,
   "uitleg": "17 effecten uit Wes' voorbeeldvideo (2026-11-05), in de Wes.Built-stijl: orbit, couch wall, ui world, frame break, digital zoom, phone mockup, checklist, headline wall, zoom-through cut, chart grow (linechart), pull-back reveal, green screen, paper cut, doodle boil, vertigo, cover story, glass type. Elk effect 1 tot 2 s, snel na elkaar; teller 'NN/MM' (pop look counter) als open lus. Effecten met de uitsnede vereisen tt.py person (vertigo maakt ook plate.mp4)."
+ },
+ "gymbro": {
+  "naam": "Never tell a GYMBRO (humor + feit)",
+  "loop": true,
+  "style": "wesbuilt",
+  "popLooks": [
+   "impact",
+   "stamp",
+   "sticker",
+   "big"
+  ],
+  "hookSub": "Aflevering {dag}",
+  "hookY": 300,
+  "captions": {
+   "y": 1264
+  },
+  "toegestaan": [
+   "hook",
+   "pop",
+   "kinetic",
+   "freeze",
+   "zoomcard",
+   "volgstempel",
+   "image",
+   "emoji",
+   "scene",
+   "cutaway",
+   "fingercard",
+   "search",
+   "counter",
+   "notes",
+   "title"
+  ],
+  "uitleg": "Hook 'Never tell a [GYMBRO]' + pill 'Aflevering X'. De verboden zin groot als quote; reactie = freeze (zwart-wit, zoom, '* ongemakkelijke stilte *'); waarheid = FEIT-stempel (groen); einde volgknop. Kleur, 8–12 s.",
+  "referentie": "voorbeelden/gymbro-afl2/storyboard.json"
  }
 }
