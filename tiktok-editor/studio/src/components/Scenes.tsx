@@ -137,11 +137,14 @@ export const HookTitle: React.FC<{ beat: HookBeat; style: StylePreset }> = ({ be
   {
     let cur: string[] | null = null;
     for (const w of words) {
+      // "]" mag gevolgd worden door leestekens ("[een week]?"): die horen dan bij het blok
+      const closes = /\][?!.,:]*$/.test(w);
+      const strip = (x: string) => x.replace(/\]([?!.,:]*)$/, "$1");
       if (cur) {
-        cur.push(w.replace(/\]$/, ""));
-        if (w.endsWith("]")) { groups.push({ text: cur.join(" "), block: true }); cur = null; }
+        cur.push(strip(w));
+        if (closes) { groups.push({ text: cur.join(" "), block: true }); cur = null; }
       } else if (w.startsWith("[")) {
-        if (w.endsWith("]")) groups.push({ text: w.slice(1, -1), block: true });
+        if (closes) groups.push({ text: strip(w.slice(1)), block: true });
         else cur = [w.slice(1)];
       } else groups.push({ text: w, block: false });
     }
