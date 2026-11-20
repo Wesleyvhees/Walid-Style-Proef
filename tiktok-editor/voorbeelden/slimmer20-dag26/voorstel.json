@@ -1,0 +1,45 @@
+{
+ "project": "slim26",
+ "titel": "Slimmer 2.0 dag 26 · intermittent fasting",
+ "intro": "Veel achtergrond- en pop-plaatjes zoals je vroeg, plus het nieuwe 3D-effect: de onderzoekskaart klapt uit je vingertop. Je eerste poging van '99 studies' en de dubbele zin zijn eruit; je horlogetik en het wijzen blijven heel. Tekst: 'keto' (gehoord: Kato), 'minder' (gehoord: pinder), 'ik 's ochtends'. Lengte nu 26,6 s (al 25% sneller). Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "lengte", "titel": "Lengte (nu 26,6 s)", "keuze": "een", "opties": [
+   {"id": "zo", "code": "K2", "label": "Zo laten", "uitleg": "26,6 s, alles blijft; de beelden houden het tempo hoog", "advies": true},
+   {"id": "knip", "code": "K3", "label": "'Ik had daardoor gewoon minder' eruit", "uitleg": "±25 s; 'in combinatie met keto' loopt dan door naar 'nu eet ik 's ochtends direct'", "advies": false}
+  ]},
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop boven je hoofd op 'dus ja'", "uitleg": "Terwijl je naar de lens wijst; loopt door in de hook", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "'Vasten = magisch?'", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:03", "tekst": "[tik op horloge] Intermittent fasting werkt, maar niet om wat jij denkt.", "still": "menu/k_1.0.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Vasten = [magisch?]'", "uitleg": "Pill met de volledige serietitel", "advies": true},
+   {"id": "b", "code": "C1", "label": "Punch-zoom op het tikken", "uitleg": "Beweging in de eerste halve seconde", "advies": true}
+  ]},
+  {"id": "m2", "tijd": "0:03", "tot": "0:07", "tekst": "Omdat jij in een kleiner tijdvak eet, eet je vaak gewoon wat minder.", "still": "menu/k_5.5.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "B", "label": "Jij uitgeknipt vóór een grote klok", "uitleg": "Achtergrond wisselt naar een wandklok op 'tijdvak'", "advies": true},
+   {"id": "b", "code": "B", "label": "Plaatje leeg bord op 'minder'", "uitleg": "Popt linksboven op", "advies": true}
+  ]},
+  {"id": "m3", "tijd": "0:07", "tot": "0:13", "tekst": "[wijzen] 99 studies, 6500 mensen. Vasten tegen gewoon minder eten, bijna hetzelfde resultaat.", "still": "menu/k_12.8.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "N", "label": "NIEUW: 3D-kaart uit je vingertop", "uitleg": "Gloeiend puntje op je vinger, kaart klapt in 3D open en zweeft; regels komen binnen op 99 studies / 6582 mensen / vasten ≈ minder eten / bijna hetzelfde resultaat. Bron eronder (BMJ 2025)", "advies": true},
+   {"id": "b", "code": "B", "label": "Zoekbalk + teller (oude stijl)", "uitleg": "Zonder 3D", "advies": false}
+  ]},
+  {"id": "m4", "tijd": "0:13", "tot": "0:17", "tekst": "Ik deed het zelf ook, in combinatie met keto. Ik had daardoor gewoon minder.", "still": "menu/k_16.2.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Keto-ontbijt even schermvullend", "uitleg": "Bacon, ei, avocado op 'keto'", "advies": true},
+   {"id": "b", "code": "B", "label": "Als plaatje dat oppopt", "uitleg": "Jij blijft in beeld", "advies": false}
+  ]},
+  {"id": "m5", "tijd": "0:17", "tot": "0:21", "tekst": "Nu eet ik 's ochtends direct, daar presteer ik veel beter op.", "still": "menu/k_20.8.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "B", "label": "Plaatje havermout op 's ochtends", "uitleg": "Popt linksboven op", "advies": true},
+   {"id": "b", "code": "B", "label": "Jij vóór de gym op 'presteer'", "uitleg": "Donkere dumbbells als achtergrond", "advies": true}
+  ]},
+  {"id": "m6", "tijd": "0:21", "tot": "0:24", "tekst": "Dus het is niet het vasten, het is gewoon het minder eten.", "still": "menu/k_23.6.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Groot woord MINDER ETEN", "uitleg": "Met 'niet het vasten' eronder, boem", "advies": true},
+   {"id": "b", "code": "B", "label": "Video krimpt tot kaart", "uitleg": "Zoomcard", "advies": false}
+  ]},
+  {"id": "m7", "tijd": "0:24", "tot": "0:26", "tekst": "Maar kies wat voor jou werkt. Dus ja!", "still": "menu/k_24.9.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Jij vóór een splitsing met wegwijzers", "uitleg": "Keuze = jouw weg", "advies": true},
+   {"id": "b", "code": "-", "label": "Gewoon jij", "uitleg": "Rustig naar het einde", "advies": false}
+  ]}
+ ]
+}

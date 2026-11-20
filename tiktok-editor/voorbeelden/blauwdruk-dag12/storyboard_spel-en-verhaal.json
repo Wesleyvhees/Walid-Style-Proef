@@ -1,0 +1,172 @@
+{
+ "title": "75 kilo blauwdruk dag 12",
+ "template": "blauwdruk75",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "overgeslagen",
+   "progressie",
+   "weken",
+   "consistent",
+   "doorgaan",
+   "onderzoek",
+   "gewoonte",
+   "hoofd",
+   "verpest",
+   "maanden",
+   "alles",
+   "niets",
+   "vandaag"
+  ],
+  "maxChars": 15,
+  "marker": true
+ },
+ "split": [
+  {
+   "start": 5.3,
+   "end": 14.45
+  },
+  {
+   "start": 14.5,
+   "end": 19.42
+  }
+ ],
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 1.9,
+   "text": "Paar dagen gemist = [alles verpest?]",
+   "size": 84,
+   "sfx": "whoosh"
+  },
+  {
+   "type": "progress",
+   "start": 1.92,
+   "end": 4.75,
+   "y": 200,
+   "from": 0.41,
+   "mid": 0.58,
+   "to": 0.83,
+   "pauseAt": 2.05,
+   "resumeAt": 4.39,
+   "pauseText": "gepauzeerd",
+   "doneText": "loopt gewoon door",
+   "note": "Laadbalk pauzeert op 'overgeslagen', loopt door op 'niet'"
+  },
+  {
+   "type": "zigzag",
+   "start": 5.3,
+   "end": 14.4,
+   "y": 110,
+   "realAt": 5.5,
+   "realDur": 8.1,
+   "title": "Mijn progressie",
+   "dips": [
+    {
+     "i": 5,
+     "text": "weken gemist"
+    },
+    {
+     "i": 9,
+     "text": "niet consistent"
+    }
+   ],
+   "endText": "en toch omhoog",
+   "note": "Verwachting vs werkelijkheid"
+  },
+  {
+   "type": "habitgrid",
+   "start": 14.5,
+   "end": 19.4,
+   "y": 150,
+   "fillAt": 14.9,
+   "fillDur": 3.4,
+   "miss": 23,
+   "title": "Nieuwe gewoonte",
+   "verdict": "maakt bijna niks uit",
+   "source": "onderzoek: Lally e.a. 2010",
+   "note": "1 rood hokje, de rest loopt door"
+  },
+  {
+   "type": "thought",
+   "start": 19.6,
+   "end": 22.95,
+   "x": 520,
+   "y": 250,
+   "ax": 720,
+   "ay": 720,
+   "w": 660,
+   "text": "nu is alles verpest",
+   "crackAt": 22.51,
+   "note": "Gedachtewolk vanuit je slaap"
+  },
+  {
+   "type": "crack",
+   "start": 22.51,
+   "end": 23.25,
+   "x": 540,
+   "y": 330,
+   "note": "Glas breekt op 'verpest'"
+  },
+  {
+   "type": "escalate",
+   "start": 24.1,
+   "end": 26.45,
+   "y": 330,
+   "sizes": [
+    100,
+    150,
+    210
+   ],
+   "items": [
+    {
+     "text": "dagen",
+     "at": 24.17
+    },
+    {
+     "text": "weken",
+     "at": 25.13
+    },
+    {
+     "text": "maanden",
+     "at": 25.89
+    }
+   ],
+   "note": "Woorden groeien, laatste trilt"
+  },
+  {
+   "type": "allornothing",
+   "start": 27.3,
+   "end": 28.9,
+   "y": 230,
+   "flips": [
+    27.72,
+    28.0,
+    28.3
+   ],
+   "xAt": 28.62,
+   "sub": "= de valkuil",
+   "note": "Schakelaar klapt heen en weer"
+  },
+  {
+   "type": "continue",
+   "start": 28.92,
+   "end": 30.4,
+   "y": 290,
+   "continueAt": 29.12,
+   "pressAt": 29.95,
+   "yes": "JA",
+   "note": "Arcade: game over -> continue -> ja"
+  },
+  {
+   "type": "volgstempel",
+   "start": 31.2,
+   "end": 32.55,
+   "y": 330,
+   "x": 450,
+   "width": 560,
+   "sfx": "boom"
+  }
+ ]
+}

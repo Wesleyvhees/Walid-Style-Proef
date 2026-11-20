@@ -1,0 +1,17 @@
+{"title": "Van nul naar grip dag 17", "template": "nulnaargrip", "video": "cut.mp4",
+ "captions": {"highlight": ["opgeven", "luiheid", "zin", "moe", "leeg", "af", "waarheid", "bang", "zwaar", "echt", "klaar", "jezelf", "waard", "dit"], "maxChars": 15},
+ "zooms": [{"start": 0.0, "end": 0.5, "to": 1.08, "ease": "punch", "note": "Op het kraken van het blikje"},
+           {"start": 14.3, "end": 14.9, "to": 1.08, "ease": "punch", "note": "'hoe zwaar', geen geluid"}],
+ "beats": [
+  {"type": "hook", "start": 0.0, "end": 2.05, "text": "Zo voelt [opgeven]", "sub": "Van nul naar grip dag 17", "size": 90, "sfx": "whoosh", "note": "Curiosity gap; echt kraakgeluid blijft"},
+  {"type": "pop", "look": "impact", "start": 3.06, "end": 3.9, "text": "GEEN LUIHEID", "size": 130, "y": 430, "sfx": "boom", "note": "Tegendraads"},
+  {"type": "pop", "look": "impact", "start": 4.09, "end": 4.9, "text": "GEEN ZIN?", "size": 150, "y": 430, "sfx": "boom"},
+  {"type": "pop", "look": "impact", "start": 4.92, "end": 5.5, "text": "MOE?", "size": 170, "y": 430, "sfx": "boom"},
+  {"type": "pop", "look": "impact", "start": 5.57, "end": 7.0, "text": "LEEG?", "size": 170, "y": 430, "sfx": "boom", "note": "Blijft staan tijdens de beker"},
+  {"type": "pop", "look": "impact", "start": 9.01, "end": 9.62, "text": "AFGEZEGD", "size": 160, "y": 430, "sfx": "boom", "note": "Ik-bewijs"},
+  {"type": "pop", "look": "impact", "start": 11.42, "end": 12.4, "text": "DE WAARHEID", "size": 140, "y": 430, "note": "Rustige klap zonder boem"},
+  {"type": "pop", "look": "impact", "start": 13.21, "end": 14.2, "text": "BANG", "size": 190, "y": 430, "sfx": "boom", "note": "Antwoord op de hook"},
+  {"type": "pop", "look": "impact", "start": 16.73, "end": 17.45, "text": "KLAAR ERMEE", "size": 140, "y": 430, "sfx": "boom", "note": "Wending"},
+  {"type": "pop", "look": "impact", "start": 17.77, "end": 18.9, "text": "KIES JEZELF", "size": 140, "y": 430, "sub": "dag 17", "sfx": "boom", "note": "Punchline"},
+  {"type": "volgstempel", "start": 18.95, "end": 19.75, "y": 330, "x": 450, "width": 560, "sfx": "boom", "note": "Kort, voor het blikje naar de lens komt"}
+ ]}

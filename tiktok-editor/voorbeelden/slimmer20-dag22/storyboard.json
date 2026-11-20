@@ -1,0 +1,380 @@
+{
+ "title": "Slimmer eten drinken en trainen dag 22",
+ "template": "slimmer20",
+ "style": "wesbuilt",
+ "video": "cut.mp4",
+ "captions": {
+  "y": 1290,
+  "highlight": [
+   "meetmoment",
+   "vochtretentie",
+   "spijsvertering",
+   "stress",
+   "trends",
+   "omtrekken",
+   "spiegel",
+   "kleding",
+   "obsessief",
+   "skip"
+  ],
+  "maxChars": 17
+ },
+ "zooms": [
+  {
+   "start": 1.1,
+   "end": 2.0,
+   "to": 1.12,
+   "ease": "punch"
+  },
+  {
+   "start": 4.22,
+   "end": 4.9,
+   "to": 1.08,
+   "ease": "punch"
+  },
+  {
+   "start": 5.74,
+   "end": 8.3,
+   "to": 1.05,
+   "ease": "in"
+  },
+  {
+   "start": 15.52,
+   "end": 16.3,
+   "to": 1.08,
+   "ease": "punch"
+  },
+  {
+   "start": 23.157,
+   "end": 23.9,
+   "to": 1.08,
+   "ease": "punch"
+  },
+  {
+   "start": 24.567,
+   "end": 25.3,
+   "to": 1.12,
+   "ease": "punch"
+  }
+ ],
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 5.7,
+   "text": "Slimmer eten drinken en *trainen*",
+   "sub": "Dag 22",
+   "size": 86,
+   "y": 215,
+   "sfx": "whoosh",
+   "note": "Serietitel + dag (H2), herkenbaar voor vaste kijkers"
+  },
+  {
+   "type": "pop",
+   "look": "stamp",
+   "start": 1.1,
+   "end": 2.9,
+   "text": "Mythe",
+   "color": "#FF3B30",
+   "size": 120,
+   "sfx": "boom",
+   "note": "Mythe: één meetmoment zegt alles (H1); lager gezet zodat je mond vrij blijft (groot gezicht in beeld)",
+   "y": 1175
+  },
+  {
+   "type": "emoji",
+   "start": 5.74,
+   "end": 6.55,
+   "name": "green salad",
+   "x": 820,
+   "y": 450,
+   "size": 200,
+   "sfx": "pop",
+   "note": "'eten'",
+   "src": "assets/emoji_green_salad.png"
+  },
+  {
+   "type": "emoji",
+   "start": 6.6,
+   "end": 7.7,
+   "name": "cup with straw",
+   "x": 820,
+   "y": 450,
+   "size": 200,
+   "sfx": "pop",
+   "note": "'drinken'",
+   "src": "assets/emoji_cup_with_straw.png"
+  },
+  {
+   "type": "emoji",
+   "start": 7.75,
+   "end": 8.33,
+   "name": "flexed biceps",
+   "x": 820,
+   "y": 450,
+   "size": 200,
+   "sfx": "pop",
+   "note": "'trainen'",
+   "src": "assets/emoji_flexed_biceps.png"
+  },
+  {
+   "type": "chart",
+   "start": 8.36,
+   "end": 10.55,
+   "mode": "bars",
+   "title": "Gewicht per dag (voorbeeld)",
+   "unit": "kg",
+   "decimals": 1,
+   "rows": [
+    {
+     "label": "ma",
+     "value": 80.4
+    },
+    {
+     "label": "di",
+     "value": 81.1
+    },
+    {
+     "label": "wo",
+     "value": 80.2
+    },
+    {
+     "label": "do",
+     "value": 80.9
+    },
+    {
+     "label": "vr",
+     "value": 81.3
+    },
+    {
+     "label": "za",
+     "value": 80.1
+    },
+    {
+     "label": "zo",
+     "value": 80.0
+    }
+   ],
+   "highlight": [
+    4
+   ],
+   "sfx": "whoosh",
+   "note": "Zelfde lichaam, elke dag een ander getal (G3, voorbeeldweek)"
+  },
+  {
+   "type": "pop",
+   "look": "label",
+   "start": 10.59,
+   "end": 11.33,
+   "text": "Vocht",
+   "sfx": "click",
+   "note": "Oorzaak (T6)",
+   "y": 1180
+  },
+  {
+   "type": "emoji",
+   "start": 10.59,
+   "end": 11.33,
+   "name": "droplet",
+   "x": 820,
+   "y": 450,
+   "size": 200,
+   "note": "'vocht' (B1)",
+   "src": "assets/emoji_droplet.png"
+  },
+  {
+   "type": "pop",
+   "look": "label",
+   "start": 11.365,
+   "end": 12.6,
+   "text": "Spijsvertering",
+   "sfx": "click",
+   "note": "Oorzaak (T6)",
+   "y": 1180
+  },
+  {
+   "type": "emoji",
+   "start": 11.365,
+   "end": 12.6,
+   "name": "fork and knife with plate",
+   "x": 820,
+   "y": 450,
+   "size": 200,
+   "note": "'spijsvertering' (B1)",
+   "src": "assets/emoji_fork_and_knife_with_plate.png"
+  },
+  {
+   "type": "pop",
+   "look": "label",
+   "start": 12.69,
+   "end": 13.12,
+   "text": "Stress",
+   "sfx": "click",
+   "note": "Oorzaak (T6)",
+   "y": 1180
+  },
+  {
+   "type": "emoji",
+   "start": 12.69,
+   "end": 13.12,
+   "name": "exploding head",
+   "x": 820,
+   "y": 450,
+   "size": 200,
+   "note": "'stress' (B1)",
+   "src": "assets/emoji_exploding_head.png"
+  },
+  {
+   "type": "prompt",
+   "start": 13.16,
+   "end": 16.6,
+   "label": "Tip",
+   "text": "Weeg je elke ochtend",
+   "typeFrom": 13.3,
+   "typeTo": 14.6,
+   "doneAt": 15.52,
+   "doneLabel": "beter",
+   "doneText": "Kijk naar de trend",
+   "sfx": "ding",
+   "note": "Typend kaartje (T7)"
+  },
+  {
+   "type": "pop",
+   "look": "stamp",
+   "start": 15.52,
+   "end": 16.6,
+   "text": "Feit",
+   "color": "#34C759",
+   "size": 120,
+   "sfx": "boom",
+   "note": "Antwoord op het MYTHE-stempel (T3); lager gezet zodat je mond vrij blijft (groot gezicht in beeld)",
+   "y": 1175
+  },
+  {
+   "type": "checklist",
+   "start": 16.64,
+   "end": 21.05,
+   "title": "Meet dit",
+   "x": 60,
+   "y": 230,
+   "w": 520,
+   "items": [
+    {
+     "text": "Omtrekken",
+     "at": 17.207
+    },
+    {
+     "text": "Spiegel",
+     "at": 18.357
+    },
+    {
+     "text": "Kleding",
+     "at": 20.327
+    }
+   ],
+   "note": "Nieuw: checklist bouwt op"
+  },
+  {
+   "type": "image",
+   "start": 17.207,
+   "end": 18.33,
+   "query": "tape measure",
+   "x": 820,
+   "y": 220,
+   "w": 360,
+   "rotate": 4,
+   "note": "Fotokaart naast de checklist (B2)",
+   "pick": 5,
+   "src": "assets/kandidaten/tape_measure/5.jpg"
+  },
+  {
+   "type": "image",
+   "start": 18.357,
+   "end": 20.3,
+   "query": "mirror reflection man",
+   "x": 820,
+   "y": 220,
+   "w": 360,
+   "rotate": 4,
+   "note": "Fotokaart naast de checklist (B2)",
+   "pick": 2,
+   "src": "assets/kandidaten/mirror_reflection_man/2.jpg"
+  },
+  {
+   "type": "emoji",
+   "start": 20.327,
+   "end": 21.05,
+   "name": "jeans",
+   "x": 820,
+   "y": 370,
+   "size": 260,
+   "sfx": "pop",
+   "note": "Kleding: spijkerbroek-icoon (keuze B)",
+   "src": "assets/emoji_jeans.png"
+  },
+  {
+   "type": "cutaway",
+   "start": 21.08,
+   "end": 22.3,
+   "query": "bathroom scale weight",
+   "sfx": "whoosh",
+   "note": "Cutaway weegschaal (B3)",
+   "pick": 0,
+   "src": "assets/kandidaten/bathroom_scale_weight/0.jpg"
+  },
+  {
+   "type": "pop",
+   "look": "sticker",
+   "start": 23.157,
+   "end": 24.5,
+   "text": "Obsessief",
+   "sfx": "pop",
+   "note": "Kernwoord (T2)",
+   "y": 1180
+  },
+  {
+   "type": "pop",
+   "look": "sticker",
+   "start": 24.567,
+   "end": 25.5,
+   "text": "Skip",
+   "sfx": "boom",
+   "note": "Kernwoord (T2)",
+   "y": 1180
+  },
+  {
+   "type": "checklist",
+   "start": 25.577,
+   "end": 26.83,
+   "title": "Doe het zo",
+   "x": 60,
+   "y": 230,
+   "w": 520,
+   "itemSfx": "none",
+   "sfx": "ding",
+   "items": [
+    {
+     "text": "Omtrekken",
+     "at": 25.75
+    },
+    {
+     "text": "Spiegel",
+     "at": 25.9
+    },
+    {
+     "text": "Kleding",
+     "at": 26.05
+    }
+   ],
+   "note": "Checklist komt terug bij 'op deze manier'"
+  },
+  {
+   "type": "volgstempel",
+   "start": 26.83,
+   "end": 28.83,
+   "y": 1000,
+   "sfx": "boom",
+   "note": "Echte profielkaart (eindbeeld 2 s verlengd)"
+  }
+ ]
+}

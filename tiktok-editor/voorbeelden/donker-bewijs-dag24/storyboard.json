@@ -1,0 +1,151 @@
+{
+ "title": "Slimmer eten, drinken en trainen 2.0 dag 24",
+ "template": "slimmer20",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "30",
+   "uren",
+   "eiwit",
+   "1,6",
+   "lichaamsgewicht",
+   "kip",
+   "kwark",
+   "eieren",
+   "stress"
+  ],
+  "maxChars": 17,
+  "marker": true
+ },
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 1.55,
+   "text": "30 minuten? [Mythe]",
+   "sub": "Slimmer eten, drinken en trainen 2.0 dag 24",
+   "size": 84,
+   "sfx": "whoosh",
+   "note": "Tegendraads; shake in beeld = bewijs"
+  },
+  {
+   "type": "freeze",
+   "start": 1.58,
+   "end": 2.14,
+   "caption": "* spoiler: hoeft niet *",
+   "sfx": "boom",
+   "note": "E reality-tv bevriezing op de mythe"
+  },
+  {
+   "type": "search",
+   "start": 2.16,
+   "end": 4.45,
+   "text": "eten na het sporten",
+   "typeFrom": 2.2,
+   "typeTo": 3.0,
+   "suggestions": [
+    "eten na het sporten binnen 30 minuten",
+    "eten na het sporten afvallen",
+    "eten na het sporten spieropbouw"
+   ],
+   "y": 250,
+   "sfx": "click",
+   "note": "C zoekbalk: hoofdtrefwoord in beeld"
+  },
+  {
+   "type": "kinetic",
+   "start": 4.51,
+   "end": 6.45,
+   "text": "Uren",
+   "sub": "geen 30 minuten",
+   "size": 330,
+   "y": 560,
+   "sfx": "boom",
+   "note": "B groot woord: contrast-piek"
+  },
+  {
+   "type": "zoomcard",
+   "start": 6.72,
+   "end": 9.7,
+   "title": "Wat wel telt",
+   "sub": "eiwit over de hele dag",
+   "scale": 0.68,
+   "cardY": 470,
+   "sfx": "whoosh",
+   "note": "F uitzoomen: antwoord als nieuw hoofdstuk"
+  },
+  {
+   "type": "counter",
+   "start": 10.3,
+   "end": 12.05,
+   "value": "1,6",
+   "unit": "gram eiwit",
+   "sub": "per kilo lichaamsgewicht",
+   "size": 230,
+   "y": 260,
+   "sfx": "click",
+   "note": "D rollende teller: getal-piek"
+  },
+  {
+   "type": "title",
+   "start": 12.13,
+   "end": 13.95,
+   "behind": true,
+   "y": 120,
+   "lines": [
+    {
+     "text": "130 G",
+     "font": "condensed",
+     "size": 430,
+     "color": "#111111"
+    }
+   ],
+   "sfx": "whoosh",
+   "note": "A tekst achter je hoofd: rekenvoorbeeld 1,6 x 80 = 128"
+  },
+  {
+   "type": "notes",
+   "start": 14.24,
+   "end": 16.25,
+   "title": "Na de training",
+   "subtitle": "vandaag",
+   "y": 240,
+   "items": [
+    {
+     "text": "Kip met rijst",
+     "at": 14.24
+    },
+    {
+     "text": "Kwark",
+     "at": 15.28
+    },
+    {
+     "text": "Eieren",
+     "at": 15.75
+    }
+   ],
+   "sfx": "ding",
+   "note": "H notities-app"
+  },
+  {
+   "type": "volgstempel",
+   "start": 16.28,
+   "end": 18.3,
+   "y": 330,
+   "x": 450,
+   "width": 560,
+   "sfx": "boom",
+   "note": "Boven het hoofd; loop"
+  },
+  {
+   "type": "pill",
+   "start": 12.3,
+   "end": 13.95,
+   "text": "bij 80 kilo per dag",
+   "y": 1420,
+   "size": 46,
+   "note": "context bij 130 G"
+  }
+ ],
+ "person": "person.webm"
+}

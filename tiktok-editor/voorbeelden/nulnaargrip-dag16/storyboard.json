@@ -1,0 +1,13 @@
+{"title": "Van nul naar grip dag 16", "template": "nulnaargrip", "video": "cut.mp4",
+ "captions": {"highlight": ["tegen", "gym", "jaren", "snel", "werkt", "level", "10", "1", "vergelijken", "eigen", "pad"], "maxChars": 15},
+ "zooms": [{"start": 7.17, "end": 7.8, "to": 1.08, "ease": "punch", "note": "Haast: 'zo snel mogelijk', geen geluid"}],
+ "beats": [
+  {"type": "hook", "start": 0.0, "end": 2.1, "text": "Een ding houdt je [tegen]", "sub": "Van nul naar grip dag 16", "size": 90, "sfx": "whoosh", "note": "Curiosity gap: welk ding?"},
+  {"type": "pop", "look": "impact", "start": 2.15, "end": 3.1, "text": "NIET IN DE GYM", "size": 127, "y": 430, "sfx": "boom", "note": "Tegendraads"},
+  {"type": "pop", "look": "impact", "start": 5.39, "end": 6.6, "text": "JAREN TRAINING", "size": 127, "y": 430, "sfx": "boom", "note": "Ik-bewijs"},
+  {"type": "pop", "look": "impact", "start": 10.15, "end": 10.95, "text": "WERKT NIET", "size": 150, "y": 430, "sfx": "boom", "note": "Klap na de haast"},
+  {"type": "pop", "look": "impact", "start": 11.84, "end": 12.55, "text": "LEVEL 10", "size": 170, "y": 430, "sfx": "boom", "note": "Contrast deel 1"},
+  {"type": "pop", "look": "impact", "start": 13.74, "end": 14.25, "text": "LEVEL 1", "size": 170, "y": 430, "sfx": "boom", "note": "Contrast deel 2"},
+  {"type": "pop", "look": "impact", "start": 15.48, "end": 16.2, "text": "EIGEN PAD", "size": 160, "y": 430, "sub": "dag 16", "sfx": "boom", "note": "Punchline = antwoord op de hook"},
+  {"type": "volgstempel", "start": 16.25, "end": 17.44, "y": 330, "x": 450, "width": 560, "sfx": "boom", "note": "Boven het hoofd; loop"}
+ ]}

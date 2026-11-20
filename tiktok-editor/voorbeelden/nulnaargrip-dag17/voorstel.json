@@ -1,0 +1,51 @@
+{
+ "project": "dag17",
+ "titel": "Van nul naar grip dag 17",
+ "intro": "Harde look, je acties staan er helemaal in: het blikje kraakt al voor je eerste woord, de beker draait volledig om en het blikje komt aan het eind naar de lens (loopt door in het begin). Tekst verbeterd: 'luiheid' (gehoord: luidheid), 'Ik zei vroeger' (gehoord: zij vroeren), 'Je bent het waard'. Lengte nu 24,4 s, dat is lang voor deze serie: kies hieronder. Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "lengte", "titel": "Lengte (nu 24,4 s)", "keuze": "een", "opties": [
+   {"id": "zo", "code": "K2", "label": "Zo laten", "uitleg": "24,4 s, alles blijft", "advies": false},
+   {"id": "s5", "code": "K1", "label": "5% sneller", "uitleg": "±23,2 s, stem blijft gelijk", "advies": false},
+   {"id": "knip", "code": "K3", "label": "5% sneller + zin 'Het heeft best een tijd geduurd…' eruit", "uitleg": "±20,7 s. Verhaal blijft kloppen: '…niet onder ogen wou zien. Ik was ook bang…'", "advies": true}
+  ]},
+  {"id": "echt", "titel": "'echt, echt klaar mee'", "keuze": "een", "opties": [
+   {"id": "twee", "code": "-", "label": "Allebei houden", "uitleg": "Jouw nadruk, het emotionele hoogtepunt (+0,4 s, pauze ertussen strak)", "advies": true},
+   {"id": "een", "code": "-", "label": "Een keer 'echt'", "uitleg": "Strakker, zoals het systeem het nu knipte", "advies": false}
+  ]},
+  {"id": "mini", "titel": "Figuurtje van toen (110 kilo)", "keuze": "een", "opties": [
+   {"id": "ja", "code": "M1", "label": "Ja, bij 'hoe zwaar ik was'", "uitleg": "Deze video gaat over toegeven hoe zwaar je was: je figuurtje van toen poppt kort naast je hoofd. Bewijs zonder woorden", "advies": true},
+   {"id": "nee", "code": "-", "label": "Nee, deze dag niet", "uitleg": "Zuivere talking head", "advies": false}
+  ]},
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop kort boven je hoofd op 'Je bent het waard'", "uitleg": "Voor het blikje in beeld komt, zodat ze elkaar niet raken", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "'Zo voelt opgeven', zwart-wit, beeld met het kapotte blikje", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:04", "tekst": "[blikje kapot] Zo voelt opgeven! En vaak is het geen luiheid.", "still": "stills/k_0.4.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Zo voelt [opgeven]'", "uitleg": "Pill 'Van nul naar grip dag 17'; het echte kraakgeluid blijft", "advies": true},
+   {"id": "b", "code": "C1", "label": "Punch-zoom op het kraken (0,0 s)", "uitleg": "Beweging in de eerste halve seconde, geen extra geluid", "advies": true},
+   {"id": "c", "code": "T8", "label": "Impact GEEN LUIHEID", "uitleg": "Tegendraads, boem", "advies": true}
+  ]},
+  {"id": "m2", "tijd": "0:04", "tot": "0:08", "tekst": "Geen zin om te sporten? Moe? Leeg? [beker om] Vaak is dat niet zo.", "still": "stills/k_6.8.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Drie snelle klappen: GEEN ZIN? MOE? LEEG?", "uitleg": "Elk woord op het moment dat je het zegt; LEEG? blijft staan tijdens de beker", "advies": true},
+   {"id": "b", "code": "T8", "label": "Alleen LEEG? bij de beker", "uitleg": "Rustiger, de beker doet het werk", "advies": false}
+  ]},
+  {"id": "m3", "tijd": "0:08", "tot": "0:12", "tekst": "Ik zei vroeger ook dingen af. Omdat ik geen zin had. Of omdat ik de waarheid niet onder ogen wou zien.", "still": "stills/k_9.4.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact AFGEZEGD", "uitleg": "Jouw ik-bewijs, boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact DE WAARHEID", "uitleg": "Op 'waarheid', zonder boem (rustige klap)", "advies": true}
+  ]},
+  {"id": "m4", "tijd": "0:13", "tot": "0:16", "tekst": "Ik was ook bang om toe te geven hoe zwaar ik was.", "still": "stills/k_17.0.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact BANG", "uitleg": "Het antwoord op de hook, groot, boem", "advies": true},
+   {"id": "b", "code": "C1", "label": "Punch-zoom op 'hoe zwaar'", "uitleg": "Geen geluid", "advies": true}
+  ]},
+  {"id": "m5", "tijd": "0:16", "tot": "0:18", "tekst": "Totdat ik er echt klaar mee was.", "still": "stills/k_19.9.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact KLAAR ERMEE", "uitleg": "De wending, boem", "advies": true},
+   {"id": "b", "code": "C1", "label": "Alleen punch-zoom", "uitleg": "Rustiger", "advies": false}
+  ]},
+  {"id": "m6", "tijd": "0:18", "tot": "0:21", "tekst": "Kies nu voor jezelf. Je bent het waard, of kies jij weer voor dit? [blikje naar de lens]", "still": "stills/k_23.6.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Punchline KIES JEZELF", "uitleg": "Met 'dag 17' eronder, boem; daarna is het blikje het einde (loop)", "advies": true},
+   {"id": "b", "code": "T8", "label": "Punchline JE BENT HET WAARD", "uitleg": "Zachter, persoonlijker", "advies": false}
+  ]}
+ ]
+}
