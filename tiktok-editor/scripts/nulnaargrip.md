@@ -120,7 +120,7 @@ Loop: "Dus ook als je denkt: ik heb een paar dagen overgeslagen."
 Pieken: gordel+motor + bekentenis (0 s) → tegendraads 'niet het probleem' (±2 s) → het echte gevaar (±5 s) → dagen → maanden (±8 s) → opdracht vandaag (±11 s).  
 Feiten: Wes heeft echt een paar dagen niet opgenomen (2026-11-17). Lally e.a. 2010: een keer missen schaadt het vormen van een gewoonte nauwelijks.
 
-## Dag 18 (nieuw) · Alles in een week · klaar (2026-11-19, v2 harder op verzoek van Wes; Wes' echte stappen-verhaal)
+## Dag 18 (nieuw) · Alles in een week · opgenomen (bewerkt 2026-11-20, 22,7 s, buiten lopend, facelock)
 Trefwoord: motivatie om vol te houden
 ```
 HOOK (letterlijk)

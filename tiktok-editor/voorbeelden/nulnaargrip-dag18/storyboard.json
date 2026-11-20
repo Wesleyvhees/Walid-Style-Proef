@@ -1,0 +1,167 @@
+{
+ "title": "Van nul naar grip dag 18",
+ "template": "nulnaargrip",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "week",
+   "nul",
+   "maandag",
+   "vrijdag",
+   "smoes",
+   "5.000",
+   "10.000",
+   "12.000",
+   "15.000",
+   "19.000",
+   "resultaat",
+   "weg",
+   "stap",
+   "excuses"
+  ],
+  "maxChars": 15
+ },
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 1.818,
+   "text": "Alles in [een week]?",
+   "sub": "Van nul naar grip dag 18",
+   "size": 90,
+   "sfx": "whoosh"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 2.764,
+   "end": 3.545,
+   "text": "OP NUL",
+   "size": 190,
+   "y": 430,
+   "sfx": "boom"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 7.927,
+   "end": 8.455,
+   "text": "SMOES",
+   "size": 200,
+   "y": 430,
+   "sfx": "boom",
+   "note": "Oordeel"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 8.964,
+   "end": 9.636,
+   "text": "5.000",
+   "size": 140,
+   "y": 430,
+   "sfx": "pop"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 10.236,
+   "end": 10.955,
+   "text": "10.000",
+   "size": 160,
+   "y": 430,
+   "sfx": "pop"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 11.027,
+   "end": 11.773,
+   "text": "12.000",
+   "size": 175,
+   "y": 430,
+   "sfx": "pop"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 11.827,
+   "end": 12.727,
+   "text": "15.000",
+   "size": 190,
+   "y": 430,
+   "sfx": "boom"
+  },
+  {
+   "type": "image",
+   "start": 12.909,
+   "end": 15.0,
+   "src": "assets/garmin.jpg",
+   "x": 540,
+   "y": 110,
+   "w": 600,
+   "rotate": -3,
+   "sfx": "whoosh",
+   "toestaan": true,
+   "note": "Garmin-bewijs: gemiddeld 19.687 per dag"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 15.118,
+   "end": 15.773,
+   "text": "EN JIJ?",
+   "size": 170,
+   "y": 430,
+   "sfx": "boom"
+  },
+  {
+   "type": "image",
+   "start": 15.845,
+   "end": 17.909,
+   "src": "assets/voor.jpg",
+   "x": 285,
+   "y": 170,
+   "w": 480,
+   "rotate": -4,
+   "sfx": "whoosh",
+   "toestaan": true,
+   "note": "Voor"
+  },
+  {
+   "type": "image",
+   "start": 16.509,
+   "end": 17.909,
+   "src": "assets/na.jpg",
+   "x": 795,
+   "y": 190,
+   "w": 480,
+   "rotate": 4,
+   "sfx": "boom",
+   "toestaan": true,
+   "note": "Na: het resultaat"
+  },
+  {
+   "type": "pop",
+   "look": "impact",
+   "start": 20.427,
+   "end": 21.091,
+   "text": "GEEN EXCUSES",
+   "size": 130,
+   "y": 430,
+   "sub": "dag 18",
+   "sfx": "boom",
+   "note": "Opdracht"
+  },
+  {
+   "type": "volgstempel",
+   "start": 21.182,
+   "end": 22.691,
+   "y": 330,
+   "x": 450,
+   "width": 560,
+   "sfx": "boom",
+   "note": "Loop: want nu is het: jij wilt alles in een week"
+  }
+ ]
+}
