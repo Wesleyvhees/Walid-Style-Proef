@@ -1,0 +1,29 @@
+{
+ "project": "gymbro2",
+ "titel": "Never tell a GYMBRO · aflevering 2 (creatine)",
+ "intro": "Nieuwe serie, eigen vaste stijl: in kleur, hook 'Never tell a GYMBRO' met 'Aflevering 2', de verboden zin als quote, je reactie bevriest als reality-tv, daarna het FEIT. Je draai naar de camera en je stille reactie met de shake blijven heel. Lengte 10,9 s. Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop op 'Dus?'", "uitleg": "Loopt door in 'zeg nooit tegen een gymbro'", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "3 titelopties", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:03", "tekst": "Zeg nooit tegen een gymbro:", "still": "menu/k_1.0.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Never tell a [GYMBRO]' + 'Aflevering 2'", "uitleg": "Vaste serie-opening", "advies": true},
+   {"id": "b", "code": "H5", "label": "Hook 'Zeg nooit tegen een [GYMBRO]'", "uitleg": "In het Nederlands", "advies": false}
+  ]},
+  {"id": "m2", "tijd": "0:03", "tot": "0:04", "tekst": "Creatine maakt je dik, toch?", "still": "menu/k_3.5.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T", "label": "Quote-sticker 'Creatine maakt je dik?'", "uitleg": "De verboden zin bovenin", "advies": true},
+   {"id": "b", "code": "-", "label": "Alleen ondertitels", "uitleg": "Rustiger", "advies": false}
+  ]},
+  {"id": "m3", "tijd": "0:04", "tot": "0:06", "tekst": "[reactie: shake neer, ongelovige blik]", "still": "menu/k_5.8.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Bevriezen: zwart-wit + '* ongemakkelijke stilte *'", "uitleg": "Reality-tv moment, foutpiepje", "advies": true},
+   {"id": "b", "code": "-", "label": "Gewoon laten lopen", "uitleg": "Zonder bevriezen", "advies": false}
+  ]},
+  {"id": "m4", "tijd": "0:06", "tot": "0:09", "tekst": "Dat is vocht in je spieren, en geen vet.", "still": "menu/k_9.2.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T", "label": "Stempel FEIT (groen)", "uitleg": "Op 'vocht'", "advies": true},
+   {"id": "b", "code": "B", "label": "Groot woord GEEN VET", "uitleg": "Met 'vocht in je spieren' eronder", "advies": true}
+  ]}
+ ]
+}

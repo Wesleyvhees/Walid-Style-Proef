@@ -57,7 +57,7 @@ Dus zeg het nooit meer:
 ```
 Feiten: bil- en beenspieren zijn de grootste spiergroepen.
 
-### Afl. 2 · Creatine maakt je dik
+### Afl. 2 · Creatine maakt je dik · opgenomen (bewerkt 2026-11-20, 10,9 s)
 ```
 Zeg nooit tegen
 een gymbro:

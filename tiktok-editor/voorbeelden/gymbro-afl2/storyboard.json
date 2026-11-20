@@ -1,0 +1,10 @@
+{"title": "Never tell a GYMBRO afl 2", "template": "gymbro", "video": "cut.mp4",
+ "captions": {"highlight": ["gymbro", "creatine", "dik", "vocht", "spieren", "vet"], "maxChars": 15, "marker": true},
+ "beats": [
+  {"type": "hook", "start": 0.0, "end": 2.75, "text": "Never tell a [GYMBRO]", "sub": "Aflevering 2", "size": 92, "sfx": "whoosh"},
+  {"type": "pop", "look": "sticker", "start": 2.86, "end": 4.2, "text": "Creatine maakt je dik?", "y": 330, "size": 70, "sfx": "pop", "note": "De verboden zin"},
+  {"type": "freeze", "start": 5.3, "end": 6.35, "caption": "* ongemakkelijke stilte *", "sfx": "error", "note": "Reactie, reality-tv"},
+  {"type": "pop", "look": "stamp", "start": 7.25, "end": 8.6, "text": "FEIT", "color": "#34C759", "y": 330, "sfx": "boom", "note": "Waarheid"},
+  {"type": "kinetic", "start": 8.68, "end": 9.8, "text": "Geen vet", "sub": "vocht in je spieren", "size": 260, "y": 560, "sfx": "boom"},
+  {"type": "volgstempel", "start": 9.85, "end": 10.881000, "y": 330, "x": 450, "width": 560, "sfx": "boom"}
+ ]}
