@@ -17,3 +17,5 @@
 - **Wandelen (2026-11-19):** "In het begin dacht ik altijd dat ik moest hardlopen toen ik nog zwaar woog. Later besefte ik dat lopen echt een goede activiteit is tussen je krachttraining en cardio in; het tast je progressie en herstel niet aan. Ik ben van 5.000 stappen naar 10.000, naar 12.000 en nu 20.000 stappen per dag gegaan. Het helpt me op mijn doel te blijven: ik kan wat meer eten terwijl ik netjes mijn plan volg, ik heb minder honger. Het heeft me heel veel geholpen van 110 naar 75 kilo."
 
 - **Garmin-bewijs stappen (2026-11-19, screenshot in scratchpad projects/eigen-fotos/garmin_stappen_4w_2026-11-19.jpg, niet in git):** 23 okt – 19 nov: gemiddeld 19.687 stappen per dag, 532.870 stappen totaal, 445,5 km in 4 weken, 132.888 per week. Bijna elke dag 15–22k.
+
+- **Weegschaal (2026-11-22):** schrok vroeger van de weegschaal, "ik dacht dat ik toch dikker was geworden". Nu weegt hij elke dag en kijkt naar het weekgemiddelde; heeft de weegschaal "een heel eind losgelaten", alleen om te zien of hij op gewicht blijft, aankomt of afvalt, focust er niet zo op. Kijkt meer naar of hij droger (strakker) wordt, naar de sport en naar hoe zijn kleding zit.
