@@ -1,0 +1,29 @@
+{
+ "project": "blauw13",
+ "titel": "75 kilo blauwdruk dag 13 · gewicht schommelt",
+ "intro": "Lengte 15,9 s (al 10% sneller). Tekst klopt; je extra zin 'Dit is veel nauwkeuriger' blijft. Donkere vaste stijl van de blauwdruk. Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop boven je hoofd op 'dus geen paniek bij'", "uitleg": "Terwijl je wijst; loopt door in de hook", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "3 titelopties", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:03", "tekst": "[flesjes] Vandaag ineens een kilo zwaarder? Dit is je kilo.", "still": "menu/k_2.4.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook '+1 kilo? [Geen vet]'", "uitleg": "Met de volledige serienaam eronder", "advies": true},
+   {"id": "b", "code": "B", "label": "Pil '2 flesjes = 1 liter = 1 kilo'", "uitleg": "Op 'dit is je kilo'", "advies": true}
+  ]},
+  {"id": "m2", "tijd": "0:03", "tot": "0:07", "tekst": "Een kilo vet is namelijk 7.700 calorieën, en dat eet je niet in een avond.", "still": "menu/k_5.0.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Groot woord 7.700 KCAL = 1 kilo vet", "uitleg": "Beeld dimt, boem", "advies": true},
+   {"id": "b", "code": "B", "label": "Rollende teller 7.700", "uitleg": "Getal met meerdere cijfers, dus mag", "advies": false}
+  ]},
+  {"id": "m3", "tijd": "0:08", "tot": "0:09", "tekst": "Natuurlijk schrok ik vroeger ook van de weegschaal,", "still": "menu/k_9.0.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Bevriezen + '* schrik *'", "uitleg": "Zwart-wit, rode cirkel, foutpiepje", "advies": true},
+   {"id": "b", "code": "-", "label": "Niks", "uitleg": "Rustig", "advies": false}
+  ]},
+  {"id": "m4", "tijd": "0:10", "tot": "0:13", "tekst": "maar nu kijk ik gewoon naar mijn weekgemiddelde. Dit is veel nauwkeuriger.", "still": "menu/k_12.4.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "B", "label": "Lijngrafiek: dag schommelt, week zakt", "uitleg": "Groene lijn boven je hoofd met label 'weekgemiddelde'", "advies": true},
+   {"id": "b", "code": "B", "label": "Video krimpt tot kaart 'Kijk naar je week'", "uitleg": "Zoomcard", "advies": false}
+  ]}
+ ]
+}

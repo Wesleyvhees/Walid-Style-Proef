@@ -53,7 +53,7 @@ Pieken: gordel+motor + vraag (0 s) → tegendraads 'verpest niks' (±2 s) → ik
 Montage (Donker Bewijs): kinetic VERPEST? · search 'opnieuw beginnen met afvallen' · freeze op 'alles is verpest' · zoomcard antwoord.  
 Status: klaar.
 
-## Dag 13 · Gewicht schommelt · klaar (nieuwe vorm 2026-11-22, met Wes' echte ervaring)
+## Dag 13 · Gewicht schommelt · opgenomen (bewerkt 2026-11-22, 15,9 s)
 Trefwoord: gewicht schommelt
 ```
 ▶ ACTIE: houd een fles water (1 liter) voor de lens
