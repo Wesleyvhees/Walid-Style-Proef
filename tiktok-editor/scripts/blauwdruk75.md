@@ -61,31 +61,21 @@ Vandaag ineens
 een kilo zwaarder?
 Dit is je kilo.
 
-Een liter water
-weegt een kilo.
 Een kilo vet is
-zo'n 7.700 calorieën.
+7.700 calorieën.
 Die eet je niet
 in een avond.
-Meestal is het vocht.
-Door zout, koolhydraten
-of een zware training.
 
 Ik schrok vroeger ook
 van de weegschaal.
-Ik dacht: ik ben
-dikker geworden.
-Nu weeg ik elke dag
-en kijk ik naar
-het weekgemiddelde.
-En hoe mijn kleding zit.
+Nu kijk ik naar
+mijn weekgemiddelde.
 
 ▶ ACTIE: wijs in de lens
-Kijk naar je week.
 Niet naar vandaag.
 Dus geen paniek bij:
 ```
-In beeld: "+1 kilo? [Geen vet]" · fles water = "1 liter = 1 kilo" · 7.700 kcal (3D-kaart of counter) · lijngrafiek week met schommelend gewicht + gemiddelde lijn
+In beeld: "+1 kilo? [Geen vet]" · op "Dit is je kilo": tekst "1 liter water = 1 kilo" (niet uitgesproken, korter gemaakt 2026-11-22) · 7.700 kcal (3D-kaart of counter) · lijngrafiek week met schommelend gewicht + gemiddelde lijn
 Loop: "Dus geen paniek bij: vandaag ineens een kilo zwaarder?"
 Pieken: fles + herkenning (0 s) → 'dit is je kilo' (±2 s) → getal 7.700 kcal (±5 s) → ik-bewijs schrok ook (±10 s) → antwoord week vs vandaag (±15 s).
 Feiten: 1 liter water = 1 kg; 1 kg lichaamsvet ≈ 7.700 kcal; glycogeen bindt ±3 g water per gram; dagschommelingen 0,5–2 kg normaal. Wes (2026-11-22): schrok vroeger van de weegschaal, weegt nu elke dag en kijkt naar het weekgemiddelde en hoe zijn kleding zit.
