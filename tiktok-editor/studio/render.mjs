@@ -241,7 +241,9 @@ await renderMedia({
   outputLocation: tmp,
   inputProps: sb,
   browserExecutable,
-  crf: draft ? 26 : 16, // 16 = meer scherpte over na TikToks eigen compressie (Wes 2026-11-10, C3)
+  crf: draft ? 26 : 14, // 14 = meer scherpte over na TikToks eigen compressie (Wes 2026-11-10 C3; 2026-11-23 "kwaliteit mag beter")
+  jpegQuality: 100, // Remotion legt elk frame standaard vast als JPEG 80 -> zachter beeld
+  x264Preset: draft ? "veryfast" : "slow",
   concurrency: Number(process.env.CONCURRENCY ?? 4),
   scale: draft ? 0.5 : 1,
   onProgress: ({ progress }) => {
@@ -256,7 +258,8 @@ await renderMedia({
 // Geluid op TikTok-volume (-14 LUFS) en wat compressie.
 execFileSync("ffmpeg", [
   "-y", "-hide_banner", "-loglevel", "error", "-i", tmp,
-  "-c:v", "copy",
+  // licht verscherpen + hoge kwaliteit, zodat er na TikToks eigen compressie meer detail overblijft
+  ...(draft ? ["-c:v", "copy"] : ["-vf", "unsharp=5:5:0.55:5:5:0,format=yuv420p", "-c:v", "libx264", "-preset", "slow", "-crf", "14", "-profile:v", "high", "-bf", "2", "-g", "60"]),
   "-af", "highpass=f=80,acompressor=threshold=-18dB:ratio=3:attack=5:release=120,loudnorm=I=-14:TP=-1.5:LRA=9",
   "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", out,
 ]);

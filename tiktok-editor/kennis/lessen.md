@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-23 · blauwdruk dag 13 · "kwaliteit mag beter" → render: Remotion-frames als JPEG 100 i.p.v. 80, x264 preset slow crf 14, eindstap licht verscherpt (unsharp 5:5:0.55) en yuv420p; scherpte gemeten +70–110% t.o.v. de vorige render (Laplacian). Filmtip: achtercamera, 4K 30 fps, meer licht van voren.
 - 2026-11-22 · blauwdruk dag 13 · "dit mag iets korter, dit is een lange video" → blauwdruk/Slimmer-scripts mikken op ±40 woorden (±15 s), niet 55; uitleg die het beeld al laat zien niet uitspreken maar als tekst in beeld zetten.
 - 2026-11-19 · Van nul naar grip dag 18 · "mag nog iets harder" → v2: kortere klappen, oordeel uitspreken ("Dat is geen plan. Dat is een smoes."), geen zachte vragen, opdracht als bevel ("Elke dag. Geen excuses."). Dit is nu het hardheidsniveau voor de serie.
 - 2026-11-19 · beschrijving · "de beschrijvingen voortaan wat korter maken" → max 2 korte zinnen + vraag aan de kijker (±150 tekens): zin 1 met hoofdtrefwoord, zin 2 serie + dag (of de bron/voorwaarde als dat moet), dan de vraag met 👇. Rest van de uitleg niet in de beschrijving.
