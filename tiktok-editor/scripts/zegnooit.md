@@ -78,11 +78,11 @@ Feiten: Kreider e.a. 2017 (ISSN): gewichtstoename door creatine = vocht in de sp
 Zeg nooit tegen
 een gymbro:
 "Ik doe alleen cardio
-om af te vallen."
+om strak te worden."
 ▶ ACTIE: laat je sleutels
 uit je hand vallen
 Zonder krachttraining
 verlies je ook spieren.
 Dus zeg het nooit meer:
 ```
-Feiten: krachttraining tijdens afvallen helpt spiermassa te behouden (o.a. Cava e.a. 2017, review); "ook spieren" = niet alleen vet.
+FYP-veilig (2026-11-24): "om strak te worden" i.p.v. "om af te vallen". Feiten: krachttraining tijdens afvallen helpt spiermassa te behouden (o.a. Cava e.a. 2017, review); "ook spieren" = niet alleen vet.
