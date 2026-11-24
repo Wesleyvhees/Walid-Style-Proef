@@ -15,6 +15,12 @@ blijven: (1) tekst ter controle, (2) vragenlijst vóór het storyboard (mag in �
 (3) fotokeuze als er foto's zijn. Daarna storyboard → eigen controle met stills (niet naar Wes) → renderen → zelfcontrole → video + SEO-pakket sturen,
 zonder tussendoor te vragen. Alleen vragen bij echte twijfel of iets onomkeerbaars.
 
+## FYP-veilig (Wes 2026-11-24: video geblokkeerd voor de For You-pagina) — gaat vóór alles
+TikTok haalt video's van de For You-pagina bij (mogelijk) schadelijk gewichtsmanagement, voor/na-transformaties en "ideale" lichamen; de check leest
+tekst in beeld, ondertitels, gesproken tekst en hashtags. Dus: geen kilo's/gewichtsgetallen of "afvallen" in hook, cover of grote tekst in beeld; geen
+weegschaal in beeld; voor/na-lichaamsfoto's niet als hoofdboodschap en nooit met getallen; framing = gezondheid, energie, kracht, gewoontes, progressie.
+Geen #afvallen/#gewichtsverlies. Scripts: check elk script hierop vóór je het stuurt.
+
 ## Stijl "Donker Bewijs" — vaste stijl voor Slimmer 2.0 en 75 kilo blauwdruk vanaf 2026-11-10 (Wes: "maak een stijl die we vanaf nu gaan gebruiken")
 
 Gaat vóór alle oudere effectregels voor deze twee series. Alles donker (zwart, witte tekst, groen #A3B462 als accent), nooit wit.
