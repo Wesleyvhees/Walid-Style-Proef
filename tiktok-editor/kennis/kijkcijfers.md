@@ -61,3 +61,14 @@ Conclusies (kleine aantallen, richting geen bewijs):
 3. Slimmer dag 23 (dubbele hook, bewijs-beeld pasta, 18 s, nieuwe scriptregels) scoort het best van de uitlegvideo's: 39% retentie, 16% afgekeken, meeste likes.
 4. Recept (chocolade eiwitbrood) haalt de meeste weergaven en 33% profielbezoek → mensen willen meer van je zien; maar volgers blijven 0–1 per video → profiel/bio zet niet om.
 5. Zoeken 0–1%: de SEO-trefwoorden trekken nog niets; mensen zoeken alleen op je naam.
+
+## Plan 2026-11-25 (Wes: "views blijven op 300 hangen, we moeten iets anders verzinnen")
+Diagnose: TikTok test elke video bij ±300 mensen; doorbreken lukt alleen als kijkers blijven/afkijken. Eigen data: kijkers blijven 5–9 s ongeacht lengte;
+12 s-video = 70% retentie, 16–25 s = 29–39%, langer < 25%. Recente video's zijn 16–25 s → te lang. Recept (eiwitbrood) = meeste weergaven + 33% profielbezoek.
+Experiment 2 weken (meten na 48 uur: weergaven, gem. kijktijd, % afgekeken, afhaakmoment):
+1. Max 10 seconden per video (1 boodschap, 15–25 woorden).
+2. Formatwissel: 3x per week "dit eet ik / recept in 10 s" (eigen eten, bus/keuken), 2x per week stitch/reactie op een virale fitnessvideo (mythe ontkrachten), rest korte motivatie/gymbro.
+3. Titel de hele video in beeld (patroon van de toppers) als test tegen hook-alleen-in-het-begin.
+4. Einde met een reageer-vraag die makkelijk is (één woord: "Ja of nee?").
+5. Elke dag 1 post, wisselend 12:00 en 19:00 om het beste uur te vinden.
+6. Bio/profiel aanpassen (keuze A/B/C staat nog open).
