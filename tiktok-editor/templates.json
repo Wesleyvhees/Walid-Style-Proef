@@ -10,7 +10,9 @@
    "follow",
    "comment",
    "prompt",
-   "volgstempel"
+   "volgstempel",
+   "flyin",
+   "framebreak"
   ],
   "popLooks": [
    "impact",
@@ -87,7 +89,9 @@
    "escalate",
    "allornothing",
    "continue",
-   "fingercard"
+   "fingercard",
+   "flyin",
+   "framebreak"
   ],
   "popLooks": [
    "stamp",
@@ -180,7 +184,8 @@
    "escalate",
    "allornothing",
    "continue",
-   "fingercard"
+   "fingercard",
+   "flyin"
   ],
   "popLooks": [
    "stamp",
@@ -239,7 +244,8 @@
    "doodle",
    "vertigo",
    "cover",
-   "glass"
+   "glass",
+   "flyin"
   ],
   "popLooks": [
    "counter",
@@ -287,7 +293,9 @@
    "search",
    "counter",
    "notes",
-   "title"
+   "title",
+   "flyin",
+   "framebreak"
   ],
   "uitleg": "Hook 'Never tell a [GYMBRO]' + pill 'Aflevering X'. De verboden zin groot als quote; reactie = freeze (zwart-wit, zoom, '* ongemakkelijke stilte *'); waarheid = FEIT-stempel (groen); einde volgknop. Kleur, 8–12 s.",
   "referentie": "voorbeelden/gymbro-afl2/storyboard.json"

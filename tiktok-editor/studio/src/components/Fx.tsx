@@ -224,9 +224,9 @@ const FrameBreak: React.FC<Props> = ({ beat, sb, style }) => {
   const f = faceAt(sb, beat.start);
   const sc = 1 - 0.24 * p;
   // bovenrand van het kader halverwege je gezicht: je hoofd breekt er bovenuit
-  const top = Math.max(200, f[1] + f[3] * 0.45);
-  const inset = { top, right: 150, bottom: 360, left: 150 };
-  const ry = -9 * p;
+  const top = Math.max(200, f[1] + f[3] * (beat.breakAt ?? 0.55));
+  const inset = { top, right: beat.side ?? 110, bottom: beat.bottom ?? 300, left: beat.side ?? 110 };
+  const ry = (beat.tilt ?? -6) * p;
   const acc = accentOf(style);
   return (
     <AbsoluteFill>
@@ -244,7 +244,7 @@ const FrameBreak: React.FC<Props> = ({ beat, sb, style }) => {
             right: inset.right * p,
             bottom: inset.bottom * p,
             borderRadius: 40 * p,
-            border: `${7 * p}px solid rgba(255,255,255,0.95)`,
+            border: `${7 * p}px solid ${beat.light ? "rgba(255,255,255,0.95)" : "#A3B462"}`, // donker/groen (Donker Bewijs), wit alleen met light: true
             boxShadow: `0 40px 120px rgba(0,0,0,${0.6 * p})`,
           }}
         />

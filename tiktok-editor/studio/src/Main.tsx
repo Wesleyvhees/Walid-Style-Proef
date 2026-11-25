@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Audio, interpolate, Easing, Freeze, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { FingerCard } from "./components/Pointer";
+import { FlyIn, flyShake } from "./components/Depth";
 import { AllOrNothing, ContinueScreen, Escalate, GlassCrack, HabitGrid, ProgressBar, shakeAt, ThoughtBubble, ZigzagChart } from "./components/Fun";
 import { Counter, DarkPill, FreezeOverlay, KineticWord, NotesCard, SearchBar, ZoomCardTitle, zoomCardScale } from "./components/Dark";
 import type { Beat, Storyboard, StylePreset, TitleBeat, WordsBeat, Zoom } from "./types";
@@ -106,7 +107,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
 
   return (
     <FxLookCtx.Provider value={(sb as any).fxLook ?? {}}>
-    <AbsoluteFill style={{ background: "#000", transform: (() => { const [sx, sy] = shakeAt(now as any[], t); return sx || sy ? `translate(${sx}px, ${sy}px) scale(1.03)` : undefined; })() }}>
+    <AbsoluteFill style={{ background: "#000", transform: (() => { const [ax, ay] = shakeAt(now as any[], t); const [bx, by] = flyShake(now as any[], t); const sx = ax + bx, sy = ay + by; return sx || sy ? `translate(${sx}px, ${sy}px) scale(1.03)` : undefined; })() }}>
       {/* virtuele camera: vaste uitsnede per shot (multicam uit één opname) */}
       {(() => {
         const shot = (sb.camShots ?? []).find((c) => t >= c.start && t < c.end);
@@ -215,6 +216,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
         if ((b as any).type === "freeze") return <FreezeOverlay key={`c${i}`} beat={b} />;
         if ((b as any).type === "zoomcard") return <ZoomCardTitle key={`c${i}`} beat={b} />;
         if ((b as any).type === "fingercard") return <FingerCard key={`c${i}`} beat={b} />;
+        if ((b as any).type === "flyin") return <FlyIn key={`c${i}`} beat={b} />;
         if ((b as any).type === "progress") return <ProgressBar key={`c${i}`} beat={b} />;
         if ((b as any).type === "zigzag") return <ZigzagChart key={`c${i}`} beat={b} />;
         if ((b as any).type === "habitgrid") return <HabitGrid key={`c${i}`} beat={b} />;
@@ -256,6 +258,7 @@ export const Main: React.FC<Storyboard> = (sb) => {
           // Spel & Verhaal-effecten (Fun.tsx): eigen geluid per moment
           ...(((bb: any) => {
             const o: { fx: string; start: number }[] = [];
+            if (bb.type === "flyin") { o.push({ fx: "whoosh", start: bb.start }); if (bb.mode !== "through") o.push({ fx: "boom", start: bb.start + (bb.fly ?? 0.32) }); }
             if (bb.type === "progress") { if (bb.pauseAt) o.push({ fx: "error", start: bb.pauseAt }); if (bb.resumeAt) o.push({ fx: "ding", start: bb.resumeAt }); }
             if (bb.type === "allornothing") { (bb.flips ?? []).forEach((f: number) => o.push({ fx: "click", start: f })); if (bb.xAt) o.push({ fx: "error", start: bb.xAt }); }
             if (bb.type === "continue") { o.push({ fx: "error", start: bb.start }); o.push({ fx: "arcade", start: bb.pressAt ?? bb.end - 0.45 }); }
