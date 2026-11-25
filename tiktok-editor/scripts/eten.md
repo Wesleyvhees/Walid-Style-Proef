@@ -3,6 +3,6 @@ Wes eet de hele week hetzelfde, menu wisselt 1x per week. ±10 s per aflevering,
 
 ## Week 1 (vanaf 2026-11-25)
 - Ontbijt: havermout-pannenkoekjes met spinazie, aardbeien, blauwe bessen, chiazaad, havermout, eiwit(poeder), amandelmelk en een beetje flavor powder.
-- Lunch: (nog vragen)
+- 10:00 en 13:00 (twee keer dezelfde maaltijd): pasta met wokgroenten, 5% mager gehakt en 1 ei, plus 6 rijstwafels per maaltijd.
 - Avondeten: (nog vragen)
-- Tussendoor: (nog vragen; rijstwafels in de bus?)
+- Tussendoor: (nog vragen)
