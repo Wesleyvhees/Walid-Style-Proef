@@ -162,7 +162,7 @@ Loop: "Want nu is het zo: je wilt alles in een week. En daarom sta je nog steeds
 Pieken: sleutels + harde stelling (0 s) → maandag/vrijdag (±3 s) → klap 'dat is een smoes' (±5 s) → ik-bewijs 5.000 → 20.000 (±7–10 s) → confrontatie 'zonder de weg' (±12 s) → opdracht (±14 s).
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md: 5.000 → 10.000 → 12.000 → 20.000 stappen in maanden, "stap voor stap"). 'Op nul' = serienaam, geen feitelijke claim.
 
-## Dag 19 · Je stopt te snel · klaar (2026-11-25, ingekort tot ±12 s, hard, FYP-veilig, Wes' echte verhaal: hardlopen → elke dag lopen)
+## Dag 19 · Je stopt te snel · opgenomen (bewerkt 2026-11-25, 16,1 s, hard, FYP-veilig, Wes' echte verhaal: hardlopen → elke dag lopen)
 Trefwoord: discipline
 ```
 ▶ ACTIE: rits je jas
