@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-25 · scripts · "soms voel je de vibe niet, neem dan even rust, keer terug tot jezelf en probeer het later opnieuw" → keurt Wes 2 scripts achter elkaar af: niet snel nog een versie gooien, maar stoppen, terugkijken naar wat bij hem werkt (toppers, zijn woorden, zijn ervaringen) en later met een frisse, betere set komen.
 - 2026-11-25 · cover dag 19 · eigen check: beeld met opgestoken vinger (onscherp) kan op een middelvinger lijken → covers altijd zonder handgebaren voor het gezicht kiezen.
 - 2026-11-25 · demo 3D-effecten (flyin/framebreak) · "die effecten zijn niet geoptimaliseerd" → nog niet gebruiken; eerst verbeteren (strakkere timing, minder waas, beter kader) en opnieuw voorleggen.
 - 2026-11-25 · effecten · "veel talking head; vermaken met 3D-effecten, effecten die het beeld in- en uitgaan" + "blijf jezelf optimaliseren en heruitvinden" → nieuw `flyin` (woord/getal/foto uit de diepte, landt met klap of `mode: "through"` door de lens), `framebreak` nu groen/donker. Spelregel: 1 opvallend effect in de eerste seconde, max 3 grote effecten, gezicht hoofdzaak. Reflectie bijhouden in kennis/reflectie.md (elke 3 video's bijwerken).
