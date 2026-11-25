@@ -124,25 +124,33 @@ Beelden (veel achtergrond/pop): klok/horloge · leeg bord · stapel onderzoeken 
 Vervangt vezels (staat als reserve onderaan).  
 Status: klaar.
 
-## Dag 27 · Volgorde krachttraining · klaar
+## Dag 27 · Volgorde krachttraining · klaar (nieuwe vorm 2026-11-25)
 Trefwoord: krachttraining
 ```
-Biceps eerst, squat als laatste?
-Slecht plan voor je krachttraining.
-Wat je eerst doet, daarin ben je sterkst.
-Dat blijkt uit meerdere onderzoeken.
-Dus zware oefeningen vooraan.
-Squat, deadlift of bankdrukken.
-Daarna pas armen en schouders.
-Dan til je zwaar waar het telt.
+▶ ACTIE: span je biceps aan en tik erop
+Biceps eerst,
+benen als laatste?
+Dan train je
+verkeerd om.
+
+Waar je mee begint,
+daarin ben je
+het sterkst.
+Dus zwaar vooraan:
+squat, deadlift,
+bankdrukken.
+[ervaring, alleen als het klopt]
+
+▶ ACTIE: wijs in de lens
+Armen pas
+als laatste.
 Of blijf je doen:
 ```
-In beeld: "[Biceps eerst?] Slecht plan"  
-Frame 1: je schema op je telefoon met biceps bovenaan (bewijs-beeld).  
-Loop: "Of blijf je doen: biceps eerst, squat als laatste?"  
-Feiten: Simão e.a. 2012 (Sports Medicine review): oefeningen vroeg in de training halen meer herhalingen en kracht.
-Pieken: Tegendraads (0–2 s) → feit 'eerst = sterkst' (±4 s) → Contrast zwaar vs armen (±11 s).  
-Montage: opstapelende labels 1 Squat / 2 Deadlift / 3 Bankdrukken / 4 Armen.
+In beeld: "Biceps eerst? [Verkeerd om]"  
+Loop: "Of blijf je doen: biceps eerst, benen als laatste?"  
+Feiten: Simão e.a. 2012 (Sports Medicine): oefeningen vroeg in de training halen meer herhalingen en kracht. FYP-veilig: geen gewicht/afvallen.  
+Nieuwe vorm 2026-11-25, ±40 woorden. Vraag aan Wes: trainde jij vroeger ook eerst je armen? Eén zin.  
+Status: klaar.
 
 ## Dag 28 · Alcohol en afvallen · klaar
 Trefwoord: alcohol en afvallen
