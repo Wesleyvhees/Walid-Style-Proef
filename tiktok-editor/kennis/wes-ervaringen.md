@@ -21,3 +21,5 @@
 - **Weegschaal (2026-11-22):** schrok vroeger van de weegschaal, "ik dacht dat ik toch dikker was geworden". Nu weegt hij elke dag en kijkt naar het weekgemiddelde; heeft de weegschaal "een heel eind losgelaten", alleen om te zien of hij op gewicht blijft, aankomt of afvalt, focust er niet zo op. Kijkt meer naar of hij droger (strakker) wordt, naar de sport en naar hoe zijn kleding zit.
 
 - **Gewicht (2026-11-25):** 35 kilo afgevallen, van 110 naar 75 kg; inmiddels weer 78,5 kg. Zeg dus nooit "ik weeg 75" in het heden. Eet de hele week hetzelfde, menu verandert een keer per week. Gewichtsgetallen alleen in de beschrijving (FYP-veilig), niet in hook/cover/beeld.
+
+- **Trainingsvolgorde (2026-11-25):** trainde nooit eerst armen; altijd de zwaarste oefeningen eerst en later de isolatieoefeningen, vanaf het begin goed gedaan.

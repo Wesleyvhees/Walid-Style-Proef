@@ -139,7 +139,10 @@ het sterkst.
 Dus zwaar vooraan:
 squat, deadlift,
 bankdrukken.
-[ervaring, alleen als het klopt]
+Zo train ik
+vanaf dag een.
+Zwaar eerst,
+isolatie daarna.
 
 ▶ ACTIE: wijs in de lens
 Armen pas
@@ -149,8 +152,7 @@ Of blijf je doen:
 In beeld: "Biceps eerst? [Verkeerd om]"  
 Loop: "Of blijf je doen: biceps eerst, benen als laatste?"  
 Feiten: Simão e.a. 2012 (Sports Medicine): oefeningen vroeg in de training halen meer herhalingen en kracht. FYP-veilig: geen gewicht/afvallen.  
-Nieuwe vorm 2026-11-25, ±40 woorden. Vraag aan Wes: trainde jij vroeger ook eerst je armen? Eén zin.  
-Status: klaar.
+Nieuwe vorm 2026-11-25, ±40 woorden. Status: klaar.
 
 ## Dag 28 · Alcohol en afvallen · klaar
 Trefwoord: alcohol en afvallen
