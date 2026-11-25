@@ -3,6 +3,7 @@
 Elke keer dat Wes feedback geeft, komt hier een regel bij (nieuwste bovenaan). Lees dit vóór elke bewerking.
 Formaat: datum · video · wat Wes zei → wat de regel nu is.
 
+- 2026-11-25 · dag 20 · "ogen dicht, achterover: duurt te lang, de 2–3 seconden oorlog is weg; binnen 2–3 s grijpen, dan weer vastgrijpen, en weer" → acties max ±0,5 s en luid/onverwacht (klap, slaan, wijzen, smijten), nooit langzaam; elke 2–3 s een nieuwe grijp (onverwacht woord, ik-bewijs, contrast, klap). In elk script de grijpmomenten met seconden noteren.
 - 2026-11-25 · scripts · "soms voel je de vibe niet, neem dan even rust, keer terug tot jezelf en probeer het later opnieuw" → keurt Wes 2 scripts achter elkaar af: niet snel nog een versie gooien, maar stoppen, terugkijken naar wat bij hem werkt (toppers, zijn woorden, zijn ervaringen) en later met een frisse, betere set komen.
 - 2026-11-25 · cover dag 19 · eigen check: beeld met opgestoken vinger (onscherp) kan op een middelvinger lijken → covers altijd zonder handgebaren voor het gezicht kiezen.
 - 2026-11-25 · demo 3D-effecten (flyin/framebreak) · "die effecten zijn niet geoptimaliseerd" → nog niet gebruiken; eerst verbeteren (strakkere timing, minder waas, beter kader) en opnieuw voorleggen.

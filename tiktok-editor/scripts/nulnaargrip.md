@@ -192,35 +192,29 @@ Loop: "Want nog een keer: jij gaat niet te zacht. Jij stopt te snel."
 Pieken: rits + stelling (0 s) → herkenning week 1/week 3 (±3 s) → ik-bewijs hardlopen (±6 s) → contrast gewoon lopen (±9 s) → klap saai/werkt (±11 s) → opdracht (±13 s).
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, wandelen 2026-11-19: dacht eerst dat hij moest hardlopen; loopt nu elke dag ±20.000 stappen). FYP-veilig: geen gewicht, kilo's of afvallen.
 
-## Dag 20 · Soms voel je de vibe niet · klaar (2026-11-25, Wes' eigen woorden van vandaag)
+## Dag 20 · Geen vibe vandaag · klaar (2026-11-25 v2: snelle acties, elke 2–3 s een nieuwe grijp)
 Trefwoord: motivatie
 ```
-▶ ACTIE: leun achterover,
-ogen dicht,
-adem hard uit
-Soms voel je
-de vibe niet.
+▶ ACTIE: klap hard
+in je handen (0 s)
+Geen vibe vandaag?
+Prima.
+
 Ik had het
 vandaag ook.
 
-Forceren werkt niet.
-Neem even rust.
-Kom terug
-bij jezelf.
+▶ ACTIE: wijs in de lens
+Forceer het niet.
+Maar stop ook niet.
 
-▶ ACTIE: ogen open,
-recht in de lens
 Rust is geen opgeven.
-Stoppen is:
-niet meer terugkomen.
+Wegblijven wel.
 
-Als alles klopt,
-ga je het gewoon
-goed doen.
-Dus als het
-even niet lukt:
+Kom terug.
+Dan doe je het goed.
+Dus zeg gewoon:
 ```
-In beeld: hook "Geen [vibe]?" · impact-woorden: FORCEREN? / RUST / GEEN OPGEVEN / TERUGKOMEN
-Loop: "Dus als het even niet lukt: soms voel je de vibe niet."
-Pieken: actie + herkenning (0 s) → ik-bewijs vandaag (±2 s) → advies rust (±4 s) → contrast rust vs stoppen (±7 s) → belofte (±10 s).
-Feiten: Wes' eigen woorden (2026-11-25): "Soms voel je de vibe niet, neem dan even rust, keer terug tot jezelf en probeer het later opnieuw; als alles klopt ga je het gewoon goed doen." FYP-veilig.
+Grijpmomenten: 0 s klap + "Prima." (onverwacht) → 2 s ik-bewijs → 4 s wijzen + contrast niet forceren/niet stoppen → 7 s klap "Wegblijven wel." → 9 s belofte → loop.
+In beeld: hook "Geen [vibe]?" · impact-woorden: PRIMA. / STOP NIET / WEGBLIJVEN WEL / KOM TERUG
+Loop: "Dus zeg gewoon: geen vibe vandaag? Prima."
+Feiten: Wes' eigen woorden (2026-11-25). FYP-veilig. ±30 woorden, ±10 s.
