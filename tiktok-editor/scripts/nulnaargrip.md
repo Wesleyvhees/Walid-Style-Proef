@@ -191,3 +191,36 @@ In beeld: hook "Je stopt [te snel]" · impact-woorden: WEEK 1 / WEEK 3: WEG / SA
 Loop: "Want nog een keer: jij gaat niet te zacht. Jij stopt te snel."
 Pieken: rits + stelling (0 s) → herkenning week 1/week 3 (±3 s) → ik-bewijs hardlopen (±6 s) → contrast gewoon lopen (±9 s) → klap saai/werkt (±11 s) → opdracht (±13 s).
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, wandelen 2026-11-19: dacht eerst dat hij moest hardlopen; loopt nu elke dag ±20.000 stappen). FYP-veilig: geen gewicht, kilo's of afvallen.
+
+## Dag 20 · Soms voel je de vibe niet · klaar (2026-11-25, Wes' eigen woorden van vandaag)
+Trefwoord: motivatie
+```
+▶ ACTIE: leun achterover,
+ogen dicht,
+adem hard uit
+Soms voel je
+de vibe niet.
+Ik had het
+vandaag ook.
+
+Forceren werkt niet.
+Neem even rust.
+Kom terug
+bij jezelf.
+
+▶ ACTIE: ogen open,
+recht in de lens
+Rust is geen opgeven.
+Stoppen is:
+niet meer terugkomen.
+
+Als alles klopt,
+ga je het gewoon
+goed doen.
+Dus als het
+even niet lukt:
+```
+In beeld: hook "Geen [vibe]?" · impact-woorden: FORCEREN? / RUST / GEEN OPGEVEN / TERUGKOMEN
+Loop: "Dus als het even niet lukt: soms voel je de vibe niet."
+Pieken: actie + herkenning (0 s) → ik-bewijs vandaag (±2 s) → advies rust (±4 s) → contrast rust vs stoppen (±7 s) → belofte (±10 s).
+Feiten: Wes' eigen woorden (2026-11-25): "Soms voel je de vibe niet, neem dan even rust, keer terug tot jezelf en probeer het later opnieuw; als alles klopt ga je het gewoon goed doen." FYP-veilig.
