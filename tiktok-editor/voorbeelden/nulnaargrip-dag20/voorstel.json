@@ -1,0 +1,33 @@
+{
+ "project": "dag20",
+ "titel": "Van nul naar grip dag 20",
+ "intro": "Je klap aan het begin staat erin. Tekst klopt ('Dus zeg voortaan tegen jezelf:' loopt door in 'Geen vibe vandaag? Helemaal prima.'). Lengte 16,4 s. Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "lengte", "titel": "Lengte (nu 16,4 s)", "keuze": "een", "opties": [
+   {"id": "s10", "code": "K1", "label": "10% sneller", "uitleg": "±14,9 s, stem blijft gelijk", "advies": true},
+   {"id": "zo", "code": "K2", "label": "Zo laten", "uitleg": "16,4 s", "advies": false}
+  ]},
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop op 'Dus zeg voortaan tegen jezelf'", "uitleg": "Loopt door in de hook", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "3 titelopties, zwart-wit, zonder handgebaar", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:03", "tekst": "[klap] Geen vibe vandaag? Helemaal prima.", "still": "menu/k_2.2.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Geen [vibe]?'", "uitleg": "Pill 'Van nul naar grip dag 20'", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact PRIMA.", "uitleg": "Het onverwachte antwoord, boem", "advies": true}
+  ]},
+  {"id": "m2", "tijd": "0:05", "tot": "0:07", "tekst": "Forceer het niet, maar stop ook niet.", "still": "menu/k_6.9.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact STOP NIET", "uitleg": "Boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact FORCEER NIET", "uitleg": "Op het eerste deel", "advies": false}
+  ]},
+  {"id": "m3", "tijd": "0:07", "tot": "0:11", "tekst": "Rust is namelijk geen opgeven, maar wegblijven is dat wel.", "still": "menu/k_10.5.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact WEGBLIJVEN WEL", "uitleg": "De harde klap", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact RUST ≠ OPGEVEN", "uitleg": "Op het eerste deel", "advies": false}
+  ]},
+  {"id": "m4", "tijd": "0:11", "tot": "0:14", "tekst": "Pak je rust, kom terug en doe het opnieuw.", "still": "menu/k_13.0.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Punchline KOM TERUG", "uitleg": "Met 'dag 20' eronder, boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Punchline OPNIEUW", "uitleg": "Op het laatste woord", "advies": false}
+  ]}
+ ]
+}

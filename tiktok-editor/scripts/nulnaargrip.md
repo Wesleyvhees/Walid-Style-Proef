@@ -192,7 +192,7 @@ Loop: "Want nog een keer: jij gaat niet te zacht. Jij stopt te snel."
 Pieken: rits + stelling (0 s) → herkenning week 1/week 3 (±3 s) → ik-bewijs hardlopen (±6 s) → contrast gewoon lopen (±9 s) → klap saai/werkt (±11 s) → opdracht (±13 s).
 Feiten: Wes' eigen verhaal (kennis/wes-ervaringen.md, wandelen 2026-11-19: dacht eerst dat hij moest hardlopen; loopt nu elke dag ±20.000 stappen). FYP-veilig: geen gewicht, kilo's of afvallen.
 
-## Dag 20 · Geen vibe vandaag · klaar (2026-11-25 v2: snelle acties, elke 2–3 s een nieuwe grijp)
+## Dag 20 · Geen vibe vandaag · opgenomen (bewerkt 2026-11-26, 14,9 s)
 Trefwoord: motivatie
 ```
 ▶ ACTIE: klap hard
