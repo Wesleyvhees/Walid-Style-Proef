@@ -1,0 +1,37 @@
+{
+ "project": "dag18",
+ "titel": "Van nul naar grip dag 18",
+ "intro": "Harde versie, buiten gefilmd: je gezicht staat nu stil in beeld (de camera bewoog mee met lopen). Tekst klopt (5.000 → 10.000 → 12.000 → 15.000 → gemiddeld 19.000). Pauze voor 'want' eruit; einde loopt door in de hook ('want nu is het: jij wilt alles in een week'). Lengte 25,0 s. Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "lengte", "titel": "Lengte (nu 25,0 s)", "keuze": "een", "opties": [
+   {"id": "s10", "code": "K1", "label": "10% sneller", "uitleg": "±22,7 s (totaal 1,21×), stem blijft gelijk", "advies": true},
+   {"id": "zo", "code": "K2", "label": "Zo laten", "uitleg": "25 s", "advies": false}
+  ]},
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop boven je hoofd op 'want nu is het'", "uitleg": "Terwijl je naar de lens wijst", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "3 titelopties, zwart-wit", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:04", "tekst": "Jij wilt alles in een week, en daarom sta je nog steeds op nul.", "still": "menu/k_3.4.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Alles in [een week]?'", "uitleg": "Pill 'Van nul naar grip dag 18'", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact OP NUL", "uitleg": "Boem", "advies": true}
+  ]},
+  {"id": "m2", "tijd": "0:04", "tot": "0:09", "tekst": "Elke maandag een nieuw plan, en vrijdag weer gestopt. Dat is geen plan, dat is een smoes.", "still": "menu/k_8.9.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact SMOES", "uitleg": "Het oordeel, groot, boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact MAANDAG → VRIJDAG", "uitleg": "In plaats van SMOES", "advies": false}
+  ]},
+  {"id": "m3", "tijd": "0:09", "tot": "0:16", "tekst": "Ik begon met 5.000 stappen. 10.000, 12.000, 15.000 en nu gemiddeld 19.000.", "still": "menu/k_15.3.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T8", "label": "Getallen groeien mee: 5.000 → 15.000", "uitleg": "Elk getal groter, laatste met boem", "advies": true},
+   {"id": "b", "code": "B", "label": "Garmin-bewijs op '19.000'", "uitleg": "Jouw echte scherm: gemiddeld 19.687 per dag, 445,5 km", "advies": true}
+  ]},
+  {"id": "m4", "tijd": "0:16", "tot": "0:20", "tekst": "En jij? Jij wilt het resultaat zonder de weg.", "still": "menu/k_19.0.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact EN JIJ?", "uitleg": "Confrontatie, boem", "advies": true},
+   {"id": "b", "code": "B", "label": "Voor/na rug-foto op 'resultaat'", "uitleg": "Eerst je rug van toen, dan met een boem je rug van nu, naast elkaar; geen tijdsduur", "advies": true}
+  ]},
+  {"id": "m5", "tijd": "0:20", "tot": "0:23", "tekst": "Een stap meer dan gisteren, elke dag, en geen excuses.", "still": "menu/k_22.8.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Punchline GEEN EXCUSES", "uitleg": "Met 'dag 18' eronder, boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Punchline EEN STAP MEER", "uitleg": "De opdracht zelf", "advies": false}
+  ]}
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "project": "dag19",
+ "titel": "Van nul naar grip dag 19",
+ "intro": "In de bus met capuchon, geen wind. Je extra opening 'Weet je wat het is?' en 'Gestopt.' staan erin. Lengte 18,9 s (al 10% sneller); onze cijfers zeggen korter = beter, zie Lengte. Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "lengte", "titel": "Lengte (nu 18,9 s)", "keuze": "een", "opties": [
+   {"id": "kort", "code": "K3", "label": "'Weet je wat het is?' eruit + 10% sneller", "uitleg": "±16 s; video begint meteen met 'Je gaat niet te zacht' (sterkste zin eerst). Het capuchon-optrekken blijft deels zichtbaar", "advies": true},
+   {"id": "weet", "code": "K3", "label": "Alleen 'Weet je wat het is?' eruit", "uitleg": "±17,8 s", "advies": false},
+   {"id": "zo", "code": "K2", "label": "Zo laten", "uitleg": "18,9 s, met jouw opening", "advies": false}
+  ]},
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop op 'want nog een keer'", "uitleg": "Loopt door in de hook", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "3 titelopties, zwart-wit", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:04", "tekst": "[capuchon op] (Weet je wat het is?) Je gaat niet te zacht, jij stopt te snel.", "still": "menu/k_3.5.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Je stopt [te snel]'", "uitleg": "Pill 'Van nul naar grip dag 19'", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact TE SNEL", "uitleg": "Boem", "advies": true}
+  ]},
+  {"id": "m2", "tijd": "0:04", "tot": "0:08", "tekst": "In week 1 geef jij alles, in week 3 alles weer weg. Gestopt.", "still": "menu/k_7.0.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact WEEK 3: WEG", "uitleg": "Boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact GESTOPT", "uitleg": "Op het laatste woord", "advies": false}
+  ]},
+  {"id": "m3", "tijd": "0:08", "tot": "0:13", "tekst": "Ik dacht ook dat alles zwaar moest zijn. Maar nu loop ik gewoon elke dag, ook al is het koud.", "still": "menu/k_12.6.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact ELKE DAG", "uitleg": "Boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Impact OOK IN DE KOU", "uitleg": "Zonder boem, direct erna", "advies": true}
+  ]},
+  {"id": "m4", "tijd": "0:13", "tot": "0:17", "tekst": "Is dat saai? Soms wel. Werkt het? Jazeker.", "still": "menu/k_17.0.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact SAAI?", "uitleg": "Zonder boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Punchline JAZEKER", "uitleg": "Met 'dag 19' eronder, boem", "advies": true}
+  ]}
+ ]
+}

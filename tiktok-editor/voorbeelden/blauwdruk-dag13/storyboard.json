@@ -1,0 +1,88 @@
+{
+ "title": "75 kilo blauwdruk dag 13",
+ "template": "blauwdruk75",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "kilo",
+   "zwaarder",
+   "vet",
+   "7.700",
+   "calorieën",
+   "avond",
+   "weegschaal",
+   "weekgemiddelde",
+   "nauwkeuriger",
+   "paniek"
+  ],
+  "maxChars": 15,
+  "marker": true
+ },
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 2.0,
+   "text": "+1 kilo? [Geen vet]",
+   "sub": "75 kilo blauwdruk dag 13",
+   "size": 90,
+   "sfx": "whoosh"
+  },
+  {
+   "type": "pill",
+   "start": 2.03,
+   "end": 2.88,
+   "text": "2 flesjes = 1 liter = 1 kilo",
+   "y": 330,
+   "size": 50,
+   "sfx": "pop",
+   "note": "Dit is je kilo"
+  },
+  {
+   "type": "kinetic",
+   "start": 4.37,
+   "end": 5.95,
+   "text": "7.700 kcal",
+   "sub": "= 1 kilo vet",
+   "size": 195,
+   "y": 560,
+   "sfx": "boom",
+   "note": "Getal-piek"
+  },
+  {
+   "type": "freeze",
+   "start": 8.56,
+   "end": 9.5,
+   "caption": "* schrik *",
+   "sfx": "error",
+   "note": "Schrok van de weegschaal"
+  },
+  {
+   "type": "linechart",
+   "start": 10.9,
+   "end": 13.95,
+   "values": [
+    80.4,
+    81.3,
+    80.2,
+    81.0,
+    80.6,
+    79.9,
+    79.6
+   ],
+   "label": "weekgemiddelde",
+   "sfx": "ding",
+   "note": "Dag schommelt, week zakt",
+   "y": 110
+  },
+  {
+   "type": "volgstempel",
+   "start": 14.05,
+   "end": 15.879,
+   "y": 330,
+   "x": 450,
+   "width": 560,
+   "sfx": "boom"
+  }
+ ]
+}

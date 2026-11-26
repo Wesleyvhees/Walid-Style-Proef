@@ -1,0 +1,182 @@
+{
+ "title": "Slimmer 2.0 dag 26",
+ "template": "slimmer20",
+ "video": "cut.mp4",
+ "captions": {
+  "highlight": [
+   "intermittent",
+   "fasting",
+   "tijdvak",
+   "minder",
+   "99",
+   "studies",
+   "vasten",
+   "keto",
+   "ochtends",
+   "presteer",
+   "werkt"
+  ],
+  "maxChars": 15,
+  "marker": true
+ },
+ "zooms": [
+  {
+   "start": 0.0,
+   "end": 0.45,
+   "to": 1.08,
+   "ease": "punch",
+   "note": "op het tikken op je horloge"
+  }
+ ],
+ "beats": [
+  {
+   "type": "hook",
+   "start": 0.0,
+   "end": 2.4,
+   "text": "Vasten = [magisch?]",
+   "sub": "Slimmer eten, drinken en trainen 2.0 dag 26",
+   "size": 84,
+   "sfx": "whoosh"
+  },
+  {
+   "type": "scene",
+   "mode": "cutout",
+   "start": 3.88,
+   "end": 6.75,
+   "query": "wall clock",
+   "scale": 0.85,
+   "dim": 0.25,
+   "sfx": "whoosh",
+   "note": "Jij voor een klok: korter tijdvak",
+   "src": "assets/kandidaten/wall_clock/7.jpg",
+   "pick": 7
+  },
+  {
+   "type": "image",
+   "start": 6.8,
+   "end": 7.72,
+   "query": "empty plate",
+   "label": "minder eten",
+   "x": 290,
+   "y": 190,
+   "w": 440,
+   "sfx": "pop",
+   "note": "Leeg bord op 'minder'",
+   "src": "assets/kandidaten/empty_plate/0.jpg",
+   "pick": 0,
+   "rotate": -6
+  },
+  {
+   "type": "fingercard",
+   "start": 7.78,
+   "end": 13.7,
+   "x": 870,
+   "y": 690,
+   "w": 880,
+   "h": 470,
+   "cardX": 540,
+   "cardY": 170,
+   "kicker": "ONDERZOEK",
+   "source": "BMJ 2025 · netwerk-meta-analyse",
+   "lines": [
+    {
+     "text": "99 studies",
+     "at": 7.9,
+     "size": 104,
+     "color": "#A3B462"
+    },
+    {
+     "text": "6582 mensen",
+     "at": 9.39,
+     "size": 70
+    },
+    {
+     "text": "vasten ≈ minder eten",
+     "at": 10.3,
+     "size": 64
+    },
+    {
+     "text": "bijna hetzelfde resultaat",
+     "at": 12.28,
+     "size": 50,
+     "color": "#A3B462"
+    }
+   ],
+   "sfx": "whoosh",
+   "note": "3D-kaart uit je vingertop"
+  },
+  {
+   "type": "cutaway",
+   "start": 15.85,
+   "end": 16.65,
+   "query": "keto breakfast avocado eggs",
+   "label": "keto",
+   "sfx": "whoosh",
+   "note": "Keto",
+   "src": "assets/kandidaten/keto_breakfast_avocado_eggs/3.jpg",
+   "pick": 3
+  },
+  {
+   "type": "image",
+   "start": 18.8,
+   "end": 19.75,
+   "query": "oatmeal breakfast",
+   "label": "direct ontbijt",
+   "x": 290,
+   "y": 190,
+   "w": 440,
+   "sfx": "pop",
+   "note": "'s ochtends direct eten",
+   "src": "assets/kandidaten/oatmeal_breakfast/0.jpg",
+   "pick": 0,
+   "rotate": -6
+  },
+  {
+   "type": "scene",
+   "mode": "cutout",
+   "start": 20.05,
+   "end": 21.35,
+   "query": "gym weights",
+   "scale": 0.85,
+   "dim": 0.25,
+   "sfx": "whoosh",
+   "note": "Presteren",
+   "src": "assets/kandidaten/gym_weights/4.jpg",
+   "pick": 4
+  },
+  {
+   "type": "kinetic",
+   "start": 23.1,
+   "end": 23.98,
+   "text": "Minder eten",
+   "sub": "niet het vasten",
+   "size": 190,
+   "y": 560,
+   "sfx": "boom",
+   "note": "Antwoord"
+  },
+  {
+   "type": "scene",
+   "mode": "cutout",
+   "start": 24.05,
+   "end": 25.6,
+   "query": "road fork crossroads",
+   "scale": 0.85,
+   "dim": 0.25,
+   "sfx": "whoosh",
+   "note": "Kies wat voor jou werkt",
+   "src": "assets/kandidaten/road_fork_crossroads/0.jpg",
+   "pick": 0
+  },
+  {
+   "type": "volgstempel",
+   "start": 25.75,
+   "end": 26.6,
+   "y": 330,
+   "x": 450,
+   "width": 560,
+   "sfx": "boom"
+  }
+ ],
+ "person": "person.webm"
+}

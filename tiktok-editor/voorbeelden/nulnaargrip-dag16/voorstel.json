@@ -1,0 +1,45 @@
+{
+ "project": "dag16",
+ "titel": "Van nul naar grip dag 16",
+ "intro": "Harde look van Van nul naar grip, talking head, nieuwe zwaardere stem. Tekst gecheckt: 'het' was per ongeluk weggeknipt ('dat het niet zo werkt'), staat er weer in; 'trainden' en 'een' verbeterd. Lengte nu 18,4 s; de laatste zin loopt door in de hook ('onthoud dat: een ding houdt je tegen'). Mijn advies staat aan. Tik op Versturen en zeg 'keuzes klaar'.",
+ "groepen": [
+  {"id": "lengte", "titel": "Lengte (nu 18,4 s)", "keuze": "een", "opties": [
+   {"id": "zo", "code": "K2", "label": "Zo laten", "uitleg": "18,4 s, al 10% sneller; verhaal heeft de ruimte nodig", "advies": false},
+   {"id": "s5", "code": "K1", "label": "5% sneller", "uitleg": "±17,5 s, stem blijft gelijk", "advies": true},
+   {"id": "knip", "code": "K3", "label": "'namelijk ook' en 'natuurlijk' eruit", "uitleg": "±17,3 s, zelfde tempo; zin loopt iets strakker", "advies": false}
+  ]},
+  {"id": "mini", "titel": "Figuurtjes van toen (110 kilo)", "keuze": "een", "opties": [
+   {"id": "nee", "code": "-", "label": "Nee, deze dag niet", "uitleg": "Zuivere talking head", "advies": true},
+   {"id": "ja", "code": "M1", "label": "Ja, voor-figuurtje bij 'jouw level 1'", "uitleg": "Jij van toen naast je hoofd als jouw level 1", "advies": false}
+  ]},
+  {"id": "einde", "titel": "Einde", "keuze": "meer", "opties": [
+   {"id": "volg", "code": "E5", "label": "Volgknop boven je hoofd tijdens 'onthoud dat'", "uitleg": "Klein, niet over de ondertitels; video loopt door in de hook", "advies": true},
+   {"id": "cover", "code": "D1", "label": "Cover maken", "uitleg": "'Een ding houdt je tegen', zwart-wit, voor je profiel", "advies": true}
+  ]}
+ ],
+ "momenten": [
+  {"id": "m1", "tijd": "0:00", "tot": "0:03", "tekst": "Een ding houdt je tegen en het zit niet in de gym.", "still": "stills/k_1.2.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "H5", "label": "Hook 'Een ding houdt je [tegen]'", "uitleg": "Curiosity gap: welk ding? Pill 'Van nul naar grip dag 16'", "advies": true},
+   {"id": "b", "code": "H5", "label": "Hook 'Het zit niet in [de gym]'", "uitleg": "Tegendraads in plaats van een vraag", "advies": false},
+   {"id": "c", "code": "T8", "label": "Impact NIET IN DE GYM", "uitleg": "Op 'niet in de gym', boem", "advies": true}
+  ]},
+  {"id": "m2", "tijd": "0:03", "tot": "0:08", "tekst": "Ik keek namelijk ook altijd naar gasten die al jaren lang trainden en ik wilde daar zo snel mogelijk zijn.", "still": "stills/k_5.0.png", "keuze": "meer", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact JAREN TRAINING", "uitleg": "Op 'jaren lang', jouw ik-bewijs, boem", "advies": true},
+   {"id": "b", "code": "C1", "label": "Punch-zoom op 'zo snel mogelijk'", "uitleg": "Geen geluid, voelt als haast", "advies": true},
+   {"id": "c", "code": "T8", "label": "Impact ZO SNEL MOGELIJK", "uitleg": "In plaats van de zoom, boem", "advies": false}
+  ]},
+  {"id": "m3", "tijd": "0:08", "tot": "0:11", "tekst": "Maar ik kwam er al snel achter dat het niet zo werkt.", "still": "stills/k_10.4.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Impact WERKT NIET", "uitleg": "De klap na de haast, boem", "advies": true},
+   {"id": "b", "code": "C1", "label": "Punch-zoom op 'niet zo werkt'", "uitleg": "Rustiger, geen woord", "advies": false}
+  ]},
+  {"id": "m4", "tijd": "0:11", "tot": "0:15", "tekst": "Je kunt niet hun level 10 vergelijken met jouw level 1.", "still": "stills/k_13.2.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Twee klappen: LEVEL 10 en dan LEVEL 1", "uitleg": "Op elk woord een impact, het contrast voel je", "advies": true},
+   {"id": "b", "code": "T8", "label": "Een impact: LEVEL 10 VS 1", "uitleg": "Alles in een woordgroep op 'vergelijken'", "advies": false},
+   {"id": "c", "code": "T8", "label": "Impact NIET VERGELIJKEN", "uitleg": "Het sleutelwoord, boem", "advies": false}
+  ]},
+  {"id": "m5", "tijd": "0:15", "tot": "0:18", "tekst": "Dus bewandel gewoon je eigen pad en onthoud dat:", "still": "stills/k_16.4.png", "keuze": "een", "opties": [
+   {"id": "a", "code": "T8", "label": "Punchline EIGEN PAD", "uitleg": "Het antwoord op de hook, met 'dag 16' eronder, boem", "advies": true},
+   {"id": "b", "code": "T8", "label": "Punchline JOUW PAD", "uitleg": "Zelfde, iets persoonlijker", "advies": false}
+  ]}
+ ]
+}
