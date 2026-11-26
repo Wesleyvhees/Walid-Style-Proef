@@ -130,3 +130,10 @@ fontmirror.com en pixflow.net (kinetische typografie is hoofdzaak, kernwoord-kle
 stock-emoji's), recapio/Hormozi-tutorials (uitzoom-overgangen, lichtstreep over tekst), opus.pro (brainrot-stack, video-essay-stijl).
 Voorstellen (keuzemenu nieuwfx): A tekst achter je hoofd, B groot kinetisch woord, C zoekbalk die typt, D rollende teller,
 E reality-tv bevriezing, F uitzoomen naar kaart, G lichtstreep-titel, H notities-app, I voortgangsbalk, J snelheidssprong.
+
+## Onderzoek 2026-11-26: wat werkt bij top-creators fitness/voeding (Wes: "doe onderzoek bij de top creators")
+Bronnen: Virlo fitness-formats okt–nov 2026; Canadian Grocer / Fox (high-protein recepttrends); blogs over hooks (vendor-data, met korrel zout).
+- Workout-demo's zijn het grootste en sterkste fitnessformat (28,6% van de video's; 25% haalt 2x de normale views). Tutorials 28%, motivatie 26%, voor/na 36% (maar voor/na = FYP-risico).
+- Voeding: snelle high-protein "swaps" en recepten (kwark/hüttenkäse als basis, eiwit-desserts, weinig ingrediënten) gaan viraal; 45% van Gen Z probeerde in een maand een TikTok-recept.
+- Hooks: tekst in beeld + fysieke beweging in de eerste 2 s (vendor: tot +50% 3-sec-retentie).
+Vertaling naar Wes: hij maakt bijna alleen talking head in de bus → grootste gat = gym-demo's (oefening fout vs goed, 10 s) en snelle eiwit-recepten/swaps (zijn recept scoorde al het best). Voor/na alleen zonder getallen.
