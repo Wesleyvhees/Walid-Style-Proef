@@ -80,25 +80,35 @@ Loop: "Dus geen paniek bij: vandaag ineens een kilo zwaarder?"
 Pieken: fles + herkenning (0 s) → 'dit is je kilo' (±2 s) → getal 7.700 kcal (±5 s) → ik-bewijs schrok ook (±10 s) → antwoord week vs vandaag (±15 s).
 Feiten: 1 liter water = 1 kg; 1 kg lichaamsvet ≈ 7.700 kcal; glycogeen bindt ±3 g water per gram; dagschommelingen 0,5–2 kg normaal. Wes (2026-11-22): schrok vroeger van de weegschaal, weegt nu elke dag en kijkt naar het weekgemiddelde en hoe zijn kleding zit.
 
-## Dag 14 · Geen truc · klaar
-Trefwoord: afvallen
+## Dag 14 · Dit ligt in mijn bus · klaar (2026-11-25)
+Trefwoord: gezonde snacks
 ```
-Geen truc. Van 110 naar 75 kilo.
-Zo viel ik af, met vijf basics.
-Eiwit bij elke maaltijd.
-Veel groente, dus veel volume.
-Krachttraining.
-Elke dag bewegen.
-Zeven uur slaap.
-Saai? Ja. Het werkte wel.
-Dus stop met zoeken, want er is
+▶ ACTIE: ruk je tas of klep open (0 s)
+Dit ligt altijd
+in mijn bus.
+
+▶ ACTIE: gooi alles een voor een op de stoel
+Water.
+Rijstwafels.
+Twaalf per dag.
+
+Koffie.
+En ja, een blikje.
+
+Geen snoep.
+Dan eet ik het
+ook niet.
+[alleen als het klopt]
+
+▶ ACTIE: wijs in de lens
+Wat ligt er
+in jouw auto?
 ```
-In beeld: "[-35 kilo], geen truc"  
-Frame 1: je houdt een oude foto van jezelf omhoog (als je die hebt).  
-Loop: "Dus stop met zoeken, want er is geen truc. Van 110 naar 75 kilo."  
-Feiten: eigen ervaring Wes (110 → 75 kg, vijf pijlers uit zijn eigen script).
-Pieken: Tegendraads + Getal (0 s) → open lus 'vijf basics' (±2 s) → elke basic een label (±4–10 s) → Contrast 'saai, werkte wel' (±12 s).  
-Montage: opstapelende labels met de 5 basics.
+In beeld: "Dit ligt in mijn [bus]"  
+Loop: "Wat ligt er in jouw auto? Dit ligt altijd in mijn bus."  
+Feiten: Wes' echte spullen in de bus (kennis/wes-bus.md): water, rijstwafels (12 per dag, eten.md week 1), koffie, blikjes. 'Geen snoep' nog bevestigen. Principe: wat binnen handbereik ligt eet je vaker (omgeving). FYP-veilig.  
+Gekozen door Wes 2026-11-25 (15:00-keuze). Grijpmomenten: 0 s tas open → 1,5 s water → 2,5 s rijstwafels + 'twaalf per dag' → 4,5 s blikje (humor) → 6,5 s 'geen snoep' → 8,5 s vraag. ±10 s.  
+Status: klaar.
 
 ## Dag 15 · Gezonde boodschappen · klaar
 Trefwoord: gezonde boodschappen
@@ -435,4 +445,26 @@ Feiten: stuk taart ±300–400 kcal; een week ±14.000–17.500 kcal bij 2000–
 Vraag aan Wes (A2): gooide jij vroeger na één 'foute' dag de hele week overboord? Wat gebeurde er dan? Eén zin.  
 Gap: 'maar dit wel' → antwoord (alles of niets denken) pas aan het eind.  
 Status: PROEF script-upgrade (wacht op akkoord Wes).
+
+
+
+## Reserve · Geen truc (oude dag 14)
+Trefwoord: afvallen
+```
+Geen truc. Van 110 naar 75 kilo.
+Zo viel ik af, met vijf basics.
+Eiwit bij elke maaltijd.
+Veel groente, dus veel volume.
+Krachttraining.
+Elke dag bewegen.
+Zeven uur slaap.
+Saai? Ja. Het werkte wel.
+Dus stop met zoeken, want er is
+```
+In beeld: "[-35 kilo], geen truc"  
+Frame 1: je houdt een oude foto van jezelf omhoog (als je die hebt).  
+Loop: "Dus stop met zoeken, want er is geen truc. Van 110 naar 75 kilo."  
+Feiten: eigen ervaring Wes (110 → 75 kg, vijf pijlers uit zijn eigen script).
+Pieken: Tegendraads + Getal (0 s) → open lus 'vijf basics' (±2 s) → elke basic een label (±4–10 s) → Contrast 'saai, werkte wel' (±12 s).  
+Montage: opstapelende labels met de 5 basics.
 
